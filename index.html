@@ -2,247 +2,217 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=1000; user-scalable=0;" />
   <title>Home</title>
   <style>
-  @font-face {
-    font-family: "MoreSugar";
-    src: url(fonts/MoreSugar-Regular.ttf) format('truetype');
-  }
+    @font-face {
+      font-family: "MoreSugar";
+      src: url(fonts/MoreSugar-Regular.ttf) format('truetype');
+    }
 
-  /* Configurações gerais */
-  html {
-    font-size: 16px; /* Base font size */
-  }
+    /* General Settings */
+    html {
+      font-size: 16px;
+    }
 
-  body, html {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    background-image: url(imgs/wood2.png);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    font-family: "MoreSugar", sans-serif;
-    font-size: 16px;
-  }
+    body, html {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background-image: url(imgs/wood2.png);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      font-family: "MoreSugar", sans-serif;
+      font-size: 16px;
+    }
 
-  /* Cabeçalho */
-  header {
-    background-color: #1B1917;
-    padding: 5px; 
-    margin-bottom: 2%;
-    border-radius: 0 0 1.25rem 1.25rem; /* 20px */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5); /* 10px */
-    width: 100%;
-    max-width: 50rem; /* 800px */
-    box-sizing: border-box;
-    max-height: 5rem;
-  }
+    /* Header */
+    header {
+      background-color: #1B1917;
+      padding: 5px;
+      margin-bottom: 2%;
+      border-radius: 0 0 1.25rem 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5);
+      width: 100%;
+      max-width: 50rem;
+      box-sizing: border-box;
+      max-height: 5rem;
+    }
 
-  /* Barra de navegação */
-  .navbar {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    flex-wrap: nowrap; /* Evita que os itens quebrem para a próxima linha */
-  }
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      flex-wrap: nowrap;
+    }
 
-  .navbar > .divitems {
-    display: inline-flex;
-    justify-content: center;
-    flex-wrap: nowrap; /* Evita que os itens quebrem para a próxima linha */
-  }
+    .navbar .divitems {
+      display: inline-flex;
+      justify-content: center;
+      flex-wrap: nowrap;
+    }
 
-  .navbar > .divitems > .nav-item {
-    white-space: nowrap;
-    padding: 0.0625rem; /* Ajuste fino no padding */
-    padding-right: 0.625rem; /* Espaçamento à direita */
-  }
+    .navbar .divitems .nav-item {
+      white-space: nowrap;
+      padding: 0.0625rem;
+      padding-right: 0.625rem;
+    }
 
-  .navbar a {
-    text-decoration: none;
-    color: #534F4A;
-    background-color: #24211e;
-    padding: 3px 10px; /* 5px 10px */
-    border-radius: 0.625rem; /* 5px */
-    transition: background-color 0.3s;
-    display: inline-block;
-    border: 0.3125rem solid #272525; /* 5px */
-    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5); /* 10px */
-    margin: 0.625rem; /* 10px */
-  }
+    .navbar a {
+      text-decoration: none;
+      color: #534F4A;
+      background-color: #24211e;
+      padding: 3px 10px;
+      border-radius: 0.625rem;
+      transition: background-color 0.3s;
+      display: inline-block;
+      border: 0.3125rem solid #272525;
+      box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5);
+      margin: 0.625rem;
+    }
 
-  .navbar a:hover {
-    background-color: #534f4a;
-    color:#1B1917;
-  }
+    .navbar a:hover {
+      background-color: #534f4a;
+      color: #1B1917;
+    }
 
-  /* Container principal */
-  #container {
-    background-color: #1B1917;
-    padding: 1.25rem; /* 20px */
-    border-radius: 1.25rem; /* 20px */
-    box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5); /* 20px */
-    text-align: center;
-    margin: 0 auto;
-    width: 100%;
-    max-width: 50rem; /* 800px */
-    box-sizing: border-box;
-    color: #534F4A
-    
-  }
+    /* Main Container */
+    #container {
+      background-color: #1B1917;
+      padding: 1.25rem;
+      border-radius: 1.25rem;
+      box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
+      text-align: center;
+      margin: 0 auto;
+      width: 100%;
+      max-width: 50rem;
+      box-sizing: border-box;
+      color: #534F4A;
+    }
 
-  /* Logo patinha */
-  #logopatinha {
-    height: 5rem; /* 80px */
-  }
+    /* Logo */
+    #logopatinha {
+      height: 5rem;
+    }
 
-  /* Logo grande */
-  #logobig {
-    max-width: 100%;
-    max-height:200px;
-    object-fit: contain;
-  }
+    #logobig {
+      max-width: 100%;
+      max-height: 200px;
+      object-fit: contain;
+    }
 
-  /* Div patinha */
-  #divpatinha {
-    flex-shrink: 0;
-  }
+    .caixalogo {
+      background-color: rgba(68, 64, 60, 0.16);
+      border-radius: 0.625rem;
+      box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
+    }
 
-  /* Caixa do logo */
-  .caixalogo {
-    background-color: rgba(68, 64, 60, 0.16);
-    border-radius: 0.625rem; /* 10px */
-    box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5); /* 20px */
-    scale: 100%;
-  }
+    .caixamaisclara {
+      background-color: #24211e;
+      padding: 0.3125rem;
+      border-radius: 0.9375rem;
+      box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      margin: 2px;
+      text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    }
 
-  /* Caixa mais clara */
-  .caixamaisclara {
-    background-color: #24211e;
-    padding: 0.3125rem; /* 5px */
-    border-radius: 0.9375rem; /* 15px */
-    box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5); /* 20px */
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    margin:  2px; 
-    text-shadow: 
-        -1px -1px 0 #000,  
-        1px -1px 0 #000,
-        -1px 1px 0 #000,
-        1px 1px 0 #000; 
-  }
+    .caixamaisclara img {
+      border-radius: 0.3125rem;
+    }
 
-  /* Imagem dentro da caixa mais clara */
-  .caixamaisclara img {
-    border-radius: 0.3125rem; /* 10px */
-  }
+    .about-text {
+      max-width: 60%;
+    }
 
-  /* Texto sobre mim */
-  .about-text {
-    max-width: 60%;
-  }
+    .caixamaisclara h2 {
+      margin-top: 0;
+    }
 
-  /* Título da seção */
-  .caixamaisclara h2 {
-    margin-top: 0;
-  }
+    hr {
+      border: 0;
+      border-top: 0.0625rem solid #534f4a;
+      margin: 1.25rem 0;
+    }
 
-  /* Linha horizontal */
-  hr {
-    border: 0;
-    border-top: 0.0625rem solid #534f4a; /* 1px */
-    margin: 1.25rem 0; /* 20px */
-  }
+    .section-title {
+      font-size: 1.5rem;
+      margin: 1.25rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-  /* Título da seção */
-  .section-title {
-    font-size: 1.5rem;
-    margin: 1.25rem 0; /* 20px */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+    #euvtuber, #euirl {
+      height: 18.75rem;
+    }
 
-  /* Imagens sobre mim */
-  #euvtuber, #euirl {
-    height: 18.75rem; /* 300px */
-  }
+    .about-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-  /* Conteúdo sobre mim */
-  .about-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    
+    .about-content img {
+      margin: 0 0.625rem;
+      border-radius: 1rem;
+    }
 
-  }
+    .about-content .about-text {
+      flex-grow: 1;
+      text-align: center;
+    }
 
-  /* Imagem dentro do conteúdo sobre mim */
-  .about-content img {
-    margin: 0 0.625rem; /* 10px */
-    border-radius: 1rem;
-  }
+    .boxfoto {
+      width: calc(25% - 2px);
+      display: flex;
+      gap: 2rem;
+      border-radius: 1rem;
+    }
 
-  /* Texto dentro do conteúdo sobre mim */
-  .about-content .about-text {
-    flex-grow: 1;
-    text-align: center;
-  }
+    h1 {
+      font-size: 2rem;
+    }
 
+    h2 {
+      font-size: 2rem;
+      margin: 0;
+      padding: 0;
+    }
 
-  .boxfoto{
-    width: calc(25% - 2px); 
-    display: flex;
-    gap: 2rem;
-    border-radius: 1rem;
-  }
+    h3 {
+      font-size: 1.7rem;
+      margin: 0;
+      padding: 0;
+    }
 
-  h1{
-  font-size: 2rem;
+    .h2text {
+      margin: 0;
+    }
 
-  }
+    .conjuntoblocos {
+      border-radius: 0rem;
+    }
 
-  h2{
-  font-size: 2rem;
-  margin: 0px;
-  padding: 0px;
-  }
-
-  h3{
-  font-size:1.7rem;
-  margin: 0px;
-  padding: 0px;
-  }
-
-  h4{
-
-  .h2text{
-  margin: 0px;
-  }
-  }
-
-  .conjuntoblocos{
-   border-radius: 0rem;
-  }
-
-  .fotosworks{
-    height: 200px;
-    border-radius: 1rem;
-    justify-content: space-between;
-
-
+    .fotosworks {
+      height: 200px;
+      border-radius: 1rem;
+    }
   </style>
 </head>
 <body>
   <header id="header" class="fixed-top">
-    <div id="divpatinha"><img src="imgs/patinha.png" id="logopatinha" alt="logo da barra de navegação"></div>
+    <div id="divpatinha">
+      <img src="imgs/patinha.png" id="logopatinha" alt="logo da barra de navegação">
+    </div>
     <nav class="navbar">
       <div class="divitems">
         <div class="nav-item">
@@ -267,42 +237,49 @@
     </nav>
   </header>
   <div id="container">
-    <div class="caixamaisclara"><img id="logobig" src="imgs/logo.png" alt="Logo" data-position="center"></div>
+    <div class="caixamaisclara">
+      <img id="logobig" src="imgs/logo.png" alt="Logo" data-position="center">
+    </div>
     <hr>
     <div class="caixamaisclara">
-      <div class="about-content"><img src="imgs/aboutmevtuber.png" alt="vtuber me" id="euvtuber">
-      <div class="bodytextcontainer">
-        <h2 class="h2text">⋅ ⭑ ✟ about me ✟ ⭑ ⋅</h2>
-        <h4>Hello! I'm Min, and I'm a digital artist.</h4>
-        <h4>Currently, I work doing Live2d rigs and animation.</h4>
-        <h4>I'm also a psychology student at Universidade Federal Fluminense.</h4>
-        <h4>And I'm an amateur photographer and artist</h4>
-      </div><img id="euirl" src="imgs/euirl.jpg" alt="eu irl" height="400px"></div>
-    </div>
-    <hr>
-    <div>
-      <div class="caixamaisclara">
-        <div class="conjuntoblocos">
-          <div>
-            <h2 class="h2text">⋅ ⭑ ✟ my works ✟ ⭑ ⋅</h2><br>
-            <h3>my drawings</h3>
-          </div>
-          <div class="boxfoto"><img src="imgs/5.png" class="fotosworks" alt="arte n1"> <img src="imgs/6.png" class="fotosworks" alt="arte n2"> <img src="imgs/7.png" class="fotosworks" alt="arte n3"></div><br>
-          <div class="divrigs">
-            <h3>my rigs</h3>
-            <div class="boxfoto">
-              <video src="imgs/5.png" class="fotosworks" alt="rig n1"><video src="imgs/6.png" class="fotosworks" alt="rig n2"><video src="imgs/7.png" class="fotosworks" alt="rig n3"></video></video></video>
-            </div><br>
-            <h3>my photography</h3>
-            <div class="boxfoto"><img src="imgs/5.png" class="fotosworks" alt="arte n1"> <img src="imgs/6.png" class="fotosworks" alt="arte n2"> <img src="imgs/7.png" class="fotosworks" alt="arte n3"></div>
-          </div>
-          <div>
-            <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core="" defer></script>
-            <div class="elfsight-app-553b0a40-d4a9-4c85-b1a4-b71648d61a83" data-elfsight-app-lazy=""></div>
-          </div>
+      <div class="about-content">
+        <img src="imgs/aboutmevtuber.png" alt="vtuber me" id="euvtuber">
+        <div class="bodytextcontainer">
+          <h2 class="h2text">⋅ ⭑ ✟ about me ✟ ⭑ ⋅</h2>
+          <h4>Hello! I'm Min, and I'm a digital artist.</h4>
+          <h4>Currently, I work doing Live2d rigs and animation.</h4>
+          <h4>I'm also a psychology student at Universidade Federal Fluminense.</h4>
+          <h4>And I'm an amateur photographer and artist</h4>
         </div>
+        <img id="euirl" src="imgs/euirl.jpg" alt="eu irl" height="400px">
       </div>
     </div>
-  </div>
+    <hr>
+    <div class="caixamaisclara">
+      <div class="conjuntoblocos">
+        <h2 class="h2text">⋅ ⭑ ✟ my works ✟ ⭑ ⋅</h2><br>
+        <h3>my drawings</h3>
+        <div class="boxfoto">
+          <img src="imgs/5.png" class="fotosworks" alt="arte n1">
+          <img src="imgs/6.png" class="fotosworks" alt="arte n2">
+          <img src="imgs/7.png" class="fotosworks" alt="arte n3">
+        </div><br>
+        <h3>my rigs</h3>
+        <div class="boxfoto">
+          <img src="imgs/5.png" class="fotosworks" alt="rig n1">
+          <img src="imgs/6.png" class="fotosworks" alt="rig n2">
+          <img src="imgs/7.png" class="fotosworks" alt="rig n3">
+        </div><br>
+        <h3>my photography</h3>
+        <div class="boxfoto">
+          <img src="imgs/8.png" class="fotosworks" alt="photo n1">
+          <img src="imgs/9.png" class="fotosworks" alt="photo n2">
+          <img src="imgs/10.png" class="fotosworks" alt="photo n3">
+        </div>
+      </div>
+      <br>
+
+  
+   
 </body>
 </html>
