@@ -1,41 +1,247 @@
-<!doctype html>
-<html Lang="pt-br">
-    <head>
-        <meta charset="utf-8">
-        <title>meu primeiro html</title>
-        <style>
-            h1 {
-                background: red;
-            }
-           
-            #p2 {
-                background: blue;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  
+  <style>
+    @font-face {
+      font-family: "MoreSugar";
+      src: url(fonts/MoreSugar-Regular.ttf) format('truetype');
+    }
 
-            }
+    html {
+      font-size: 16px; /* Base font size */
+    }
 
-            .bold {
-                color: pink;
-                font-weight: bold;
-            }
+    body, html {
+      height: 100%;
+      margin: 0;
+      background-image: url(imgs/wood2.png);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      color: #fff;
+      font-family: "MoreSugar", sans-serif;
+    }
 
-            #fundoverde{
-                background: green;
-            }
-            
-        </style>
-    </head>
-    <body>
-        <h1>ola mundo :D
-            
-        </h1>
-        <h2>
+    header {
+      background-color: #1B1917;
+      padding: 0.625rem; /* 10px */
+      margin-bottom: 2%;
+      border-radius: 0 0 1.25rem 1.25rem; /* 20px */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5); /* 10px */
+      width: 100%;
+      max-width: 50rem; /* 800px */
+      box-sizing: border-box;
+    }
 
-    <p id="p1" class="fundoverde bold">
-            texto secundario
-        </p>
-    </h2>
-    <p id="p2">
-        texto terciario
-    </p>
-    </body>
-</html>
+    .navbar {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      flex-wrap: wrap;
+    }
+
+    .nav-item {
+      scale: 100%;
+    }
+
+    .navbar > .divitems {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .navbar > .divitems > .nav-item {
+      white-space: nowrap;
+      padding: 0.625rem 0.3125rem; /* 10px 5px */
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: #534F4A;
+      background-color: #24211e;
+      padding: 0.625rem 0.9375rem; /* 10px 15px */
+      border-radius: 0.3125rem; /* 5px */
+      transition: background-color 0.3s;
+      display: inline-block;
+      border-color: #272525;
+      border-width: 0.3125rem; /* 5px */
+      box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5); /* 10px */
+      margin: 0.625rem; /* 10px */
+    }
+
+    .navbar a:hover {
+      background-color: #534f4a;
+    }
+
+    #container {
+      background-color: #1B1917;
+      padding: 1.25rem; /* 20px */
+      border-radius: 1.25rem; /* 20px */
+      box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5); /* 20px */
+      text-align: center;
+      margin: 0 auto;
+      width: 100%;
+      max-width: 50rem; /* 800px */
+      box-sizing: border-box;
+    }
+
+    #logopatinha {
+      height: 5rem; /* 80px */
+    }
+
+    #logobig {
+      max-width: 100%;
+      max-height: 21.875rem; /* 350px */
+      object-fit: contain;
+    }
+
+    #divpatinha {
+      flex-shrink: 0;
+    }
+
+    .caixalogo {
+      background-color: rgba(68, 64, 60, 0.16);
+      border-radius: 0.625rem; /* 10px */
+      box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5); /* 20px */
+      scale: 100%;
+    }
+
+    .caixamaisclara {
+      background-color: #24211e;
+      padding: 0.3125rem; /* 5px */
+      border-radius: 0.9375rem; /* 15px */
+      box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5); /* 20px */
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      margin: 1.25rem 0; /* 20px */
+    }
+
+    .caixamaisclara img {
+      border-radius: 0.625rem; /* 10px */
+    }
+
+    .about-text {
+      max-width: 60%;
+    }
+
+    .caixamaisclara h2 {
+      margin-top: 0;
+    }
+
+    hr {
+      border: 0;
+      border-top: 0.0625rem solid #534f4a; /* 1px */
+      margin: 1.25rem 0; /* 20px */
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      margin: 1.25rem 0; /* 20px */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #euvtuber, #euirl {
+      height: 18.75rem; /* 300px */
+    }
+
+    .about-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .about-content img {
+      margin: 0 0.625rem; /* 10px */
+    }
+
+    .about-content .about-text {
+      flex-grow: 1;
+      text-align: center;
+    }
+
+    hr {
+      margin-top: 0.3125rem; /* 5px */
+    }
+
+    .h2text {
+      font-size: 1.8rem;
+    }
+    
+    h3 {
+      font-size: 1.3rem;
+    }
+  </style>
+</head>
+<body>
+  <header id="header" class="fixed-top">
+    <div id="divpatinha">
+      <img src="imgs/patinha.png" id="logopatinha" alt="logo da barra de navegação">
+    </div>
+    <nav class="navbar">
+      <div class="divitems">
+        <div class="nav-item">
+          <a href="#" class="nav-link">home</a>
+        </div>
+        <div class="nav-item">
+          <a href="#" class="nav-link">about me</a>
+        </div>
+        <div class="nav-item">
+          <a href="#" class="nav-link">feed</a>
+        </div>
+        <div class="nav-item">
+          <a href="#" class="nav-link">contact</a>
+        </div>
+        <div class="nav-item">
+          <a href="#" class="nav-link">portfolio</a>
+        </div>
+        <div class="nav-item">
+          <a href="#" class="nav-link">pricings & tos</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div id="container">
+    <div class="caixamaisclara">
+      <img id="logobig" src="imgs/logo.png" alt="Logo" data-position="center">
+    </div>
+    <hr>
+    <div class="caixamaisclara">
+      <div class="about-content">
+        <img src="imgs/aboutmevtuber.png" alt="vtuber me" id="euvtuber">
+        <div class="bodytextcontainer">
+          <h2 class="h2text">⋅ ⭑ ✟ about me ✟ ⭑ ⋅</h2>
+          <h3>Hello! I'm Min, and I'm a digital artist.</h3>
+          <h3>Currently, I work doing Live2d rigs and animation.</h3>
+          <h3>I'm also a psychology student at Universidade Federal Fluminense.</h3>
+          <h3>And I'm an amateur photographer and artist</h3>
+        </div>
+        <img id="euirl" src="imgs/euirl.jpg" alt="eu irl" height="400px">
+      </div>
+    </div>
+
+    <hr>
+
+    <div>
+      <div class="caixamaisclara">
+        <h2 class="h2title">⋅ ⭑ ✟ my work ✟ ⭑ ⋅</h2>
+      </div>
+    </div>
+
+    <div>
+      <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core="" defer></script>
+      <div class="elfsight-app-553b0a40-d4a9-4c85-b1a4-b71648d61a83" data-elfsight-app-lazy=""></div>
+    </div>
+  </div>
+  <script
