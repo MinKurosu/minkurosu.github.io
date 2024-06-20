@@ -1,4 +1,94 @@
+
+body, html{
+    height: 100%;
+    margin: 0;
+}
+
 #logo {
-    height: 20px;
-    width: 22px;
+    width: 420px;
+}
+
+#patinha{
+    width: 80px;
+    max-width: 80px;
+    padding-left: 20%;
+    padding-bottom: 20%;
+    padding-top: 40px;
+}
+
+body{
+    background-image: url(imgs/wood2.png)
+    
+}
+
+#container{
+    background-color: #1B1917;
+    padding: 20px;
+    border-radius: 20px; /* Borda arredondada */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Sombra */
+    text-align: center;
+    margin-left: 200px; /* Margem esquerda */
+    margin-right: 200px;
+    padding:
+}
+
+header{
+    background-color: #1B1917 ;
+    padding: 10px, ;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 0 0 20px 20px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 12%;~
+    position: relative;
+}
+
+header nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    border-radius: 5px;
+    width: 100%;
+
+}
+
+header nav ul{
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    flex-grow: 0;
+    justify-content: space-evenly; /* Distribui igualmente o espaço entre os itens */
+    align-items: center;
+}
+
+#button{
+    text-decoration: none;
+    background-color:#24211e;
+    color:white;
+    border-radius: 2rem;
+    padding: 10px 20px;
+    
+
+    
+}
+
+#divCaixasNav{
+display:flex;
+justify-content: center;
+align-items: center;
+margin-left: 25%;
+
+}
+
+
+header nav ul li {
+    display: block;
+    text-decoration: none;
+    color: #ccc;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
 }
