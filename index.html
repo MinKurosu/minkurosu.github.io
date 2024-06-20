@@ -9,12 +9,12 @@
     font-family: "MoreSugar";
     src: url(fonts/MoreSugar-Regular.ttf) format('truetype');
   }
-  
+
   /* Configurações gerais */
   html {
     font-size: 16px; /* Base font size */
   }
-  
+
   body, html {
     height: 100%;
     margin: 0;
@@ -27,7 +27,7 @@
     font-family: "MoreSugar", sans-serif;
     font-size: 16px;
   }
-  
+
   /* Cabeçalho */
   header {
     background-color: #1B1917;
@@ -43,7 +43,7 @@
     box-sizing: border-box;
     max-height: 5rem;
   }
-  
+
   /* Barra de navegação */
   .navbar {
     display: flex;
@@ -51,19 +51,19 @@
     width: 100%;
     flex-wrap: nowrap; /* Evita que os itens quebrem para a próxima linha */
   }
-  
+
   .navbar > .divitems {
     display: inline-flex;
     justify-content: center;
     flex-wrap: nowrap; /* Evita que os itens quebrem para a próxima linha */
   }
-  
+
   .navbar > .divitems > .nav-item {
     white-space: nowrap;
     padding: 0.0625rem; /* Ajuste fino no padding */
     padding-right: 0.625rem; /* Espaçamento à direita */
   }
-  
+
   .navbar a {
     text-decoration: none;
     color: #534F4A;
@@ -76,12 +76,12 @@
     box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5); /* 10px */
     margin: 0.625rem; /* 10px */
   }
-  
+
   .navbar a:hover {
     background-color: #534f4a;
     color:#1B1917;,
   }
-  
+
   /* Container principal */
   #container {
     background-color: #1B1917;
@@ -96,24 +96,24 @@
     color: #534F4A
     
   }
-  
+
   /* Logo patinha */
   #logopatinha {
     height: 5rem; /* 80px */
   }
-  
+
   /* Logo grande */
   #logobig {
     max-width: 100%;
     max-height:200px;
     object-fit: contain;
   }
-  
+
   /* Div patinha */
   #divpatinha {
     flex-shrink: 0;
   }
-  
+
   /* Caixa do logo */
   .caixalogo {
     background-color: rgba(68, 64, 60, 0.16);
@@ -121,7 +121,7 @@
     box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5); /* 20px */
     scale: 100%;
   }
-  
+
   /* Caixa mais clara */
   .caixamaisclara {
     background-color: #24211e;
@@ -138,29 +138,29 @@
         -1px 1px 0 #000,
         1px 1px 0 #000; 
   }
-  
+
   /* Imagem dentro da caixa mais clara */
   .caixamaisclara img {
     border-radius: 0.3125rem; /* 10px */
   }
-  
+
   /* Texto sobre mim */
   .about-text {
     max-width: 60%;
   }
-  
+
   /* Título da seção */
   .caixamaisclara h2 {
     margin-top: 0;
   }
-  
+
   /* Linha horizontal */
   hr {
     border: 0;
     border-top: 0.0625rem solid #534f4a; /* 1px */
     margin: 1.25rem 0; /* 20px */
   }
-  
+
   /* Título da seção */
   .section-title {
     font-size: 1.5rem;
@@ -169,34 +169,34 @@
     align-items: center;
     justify-content: center;
   }
-  
+
   /* Imagens sobre mim */
   #euvtuber, #euirl {
     height: 18.75rem; /* 300px */
   }
-  
+
   /* Conteúdo sobre mim */
   .about-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
     
-  
+
   }
-  
+
   /* Imagem dentro do conteúdo sobre mim */
   .about-content img {
     margin: 0 0.625rem; /* 10px */
     border-radius: 1rem;
   }
-  
+
   /* Texto dentro do conteúdo sobre mim */
   .about-content .about-text {
     flex-grow: 1;
     text-align: center;
   }
-  
- 
+
+
   .boxfoto{
     width: calc(25% - 2px); 
     display: flex;
@@ -205,28 +205,28 @@
   }
 
   h1{
-font-size: 2rem;
-  
+  font-size: 2rem;
+
   }
 
-h2{
+  h2{
   font-size: 2rem;
   margin: 0px;
   padding: 0px;
-}
+  }
 
-h3{
-font-size:1.7rem;
-margin: 0px;
-padding: 0px;
-}
-
-h4{
-
-.h2text{
+  h3{
+  font-size:1.7rem;
   margin: 0px;
-}
-}
+  padding: 0px;
+  }
+
+  h4{
+
+  .h2text{
+  margin: 0px;
+  }
+  }
 
   .conjuntoblocos{
    border-radius: 0rem;
@@ -242,9 +242,7 @@ h4{
 </head>
 <body>
   <header id="header" class="fixed-top">
-    <div id="divpatinha">
-      <img src="imgs/patinha.png" id="logopatinha" alt="logo da barra de navegação">
-    </div>
+    <div id="divpatinha"><img src="imgs/patinha.png" id="logopatinha" alt="logo da barra de navegação"></div>
     <nav class="navbar">
       <div class="divitems">
         <div class="nav-item">
@@ -268,65 +266,43 @@ h4{
       </div>
     </nav>
   </header>
-
   <div id="container">
-    <div class="caixamaisclara">
-      <img id="logobig" src="imgs/logo.png" alt="Logo" data-position="center">
-    </div>
+    <div class="caixamaisclara"><img id="logobig" src="imgs/logo.png" alt="Logo" data-position="center"></div>
     <hr>
     <div class="caixamaisclara">
-      <div class="about-content">
-        <img src="imgs/aboutmevtuber.png" alt="vtuber me" id="euvtuber">
-        <div class="bodytextcontainer">
-          <h2 class="h2text">⋅ ⭑ ✟ about me ✟ ⭑ ⋅</h2>
-          <h4>Hello! I'm Min, and I'm a digital artist.</h3>
-          <h4>Currently, I work doing Live2d rigs and animation.</h3>
-          <h4>I'm also a psychology student at Universidade Federal Fluminense.</h3>
-          <h4>And I'm an amateur photographer and artist</h3>
-        </div>
-        <img id="euirl" src="imgs/euirl.jpg" alt="eu irl" height="400px">
-      </div>
+      <div class="about-content"><img src="imgs/aboutmevtuber.png" alt="vtuber me" id="euvtuber">
+      <div class="bodytextcontainer">
+        <h2 class="h2text">⋅ ⭑ ✟ about me ✟ ⭑ ⋅</h2>
+        <h4>Hello! I'm Min, and I'm a digital artist.</h4>
+        <h4>Currently, I work doing Live2d rigs and animation.</h4>
+        <h4>I'm also a psychology student at Universidade Federal Fluminense.</h4>
+        <h4>And I'm an amateur photographer and artist</h4>
+      </div><img id="euirl" src="imgs/euirl.jpg" alt="eu irl" height="400px"></div>
     </div>
-
     <hr>
-
     <div>
       <div class="caixamaisclara">
-      
-          <div class="conjuntoblocos">
-            <div>
-            <h2 class="h2text">⋅ ⭑ ✟ my works ✟ ⭑ ⋅</h2>
-            <br>
+        <div class="conjuntoblocos">
+          <div>
+            <h2 class="h2text">⋅ ⭑ ✟ my works ✟ ⭑ ⋅</h2><br>
             <h3>my drawings</h3>
-            </div>
+          </div>
+          <div class="boxfoto"><img src="imgs/5.png" class="fotosworks" alt="arte n1"> <img src="imgs/6.png" class="fotosworks" alt="arte n2"> <img src="imgs/7.png" class="fotosworks" alt="arte n3"></div><br>
+          <div class="divrigs">
+            <h3>my rigs</h3>
             <div class="boxfoto">
-              <img src="imgs/5.png" class="fotosworks" alt="arte n1">
-              <img src="imgs/6.png" class="fotosworks" alt="arte n2">
-              <img src="imgs/7.png" class="fotosworks" alt="arte n3">
-            </div>
-            <br>
-            <div class=" divrigs">
-              <h3>my rigs</h3>
-              <div class="boxfoto">
-              <video src="imgs/5.png" class="fotosworks" alt="rig n1">
-              <video src="imgs/6.png" class="fotosworks" alt="rig n2">
-              <video src="imgs/7.png" class="fotosworks" alt="rig n3">
-              </div>
-          <br>
-          <h3>my photography</h3>
-          <div class="boxfoto">
-              <img src="imgs/5.png" class="fotosworks" alt="arte n1">
-              <img src="imgs/6.png" class="fotosworks" alt="arte n2">
-              <img src="imgs/7.png" class="fotosworks" alt="arte n3">
-            </div>
+              <video src="imgs/5.png" class="fotosworks" alt="rig n1"><video src="imgs/6.png" class="fotosworks" alt="rig n2"><video src="imgs/7.png" class="fotosworks" alt="rig n3"></video></video></video>
+            </div><br>
+            <h3>my photography</h3>
+            <div class="boxfoto"><img src="imgs/5.png" class="fotosworks" alt="arte n1"> <img src="imgs/6.png" class="fotosworks" alt="arte n2"> <img src="imgs/7.png" class="fotosworks" alt="arte n3"></div>
+          </div>
+          <div>
+            <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core="" defer></script>
+            <div class="elfsight-app-553b0a40-d4a9-4c85-b1a4-b71648d61a83" data-elfsight-app-lazy=""></div>
+          </div>
+        </div>
       </div>
-    
-
-
-
-    <div>
-      <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core="" defer></script>
-      <div class="elfsight-app-553b0a40-d4a9-4c85-b1a4-b71648d61a83" data-elfsight-app-lazy=""></div>
     </div>
   </div>
-  <script
+</body>
+</html>
