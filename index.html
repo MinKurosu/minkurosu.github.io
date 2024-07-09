@@ -81,7 +81,11 @@
     .navbar a:hover {
       background-color: #534f4a;
       color: #1B1917;
+      transform: scale(1.15);
+      transition: 0.2s;
     }
+  
+
 
     /* Main Container */
     #container {
@@ -97,16 +101,32 @@
       color: #534F4A;
     }
 
-    /* Logo */
-    #logopatinha {
-      height: 5rem;
-    }
+/* Logo */
 
-    #logobig {
-      max-width: 100%;
-      max-height: 200px;
-      object-fit: contain;
-    }
+#logobig {
+  max-width: 100%;
+  max-height: 200px;
+  object-fit: contain;
+  animation: breathing 2.5s infinite ease-in-out;
+  transition: transform 0.3s ease-in-out;
+}
+
+#logobig:hover {
+  transform: scale(1.15) translateY(10px);
+  transition: 0.2s;
+}
+
+@keyframes breathing {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-2px) scale(1);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
 
     .caixalogo {
       background-color: rgba(68, 64, 60, 0.16);
@@ -167,6 +187,19 @@
       border-radius: 1rem;
     }
 
+    #euirl, #euvtuber {
+  transition: transform 0.3s ease-in-out;
+}
+
+#euirl:hover, #euvtuber:hover {
+  transform: scale(1.05);
+}
+
+
+
+
+
+
     .about-content .about-text {
       flex-grow: 1;
       text-align: center;
@@ -206,7 +239,12 @@
     .fotosworks {
       height: 200px;
       border-radius: 1rem;
-    }
+      transition: transform 0.1s ease-in-out;
+}
+
+.fotosworks:hover {
+  transform: scale(1.1) translateY(5px);
+}
   </style>
 </head>
 <body>
@@ -223,16 +261,16 @@
           <a href="#" class="nav-link">about me</a>
         </div>
         <div class="nav-item">
-          <a href="C:\Users\yasmi\OneDrive\Área de Trabalho\estudinhos\estudinhos\index.html" class="nav-link">feed</a>
+          <a href="feed.html" class="nav-link">feed</a>
         </div>
         <div class="nav-item">
-          <a href="#" class="nav-link">contact</a>
+          <a href="contact.html" class="nav-link">contact</a>
         </div>
         <div class="nav-item">
           <a href="#" class="nav-link">portfolio</a>
         </div>
         <div class="nav-item">
-          <a href="#" class="nav-link">pricings & tos</a>
+          <a href="pricings.html" class="nav-link">pricings & tos</a>
         </div>
       </div>
     </nav>
@@ -247,10 +285,10 @@
         <img src="imgs/aboutmevtuber.png" alt="vtuber me" id="euvtuber">
         <div class="bodytextcontainer">
           <h2 class="h2text">⋅ ⭑ ✟ about me ✟ ⭑ ⋅</h2>
-          <h4>Hello! I'm Min, and I'm a digital artist.</h4>
-          <h4>Currently, I work doing Live2d rigs and animation.</h4>
+          <h4>Hello! I'm Min!</h4>
+          <h4>Currently, I do Live2d rigs and animation for virtual streamers!.</h4>
           <h4>I'm also a psychology student at Universidade Federal Fluminense.</h4>
-          <h4>And I'm an amateur photographer and artist</h4>
+          <h4>And I'm also  an amateur photographer and artist, and im also learning front-end dev (im making this site!!) </h4>
         </div>
         <img id="euirl" src="imgs/euirl.jpg" alt="eu irl" height="400px">
       </div>
@@ -264,21 +302,24 @@
           <img src="imgs/5.png" class="fotosworks" alt="arte n1">
           <img src="imgs/6.png" class="fotosworks" alt="arte n2">
           <img src="imgs/7.png" class="fotosworks" alt="arte n3">
-        </div><br>
+        </div>
+        <br>
         <h3>my rigs</h3>
         <div class="boxfoto">
           <img src="imgs/5.png" class="fotosworks" alt="rig n1">
           <img src="imgs/6.png" class="fotosworks" alt="rig n2">
           <img src="imgs/7.png" class="fotosworks" alt="rig n3">
-        </div><br>
+        </div>
+        <br>
         <h3>my photography</h3>
         <div class="boxfoto">
           <img src="imgs/8.png" class="fotosworks" alt="photo n1">
           <img src="imgs/9.png" class="fotosworks" alt="photo n2">
           <img src="imgs/10.png" class="fotosworks" alt="photo n3">
         </div>
+        <br>
       </div>
-      <br>
+     
 
   
    
