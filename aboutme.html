@@ -3,10 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <title>Contact</title>
+  <title>Home</title>
   <style>
-    /* Styles specific to contact page */
     @font-face {
       font-family: "MoreSugar";
       src: url(fonts/MoreSugar-Regular.ttf) format('truetype');
@@ -82,11 +80,7 @@
     .navbar a:hover {
       background-color: #534f4a;
       color: #1B1917;
-      transform: scale(1.15);
-      transition: 0.2s;
     }
-  
-
 
     /* Main Container */
     #container {
@@ -102,32 +96,16 @@
       color: #534F4A;
     }
 
-/* Logo */
+    /* Logo */
+    #logopatinha {
+      height: 5rem;
+    }
 
-#logobig {
-  max-width: 100%;
-  max-height: 200px;
-  object-fit: contain;
-  animation: breathing 2.5s infinite ease-in-out;
-  transition: transform 0.3s ease-in-out;
-}
-
-#logobig:hover {
-  transform: scale(1.15) translateY(10px);
-  transition: 0.2s;
-}
-
-@keyframes breathing {
-  0% {
-    transform: translateY(0) scale(1);
-  }
-  50% {
-    transform: translateY(-2px) scale(1);
-  }
-  100% {
-    transform: translateY(0) scale(1);
-  }
-}
+    #logobig {
+      max-width: 100%;
+      max-height: 200px;
+      object-fit: contain;
+    }
 
     .caixalogo {
       background-color: rgba(68, 64, 60, 0.16);
@@ -188,29 +166,6 @@
       border-radius: 1rem;
     }
 
-    #euirl, #euvtuber {
-  transition: transform 0.3s ease-in-out;
-}
-
-#euirl:hover, #euvtuber:hover {
-  transform: scale(1.05);
-}
-
-
- /* Logo */
- #logopatinha {
-    height: 5rem;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  #logopatinha:hover {
-    transform: scale(1.10) translateY(2px);
-    transition: 0.1s;
-  }
-  
-
-
-
     .about-content .about-text {
       flex-grow: 1;
       text-align: center;
@@ -250,59 +205,7 @@
     .fotosworks {
       height: 200px;
       border-radius: 1rem;
-      transition: transform 0.1s ease-in-out;
-}
-
-    .button-link {
-      text-decoration: none;
-      color: #534F4A;
-      background-color: #24211e;
-      padding: 10px 10px;
-      border-radius: 0.625rem;
-      transition: background-color 0.3s;
-      display: inline-block;
-      border: 0.3125rem solid #272525;
-      box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5);
-      margin: 5px;
-      text-align: center;
     }
-
-    .button-link:hover {
-      background-color: #534f4a;
-      color: #1B1917;
-    }
-
-    /* Contact specific styles */
-    .button-container {
-      display: flex-box;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 20px;
-      width: 100%;
-      max-width: 50rem;
-    }
-
-    .button-container .contact-links {
-      flex: 0 0 calc(25% - 10px);
-    }
-
-    .button-container .contact-links .button-link {
-      width: 40%;
-      padding: 10px;
-      margin: 10px;
-      max-width: 100%;
-      
-    }
-
-
-    .button-container a:hover {
-      background-color: #534f4a;
-      color: #1B1917;
-      transform: scale(1.15);
-      transition: 0.2s;
-    }
-  
   </style>
 </head>
 <body>
@@ -313,64 +216,77 @@
     <nav class="navbar">
       <div class="divitems">
         <div class="nav-item">
-          <a href="index.html" class="button-link">home</a>
+          <a href="#" class="nav-link">home</a>
         </div>
         <div class="nav-item">
-          <a href="feed.html" class="button-link">feed</a>
+          <a href="#" class="nav-link">about me</a>
         </div>
         <div class="nav-item">
-          <a href="contact.html" class="button-link">contact</a>
+          <a href="#" class="nav-link">feed</a>
         </div>
         <div class="nav-item">
-          <a href="portfolio.html" class="button-link">portfolio</a>
+          <a href="#" class="nav-link">contact</a>
         </div>
         <div class="nav-item">
-          <a href="pricings.html" class="button-link">pricings & tos</a>
+          <a href="#" class="nav-link">portfolio</a>
+        </div>
+        <div class="nav-item">
+          <a href="#" class="nav-link">pricings & tos</a>
         </div>
       </div>
     </nav>
   </header>
   <div id="container">
     <div class="caixamaisclara">
-      <div class="conjuntoblocos">
-        <h2 class="h2text">⸺ ⋅⭑✟ links ✟⭑⋅ ⸺</h2><br>
-
-        <div class="button-container">
-          <div class="contact-links">
-            <a href="https://instagram.com/minyasartes" class="button-link">art instagram</a>
-          </div>
-          <div class="contact-links">
-            <a href="https://x.com/minkurosu" class="button-link">art twitter</a>
-          </div>
-          <div class="contact-links">
-            <a href="https://discord.gg/AjND37mu2h" class="button-link">discord</a>
-          </div>
-          <div class="contact-links">
-            <a href="https://instagram.com/minkurosu" class="button-link">personal Instagram</a>
-          </div>
-          <div class="contact-links">
-            <a href="https://twitch.tv/minkurosu" class="button-link">twitch</a>
-          </div>
-          <div class="contact-links">
-            <a href="www.linkedin.com/in/yasmincruzm" class="button-link">linkedIn</a>
-          </div>
-          <div class="contact-links">
-            <a href="https://open.spotify.com/user/mimincruzm" class="button-link">spotify</a>
-          </div>
-          <div class="contact-links">
-            <a href="https://trello.com/b/FLKUzYRd/commissions" class="button-link">trello</a>
-          </div>
-          <div class="contact-links">
-            <a href="https://github.com/MinKurosu" class="button-link">github</a>
-          </div>
-          <div class="contact-links">
-            <a href="curriculo.pdf" class="button-link">baixe meu currículo</a>
-              
-          </a>
-          </div>
+      <img id="logobig" src="imgs/logo.png" alt="Logo" data-position="center">
+    </div>
+    <hr>
+    <div class="caixamaisclara">
+      <div class="about-content">
+        <img src="imgs/aboutmevtuber.png" alt="vtuber me" id="euvtuber">
+        <div class="bodytextcontainer">
+          <h2 class="h2text">⋅ ⭑ ✟ about me ✟ ⭑ ⋅</h2>
+          <h4>Hello! I'm Min, and I'm a digital artist.</h4>
+          <h4>Currently, I work doing Live2d rigs and animation.</h4>
+          <h4>I'm also a psychology student at Universidade Federal Fluminense.</h4>
+          <h4>And I'm an amateur photographer and artist</h4>
         </div>
+        <img id="euirl" src="imgs/euirl.jpg" alt="eu irl" height="400px">
       </div>
     </div>
+    <hr>
+    <div class="caixamaisclara">
+      <div class="conjuntoblocos">
+        <h2 class="h2text">⋅ ⭑ ✟ my works ✟ ⭑ ⋅</h2><br>
+        <h3>my drawings</h3>
+        <div class="boxfoto">
+          <img src="imgs/5.png" class="fotosworks" alt="arte n1">
+          <img src="imgs/6.png" class="fotosworks" alt="arte n2">
+          <img src="imgs/7.png" class="fotosworks" alt="arte n3">
+        </div><br>
+        <h3>my rigs</h3>
+        <div class="boxfoto">
+          <img src="imgs/5.png" class="fotosworks" alt="rig n1">
+          <img src="imgs/6.png" class="fotosworks" alt="rig n2">
+          <img src="imgs/7.png" class="fotosworks" alt="rig n3">
+        </div><br>
+        <h3>my photography</h3>
+        <div class="boxfoto">
+          <img src="imgs/8.png" class="fotosworks" alt="photo n1">
+          <img src="imgs/9.png" class="fotosworks" alt="photo n2">
+          <img src="imgs/10.png" class="fotosworks" alt="photo n3">
+        </div>
+      </div>
+      <br>
+
+  
+    </div>
+    <div>
+      <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core="" defer></script>
+      <div class="elfsight-app-553b0a40-d4a9-4c85-b1a4-b71648d61a83" data-elfsight-app-lazy=""></div>
+    </div>
   </div>
+</div>
+</div>
 </body>
 </html>
