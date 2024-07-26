@@ -26,10 +26,6 @@
   }
 }
 
-.nav-item{
-  font-size: 1.3rem;
-}
-
     @font-face {
       font-family: "MoreSugar";
       src: url(fonts/MoreSugar-Regular.ttf) format('truetype');
@@ -75,14 +71,16 @@ box-shadow: none;
       max-height: 5rem;
     }
 
-    /* Navbar */
-    .navbar {
+      /* Navbar */
+      .navbar {
       display: flex;
       justify-content: center;
       width: 100%;
       flex-wrap: nowrap;
     }
-
+    .nav-item{
+  font-size: 1.3rem;
+}
     .navbar .divitems {
       display: inline-flex;
       justify-content: center;
@@ -113,9 +111,9 @@ box-shadow: none;
       color: #1B1917;
       transform: scale(1.15);
       transition: 0.2s;
+      animation: ease-in-out;
     }
   
-
 
     /* Main Container */
     #container {

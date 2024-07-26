@@ -67,7 +67,9 @@
       width: 100%;
       flex-wrap: nowrap;
     }
-
+    .nav-item{
+  font-size: 1.3rem;
+}
     .navbar .divitems {
       display: inline-flex;
       justify-content: center;
@@ -98,6 +100,7 @@
       color: #1B1917;
       transform: scale(1.15);
       transition: 0.2s;
+      animation: ease-in-out;
     }
   
 
@@ -270,16 +273,45 @@
     .conjuntoblocos {
       border-radius: 0rem;
     }
-
-    .fotosworks {
-      height: 200px;
-      border-radius: 1rem;
-      transition: transform 0.1s ease-in-out;
+/* Ajustar tamanho dos quadrados para 200px x 200px */
+.fotosworks {
+  width: 200px;
+  height: 200px;
+  border-radius: 0.3125rem; /* ajustar se necessário */
+  object-fit: cover;
+  transition: transform 0.2s ease-in-out;
 }
 
-.fotosworks:hover {
-  transform: scale(1.1) translateY(5px);
+/* Ajustar o tamanho e a exibição dos vídeos */
+.boxfoto video {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
 }
+
+/* Garantir que imagens dentro de .boxfoto sejam quadradas */
+.boxfoto img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 0.3125rem; /* ajustar se necessário */
+}
+
+/* Ajustar as imagens na seção about-content */
+.about-content img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 0.3125rem; /* ajustar se necessário */
+}
+
+.fotosworks:hover,
+.boxfoto video:hover,
+.about-content img:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease-in-out;; /* Aumenta o tamanho em 10% */
+}
+
 
 /* Scale for viewports between 600px and 1200px */
 @media (min-width: 400px) and (max-width: 1200px) {
@@ -365,9 +397,21 @@
         <br>
         <h3>my live2d rigs</h3>
         <div class="boxfoto">
-          <img src="imgs/5.png" class="fotosworks" alt="rig n1">
-          <img src="imgs/6.png" class="fotosworks" alt="rig n2">
-          <img src="imgs/7.png" class="fotosworks" alt="rig n3">
+          <a href="portfolio.html" target="_blank" class="fotosworks">
+            <video width="200px" height="200px" autoplay>
+              <source src="imgs/portfolio/2024-07-16 13-50-43.mp4" type="video/mp4">
+            </video>
+          </a>
+          <a href="portfolio.html" target="_blank" class="fotosworks">
+            <video width="200px" height="200px" autoplay>
+              <source src="imgs/portfolio/2024-07-16 14-00-18.mp4" type="video/mp4">
+            </video>
+          </a>
+          <a href="portfolio.html" target="_blank" class="fotosworks">
+            <video width="200px" height="200px" autoplay>
+              <source src="imgs/portfolio/2024-07-16 14-22-14.mp4" type="video/mp4">
+            </video>
+          </a>
         </div>
         <br>
         <h3>my photos</h3>
