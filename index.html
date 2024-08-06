@@ -30,6 +30,18 @@
       font-size: 16px;
     }
 
+    @media (prefers-color-scheme: dark) {
+    /* Sobrescreva estilos do modo noturno, se houver */
+    :root {
+        color-scheme: light; /* Define o esquema de cores como claro */
+    }
+
+    /* Caso existam estilos específicos para o modo noturno, redefina-os */
+    body, html {
+        background-color: white !important;
+        color: black !important;
+    }
+}
     
     body, html {
       height: 100%;
