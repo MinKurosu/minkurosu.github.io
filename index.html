@@ -30,7 +30,7 @@
       font-size: 16px;
     }
 
-    @media (prefers-color-scheme: dark) {
+    @media (prefers-color-scheme: light) {
     /* Sobrescreva estilos do modo noturno, se houver */
     :root {
         color-scheme: light; /* Define o esquema de cores como claro */
@@ -38,8 +38,8 @@
 
     /* Caso existam estilos específicos para o modo noturno, redefina-os */
     body, html {
-        background-color: white !important;
-        color: black !important;
+        background-color: #24211e !important;
+        color: #24211e !important;
     }
 }
     
@@ -295,6 +295,7 @@
   border-radius: 0.3125rem; /* ajustar se necessário */
   object-fit: cover;
   transition: transform 0.2s ease-in-out;
+
 }
 
 /* Ajustar o tamanho e a exibição dos vídeos */
@@ -302,6 +303,7 @@
   width: 200px;
   height: 200px;
   object-fit: cover;
+  border-radius: 0.3125rem;
 }
 
 /* Garantir que imagens dentro de .boxfoto sejam quadradas */
