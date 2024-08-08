@@ -40,7 +40,7 @@
       font-size: 16px;
     }
 
-    @media (prefers-color-scheme: light) {
+    @media (prefers-color-scheme: dark) {
     /* Sobrescreva estilos do modo noturno, se houver */
     :root {
         color-scheme: light; /* Define o esquema de cores como claro */
@@ -53,6 +53,7 @@
     }
 }
 @media (prefers-color-scheme: dark) {
+  
   header {
     background-color: #1B1917;
   }
@@ -92,6 +93,24 @@
     .caixamaisclara {
       background-color: #24211e;
       }
+
+      header {
+        background-color: #1B1917
+        }
+
+        .navbar a {
+      text-decoration: none;
+      color: #534F4A;
+      background-color: #24211e;
+      }
+
+      #container {
+        background-color: #1B1917;
+        }
+
+        .caixamaisclara {
+          background-color: #24211e;
+        }
 }
 
     body, html {
