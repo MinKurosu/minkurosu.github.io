@@ -28,9 +28,18 @@
     max-width: 100%;
     }
 
-    #fancybox-content {
-    position: relative;
-    width: 50rem;
+    .fancybox-wrap{
+      max-width: 50rem;
+    }
+
+    .element.style{
+      max-width: 50rem;
+      
+    }
+
+    .fancybox{
+      max-width: 50rem;
+    }
 }
 
     @font-face {
@@ -62,8 +71,8 @@ box-shadow: none;
       z-index: 1;
     }
 
-     /* Header */
-     header {
+    /* Header */
+    header {
       background-color: #1B1917;
       padding: 5px;
       margin-bottom: 2%;
@@ -78,15 +87,15 @@ box-shadow: none;
       max-height: 5rem;
     }
 
-    /* Navbar */
-    .navbar {
+      /* Navbar */
+      .navbar {
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       width: 100%;
       flex-wrap: nowrap;
     }
     .nav-item{
-  font-size: 1rem;
+    font-size: 1rem;
 }
     .navbar .divitems {
       display: inline-flex;
@@ -96,9 +105,8 @@ box-shadow: none;
 
     .navbar .divitems .nav-item {
       white-space: nowrap;
-      padding: 0.0625rem;
-      padding-right: 0.625rem;
-      font-size: 1rem;
+      padding: 2px
+      padding-right:
     }
 
     .navbar a {
@@ -123,7 +131,6 @@ box-shadow: none;
     }
   
 
-
     /* Main Container */
     #container {
       background-color: #1B1917;
@@ -137,7 +144,6 @@ box-shadow: none;
       box-sizing: border-box;
       color: #534F4A;
     }
-
 
 /* Logo */
 
