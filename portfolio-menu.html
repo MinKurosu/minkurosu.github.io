@@ -30,7 +30,17 @@
       font-size: 16px;
     }
 
-    
+     /* Scale for viewports between 600px and 1200px */
+     @media (min-width: 400px) and (max-width: 1200px) {
+  body {
+    transform: scale(1.2);
+    transform-origin: top; 
+  }
+  .caixamaisclara {
+    max-width: 50rem;
+    }
+}
+
     body, html {
       height: 100%;
       margin: 0;
@@ -342,21 +352,7 @@
 
 
 
-/* Scale for viewports between 600px and 1200px */
-@media (min-width: 400px) and (max-width: 1200px) {
-  body {
-    transform: scale(1.3);
-    transform-origin: top;
-  }
 
-  h4{
-    font-size: 1.3rem;
-  }
-  
-  .nav-item{
-  font-size: 1.3rem;
-}
-}
 
 .button-link {
       text-decoration: none;
