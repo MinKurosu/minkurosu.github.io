@@ -1,521 +1,826 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4K5KDKEJ2E"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-4K5KDKEJ2E"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
 
-  gtag('config', 'G-4K5KDKEJ2E');
-</script>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=0.4, minimum-scale=0.1, maximum-scale=2.0, user-scalable=yes">
-  <link rel="stylesheet" href="styles.css">
-  <title>Feed</title>
-  <link rel="icon" type="image/ico" href="imgs/favicon.ico"/>
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
-  <style>
-        
-     /* Scale for viewports between 600px and 1200px */
-     @media (min-width: 400px) and (max-width: 1200px) {
-  body {
-    transform: scale(1.2);
-    transform-origin: top; 
-  }
-  .caixamaisclara {
-    max-width: 100%;
-    }
+      gtag('config', 'G-4K5KDKEJ2E');
+    </script>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=0.4, minimum-scale=0.1, maximum-scale=2.0, user-scalable=yes"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Feed</title>
+    <link rel="icon" type="image/ico" href="imgs/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="/fancybox/jquery.fancybox-1.3.4.css"
+      type="text/css"
+      media="screen"
+    />
 
-    .fancybox-wrap{
-      max-width: 50rem;
-    }
+    <style>
+      /* Scale for viewports between 600px and 1200px */
+      @media (min-width: 400px) and (max-width: 1200px) {
+        body {
+          transform: scale(1.2);
+          transform-origin: top;
+        }
+        .caixamaisclara {
+          max-width: 100%;
+        }
 
-    .element.style{
-      max-width: 50rem;
-      
-    }
+        .fancybox-wrap {
+          max-width: 50rem;
+        }
 
-    .fancybox{
-      max-width: 50rem;
-    }
-}
+        .element.style {
+          max-width: 50rem;
+        }
 
-    @font-face {
-      font-family: "MoreSugar";
-      src: url(fonts/MoreSugar-Regular.ttf) format('truetype');
-    }
+        .fancybox {
+          max-width: 50rem;
+        }
 
-    /* General Settings */
-    html {
-      font-size: 16px;
-    }
+        #fancybox-wrap {
+          max-width: 100%;
+          left: 0 !important;
+          padding: 0 !important;
+        }
 
-    #logopatinha{
-box-shadow: none;
-    }
+        #fancybox-content {
+          max-width: 100%;
+          border: none !important;
+        }
 
+        #fancybox-close {
+          right: 0 !important;
+        }
 
-    body, html {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-      background-image: url(imgs/wood2.png);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      font-family: "MoreSugar", sans-serif;
-      font-size: 16px;
-      z-index: 1;
-    }
+        .fancybox-bg {
+          display: none;
+        }
 
-    /* Header */
-    header {
-      background-color: #1B1917;
-      padding: 5px;
-      margin-bottom: 2%;
-      border-radius: 0 0 1.25rem 1.25rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5);
-      width: 100%;
-      max-width: 50rem;
-      box-sizing: border-box;
-      max-height: 5rem;
-    }
+        .grid-feed {
+          max-width: 50rem; /* Largura máxima do grid */
+        }
+
+        .caixamaisclara img {
+          border-radius: 0.3125rem;
+          max-width: 100%;
+        }
+        .caixamaisclara {
+          max-width: 50rem;
+        }
+      }
+
+      .grid-img img {
+        aspect-ratio: 1 !important;
+        max-height: 300px;
+      }
+
+      #fancybox-outer {
+        background: none !important;
+      }
+      #fancybox-bg-e {
+        display: none !important;
+      }
+
+      #fancybox-content {
+        max-width: 100%;
+        border: none !important;
+      }
+
+      @font-face {
+        font-family: 'MoreSugar';
+        src: url(fonts/MoreSugar-Regular.ttf) format('truetype');
+      }
+
+      /* General Settings */
+      html {
+        font-size: 16px;
+      }
+
+      #logopatinha {
+        box-shadow: none;
+      }
+
+      body,
+      html {
+        height: 100%;
+        width: ;
+        margin: 0;
+        padding: 0;
+        background-image: url(imgs/wood2.png);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        font-family: 'MoreSugar', sans-serif;
+        font-size: 16px;
+        z-index: 1;
+      }
+
+      /* Header */
+      header {
+        background-color: #1b1917;
+        padding: 5px;
+        margin-bottom: 2%;
+        border-radius: 0 0 1.25rem 1.25rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5);
+        width: 100%;
+        max-width: 50rem;
+        box-sizing: border-box;
+        max-height: 5rem;
+      }
 
       /* Navbar */
       .navbar {
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
-      flex-wrap: nowrap;
-    }
-    .nav-item{
-    font-size: 1rem;
-}
-    .navbar .divitems {
-      display: inline-flex;
-      justify-content: center;
-      flex-wrap: nowrap;
-    }
+        display: flex;
 
-    .navbar .divitems .nav-item {
-      white-space: nowrap;
-      padding: 2px
-      padding-right:
-    }
+        width: 100%;
+        flex-wrap: nowrap;
+      }
+      .nav-item {
+        font-size: 1rem;
+      }
+      .navbar .divitems {
+        display: inline-flex;
+        justify-content: center;
+        flex-wrap: nowrap;
+      }
 
-    .navbar a {
-      text-decoration: none;
-      color: #534F4A;
-      background-color: #24211e;
-      padding: 3px 10px;
-      border-radius: 0.625rem;
-      transition: background-color 0.3s;
-      display: inline-block;
-      border: 0.3125rem solid #272525;
-      box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5);
-      margin: 0.625rem;
-    }
+      .navbar .divitems .nav-item {
+        white-space: nowrap;
+        padding: 2px;
+      }
 
-    .navbar a:hover {
-      background-color: #534f4a;
-      color: #1B1917;
-      transform: scale(1.15);
-      transition: 0.2s;
-      animation: ease-in-out;
-    }
-  
+      .navbar a {
+        text-decoration: none;
+        color: #534f4a;
+        background-color: #24211e;
+        padding: 3px 10px;
+        border-radius: 0.625rem;
+        transition: background-color 0.3s;
+        display: inline-block;
+        border: 0.3125rem solid #272525;
+        box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5);
+        margin: 0.625rem;
+      }
 
-    /* Main Container */
-    #container {
-      background-color: #1B1917;
-      padding: 1.25rem;
-      border-radius: 1.25rem;
-      box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
-      text-align: center;
-      margin: 0 auto;
-      width: 100%;
-      max-width: 50rem;
-      box-sizing: border-box;
-      color: #534F4A;
-    }
+      .navbar a:hover {
+        background-color: #534f4a;
+        color: #1b1917;
+        transform: scale(1.15);
+        transition: 0.2s;
+        animation: ease-in-out;
+      }
 
-/* Logo */
+      /* Main Container */
+      #container {
+        background-color: #1b1917;
+        padding: 1.25rem;
+        border-radius: 1.25rem;
+        box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
+        text-align: center;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 50rem;
+        box-sizing: border-box;
+        color: #534f4a;
+      }
 
-#logobig {
-  max-width: 100%;
-  max-height: 200px;
-  object-fit: contain;
-  animation: breathing 2.5s infinite ease-in-out;
-  transition: transform 0.3s ease-in-out;
-}
+      /* Logo */
 
-#logobig:hover {
-  transform: scale(1.15) translateY(10px);
-  transition: 0.2s;
-}
+      #logobig {
+        max-width: 100%;
+        max-height: 200px;
+        object-fit: contain;
+        animation: breathing 2.5s infinite ease-in-out;
+        transition: transform 0.3s ease-in-out;
+      }
 
-@keyframes breathing {
-  0% {
-    transform: translateY(0) scale(1);
-  }
-  50% {
-    transform: translateY(-2px) scale(1);
-  }
-  100% {
-    transform: translateY(0) scale(1);
-  }
-}
+      #logobig:hover {
+        transform: scale(1.15) translateY(10px);
+        transition: 0.2s;
+      }
 
-    .caixalogo {
-      background-color: rgba(68, 64, 60, 0.16);
-      border-radius: 0.625rem;
-      box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
-    }
+      @keyframes breathing {
+        0% {
+          transform: translateY(0) scale(1);
+        }
+        50% {
+          transform: translateY(-2px) scale(1);
+        }
+        100% {
+          transform: translateY(0) scale(1);
+        }
+      }
 
-    .caixamaisclara {
-      background-color: #24211e;
-      padding: 0.3125rem;
-      border-radius: 0.9375rem;
-      box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      margin: 2px;
-      text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-      max-width: 50rem;
-    }
+      .caixalogo {
+        background-color: rgba(68, 64, 60, 0.16);
+        border-radius: 0.625rem;
+        box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
+      }
 
-    .caixamaisclara img {
-      border-radius: 0.3125rem;
-      max-width: 50rem;
-    }
+      .caixamaisclara {
+        background-color: #24211e;
+        padding: 0.3125rem;
+        border-radius: 0.9375rem;
+        box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin: 2px;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+          1px 1px 0 #000;
+      }
 
-    .about-text {
-      max-width: 60%;
-    }
+      .caixamaisclara img {
+        border-radius: 0.3125rem;
+        max-width: 50rem;
+      }
 
-    .caixamaisclara h2 {
-      margin-top: 0;
-    }
+      .about-text {
+        max-width: 60%;
+      }
 
-    hr {
-      border: 0;
-      border-top: 0.0625rem solid #534f4a;
-      margin: 1.25rem 0;
-    }
+      .caixamaisclara h2 {
+        margin-top: 0;
+      }
 
-    .section-title {
-      font-size: 1.5rem;
-      margin: 1.25rem 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+      hr {
+        border: 0;
+        border-top: 0.0625rem solid #534f4a;
+        margin: 1.25rem 0;
+      }
 
-    #euvtuber, #euirl {
-      height: 18.75rem;
-    }
+      .section-title {
+        font-size: 1.5rem;
+        margin: 1.25rem 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
 
-    .about-content {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      
-    }
+      #euvtuber,
+      #euirl {
+        height: 18.75rem;
+      }
 
-    .about-content img {
-      margin: 0 0.625rem;
-      border-radius: 1rem;
-    }
+      .about-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
 
-    #euirl, #euvtuber {
-  transition: transform 0.3s ease-in-out;
-}
+      .about-content img {
+        margin: 0 0.625rem;
+        border-radius: 1rem;
+      }
 
-#euirl:hover, #euvtuber:hover {
-  transform: scale(1.05);
-}
+      #euirl,
+      #euvtuber {
+        transition: transform 0.3s ease-in-out;
+      }
 
+      #euirl:hover,
+      #euvtuber:hover {
+        transform: scale(1.05);
+      }
 
+      .about-content .about-text {
+        flex-grow: 1;
+        text-align: center;
+      }
 
+      .boxfoto {
+        width: calc(25% - 2px);
+        display: flex;
+        gap: 2rem;
+        border-radius: 1rem;
+        max-width: 50rem;
+      }
 
+      h1 {
+        font-size: 2rem;
+      }
 
+      h2 {
+        font-size: 2rem;
+        margin: 0;
+        padding: 0;
+      }
 
-    .about-content .about-text {
-      flex-grow: 1;
-      text-align: center;
-    }
+      h3 {
+        font-size: 1.7rem;
+        margin: 0;
+        padding: 0;
+      }
 
-    .boxfoto {
-      width: calc(25% - 2px);
-      display: flex;
-      gap: 2rem;
-      border-radius: 1rem;
-      max-width: 50rem;
-    }
+      .h2text {
+        margin: 0;
+      }
 
-    h1 {
-      font-size: 2rem;
-    }
+      .conjuntoblocos {
+        border-radius: 0rem;
+      }
 
-    h2 {
-      font-size: 2rem;
-      margin: 0;
-      padding: 0;
-    }
+      .fotosworks {
+        height: 200px;
+        border-radius: 1rem;
+        transition: transform 0.1s ease-in-out;
+      }
 
-    h3 {
-      font-size: 1.7rem;
-      margin: 0;
-      padding: 0;
-    }
+      .grid-feed {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* Três colunas fixas */
+        gap: 10px; /* Espaço entre as imagens */
+        justify-items: center; /* Centraliza as imagens horizontalmente */
+        padding: 10px;
+        max-width: 80rem; /* Largura máxima do grid */
+        margin: 0 auto; /* Centraliza o grid na página */
+      }
 
-    .h2text {
-      margin: 0;
-    }
+      .grid-img {
+        position: relative;
+        z-index: 1;
+        justify-content: center;
+      }
 
-    .conjuntoblocos {
-      border-radius: 0rem;
-    }
+      .grid-img img {
+        width: 100%;
+        height: 100%;
+        transition: transform 0.3s ease;
+        z-index: 0s ease 0.3s;
+        aspect-ratio: 1;
+        z-index: 1;
+        object-fit: cover;
+      }
 
-    .fotosworks {
-      height: 200px;
-      border-radius: 1rem;
-      transition: transform 0.1s ease-in-out;
-}
+      .grid-img:hover img {
+        transform: scale(1.05);
+        z-index: 50;
+        transition: transform 0.3s ease, z-index 0s;
+      }
 
+      .box {
+        width: 40%;
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.2);
+        padding: 35px;
+        border: 2px solid #353535;
+        border-radius: 20px/50px;
+        background-clip: padding-box;
+        text-align: center;
+      }
 
+      .button {
+        font-size: 1em;
+        padding: 10px;
+        color: #353535;
+        border: 2px solid #06d85f;
+        border-radius: 20px/50px;
+        text-decoration: none;
+        cursor: pointer;
+        transition: all 0.3s ease-out;
+      }
+      .button:hover {
+        background: #06d85f;
+      }
 
+      .overlay {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.7);
+        transition: opacity 0.5s;
+        visibility: hidden;
+        opacity: 0;
+      }
+      .overlay:target {
+        visibility: visible;
+        opacity: 1;
+      }
 
+      .popup {
+        margin: 70px auto;
+        padding: 20px;
+        background: #353535;
+        border-radius: 5px;
+        width: 30%;
+        position: relative;
+        transition: all 0.5s ease-in-out;
+      }
 
+      .popup h2 {
+        margin: 10px;
+        margin-top: 0;
+        color: #333;
+        font-family: Tahoma, Arial, sans-serif;
+        font-size: 16px;
+      }
+      .popup .close {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        transition: all 200ms;
+        font-size: 30px;
+        font-weight: bold;
+        text-decoration: none;
+        color: #333;
+      }
+      .popup .close:hover {
+        color: #06d85f;
+      }
+      .popup .content {
+        max-height: 30%;
+        overflow: auto;
+      }
 
-.grid-feed {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Três colunas fixas */
-  gap: 10px; /* Espaço entre as imagens */
-  justify-items: center; /* Centraliza as imagens horizontalmente */
-  padding: 10px;
-  max-width: 50rem; /* Largura máxima do grid */
-  margin: 0 auto; /* Centraliza o grid na página */
-}
-
-.grid-img {
-    position: relative;
-    z-index: 1;
-    justify-content: center;
-    object; 
-    
-}
-
-.grid-img img {
-    width: 100%;
-    height: 100%;
-    transition: transform 0.3s ease; z-index: 0s ease 0.3s;
-    aspect-ratio: 1;
-    z-index: 1;
-    object-fit:cover; 
-    
-}
-
-.grid-img:hover img {
-    transform: scale(1.05); 
-    z-index: 50;
-    transition: transform 0.3s ease, z-index 0s;
-}
-
-
-
-.box {
-  width: 40%;
-  margin: 0 auto;
-  background: rgba(255,255,255,0.2);
-  padding: 35px;
-  border: 2px solid #353535;
-  border-radius: 20px/50px;
-  background-clip: padding-box;
-  text-align: center;
-}
-
-.button {
-  font-size: 1em;
-  padding: 10px;
-  color: #353535;
-  border: 2px solid #06D85F;
-  border-radius: 20px/50px;
-  text-decoration: none;
-  cursor: pointer;
-  transition: all 0.3s ease-out;
-}
-.button:hover {
-  background: #06D85F;
-}
-
-.overlay {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.7);
-  transition: opacity 0.5s;
-  visibility: hidden;
-  opacity: 0;
-}
-.overlay:target {
-  visibility: visible;
-  opacity: 1;
-}
-
-.popup {
-  margin: 70px auto;
-  padding: 20px;
-  background: #353535;
-  border-radius: 5px;
-  width: 30%;
-  position: relative;
-  transition: all 0.5s ease-in-out;
-}
-
-.popup h2 {
-  margin: 10px;
-  margin-top: 0;
-  color: #333;
-  font-family: Tahoma, Arial, sans-serif;
-  font-size: 16px;
-}
-.popup .close {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  transition: all 200ms;
-  font-size: 30px;
-  font-weight: bold;
-  text-decoration: none;
-  color: #333;
-}
-.popup .close:hover {
-  color: #06D85F;
-}
-.popup .content {
-  max-height: 30%;
-  overflow: auto;
-}
-
-@media screen and (max-width: 700px){
-  .box{
-    width: 40%;
-  }
-  .popup{
-    width: 40%;
-  }
-}
+      @media screen and (max-width: 700px) {
+        .box {
+          width: 40%;
+        }
+        .popup {
+          width: 40%;
+        }
+      }
 
       a.fancybox img {
-          border: none;
-          box-shadow: 0 1px 7px rgba(0,0,0,0.6);
-          -o-transform: scale(1,1); -ms-transform: scale(1,1); -moz-transform: scale(1,1); -webkit-transform: scale(1,1); transform: scale(1,1); -o-transition: all 0.2s ease-in-out; -ms-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; -webkit-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out;
-      } 
-      a.fancybox:hover img {
-          position: relative; z-index: 999; -o-transform: scale(1.03,1.03); -ms-transform: scale(1.03,1.03); -moz-transform: scale(1.03,1.03); -webkit-transform: scale(1.03,1.03); transform: scale(1.03,1.03);
+        border: none;
+        box-shadow: 0 1px 7px rgba(0, 0, 0, 0.6);
+        -o-transform: scale(1, 1);
+        -ms-transform: scale(1, 1);
+        -moz-transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
+        -o-transition: all 0.2s ease-in-out;
+        -ms-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        -webkit-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
       }
-  </style>
-  <link rel="stylesheet" type="text/css" media="screen" href="http://cdnjs.cloudflare.com/ajax/libs/fancybox/1.3.4/jquery.fancybox-1.3.4.css" />
-  <style type="text/css">
+      a.fancybox:hover img {
+        position: relative;
+        z-index: 999;
+        -o-transform: scale(1.03, 1.03);
+        -ms-transform: scale(1.03, 1.03);
+        -moz-transform: scale(1.03, 1.03);
+        -webkit-transform: scale(1.03, 1.03);
+        transform: scale(1.03, 1.03);
+      }
+    </style>
 
-  </style>
-</head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-DT4FG20QMR"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="http://cdnjs.cloudflare.com/ajax/libs/fancybox/1.3.4/jquery.fancybox-1.3.4.css"
+    />
+  </head>
 
-  gtag('config', 'G-DT4FG20QMR');
-</script>
-<body>
-  <header id="header" class="fixed-top">
-    <div id="divpatinha">
-      <img src="imgs/patinha.png" id="logopatinha" alt="logo da barra de navegação">
-    </div>
-    <nav class="navbar">
-      <div class="divitems">
-        <div class="nav-item">
-          <a href="index.html" target="_self" class="nav-link">home</a>
-        </div>
-        <div class="nav-item">
-          <a href="feed.html" target="_self" class="nav-link">feed</a>
-        </div>
-        <div class="nav-item">
-          <a href="contact.html" target="_self" class="nav-link">contact</a>
-        </div>
-        <div class="nav-item">
-          <a href="portfolio-menu.html" target="_self" class="nav-link">portfolio</a>
-        </div>
-        <div class="nav-item">
-            <a href="rigclients.html" target="_self" class="nav-link">rig clients</a>
-          </div>
-        <div class="nav-item">
-          <a href="pricings.html" target="_self" class="nav-link">pricings & tos</a>
-        </div>
+  <!-- Google tag (gtag.js) -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-DT4FG20QMR"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'G-DT4FG20QMR');
+  </script>
+  <body>
+    <header id="header" class="fixed-top">
+      <div id="divpatinha">
+        <img
+          src="imgs/patinha.png"
+          id="logopatinha"
+          alt="logo da barra de navegação"
+        />
       </div>
-    </nav>
-  </header>
+      <nav class="navbar">
+        <div class="divitems">
+          <div class="nav-item">
+            <a href="index.html" target="_self" class="nav-link">home</a>
+          </div>
+          <div class="nav-item">
+            <a href="feed.html" target="_self" class="nav-link">feed</a>
+          </div>
+          <div class="nav-item">
+            <a href="contact.html" target="_self" class="nav-link">contact</a>
+          </div>
+          <div class="nav-item">
+            <a href="portfolio-menu.html" target="_self" class="nav-link"
+              >portfolio</a
+            >
+          </div>
+          <div class="nav-item">
+            <a href="rigclients.html" target="_self" class="nav-link"
+              >rig clients</a
+            >
+          </div>
+          <div class="nav-item">
+            <a href="pricings.html" target="_self" class="nav-link"
+              >pricings & tos</a
+            >
+          </div>
+        </div>
+      </nav>
+    </header>
 
-<div class="caixamaisclara">
-  <div class="grid-feed">
-    <div class="grid-img">
-        <img class="fancybox" src="imgs/photography-portfolio/DSCN4875 (1).jpg"> 
+    <div class="caixamaisclara">
+      <div class="grid-feed">
+        <div class="grid-img">
+          <img
+            class="fancybox"
+            src="imgs/photography-portfolio/DSCN4875 (1).jpg"
+            alt="Descrição da imagem 1"
+          />
+        </div>
+        <div class="grid-img">
+          <img
+            class="fancybox"
+            src="imgs/photography-portfolio/garden1.jpg"
+            alt="Descrição da imagem 2"
+          />
+        </div>
+        <div class="grid-img">
+          <img
+            class="fancybox"
+            src="imgs/photography-portfolio/DSCN4796 (1).jpg"
+            alt="Descrição da imagem 2"
+          />
+      </div>
+      <div class="grid-img">
+        <img
+          class="fancybox"
+          src="imgs/photography-portfolio/DSCN4784.jpg"
+          alt="Descrição da imagem 1"
+        />
+      </div>
+      <div class="grid-img">
+        <img
+          class="fancybox"
+          src="imgs/photography-portfolio/DSCN4820 (2).jpg"
+          alt="Descrição da imagem 2"
+        />
+      </div>
+      <div class="grid-img">
+        <img
+          class="fancybox"
+          src="imgs/photography-portfolio/garden2.jpg"
+          alt="Descrição da imagem 2"
+        />
     </div>
     <div class="grid-img">
-        <img class="fancybox" src="imgs/feed/359676570_1281671176051603_6240681789574852749_n_17844844440017402.png"> 
+      <img
+        class="fancybox"
+        src="imgs/photography-portfolio/DSCN4803.jpg"
+        alt="Descrição da imagem 1"
+      />
     </div>
     <div class="grid-img">
-        <img class="fancybox" src="imgs/feed/354801412_646262653717498_1848050448632852524_n_17977021157143910.png"> 
-    
+      <img
+        class="fancybox"
+        src="imgs/photography-portfolio/DSCN4744.jpg"
+        alt="Descrição da imagem 2"
+      />
+    </div>
+    <div class="grid-img">
+      <img
+        class="fancybox"
+        src="imgs/photography-portfolio/Picsart_24-09-08_21-32-04-941(1).jpg"
+        alt="Descrição da imagem 2"
+      />
+  </div>
+  <div class="grid-img">
+    <img
+      class="fancybox"
+      src="imgs/photography-portfolio/DSCN4862 (1).jpg"
+      alt="Descrição da imagem 1"
+    />
+  </div>
+
+  <div class="grid-img">
+    <img
+      class="fancybox"
+      src="imgs/photography-portfolio/DSCN4822 (1).jpg"
+      alt="Descrição da imagem 1"
+    />
+  </div>
+
+  <div class="grid-img">
+    <img
+      class="fancybox"
+      src="imgs/photography-portfolio/DSCN4813 (1).jpg"
+      alt="Descrição da imagem 1"
+    />
+  </div>
+
+  <div class="grid-img">
+    <img
+      class="fancybox"
+      src="imgs/photography-portfolio/DSCN4684-1 (1).jpg"
+      alt="Descrição da imagem 1"
+    />
+  </div>
+
+  <div class="grid-img">
+    <img
+      class="fancybox"
+      src="imgs/photography-portfolio/DSCN4685 (1).jpg"
+      alt="Descrição da imagem 1"
+    />
+  </div>
+
+  <div class="grid-img">
+    <img
+      class="fancybox"
+      src="imgs/photography-portfolio/DSCN4671 (1).jpg"
+      alt="Descrição da imagem 1"
+    />
+  </div>
+
+   
+  <div class="grid-img">
+    <img
+      class="fancybox"
+      src="imgs/photography-portfolio/DSCN4017-1.jpg"
+      alt="Descrição da imagem 1"
+    />
+  </div>
+
+  <div class="grid-img">
+    <img
+      class="fancybox"
+      src="imgs/photography-portfolio/DSCN4015.jpg"
+      alt="Descrição da imagem 1"
+    />
+  </div>
+
+  <div class="grid-img">
+    <img
+      class="fancybox"
+      src="imgs/photography-portfolio/DSCN4018-1.jpg"
+      alt="Descrição da imagem 1"
+    />
+  </div>
+   
+  <div class="grid-img">
+    <img
+      class="fancybox"
+      src="imgs/photography-portfolio/DSCN4520-1 (2) (1).jpg"
+      alt="Descrição da imagem 1"
+    />
+  </div>
+
+  <div class="grid-img">
+    <img
+      class="fancybox"
+      src="imgs/photography-portfolio/DSCN4552 (1).jpg"
+      alt="Descrição da imagem 1"
+    />
+  </div>
+
+  <div class="grid-img">
+    <img
+      class="fancybox"
+      src="imgs/photography-portfolio/DSCN4513 (2).jpg"
+      alt="Descrição da imagem 1"
+    />
+  </div>
+
+  <div class="grid-img">
+    <img
+      class="fancybox"
+      src="imgs/photography-portfolio/DSCN3527 (1).jpg"
+      alt="Descrição da imagem 1"
+    />
+  </div>
+
+  <div class="grid-img">
+    <img
+      class="fancybox"
+      src="imgs/photography-portfolio/DSCN3461 (2).jpg"
+      alt="Descrição da imagem 1"
+    />
+  </div>
+
+  <div class="grid-img">
+    <img
+      class="fancybox"
+      src="imgs/photography-portfolio/DSCN3546 (3).jpg"
+      alt="Descrição da imagem 1"
+    />
+  </div>
+
+  
+  <div class="grid-img">
+    <img
+      class="fancybox"
+      src="imgs/photography-portfolio/DSCN4065.jpg"
+      alt="Descrição da imagem 1"
+    />
+  </div>
+
+  <div class="grid-img">
+    <img
+      class="fancybox"
+      src="imgs/photography-portfolio/DSCN4071 (2).jpg"
+      alt="Descrição da imagem 1"
+    />
+  </div>
+
+  <div class="grid-img">
+    <img
+      class="fancybox"
+      src="imgs/photography-portfolio/DSCN4057 (1).jpg"
+      alt="Descrição da imagem 1"
+    />
+  </div>
+
+  <div class="grid-img">
+    <img
+      class="fancybox"
+      src="imgs/photography-portfolio/DSCN3822 (4).jpg"
+      alt="Descrição da imagem 1"
+    />
+  </div>
+
+  <div class="grid-img">
+    <img
+      class="fancybox"
+      src="imgs/photography-portfolio/DSCN3858-1 (1).jpg"
+      alt="Descrição da imagem 1"
+    />
+  </div>
+
+  <div class="grid-img">
+    <img
+      class="fancybox"
+      src="imgs/photography-portfolio/DSCN3815 (5)(1).jpg"
+      alt="Descrição da imagem 1"
+    />
+  </div>
 
 
-</div>
-</div>
+    </div>
 
-
-
-<div>
-
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/fancybox/1.3.4/jquery.fancybox-1.3.4.pack.min.js"></script>
-<script type="text/javascript">
-    $(function($){
-        var addToAll = true;
-        var gallery = true;
-        var titlePosition = 'inside';
-        $(addToAll ? 'img' : 'img.fancybox').each(function(){
+    <div>
+      <script
+        type="text/javascript"
+        src="http://code.jquery.com/jquery-1.11.0.min.js"
+      ></script>
+      <script
+        type="text/javascript"
+        src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"
+      ></script>
+      <script
+        type="text/javascript"
+        src="http://cdnjs.cloudflare.com/ajax/libs/fancybox/1.3.4/jquery.fancybox-1.3.4.pack.min.js"
+      ></script>
+      <script type="text/javascript">
+        $(function ($) {
+          var addToAll = true;
+          var gallery = true;
+          var titlePosition = 'inside';
+          $(addToAll ? 'img' : 'img.fancybox').each(function () {
             var $this = $(this);
             var title = $this.attr('title');
             var src = $this.attr('data-big') || $this.attr('src');
-            var a = $('<a href="#" class="fancybox"></a>').attr('href', src).attr('title', title);
+            var a = $('<a href="#" class="fancybox"></a>')
+              .attr('href', src)
+              .attr('title', title);
             $this.wrap(a);
+          });
+          if (gallery) $('a.fancybox').attr('rel', 'fancyboxgallery');
+          $('a.fancybox').fancybox({
+            titlePosition: titlePosition,
+          });
         });
-        if (gallery)
-            $('a.fancybox').attr('rel', 'fancyboxgallery');
-        $('a.fancybox').fancybox({
-            titlePosition: titlePosition
-        });
-    });
-    $.noConflict();
-</script>
-</div>
-
-
-
-</body>
-    
-    </html>
-  
+        $.noConflict();
+      </script>
+    </div>
+  </body>
+</html>
