@@ -358,6 +358,23 @@
       transition: 0.2s;
     }
   
+    .imagem-circular {
+    width: 150px; /* Ajuste o tamanho conforme necessário */
+    height: 150px;
+    overflow: hidden;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto; /* Centraliza a imagem */
+}
+
+.imagem-circular img {
+    width: 100%;
+    height: auto;
+}
+
+
 /* Ajustes para dispositivos móveis */
 @media (max-width: 768px) {
 
@@ -406,6 +423,9 @@
       <div class="conjuntoblocos">
         <br>
         <h2 class="h2text">⸺ ⋅⭑✟ links ✟⭑⋅ ⸺</h2>
+        <div class="imagem-circular">
+          <img src="iconredondo.jpg" alt="Imagem Circular">
+      </div>
         <div class="button-container">
           <div class="contact-links">
             <a href="https://instagram.com/minkurosu" class="button-link">art instagram</a>
