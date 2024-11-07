@@ -359,24 +359,22 @@
     }
   
     .imagem-circular {
-    width: 150px; /* Ajuste o tamanho conforme necessário */
-    height: 150px;
-    overflow: hidden;
+    overflow: ;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto; /* Centraliza a imagem */
 }
-
-.imagem-circular img {
-    width: 100%;
-    height: auto;
+.imagem-circular img{
+  max-width: 15rem;
+  max-height: 15rem;
+  border-radius: 50%;
 }
 
-
-.imagem-circular img:hover{
+.imagem-circular:hover{
   transform: scale(1.05);
+  transition: 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 /* Ajustes para dispositivos móveis */
