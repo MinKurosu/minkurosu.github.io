@@ -99,7 +99,6 @@
     text-align: center;
     margin: 0 auto;
     width: 100%;
-    max-width: 50rem;
     box-sizing: border-box;
     color: #534F4A;
   }
@@ -128,21 +127,8 @@
     box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
   }
 
-  .caixamaisclara {
-    background-color: #24211e;
-    padding: 0.9375rem;
-    border-radius: 0.9375rem;
-    box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
-    display: flex-center;
-    align-items: center;
-    justify-content: space-around;
-    margin: 2px;
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-  }
 
-  .caixamaisclara img {
-    border-radius: 0.3125rem;
-  }
+  
 
   .about-text {
     max-width: 60%;
@@ -224,8 +210,3 @@
     justify-content: center;
   }
 
-  .instafeed {
-    width: 100%; /* Ajusta a largura para 100% do contêiner pai */
-    max-width: 800px; /* Define uma largura máxima maior */
-    margin: 0 auto; /* Centraliza o feed */
-  }
