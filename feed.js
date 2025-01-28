@@ -1,6 +1,6 @@
 jQuery(document).ready(function($) {
   $(".fancybox").fancybox({
       fitToView: false,
-      maxWidth: "90%"
+      maxWidth: "80%"
   });
 }); // ready
