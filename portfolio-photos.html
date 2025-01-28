@@ -79,77 +79,126 @@
         z-index: 1;
       }
 
-      /* Header */
-      header {
-        background-color: #1b1917;
-        padding: 5px;
-        margin-bottom: 2%;
-        border-radius: 0 0 1.25rem 1.25rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5);
-        width: 100%;
-        max-width: 50rem;
-        box-sizing: border-box;
-        max-height: 5rem;
-      }
+     /* Header */
+    header {
+      background-color: #1B1917;
+      padding: 5px;
+      margin-bottom: 2%;
+      border-radius: 0 0 1.25rem 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5);
+      width: 100%;
+      max-width: 50rem;
+      box-sizing: border-box;
+      max-height: 5rem;
+    }
 
-      /* Navbar */
-      .navbar {
-        display: flex;
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      flex-wrap: nowrap;
+    }
+    .nav-item{
+  font-size: 1.5rem;
+}
+    .navbar .divitems {
+      display: inline-flex;
+      justify-content: center;
+      flex-wrap: nowrap;
+    }
 
-        width: 100%;
-        flex-wrap: nowrap;
-      }
-      .nav-item {
-        font-size: 1rem;
-      }
-      .navbar .divitems {
-        display: inline-flex;
-        justify-content: center;
-        flex-wrap: nowrap;
-      }
+    .navbar .divitems .nav-item {
+      white-space: nowrap;
+      padding: 0.0625rem;
+      padding-right: 0.625rem;
+      font-size: 1.5rem;
+    }
 
-      .navbar .divitems .nav-item {
-        white-space: nowrap;
-        padding: 2px;
-      }
+    .navbar a {
+      text-decoration: none;
+      color: #534F4A;
+      background-color: #24211e;
+      padding: 3px 10px;
+      border-radius: 0.625rem;
+      transition: background-color 0.3s;
+      display: inline-block;
+      border: 0.3125rem solid #272525;
+      box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5);
+      margin: 0.625rem;
+    }
 
-      .navbar a {
-        text-decoration: none;
-        color: #534f4a;
-        background-color: #24211e;
-        padding: 3px 10px;
-        border-radius: 0.625rem;
-        transition: background-color 0.3s;
-        display: inline-block;
-        border: 0.3125rem solid #272525;
-        box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5);
-        margin: 0.625rem;
-      }
+    .navbar a:hover {
+      background-color: #534f4a;
+      color: #1B1917;
+      transform: scale(1.15);
+      transition: 0.2s;
+      animation: ease-in-out;
+    }
+  
+/* Header */
+header {
+      background-color: #1B1917;
+      padding: 5px;
+      margin-bottom: 2%;
+      border-radius: 0 0 1.25rem 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5);
+      width: 100%;
+      max-width: 50rem;
+      box-sizing: border-box;
+      max-height: 5rem;
+    }
 
-      .navbar a:hover {
-        background-color: #534f4a;
-        color: #1b1917;
-        3;
-        transition: 0.2s;
-        animation: ease-in-out;
-      }
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      flex-wrap: nowrap;
+    }
+    .nav-item{
+  font-size: 1.5rem;
+}
+    .navbar .divitems {
+      display: inline-flex;
+      justify-content: center;
+      flex-wrap: nowrap;
+    }
 
-      /* Main Container */
-      #container {
-        background-color: #1b1917;
-        padding: 1.25rem;
-        border-radius: 1.25rem;
-        box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
-        text-align: center;
-        margin: 0 auto;
-        width: 100%;
-        max-width: 50rem;
-        box-sizing: border-box;
-        color: #534f4a;
-      }
+    .navbar .divitems .nav-item {
+      white-space: nowrap;
+      padding: 0.0625rem;
+      padding-right: 0.625rem;
+      font-size: 1.5rem;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: #534F4A;
+      background-color: #24211e;
+      padding: 3px 10px;
+      border-radius: 0.625rem;
+      transition: background-color 0.3s;
+      display: inline-block;
+      border: 0.3125rem solid #272525;
+      box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5);
+      margin: 0.625rem;
+    }
+
+    .navbar a:hover {
+      background-color: #534f4a;
+      color: #1B1917;
+      transform: scale(1.15);
+      transition: 0.2s;
+      animation: ease-in-out;
+    }
+  
 
       /* Logo */
 
@@ -491,11 +540,6 @@
           </div>
           <div class="nav-item">
             <a href="portfolio-menu.html" target="_self" class="nav-link">portfolio</a>
-          </div>
-          <div class="nav-item">
-            <a href="rigclients.html" target="_self" class="nav-link"
-              >rig clients</a
-            >
           </div>
           <div class="nav-item">
             <a href="pricings.html" target="_self" class="nav-link"
