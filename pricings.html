@@ -266,11 +266,15 @@
     }
 
     h3 {
-      font-size: 1.7rem;
+      font-size: 1.5rem;
       margin: 0;
       padding: 0;
+      text-align: center;
     }
 
+h4{
+    font-size: 1rem;
+}
     .h2text {
       margin: 0;
     }
@@ -296,6 +300,112 @@
 
 #pricesimages{
     max-width: 100%;
+}
+
+.pushable {
+    position: relative;
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+    transition: filter 250ms;
+    display: inline-block;
+    margin: auto;
+    text-decoration: none; /* Remove sublinhado */
+    display: block;  /* Garante que o botão ocupe a largura total do container */
+    width: 40%;  /* Faz com que cada botão tenha a largura máxima disponível */
+  }
+  .shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: hsl(0deg 0% 0% / 0.25);
+    will-change: transform;
+    transform: translateY(2px);
+    transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+  }
+  .edge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: linear-gradient(
+      to left,
+      hsl(43, 9%, 15%) 92%,
+      hsl(30, 4%, 18%) 8%,
+      hsl(43, 9%, 15%) 92%,
+      hsl(60, 2%, 11%) 100%
+    );
+  }
+  .front {
+    display: block;
+    position: relative;
+    padding: 12px 42px;
+    border-radius: 12px;
+    font-size: 1.25rem;
+    color: #7c756d;
+    background: hsl(30, 4%, 20%);
+    will-change: transform;
+    transform: translateY(-4px);
+    transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+  }
+  .pushable:hover {
+    filter: brightness(110%);
+  }
+  .pushable:hover .front {
+    transform: translateY(-6px);
+    transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+  }
+  .pushable:active .front {
+    transform: translateY(-2px);
+    transition: transform 34ms;
+  }
+  .pushable:hover .shadow {
+    transform: translateY(4px);
+    transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+  }
+  .pushable:active .shadow {
+    transform: translateY(1px);
+    transition: transform 34ms;
+  }
+  .pushable:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  .terms {
+    text-align: justify;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.2; /* Melhor legibilidade */
+}
+
+th {
+  background-color: rgba(255, 255, 255, 0.1); /* Branco com 60% de transparência */
+}
+td{
+    background-color: rgba(255, 255, 255, 0.05); /* Branco com 60% de transparência */
+
+}
+table {
+  border: 3px solid black; /* Aumenta o contorno da tabela */
+  border-collapse: collapse; /* Faz as bordas se fundirem */
+  border-spacing: 2; /* Garante que as bordas não se sobreponham */
+  border-radius: 10px; /* Arredonda as bordas da tabela */
+  overflow: hidden; /* Garante que as bordas arredondadas se apliquem corretamente */
+}
+
+th, td {
+  border: 2px solid black; /* Aumenta o contorno das células */
+}
+
+video{
+    max
 }
   </style>
 </head>
@@ -326,12 +436,154 @@
   <div id="container">
     <div class="caixamaisclara">
         <div class= "caixaprices">
-            <img src="imgs/prices1.png" id="pricesimages" alt="tabela de preços">
-            <img src="imgs/prices2.png" id="pricesimages" alt="tabela de preços">
-            <img src="imgs/prices3.png" id="pricesimages" alt="tabela de preços">
-            <img src="imgs/prices4.png" id="pricesimages" alt="tabela de preços">
-        </div>
-    </div>
+           <h2>pricings</h2>
+<br>
+<h3>terms of service:</h3>
+<br>
+<div class="terms">
 
+
+    <div class="button-container">
+        <div class="contact-links">
+            <a href="portfolio-rig.html" class="pushable" target="_self">
+                <span class="shadow"></span>
+                <span class="edge"></span>
+                <span class="front">english version</span>
+            </a>
+    
+            <div class="terms">
+                <p>- pagamento em brl (R$) por pix ou transferência.</p>
+                <p>- 50% do pagamento no início, 50% no final.</p>
+                <p>- revisões ilimitadas, mas mudanças serão cobradas de acordo!</p>
+                <p>- uso comercial +60% do valor.</p>
+                <p>- reembolso: 100% antes do início, 40% durante ou proporcional ao progresso.</p>
+                <p>- por favor, me credite nas redes sociais.</p>
+                <p>- a duração do processo depende da complexidade e da minha disponibilidade, mas sempre irei avisando e atualizando!!</p>
+                <p>- proibido uso como NFT, a menos que acordado previamente e eu receba porcentagens rs</p>
+                <p>- eu não faço a arte do modelo, apenas faço o rig, ou seja, a animação, pois ainda acho muito trabalhoso pra mim.</p>
+                <p>- os valores estao sujeito a mudanças dependendo do nivel de complexidade do rig.</p>
+                <p>- podemos negociar caso você queira adicionar conteúdos do rig complexo no simples.</p>
+              </div>  
+        
+      
+        
+  
+    <br>
+    <h3>tabela de preços:</h3>
+    <br>
+    <table style="border-collapse: collapse; width: 100%; background-color: transparent;">
+        <tr>
+            <th style="border: 1px solid black; padding: 8px;">descrição</th>
+            <th style="border: 1px solid black; padding: 8px;">valor</th>
+        </tr>
+        <tr><td style="border: 1px solid black; padding: 8px;">rig lite (quase um pngtuber)</td><td style="border: 1px solid black; padding: 8px;">R$100</td></tr>
+        
+        <tr><td style="border: 1px solid black; padding: 8px;">rig halfbody simples</td><td style="border: 1px solid black; padding: 8px;">R$ 200</td></tr>
+
+        <tr><td style="border: 1px solid black; padding: 8px;">rig fullbody simples</td><td style="border: 1px solid black; padding: 8px;">R$ 220</td></tr>
+
+        <tr><td style="border: 1px solid black; padding: 8px;">rig halfbody detalhado</td><td style="border: 1px solid black; padding: 8px;">R$ 340</td></tr>
+
+        <tr><td style="border: 1px solid black; padding: 8px;">rig fullbody detalhado</td><td style="border: 1px solid black; padding: 8px;">R$ 380</td></tr>
+
+        <tr><td style="border: 1px solid black; padding: 8px;">rig fullbody + vbridger + extra physics</td><td style="border: 1px solid black; padding: 8px;">R$ 500</td></tr>
+
+        <tr><td style="border: 1px solid black; padding: 8px;">rig vtuber pet/chibi complexo</td><td style="border: 1px solid black; padding: 8px;">R$ 150 +-</td></tr>
+
+        <tr><td style="border: 1px solid black; padding: 8px;">adicional toggle (on/off)</td><td style="border: 1px solid black; padding: 8px;">R $5 +-</td></tr>
+
+        <tr><td style="border: 1px solid black; padding: 8px;">adicional com expressão/movimento/física</td><td style="border: 1px solid black; padding: 8px;">R$ 10</td></tr>
+
+        <tr><td style="border: 1px solid black; padding: 8px;">adicional com motion/animação (.can3)</td><td style="border: 1px solid black; padding: 8px;">R$ 15-20</td></tr>
+        
+        <tr><td style="border: 1px solid black; padding: 8px;">adicional partes do corpo extra (rabo, orelhas, olho...)</td><td style="border: 1px solid black; padding: 8px;">R$ 15</td></tr>
+
+        <tr><td style="border: 1px solid black; padding: 8px;">adicional angulos da cabeça wide-range</td><td style="border: 1px solid black; padding: 8px;">R$ 50</td></tr>
+
+        <tr><td style="border: 1px solid black; padding: 8px;">adicional boca vbridger</td><td style="border: 1px solid black; padding: 8px;">R$ 50</td></tr>
+
+   <tr><td style="border: 1px solid black; padding: 8px;">physics augmentation @ vtube studio</td><td style="border: 1px solid black; padding: 8px;">R$ 20</td></tr>
+
+        <tr><td style="border: 1px solid black; padding: 8px;">rework em qualquer parte</td><td style="border: 1px solid black; padding: 8px;">valor a combinar</td></tr>
+
+        <tr><td style="border: 1px solid black; padding: 8px;">animação de objetos/props</td><td style="border: 1px solid black; padding: 8px;">valor a combinar</td></tr>
+
+     
+    </table>
+    <p> * preços podem mudar dependendo da complexidade e número de camadas.</p>
+  <br>
+    <div class="button-container">
+      <div class="button-container">
+        <div class="contact-links">
+          <a href="portfolio-rig.html" class="pushable" target="_self">
+            <span class="shadow"></span>
+            <span class="edge"></span>
+            <span class="front">exemplos de rig!</span>
+          </a>
+        </div>
+
+        <br>
+<div class="exp"
+<br>
+<hr>
+<br>
+
+<h3>todos os rigs incluem:</h3>
+<ul>
+    <li>movimento da íris</li>
+    <li>movimento de piscar</li>
+    <li>movimento da sobrancelha cima-baixo (ângulo y)</li>
+    <li>física do cabelo</li>
+    <li>ângulo x da cabeça simples</li>
+    <li>movimento de abrir, fechar e sorrir da boca</li>
+</ul>
+
+<h3>rig lite:</h3>
+<ul>
+    <li>os itens básicos citados acima</li>
+</ul>
+
+<h3>rig simples:</h3>
+<ul>
+    <li>itens do rig lite citados acima</li>
+    <li>ângulos x e y da cabeça</li>
+    <li>ângulos x e y do corpo</li>
+    <li>movimento olho abrindo, fechando e sorrindo</li>
+    <li>movimento da íris</li>
+    <li>física básica do cabelo e busto (apenas ângulo x)</li>
+    <li>sobrancelha y + forma</li>
+    <li>movimento simples da boca</li>
+    <li>1 toggle</li>
+</ul>
+
+<h3>rig detalhado inclui:</h3>
+<ul>
+    <li>+ itens acima</li>
+    <li>ângulos x, y e z da cabeça</li>
+    <li>ângulos x, y e z do corpo</li>
+    <li>física da perna e braços</li>
+    <li>ângulo de inclinação da sobrancelha e mudança da forma</li>
+    <li>movimento detalhado da boca</li>
+    <li>físicas em ângulos x e y, mais complexas e mais detalhistas, no cabelo, corpo, roupas, olhos, etc.</li>
+</ul>
+
+<h3>adicional vbridger inclui:</h3>
+<ul>
+  <li>+ itens acima</li>
+    <li>modelo da boca detalhada</li>
+    <li>boca x</li>
+    <li>encher bochechas</li>
+    <li>língua para fora</li>
+    <li>eye squint</li>
+    <li>mais variação de movimento dos lábios</li>
+    <li> breathing</lis>
+</ul>
+  </div>
+</div>
+</div>
+</div><div class="exemplosrig"
+<br>
+<br>
+</div>
 </body>
 </html>
