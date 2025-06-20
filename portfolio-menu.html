@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4K5KDKEJ2E"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-4K5KDKEJ2E');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=0.4, minimum-scale=0.1, maximum-scale=2.0, user-scalable=yes">
+  <meta property="og:image" content="https://i.ibb.co/RC2v9zg/sitethumbnail.png"/>
+  <meta property="og:image" content="imgs/sitethumbnail.png"/>
+  <link rel="stylesheet" href="styles.css">
+<title>@minkurosu</title>
+<script src="script.js"></script>
+<link rel="icon" type="image/ico" href="imgs/favicon.ico"/>
+  <style>
+    @font-face {
+      font-family: "MoreSugar";
+      src: url(fonts/MoreSugar-Regular.ttf) format('truetype');
+    }
+    <link rel="shortcut icon" type="image/jpg" href="Favicon_Image_Location"/>
+    /* General Settings */
+    html {
+      font-size: 16px;
+    }
+
+     /* Scale for viewports between 600px and 1200px */
+     @media (min-width: 400px) and (max-width: 1200px) {
+  body {
+    transform: scale(1.2);
+    transform-origin: top; 
+  }
+  .caixamaisclara {
+    max-width: 50rem;
+    }
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: "MoreSugar", sans-serif;
+    font-size: 16px;
+  }
+
+  html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: url(imgs/wood2.png);
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: "MoreSugar", sans-serif;
+    font-size: 16px;
+  }
+
+    /* Header */
+    header {
+      background-color: #1B1917;
+      padding: 5px;
+      margin-bottom: 2%;
+      border-radius: 0 0 1.25rem 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5);
+      width: 100%;
+      max-width: 50rem;
+      box-sizing: border-box;
+      max-height: 5rem;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      flex-wrap: nowrap;
+    }
+    .nav-item{
+  font-size: 1.5rem;
+}
+    .navbar .divitems {
+      display: inline-flex;
+      justify-content: center;
+      flex-wrap: nowrap;
+    }
+
+    .navbar .divitems .nav-item {
+      white-space: nowrap;
+      padding: 0.0625rem;
+      padding-right: 0.625rem;
+      font-size: 1.5rem;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: #534F4A;
+      background-color: #24211e;
+      padding: 3px 10px;
+      border-radius: 0.625rem;
+      transition: background-color 0.3s;
+      display: inline-block;
+      border: 0.3125rem solid #272525;
+      box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5);
+      margin: 0.625rem;
+    }
+
+    .navbar a:hover {
+      background-color: #534f4a;
+      color: #1B1917;
+      transform: scale(1.15);
+      transition: 0.2s;
+      animation: ease-in-out;
+    }
+  
+
+
+    /* Main Container */
+    #container {
+      background-color: #1B1917;
+      padding: 1.25rem;
+      border-radius: 1.25rem;
+      box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
+      text-align: center;
+      margin: 0 auto;
+      width: 100%;
+      max-width: 50rem;
+      box-sizing: border-box;
+      color: #534F4A;
+    }
+
+/* Logo */
+
+#logobig {
+  max-width: 100%;
+  max-height: 200px;
+  object-fit: contain;
+  animation: breathing 2.5s infinite ease-in-out;
+  transition: transform 0.3s ease-in-out;
+}
+
+#logobig:hover {
+  transform: scale(1.15) translateY(10px);
+  transition: 0.4s;
+}
+
+@keyframes breathing {
+  0% {
+    transform: translateY(-1px) scale(1);
+  }
+  50% {
+    transform: translateY(-10px) scale(1);
+  }
+  100% {
+    transform: translateY(-1px) scale(1);
+  }
+}
+
+    .caixalogo {
+      background-color: rgba(68, 64, 60, 0.16);
+      border-radius: 0.625rem;
+      box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
+    }
+
+    .caixamaisclara {
+      background-color: #24211e;
+      padding: 0.3125rem;
+      border-radius: 0.9375rem;
+      box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      margin: 2px;
+      text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    }
+
+    .caixamaisclara img {
+      border-radius: 0.3125rem;
+    }
+
+    .about-text{
+      max-width: 60%;
+      max-height: 
+    }
+
+    .caixamaisclara h2 {
+      margin-top: 0;
+    }
+
+    hr {
+      border: 0;
+      border-top: 0.0625rem solid #534f4a;
+      margin: 1.25rem 0;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      margin: 1.25rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #euvtuber, #euirl {
+      height: 18.75rem;
+    }
+
+    .about-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-height:
+    }
+
+    .about-content img {
+      margin: 0 0.625rem;
+      border-radius: 1rem;
+    }
+
+    #euirl, #euvtuber {
+  transition: transform 0.3s ease-in-out;
+}
+
+#euirl:hover, #euvtuber:hover {
+  transform: scale(1.05);
+}
+
+.bodytextcontainer{
+  max-height: 
+}
+
+ /* Logo */
+ #logopatinha {
+    height: 5rem;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  #logopatinha:hover {
+    transform: scale(1.10) translateY(2px);
+    transition: 0.1s;
+  }
+  
+
+
+
+    .about-content .about-text {
+      flex-grow: 1;
+      text-align: center;
+    }
+
+    .boxfoto {
+      width: calc(25% - 2px);
+      display: flex;
+      gap: 2rem;
+      border-radius: 1rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    h3 {
+      font-size: 1.7rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    h4 {
+      font-size: 1rem;
+      margin: 5px;
+      padding: 8px;
+    }
+    .h2text {
+      margin: 0;
+    }
+
+    .conjuntoblocos {
+      border-radius: 0rem;
+    }
+/* Ajustar tamanho dos quadrados para 200px x 200px */
+.fotosworks {
+  width: 200px;
+  height: 200px;
+  border-radius: 0.3125rem; /* ajustar se necessário */
+  object-fit: cover;
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Ajustar o tamanho e a exibição dos vídeos */
+.boxfoto video {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Garantir que imagens dentro de .boxfoto sejam quadradas */
+.boxfoto img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 0.3125rem; /* ajustar se necessário */
+}
+
+/* Ajustar as imagens na seção about-content */
+.about-content img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 0.3125rem; /* ajustar se necessário */
+}
+
+.fotosworks:hover,
+.boxfoto video:hover,
+.about-content img:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease-in-out;; /* Aumenta o tamanho em 10% */
+}
+
+.menu-link a {
+      text-decoration: none;
+      color: #534F4A;
+      background-color: #24211e;
+      padding: 3px 10px;
+      border-radius: 0.625rem;
+      transition: background-color 0.3s;
+      display: inline-block;
+      border: 0.3125rem solid #272525;
+      box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5);
+      margin: 0.625rem;
+    }
+
+    .menu-link a:hover {
+      background-color: #534f4a;
+      color: #1B1917;
+      transform: scale(1.15);
+      transition: 0.2s;
+      animation: ease-in-out;
+    }
+  
+    navbar .divitems {
+      display: inline-flex;
+      justify-content: center;
+      flex-wrap: nowrap;
+    }
+
+
+
+
+
+    .button-link {
+      text-decoration: none;
+      color: #534F4A;
+      background-color: #24211e;
+      padding: 10px 10px;
+      border-radius: 0.625rem;
+      transition: background-color 0.3s;
+      display: inline-block;
+      border: 0.3125rem solid #272525;
+      box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5);
+      margin: 5px;
+      text-align: center;
+    }
+
+    .button-link:hover {
+      background-color: #534f4a;
+      color: #1B1917;
+    }
+
+    /* Contact specific styles */
+    .button-container {
+      display: flex-box;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+      width: 100%;
+      max-width: 50rem;
+      display: flex;
+  flex-direction: column; /* Alinha os itens em uma coluna */
+  align-items: stretch;
+      
+    }
+
+    .button-container .contact-links {
+      flex: 0 0 calc(25% - 10px);
+    }
+
+    .button-container .contact-links .button-link {
+      width: 80%;
+      padding: 10px;
+      margin: 30px;
+      
+      
+      
+    }
+
+    .contact-links {
+  margin-bottom: 15px; /* Espaço entre os botões */
+}
+
+  
+    .imagem-circular {
+    overflow: ;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto; /* Centraliza a imagem */
+}
+.imagem-circular img{
+  max-width: 15rem;
+  max-height: 15rem;
+  border-radius: 50%;
+}
+
+.imagem-circular:hover{
+  transform: scale(1.05);
+  transition: 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Ajustes para dispositivos móveis */
+@media (max-width: 768px) {
+
+}
+
+.pushable {
+    position: relative;
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+    transition: filter 250ms;
+    display: inline-block;
+    text-decoration: none; /* Remove sublinhado */
+    display: block;  /* Garante que o botão ocupe a largura total do container */
+    width: 100%;  /* Faz com que cada botão tenha a largura máxima disponível */
+  }
+  .shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: hsl(0deg 0% 0% / 0.25);
+    will-change: transform;
+    transform: translateY(2px);
+    transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+  }
+  .edge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: linear-gradient(
+      to left,
+      hsl(43, 9%, 15%) 92%,
+      hsl(30, 4%, 18%) 8%,
+      hsl(43, 9%, 15%) 92%,
+      hsl(60, 2%, 11%) 100%
+    );
+  }
+  .front {
+    display: block;
+    position: relative;
+    padding: 12px 42px;
+    border-radius: 12px;
+    font-size: 1.25rem;
+    color: #7c756d;
+    background: hsl(30, 4%, 20%);
+    will-change: transform;
+    transform: translateY(-4px);
+    transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+  }
+  .pushable:hover {
+    filter: brightness(110%);
+  }
+  .pushable:hover .front {
+    transform: translateY(-6px);
+    transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+  }
+  .pushable:active .front {
+    transform: translateY(-2px);
+    transition: transform 34ms;
+  }
+  .pushable:hover .shadow {
+    transform: translateY(4px);
+    transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+  }
+  .pushable:active .shadow {
+    transform: translateY(1px);
+    transition: transform 34ms;
+  }
+  .pushable:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+
+
+  </style>
+</head>
+<body>
+    <header id="header" class="fixed-top">
+      <div id="divpatinha">
+        <img src="imgs/patinha.png" id="logopatinha" alt="logo da barra de navegação">
+      </div>
+      <nav class="navbar">
+        <div class="divitems">
+          <div class="nav-item">
+            <a href="index.html" target="_self" class="nav-link">home</a>
+          </div>
+          <div class="nav-item">
+            <a href="feed.html" target="_self" class="nav-link">feed</a>
+          </div>
+          <div class="nav-item">
+            <a href="links.html" target="_self" class="nav-link">links</a>
+          </div>
+          <div class="nav-item">
+            <a href="portfolio-menu.html" target="_self" class="nav-link">portfolio</a>
+          </div>
+    
+          <div class="nav-item">
+            <a href="pricings.html" target="_self" class="nav-link">pricings & tos</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div id="container">
+        <div class="caixamaisclara">
+          <img id="logobig" src="imgs/logo.png" alt="Logo" data-position="center">
+        </div>
+        <hr>
+        
+        
+
+        <div class="caixamaisclara">
+            <div class="caixamaisclara-conteudo">
+                
+              <h1 class="section-title">choose one!</h1>
+             
+              <div class="button-container">
+                <div class="button-container">
+                  <div class="contact-links">
+                    <a href="portfolio-rig.html" class="pushable" target="_self">
+                      <span class="shadow"></span>
+                      <span class="edge"></span>
+                      <span class="front">live2d rigs</span>
+                    </a>
+                  </div>
+                   <div class="contact-links">
+                    <a href="portfolio-photos.html" class="pushable" target="_self">
+                      <span class="shadow"></span>
+                      <span class="edge"></span>
+                      <span class="front">photography</span>
+                    </a>
+                  </div>
+          
+                  <div class="contact-links">
+                    <a href="portfolio-art.html" class="pushable" target="_self">
+                      <span class="shadow"></span>
+                      <span class="edge"></span>
+                      <span class="front">drawings</span>
+                    </a>
+                  </div>
+              </div>
+             
+            </div>
+          </div>
+          
