@@ -20,443 +20,90 @@
 <title>@minkurosu</title>
 <script src="script.js"></script>
 <link rel="icon" type="image/ico" href="imgs/favicon.ico"/>
-  <style>
-
-:root {
-         color-scheme: light only;
-       }
-
-       :root {
-  color-scheme: light;
-}
-
-    @font-face {
-      font-family: "MoreSugar";
-      src: url(fonts/MoreSugar-Regular.ttf) format('truetype');
-    }
-    <link rel="shortcut icon" type="image/jpg" href="Favicon_Image_Location"/>
-    /* General Settings */
-    html {
-      font-size: 16px;
-    }
-
-        /* Scale for viewports between 600px and 1200px */
-@media (min-width: 400px) and (max-width: 1200px) {
-  body {
-    transform: scale(1.2);
-    transform-origin: top; 
-  }
-  .caixamaisclara {
-    max-width: 50rem;
-    }
-}
-
-    @media (prefers-color-scheme: dark) {
-    /* Sobrescreva estilos do modo noturno, se houver */
-    :root {
-        color-scheme: light; /* Define o esquema de cores como claro */
-    }
-
-    /* Caso existam estilos específicos para o modo noturno, redefina-os */
-    body, html {
-        background-color: #24211e !important;
-        color: #24211e !important;
-    }
-}
-@media (prefers-color-scheme: dark) {
-  
-  header {
-    background-color: #1B1917;
-  }
-
-  .navbar a {
-      color: #534F4A;
-      background-color: #24211e;
-
-} 
-
-.navbar a {
-      text-decoration: none;
-      color: #534F4A;
-      background-color: #24211e;
-      }
-
-
-      .navbar a:hover {
-      background-color: #534f4a;
-      color: #1B1917;
-      }
-
-      #container {
-        background-color: #1B1917;
-        }
-
-        .caixamaisclara {
-          background-color: #24211e;
-          }
-
-          .caixalogo {
-      background-color: rgba(68, 64, 60, 0.16);
-      border-radius: 0.625rem;
-      box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
-    }
-
-    .caixamaisclara {
-      background-color: #24211e;
-      }
-
-      header {
-        background-color: #1B1917
-        }
-
-        .navbar a {
-      text-decoration: none;
-      color: #534F4A;
-      background-color: #24211e;
-      }
-
-      #container {
-        background-color: #1B1917;
-        }
-
-        .caixamaisclara {
-          background-color: #24211e;
-        }
-}
-
-  html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  background-image: url(imgs/wood2.png);
-  background-attachment: fixed;
-  font-family: "MoreSugar", sans-serif;
-  font-size: 16px;
-  box-sizing: border-box;
-}
-
-body > .layout-with-sidebars {
-  /* força grid mesmo dentro do flex */
-  display: grid !important;
-  grid-template-columns: 400px 1fr 400px;
-}
-    
-    /* Header */
-    header {
-      background-color: #1B1917;
-      padding: 5px;
-      background-attachment: fixed;
-      margin-bottom: 2%;
-      border-radius: 0 0 1.25rem 1.25rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5);
-      width: 100%;
-      max-width: 50rem;
-      box-sizing: border-box;
-      max-height: 5rem;
-    }
-
-    /* Navbar */
-    .navbar {
-      display: flex;
-      justify-content: center;
-      width: 100%;
-      flex-wrap: nowrap;
-      
-    }
-
-    .nav-item{
-     font-size: 1rem;
-  }
-    .navbar .divitems {
-      display: inline-flex;
-      justify-content: center;
-      flex-wrap: nowrap;
-    }
-
-    .navbar .divitems .nav-item {
-      white-space: nowrap;
-      padding: 0.0625rem;
-      padding-right: 0.625rem;
-      font-size: 1.5rem;
-    }
-
-    .navbar a {
-      text-decoration: none;
-      color: #534F4A;
-      background-color: #24211e;
-      padding: 3px 10px;
-      border-radius: 0.625rem;
-      transition: background-color 0.3s;
-      display: inline-block;
-      border: 0.3125rem solid #272525;
-      box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5);
-      margin: 0.625rem;
-    }
-
-    .navbar a:hover {
-      background-color: #534f4a;
-      color: #1B1917;
-      transform: scale(1.15);
-      transition: 0.2s;
-      animation: ease-in-out;
-    }
-  
-    .fixed-top{
-      
-    }
-
-    /* Main Container */
-    #container {
-      background-color: #1B1917;
-      padding: 1.25rem;
-      border-radius: 1.25rem;
-      box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
-      text-align: center;
-      margin: 0 auto;
-      width: 100%;
-      max-width: 50rem;
-      box-sizing: border-box;
-      color: #534F4A;
-    }
-
-/* Logo */
-
-#logobig {
-  max-width: 100%;
-  max-height: 200px;
-  object-fit: contain;
-  animation: breathing 2.5s infinite ease-in-out;
-  transition: transform 0.3s ease-in-out;
-}
-
-#logobig:hover {
-  transform: scale(1.15) translateY(10px);
-  transition: 0.4s;
-}
-
-@keyframes breathing {
-  0% {
-    transform: translateY(-1px) scale(1);
-  }
-  50% {
-    transform: translateY(-10px) scale(1);
-  }
-  100% {
-    transform: translateY(-1px) scale(1);
-  }
-}
-
-    .caixalogo {
-      background-color: rgba(68, 64, 60, 0.16);
-      border-radius: 0.625rem;
-      box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
-    }
-
-    .caixamaisclara {
-      background-color: #24211e;
-      padding: 0.3125rem;
-      border-radius: 0.9375rem;
-      box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      margin: 2px;
-      text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-    }
-
-    .caixamaisclara img {
-      border-radius: 0.3125rem;
-    }
-
-    .about-text{
-      max-width: 60%;
-      max-height: 
-    }
-
-    .caixamaisclara h2 {
-      margin-top: 0;
-    }
-
-    hr {
-      border: 0;
-      border-top: 0.0625rem solid #534f4a;
-      margin: 1.25rem 0;
-    }
-
-    .section-title {
-      font-size: 1.5rem;
-      margin: 1.25rem 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    #euvtuber, #euirl {
-      height: 18.75rem;
-    }
-
-    .about-content {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      max-height:
-    }
-
-    .about-content img {
-      margin: 0 0.625rem;
-      border-radius: 1rem;
-    }
-
-    #euirl, #euvtuber {
-  transition: transform 0.3s ease-in-out;
-}
-
-#euirl:hover, #euvtuber:hover {
-  transform: scale(1.05);
-}
-
-.bodytextcontainer{
-  max-height: 
-}
-
- /* Logo */
- #logopatinha {
-    height: 5rem;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  #logopatinha:hover {
-    transform: scale(1.10) translateY(2px);
-    transition: 0.1s;
-  }
-  
-
-
-
-    .about-content .about-text {
-      flex-grow: 1;
-      text-align: center;
-    }
-
-    .boxfoto {
-      width: calc(25% - 2px);
-      display: flex;
-      gap: 2rem;
-      border-radius: 1rem;
-    }
-
-    h1 {
-      font-size: 2rem;
-    }
-
-    h2 {
-      font-size: 2rem;
-      margin: 0;
-      padding: 0;
-    }
-
-    h3 {
-      font-size: 1.7rem;
-      margin: 0;
-      padding: 0;
-    }
-
-    h4 {
-      font-size: 1rem;
-      margin: 5px;
-      padding: 8px;
-    }
-    .h2text {
-      margin: 0;
-    }
-
-    .conjuntoblocos {
-      border-radius: 0rem;
-    }
-/* Ajustar tamanho dos quadrados para 200px x 200px */
-.fotosworks {
-  width: 200px;
-  height: 200px;
-  border-radius: 0.3125rem; /* ajustar se necessário */
-  object-fit: cover;
-  transition: transform 0.2s ease-in-out;
-
-}
-
-/* Ajustar o tamanho e a exibição dos vídeos */
-.boxfoto video {
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 0.3125rem;
-}
-
-/* Garantir que imagens dentro de .boxfoto sejam quadradas */
-.boxfoto img {
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 0.3125rem; /* ajustar se necessário */
-}
-
-/* Ajustar as imagens na seção about-content */
-.about-content img {
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 0.3125rem; /* ajustar se necessário */
-}
-
-.fotosworks:hover,
-.boxfoto video:hover,
-.about-content img:hover {
-  transform: scale(1.05);
-  transition: transform 0.2s ease-in-out;; /* Aumenta o tamanho em 10% */
-}
-
-.sidebar .box {
-  background: linear-gradient(145deg, #2c2926, #1f1d1b);
-  padding: 1rem;
-  border-radius: 0.75rem;
-  margin: 1rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid #3a3733;
-}
-
-
-
-.sidebar h2 {
-  font-size: 1.5rem;
-  color: #e2ded7;
-  margin-bottom: 0.5rem;
-  text-shadow: 1px 1px 2px black;
-}
-
-.sidebar p, .sidebar a {
-  font-size: 1rem;
-  color: #b5afa6;
-  line-height: 1.4;
-  text-shadow: 1px 1px 2px black;
-}
-
-.sidebar a {
-  display: inline-block;
-  margin-top: 0.25rem;
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.sidebar a:hover {
-  color: #fff;
-}
+  <style src="style.css">
 
   </style>
 </head>
 <body>
-  <header id="header" class="fixed-top">
+  
+
+  <div class="layout-with-sidebars">
+    <!-- Sidebar Esquerda -->
+    <aside class="sidebar">
+      <div class="box">
+         <img id="sidepic" src="imgs/euur.jpg" alt="eu irl">
+       
+            
+             
+ 
+      </div>
+         
+ <div class="box">
+  <h2 id="nomeSide">min</h2>
+  <h3> 22yo • they/she/he • brazil  </h3>
+  <h3>psychology student & freelance artist</h3>
+  <h3>(digital art & live2d)</h3>
+  </div>
+       
+  <div class="sideScrollable">
+      <div class="box">
+
+       
+        <img src="imgs/webgraphics/tumblr_238bc8a89784e67ff37fb2acb9ddae14_e82df87a_250-1.png" id="blinkies" class="desaturate">
+                <img src="imgs/webgraphics/tumblr_3d2875e8ec7dc58f0803f607c946b286_26797ae1_250.webp" id="blinkies" class="desaturate">
+                <img src="imgs/webgraphics/tumblr_e1fab16255e5243dacd2667b0cc56b81_202a429d_250.webp" id="blinkies" class="desaturate">
+
+ <img src="imgs/webgraphics/tumblr_9830dc3590824b7e9f229a1f8dcce01c_dd2e4ff2_250.webp" id="blinkies" class="desaturate">
+  <img src="imgs/webgraphics/vampires.gif" id="blinkies" class="desaturate">
+  <img src="imgs/webgraphics/y61.gif" id="blinkies" class="desaturate">
+  <img src="imgs/webgraphics/148978sykl5tijjt.gif" id="blinkies" class="desaturate">
+  <img src="imgs/webgraphics/artistblinkie.gif" id="blinkies" class="desaturate">
+ <img src="imgs/webgraphics/tumblr_8255cdee54062be2f0a75c1d4f95e5cc_bfc2aaa3_250.webp" id="blinkies" class="desaturate">
+    <img src="imgs/webgraphics/peace.gif" id="blinkies" class="desaturate">
+     <img src="imgs/webgraphics/fluttershy.webp" id="blinkies" class="desaturate">
+   <img src="imgs/webgraphics/tumblr_1ba8acadf93bdf3b77ca962a5b808918_8304b89b_250.webp" id="blinkies" class="desaturate">
+    <img src="imgs/webgraphics/grumpy.gif" id="blinkies" class="desaturate">
+      
+  <img src="imgs/webgraphics/tumblr_9d1751a3c34f35a9a6f506a508e97c18_2b39ffdf_250.webp" id="blinkies" class="desaturate">
+   <img src="imgs/webgraphics/tumblr_6cbe527991abf037b4107f7afaeb7c36_0be8c4f4_250.webp" id="blinkies" class="desaturate">
+      <img src="imgs/webgraphics/tumblr_cc6601bff4cafa9807239d7011a848e7_adcd7e13_250.webp" id="blinkies" class="desaturate">
+    <img src="imgs/webgraphics/0276-washhands.gif" id="blinkies" class="desaturate">
+     <img src="imgs/webgraphics/fuckai.webp" id="blinkies" class="desaturate">
+  
+    <img src="imgs/webgraphics/tumblr_e48558a31d2bcecba600c239ee8d1f73_2df4e83a_250.webp" id="blinkies" class="desaturate">
+     
+ <img src="imgs/webgraphics/tumblr_500787584e2fcb081f33f1f50e423809_cae25393_250.webp" id="blinkies" class="desaturate">
+ <img src="imgs/webgraphics/tumblr_816eb6b2ae5ec2a175d6e979bfb1ef00_67bb8047_250.webp" id="blinkies" class="desaturate">
+ 
+ <img src="imgs/webgraphics/dont-bother.gif" id="blinkies" class="desaturate">
+ <img src="imgs/webgraphics/tumblr_62469fedeace79baf6cb78a66777e49d_18859dea_250.gif" id="blinkies" class="desaturate">
+ <img src="imgs/webgraphics/z31.gif" id="blinkies" class="desaturate">
+ <img src="imgs/webgraphics/ego.gif" id="blinkies" class="desaturate">
+
+
+
+<img src="imgs/webgraphics/copycat.gif" id="blinkies" class="desaturate">
+        <img src="imgs/webgraphics/gotit.gif" id="blinkies" class="desaturate">
+
+
+     <img src="imgs/webgraphics/tumblr_98f23d97540c7be9ea93a91a5eab9c84_8bf09a4c_250.gif" id="blinkies" class="desaturate">
+ <img src="imgs/webgraphics/tumblr_83e7126a4faf5743ee52655a04aeaeee_745f5050_250.webp" id="blinkies" class="desaturate">
+  <img src="imgs/webgraphics/tumblr_31207640325b16c36e700b5de862fc47_cfccfada_250.webp" id="blinkies" class="desaturate">
+  <img src="imgs/webgraphics/tumblr_7a27cd9937d313d3465a26abe17621e9_0b069243_250.webp" id="blinkies" class="desaturate">
+         <img src="imgs/webgraphics/tumblr_688960ed71710f809e636f9895a1993f_120ee25b_250.webp" id="blinkies" class="desaturate">
+          
+     <img src="imgs/webgraphics/tumblr_0a004860b3603082f3ebf24c87477d9c_d5501165_250.gif" id="blinkies" class="desaturate">
+       <img src="imgs/webgraphics/hatetalentedpeopleblink.gif" id="blinkies" class="desaturate">
+         <img src="imgs/webgraphics/meds.gif" id="blinkies" class="desaturate">
+       <img src="imgs/webgraphics/catnip.webp" id="blinkies" class="desaturate">
+ <img src="imgs/webgraphics/tumblr_0f456fd199bd42212ed59be579396615_e25be5fc_250.webp" id="blinkies" class="desaturate">
+  <img src="imgs/webgraphics/pms.gif" id="blinkies" class="desaturate">
+      </div>
+       </div>
+    </aside>
+
+    <!-- Conteúdo Principal -->
+    <main id="containerprincipal"><header id="header" class="fixed-top">
     <div id="divpatinha">
       <img src="imgs/patinha.png" id="logopatinha" alt="logo da barra de navegação">
     </div>
@@ -464,47 +111,26 @@ body > .layout-with-sidebars {
       <div class="divitems">
         <div class="nav-item"><a href="index.html">home</a></div>
         <div class="nav-item"><a href="feed.html">feed</a></div>
+          <div class="nav-item"><a href="pricings.html">blog</a></div>
         <div class="nav-item"><a href="links.html">links</a></div>
         <div class="nav-item"><a href="portfolio-menu.html">portfolio</a></div>
-        <div class="nav-item"><a href="pricings.html">pricings & tos</a></div>
+        
+   
       </div>
     </nav>
   </header>
-
-  <div class="layout-with-sidebars">
-    <!-- Sidebar Esquerda -->
-    <aside class="sidebar">
-      <div class="box">
-        <h2>Subtitle</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </div>
-      <div class="box">
-        <h2>Links</h2>
-        <a href="#">link</a><br>
-        <img src="" id="banners">
-        <a href="#">link</a><br>
-        <a href="#">link</a>
-      </div>
-    </aside>
-
-    <!-- Conteúdo Principal -->
-    <main id="container">
+  <div id="container">
       <div class="caixamaisclara">
         <img id="logobig" src="imgs/logo.png" alt="Logo" data-position="center">
       </div>
       <hr>
       <div class="caixamaisclara">
-        <div class="about-content">
-          <img src="imgs/aboutmevtuber.png" alt="vtuber me" id="euvtuber">
-          <div class="bodytextcontainer">
-            <h2 class="h2text">⋅ ⭑ ✟ about me ✟ ⭑ ⋅</h2>
-            <h4>Hello! I'm Min!</h4>
-            <h4>Currently, I work doing Live2d rigs and animation for virtual streamers!</h4>
-            <h4>I'm also a psychology student at Universidade Federal Fluminense</h4>
-            <h4>And I'm also an amateur photographer and artist, and im also learning front-end dev (im making this site!!)</h4>
-          </div>
-          <img id="euirl" src="imgs/feed/3471666579232484651_229670069.jpg" alt="eu irl">
-        </div>
+        <div class="maincollums">
+       <div class="column">
+        <h2>welcome to my site!!</h2>
+       </div>
+  <div class="column">Conteúdo da Coluna 2</div>
+      </div>
       </div>
       <hr>
       <div class="spotify">
@@ -525,14 +151,15 @@ body > .layout-with-sidebars {
   allowfullscreen>
 </iframe>
 <br>
-    
+    </div>
+    <hr>
       <div class="caixamaisclara">
         <div class="conjuntoblocos">
           <h2 class="h2text">⋅ ⭑ ✟ my works ✟ ⭑ ⋅</h2>
           <h3>my drawings</h3>
           <div class="boxfoto">
             <a href="portfolio-art.html"><img src="imgs/5.png" class="fotosworks" alt="arte n1"></a>
-            <a href="portfolio-art.html"><img src="imgs/portfolio-art/GcgzfGTWkAArcsp.jpeg" class="fotosworks" alt="arte n2"></a>
+            <a href="portfolio-art.html"><img src="http://127.0.0.1:5500/imgs/art%20portfolio/GcgzfGTWkAArcsp.jpeg" class="fotosworks" alt="arte n2"></a>
             <a href="portfolio-art.html"><img src="imgs/7.png" class="fotosworks" alt="arte n3"></a>
           </div>
           <h3>my live2d rigs</h3>
@@ -552,18 +179,7 @@ body > .layout-with-sidebars {
     </main>
 
     <!-- Sidebar Direita -->
-    <aside class="sidebar">
-      <div class="box">
-        <h2>Subtitle</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </div>
-      <div class="box">
-        <h2>Links</h2>
-        <img src="imgs/webgraphics/imgs/webgraphics/tumblr_0b26aa1d798e3fd5595276e3eadafc42_9d6f076b_100.gif">
-        <a href="#">link</a><br>
-        <a href="#">link</a>
-      </div>
-    </aside>
+    </div>
   </div>
 </body>
 </html>
