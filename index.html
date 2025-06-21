@@ -49,6 +49,16 @@
   .caixamaisclara {
     max-width: 50rem;
     }
+
+    .portal-to-personal {
+    position: fixed; !important
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+  }
+
+
 }
 
     @media (prefers-color-scheme: dark) {
@@ -414,7 +424,13 @@
   transition: transform 0.2s ease-in-out;; /* Aumenta o tamanho em 10% */
 }
 
-
+.portal-to-personal {
+  position: fixed;
+  bottom: 10px;
+  right: 100px;
+  width: 100px; /* ajuste o tamanho */
+  z-index: 1000; /* garante que fique por cima */
+}
 
   </style>
 </head>
@@ -444,6 +460,9 @@
       </div>
     </nav>
   </header>
+
+
+
   <div id="container">
     <div class="caixamaisclara">
       <img id="logobig" src="imgs/logo.png" alt="Logo" data-position="center">
@@ -519,6 +538,9 @@
           </a>
       </div>
         <br>
+        <a href="MINKUROSU.html">
+  <img src="imgs/portal.gif.gif" class="portal-to-personal">
+</a>
       </div>
      
 
