@@ -73,7 +73,7 @@
   height: 100%;
   margin: 0;
   padding: 0;
-  background-image: url(imgs/wood2.png);
+  
   background-attachment: fixed;
   font-family: "MoreSugar", sans-serif;
   font-size: 16px;
@@ -97,7 +97,7 @@
     height: 100%;
     margin: 0;
     padding: 0;
-    background-image: url(imgs/wood2.png);
+    background-image: url(imgs/site_imgs/wood2.png);
     background-attachment: fixed;
     display: flex;
     flex-direction: column;
