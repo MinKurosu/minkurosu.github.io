@@ -7,54 +7,82 @@
     <link rel="stylesheet" href="styles.css"> </head>
     <style>/* --- Estilos para o Painel de Administração (admin.html) --- */
 
+/* --- Seu styles.css (Versão Ajeitada) --- */
+
+/* Garante que o contêiner principal (#container) empilhe seus filhos */
+#container {
+    display: flex; /* Ativa o Flexbox */
+    flex-direction: column; /* Organiza os filhos (como as caixas .caixamaisclara) em uma coluna */
+    align-items: center; /* Centraliza os filhos horizontalmente dentro do container */
+    max-width: 900px; /* Define uma largura máxima para todo o conteúdo do site. Ajuste conforme sua preferência. */
+    margin: 0 auto; /* Centraliza o container na página */
+    padding: 20px; /* Adiciona um padding interno para não colar nas bordas da tela */
+    box-sizing: border-box; /* Garante que o padding seja incluído na largura total */
+}
+
+/* Estilos gerais para as caixas de conteúdo (logo, posts, login, etc.) */
+.caixamaisclara {
+    background-color: #24211e; /* ADICIONADO: Fundo branco para a caixa */
+    border: 1px solid #ddd; /* ADICIONADO: Borda sutil, consistente com a ideia de "caixa" */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 25px;
+    margin-bottom: 25px;
+    width: 100%;
+    max-width: 800px;
+    box-sizing: border-box;
+    text-align: left;
+}
+
 /* Estilos para as caixas principais (Login e Criar Post) */
 .admin-form-box {
-    display: flex; /* Ativa o Flexbox */
-    flex-direction: column; /* Organiza os itens filhos em uma coluna (verticalmente) */
-    align-items: center; /* Centraliza os itens horizontalmente dentro da caixa */
-    justify-content: center; /* Centraliza os itens verticalmente (se houver espaço extra) */
+    background-color: #24211e; /* ADICIONADO: Fundo branco para a caixa de admin */
+    margin: 30px auto; /* ADICIONADO: Centraliza a caixa horizontalmente e dá margem vertical */
     
-    padding: 25px; /* Espaçamento interno da caixa */
-    border-radius: 8px; /* Cantos levemente arredondados */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Sombra suave para destacar a caixa */
-    max-width: 450px; /* Largura máxima para a caixa, ajuste se precisar */
-    margin: 30px auto; /* Centraliza a caixa na página com margem superior/inferior */
-
-    border: 1px solid #534F4A; /* Borda sutil */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    max-width: 450px;
+    border: 1px solid #534F4A;
 }
 
 /* Estilos para o título principal (Login do Administrador / Criar Novo Post) */
 .admin-form-box h1 {
-    margin-top: 0; /* Remove a margem superior padrão do h1 */
-    margin-bottom: 25px; /* Espaço abaixo do título */
-    color: #333; /* Cor do título */
-    font-family: "OldEnglishGothicPixelRegular", sans-serif; /* Use a fonte dos seus títulos */
-    text-align: center; /* Centraliza o texto do título */
-    font-size: 2.2em; /* Tamanho da fonte do título, ajuste se necessário */
-    letter-spacing: 1px; /* Espaçamento entre letras */
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: #24211e;
+    font-family: "Born2bSportyFS", sans-serif; /* Removido o ; duplicado */
+    text-align: center;
+    font-size: 2.2em;
+    letter-spacing: 1px;
 }
 
 /* Estilos para os formulários dentro das caixas admin */
 .admin-form-box form {
-    width: 100%; /* Faz o formulário ocupar a largura total da caixa */
+    width: 100%;
     display: flex;
-    flex-direction: column; /* Organiza os elementos do formulário em coluna */
-    gap: 18px; /* Espaço entre os grupos de input */
+    flex-direction: column;
+    gap: 18px;
 }
 
 /* Estilos para cada div que contém um label e um input */
 .admin-form-box form div {
     display: flex;
-    flex-direction: column; /* Faz o label e o input ficarem um abaixo do outro */
+    flex-direction: column;
     width: 100%;
 }
 
 /* Estilos para os rótulos (labels) */
 .admin-form-box label {
-    margin-bottom: 8px; /* Espaço entre o rótulo e o input */
-    font-weight: bold; /* Texto em negrito para os rótulos */
-    color: #555; /* Cor do texto do rótulo */
-    font-family: "Born2bSportyFS", sans-serif; /* Use a fonte do seu conteúdo */
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+    font-family: "Born2bSportyFS", sans-serif;
     font-size: 0.95em;
 }
 
@@ -63,47 +91,54 @@
 .admin-form-box input[type="email"],
 .admin-form-box input[type="password"],
 .admin-form-box textarea {
-    padding: 12px; /* Preenchimento interno dos campos */
-    border: 1px solid #534F4A; /* Borda padrão */
-    border-radius: 6px; /* Cantos arredondados */
-    font-size: 1em; /* Tamanho da fonte do texto digitado */
-    font-family: "Born2bSportyFS", sans-serif; /* Fonte para o input */
-    width: -webkit-fill-available; /* Tenta preencher o espaço disponível no Safari/Chrome */
-    width: fill-available; /* Preenche o espaço disponível */
-    box-sizing: border-box; /* Garante que padding e borda não aumentem a largura total */
+    padding: 12px;
+    border: 1px solid #333;
+    border-radius: 6px;
+    font-size: 1em;
+    font-family: "Born2bSportyFS", sans-serif;
+    width: -webkit-fill-available;
+    width: fill-available;
+    box-sizing: border-box;
 }
 
 /* Estilo específico para o textarea (conteúdo do post) */
 .admin-form-box textarea {
-    min-height: 120px; /* Altura mínima para o campo de conteúdo */
-    resize: vertical; /* Permite redimensionar verticalmente */
+    min-height: 120px;
+    resize: vertical;
 }
 
 /* Estilos para os botões */
 .admin-form-box button {
-    padding: 12px 20px; /* Preenchimento interno do botão */
-    background-color: #534F4A; /* Cor de fundo do botão (azul padrão) */
-    color: 534F4A; /* Cor do texto do botão */
-    border: none; /* Remove a borda padrão */
-    border-radius: 6px; /* Cantos arredondados */
-    cursor: pointer; /* Muda o cursor ao passar por cima */
-    font-size: 1.05em; /* Tamanho da fonte do botão */
-    margin-top: 15px; /* Espaço acima do botão */
-    transition: background-color 0.3s ease, transform 0.1s ease; /* Transição suave */
-    font-family: "Born2bSportyFS", sans-serif; /* Fonte para o botão */
+    padding: 12px 20px;
+    background-color: #333; /* Seu cinza/marrom */
+    color: #24211e; /* Alterado para branco para melhor contraste com o fundo escuro */
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.05em;
+    margin-top: 15px;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    font-family: "Born2bSportyFS", sans-serif;
     font-weight: bold;
 }
 
 .admin-form-box button:hover {
-    background-color: #534F4A; /* Cor mais escura ao passar o mouse */
-    transform: translateY(-1px); /* Pequeno efeito de elevação */
+    background-color: #6C6661; /* Cor um pouco mais clara para hover */
+    transform: translateY(-1px);
 }
 
 .admin-form-box button:active {
-    background-color: #534F4A; /* Cor ao clicar */
-    transform: translateY(0); /* Volta à posição original ao clicar */
+    background-color: #4A4641; /* Cor um pouco mais escura para active */
+    transform: translateY(0);
 }
 
+/* Estilos para a linha horizontal */
+hr {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 20px 0;
+    width: 80%;
+}
 
 /* Estilos para mensagens de status (info, success, error) */
 .message {
@@ -152,7 +187,7 @@
     <div id="container">
         <div id="admin-login-section" class="caixamaisclara admin-form-box">
             <h1>login do admin</h1>
-            <br>
+            
             <form id="login-form">
                 <div>
                     <label for="login-email">email:</label>
