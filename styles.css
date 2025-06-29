@@ -73,7 +73,7 @@
   height: 100%;
   margin: 0;
   padding: 0;
-  
+  background-image: url(imgs/wood2.png);
   background-attachment: fixed;
   font-family: "MoreSugar", sans-serif;
   font-size: 16px;
@@ -97,7 +97,7 @@
     height: 100%;
     margin: 0;
     padding: 0;
-    background-image: url(imgs/site_imgs/wood2.png);
+    background-image: url(imgs/wood2.png);
     background-attachment: fixed;
     display: flex;
     flex-direction: column;
@@ -111,7 +111,7 @@
 body > .layout-with-sidebars {
   /* força grid mesmo dentro do flex */
   display: grid !important;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: auto 1fr;
 }
 
   /* Header */
@@ -177,146 +177,6 @@ body > .layout-with-sidebars {
       transition: 0.2s;
       animation: ease-in-out;
   }
-
-
-
-
-/* empilha e centraliza */
-.caixamaisclara {
-  display: flex;
-  flex-direction: flex;   /* empilhado */
-  align-items: center;      /* centralizado na largura */
-}
-
-/* empilha e centraliza */
-.caixamaisclara {
-  display: flex;
-  flex-direction: flex;   /* empilhado */
-  align-items: center;      /* centralizado na largura */
-}
-
-
-/* espaçamento entre os “botões” */
-.caixamaisclara .side-item {
-  margin: 3px;        /* cima/baixo 10 px */
-max-width: 300px;
-}
-
-/* mesmo visual do navbar, agora ocupando a largura do item */
-.caixamaisclara .side-item a {
-  display: block;           /* vira “bloco”, não inline-block */
-  padding: 3px;
-  text-align: center;
-  text-decoration: none;
-  color: #534F4A;
-  background: #24211e;
-  border: .3125rem solid #272525;
-  border-radius: .625rem;
-  box-shadow: 0 0 .625rem rgba(0,0,0,.5);
-  transition: background-color .3s, transform .2s;
-}
-
-.caixamaisclara .side-item a:hover {
-  background: #534f4a;
-  color: #1B1917;
-  transform: scale(1.15);
-}
-
-
-/* empilha e centraliza */
-.caixamaisclara .side-item {
-  display: flex;
-  flex-direction: column;   /* empilhado */
-  align-items: center;      /* centralizado na largura */
-}
-
-
-/* empilha e centraliza */
-.caixamaisclara .sidebar {
-  display: flex;
-  flex-direction: column;   /* empilhado */
-  margin: 5px; !important
-  max-width: 280px;
-  display: flex;
-  flex-direction: flex;   /* empilhado */
-  align-items: center;
-}
-
-
-.nav-side {
-  display: flex;
-  flex-direction: row;
-  align-items: center; /* centraliza horizontalmente */
-  gap: 10px; /* espaço entre os itens */
-}
-
-.side-item a {
-  display: block;
-  padding: 6px 12px;
-  text-align: center;
-  background-color: #24211e;
-
-  text-decoration: none;
-  border-radius: 10px;
-  border: 2px solid #272525;
-}
-
-
-  .side-item a {
-
-    color: #1B1917;
-     text-decoration: none;
-   
-    background-color: #24211e;
- 
-    transition: background-color 0.3s;
-    display: inline-block;
-    border: 0.3125rem solid #272525;
-    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5);
-
-  }
-
-
-        .navbar a {
-            color: #534F4A;
-            background-color: #24211e;
-        }
-
-  .side-item a {
-    text-decoration: none;
-      color: #534F4A;
-    background-color: #24211e;
-    padding: 3px 10px;
-    border-radius: 0.625rem;
-    transition: background-color 0.3s;
-    display: inline-block;
-    border: 0.3125rem solid #272525;
-    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5);
- 
-  }
-
-  .side-item :hover {
-    background-color: #534f4a;
-    color: #1B1917;
-        transform: scale(1.10);
-    transition: 0.1s;
-  }
-
-.sidebar p, .sidebar a {  
-  font-size: 1rem;
-            color: #534F4A; 
-            line-height: 1.4;
-           
-        }
-
-
-
-
-
-
-
-
-
 
    /* Main Container transparente */
     #containerprincipal {
@@ -420,7 +280,7 @@ max-width: 300px;
       box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
       display: flex;
       align-items: center;
-      justify-content: space-around ;
+      justify-content: space-around;
       margin: 2px;
       text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     }
@@ -438,7 +298,7 @@ max-width: 300px;
   }
 
   hr {
-    border: 5px;
+    border: 0;
     border-top: 0.0625rem solid #534f4a;
     margin: 1.25rem 0;
   }
@@ -483,7 +343,7 @@ max-width: 300px;
   }
 
   h2 {
-    font-size: 3rem;
+    font-size: 2rem;
     margin: 0;
     padding: 0;
   }
@@ -551,9 +411,7 @@ max-width: 300px;
 }
 
 
-.sidebar{
-  max-width: 300px;
-}
+
 
 
 .sidebar h2 {
@@ -568,19 +426,9 @@ max-width: 300px;
 
 
 .sidebar h3 {
-  font-size: 24px;
- color: #534F4A;
-  margin: 0.3rem;
-  text-shadow: 1px 1px 2px black;
-   font-family: 
-    
-   
-}
-
-.sidebar h4 {
   font-size: 18px;
  color: #534F4A;
-  margin: 0rem;
+  margin: 0.3rem;
   text-shadow: 1px 1px 2px black;
    font-family: 
     
@@ -591,8 +439,9 @@ max-width: 300px;
 
 .sidebar p, .sidebar a {
   font-size: 1rem;
+  color: #b5afa6;
   line-height: 1.4;
-
+  text-shadow: 1px 1px 2px black;
 }
 
 .sidebar a {
@@ -600,12 +449,10 @@ max-width: 300px;
   margin-top: 0.25rem;
   text-decoration: none;
   transition: color 0.2s ease;
-  color:#534F4A;
 }
 
 .sidebar a:hover {
-   color: #1B1917;
-   background-color: #534f4a;
+  color: #fff;
 } 
 
 #sidepic{
@@ -622,33 +469,12 @@ transition: transform 0.3s ease, box-shadow 0.3s ease;
 box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
 max-width: 300px;!important
 
-
   display: flex;
   flex-direction: column;       /* conteúdo em coluna, se for texto e imagens */
   justify-content: center;      /* centraliza verticalmente */
   align-items: center;          /* centraliza horizontalmente */
   text-align: center;           /* centraliza texto */
 }
-
-
-.box .nav- {
-background: #24211e;
-border-radius: 0.75rem;
-padding: 0.5rem;
-margin: 0.5rem;
-transition: transform 0.3s ease, box-shadow 0.3s ease;
-box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
-max-width: 300px;!important
-
-
-  display: flex;
-  flex-direction: column;       /* conteúdo em coluna, se for texto e imagens */
-  justify-content: center;      /* centraliza verticalmente */
-  align-items: center;          /* centraliza horizontalmente */
-  text-align: center;           /* centraliza texto */
-}
-
-
 }
 
 .sideScrollable{
@@ -691,81 +517,16 @@ overflow-y: scroll
     display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 10px;
-grid-template-columns: 300px 1fr 1000px; !important
-  -webkit-column-rule: 1px solid #dbdbdb; /* Chrome, Safari, Opera */
-            -moz-column-rule: 1px solid #dbdbdb; /* Firefox */
-            column-rule: 1px solid #dbdbdb;
+  gap: 20px;
 }
 
 
 .column {
   flex: 1;
- margin: 5px;
-  justify-content: left;
-   -webkit-column-rule: 1px solid #dbdbdb; /* Chrome, Safari, Opera */
-            -moz-column-rule: 1px solid #dbdbdb; /* Firefox */
-            column-rule: 1px solid #dbdbdb;
+  padding: 10px;
 }
 
 .column h1, .column p {
   margin: 0;
-  text-align: justify;
-}
-
-.column h4{
-  font-size: 18px;
-
-   text-indent: 0px;
-   max-width: 500px;
-   padding: 2px;
-   margin: 8px;
-   
-}
-
-.welcome{
-margin-right: 30px;
-}
-
-
-.deslikes{
-text-align: right;
-margin-right: 2.5rem;
-
-}
-
-.likes{
-text-align: left;
-margin-left: 3rem;
-
-}
-
-
-.column h3{
-  font-size: 32px;
-   text-align: center;
-   text-indent: 20px;
-   max-width: 500px;
- 
-   
-}
-.divider {
-  width: 1.5px;
-  background-color:#534f4a;
-  margin: 0 10px;
-  height: auto;
-  min-height: 100px;
-}
-
-#niuplayer {
-    border: solid 5px black;
-    padding: 1em;
-    border-radius:20px;
-    background-color: #c2c2c2;
-}
-#niuplayer button {
-    background-color: #fff;
-    border: solid 5px black;
-    padding: 0.5em;
-    border-radius:20px;
+  text-align: left;
 }
