@@ -10,13 +10,14 @@ import { getFirestore, collection, addDoc, onSnapshot, query, orderBy } from 'ht
 // 3. Na seção "Seus aplicativos", clique no ícone </> (Adicionar aplicativo web) e siga os passos.
 // 4. Copie o objeto 'firebaseConfig' que será exibido e cole-o abaixo.
 const FIREBASE_CONFIG = {
-    apiKey: "SEU_API_KEY", // EX: "AIzaSyC..."
-    authDomain: "SEU_PROJETO.firebaseapp.com", // EX: "meu-projeto-12345.firebaseapp.com"
-    projectId: "SEU_PROJECT_ID", // EX: "meu-projeto-12345"
-    storageBucket: "SEU_STORAGE_BUCKET.appspot.com", // EX: "meu-projeto-12345.appspot.com"
-    messagingSenderId: "SEU_MESSAGING_SENDER_ID", // EX: "1234567890"
-    appId: "SEU_APP_ID" // EX: "1:1234567890:web:abcdef1234567890abcdef"
-};
+    apiKey: "AIzaSyA8-Ab2dE48sVOhmT-HfxIL5_rzDMRdcCc",
+    authDomain: "minkurosu.firebaseapp.com",
+    projectId: "minkurosu",
+    storageBucket: "minkurosu.firebasestorage.app",
+    messagingSenderId: "290821725607",
+    appId: "1:290821725607:web:5e39e561da53ac7c8a2a82",
+    measurementId: "G-M7PWC6DDRH"
+  };
 
 // ** ATENÇÃO: PASSO CRÍTICO! PREENCHA COM O SEU PRÓPRIO USER ID (UID) DO FIREBASE **
 // 1. Publique seu site no GitHub Pages com o FIREBASE_CONFIG preenchido (mesmo que OWNER_USER_ID esteja vazio por enquanto).

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+
     <script src="oneko.js"></script>
     <script>NekoType="black"</script>
     <style type="text/css">* {cursor: url(https://cur.cursors-4u.net/symbols/sym-1/sym57.cur), auto !important;}</style>
@@ -16,6 +17,30 @@
     /* O aplicativo React cuidará de seu próprio estilo via Tailwind */
     /* Você pode adicionar preenchimento/margem aqui se quiser espaço ao redor do aplicativo React */
 }
+
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyA8-Ab2dE48sVOhmT-HfxIL5_rzDMRdcCc",
+    authDomain: "minkurosu.firebaseapp.com",
+    projectId: "minkurosu",
+    storageBucket: "minkurosu.firebasestorage.app",
+    messagingSenderId: "290821725607",
+    appId: "1:290821725607:web:5e39e561da53ac7c8a2a82",
+    measurementId: "G-M7PWC6DDRH"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
 
 
     </style>
