@@ -1,0 +1,771 @@
+@font-face {
+    font-family: "MoreSugar";
+    src: url(fonts/MoreSugar-Regular.ttf) format('truetype');
+  }
+
+  @font-face {
+  font-family: "OldEnglishGothicPixelRegular";
+  src: url(fonts/OldEnglishGothicPixelRegular.ttf) format('truetype');
+}
+
+  @font-face {
+  font-family: "Born2bSportyFS";
+  src: url(fonts/Born2bSportyFS.otf) format('truetype');
+}
+
+
+  /* General Settings */
+  html {
+    font-size: 16px;
+  }
+  
+
+:root {
+         color-scheme: light only;
+       }
+
+       :root {
+  color-scheme: light;
+}
+
+ <link rel="shortcut icon" type="image/jpg" href="Favicon_Image_Location"/>
+    /* General Settings */
+    html {
+      font-size: 16px;
+    }
+         /* Scale for viewports between 600px and 1200px */
+@media (min-width: 100px) and (max-width: 1200px) {
+  body {
+    transform: scale(0.6);
+    transform-origin: top; 
+  }
+  .caixamaisclara {
+    max-width: 50rem;
+    }
+}
+
+  @media (prefers-color-scheme: dark) {
+    /* Sobrescreva estilos do modo noturno, se houver aaaaaaaa q odio */
+    :root {
+        color-scheme: light; /* Define o esquema de cores como claro */
+    }
+
+    /* Caso existam estilos específicos para o modo noturno, redefina-os */
+    body, html {
+        background-color: #24211e !important;
+        color: #24211e !important;
+    }
+
+@media (prefers-color-scheme: dark) {
+  
+  header {
+    background-color: #1B1917;
+  }
+
+  .navbar a {
+      color: #534F4A;
+      background-color: #24211e;
+
+} 
+
+
+  html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-image: url(imgs/wood2.png);
+  background-attachment: fixed;
+  font-family: "MoreSugar", sans-serif;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+  body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: "Born2bSportyFS";
+     font-style: bold;
+    font-size: 16px;
+  }
+
+  html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: url(imgs/wood2.png);
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+   font-family: "Born2bSportyFS";
+    font-size: 16px;
+  }
+
+  
+body > .layout-with-sidebars {
+  /* força grid mesmo dentro do flex */
+  display: grid !important;
+  grid-template-columns: auto 1fr auto;
+}
+
+  /* Header */
+  header {
+    background-color: #1B1917;
+    padding: 5px;
+    background-attachment: fixed;
+    margin-bottom: 2%;
+    border-radius: 0 0 1.25rem 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 50rem;
+    box-sizing: border-box;
+    max-height: 5rem;
+  
+  }
+
+  /* Navbar */
+  .navbar {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: nowrap;
+  }
+
+     .nav-item{
+     font-size: 1rem;
+  }
+
+  .navbar .divitems {
+    display: inline-flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+  }
+
+  .navbar .divitems .nav-item {
+    white-space: nowrap;
+    padding: 0.0625rem;
+    padding-right: 0.625rem;
+    font-size: 1.5rem;
+  }
+
+  .navbar a {
+    text-decoration: none;
+    color: #534F4A;
+    background-color: #24211e;
+    padding: 3px 10px;
+    border-radius: 0.625rem;
+    transition: background-color 0.3s;
+    display: inline-block;
+    border: 0.3125rem solid #272525;
+    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5);
+    margin: 0.625rem;
+  }
+
+  .navbar a:hover {
+     background-color: #534f4a;
+      color: #1B1917;
+      transform: scale(1.15);
+      transition: 0.2s;
+      animation: ease-in-out;
+  }
+
+
+
+
+/* empilha e centraliza */
+.caixamaisclara {
+  display: flex;
+  flex-direction: flex;   /* empilhado */
+  align-items: center;      /* centralizado na largura */
+}
+
+/* empilha e centraliza */
+.caixamaisclara {
+  display: flex;
+  flex-direction: flex;   /* empilhado */
+  align-items: center;      /* centralizado na largura */
+}
+
+
+/* espaçamento entre os “botões” */
+.caixamaisclara .side-item {
+  margin: 3px;        /* cima/baixo 10 px */
+max-width: 300px;
+}
+
+/* mesmo visual do navbar, agora ocupando a largura do item */
+.caixamaisclara .side-item a {
+  display: block;           /* vira “bloco”, não inline-block */
+  padding: 3px;
+  text-align: center;
+  text-decoration: none;
+  color: #534F4A;
+  background: #24211e;
+  border: .3125rem solid #272525;
+  border-radius: .625rem;
+  box-shadow: 0 0 .625rem rgba(0,0,0,.5);
+  transition: background-color .3s, transform .2s;
+}
+
+.caixamaisclara .side-item a:hover {
+  background: #534f4a;
+  color: #1B1917;
+  transform: scale(1.15);
+}
+
+
+/* empilha e centraliza */
+.caixamaisclara .side-item {
+  display: flex;
+  flex-direction: column;   /* empilhado */
+  align-items: center;      /* centralizado na largura */
+}
+
+
+/* empilha e centraliza */
+.caixamaisclara .sidebar {
+  display: flex;
+  flex-direction: column;   /* empilhado */
+  margin: 5px; !important
+  max-width: 280px;
+  display: flex;
+  flex-direction: flex;   /* empilhado */
+  align-items: center;
+}
+
+
+.nav-side {
+  display: flex;
+  flex-direction: row;
+  align-items: center; /* centraliza horizontalmente */
+  gap: 10px; /* espaço entre os itens */
+}
+
+.side-item a {
+  display: block;
+  padding: 6px 12px;
+  text-align: center;
+  background-color: #24211e;
+
+  text-decoration: none;
+  border-radius: 10px;
+  border: 2px solid #272525;
+}
+
+
+  .side-item a {
+
+    color: #1B1917;
+     text-decoration: none;
+   
+    background-color: #24211e;
+ 
+    transition: background-color 0.3s;
+    display: inline-block;
+    border: 0.3125rem solid #272525;
+    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5);
+
+  }
+
+
+        .navbar a {
+            color: #534F4A;
+            background-color: #24211e;
+        }
+
+  .side-item a {
+    text-decoration: none;
+      color: #534F4A;
+    background-color: #24211e;
+    padding: 3px 10px;
+    border-radius: 0.625rem;
+    transition: background-color 0.3s;
+    display: inline-block;
+    border: 0.3125rem solid #272525;
+    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5);
+ 
+  }
+
+  .side-item :hover {
+    background-color: #534f4a;
+    color: #1B1917;
+        transform: scale(1.10);
+    transition: 0.1s;
+  }
+
+.sidebar p, .sidebar a {  
+  font-size: 1rem;
+            color: #534F4A; 
+            line-height: 1.4;
+           
+        }
+
+
+
+
+
+
+
+
+
+
+   /* Main Container transparente */
+    #containerprincipal {
+      border-radius: 1.25rem;
+      text-align: center;
+      margin: 0 auto;
+      width: 100%;
+      max-width: 50rem;
+      box-sizing: border-box;
+      color: #534F4A;
+    }
+ /*  Container colorido */
+    #container {
+      background-color: #1B1917;
+      padding: 1.25rem;
+      border-radius: 1.25rem;
+      box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
+      text-align: center;
+      margin: 0 auto;
+      width: 100%;
+      max-width: 50rem;
+      box-sizing: border-box;
+      color: #534F4A;
+    }
+
+
+  /* Main Container */
+  #container {
+    background-color: #1B1917;
+    padding: 1.25rem;
+    border-radius: 1.25rem;
+    box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+    color: #534F4A;
+  }
+
+  /* Logo */
+  #logopatinha {
+    height: 5rem;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  #logopatinha:hover {
+    transform: scale(1.10) translateY(2px);
+    transition: 0.1s;
+  }
+  
+
+  #logobig {
+  max-width: 100%;
+  max-height: 200px;
+  object-fit: contain;
+  animation: breathing 2.5s infinite ease-in-out;
+  transition: transform 0.3s ease-in-out;
+}
+
+#logobig:hover {
+  transform: scale(1.15) translateY(10px);
+  transition: 0.4s;
+}
+
+@keyframes breathing {
+  0% {
+    transform: translateY(-1px) scale(1);
+  }
+  50% {
+    transform: translateY(-10px) scale(1);
+  }
+  100% {
+    transform: translateY(-1px) scale(1);
+  }
+}
+
+
+ /* Logo patinha */
+ #logopatinha {
+    height: 5rem;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  #logopatinha:hover {
+    transform: scale(1.10) translateY(2px);
+    transition: 0.1s;
+  }
+  
+
+  .caixalogo {
+    background-color: rgba(68, 64, 60, 0.16);
+    border-radius: 0.625rem;
+    box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
+  }
+
+
+  .caixamaisclara {
+      background-color: #24211e;
+      padding: 0.3125rem;
+      border-radius: 0.9375rem;
+      box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: space-around ;
+      margin: 2px;
+      text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    }
+
+     .caixamaisclara img {
+      border-radius: 0.3125rem;
+    }
+
+  .about-text {
+    max-width: 60%;
+  }
+
+  .caixamaisclara h2 {
+    margin-top: 0;
+  }
+
+  hr {
+    border: 5px;
+    border-top: 0.0625rem solid #534f4a;
+    margin: 1.25rem 0;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+    margin: 1.25rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #euvtuber, #euirl {
+    height: 18.75rem;
+  }
+
+  .about-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .about-content img {
+    margin: 0 0.625rem;
+    border-radius: 1rem;
+  }
+
+  .about-content .about-text {
+    flex-grow: 1;
+    text-align: center;
+  }
+
+  .boxfoto {
+    width: calc(25% - 2px);
+    display: flex;
+    gap: 2rem;
+    border-radius: 1rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 3rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  h3 {
+    font-size: 1.7rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  
+    h4 {
+      font-size: 1rem;
+      margin: 5px;
+      padding: 8px;
+    }
+    
+  .h2text {
+    margin: 0;
+  }
+
+  .conjuntoblocos {
+    border-radius: 0rem;
+    
+  }
+
+  .fotosworks {
+    height: 200px;
+    width: 200px;
+    border-radius: 0.3125rem;
+    justify-content: center;
+    object-fit: cover;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  
+/* Ajustar o tamanho e a exibição dos vídeos */
+.boxfoto video {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 0.3125rem;
+}
+
+/* Garantir que imagens dentro de .boxfoto sejam quadradas */
+.boxfoto img {
+  object-fit: cover;
+  border-radius: 0.3125rem; /* ajustar se necessário */
+}
+
+
+/* Ajustar as imagens na seção about-content */
+.about-content img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 0.3125rem; /* ajustar se necessário */
+}
+
+.fotosworks:hover,
+.boxfoto video:hover,
+.about-content img:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease-in-out;; /* Aumenta o tamanho em 10% */
+}
+
+
+.sidebar{
+  max-width: 300px;
+}
+
+
+.sidebar h2 {
+  font-size: 64px;
+ color: #534F4A;
+  margin: 0.08em;
+  text-shadow: 1px 1px 2px black;
+   font-family: "OldEnglishGothicPixelRegular", serif; !important
+    
+   
+}
+
+
+.sidebar h3 {
+  font-size: 24px;
+ color: #534F4A;
+  margin: 0.3rem;
+  text-shadow: 1px 1px 2px black;
+   font-family: 
+    
+   
+}
+
+.sidebar h4 {
+  font-size: 18px;
+ color: #534F4A;
+  margin: 0rem;
+  text-shadow: 1px 1px 2px black;
+   font-family: 
+    
+   
+}
+
+
+
+.sidebar p, .sidebar a {
+  font-size: 1rem;
+  line-height: 1.4;
+
+}
+
+.sidebar a {
+  display: inline-block;
+  margin-top: 0.25rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  color:#534F4A;
+}
+
+.sidebar a:hover {
+   color: #1B1917;
+   background-color: #534f4a;
+} 
+
+#sidepic{
+  max-height: 340px;
+  border-radius: 3%
+}
+
+.sidebar .box {
+background: #24211e;
+border-radius: 0.75rem;
+padding: 0.5rem;
+margin: 0.5rem;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
+max-width: 300px;!important
+
+
+  display: flex;
+  flex-direction: column;       /* conteúdo em coluna, se for texto e imagens */
+  justify-content: center;      /* centraliza verticalmente */
+  align-items: center;          /* centraliza horizontalmente */
+  text-align: center;           /* centraliza texto */
+}
+
+
+.box .nav- {
+background: #24211e;
+border-radius: 0.75rem;
+padding: 0.5rem;
+margin: 0.5rem;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
+max-width: 300px;!important
+
+
+  display: flex;
+  flex-direction: column;       /* conteúdo em coluna, se for texto e imagens */
+  justify-content: center;      /* centraliza verticalmente */
+  align-items: center;          /* centraliza horizontalmente */
+  text-align: center;           /* centraliza texto */
+}
+
+
+}
+
+.sideScrollable{
+width: 300px;
+max-height: 900px;
+overflow: auto;
+overflow-y: scroll  
+  overflow: auto;
+  scrollbar-width: none;        /* Firefox */
+  -ms-overflow-style: none;     /* IE/Edge */
+}
+
+
+.scroll-box::-webkit-scrollbar {
+  display: none;                /* Chrome, Safari, Edge (WebKit) */
+}
+
+#blinkies{
+ width: 100%;
+ max-height: 33.58px;
+ margin: 2px;           
+}
+
+.desaturate {
+  filter: saturate(0.3);           /* diminui a saturação */
+  transition: filter 0.3s ease;    /* suaviza a transição */
+}
+
+.desaturate:hover {
+  filter: saturate(1);             /* saturação normal ao passar o mouse */
+}
+
+#nomeSide{
+  margin: 0px;
+  padding 0px;
+}
+
+
+.maincollums {
+    display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+grid-template-columns: 300px 1fr 1000px; !important
+  -webkit-column-rule: 1px solid #dbdbdb; /* Chrome, Safari, Opera */
+            -moz-column-rule: 1px solid #dbdbdb; /* Firefox */
+            column-rule: 1px solid #dbdbdb;
+}
+
+
+.column {
+  flex: 1;
+ margin: 5px;
+  justify-content: left;
+   -webkit-column-rule: 1px solid #dbdbdb; /* Chrome, Safari, Opera */
+            -moz-column-rule: 1px solid #dbdbdb; /* Firefox */
+            column-rule: 1px solid #dbdbdb;
+}
+
+.column h1, .column p {
+  margin: 0;
+  text-align: justify;
+}
+
+.column h4{
+  font-size: 18px;
+
+   text-indent: 0px;
+   max-width: 500px;
+   padding: 2px;
+   margin: 8px;
+   
+}
+
+.welcome{
+margin-right: 30px;
+}
+
+
+.deslikes{
+text-align: right;
+margin-right: 2.5rem;
+
+}
+
+.likes{
+text-align: left;
+margin-left: 3rem;
+
+}
+
+
+.column h3{
+  font-size: 32px;
+   text-align: center;
+   text-indent: 20px;
+   max-width: 500px;
+ 
+   
+}
+.divider {
+  width: 1.5px;
+  background-color:#534f4a;
+  margin: 0 10px;
+  height: auto;
+  min-height: 100px;
+}
+
+#niuplayer {
+    border: solid 5px black;
+    padding: 1em;
+    border-radius:20px;
+    background-color: #c2c2c2;
+}
+#niuplayer button {
+    background-color: #fff;
+    border: solid 5px black;
+    padding: 0.5em;
+    border-radius:20px;
+}
