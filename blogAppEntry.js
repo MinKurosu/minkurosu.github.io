@@ -20,7 +20,7 @@ const FIREBASE_CONFIG = {
 
 // ** ATENÇÃO: PASSO CRÍTICO! PREENCHA COM O SEU PRÓPRIO USER ID (UID) DO FIREBASE (NO PASSO 6 ABAIXO) **
 // Você encontrará este ID exibido na tela do seu blog após o primeiro deploy com FIREBASE_CONFIG.
-const OWNER_USER_ID = "SEU_OWN_FIREBASE_USER_ID_AQUI"; // EX: "k4j2h1l3kj4h2l3kj4h2l3kj4h2l3kj4h2l3k"
+const OWNER_USER_ID = "SKRZj0yyBuZfmQKwlWYKup0K93q2"; // EX: "k4j2h1l3kj4h2l3kj4h2l3kj4h2l3kj4h2l3k"
 
 // Componente principal da aplicação
 const App = () => {
