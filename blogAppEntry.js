@@ -81,4 +81,128 @@ const App = () => {
             // Configura um listener em tempo real para os posts do blog
             const unsubscribe = onSnapshot(q, (snapshot) => {
                 // Mapeia os documentos do snapshot para o formato de post
-                const posts = snapshot.docs.map(
+                const posts = snapshot.docs.map(doc => ({
+                    id: doc.id,
+                    ...doc.data()
+                }));
+                setBlogPosts(posts); // Atualiza o estado com os posts
+            }, (error) => {
+                console.error("Erro ao buscar posts:", error);
+                setMessage("Erro ao carregar posts. Por favor, tente novamente.");
+            });
+
+            // Função de limpeza para o listener de snapshot
+            return () => unsubscribe();
+        }
+    }, [db, userId]); // Este efeito roda quando db ou userId mudam
+
+    // Seu restante do código para renderizar a UI irá aqui,
+    // incluindo a lógica para adicionar novos posts, etc.
+    // Por exemplo, você teria um retorno (return) de JSX aqui.
+
+    return (
+        <div>
+            <h1>Meu Blog Simples</h1>
+            {message && <p style={{ color: 'red' }}>{message}</p>}
+            {/* Aqui você renderizaria a lista de posts ou o formulário de novo post */}
+            {currentView === 'list' && (
+                <div>
+                    <h2>Lista de Posts</h2>
+                    {blogPosts.length > 0 ? (
+                        <ul>
+                            {blogPosts.map(post => (
+                                <li key={post.id}>
+                                    <h3>{post.title}</h3>
+                                    <p>{post.content}</p>
+                                    <small>{new Date(post.timestamp?.toDate()).toLocaleString()}</small>
+                                </li>
+                            ))}
+                        </ul>
+                    ) : (
+                        <p>Nenhum post encontrado.</p>
+                    )}
+                    <button onClick={() => setCurrentView('newPost')}>Criar Novo Post</button>
+                </div>
+            )}
+
+            {currentView === 'newPost' && (
+                <NewPostForm
+                    db={db}
+                    userId={userId}
+                    ownerUserId={OWNER_USER_ID}
+                    appId={FIREBASE_CONFIG.appId}
+                    onPostAdded={() => {
+                        setMessage("Post adicionado com sucesso!");
+                        setCurrentView('list');
+                    }}
+                    onCancel={() => setCurrentView('list')}
+                    onError={(msg) => setMessage(msg)}
+                />
+            )}
+        </div>
+    );
+};
+
+// Exemplo de um componente NewPostForm (você precisaria criá-lo)
+const NewPostForm = ({ db, userId, ownerUserId, appId, onPostAdded, onCancel, onError }) => {
+    const [title, setTitle] = useState('');
+    const [content, setContent] = useState('');
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        if (!db || !userId) {
+            onError("Banco de dados ou ID de usuário não disponíveis.");
+            return;
+        }
+
+        // Apenas o OWNER_USER_ID pode adicionar posts
+        if (userId !== ownerUserId) {
+            onError("Você não tem permissão para adicionar posts.");
+            return;
+        }
+
+        try {
+            await addDoc(collection(db, `artifacts/${appId}/public/data/blogPosts`), {
+                title,
+                content,
+                timestamp: new Date(),
+                authorId: userId // Opcional: para identificar quem criou o post
+            });
+            onPostAdded();
+            setTitle('');
+            setContent('');
+        } catch (error) {
+            console.error("Erro ao adicionar post:", error);
+            onError("Erro ao adicionar post. Por favor, tente novamente.");
+        }
+    };
+
+    return (
+        <div>
+            <h2>Novo Post</h2>
+            <form onSubmit={handleSubmit}>
+                <div>
+                    <label>Título:</label>
+                    <input
+                        type="text"
+                        value={title}
+                        onChange={(e) => setTitle(e.target.value)}
+                        required
+                    />
+                </div>
+                <div>
+                    <label>Conteúdo:</label>
+                    <textarea
+                        value={content}
+                        onChange={(e) => setContent(e.target.value)}
+                        required
+                    ></textarea>
+                </div>
+                <button type="submit">Adicionar Post</button>
+                <button type="button" onClick={onCancel}>Cancelar</button>
+            </form>
+        </div>
+    );
+};
+
+export default App;
