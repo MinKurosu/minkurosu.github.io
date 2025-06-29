@@ -1,14 +1,11 @@
-// Importações de React e Firebase (para serem usadas no componente App)
+// Importações de React e Firebase
 import React, { useState, useEffect, useRef } from 'react';
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js';
 import { getAuth, signInAnonymously, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js';
 import { getFirestore, collection, addDoc, onSnapshot, query, orderBy } from 'https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js';
 
-// ** ATENÇÃO: PASSO CRÍTICO! PREENCHA COM A SUA CONFIGURAÇÃO DO FIREBASE **
-// 1. Vá para o Console do Firebase: https://console.firebase.google.com/
-// 2. Selecione seu Projeto > Configurações do Projeto (ícone de engrenagem)
-// 3. Na seção "Seus aplicativos", clique no ícone </> (Adicionar aplicativo web) e siga os passos.
-// 4. Copie o objeto 'firebaseConfig' que será exibido e cole-o abaixo.
+// ** SUA CONFIGURAÇÃO DO FIREBASE (FORNECIDA POR VOCÊ) **
+// Certifique-se de que estes valores estão corretos do seu Console do Firebase.
 const FIREBASE_CONFIG = {
     apiKey: "AIzaSyA8-Ab2dE48sVOhmT-HfxIL5_rzDMRdcCc",
     authDomain: "minkurosu.firebaseapp.com",
@@ -16,16 +13,11 @@ const FIREBASE_CONFIG = {
     storageBucket: "minkurosu.firebasestorage.app",
     messagingSenderId: "290821725607",
     appId: "1:290821725607:web:5e39e561da53ac7c8a2a82",
-    measurementId: "G-M7PWC6DDRH"
+    measurementId: "G-M7PWC6DDRH" // measurementId é opcional para a funcionalidade do blog
 };
 
-
-// ** ATENÇÃO: PASSO CRÍTICO! PREENCHA COM O SEU PRÓPRIO USER ID (UID) DO FIREBASE **
-// 1. Publique seu site no GitHub Pages com o FIREBASE_CONFIG preenchido (mesmo que OWNER_USER_ID esteja vazio por enquanto).
-// 2. Abra seu site no navegador.
-// 3. Abra o Console do Desenvolvedor (F12 ou Ctrl+Shift+I).
-// 4. No console, procure pela mensagem "Usuário logado: [SEU_UID_AQUI]".
-// 5. Copie esse ID e cole-o abaixo. Ele será um ID aleatório gerado pelo Firebase para seu login anônimo.
+// ** ATENÇÃO: PASSO CRÍTICO! PREENCHA COM O SEU PRÓPRIO USER ID (UID) DO FIREBASE (NO PASSO 6 ABAIXO) **
+// Você encontrará este ID exibido na tela do seu blog após o primeiro deploy com FIREBASE_CONFIG.
 const OWNER_USER_ID = "SEU_OWN_FIREBASE_USER_ID_AQUI"; // EX: "k4j2h1l3kj4h2l3kj4h2l3kj4h2l3kj4h2l3k"
 
 // Componente principal da aplicação
@@ -55,7 +47,7 @@ const App = () => {
                 if (user) {
                     // Se o usuário está logado, define o userId
                     setUserId(user.uid);
-                    console.log('Usuário logado:', user.uid);
+                    console.log('Usuário logado (do console.log de depuração):', user.uid); // Log para depuração no console
                 } else {
                     // Tenta logar anonimamente se não houver usuário logado
                     try {
