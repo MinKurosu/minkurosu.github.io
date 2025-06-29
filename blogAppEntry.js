@@ -1,3 +1,5 @@
+// ... (outras importações e a constante FIREBASE_CONFIG)
+
 // Importações de React e Firebase
 import React, { useState, useEffect, useRef } from 'react';
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js';
@@ -34,6 +36,7 @@ const App = () => {
     useEffect(() => {
         try {
             // Inicializa o Firebase App com sua configuração
+            // AQUI É A LINHA QUE ESTAVA COMENTADA NA SUA IMAGEM, E É ONDE O ERRO ESTAVA.
             const app = initializeApp(FIREBASE_CONFIG);
             const firestore = getFirestore(app);
             const authentication = getAuth(app);
