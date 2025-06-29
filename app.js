@@ -17,7 +17,7 @@ import { collection, addDoc, onSnapshot, query, orderBy, Timestamp } from 'https
 // ** ATENÇÃO: PASSO CRÍTICO! PREENCHA COM O SEU PRÓPRIO USER ID (UID) DO FIREBASE (NO PASSO 6 ABAIXO) **
 // Você encontrará este ID exibido na tela do seu blog após o primeiro deploy com FIREBASE_CONFIG.
 // Esta constante pode ser definida aqui ou importada de um arquivo de configurações, se preferir.
-const OWNER_USER_ID = "SEU_OWN_FIREBASE_USER_ID_AQUI"; // EX: "k4j2h1l3kj4h2l3kj4h2l3kj4h2l3kj4h2l3k"
+const OWNER_USER_ID = "SKRZj0yyBuZfmQKwlWYKup0K93q2"; // EX: "k4j2h1l3kj4h2l3kj4h2l3kj4h2l3kj4h2l3k"
 // Se FIREBASE_CONFIG também é necessário aqui (por exemplo, para appId), você precisaria importá-lo também
 // import { FIREBASE_CONFIG } from './firebase-init.js'; // OU DE UM ARQUIVO DE CONFIGURAÇÃO SEPARADO
 
