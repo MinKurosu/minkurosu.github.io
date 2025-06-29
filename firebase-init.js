@@ -34,3 +34,12 @@ export const db = getFirestore(app); // Instância do serviço Cloud Firestore (
 export const storage = getStorage(app); // Instância do serviço Cloud Storage (para mídias)
 
 console.log("🔥 Firebase inicializado com sucesso para o projeto minkurosu!");
+
+
+
+
+
+
+
+
+
