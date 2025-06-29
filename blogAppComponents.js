@@ -17,7 +17,8 @@ const FIREBASE_CONFIG = {
     messagingSenderId: "290821725607",
     appId: "1:290821725607:web:5e39e561da53ac7c8a2a82",
     measurementId: "G-M7PWC6DDRH"
-  };
+};
+
 
 // ** ATENÇÃO: PASSO CRÍTICO! PREENCHA COM O SEU PRÓPRIO USER ID (UID) DO FIREBASE **
 // 1. Publique seu site no GitHub Pages com o FIREBASE_CONFIG preenchido (mesmo que OWNER_USER_ID esteja vazio por enquanto).
