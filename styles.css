@@ -474,6 +474,18 @@ body > .layout-with-sidebars {
       text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     }
 
+    .caixamaisclaraInterests {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #24211e;
+    padding: 0.3125rem;
+    border-radius: 0.9375rem;
+    box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
+    margin: 2px;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
      .caixamaisclara img {
       border-radius: 0.3125rem;
     }
