@@ -657,7 +657,7 @@ header.blog-header {
   animation-play-state: paused; /* Pausa a animação quando o mouse passa sobre o contêiner */
 }
 
-/* Keyframes para a animação de scroll */
+/* Keyframes para a animação de scrollar */
 @keyframes scroll {
   0% {
     transform: translateX(0); /* Começa na posição original */
