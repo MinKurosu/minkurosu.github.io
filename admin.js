@@ -19,207 +19,146 @@ const firebaseConfig = {
 
 // Inicializa o Firebase
 const app = initializeApp(firebaseConfig);
-const auth = getAuth(app); // Instância de autenticação
-const db = getFirestore(app); // Instância do Firestore
-const storage = getStorage(app); // Instância do Storage
+const auth = getAuth(app);
+const db = getFirestore(app);
+const storage = getStorage(app);
 
-// Referências aos elementos HTML (Login)
-// É CRUCIAL que esses IDs existam no seu HTML!
-const loginSection = document.getElementById('admin-login-section');
-const adminPanelSection = document.getElementById('admin-panel-section');
-const loginForm = document.getElementById('login-form');
-const emailInput = document.getElementById('login-email');
-const passwordInput = document.getElementById('login-password');
-const loginBtn = document.getElementById('login-btn'); // Embora não usado diretamente no listener de 'submit' do form, é bom ter.
-const loginMessage = document.getElementById('login-message'); // Para mensagens de login
+// Declare as variáveis no escopo global, mas atribua-as dentro do DOMContentLoaded
+let loginForm, loginEmailInput, loginPasswordInput, loginBtn, loginMessage;
+let adminPanelSection, postTitleInput, postContentInput, postImageInput, publishPostBtn, postMessage, logoutBtn;
 
-// Referências aos elementos HTML (Postagem)
-const postTitleInput = document.getElementById('post-title');
-const postContentInput = document.getElementById('post-content');
-const postImageInput = document.getElementById('post-image');
-const publishPostBtn = document.getElementById('publish-post-btn');
-const postMessage = document.getElementById('post-message'); // Para mensagens de postagem
-const logoutBtn = document.getElementById('logout-btn');
-
-// Função para exibir mensagens temporárias
-function showMessage(element, msg, type = 'info') {
-    if (!element) {
-        console.warn(`Elemento para exibir mensagem não encontrado: ${msg}`);
-        return;
-    }
-    element.textContent = msg;
-    element.className = `message ${type}`; // Adiciona classes para estilização
-    setTimeout(() => {
-        if (element) { // Verifica novamente se o elemento ainda existe
-            element.textContent = '';
-            element.className = 'message';
-        }
-    }, 5000); // Mensagem desaparece após 5 segundos
-}
-
-// Lida com o estado de autenticação (quando o usuário loga/desloga)
-onAuthStateChanged(auth, (user) => {
-    console.log("DEBUG: onAuthStateChanged - Usuário atual:", user ? user.email : "Nenhum usuário logado"); // Linha adicionada
-    if (user) {
-        // Usuário logado
-        if (loginSection) loginSection.style.display = 'none';
-        if (adminPanelSection) adminPanelSection.style.display = 'block';
-        showMessage(loginMessage, `Bem-vindo, ${user.email || 'Usuário Anônimo'}!`, 'success');
+// Função para exibir mensagens de status
+function showMessage(element, message, type) {
+    if (element) {
+        element.textContent = message;
+        element.className = `message ${type}`; // Adiciona classes para estilização (e.g., 'error', 'success', 'info')
     } else {
-        // Usuário deslogado
-        if (loginSection) loginSection.style.display = 'block';
-        if (adminPanelSection) adminPanelSection.style.display = 'none';
-        // Limpa as mensagens quando desloga
-        showMessage(loginMessage, '', 'info');
-        showMessage(postMessage, '', 'info');
+        console.warn('Elemento de mensagem não encontrado:', message);
     }
-});
+}
 
-// Lida com o estado de autenticação (quando o usuário loga/desloga)
-onAuthStateChanged(auth, (user) => {
-    if (user) {
-        // Usuário logado
-        if (loginSection) loginSection.style.display = 'none';
-        if (adminPanelSection) adminPanelSection.style.display = 'block';
-        showMessage(loginMessage, `Bem-vindo, ${user.email || 'Usuário Anônimo'}!`, 'success');
+// Garante que o DOM esteja completamente carregado antes de tentar acessar os elementos
+document.addEventListener('DOMContentLoaded', () => {
+    // Atribui os elementos do DOM aqui
+    loginForm = document.getElementById('login-form');
+    loginEmailInput = document.getElementById('login-email');
+    loginPasswordInput = document.getElementById('login-password');
+    loginBtn = document.getElementById('login-btn');
+    loginMessage = document.getElementById('login-message');
+
+    adminPanelSection = document.getElementById('admin-panel-section');
+    postTitleInput = document.getElementById('post-title');
+    postContentInput = document.getElementById('post-content');
+    postImageInput = document.getElementById('post-image');
+    publishPostBtn = document.getElementById('publish-post-btn');
+    postMessage = document.getElementById('post-message');
+    logoutBtn = document.getElementById('logout-btn');
+
+    // Monitora o estado de autenticação do usuário
+    onAuthStateChanged(auth, (user) => {
+        if (adminPanelSection && loginForm) { // Verifica se os elementos existem antes de manipular
+            if (user) {
+                adminPanelSection.style.display = 'block';
+                loginForm.style.display = 'none';
+            } else {
+                adminPanelSection.style.display = 'none';
+                loginForm.style.display = 'block';
+            }
+        } else {
+            console.warn("Elementos do painel de administração ou login não encontrados. Verifique admin.html.");
+        }
+    });
+
+    // Evento de Login
+    if (loginForm) { // Verifica se loginForm existe antes de adicionar o listener
+        loginForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            // Verifica se os campos de input de login existem
+            if (!loginEmailInput || !loginPasswordInput) {
+                showMessage(loginMessage, 'Erro interno: Campos de login não encontrados.', 'error');
+                console.error("Erro: Elementos de input de login não encontrados no DOM.");
+                return;
+            }
+            const email = loginEmailInput.value;
+            const password = loginPasswordInput.value;
+
+            try {
+                await signInWithEmailAndPassword(auth, email, password);
+                showMessage(loginMessage, 'Login bem-sucedido!', 'success');
+            } catch (error) {
+                showMessage(loginMessage, `Erro de login: ${error.message}`, 'error');
+                console.error("Erro de login:", error);
+            }
+        });
     } else {
-        // Usuário deslogado
-        if (loginSection) loginSection.style.display = 'block';
-        if (adminPanelSection) adminPanelSection.style.display = 'none';
-        // Limpa as mensagens quando desloga
-        showMessage(loginMessage, '', 'info');
-        showMessage(postMessage, '', 'info');
+        console.error("Elemento 'login-form' não encontrado no HTML. O listener de login não foi anexado.");
+    }
+
+    // Evento de Publicação de Post
+    if (publishPostBtn) { // Verifica se o botão de publicação existe antes de adicionar o listener
+        publishPostBtn.addEventListener('click', async () => {
+            try {
+                // Verifica se os campos de input do post existem
+                if (!postTitleInput || !postContentInput) {
+                    showMessage(postMessage, 'Erro interno: Campos de postagem (título ou conteúdo) não encontrados.', 'error');
+                    console.error("Erro: Elementos de input do post (título ou conteúdo) não foram encontrados no DOM ao tentar publicar.");
+                    return; // Impede a continuação da função
+                }
+
+                const title = postTitleInput.value;
+                const content = postContentInput.value;
+                const imageFile = postImageInput ? postImageInput.files[0] : null; // Verifica se postImageInput existe
+
+                if (!title.trim() || !content.trim()) {
+                    showMessage(postMessage, 'Por favor, preencha o título e o conteúdo do post.', 'error');
+                    return;
+                }
+
+                let imageUrl = '';
+                if (imageFile) {
+                    showMessage(postMessage, 'Enviando imagem...', 'info');
+                    const storageRef = ref(storage, `blog_images/${Date.now()}_${imageFile.name}`);
+                    const uploadTask = uploadBytes(storageRef, imageFile);
+
+                    await uploadTask; // Espera o upload terminar
+                    imageUrl = await getDownloadURL(storageRef); // Pega a URL da imagem
+                    showMessage(postMessage, 'Imagem enviada. Publicando post...', 'info');
+                }
+
+                // Salva os dados do post no Firestore
+                await addDoc(collection(db, 'posts'), {
+                    title: title,
+                    content: content,
+                    imageUrl: imageUrl,
+                    timestamp: serverTimestamp() // Data e hora do servidor
+                });
+
+                showMessage(postMessage, 'Post publicado com sucesso!', 'success');
+                // Limpa os campos após a publicação
+                postTitleInput.value = '';
+                postContentInput.value = '';
+                if (postImageInput) postImageInput.value = ''; // Limpa o input de arquivo, se existir
+            } catch (error) {
+                showMessage(postMessage, `Erro ao publicar: ${error.message}`, 'error');
+                console.error("Erro ao publicar post:", error);
+            }
+        });
+    } else {
+        console.error("Elemento 'publish-post-btn' não encontrado no HTML. O listener de publicação não foi anexado.");
+    }
+
+    // Evento de Logout
+    if (logoutBtn) { // Verifica se o botão de logout existe antes de adicionar o listener
+        logoutBtn.addEventListener('click', async () => {
+            try {
+                await signOut(auth);
+                showMessage(loginMessage, 'Você saiu da sua conta.', 'info');
+            } catch (error) {
+                console.error("Erro ao fazer logout:", error);
+                showMessage(loginMessage, `Erro ao sair: ${error.message}`, 'error');
+            }
+        });
+    } else {
+        console.error("Elemento 'logout-btn' não encontrado no HTML. O listener de logout não foi anexado.");
     }
 });
-
-// Evento de Login
-// Verifica se o formulário de login existe antes de adicionar o listener
-if (loginForm) {
-    loginForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const email = loginEmailInput.value;
-    const password = loginPasswordInput.value;
-
-    showMessage(loginMessage, 'Tentando fazer login...', 'info');
-
-    try {
-        await signInWithEmailAndPassword(auth, email, password);
-        // ...
-    } catch (error) {
-        let errorMessage = 'Erro ao fazer login. Verifique seu email e senha.';
-        // ... (suas condições de erro específicas)
-        showMessage(loginMessage, errorMessage, 'error');
-        console.error("DEBUG: Erro no signInWithEmailAndPassword:", error); // Garanta que este console.error está aqui
-    }
-});
-        const email = emailInput.value;
-        const password = passwordInput.value;
-
-        showMessage(loginMessage, 'Tentando fazer login...', 'info');
-
-        try {
-            await signInWithEmailAndPassword(auth, email, password);
-            // onAuthStateChanged vai lidar com a exibição do painel
-            // showMessage(loginMessage, 'Login bem-sucedido!', 'success'); // Já tratado por onAuthStateChanged
-        } catch (error) {
-            console.error("Erro no login:", error); // Adicionando log de erro explícito
-            let errorMessage = 'Erro desconhecido ao fazer login.';
-            switch (error.code) {
-                case 'auth/user-not-found':
-                    errorMessage = 'Usuário não encontrado. Verifique o email.';
-                    break;
-                case 'auth/wrong-password':
-                    errorMessage = 'Senha incorreta.';
-                    break;
-                case 'auth/invalid-email':
-                    errorMessage = 'Email inválido.';
-                    break;
-                case 'auth/too-many-requests':
-                    errorMessage = 'Muitas tentativas de login. Tente novamente mais tarde.';
-                    break;
-                case 'auth/network-request-failed':
-                    errorMessage = 'Falha na conexão de rede. Verifique sua internet.';
-                    break;
-                default:
-                    errorMessage = `Erro no login: ${error.message}`;
-            }
-            showMessage(loginMessage, errorMessage, 'error');
-        }
-    });
-} else {
-    console.error("Elemento 'login-form' não encontrado no HTML. O listener de login não foi anexado.");
-}
-
-
-// Evento de Publicar Post
-// Verifica se o botão de publicação existe antes de adicionar o listener
-if (publishPostBtn) {
-    publishPostBtn.addEventListener('click', async () => {
-        if (!postTitleInput || !postContentInput || !postImageInput) {
-            console.error("Erro: Elementos do formulário de postagem não encontrados no HTML.");
-            showMessage(postMessage, 'Erro interno: Campos de postagem não encontrados.', 'error');
-            return;
-        }
-
-        const title = postTitleInput.value;
-        const content = postContentInput.value;
-        const imageFile = postImageInput.files[0];
-
-        if (!title || !content) {
-            showMessage(postMessage, 'Título e conteúdo são obrigatórios.', 'error');
-            return;
-        }
-
-        showMessage(postMessage, 'Publicando post...', 'info');
-
-        try {
-            let imageUrl = '';
-            if (imageFile) {
-                showMessage(postMessage, 'Enviando imagem...', 'info');
-                const storageRef = ref(storage, `blog_images/${Date.now()}_${imageFile.name}`);
-                const uploadTask = uploadBytes(storageRef, imageFile);
-
-                await uploadTask; // Espera o upload terminar
-                imageUrl = await getDownloadURL(storageRef); // Pega a URL da imagem
-                showMessage(postMessage, 'Imagem enviada. Publicando post...', 'info');
-            }
-
-            // Salva os dados do post no Firestore
-            await addDoc(collection(db, 'posts'), {
-                title: title,
-                content: content,
-                imageUrl: imageUrl,
-                timestamp: serverTimestamp() // Data e hora do servidor
-            });
-
-            showMessage(postMessage, 'Post publicado com sucesso!', 'success');
-            // Limpa os campos após a publicação
-            postTitleInput.value = '';
-            postContentInput.value = '';
-            postImageInput.value = ''; // Limpa o input de arquivo
-        } catch (error) {
-            showMessage(postMessage, `Erro ao publicar: ${error.message}`, 'error');
-            console.error("Erro ao publicar post:", error);
-        }
-    });
-} else {
-    console.error("Elemento 'publish-post-btn' não encontrado no HTML. O listener de publicação não foi anexado.");
-}
-
-
-// Evento de Logout
-// Verifica se o botão de logout existe antes de adicionar o listener
-if (logoutBtn) {
-    logoutBtn.addEventListener('click', async () => {
-        try {
-            await signOut(auth);
-            // onAuthStateChanged vai lidar com a exibição do painel de login
-            // showMessage(loginMessage, 'Você saiu da sua conta.', 'info'); // Já tratado por onAuthStateChanged
-        } catch (error) {
-            console.error("Erro ao fazer logout:", error);
-            showMessage(loginMessage, `Erro ao sair: ${error.message}`, 'error');
-        }
-    });
-} else {
-    console.error("Elemento 'logout-btn' não encontrado no HTML. O listener de logout não foi anexado.");
-}
