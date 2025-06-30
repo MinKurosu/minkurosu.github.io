@@ -233,20 +233,6 @@ header {
     }
 }
 
-  @media (prefers-color-scheme: dark) {
-    /* Sobrescreva estilos do modo noturno, se houver aaaaaaaa q odio */
-    :root {
-        color-scheme: light; /* Define o esquema de cores como claro */
-    }
-
-    /* Caso existam estilos específicos para o modo noturno, redefina-os */
-    body, html {
-        background-color: #24211e !important;
-        color: #24211e !important;
-    }
-
-@media (prefers-color-scheme: dark) {
-  
   header {
     background-color: #1B1917;
   }
@@ -295,13 +281,6 @@ header {
    font-family: "Born2bSportyFS";
     font-size: 16px;
   }
-
-  
-body > .layout-with-sidebars {
-  /* força grid mesmo dentro do flex */
-  display: grid !important;
-  grid-template-columns: auto 1fr;
-}
 
   /* Header */
   header {
@@ -612,8 +591,22 @@ body > .layout-with-sidebars {
 }
 
 
+.layout-with-sidebars {
+  display: grid;
+  grid-template-columns: auto 1fr auto; /* Sidebar Esquerda | Conteúdo Principal | Sidebar Direita */
+  gap: 5px; /* Adiciona espaçamento entre as colunas, ajuste conforme desejar */
+  width: 100%; /* Ocupa toda a largura disponível */
+  max-width: 1000px; /* Define uma largura máxima para o layout, ajuste este valor se necessário */
+  margin: 20px auto; /* Centraliza o layout na página e adiciona margem superior/inferior */
+  box-sizing: border-box; /* Inclui padding e bordas no cálculo da largura total */
+
+  justify-content: space-between; /* Isso ajuda a distribuir o espaço */
+  margin-left: auto;
+  margin-right: auto;
+  
 
 
+}
 
 .sidebar h2 {
   font-size: 64px;
@@ -778,23 +771,7 @@ overflow-y: scroll
     }
 }
 
-  @media (prefers-color-scheme: dark) {
-    /* Sobrescreva estilos do modo noturno, se houver aaaaaaaa q odio */
-    :root {
-        color-scheme: light; /* Define o esquema de cores como claro */
-    }
 
-    /* Caso existam estilos específicos para o modo noturno, redefina-os */
-    body, html {
-        background-color: #24211e !important;
-        color: #24211e !important;
-    }
-
-@media (prefers-color-scheme: dark) {
-  
-  header {
-    background-color: #1B1917;
-  }
 
   .navbar a {
       color: #534F4A;
@@ -841,12 +818,7 @@ overflow-y: scroll
     font-size: 16px;
   }
 
-  
-body > .layout-with-sidebars {
-  /* força grid mesmo dentro do flex */
-  display: grid !important;
-  grid-template-columns: auto 1fr auto;
-}
+
 
   /* Header */
   header {
@@ -1425,14 +1397,14 @@ overflow-y: scroll
 
 
 .maincollums {
-    display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 10px;
-grid-template-columns: 300px 1fr 1000px; !important
-  -webkit-column-rule: 1px solid #dbdbdb; /* Chrome, Safari, Opera */
-            -moz-column-rule: 1px solid #dbdbdb; /* Firefox */
-            column-rule: 1px solid #dbdbdb;
+    display: flex; /* Mantenha esta linha se você quer que o conteúdo interno de maincollums seja flex. */
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+    /* grid-template-columns: 300px 1fr 1000px; !important REMOVA ESTA LINHA! */
+    -webkit-column-rule: 1px solid #dbdbdb;
+    -moz-column-rule: 1px solid #dbdbdb;
+    column-rule: 1px solid #dbdbdb;
 }
 
 
@@ -1527,3 +1499,36 @@ margin-left: 3rem;
  
      transition: transform 0.3s ease-in-out;
   }
+
+
+
+
+
+
+
+
+
+  /* table */
+
+
+td{
+    background-color: rgba(255, 255, 255, 0.05); /* Branco com 60% de transparência */
+
+}
+table {
+  border: 3px solid black; /* Aumenta o contorno da tabela */
+  border-collapse: collapse; /* Faz as bordas se fundirem */
+  border-spacing: 2; /* Garante que as bordas não se sobreponham */
+  border-radius: 10px; /* Arredonda as bordas da tabela */
+  overflow: hidden; /* Garante que as bordas arredondadas se apliquem corretamente */
+  color: #534F4A;
+  
+}
+
+th, td {
+  border: 2px solid black; /* Aumenta o contorno das células */
+}
+
+  th {
+  background-color: rgba(255, 255, 255, 0.1); /* Branco com 60% de transparência */
+}
