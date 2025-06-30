@@ -69,7 +69,7 @@ async function loadPosts() {
 
             // Constrói o HTML para cada post, incluindo a nova div .post-info-header
           postElement.innerHTML = `
-                <div class="post-author-line">@minkurosu</div> <br><h2>${post.title}</h2>
+               <h1>${post.title}</h1>
                 <p>${post.content.replace(/\n/g, '<br>')}</p>
                 ${post.imageUrl ? `<img src="${post.imageUrl}" alt="${post.title}">` : ''}
                 <div class="post-timestamp-line">${formatTimestamp(post.timestamp)}</div> <hr class="post-divider">

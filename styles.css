@@ -116,6 +116,12 @@ header {
     box-shadow: none;
     word-wrap: break-word;
     text-align: left; /* Garante que todo o conteúdo do post seja alinhado à esquerda por padrão */
+    /* Defina a largura máxima aqui */
+    max-width: 800px; /* Exemplo: Defina este valor para a largura do seu post mais largo */
+    width: 100%; /* Garante que ele ocupe 100% do espaço disponível até o max-width */
+    box-sizing: border-box; /* Inclui padding e borda na largura total */
+
+
 }
 
 /* Estilos para o cabeçalho de informação do post (@minkurosu • Data) */
