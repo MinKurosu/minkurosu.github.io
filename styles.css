@@ -647,7 +647,6 @@ header.blog-header {
 .scrolling-container img {
   height: 56px; /* Ajuste a altura das suas imagens conforme necessário */
   width: 99px;
- 
   margin-right: 10px; /* Espaço entre as imagens */
   vertical-align: middle; /* Alinha as imagens verticalmente */
   display: inline-block; /* Garante que as imagens se comportem como elementos em linha */
