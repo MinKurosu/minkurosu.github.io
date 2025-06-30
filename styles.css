@@ -1488,3 +1488,24 @@ margin-left: 3rem;
     padding: 0.5em;
     border-radius:20px;
 }
+
+.caixamaisclara-interests{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #24211e;
+    padding: 0.3125rem;
+    border-radius: 0.9375rem;
+    box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
+    margin: 2px;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+
+
+
+  .hover:hover {
+    transform: scale(1.2);
+ 
+     transition: transform 0.3s ease-in-out;
+  }

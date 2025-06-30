@@ -96,15 +96,22 @@ onAuthStateChanged(auth, (user) => {
 // Verifica se o formulário de login existe antes de adicionar o listener
 if (loginForm) {
     loginForm.addEventListener('submit', async (e) => {
-        e.preventDefault(); // Impede o recarregamento da página
+    e.preventDefault();
+    const email = loginEmailInput.value;
+    const password = loginPasswordInput.value;
 
-        // Verifica se os inputs existem antes de tentar acessar seus valores
-        if (!emailInput || !passwordInput) {
-            console.error("Erro: Elementos de email ou senha não encontrados no HTML.");
-            showMessage(loginMessage, 'Erro interno: Campos de login não encontrados.', 'error');
-            return;
-        }
+    showMessage(loginMessage, 'Tentando fazer login...', 'info');
 
+    try {
+        await signInWithEmailAndPassword(auth, email, password);
+        // ...
+    } catch (error) {
+        let errorMessage = 'Erro ao fazer login. Verifique seu email e senha.';
+        // ... (suas condições de erro específicas)
+        showMessage(loginMessage, errorMessage, 'error');
+        console.error("DEBUG: Erro no signInWithEmailAndPassword:", error); // Garanta que este console.error está aqui
+    }
+});
         const email = emailInput.value;
         const password = passwordInput.value;
 

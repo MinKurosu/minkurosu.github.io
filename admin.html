@@ -202,14 +202,17 @@ hr {
         </div>
 
         <div id="admin-panel-section" class="caixamaisclara admin-form-box" style="display: none;">
-            <h1>criar novo post</h1>
-        
+            <h1>new post</h1>
+        <div>
+                <label for="post-title">post title:</label>
+                <textarea id="post-title"></textarea>
+            </div>
             <div>
-                <label for="post-content">conteúdo do post:</label>
+                <label for="post-content">post text:</label>
                 <textarea id="post-content" required></textarea>
             </div>
             <div>
-                <label for="post-image">imagem (opcional):</label>
+                <label for="post-image">post image (optional):</label>
                 <input type="file" id="post-image" accept="image/*">
             </div>
             <button type="button" id="publish-post-btn">publicar</button>

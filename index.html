@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="styles.css">
 <title>@minkurosu</title>
 <script src="script.js"></script>
-<link rel="icon" type="image/ico" href="imgs/favicon.ico"/>
+<link rel="icon" type="image/ico" href="imgs/site_imgs/favicon.ico"/>
   <style>
 
 :root {
@@ -50,12 +50,6 @@
     max-width: 50rem;
     }
 
-    .portal-to-personal {
-    position: fixed; !important
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1000;
   }
 
 
@@ -92,6 +86,10 @@
       }
 
 
+  .hover:hover {
+    transform: scale(1.05);
+  transition: transform 0.2s ease-in-out;; /* Aumenta o tamanho em 10% */
+  }
       .navbar a:hover {
       background-color: #534f4a;
       color: #1B1917;
@@ -139,7 +137,7 @@
       height: 100%;
       margin: 0;
       padding: 0;
-      background-image: url(imgs/wood2.png);
+      background-image: url(imgs/site_imgs/wood2.png);
       background-attachment: fixed;
       display: flex;
       flex-direction: column;
@@ -428,17 +426,31 @@
 .portal-to-personal {
   position: fixed;
   bottom: 10px;
-  right: 100px;
+  right: 80px;
   width: 100px; /* ajuste o tamanho */
   z-index: 1000; /* garante que fique por cima */
+   position: fixed; !important
+   text-decoration: none;
+   font
 }
+
+
+  .portal-to-personal img {
+ transition: transform 0.3s ease-in-out;
+    bottom: 10px;
+    width: 150px; */
+    z-index: 1000;
+}
+
+
+
 
   </style>
 </head>
 <body>
   <header id="header" class="fixed-top">
     <div id="divpatinha">
-      <img src="imgs/patinha.png" id="logopatinha" alt="logo da barra de navegação">
+      <img src="imgs/site_imgs/patinha.png" id="logopatinha" alt="logo da barra de navegação">
     </div>
     <nav class="navbar">
       <div class="divitems">
@@ -466,7 +478,7 @@
 
   <div id="container">
     <div class="caixamaisclara">
-      <img id="logobig" src="imgs/logo.png" alt="Logo" data-position="center">
+      <img id="logobig" src="imgs/site_imgs/logo.png" alt="Logo" data-position="center">
     </div>
     <hr>
     <div class="caixamaisclara">
@@ -475,7 +487,7 @@
 
       
       <div class="about-content">
-        <img src="imgs/aboutmevtuber.png" alt="vtuber me" id="euvtuber">
+        <img src="imgs/site_imgs/aboutmevtuber.png" alt="vtuber me" id="euvtuber">
         <div class="bodytextcontainer">
           <h2 class="h2text">⋅ ⭑ ✟ about me ✟ ⭑ ⋅</h2>
           <h4>Hello! I'm Min!</h4>
@@ -497,13 +509,13 @@
         <h3>my drawings</h3>
         <div class="boxfoto">
           <a href="portfolio-art.html">
-              <img src="imgs/5.png" class="fotosworks" alt="arte n1">
+              <img src="imgs/art portfolio/5.png" class="fotosworks" alt="arte n1">
           </a>
           <a href="portfolio-art.html">
               <img src="imgs/art portfolio/GcgzfGTWkAArcsp.jpeg" class="fotosworks" alt="arte n2">
           </a>
           <a href="portfolio-art.html">
-              <img src="imgs/7.png" class="fotosworks" alt="arte n3">
+              <img src="imgs/art portfolio/7.png" class="fotosworks" alt="arte n3">
           </a>
       </div>
         <br>
@@ -529,23 +541,30 @@
         <h3>my photos</h3>
         <div class="boxfoto">
           <a href="portfolio-photos.html">
-              <img src="imgs/8.png" class="fotosworks" alt="photo n1">
+              <img src="imgs/site_imgs/8.png" class="fotosworks" alt="photo n1">
           </a>
           <a href="portfolio-photos.html">
-              <img src="imgs/9.png" class="fotosworks" alt="photo n2">
+              <img src="imgs/site_imgs/9.png" class="fotosworks" alt="photo n2">
           </a>
           <a href="portfolio-photos.html">
-              <img src="imgs/10.png" class="fotosworks" alt="photo n3">
+              <img src="imgs/site_imgs/10.png" class="fotosworks" alt="photo n3">
           </a>
       </div>
         <br>
-        <a href="MINKUROSU.html">
-  <img src="portal.gif" class="portal-to-personal">
-</a>
+
+
+
+
       </div>
      
 
+  <div class="portal-to-personal">
   
+   <br>
+        <a href="MINKUROSU.html">
+           <img src="imgs/site_imgs/portal.gif" class="hover portal-to-personal"  title="click to go to my blog!">
+</a>
+</div>
    
 </body>
 </html>
