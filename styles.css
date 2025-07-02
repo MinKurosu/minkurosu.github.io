@@ -797,6 +797,7 @@ table {
     border-radius: 10px;
     overflow: hidden;
     color: #534F4A;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 td {
@@ -810,4 +811,3 @@ th, td {
 th {
     background-color: rgba(255, 255, 255, 0.1);
 }
-
