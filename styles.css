@@ -811,3 +811,43 @@ th, td {
 th {
     background-color: rgba(255, 255, 255, 0.1);
 }
+
+
+.track {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+
+    padding: 10px 0;
+    border-radius: 8px;
+}
+
+.track-inner {
+    display: inline-block;
+    animation: scroll-right 60s linear infinite; /* Altere para scroll-right */
+}
+
+/* Pausa a animação ao passar o mouse */
+.track:hover .track-inner {
+    animation-play-state: paused;
+}
+
+.track-inner img {
+    height: 55px;
+    width: 99px;
+    width: auto;
+    vertical-align: middle;
+    margin: 0 5px;
+}
+
+/* Animação de rolagem para a direita */
+@keyframes scroll-right {
+    0% {
+        transform: translateX(-50%); /* Começa com a metade duplicada visível */
+    }
+    100% {
+        transform: translateX(0%); /* Termina com a primeira metade visível */
+    }
+}
+
