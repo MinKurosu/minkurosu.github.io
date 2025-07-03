@@ -28,21 +28,61 @@
   color-scheme: light;
 }
 
- <link rel="shortcut icon" type="image/jpg" href="Favicon_Image_Location"/>
-    /* General Settings */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Media Query para Dispositivos Móveis (Viewports menores) */
+/* Ativa a rolagem horizontal quando a tela é pequena o suficiente */
+@media (max-width: 768px) { /* Você pode ajustar este breakpoint (ex: 600px, 480px) */
     html {
-      font-size: 16px;
+        /* Permite rolagem horizontal apenas em viewports de celular */
+        overflow-x: auto; 
+        -webkit-overflow-scrolling: touch; /* Melhora a rolagem em iOS */
     }
-         /* Scale for viewports between 600px and 1200px */
-@media (min-width: 100px) and (max-width: 1200px) {
-  body {
-    transform: scale(0.6);
-    transform-origin: top; 
-  }
-  .caixamaisclara {
-    max-width: 50rem;
+
+    /* Remova ou ajuste o transform: scale se ele estiver causando conflito */
+    /* Se o initial-scale já está dando o zoom out, este scale pode não ser necessário ou causar problemas */
+    body {
+        transform: none; /* Desativa o scale que você tinha para viewports específicas */
+        transform-origin: top; 
     }
 }
+
+/* Sua Media Query existente para viewports entre 100px e 1200px */
+/* Cuidado: O `transform: scale(0.6)` aqui pode conflitar com o `initial-scale` no celular. */
+/* Se a ideia é ter um zoom para uma faixa específica de telas, mantenha. */
+/* Se o objetivo é apenas o celular, essa regra pode ser desnecessária ou precisar de ajuste. */
+@media (min-width: 100px) and (max-width: 1200px) {
+    body {
+        /* Mantenha ou ajuste se for realmente necessário para este intervalo de telas, */
+        /* mas lembre-se que o initial-scale do viewport já cuida do celular */
+        transform: scale(0.6); 
+        transform-origin: top; 
+    }
+    .caixamaisclara {
+        max-width: 50rem;
+    }
+}
+
+
+
+
+
+
 
 
 @media (prefers-color-scheme: dark) {
