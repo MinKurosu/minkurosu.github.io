@@ -825,7 +825,7 @@ th {
 
 .track-inner {
     display: inline-block;
-    animation: scroll-right 60s linear infinite; /* Altere para scroll-right */
+    animation: scroll-right 100s linear infinite; /* Altere para scroll-right */
 }
 
 /* Pausa a animação ao passar o mouse */
@@ -834,8 +834,8 @@ th {
 }
 
 .track-inner img {
-    height: 55px;
-    width: 99px;
+    height: 55px; !important
+    width: 99px; !important
     width: auto;
     vertical-align: middle;
     margin: 0 5px;
@@ -851,3 +851,561 @@ th {
     }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ========================================= */
+/* CSS COMPLETO PARA O MINECRAFT 3D SKIN VIEWER (INCLUINDO SUPORTE SLIM E LEGACY) */
+/* Adaptado para skins Legacy (64x32) e múltiplos visualizadores */
+
+#skin-showcase-container {
+    display: flex; /* Alinha os visualizadores lado a lado */
+    flex-wrap: wrap; /* Permite que os visualizadores quebrem para a próxima linha em telas menores */
+    justify-content: center; /* Centraliza os visualizadores */
+    gap: 20px; /* Espaço entre cada visualizador */
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.skin-viewer-wrapper {
+    text-align: center;
+    margin-bottom: 20px; /* Espaço entre as linhas de skins */
+}
+
+.skin-name {
+    font-family: "Born2bSportyFS", sans-serif;
+    color: #534F4A;
+    margin-top: 10px;
+    font-size: 1.1em;
+}
+
+/* O container de cada skin individual */
+.mc-skin-viewer-11x {
+    position: relative;
+    width: 64px; /* Tamanho do container para uma skin */
+    height: 128px;
+    margin: 0 auto; /* Centraliza cada skin dentro do seu wrapper */
+    -webkit-perspective: 800px;
+            perspective: 800px;
+    cursor: grab;
+}
+
+.mc-skin-viewer-11x *, .mc-skin-viewer-11x *::before, .mc-skin-viewer-11x *::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  image-rendering: pixelated; /* Garante que a imagem permaneça pixelada */
+}
+
+/* O player principal */
+.mc-skin-viewer-11x .player {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform: rotateX(-20deg) rotateY(45deg); /* Posição inicial */
+          transform: rotateX(-20deg) rotateY(45deg);
+  transition: transform 0.1s linear; /* Transição para rotação manual */
+}
+
+/* Tamanhos de base para os blocos */
+.mc-skin-viewer-11x .head, .mc-skin-viewer-11x .body, .mc-skin-viewer-11x .left-arm, .mc-skin-viewer-11x .right-arm, .mc-skin-viewer-11x .left-leg, .mc-skin-viewer-11x .right-leg {
+  position: absolute;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+/* Todas as faces de todos os blocos */
+.mc-skin-viewer-11x .head div, .mc-skin-viewer-11x .body div, .mc-skin-viewer-11x .left-arm div, .mc-skin-viewer-11x .right-arm div, .mc-skin-viewer-11x .left-leg div, .mc-skin-viewer-11x .right-leg div, .mc-skin-viewer-11x .accessory div {
+  position: absolute;
+  /* background-image será definido via JS usando o data-skin-url */
+  background-repeat: no-repeat;
+  background-size: 128px 64px; /* CORRIGIDO E PADRONIZADO PARA SKINS LEGACY (64x32) */
+  image-rendering: pixelated;
+}
+
+/* Head */
+.mc-skin-viewer-11x .head {
+  width: 32px;
+  height: 32px;
+  -webkit-transform: translate3d(-16px, 0px, -16px);
+          transform: translate3d(-16px, 0px, -16px);
+}
+.mc-skin-viewer-11x .head .top {
+  width: 32px;
+  height: 32px;
+  -webkit-transform: rotateX(90deg) translateZ(-16px);
+          transform: rotateX(90deg) translateZ(-16px);
+  background-position: -32px 0px;
+}
+.mc-skin-viewer-11x .head .bottom {
+  width: 32px;
+  height: 32px;
+  -webkit-transform: rotateX(-90deg) translateZ(-16px);
+          transform: rotateX(-90deg) translateZ(-16px);
+  background-position: -64px 0px;
+}
+.mc-skin-viewer-11x .head .left {
+  width: 32px;
+  height: 32px;
+  -webkit-transform: rotateY(-90deg) translateZ(-16px);
+          transform: rotateY(-90deg) translateZ(-16px);
+  background-position: 0px 0px;
+}
+.mc-skin-viewer-11x .head .front {
+  width: 32px;
+  height: 32px;
+  -webkit-transform: translateZ(-16px);
+          transform: translateZ(-16px);
+  background-position: -16px 0px;
+}
+.mc-skin-viewer-11x .head .right {
+  width: 32px;
+  height: 32px;
+  -webkit-transform: rotateY(90deg) translateZ(-16px);
+          transform: rotateY(90deg) translateZ(-16px);
+  background-position: -48px 0px;
+}
+.mc-skin-viewer-11x .head .back {
+  width: 32px;
+  height: 32px;
+  -webkit-transform: rotateY(180deg) translateZ(-16px);
+          transform: rotateY(180deg) translateZ(-16px);
+  background-position: -80px 0px;
+}
+
+/* Head Accessory (Hat Layer) - Legacy-specific */
+.mc-skin-viewer-11x.legacy .head .accessory {
+  width: 33px;
+  height: 33px;
+  -webkit-transform: translate3d(-0.5px, 0px, -0.5px);
+          transform: translate3d(-0.5px, 0px, -0.5px);
+}
+.mc-skin-viewer-11x.legacy .head .accessory .top {
+  width: 33px;
+  height: 33px;
+  -webkit-transform: rotateX(90deg) translateZ(-16.5px);
+          transform: rotateX(90deg) translateZ(-16.5px);
+  background-position: -64px 32px;
+}
+.mc-skin-viewer-11x.legacy .head .accessory .bottom {
+  width: 33px;
+  height: 33px;
+  -webkit-transform: rotateX(-90deg) translateZ(-16.5px);
+          transform: rotateX(-90deg) translateZ(-16.5px);
+  background-position: -96px 32px;
+}
+.mc-skin-viewer-11x.legacy .head .accessory .left {
+  width: 33px;
+  height: 33px;
+  -webkit-transform: rotateY(-90deg) translateZ(-16.5px);
+          transform: rotateY(-90deg) translateZ(-16.5px);
+  background-position: 0px 32px;
+}
+.mc-skin-viewer-11x.legacy .head .accessory .front {
+  width: 33px;
+  height: 33px;
+  -webkit-transform: translateZ(-16.5px);
+          transform: translateZ(-16.5px);
+  background-position: -32px 32px;
+}
+.mc-skin-viewer-11x.legacy .head .accessory .right {
+  width: 33px;
+  height: 33px;
+  -webkit-transform: rotateY(90deg) translateZ(-16.5px);
+          transform: rotateY(90deg) translateZ(-16.5px);
+  background-position: -64px 32px;
+}
+.mc-skin-viewer-11x.legacy .head .accessory .back {
+  width: 33px;
+  height: 33px;
+  -webkit-transform: rotateY(180deg) translateZ(-16.5px);
+          transform: rotateY(180deg) translateZ(-16.5px);
+  background-position: -96px 32px;
+}
+
+/* Body */
+.mc-skin-viewer-11x .body {
+  width: 32px;
+  height: 48px;
+  -webkit-transform: translate3d(-16px, 32px, -8px);
+          transform: translate3d(-16px, 32px, -8px);
+}
+.mc-skin-viewer-11x .body .top {
+  width: 32px;
+  height: 16px;
+  -webkit-transform: rotateX(90deg) translateZ(-8px);
+          transform: rotateX(90deg) translateZ(-8px);
+  background-position: -80px -16px;
+}
+.mc-skin-viewer-11x .body .bottom {
+  width: 32px;
+  height: 16px;
+  -webkit-transform: rotateX(-90deg) translateZ(-8px);
+          transform: rotateX(-90deg) translateZ(-8px);
+  background-position: -112px -16px;
+}
+.mc-skin-viewer-11x .body .left {
+  width: 16px;
+  height: 48px;
+  -webkit-transform: rotateY(-90deg) translateZ(-16px);
+          transform: rotateY(-90deg) translateZ(-16px);
+  background-position: -64px -16px;
+}
+.mc-skin-viewer-11x .body .front {
+  width: 32px;
+  height: 48px;
+  -webkit-transform: translateZ(-8px);
+          transform: translateZ(-8px);
+  background-position: -16px -16px; /* CORRIGIDO para Legacy (2º bloco da esquerda) */
+}
+.mc-skin-viewer-11x .body .right {
+  width: 16px;
+  height: 48px;
+  -webkit-transform: rotateY(90deg) translateZ(-16px);
+          transform: rotateY(90deg) translateZ(-16px);
+  background-position: -48px -16px; /* CORRIGIDO para Legacy (1º bloco da direita) */
+}
+.mc-skin-viewer-11x .body .back {
+  width: 32px;
+  height: 48px;
+  -webkit-transform: rotateY(180deg) translateZ(-8px);
+          transform: rotateY(180deg) translateZ(-8px);
+  background-position: -80px -16px; /* CORRIGIDO para Legacy (2º bloco da direita) */
+}
+
+/* Arms (Legacy 64x32 arms and legs use same texture region) */
+.mc-skin-viewer-11x.legacy .left-arm {
+  width: 16px;
+  height: 48px;
+  -webkit-transform: translate3d(-28px, 32px, -8px);
+          transform: translate3d(-28px, 32px, -8px);
+}
+.mc-skin-viewer-11x.legacy .left-arm .top {
+  width: 16px;
+  height: 16px;
+  -webkit-transform: rotateX(90deg) translateZ(-8px);
+          transform: rotateX(90deg) translateZ(-8px);
+  background-position: -176px -16px; /* Coordenadas de braço/perna */
+}
+.mc-skin-viewer-11x.legacy .left-arm .bottom {
+  width: 16px;
+  height: 16px;
+  -webkit-transform: rotateX(-90deg) translateZ(-8px);
+          transform: rotateX(-90deg) translateZ(-8px);
+  background-position: -192px -16px; /* Coordenadas de braço/perna */
+}
+.mc-skin-viewer-11x.legacy .left-arm .left {
+  width: 16px;
+  height: 48px;
+  -webkit-transform: rotateY(-90deg) translateZ(-8px);
+          transform: rotateY(-90deg) translateZ(-8px);
+  background-position: -160px -16px; /* Coordenadas de braço/perna */
+}
+.mc-skin-viewer-11x.legacy .left-arm .front {
+  width: 16px;
+  height: 48px;
+  -webkit-transform: translateZ(-8px);
+          transform: translateZ(-8px);
+  background-position: -40px -16px; /* CORRIGIDO: Braço esquerdo do mapa de skin (primeira linha do braço) */
+}
+.mc-skin-viewer-11x.legacy .left-arm .right {
+  width: 16px;
+  height: 48px;
+  -webkit-transform: rotateY(90deg) translateZ(-8px);
+          transform: rotateY(90deg) translateZ(-8px);
+  background-position: -40px -16px; /* Usando a mesma coordenada, pode precisar de ajuste fino */
+}
+.mc-skin-viewer-11x.legacy .left-arm .back {
+  width: 16px;
+  height: 48px;
+  -webkit-transform: rotateY(180deg) translateZ(-8px);
+          transform: rotateY(180deg) translateZ(-8px);
+  background-position: -56px -16px; /* Coordenadas de braço/perna */
+}
+
+.mc-skin-viewer-11x.legacy .right-arm {
+  width: 16px;
+  height: 48px;
+  -webkit-transform: translate3d(12px, 32px, -8px);
+          transform: translate3d(12px, 32px, -8px);
+}
+.mc-skin-viewer-11x.legacy .right-arm .top {
+  width: 16px;
+  height: 16px;
+  -webkit-transform: rotateX(90deg) translateZ(-8px);
+          transform: rotateX(90deg) translateZ(-8px);
+  background-position: -176px -16px;
+}
+.mc-skin-viewer-11x.legacy .right-arm .bottom {
+  width: 16px;
+  height: 16px;
+  -webkit-transform: rotateX(-90deg) translateZ(-8px);
+          transform: rotateX(-90deg) translateZ(-8px);
+  background-position: -192px -16px;
+}
+.mc-skin-viewer-11x.legacy .right-arm .left {
+  width: 16px;
+  height: 48px;
+  -webkit-transform: rotateY(-90deg) translateZ(-8px);
+          transform: rotateY(-90deg) translateZ(-8px);
+  background-position: -160px -16px;
+}
+.mc-skin-viewer-11x.legacy .right-arm .front {
+  width: 16px;
+  height: 48px;
+  -webkit-transform: translateZ(-8px);
+          transform: translateZ(-8px);
+  background-position: -40px -16px; /* CORRIGIDO: Usa a mesma região do esquerdo no 64x32 */
+}
+.mc-skin-viewer-11x.legacy .right-arm .right {
+  width: 16px;
+  height: 48px;
+  -webkit-transform: rotateY(90deg) translateZ(-8px);
+          transform: rotateY(90deg) translateZ(-8px);
+  background-position: -40px -16px; /* Usando a mesma coordenada, pode precisar de ajuste fino */
+}
+.mc-skin-viewer-11x.legacy .right-arm .back {
+  width: 16px;
+  height: 48px;
+  -webkit-transform: rotateY(180deg) translateZ(-8px);
+          transform: rotateY(180deg) translateZ(-8px);
+  background-position: -56px -16px;
+}
+
+/* Arms Accessories - Hidden for Legacy (64x32 skins don't have separate arm accessory layers) */
+.mc-skin-viewer-11x.legacy .left-arm .accessory,
+.mc-skin-viewer-11x.legacy .right-arm .accessory {
+    display: none;
+}
+
+/* Legs (Legacy 64x32 arms and legs use same texture region) */
+.mc-skin-viewer-11x .left-leg {
+  width: 16px;
+  height: 48px;
+  -webkit-transform: translate3d(-16px, 80px, -8px);
+          transform: translate3d(-16px, 80px, -8px);
+}
+.mc-skin-viewer-11x .left-leg .top {
+  width: 16px;
+  height: 16px;
+  -webkit-transform: rotateX(90deg) translateZ(-8px);
+          transform: rotateX(90deg) translateZ(-8px);
+  background-position: -0px -16px; /* Coordenadas de braço/perna */
+}
+.mc-skin-viewer-11x .left-leg .bottom {
+  width: 16px;
+  height: 16px;
+  -webkit-transform: rotateX(-90deg) translateZ(-8px);
+          transform: rotateX(-90deg) translateZ(-8px);
+  background-position: -16px -16px; /* Coordenadas de braço/perna */
+}
+.mc-skin-viewer-11x .left-leg .left {
+  width: 16px;
+  height: 48px;
+  -webkit-transform: rotateY(-90deg) translateZ(-8px);
+          transform: rotateY(-90deg) translateZ(-8px);
+  background-position: -32px -16px; /* Coordenadas de braço/perna */
+}
+.mc-skin-viewer-11x .left-leg .front {
+  width: 16px;
+  height: 48px;
+  -webkit-transform: translateZ(-8px);
+          transform: translateZ(-8px);
+  background-position: 0px -16px; /* CORRIGIDO: Perna esquerda do mapa de skin (primeira linha da perna) */
+}
+.mc-skin-viewer-11x .left-leg .right {
+  width: 16px;
+  height: 48px;
+  -webkit-transform: rotateY(90deg) translateZ(-8px);
+          transform: rotateY(90deg) translateZ(-8px);
+  background-position: 0px -16px; /* Usando a mesma coordenada, pode precisar de ajuste fino */
+}
+.mc-skin-viewer-11x .left-leg .back {
+  width: 16px;
+  height: 48px;
+  -webkit-transform: rotateY(180deg) translateZ(-8px);
+          transform: rotateY(180deg) translateZ(-8px);
+  background-position: -16px -16px; /* Coordenadas de braço/perna */
+}
+
+.mc-skin-viewer-11x .right-leg {
+  width: 16px;
+  height: 48px;
+  -webkit-transform: translate3d(0px, 80px, -8px);
+          transform: translate3d(0px, 80px, -8px);
+}
+.mc-skin-viewer-11x .right-leg .top {
+  width: 16px;
+  height: 16px;
+  -webkit-transform: rotateX(90deg) translateZ(-8px);
+          transform: rotateX(90deg) translateZ(-8px);
+  background-position: -0px -16px;
+}
+.mc-skin-viewer-11x .right-leg .bottom {
+  width: 16px;
+  height: 16px;
+  -webkit-transform: rotateX(-90deg) translateZ(-8px);
+          transform: rotateX(-90deg) translateZ(-8px);
+  background-position: -16px -16px;
+}
+.mc-skin-viewer-11x .right-leg .left {
+  width: 16px;
+  height: 48px;
+  -webkit-transform: rotateY(-90deg) translateZ(-8px);
+          transform: rotateY(-90deg) translateZ(-8px);
+  background-position: -32px -16px;
+}
+.mc-skin-viewer-11x .right-leg .front {
+  width: 16px;
+  height: 48px;
+  -webkit-transform: translateZ(-8px);
+          transform: translateZ(-8px);
+  background-position: 0px -16px; /* CORRIGIDO: Usa a mesma região do esquerdo no 64x32 */
+}
+.mc-skin-viewer-11x .right-leg .right {
+  width: 16px;
+  height: 48px;
+  -webkit-transform: rotateY(90deg) translateZ(-8px);
+          transform: rotateY(90deg) translateZ(-8px);
+  background-position: 0px -16px; /* Usando a mesma coordenada, pode precisar de ajuste fino */
+}
+.mc-skin-viewer-11x .right-leg .back {
+  width: 16px;
+  height: 48px;
+  -webkit-transform: rotateY(180deg) translateZ(-8px);
+          transform: rotateY(180deg) translateZ(-8px);
+  background-position: -16px -16px;
+}
+
+/* Leg Accessories - Hidden for Legacy (64x32 skins don't have separate leg accessory layers) */
+.mc-skin-viewer-11x.legacy .left-leg .accessory,
+.mc-skin-viewer-11x.legacy .right-leg .accessory {
+    display: none;
+}
+
+/* Body Accessory - Hidden for Legacy (64x32 skins don't have a body accessory layer) */
+.mc-skin-viewer-11x.legacy .body .accessory {
+    display: none;
+}
+
+
+/* Slim model support (Alex) - Mantenho, mas para skins 64x32 Legacy, é menos comum */
+.slim .mc-skin-viewer-11x .left-arm {
+  width: 14px; /* Mais fino */
+  -webkit-transform: translate3d(-27px, 32px, -8px); /* Ajusta a posição */
+          transform: translate3d(-27px, 32px, -8px);
+}
+.slim .mc-skin-viewer-11x .left-arm .top {
+  width: 14px;
+  height: 16px;
+  background-position: -176px -48px; /* Novas coordenadas para slim */
+}
+.slim .mc-skin-viewer-11x .left-arm .bottom {
+  width: 14px;
+  height: 16px;
+  background-position: -190px -48px; /* Novas coordenadas para slim */
+}
+.slim .mc-skin-viewer-11x .left-arm .left {
+  width: 16px;
+  height: 48px;
+  background-position: -160px -48px; /* Novas coordenadas para slim */
+}
+.slim .mc-skin-viewer-11x .left-arm .front {
+  width: 14px;
+  height: 48px;
+  background-position: -176px -48px; /* Novas coordenadas para slim */
+}
+.slim .mc-skin-viewer-11x .left-arm .right {
+  width: 16px;
+  height: 48px;
+  background-position: -190px -48px; /* Novas coordenadas para slim */
+}
+.slim .mc-skin-viewer-11x .left-arm .back {
+  width: 14px;
+  height: 48px;
+  background-position: -206px -48px; /* Novas coordenadas para slim */
+}
+
+.slim .mc-skin-viewer-11x .right-arm {
+  width: 14px; /* Mais fino */
+  -webkit-transform: translate3d(13px, 32px, -8px); /* Ajusta a posição */
+          transform: translate3d(13px, 32px, -8px);
+}
+.slim .mc-skin-viewer-11x .right-arm .top {
+  width: 14px;
+  height: 16px;
+  background-position: -176px -48px; /* Novas coordenadas para slim */
+}
+.slim .mc-skin-viewer-11x .right-arm .bottom {
+  width: 14px;
+  height: 16px;
+  background-position: -190px -48px; /* Novas coordenadas para slim */
+}
+.slim .mc-skin-viewer-11x .right-arm .left {
+  width: 16px;
+  height: 48px;
+  background-position: -160px -48px; /* Novas coordenadas para slim */
+}
+.slim .mc-skin-viewer-11x .right-arm .front {
+  width: 14px;
+  height: 48px;
+  background-position: -176px -48px; /* Novas coordenadas para slim */
+}
+.slim .mc-skin-viewer-11x .right-arm .right {
+  width: 16px;
+  height: 48px;
+  background-position: -190px -48px; /* Novas coordenadas para slim */
+}
+.slim .mc-skin-viewer-11x .right-arm .back {
+  width: 14px;
+  height: 48px;
+  background-position: -206px -48px; /* Novas coordenadas para slim */
+}
+
+/* Accessories for Slim Arms (Still hidden for Legacy, but good to keep if you ever mix types) */
+.slim .mc-skin-viewer-11x .left-arm .accessory,
+.slim .mc-skin-viewer-11x .right-arm .accessory {
+    display: none; /* Mantém oculto para skins 64x32, mesmo se forem slim */
+}
+
+/* Rotação automática (opcional, pode ser controlada por JS) */
+.spin {
+    animation: spin 10s infinite linear;
+}
+
+/* Classe para pausar a animação */
+.paused .player {
+    animation-play-state: paused;
+}
+
+@keyframes spin {
+    from { transform: rotateX(-20deg) rotateY(0deg); }
+    to { transform: rotateX(-20deg) rotateY(360deg); }
+}

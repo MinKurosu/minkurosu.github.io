@@ -6,298 +6,328 @@
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4K5KDKEJ2E"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-4K5KDKEJ2E');
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-4K5KDKEJ2E');
     </script>
     <script> window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches </script>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.4, minimum-scale=0.1, maximum-scale=2.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8, minimum-scale=0.1, maximum-scale=2.0, user-scalable=yes">
     <meta property="og:image" content="https://i.ibb.co/RC2v9zg/sitethumbnail.png"/>
     <meta property="og:image" content="imgs/site_imgs/sitethumbnail.png"/>
     <meta name="color-scheme" content="light only">
 
     <link rel="stylesheet" href="styles.css">
-    <title>@minkurosu - Blog</title>
-    <script src="script.js"></script> <link rel="icon" type="image/ico" href="imgs/site_imgs/favicon.ico"/>
+    <title>@minkurosu</title>
+    <script src="script.js"></script>
+    <link rel="icon" type="image/ico" href="imgs/site_imgs/favicon.ico"/>
     <script src="https://unpkg.com/webamp@1.4.0/built/webamp.bundle.min.js"></script>
-
-    <style>
-/* Definições de fontes - Mantenha estas no topo do seu styles.css */
-@font-face {
-    font-family: "MoreSugar";
-    src: url(fonts/MoreSugar-Regular.ttf) format('truetype');
-}
-
-@font-face {
-    font-family: "OldEnglishGothicPixelRegular";
-    src: url(fonts/OldEnglishGothicPixelRegular.ttf) format('truetype');
-}
-
-@font-face {
-    font-family: "Born2bSportyFS";
-    src: url(fonts/Born2bSportyFS.otf) format('truetype');
-}
-
-/* Escala para viewports entre 600px e 1200px (ajustada para 70rem) */
-@media (min-width: 100px) and (max-width: 1200px) {
-    body {
-        transform: scale(0.6);
-        transform-origin: top;
-    }
-    .caixamaisclara {
-        max-width: 70rem; /* Posts mais largos em telas menores/médias */
-    }
-}
-
-
-
-
-/* Header (ajustado para 70rem para combinar com o container) */
-header {
-    background-color: #1B1917;
-    padding: 5px;
-    background-attachment: fixed;
-    margin-bottom: 2%;
-    border-radius: 0 0 1.25rem 1.25rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5);
-    width: 100%;
-    max-width: 70rem; /* Posts mais largos */
-    box-sizing: border-box;
-    max-height: 5rem;
-}
-
-/* caixamaisclara geral (onde está o posts-container, ajustada para 70rem) */
-.caixamaisclara {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #24211e;
-    padding: 0.3125rem;
-    border-radius: 0.9375rem;
-    box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
-    margin: 2px;
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-}
-
-/* Container principal (#container, ajustado para 70rem) */
-#container {
-    background-color: #1B1917;
-    padding: 1.25rem;
-    border-radius: 1.25rem;
-    box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
-    text-align: center;
-    margin: 0 auto;
-    width: 100%;
-    max-width: 70rem; /* Posts mais largos */
-    box-sizing: border-box;
-    color: #534F4A;
-}
-
-/* ========================================= */
-/* ESTILOS ESPECÍFICOS PARA OS POSTS DO BLOG */
-/* ========================================= */
-
-/* Container que envolve todos os posts */
-#posts-container {
-    padding: 10px;
-}
-
-/* Estilo para a mensagem de "Carregando Posts..." ou "Nenhum post encontrado" */
-#posts-container h2 {
-    text-align: left;
-    font-family: "Born2bSportyFS", serif; /* Mantenho MoreSugar para esse H2 específico de "Carregando Posts..." */
-    color: #534F4A;
-    margin-bottom: 20px;
-}
-
-/* Estilos para os posts individuais */
-.blog-post {
-    background-color: transparent;
-    border: none;
-    padding: 5px 0;
-    margin: 0;
-    border-radius: 0;
-    box-shadow: none;
-    word-wrap: break-word;
-    text-align: left; /* Garante que todo o conteúdo do post seja alinhado à esquerda por padrão */
-}
-
-/* Estilos para o cabeçalho de informação do post (@minkurosu • Data) */
-.post-info-header {
-    display: flex;
-    align-items: center;
-    font-family: "Born2bSportyFS", sans-serif;
-    color: #534F4A;
-    font-size: 0.9em;
-    margin-bottom: 8px;
-    gap: 5px;
-}
-
-.post-author-name {
-    font-weight: bold;
-}
-
-.post-separator {
-    font-size: 1.2em;
-    line-height: 1;
-}
-
-.post-date {
-    /* Estilo para a data, pode ser ajustado */
-}
-
-/* Estilos para o título de cada post (h2 dentro de .blog-post) */
-.blog-post h2 {
-    font-family: "Born2bSportyFS", sans-serif; /* ALTERADO: MESMA FONTE DO CORPO */
-    color: #534F4A;
-    margin-top: 0;
-    margin-bottom: 10px;
-    font-size: 1.2em;
-    line-height: 1.2;
-    text-align: left;
-}
-
-/* Estilos para as imagens dentro dos postsaaa */
-.blog-post img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 10px auto;
-    border-radius: 4px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-}
-
-/* Estilos para o parágrafo do conteúdo do post */
-.blog-post p {
-    font-family: "Born2bSportyFS", sans-serif;
-    line-height: 1.5;
-    color: #534F4A;
-    text-align: justify; /* Texto justificado */
-    margin-top: 0;
-    margin-bottom: 5px;
-}
-
-/* Estilos para a linha divisória (hr) */
-.post-divider {
-    border: none;
-    border-top: 1px solid #534f4a;
-    margin: 20px 0;
-    width: 100%;
-}
-
-
-
-.nav-side {
-  display: flex;
-  flex-direction: row;
-  align-items: center; /* centraliza horizontalmente */
-  gap: 10px; /* espaço entre os itens */
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-
-
-
-
-
-
-    </style>
 </head>
 <body>
 
-    <div class="layout-with-sidebars">
-            <aside class="sidebar">
-      <div class="box">
-         <img id="sidepic" src="imgs/site_imgs/euur.jpg" alt="eu irl">
-    
-          
-             
- 
-      </div>
-          
- <div class="box">
-  <h2 id="nomeSide">min</h2>
-  <h3> 22yo • they/she/he • brazil  </h3>
-  <h3>psychology student & freelance artist</h3>
-  <h3>(digital art & live2d)</h3>
-  
-<h1 id=nl><script src="https://webneko.net/n20171213.js"></script><a 
-href="https://webneko.net">Neko</a></h1>
-</div>
-  <div class="box">
-    <div class="nav-side"
-  <aside class="sidebar">
- 
-    <div class="side-item"><a href="MINKUROSU.html">home</a></div>
-    <div class="side-item"><a href="feed.html">feed</a></div>
-    <div class="side-item"><a href="links.html">links</a></div>
-    <div class="side-item"><a href="links.html">links</a></div>
-      <div class="side-item"><a href="links.html">links</a></div>
-        <div class="side-item"><a href="links.html">links</a></div>
-          <div class="side-item"><a href="links.html">links</a></div>
-            <div class="side-item"><a href="links.html">links</a></div>
-          
-  
-    </div>
-  </div>
-  <div class="sideScrollable">
-      <div class="box">
+<div class="layout-with-sidebars">
 
-       </div>
+    <aside class="sidebar">
+        <div class="box">
+            <img id="sidepic" src="imgs/site_imgs/euirl.jpg" alt="eu irl" height="1700px">
+        </div>
+        <div class="box">
+            <h2 id="nomeSide">min</h2>
+            <h3> 22yo • they/she/he • brazil </h3>
+            <h3>psychology student & freelance artist</h3>
+            <h3>(digital art & live2d)</h3>
+            <h1 id="nl"><script src="https://webneko.net/n20171213.js"></script><a href="https://webneko.net">Neko</a></h1>
+
+            
+       
+              <!-- Começa aqui -->
+<script language="javascript" type="text/javascript" src="//counter1.fc2.com/counter.php?id=40451086&main=1"></script><noscript><img src="//counter1.fc2.com/counter_img.php?id=40451086&main=1" /></noscript>
+<!-- Termina aqui -->
+
+
+        </div>
+        <div class="box">
+            <div class="nav-side">
+                <div class="side-item"><a href="music.html">music</a></div>
+                <div class="side-item"><a href="quizzes.html">quizzes</a></div>
+                <div class="side-item"><a href="minecraft.html">minecraft</a></div>
+                <div class="side-item"><a href="links.html">links</a></div>
+                <div class="side-item"><a href="links.html">links</a></div>
+                <div class="side-item"><a href="links.html">links</a></div>
+                <div class="side-item"><a href="links.html">links</a></div>
+                <div class="side-item"><a href="links.html">links</a></div>
+            </div>
+        </div>
+        <div class="box">
+            <h3>what am i up to?</h3>
+            <table style="border-collapse: collapse; width: 100%; background-color: transparent;">
+                <tr>
+                    <th style="border: 1px solid black; padding: 8px;">a</th>
+                    <th style="border: 1px solid black; padding: 8px;">a</th>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid black; padding: 8px;">aa</td>
+                    <td style="border: 1px solid black; padding: 8px;">a</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid black; padding: 8px;">a</td>
+                    <td style="border: 1px solid black; padding: 8px;">a</td>
+                </tr>
+            </table>
+        </div>
+        <div class="sideScrollable">
+            <div class="box">
+  
+        </div>
     </aside>
 
-        <main id="containerprincipal">
-            <header id="header" class="fixed-top">
-                <div id="divpatinha">
-                    <img src="imgs/site_imgs/patinha.png" id="logopatinha" alt="logo da barra de navegação">
+    <main id="containerprincipal">
+        <header id="header" class="fixed-top">
+            <div id="divpatinha">
+                <img src="imgs/site_imgs/patinha.png" id="logopatinha" alt="logo da barra de navegação">
+            </div>
+            <nav class="navbar">
+                <div class="divitems">
+                    <div class="nav-item">
+                        <a href="#" onclick="history.back(); return false;" class="nav-link">back</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="index.html" target="_self" class="nav-link">home</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="feed.html" target="_self" class="nav-link">feed</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="blog.html" target="_self" class="nav-link">blog</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="links.html" target="_self" class="nav-link">links</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="portfolio-menu.html" target="_self" class="nav-link">portfolio</a>
+                    </div>
                 </div>
-                <nav class="navbar">
-                 <div class="divitems">
+            </nav>
+        </header>
+        <div id="container">
+            <div class="caixamaisclara">
+                <img id="logobig" src="imgs/site_imgs/logo.png" alt="Logo" data-position="center">
+            </div>
+            <hr>
+            <div class="caixamaisclara">
+                  <h1>Visualizador de Skin 3D</h1>
 
-         <div class="nav-item">
-    <a href="#" onclick="history.back(); return false;" class="nav-link">back</a>
-</div>
+   <canvas id="skin_container"></canvas>
+<script>
+	let skinViewer = new skinview3d.SkinViewer({
+		canvas: document.getElementById("skin_container"),
+		width: 300,
+		height: 400,
+		skin: "img/skin.png"
+	});
 
-        <div class="nav-item">
-          <a href="index.html" target="_self" class="nav-link">home</a>
+	// Change viewer size
+	skinViewer.width = 600;
+	skinViewer.height = 800;
+
+	// Load another skin
+	skinViewer.loadSkin("img/skin2.png");
+
+	// Load a cape
+	skinViewer.loadCape("img/cape.png");
+
+	// Load an elytra (from a cape texture)
+	skinViewer.loadCape("img/cape.png", { backEquipment: "elytra" });
+
+	// Unload(hide) the cape / elytra
+	skinViewer.loadCape(null);
+
+	// Set the background color
+	skinViewer.background = 0x5a76f3;
+
+	// Set the background to a normal image
+	skinViewer.loadBackground("img/background.png");
+
+	// Set the background to a panoramic image
+	skinViewer.loadPanorama("img/panorama1.png");
+
+	// Change camera FOV
+	skinViewer.fov = 70;
+
+	// Zoom out
+	skinViewer.zoom = 0.5;
+
+	// Rotate the player
+	skinViewer.autoRotate = true;
+
+	// Apply an animation
+	skinViewer.animation = new skinview3d.WalkingAnimation();
+
+	// Set the speed of the animation
+	skinViewer.animation.speed = 3;
+
+	// Pause the animation
+	skinViewer.animation.paused = true;
+
+	// Remove the animation
+	skinViewer.animation = null;
+</script>
+            </div>
+    </main>
+
+    <aside class="sidebar sidebar-right">
+  
+      
+
+           <div class="sideScrollable">
+            <div class="box">     
+                  <h3>blinkies about me</h3>
+                <h4>(scrollable)</h4>
+                <div class="stamps">
+   <div class="carousel-container">
+        <div class="track track-1">
+            <div class="track-inner">
+                <img src="imgs/webgraphics/stamps/3dsowner.jpg" alt="3dsowner">
+                <img src="imgs/webgraphics/stamps/a101.jpg" alt="a101">
+                <img src="imgs/webgraphics/stamps/iloveallkitties.webp" alt="iloveallkitties">
+                 <img src="imgs/webgraphics/stamps/ilovemyds.gif" alt="ilovemyds">
+                <img src="imgs/webgraphics/stamps/addictmc.png" alt="addictmc">
+                <img src="imgs/webgraphics/stamps/awesome.gif" alt="awesome">
+                <img src="imgs/webgraphics/stamps/behuman.jpg" alt="behuman">
+                <img src="imgs/webgraphics/stamps/believe.png" alt="believe">
+                <img src="imgs/webgraphics/stamps/bestviewedwhilehigh.gif" alt="bestviewedwhilehigh">
+                <img src="imgs/webgraphics/stamps/blackcat.gif" alt="blackcat">
+                <img src="imgs/webgraphics/stamps/boop.gif" alt="boop">
+                <img src="imgs/webgraphics/stamps/catgirlobsession.gif" alt="catgirlobsession">
+                <img src="imgs/webgraphics/stamps/catlover.webp" alt="catlover">
+                <img src="imgs/webgraphics/stamps/catsinside.png" alt="catsinside">
+                <img src="imgs/webgraphics/stamps/ceilingstars.png" alt="ceilingstars">
+                <img src="imgs/webgraphics/stamps/chococat.png" alt="chococat">
+                <img src="imgs/webgraphics/stamps/choker.gif" alt="choker">
+                <img src="imgs/webgraphics/stamps/dontsteponthem.jpg" alSt="dontsteponthem">
+                <img src="imgs/webgraphics/stamps/e79.gif" alt="e79">
+                <img src="imgs/webgraphics/stamps/f64.png" alt="f64">
+                <img src="imgs/webgraphics/stamps/FHX2sll.gif" alt="FHX2sll">
+                <img src="imgs/webgraphics/stamps/flutterbat.gif" alt="flutterbat">
+                <img src="imgs/webgraphics/stamps/give your broo.png" alt="giveyourbroo">
+                <img src="imgs/webgraphics/stamps/graphicdesign.gif" alt="graphicdesign">
+                <img src="imgs/webgraphics/stamps/icollectplushies.png" alt="icollectplushies">
+                <img src="imgs/webgraphics/stamps/ilikestayingupallnight.gif" alt="ilikeastayingupallnight">
+                
+               
+                <img src="imgs/webgraphics/stamps/ilovestamps.gif" alt="ilovestamps">    
+                <img src="imgs/webgraphics/stamps/iwasemobeforeitwallcool.jpg" alt="iwasemobeforeitwascool">
+                <img src="imgs/webgraphics/stamps/ilovestars.gif" alt="ilovestars">
+                <img src="imgs/webgraphics/stamps/imhigh.gif" alt="IMG_9366">
+                <img src="imgs/webgraphics/stamps/louiswain.png" alt="imhigh">
+                <img src="imgs/webgraphics/stamps/imwaycooleronline.gif" alt="imwaycooleronline">
+                <img src="imgs/webgraphics/stamps/is2weed.gif" alt="is2weed">
+                <img src="imgs/webgraphics/stamps/isuportdrawinginmathclass.png" alt="isudportdrawinginmathclass">
+           
+                <img src="imgs/webgraphics/stamps/iwishilivedinminecraft.gif" alt="iwishlivedinminecraft">
+                <img src="imgs/webgraphics/stamps/jinx.webp" alt="jinx">
+                <img src="imgs/webgraphics/stamps/kindness.gif" alt="kindness">
+                <img src="imgs/webgraphics/stamps/louiswain.png" alt="louiswain">
+                <img src="imgs/webgraphics/stamps/louiswainstamp.png" alt="louiswainstamp">
+                <img src="imgs/webgraphics/stamps/lsd.png" alt="lsd">
+            </div>
         </div>
-        <div class="nav-item">
-          <a href="feed.html" target="_self" class="nav-link">feed</a>
+
+        <div class="track track-2">
+            <div class="track-inner">
+                <img src="imgs/webgraphics/stamps/maxwell.gif" alt="maxwell" class="desaturate">
+                <img src="imgs/webgraphics/stamps/mcr4x4.gif" alt="mcr4x4" class="desaturate">
+                <img src="imgs/webgraphics/stamps/mcrred.png" alt="mcrred" class="desaturate">
+                <img src="imgs/webgraphics/stamps/mentallillness.png" alt="mentalillness">
+                <img src="imgs/webgraphics/stamps/minecraft.png" alt="minecraft">
+                <img src="imgs/webgraphics/stamps/mychem.gif" alt="mychem">
+                <img src="imgs/webgraphics/stamps/nerdswonka.png" alt="nerdswonka">
+                <img src="imgs/webgraphics/stamps/nitw.gif" alt="nitw">
+                <img src="imgs/webgraphics/stamps/nop.gif" alt="nop">
+                <img src="imgs/webgraphics/stamps/nyancat.gif" alt="nyancat">
+                <img src="imgs/webgraphics/stamps/palestine.gif" alt="palestine">
+                <img src="imgs/webgraphics/stamps/piercings.png" alt="piercings">
+                <img src="imgs/webgraphics/stamps/powder.webp" alt="powder">
+                <img src="imgs/webgraphics/stamps/ppudor.png" alt="ppudor">
+                <img src="imgs/webgraphics/stamps/psychedelic.gif" alt="psychedelic">
+                <img src="imgs/webgraphics/stamps/puter.gif" alt="puter">
+                <img src="imgs/webgraphics/stamps/rain.gif" alt="rain">
+                <img src="imgs/webgraphics/stamps/stars.gif" alt="stars">
+                <img src="imgs/webgraphics/stamps/steam.png" alt="steam">
+                <img src="imgs/webgraphics/stamps/stevenuniverse.gif" alt="stevenuniverse">
+                <img src="imgs/webgraphics/stamps/supportgrass.png" alt="supportgrass">
+                <img src="imgs/webgraphics/stamps/talksoftly.png" alt="talksoftly">
+                <img src="imgs/webgraphics/stamps/tubbs.png" alt="tubbs">
+                <img src="imgs/webgraphics/stamps/tumblr_inline_p25mcqZLDR1ux8fd4_500.gif" alt="haveyoutanekyourmedstoday?">
+                
+                <img src="imgs/webgraphics/stamps/twilightapple.png" alt="twilightapple">
+                <img src="imgs/webgraphics/stamps/uwu.png" alt="uwu">
+                <img src="imgs/webgraphics/stamps/weirdnoises.png" alt="weirdnoises">
+                <img src="imgs/webgraphics/stamps/weirdpeople.png" alt="weirdpeople">
+                <img src="imgs/webgraphics/stamps/xfiles.gif" alt="xfiles">
+                <img src="imgs/webgraphics/stamps/xfiles.jpg" alt="xfiles">
+                <img src="imgs/webgraphics/stamps/yaoi.gif" alt="yaoi">
+                <img src="imgs/webgraphics/stamps/yaoi.png" alt="yaoi">
+                <img src="imgs/webgraphics/stamps/youcanfeelsafearoundme.gif" alt="youcanfeelsafearoundme">
+            </div>
+        </div>
+
+         
+               <img src="imgs/webgraphics/blinkies/catlover2.gif" id="blinkies" class="desaturate">
+                <img src="imgs/webgraphics/blinkies/mcr.gif" id="blinkies" class="desaturate">
+                <img src="imgs/webgraphics/blinkies/blinkie-psychology.gif" id="blinkies" class="desaturate">
+                <img src="imgs/webgraphics/blinkies/vampires.gif" id="blinkies" class="desaturate">
+                <img src="imgs/webgraphics/blinkies/nightperson.gif" id="blinkies" class="desaturate">
+                <img src="imgs/webgraphics/blinkies/artistblinkie.gif" id="blinkies" class="desaturate">
+                <img src="imgs/webgraphics/blinkies/peace.gif" id="blinkies" class="desaturate">
+                <img src="imgs/webgraphics/blinkies/gothicandloneliness.webp" id="blinkies" class="desaturate">
+                <img src="imgs/webgraphics/blinkies/fluttershymarijuana.webp" id="blinkies" class="desaturate">
+                <img src="imgs/webgraphics/blinkies/freelanceartist.webp" id="blinkies" class="desaturate">
+                <img src="imgs/webgraphics/blinkies/catnip.webp" id="blinkies" class="desaturate">
+                            <img src="imgs/webgraphics/blinkies/neurodivergent.webp" id="blinkies" class="desaturate">
+                 <img src="imgs/webgraphics/blinkies/brasil.gif" id="blinkies" class="desaturate">
+                 <img src="imgs/webgraphics/blinkies/copycat.gif" id="blinkies" class="desaturate">
+                               <img src="imgs/webgraphics/blinkies/piercingobsessed.webp"id="blinkies" class="desaturate">
+                <img src="imgs/webgraphics/blinkies/grumpy.gif" id="blinkies" class="desaturate">
+                <img src="imgs/webgraphics/blinkies/nonbinary.webp" id="blinkies" class="desaturate">
+                <img src="imgs/webgraphics/blinkies/imissmybf.gif" id="blinkies" class="desaturate">
+                <img src="imgs/webgraphics/blinkies/brasil.gif"id="blinkies" class="desaturate">
+                <img src="imgs/webgraphics/blinkies/atmyfuckinglimit.webp" id="blinkies" class="desaturate">
+                <img src="imgs/webgraphics/blinkies/freepalestine.gif" id="blinkies" class="desaturate">
+                <img src="imgs/webgraphics/blinkies/icant.gif" id="blinkies" class="desaturate">
+                <img src="imgs/webgraphics/blinkies/iloverevenge.gif" id="blinkies" class="desaturate">
+                <img src="imgs/webgraphics/blinkies/demolitionlovers.gif" id="blinkies" class="desaturate">
+                <img src="imgs/webgraphics/blinkies/hopelessromantic.gif" id="blinkies" class="desaturate">
+                               <img src="imgs/webgraphics/blinkies/cring.webp" id="blinkies" class="desaturate">
+                <img src="imgs/webgraphics/blinkies/iwannagohome.webp" id="blinkies" class="desaturate">
+                <img src="imgs/webgraphics/blinkies/dont-bother.gif" id="blinkies" class="desaturate">
+                <img src="imgs/webgraphics/blinkies/sebastian.gif" id="blinkies" class="desaturate">
+                <img src="imgs/webgraphics/blinkies/stevenuniverse.webp" id="blinkies" class="desaturate">
+                <img src="imgs/webgraphics/blinkies/scully.gif" id="blinkies" class="desaturate">
+                <img src="imgs/webgraphics/blinkies/opinionated.webp" id="blinkies" class="desaturate">
+                <img src="imgs/webgraphics/blinkies/copycat.gif" id="blinkies" class="desaturate">
+                                <img src="imgs/webgraphics/blinkies/.gif" id="blinkies" class="desaturate">
+                <img src="imgs/webgraphics/blinkies/sillycat.webp" id="blinkies" class="desaturate">
+                <img src="imgs/webgraphics/blinkies/hellraiser.webp" id="blinkies" class="desaturate">
+                <img src="imgs/webgraphics/blinkies/washyourhands.gif" id="blinkies" class="desaturate">
+                <img src="imgs/webgraphics/blinkies/mmmyummisubstances.webp" id="blinkies" class="desaturate">
+                <img src="imgs/webgraphics/blinkies/pms.gif" id="blinkies" class="desaturate">
+            </div>
+        </div>
+        <br>
+           <div class="box">
+        
+    
+</div>
+  </div>
+</div>
+</div>
         </div>
         
-        <div class="nav-item">
-          <a href="blog.html" target="_self" class="nav-link">blog</a>
         </div>
-        <div class="nav-item">
-          <a href="links.html" target="_self" class="nav-link">links</a>
-        </div>
-        <div class="nav-item">
-          <a href="portfolio-menu.html" target="_self" class="nav-link">portfolio</a>
-        </div>
-                    </div>
-                </nav>
-            </header>
-            <div id="container">
-                <div class="caixamaisclara">
-                    <p>my minecraft world</p>
-<iframe src="/mapa-minecraft/index.html" width="100%" height="600px" frameborder="0" allowfullscreen></iframe>
-<a href="/mapa-minecraft/index.html" target="_blank">Abrir Mapa Estático</a>
-                </div>
+        
+    </aside>
 
-
-
-                <a href='https://www.minecraftskins.com/uploads/skins/2020/04/15/me-irl-14132012.png?v883'>Me irl<br /><img src='https://www.minecraftskins.com/uploads/skins/2020/04/15/me-irl-14132012.png?v883' alt='Me irl' border='0' /></a>
-            </main>
-
-            </div>
-
-    <script type="module" src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"></script>
-    <script type="module" src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js"></script>
-    <script type="module" src="blog.js"></script>
-</body>
+</div> </body>
 </html>

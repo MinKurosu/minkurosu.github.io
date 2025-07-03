@@ -13,15 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@fancyapps/ui": "^5.0.36"
-  }
-}
-
-{
-  "name": "js",
-  "version": "0.0.0",
-  "private": true,
-  "dependencies": {
-    "@fancyapps/ui": "^5.0.14"
+    "@fancyapps/ui": "^5.0.36",
+    "skinview3d": "^3.4.1"
   }
 }
