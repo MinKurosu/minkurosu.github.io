@@ -39,45 +39,92 @@
 
 
 
+@media (max-width: 768px) { /* Usando 768px como breakpoint para melhor compatibilidade */
 
-
-
-
-
-
-/* Media Query para Dispositivos Móveis (Viewports menores) */
-/* Ativa a rolagem horizontal quando a tela é pequena o suficiente */
-@media (max-width: 768px) { /* Você pode ajustar este breakpoint (ex: 600px, 480px) */
-    html {
-        /* Permite rolagem horizontal apenas em viewports de celular */
-        overflow-x: auto; 
-        -webkit-overflow-scrolling: touch; /* Melhora a rolagem em iOS */
-    }
-
-    /* Remova ou ajuste o transform: scale se ele estiver causando conflito */
-    /* Se o initial-scale já está dando o zoom out, este scale pode não ser necessário ou causar problemas */
+    /* 1. Resetar o BODY para mobile */
     body {
-        transform: none; /* Desativa o scale que você tinha para viewports específicas */
-        transform-origin: top; 
+        transform: none !important; /* Remove qualquer transformação de escala */
+        transform-origin: initial !important; /* Reseta a origem da transformação */
+        position: static !important; /* Remove position: absolute; - volta ao fluxo normal */
+        overflow-x: auto !important; /* Permite rolagem horizontal se o conteúdo vazar (para debug e ajuste) */
+                                     /* Idealmente, após o ajuste, não haverá necessidade de rolagem */
+        width: 100%; /* Garante que o body ocupe 100% da largura do viewport */
+        min-width: unset; /* Remove qualquer largura mínima que possa causar overflow */
     }
-}
 
-/* Sua Media Query existente para viewports entre 100px e 1200px */
-/* Cuidado: O `transform: scale(0.6)` aqui pode conflitar com o `initial-scale` no celular. */
-/* Se a ideia é ter um zoom para uma faixa específica de telas, mantenha. */
-/* Se o objetivo é apenas o celular, essa regra pode ser desnecessária ou precisar de ajuste. */
-@media (min-width: 100px) and (max-width: 1200px) {
-    body {
-        /* Mantenha ou ajuste se for realmente necessário para este intervalo de telas, */
-        /* mas lembre-se que o initial-scale do viewport já cuida do celular */
-        transform: scale(0.6); 
-        transform-origin: top; 
+    /* 2. Ajustar o layout principal (.layout-with-sidebars) para empilhar */
+    /* Isso sobrescreve a regra global 'display: grid' para telas grandes */
+    .layout-with-sidebars {
+        display: flex; /* Muda para flexbox no mobile */
+        flex-direction: column; /* Empilha as sidebars e o conteúdo principal verticalmente */
+        width: 100%; /* Ocupa 100% da largura disponível */
+        max-width: 100%; /* Garante que não ultrapasse a largura da tela */
+        margin: 0 auto; /* Centraliza o container */
+       
+        padding: 0; /* Remova qualquer padding que possa causar overflow */
     }
+
+    /* 3. Gerenciar as Sidebars no Mobile */
+    /* Se você quer que as sidebars sejam visíveis, elas precisam se adaptar. */
+    /* Se você preferir escondê-las, mantenha 'display: none;'. */
+   
+    /* Se você realmente quer escondê-las, descomente a linha abaixo: */
+    /* .sidebar { display: none; } */
+
+
+    /* 4. Ajustar o Container Principal de Conteúdo */
+    #containerprincipal {
+        width: 100%; /* Garante que o conteúdo principal ocupe a largura total */
+        max-width: 100%; /* Previne que ele vaze */
+        margin: 0 auto; /* Centraliza o conteúdo principal */
+        padding: 0 10px; /* Adiciona um pequeno padding nas laterais */
+        box-sizing: border-box; /* Inclui padding na largura total */
+    }
+
+    /* 5. Corrigir e ajustar `.maincollums` para Mobile */
+    /* Esta é a regra mais crítica que causa o overflow horizontal. */
+    .maincollums {
+        display: flex; /* Use flexbox para controle */
+        flex-direction: column; /* Empilha as colunas verticalmente */
+        width: 100%; /* Ocupa 100% da largura disponível */
+        max-width: 100%; /* Garante que não vaze */
+        gap: 0; /* Remover gap que pode somar e causar overflow */
+        padding: 0; /* Remover padding que pode causar overflow */
+        /* Remova ou sobrescreva explicitamente a regra global de grid-template-columns */
+        grid-template-columns: unset !important; /* Desativa a regra de grid para mobile */
+    }
+
+    .column {
+        flex: none; /* Remove flex-grow para que ocupe a largura total definida */
+        width: 100%; /* Ocupa 100% da largura do maincollums */
+        margin: 5px 0; /* Margem vertical, remove horizontal */
+        padding: 5px; /* Adiciona padding interno */
+        box-sizing: border-box; /* Inclui padding na largura */
+        /* Remover regras de column-rule que podem interferir */
+        -webkit-column-rule: none;
+        -moz-column-rule: none;
+        column-rule: none;
+    }
+    
+    .divider {
+        display: none; /* Esconder divisores entre colunas no mobile */
+    }
+
+    /* 6. Corrigir valores inválidos de flex-direction */
+    /* Altere todos os 'flex-direction: flex;' para 'flex-direction: column;' ou 'row' conforme a intenção */
+    /* Exemplo para .caixamaisclara: */
     .caixamaisclara {
-        max-width: 50rem;
+        display: flex;
+        flex-direction: column;   /* CORRIGIDO: de 'flex' para 'column' */
+        align-items: center;      /* Centralizado na largura */
+        justify-content: center; /* Centraliza conteúdo verticalmente se houver espaço */
+        width: 100%; /* Garante que ocupe a largura total disponível */
+        max-width: 100%; /* Previne overflow */
+        box-sizing: border-box; /* Inclui padding na largura */
     }
-}
 
+
+  }
 
 
 
@@ -649,6 +696,7 @@ border-radius: 0.75rem;
 padding: 0.5rem;
 margin-bottom: 0.5rem;
 margin-right:0.5rem;
+margin-left:0.5rem;
 transition: transform 0.3s ease, box-shadow 0.3s ease;
 box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
 max-width: 300px;!important
