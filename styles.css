@@ -596,12 +596,9 @@ max-width: 300px;
     transition: transform 0.2s ease-in-out;
   }
 
-  /* GRIDFEED 
+  /* GRIDFEED  /* 
 
   
-    .conjuntoblocos {
-      border-radius: 0rem;
-    }
 
     .grid-feed {
       display: grid;
@@ -783,11 +780,11 @@ max-width: 300px;!important
 }
 
 
-}
+
 
 .scroll{
 
-max-height: 825px;
+max-height: 775px;
 overflow: auto;
 overflow-y: scroll  
   overflow: auto;
