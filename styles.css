@@ -146,7 +146,7 @@
 
 
   html, body {
-  height: 100%;
+ 
   margin: 0;
   padding: 0;
   background-attachment: fixed;
@@ -156,7 +156,7 @@
 }
 
   body {
-    height: 100%;
+  
     margin: 0;
     padding: 0;
     display: flex;
@@ -169,7 +169,7 @@
   }
 
   html {
-    height: 100%;
+   
     margin: 0;
     padding: 0;
     background-image: url(imgs/site_imgs/wood2.png);
@@ -596,7 +596,64 @@ max-width: 300px;
     transition: transform 0.2s ease-in-out;
   }
 
+  /* GRIDFEED 
+
   
+    .conjuntoblocos {
+      border-radius: 0rem;
+    }
+
+    .grid-feed {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* 3 colunas */
+      gap: 10px; /* Espaço entre as imagens */
+      max-width: 800px;
+  
+      
+    }
+
+    .grid-feed a{
+      display: block;
+      position: relative;
+      max-width: 800px;
+      max-height: 800px;
+      display: block;
+     
+    }
+
+
+    .grid-img {
+      position: relative;
+      
+      
+    }
+
+
+
+    .grid-feed a img{
+  transition: transform 0.1s ease-in-out; /* Suaviza o aumento ao passar o mouse */
+  object-fit: cover;
+}
+
+.grid-feed a:hover img {
+  transform: scale(1.05); /* Aumenta a imagem suavemente */
+  transition: transform 0.1s ease-in-out;
+}
+
+.caixamaisclara img {
+    border-radius: 6px;
+  }
+
+  .fancybox__caption {
+ font-size: 25px;
+ color: #534f4a;
+ border-color:#24211e
+ }
+/* GRID FEED /*
+
+
+
+
 /* Ajustar o tamanho e a exibição dos vídeos */
 .boxfoto video {
   width: 200px;
@@ -691,7 +748,7 @@ max-width: 300px;
 }
 
 .sidebar .box {
-background: #24211e;
+background: #1B1917;
 border-radius: 0.75rem;
 padding: 0.5rem;
 margin-bottom: 0.5rem;
@@ -718,8 +775,6 @@ margin: 0.5rem;
 transition: transform 0.3s ease, box-shadow 0.3s ease;
 box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
 max-width: 300px;!important
-
-
   display: flex;
   flex-direction: column;       /* conteúdo em coluna, se for texto e imagens */
   justify-content: center;      /* centraliza verticalmente */
@@ -730,9 +785,9 @@ max-width: 300px;!important
 
 }
 
-.sideScrollable{
-width: 300px;
-max-height: 788px;
+.scroll{
+
+max-height: 825px;
 overflow: auto;
 overflow-y: scroll  
   overflow: auto;
@@ -926,4 +981,530 @@ th {
         transform: translateX(0%); /* Termina com a primeira metade visível */
     }
 }
+/* Seu CSS Existente */
 
+/* Estilos gerais para o contêiner da grid */
+.skin-grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px; /* Adicione um max-width para controlar a largura da grid */
+  margin: 0 auto; /* Centraliza a grid */
+  border-radius: 8px;
+
+  /* Importante: Remova qualquer `width: [valor fixo];` que possa estar causando o transbordo */
+  /* Se ainda vazar, tente adicionar: */
+  /* overflow-x: hidden; */
+}
+
+/* NOVO CSS PARA O CONTÊINER .content-column */
+.content-column {
+    display: flex; /* Habilita Flexbox */
+    flex-direction: column; /* Organiza os itens (h3 e skin-grid-container) em coluna */
+    align-items: center; /* Centraliza os itens horizontalmente dentro do .content-column */
+    /* Se você quiser que o .content-column não ocupe 100% da largura, defina um max-width e margin: auto */
+    max-width: 1300px; /* Exemplo: um pouco maior que a grid para acomodar padding se houver */
+    margin: 0 auto; /* Centraliza o próprio .content-column dentro do .caixamaisclara */
+    padding: 10px; /* Opcional: Adicione um padding interno ao .content-column se desejar */
+}
+
+/* NOVO CSS PARA O TÍTULO h3 DENTRO DE .content-column */
+/* Como o h3 agora está dentro de .content-column, ajustamos o seletor */
+.content-column h3 {
+ 
+  
+  font-size: 2.5em; /* Tamanho do título */
+  text-align: center; /* Centraliza o texto do título */
+  margin-top: 0; /* Remove margem superior padrão do h3 */
+  margin-bottom: 20px; /* Espaço abaixo do título antes da grid */
+  padding-top: 20px; /* Adiciona padding na parte superior para afastar do topo da .caixamaisclara ou .content-column */
+  letter-spacing: 1px; /* Opcional: espaçamento entre letras */
+  text-transform: uppercase; /* Opcional: letras maiúsculas */
+}
+
+/* Estilos para cada item de skin */
+.skin-item {
+  background-color: #534f4a15 ;
+  border: 4px solid #534f4ac2; /* Borda sutil */
+  border-radius: 8px; /* Cantos arredondados */
+  padding: 15px; /* Preenchimento interno */
+  text-align: center; /* Centraliza a imagem e o título */
+  display: flex; /* Usa flexbox para organizar conteúdo interno */
+  flex-direction: column; /* Organiza itens em coluna */
+  justify-content: space-between; /* Espaço entre imagem e título */
+  align-items: center; /* Centraliza horizontalmente */
+  transition: transform 0.2s ease-in-out; /* Efeito de transição ao passar o mouse */
+}
+
+.skin-item:hover {
+  transform: translateY(-5px); /* Levanta o item um pouco ao passar o mouse */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Sombra mais pronunciada */
+}
+
+/* Estilos para a imagem da skin */
+.skin-item img {
+  max-width: 100%; /* Garante que a imagem não transborde */
+  height: auto; /* Mantém a proporção da imagem */
+  display: block; /* Remove espaço extra abaixo da imagem */
+  margin-bottom: 10px; /* Espaço entre a imagem e o título */
+  border-radius: 4px; /* Cantos arredondados para a imagem */
+}
+
+/* Estilos para o título da skin */
+.skin-title {
+  font-size: 1rem; /* Tamanho pequeno para o título */
+  color: #534f4a; /* Cor escura para o texto */
+  margin: 0; /* Remove margens padrão do parágrafo */
+  padding-top: 5px; /* Pequeno espaçamento acima do título */
+  
+  font-weight: 500; /* Um pouco mais encorpado */
+}
+
+/* Media Queries para responsividade */
+@media (max-width: 768px) {
+  .skin-grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Reduz o min-width em telas menores */
+    gap: 15px;
+  }
+  .skin-item {
+    padding: 10px;
+  }
+  .skin-title {
+    font-size: 0.8em;
+  }
+}
+
+@media (max-width: 480px) {
+  .skin-grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Ainda menor para celulares */
+    gap: 10px;
+  }
+  .skin-item {
+    padding: 8px;
+  }
+  .skin-title {
+    font-size: 0.75em;
+  }
+}
+
+
+
+
+.pushable {
+    position: relative;
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+    transition: filter 250ms;
+    display: inline-block;
+    text-decoration: none; /* Remove sublinhado */
+    display: block;  /* Garante que o botão ocupe a largura total do container */
+    width: 100%;  /* Faz com que cada botão tenha a largura máxima disponível */
+  }
+  .shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: hsl(0deg 0% 0% / 0.25);
+    will-change: transform;
+    transform: translateY(2px);
+    transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+  }
+  .edge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: linear-gradient(
+      to left,
+      hsl(43, 9%, 15%) 92%,
+      hsl(30, 4%, 18%) 8%,
+      hsl(43, 9%, 15%) 92%,
+      hsl(60, 2%, 11%) 100%
+    );
+  }
+  .front {
+    display: block;
+    position: relative;
+    padding: 12px 42px;
+    border-radius: 12px;
+    font-size: 1.25rem;
+    color: #7c756d;
+    background: hsl(30, 4%, 20%);
+    will-change: transform;
+    transform: translateY(-4px);
+    transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+  }
+  .pushable:hover {
+    filter: brightness(110%);
+  }
+  .pushable:hover .front {
+    transform: translateY(-6px);
+    transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+  }
+  .pushable:active .front {
+    transform: translateY(-2px);
+    transition: transform 34ms;
+  }
+  .pushable:hover .shadow {
+    transform: translateY(4px);
+    transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+  }
+  .pushable:active .shadow {
+    transform: translateY(1px);
+    transition: transform 34ms;
+  }
+  .pushable:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+
+/* Primeiro, vamos garantir que a classe base .pushable se comporte como um elemento inline-block
+   para que ele possa sentar-se lado a lado com outros elementos. */
+.pushable {
+    position: relative;
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+    transition: filter 250ms;
+    /* CHAVE: Mude para inline-block para permitir que fiquem lado a lado */
+    display: inline-block; 
+    text-decoration: none; /* Remove sublinhado */
+    /* REMOVA ou COMENTE as linhas abaixo que forçam largura total ou comportamento de bloco: */
+    /* display: block; */ /* Isso faria com que cada botão ocupasse sua própria linha */
+    /* width: 100%; */   /* Isso faria com que cada botão ocupasse 100% da largura do pai */
+}
+
+.shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: hsl(0deg 0% 0% / 0.25);
+    will-change: transform;
+    transform: translateY(2px);
+    transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+.edge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: linear-gradient(
+        to left,
+        hsl(43, 9%, 15%) 92%,
+        hsl(30, 4%, 18%) 8%,
+        hsl(43, 9%, 15%) 92%,
+        hsl(60, 2%, 11%) 100%
+    );
+}
+.front {
+    display: block; /* Mantenha display: block aqui para que o padding e a largura dentro do botão funcionem */
+    position: relative;
+    padding: 12px 42px; /* Este padding define o tamanho "extra" ao redor do texto */
+    border-radius: 12px;
+    font-size: 1.25rem;
+    color: #7c756d;
+    background: hsl(30, 4%, 20%);
+    will-change: transform;
+    transform: translateY(-4px);
+    transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+    white-space: nowrap; /* Impede que o texto dentro do botão quebre linha */
+    /* Se quiser que o texto se ajuste ao tamanho e o botão não tenha largura mínima,
+       remova qualquer 'min-width' ou 'width' fixos que você possa ter adicionado aqui. */
+}
+.pushable:hover {
+    filter: brightness(110%);
+}
+.pushable:hover .front {
+    transform: translateY(-6px);
+    transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+}
+.pushable:active .front {
+    transform: translateY(-2px);
+    transition: transform 34ms;
+}
+.pushable:hover .shadow {
+    transform: translateY(4px);
+    transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+}
+.pushable:active .shadow {
+    transform: translateY(1px);
+    transition: transform 34ms;
+}
+.pushable:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* ----------------------------------------------- */
+/* Estilos base para os botões "pushable" (aplicados a todos os botões com esta classe) */
+/* ----------------------------------------------- */
+.pushable {
+    position: relative;
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+    transition: filter 250ms;
+    display: inline-block; /* ESSENCIAL: Permite que os botões fiquem lado a lado */
+    text-decoration: none; /* Remove sublinhado padrão dos links */
+}
+
+.shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: hsl(0deg 0% 0% / 0.25);
+    will-change: transform;
+    transform: translateY(2px);
+    transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+
+.edge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: linear-gradient(
+        to left,
+        hsl(43, 9%, 15%) 92%,
+        hsl(30, 4%, 18%) 8%,
+        hsl(43, 9%, 15%) 92%,
+        hsl(60, 2%, 11%) 100%
+    );
+}
+
+.front {
+    display: block; /* Mantém o bloco para padding e alinhamento do texto */
+    position: relative;
+    /* AJUSTES PARA BOTÕES MENORES: */
+    font-size: 1rem; /* Tamanho da fonte reduzido */
+    padding: 8px 20px; /* Padding reduzido (vertical 8px, horizontal 20px) */
+    /* AJUSTE PARA LARGURA DOS BOTÕES (OPCIONAL): */
+    min-width: 150px; /* Define uma largura mínima para todos os botões */
+    text-align: center; /* Centraliza o texto dentro do botão */
+
+    border-radius: 12px;
+    color: #7c756d;
+    background: hsl(30, 4%, 20%);
+    will-change: transform;
+    transform: translateY(-4px);
+    transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+    white-space: nowrap; /* Impede que o texto quebre linha */
+}
+
+.pushable:hover {
+    filter: brightness(110%);
+}
+
+.pushable:hover .front {
+    transform: translateY(-6px);
+    transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+}
+
+.pushable:active .front {
+    transform: translateY(-2px);
+    transition: transform 34ms;
+}
+
+.pushable:hover .shadow {
+    transform: translateY(4px);
+    transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+}
+
+.pushable:active .shadow {
+    transform: translateY(1px);
+    transition: transform 34ms;
+}
+
+.pushable:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* Estilo para o botão de jogo ativo (clicado) - opcional */
+.game-button-link.active .front {
+    transform: translateY(-2px); /* Botão "afundado" quando ativo */
+    background: hsl(30, 4%, 15%); /* Cor mais escura para o botão ativo */
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.3); /* Sombra interna para dar um efeito de "pressionado" */
+}
+.game-button-link.active .shadow {
+    transform: translateY(1px); /* Sombra mais próxima para o botão ativo */
+}
+
+.screenshots {
+  max-height: 500px;
+  max-width: 500px;
+}
+
+
+/* ----------------------------------------------- */
+/* Seção "My Games" - Contêiner principal da seção de jogos */
+/* ----------------------------------------------- */
+.games-section {
+    background-color: #1B1917;
+    padding: 20px;
+    border-radius: 0.9375rem;
+    box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
+    max-width: 50rem;
+    margin: 20px auto;
+    text-align: center;
+    color: #534F4A;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.games-title {
+   text-align: center;
+    font-size: 3rem;
+   
+    color: #534F4A;
+    text-transform: uppercase;
+    text-align: center; /* Centraliza o texto do título horizontalmente */
+    
+    /* ZERA MARGENS PADRÕES E DEFINE APENAS O ESPAÇO INFERIOR */
+    margin-top: 0; /* Remove qualquer margem superior padrão do H1 */
+    margin-bottom: 20px; /* Controla o espaço ABAIXO do título. Ajuste este valor! */
+                          /* Um valor menor (ex: 10px, 5px) deixará mais perto dos botões. */
+                          /* Um valor maior (ex: 30px, 40px) deixará mais longe. */
+
+    /* Mantenha suas outras propriedades de fonte, cor, tamanho, etc. */
+    /* Exemplo: font-family: "Born2bSportyFS", Arial, sans-serif; */
+    /* font-size: 2.5em; */
+    /* color: #f0f0f0; */
+
+}
+
+/* CONTÊINER DOS BOTÕES DE JOGOS: ESSENCIAL PARA BOTÕES LADO A LADO */
+.games-button-container {
+    display: flex; /* Habilita Flexbox para alinhar os botões lado a lado */
+    flex-wrap: wrap; /* Permite que os botões quebrem para a próxima linha em telas menores */
+    justify-content: center; /* Centraliza os botões horizontalmente no contêiner */
+    gap: 10px; /* Espaço entre os botões (reduzido para botões menores) */
+   
+ margin-top: 0; /* Geralmente, defina como 0 ou um valor pequeno, pois a margem do título já fará o espaçamento */
+padding: 10px;
+width: 100%;
+  }
+
+/* O elemento .game-button-link é apenas um wrapper para o .pushable. */
+.game-button-link {
+    /* Não precisa de estilos de largura aqui, pois o .pushable agora é inline-block e o flexbox gerencia */
+}
+
+/* ----------------------------------------------- */
+/* Wrapper e estilos para o iframe (para garantir proporção e responsividade) */
+/* ----------------------------------------------- */
+
+.game-iframe-wrapper {
+    /* Mantenha essas propriedades do último ajuste */
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-color: transparent; /* Mude para transparente, ou a cor que realmente deseja */
+    border-radius: 8px;
+    box-shadow: none; /* Remova qualquer sombra que possa parecer uma borda */
+    padding: 0; /* Certifique-se de que não há padding aqui se não quiser */
+    box-sizing: border-box;
+}
+
+.game-iframe-wrapper iframe {
+    /* Certifique-se que estas estão comentadas ou removidas como discutimos */
+    /* position: absolute; */
+    /* top: 0; */
+    /* left: 0; */
+    /* height: 100%; */
+
+    width: 100%;
+    border: none; /* Isso remove a borda padrão do iframe */
+    border-radius: 0; /* Garanta que o iframe não tenha bordas arredondadas próprias que "cortem" */
+    margin: 0; /* Adicione para garantir que não haja margem padrão */
+    padding: 0; /* Adicione para garantir que não haja padding padrão */
+    background-color: transparent; /* Garanta que o fundo do iframe seja transparente */
+}
+
+/* Esta é a classe aplicada diretamente ao seu iframe no games.html */
+#gameIframe, .gameIframe { /* Use o ID e/ou a classe que está aplicada ao seu iframe */
+    width: 100%;
+    border: none;
+    overflow: hidden; /* **ESSENCIAL: Isso impede que o elemento iframe tenha sua própria barra de rolagem** */
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    outline: none;
+    /* E certifique-se de que não há NENHUMA altura fixa aqui. */
+    /* A altura deve ser definida SOMENTE pelo seu JavaScript. */
+}
+/* ----------------------------------------------- */
+/* Seção "Portfolio Buttons" (choose one!) - Botões de portfólio (comportamento similar) */
+/* ----------------------------------------------- */
+.button-container.portfolio-buttons {
+    display: flex; /* Garante que os botões fiquem lado a lado */
+    flex-wrap: wrap; /* Permite que quebrem linha */
+    justify-content: center; /* Centraliza */
+    gap: 10px; /* Espaçamento entre os botões (ajustado para botões menores) */
+    padding: 10px;
+    margin-top: 10px; /* Margem superior ajustada */
+}
+
+.contact-links {
+    /* Certifique-se de que não há display: block; ou width: 100%; aqui que force quebra de linha */
+}
+
+/* ----------------------------------------------- */
+/* Media Queries para Responsividade (ajustes para telas menores) */
+/* ----------------------------------------------- */
+
+@media (max-width: 768px) {
+    .games-section {
+        padding: 15px;
+        margin: 15px auto;
+    }
+    .games-title {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+    }
+    .games-button-container {
+        gap: 8px; /* Espaçamento menor em telas de tablet */
+    }
+    /* Se quiser que os botões ocupem metade da largura em tablets: */
+    /* .game-button-link {
+        flex-basis: calc(50% - 8px); 
+    } */
+}
+
+@media (max-width: 480px) {
+    .games-section {
+        padding: 10px;
+        margin: 10px auto;
+    }
+    .games-title {
+        font-size: 1.5em;
+        margin-bottom: 15px;
+    }
+    .games-button-container {
+        flex-direction: column; /* Empilha os botões verticalmente em telas muito pequenas */
+        gap: 6px; /* Espaçamento ainda menor */
+    }
+    .game-button-link {
+        width: 100%; /* Força a largura total em telas muito pequenas para melhor usabilidade */
+    }
+}
