@@ -1417,7 +1417,7 @@ width: 100%;
     width: 100%;
     overflow: hidden;
     background-color: transparent; /* Mude para transparente, ou a cor que realmente deseja */
-    border-radius: 8px;
+    border-radius: 0.9375rem;
     box-shadow: none; /* Remova qualquer sombra que possa parecer uma borda */
     padding: 0; /* Certifique-se de que não há padding aqui se não quiser */
     box-sizing: border-box;
