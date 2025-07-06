@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem-vindo(a) ao Meu Site!</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/ico" href="favicon.ico"/>
+    <style>
+
+
+.caixamaisclara-entrada {
+    background-image: url('wood.png'); /* Caminho para sua imagem wood.png */
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+
+    padding: 30px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    max-width: 90%; /* Ajuste para responsividade */
+    max-height: 90vh; /* Limita a altura para telas menores */
+    display: flex; /* Para centralizar o conteúdo verticalmente */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Organiza itens em coluna */
+}
+
+.caixamaisclara-entrada:hover {
+    transform: scale(1.03);
+   
+}
+
+.caixamaisclara-entrada img {
+    max-width: 80%; /* Imagem menor para caber na div */
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Centraliza a imagem */
+    /* Remova ou ajuste esta linha se sua imagem já for colorida ou tiver o efeito desejado */
+  
+    transition: filter 0.3s ease-in-out;
+}
+
+.caixamaisclara-entrada:hover img {
+    filter: grayscale(0%); /* Mantém colorida no hover */
+}
+
+/* Opcional: Estilos para telas muito pequenas */
+@media (max-width: 600px) {
+    .caixamaisclara-entrada {
+        padding: 15px; /* Menos padding em telas pequenas */
+    }
+    .caixamaisclara-entrada img {
+        max-width: 90%; /* Aumenta um pouco a imagem em telas pequenas */
+    }
+}
+
+        /* Estilos específicos para esta página de entrada */
+        body {
+            margin: 0;
+            padding: 0;
+          
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Ocupa a altura total da viewport */
+            overflow: hidden; /* Evita barras de rolagem */
+        }
+
+        .caixamaisclara-entrada {
+            background-image: url('wood.png'); /* Caminho para sua imagem de madeira */
+            background-size: cover; /* Cobre toda a área da div */
+            background-position: center; /* Centraliza a imagem de fundo */
+            border-radius: 10px; /* Cantos arredondados, combinando com seu estilo */
+
+            padding: 30px; /* Espaçamento interno */
+            text-align: center; /* Centraliza o conteúdo (a imagem) */
+            cursor: pointer; /* Muda o cursor para indicar que é clicável */
+            transition: transform 0.3s ease-in-out; /* Transição suave para hover */
+            max-width: 90%; /* Largura máxima para responsividade */
+            aspect-ratio: 16 / 9; /* Mantém uma proporção para a caixa, ajustável se necessário */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; /* Para alinhar a imagem e possível texto verticalmente */
+        }
+
+        .caixamaisclara-entrada:hover {
+            transform: scale(1.03); /* Aumenta um pouco no hover */
+         
+        }
+
+        .caixamaisclara-entrada img {
+            max-width: 80%; /* A imagem ocupa 80% da largura da div pai */
+            height: auto; /* Mantém a proporção */
+            display: block; /* Remove espaços extras */
+            margin-bottom: 20px; /* Espaço entre a imagem e um possível texto (se você adicionar depois) */
+            /* Se sua imagem já tem o efeito de "play", remova o filtro grayscale */
+          
+            transition: filter 0.3s ease-in-out;
+        }
+
+    </style>
+</head>
+<body>
+   <div class="caixamaisclara-entrada">
+    <a href="https://minkurosu.github.io">
+        <img src="logo.png" alt="enter">
+    </a>
+</div>//
+    <script>
+        // Este script garante que o redirecionamento funcione
+        document.addEventListener('DOMContentLoaded', function() {
+            const caixaEntrada = document.querySelector('.caixamaisclara-entrada');
+            if (caixaEntrada) {
+                caixaEntrada.onclick = function() {
+                    // Redireciona para o seu arquivo index.html principal
+                    window.location.href = 'index.html'; 
+                };
+            }
+        });
+    </script>
+</body>
+</html>
