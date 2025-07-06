@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="oneko.js"></script>
+    <script>NekoType="black"</script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4K5KDKEJ2E"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-4K5KDKEJ2E');
+    </script>
+    <script> window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches </script>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=0., minimum-scale=0.2, maximum-scale=1.0, user-scalable=yes">
+    <meta property="og:image" content="https://i.ibb.co/RC2v9zg/sitethumbnail.png"/>
+    <meta property="og:image" content="imgs/site_imgs/sitethumbnail.png"/>
+    <meta name="color-scheme" content="light only">
+
+    <link rel="stylesheet" href="styles.css">
+    <title>@minkurosu</title>
+   
+    <link rel="icon" type="image/ico" href="imgs/site_imgs/favicon.ico"/>
+   
+<Style>
+   /* Seu CSS da página principal aqui, incluindo estilos para .gameIframe */
+   /* Seu CSS da página principal aqui, incluindo estilos para .gameIframe */
+    .gameIframe {
+        width: 100%; /* Garante que o iframe ocupe a largura total */
+        border: none; /* Remove a borda padrão do iframe */
+        overflow: hidden; /* **ESSENCIAL: Esconde as barras de rolagem do iframe** */
+        /* Remova qualquer altura fixa ou altura mínima aqui */
+        /* min-height: 500px; */
+    }
+
+    body {
+    overflow-x: hidden; /* Remove a rolagem horizontal para a página principal */
+    /* Mantenha as outras propriedades que já discutimos, como margin: 0; padding: 0; etc. */
+}
+  hr {
+    border: 5px;
+    border-top: 0.0625rem solid #ececec;
+    margin: 1.25rem 0;
+  }
+
+.caixamaisclaraInterests {
+    display: flex;           /* Transforma em um container flexível */
+    flex-direction: column;  /* Força os itens internos (o H1 e o container de botões) a se empilharem verticalmente */
+    align-items: center;     /* Centraliza os itens (o H1 e o container de botões) horizontalmente */
+    width: 100%;             /* Garante que ocupe a largura total disponível */
+    /* Mantenha outras propriedades como background, padding, border-radius, etc., que você já tenha aqui. */
+}
+
+/* ----------------------------------------------- */
+/* Para o título H1 (games-title): */
+/* ----------------------------------------------- */
+.games-title {
+    text-align: center;      /* Garante que o texto do título esteja centralizado horizontalmente */
+    margin-top: 0;           /* Remove qualquer margem superior padrão que o H1 possa ter */
+    margin-bottom: 20px;     /* Espaço ABAIXO do título. Ajuste este valor (ex: 10px, 15px) para controlar a distância dos botões. */
+    /* Mantenha suas outras propriedades de fonte e cor para o título aqui. */
+}
+
+/* ----------------------------------------------- */
+/* Para o contêiner dos botões (games-button-container): */
+/* ----------------------------------------------- */
+.games-button-container {
+    display: flex;           /* Transforma em um container flexível para os próprios botões */
+    flex-wrap: wrap;         /* Permite que os botões quebrem para a próxima linha se não houver espaço */
+    justify-content: center; /* Centraliza os botões horizontalmente dentro do seu contêiner */
+    gap: 10px;               /* Espaçamento entre os botões */
+    margin-top: 0;           /* Remove qualquer margem superior, pois o espaçamento já vem do H1 acima */
+    padding: 0;              /* Remove padding extra se houver */
+    /* Mantenha outras propriedades que você já tenha aqui. */
+}
+</Style>
+
+</head>
+<body>
+
+<div class="layout-with-sidebars">
+
+
+
+    <main id="containerprincipal">
+        <header id="header" class="fixed-top">
+            <div id="divpatinha">
+                <img src="imgs/site_imgs/patinha.png" id="logopatinha" alt="logo da barra de navegação">
+            </div>
+            <nav class="navbar">
+                <div class="divitems">
+                    <div class="nav-item">
+                        <a href="#" onclick="history.back(); return false;" class="nav-link">back</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="index.html" target="_self" class="nav-link">home</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="feed.html" target="_self" class="nav-link">feed</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="blog.html" target="_self" class="nav-link">blog</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="links.html" target="_self" class="nav-link">links</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="portfolio-menu.html" target="_self" class="nav-link">portfolio</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+   
+        
+            <div class="games-section">
+    <div class="caixamaisclaraInterests">
+        <h1 class="games-title">choose a game!</h1>
+        <div class="games-button-container">
+            <a href="#" class="pushable game-button-link" data-src="random-quizzes.html">
+                <span class="shadow"></span>
+                <span class="edge"></span>
+                <span class="front">minecraft</span>
+            </a>
+             <a href="#" class="pushable game-button-link" data-src="stardewvalley.html">
+                <span class="shadow"></span>
+                <span class="edge"></span>
+                <span class="front">stardew valley</span>
+            </a>
+            <a href="#" class="pushable game-button-link" data-src="baldursgate.html">
+                <span class="shadow"></span>
+                <span class="edge"></span>
+                <span class="front">baldurs gate 3</span>
+            </a>
+           
+          
+            </a>
+            <br>
+        </div>
+    </div>
+<br>                <div class="game-iframe-wrapper">
+                    <iframe id="gameIframe" src="about:blank" frameborder="0" ></iframe>
+                </div>
+           
+
+
+</div>
+
+
+
+    </main>
+    
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <script>
+      Fancybox.bind('[data-fancybox="gallery"]', {
+        //
+      });    
+    </script>
+    
+      <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const gameButtons = document.querySelectorAll('.game-button-link');
+        const gameIframe = document.getElementById('gameIframe');
+
+        function resizeIframe() {
+            try {
+                if (gameIframe.contentWindow && gameIframe.contentWindow.document) {
+                    const iframeDoc = gameIframe.contentWindow.document;
+                    
+                    let maxContentY = 0;
+                    const iframeElements = iframeDoc.querySelectorAll('body *'); 
+
+                    iframeElements.forEach(el => {
+                        const rect = el.getBoundingClientRect();
+                        const elementBottom = rect.bottom + iframeDoc.defaultView.scrollY; 
+                        
+                        if (elementBottom > maxContentY) {
+                            maxContentY = elementBottom;
+                        }
+                    });
+                    
+                    let contentHeight = maxContentY > 0 ? maxContentY : iframeDoc.documentElement.scrollHeight;
+
+                    // Ajuste o buffer se os textos ainda estiverem cortados
+                    gameIframe.style.height = (contentHeight + 100) + 'px'; 
+                    console.log('Iframe resized to (maxContentY):', (contentHeight + 100) + 'px');
+                } else {
+                    // Se contentWindow.document não estiver acessível, defina uma altura padrão
+                    gameIframe.style.height = '800px'; // Altura padrão se não conseguir calcular
+                    console.warn("Iframe content not accessible. Setting default height.");
+                }
+            } catch (e) {
+                console.warn("Erro ao redimensionar iframe (provável Same-Origin Policy ou conteúdo não carregado):", e);
+                // Se houver um erro, defina uma altura padrão para que o iframe não suma
+                gameIframe.style.height = '800px'; // Altura padrão em caso de erro
+            }
+        }
+
+        gameButtons.forEach(button => {
+            button.addEventListener('click', function(event) {
+                event.preventDefault();
+                const gameSrc = this.getAttribute('data-src');
+                gameIframe.src = gameSrc;
+
+                gameButtons.forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        gameIframe.onload = function() {
+            resizeIframe();
+            setTimeout(resizeIframe, 300); 
+            setTimeout(resizeIframe, 1000); 
+            setTimeout(resizeIframe, 2000); 
+        };
+
+        if (gameButtons.length > 0) {
+            gameIframe.style.height = '500px'; 
+            gameButtons[0].click();
+        }
+
+        window.addEventListener('resize', function() {
+            clearTimeout(window.iframeResizeTimer);
+            window.iframeResizeTimer = setTimeout(resizeIframe, 200);
+        });
+    });
+</script>
+ 
+</div>
+
+
+
+
+ </body>
+
+</html>
