@@ -513,7 +513,35 @@ max-width: 300px;
       margin: 2px;
       text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     }
+.caixamaisclaraCenter {
+    background-color: #24211e;
+    padding: 0.3125rem;
+    border-radius: 0.9375rem;
+    box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center; /* Já centraliza o conteúdo verticalmente */
 
+    /* ----- NOVAS PROPRIEDADES PARA CENTRALIZAR ----- */
+
+    /* 1. Para centralizar o CONTEÚDO DENTRO da caixa horizontalmente: */
+    justify-content: center; 
+
+    /* 2. Para centralizar a PRÓPRIA CAIXA horizontalmente na página: */
+    /* Substitua o 'margin: 2px;' por este: */
+    margin: 0 auto; /* Define 0 de margem em cima/baixo e 'auto' nas laterais para centralizar */
+
+    /* 3. IMPORTANTE: Para 'margin: auto' funcionar, o elemento precisa ter uma largura definida. */
+    /* Se a caixa for ocupar 100% da largura, ela já estará "centralizada" (ocupando tudo). */
+    /* Se você quer que ela tenha uma largura menor e fique no centro, adicione uma largura: */
+    max-width: 500px; /* Exemplo: define uma largura máxima para a caixa */
+    /* Ou, se o conteúdo ditar a largura e ela não for 100%: */
+    /* width: fit-content; */ 
+
+    /* ----------------------------------------------- */
+
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+    
      .caixamaisclara img {
       border-radius: 0.3125rem;
     }

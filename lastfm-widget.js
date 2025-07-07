@@ -31,7 +31,7 @@ async function fetchLastFmTrack() {
             const artistName = track.artist['#text'];
 
             // Corrigido para não adicionar espaço extra se não estiver tocando agora
-            const nowPlayingIndicator = track['@attr'] && track['@attr'].nowplaying ? ' (agora)' : '';
+         const nowPlayingIndicator = ''; // Não adiciona "(agora)"
 
             // ATUALIZA O CONTEÚDO DA CÉLULA DA TABELA
             lastfmSongCell.textContent = `${songName} - ${artistName}${nowPlayingIndicator}`;
