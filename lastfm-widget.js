@@ -13,8 +13,8 @@ async function fetchLastFmTrack() {
         return; // Sai da função se o elemento não for encontrado
     }
 
- const apiUrl = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${LASTFM_USERNAME}&api_key=${LASTFM_API_KEY}&format=json&limit=1`;
-
+    // CORREÇÃO AQUI: Usando HTTPS e as variáveis corretas
+    const apiUrl = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${LASTFM_USERNAME}&api_key=${LASTFM_API_KEY}&format=json&limit=1`;
 
     try {
         const response = await fetch(apiUrl); 
@@ -30,7 +30,8 @@ async function fetchLastFmTrack() {
             const songName = track.name;
             const artistName = track.artist['#text'];
 
-            const nowPlayingIndicator = track['@attr'] && track['@attr'].nowplaying ? ' ' : '';
+            // Corrigido para não adicionar espaço extra se não estiver tocando agora
+            const nowPlayingIndicator = track['@attr'] && track['@attr'].nowplaying ? ' (agora)' : '';
 
             // ATUALIZA O CONTEÚDO DA CÉLULA DA TABELA
             lastfmSongCell.textContent = `${songName} - ${artistName}${nowPlayingIndicator}`;
@@ -41,8 +42,8 @@ async function fetchLastFmTrack() {
         }
 
     } catch (error) {
-        console.error('error fetching song', error);
-        lastfmSongCell.textContent = 'error fetching song'; // Define o texto da célula para um erro
+        console.error('Erro ao buscar músicas do Last.fm:', error);
+        lastfmSongCell.textContent = 'Erro ao carregar a música.'; // Define o texto da célula para um erro
     }
 }
 
