@@ -15,7 +15,7 @@ async function fetchLastFmTrack() {
 
  const apiUrl = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${LASTFM_USERNAME}&api_key=${LASTFM_API_KEY}&format=json&limit=1`;
 
- 
+
     try {
         const response = await fetch(apiUrl); 
         
