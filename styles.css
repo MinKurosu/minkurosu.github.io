@@ -183,6 +183,18 @@
   }
 
   
+a {
+    text-decoration: none; /* Remove o sublinhado */
+    color: #534F4A; /* Define uma cor padrão para todos os links, como a de seu site */
+}
+
+/* Opcional: Se você quiser que os links mudem de cor ao passar o mouse */
+a:hover {
+    color: #a7a7a7; /* Exemplo: muda para um amarelo ao passar o mouse */
+    text-decoration: underline; /* Opcional: Adiciona o sublinhado de volta ao passar o mouse */
+}
+
+
 body > .layout-with-sidebars {
   /* força grid mesmo dentro do flex */
   display: grid !important;
@@ -784,7 +796,7 @@ max-width: 300px;!important
 
 .scroll{
 
-max-height: 775px;
+max-height: 860px;
 overflow: auto;
 overflow-y: scroll  
   overflow: auto;
@@ -1508,16 +1520,6 @@ width: 100%;
 
 
 
-a {
-    text-decoration: none; /* Remove o sublinhado */
-    color: #7c756d; /* Define uma cor padrão para todos os links, como a de seu site */
-}
-
-/* Opcional: Se você quiser que os links mudem de cor ao passar o mouse */
-a:hover {
-    color: #a7a7a7; /* Exemplo: muda para um amarelo ao passar o mouse */
-    text-decoration: none; /* Opcional: Adiciona o sublinhado de volta ao passar o mouse */
-}
 
 #lastfm-song-cell {
     /* Exemplo de estilização para a célula da tabela */
