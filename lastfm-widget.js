@@ -34,7 +34,7 @@ async function fetchLastFmTrack() {
          const nowPlayingIndicator = ''; // Não adiciona "(agora)"
 
             // ATUALIZA O CONTEÚDO DA CÉLULA DA TABELA
-            lastfmSongCell.textContent = `${songName} - ${artistName}${nowPlayingIndicator}`;
+            lastfmSongCell.textContent = `${songName} - ${artistName}`;
             // Usamos textContent para evitar injeção de HTML e garantir que seja apenas texto puro
             
         } else {
