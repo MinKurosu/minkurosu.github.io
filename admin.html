@@ -187,7 +187,6 @@ hr {
     <div id="container">
         <div id="admin-login-section" class="caixamaisclara admin-form-box">
             <h1>login do admin</h1>
-            
             <form id="login-form">
                 <div>
                     <label for="login-email">email:</label>
@@ -198,12 +197,14 @@ hr {
                     <input type="password" id="login-password" required>
                 </div>
                 <button type="submit" id="login-btn">entrar</button>
-                <div id="login-message" class="message"></div> </form>
+                <div id="login-message" class="message"></div>
+            </form>
         </div>
 
         <div id="admin-panel-section" class="caixamaisclara admin-form-box" style="display: none;">
+            
             <h1>new post</h1>
-        <div>
+            <div>
                 <label for="post-title">post title:</label>
                 <textarea id="post-title"></textarea>
             </div>
@@ -216,7 +217,18 @@ hr {
                 <input type="file" id="post-image" accept="image/*">
             </div>
             <button type="button" id="publish-post-btn">publicar</button>
-            <div id="post-message" class="message"></div> <hr>
+            <div id="post-message" class="message"></div>
+            <hr>
+
+            <form id="dream-journal-form">
+                <h2>Registrar Novo Sonho</h2>
+                <label for="dream-content">Conteúdo do Sonho:</label>
+                <textarea id="dream-content"></textarea>
+                <button type="button" id="publish-dream-btn">Registrar Sonho</button>
+                <div id="dream-message" class="message"></div>
+            </form>
+            <hr>
+
             <button type="button" id="logout-btn">sair</button>
         </div>
     </div>

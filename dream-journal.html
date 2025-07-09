@@ -19,7 +19,7 @@
     <meta name="color-scheme" content="light only">
 
     <link rel="stylesheet" href="styles.css">
-    <title>@minkurosu</title>
+    <title>@minkurosu - Dream Journal</title>
    
     <link rel="icon" type="image/ico" href="imgs/site_imgs/favicon.ico"/>
    
@@ -185,7 +185,6 @@ header {
 
 
 
-
 </style>
 </head>
 <body>
@@ -193,7 +192,7 @@ header {
 <div class="layout-with-sidebars">
 
     <aside class="sidebar">
-       
+    
     </aside>
 
     <main id="containerprincipal">
@@ -229,21 +228,25 @@ header {
                 </nav>
             </header>
             <div id="container">
+              <main id="containerprincipal">
+            <header id="header" class="fixed-top">
+                </header>
+            
+            <div id="container">
                 <div class="caixamaisclara">
                     <img id="logobig" src="imgs/site_imgs/logo.png" alt="Logo" data-position="center">
                 </div>
                 <hr>
-                <div class="caixamaisclara" id="posts-container">
-                    <h2>loading posts...</h2> 
+                <div class="caixamaisclara" id="dreams-container">
+                    <h2>loading dreams...</h2> 
                 </div>
-                <div class="nav-item">
-          <a href="admin.html" target="_self" class="nav-link">admin</a>
+            </div>
+    </main>
         </div>
             </main>
 
     <aside class="sidebar sidebar-right">
   
-    
     </aside>
 
 </div>
@@ -251,7 +254,7 @@ header {
  <script src="script.js"></script>
  <script type="module" src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"></script>
     <script type="module" src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js"></script>
-    <script type="module" src="blog.js"></script>
+    <script type="module" src="dream-journal.js"></script>
  </body>
 
 </html>

@@ -188,6 +188,11 @@ a {
     color: #534F4A; /* Define uma cor padrão para todos os links, como a de seu site */
 }
 
+.marked-link {
+    text-decoration: underline; /* Remove o sublinhado */
+    color: #534F4A; /* Define uma cor padrão para todos os links, como a de seu site */
+}
+
 /* Opcional: Se você quiser que os links mudem de cor ao passar o mouse */
 a:hover {
     color: #a7a7a7; /* Exemplo: muda para um amarelo ao passar o mouse */
@@ -1580,3 +1585,17 @@ width: 100%;
 }
 
 
+#statuscafe {
+   color: #534F4A;
+    padding: .5em;
+    background-color: rgba(240, 255, 255, 0);
+    border: 1px solid rgba(25, 25, 112, 0);
+}
+#statuscafe-username {
+    margin-bottom: .5em;
+     color: #534F4A;
+}
+#statuscafe-content {
+    margin: 0 1em 0.5em 1em;
+    color: #534F4A;
+}
