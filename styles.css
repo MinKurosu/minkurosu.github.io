@@ -534,6 +534,32 @@ max-width: 300px;
 
     }
 
+    
+    .caixamaisclaraColumn{
+  background-color: #24211e;
+      padding: 0.3125rem;
+      border-radius: 0.9375rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-around ;
+      margin: 2px;
+      flex-direction: column;
+    }
+
+    
+    
+    .caixamaisclaraColumnSimple{
+
+      padding: 0.3125rem;
+      border-radius: 0.9375rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-around ;
+      margin: 2px;
+      flex-direction: column;
+    }
+
+
  .caixamaisclaraCenterSimple text{
  background-color: #24211e;
       padding: 0.3125rem;

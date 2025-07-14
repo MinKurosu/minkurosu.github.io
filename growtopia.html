@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Minhas Skins de Minecraft</title> <link rel="stylesheet" href="../styles.css">
+
+    <style>
+        /* CSS ESPECÍFICO PARA A PÁGINA QUE SERÁ CARREGADA NO IFRAME (skins.html) */
+
+       html, body {
+        background-color: #24211e;
+        margin: 0;
+        padding: 0;
+        /* CORREÇÃO AQUI: */
+       font-family: "Born2bSportyFS";
+        
+     /* Certifique-se de que NENHUMA altura fixa ou min-height: 100vh; esteja aqui */
+    }
+
+  hr {
+    border: 5px;
+  
+    margin: 1.25rem 0;
+  }
+
+
+ #containerprincipal { /* Ou a classe .content-column ou .iframe-content-wrapper */
+        width: 100%;
+ }
+        /* REMOVED .skins { max-height: 150px ; } */ /* This class was applied to the img and the skin-item. It's better to control height via .skin-item and .skin-item img */
+
+        /* Wrapper principal para todo o conteúdo das skins/screenshots */
+       
+
+        /* Classes existentes do seu HTML de skins */
+        .caixamaisclara {
+            background-color: #24211e;
+            border-radius: 0.9375rem;
+            padding: 10px;
+        }
+
+        .content-column {
+            display: flex;           /* Transforma o .content-column em um container flexível */
+    flex-direction: column;  /* Força os itens internos (h3, div.skin-grid-container) a se empilharem verticalmente */
+    align-items: center;     /* Centraliza os itens horizontalmente dentro do .content-column */
+    width: 100%;             /* Garante que o .content-column ocupe a largura total disponível */
+    max-width: 900px;        /* Defina uma largura máxima se desejar que o conteúdo não se espalhe muito */
+    margin: 20px auto;       /* Centraliza o container na página e adiciona margem superior/inferior */
+    padding: 20px;           /* Adicione padding interno se necessário */
+    box-sizing: border-box;  
+    
+            
+        }
+
+        h3 {
+            text-align: center;
+            margin-top: 25px;
+            margin-bottom: 20px;
+            color: #534F4A;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+            text-transform: uppercase;
+        }
+
+          h2 {
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            color: #534F4A;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+            text-transform: lowercase;
+        }
+
+
+        /* Estilos para o GRID de SKINS - Para 4 colunas verticais fixas */
+        .skin-grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Mantendo 3 colunas para o exemplo anterior */
+            gap: 15px;
+            justify-content: center;
+            padding: 0;
+              max-width: 100%;
+        }
+
+         .skin-item {
+        /* Se você definiu uma altura fixa aqui (como height: 200px;),
+           e o conteúdo (imagem + título) excede, o texto será cortado.
+           Ajuste a altura ou use min-height/flex-grow para permitir crescimento. */
+        height: 200px; /* Se o texto está cortado, pode ser porque o height é muito justo */
+        overflow: hidden; /* Se o item em si tiver overflow: hidden, o conteúdo interno será cortado */
+        /* Remova overflow: hidden se ele estiver no .skin-item e estiver cortando o P */
+    }
+
+        .skin-item img {
+            width: 100%;
+            max-height: 150px;
+            object-fit: contain;
+            border-radius: 4px;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .skin-title {
+            font-size: 0.9em;
+            color: #534F4A;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+            margin: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 100%;
+        }
+
+
+
+        p {
+
+            font-size: 1.3rem;
+            color: #534F4A;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+            margin: 0;
+          text-indent: 1rem;
+            width: 100%;
+    
+        }
+
+
+/* Estilo para o container principal (se você tiver um) */
+#containerprincipalColumn {
+    /* Pode ser display: flex; flex-direction: column; para organizar tudo verticalmente */
+    /* ou apenas um container para centralizar o contentcolumn */
+    display: flex;
+    justify-content: center; /* Centraliza o contentcolumn se ele tiver uma largura menor */
+    padding: 20px;
+}
+
+.contentcolumn {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+
+    align-items: center; /* Centraliza o row-container horizontalmente dentro de contentcolumn */
+    width: 100%; /* Garante que o contentcolumn ocupe a largura total disponível */
+    max-width: 1000px; /* Opcional: Define uma largura máxima para o contentcolumn */
+}
+
+.row-container {
+    display: flex; /* Ativa o Flexbox para alinhar os itens lado a lado */
+    flex-direction: row; /* Garante que os itens fiquem em linha */
+    flex-wrap: wrap; /* Permite que os itens quebrem para a linha de baixo em telas menores */
+    justify-content: center; /* Centraliza os itens horizontalmente dentro do row-container */
+    align-items: center; /* Centraliza os itens verticalmente dentro do row-container */
+    gap: 20px; /* Espaço entre a imagem e o texto */
+    padding: 15px;
+ 
+    width: 100%; /* Garante que o row-container ocupe toda a largura disponível */
+    max-width: 900px; /* Opcional: Define uma largura máxima para o container que agrupa imagem e texto */
+}
+
+/* Dentro de growtopia.html, na tag <style> */
+.text-content {
+    flex: 2;
+    min-width: 0; /* ADICIONE/CONFIRME ESTA LINHA */
+    text-align: justify;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.image-content {
+    flex: 1;
+    min-width: 0; /* ADICIONE/CONFIRME ESTA LINHA */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    box-sizing: border-box;
+}
+
+.image-content img {
+    max-width: 100%; /* Garante que a imagem não transborde seu container */
+    height: auto; /* Mantém a proporção da imagem */
+    display: block; /* Remove espaços extras abaixo da imagem */
+}
+
+/* Opcional: Estilos para o contador de dias se precisar */
+#growtopia-days-counter {
+    font-weight: bold;
+    
+}
+
+/* Adicionando um media query para telas menores, se os itens precisarem empilhar */
+@media (max-width: 768px) {
+    .row-container {
+        flex-direction: column; /* Em telas menores, empilha imagem e texto */
+    }
+    .text-content,
+    .image-content {
+        flex: none; /* Remove a proporção flex para que ocupem a largura total */
+        width: 100%; /* Ocupa a largura total */
+        min-width: unset; /* Remove o min-width para não causar problemas de largura */
+    }
+}
+    </style>
+</head>
+<body>
+   <main id="containerprincipalColumn">
+    
+        <div class="row-container">
+          
+                <p>growtopia was one of the most important games of my childhood, and my account is <span id="growtopia-days-counter">calculating...</span> days old.</p>
+
+                <p> Sadly, the game isnt the same from that time, now ubisoft bought it and its full of casinos and bots.</p>
+                    
+                  <p>   sometimess i even dream about the game, of my account being hacked or my world griefed, in some of them i recall me /msg'ing the mods because a hacker was breaking my world... </p>
+                    
+            <p>    so crazy to think the game i played when i was 10 was so important its printed in my brain/dreams.</p>
+           
+  <img src="imgs/minecraft/growtopiacharacter.png" alt="my character" style="height: 200px;">
+                <br>
+<img src="imgs\minecraft\screenshots\Screenshot_20250711_163217_Growtopia.jpg" style="width:600px">
+<div>
+    
+</div>
+    
+              
+        </div>
+    </div>
+</main>
+</body>
+<script>// script.js
+
+// Function to calculate and display the Growtopia account age
+function updateGrowtopiaAccountAge() {
+    // 1. Get the current date
+    const today = new Date();
+
+    // 2. Define the exact creation date of your Growtopia account.
+    // Since you know it was 4373 days ago from "now" (when you last calculated it),
+    // we'll set the *start date* based on today minus 4373 days.
+    // **IMPORTANT:** You need to set this `startDate` precisely.
+    // If "4373 days ago" was referring to a specific historical date (e.g., Jan 1, 2012),
+    // you should use that specific date.
+    // For this example, I'll calculate it as 4373 days before *today* (July 11, 2025).
+
+    const initialDaysAgo = 4373; // The number of days passed when you last knew it.
+    const ONE_DAY_IN_MS = 1000 * 60 * 60 * 24; // Milliseconds in a day
+
+    // Calculate the reference timestamp: today's timestamp minus initialDaysAgo
+    // This assumes "4373 days ago" means 4373 days prior to the current date when you set it up.
+    // If you know the *exact specific date* your account was created (e.g., '2013-05-15'),
+    // it's much better to use: const growtopiaStartDate = new Date('YYYY-MM-DD');
+    const growtopiaStartDate = new Date(today.getTime() - (initialDaysAgo * ONE_DAY_IN_MS));
+
+
+    // 3. Calculate the difference in milliseconds
+    const differenceInMs = today.getTime() - growtopiaStartDate.getTime();
+
+    // 4. Convert milliseconds to days
+    // We use Math.floor to get a whole number of days, ignoring partial days.
+    const daysPassed = Math.floor(differenceInMs / ONE_DAY_IN_MS);
+
+    // 5. Get the element to display the counter
+    const counterElement = document.getElementById('growtopia-days-counter');
+
+    // 6. Update the content
+    if (counterElement) {
+        counterElement.textContent = daysPassed;
+    }
+}
+
+// Call the function when the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', updateGrowtopiaAccountAge);
+
+// Optional: If you want the counter to update in real-time (e.g., every second or minute),
+// you can use setInterval. However, for "days passed", updating once on load is usually sufficient.
+// If you want it to be super precise and update every minute (or second), you could do:
+// setInterval(updateGrowtopiaAccountAge, 60 * 1000); // Update every minute
+</script>
+</html>

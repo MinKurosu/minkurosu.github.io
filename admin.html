@@ -213,26 +213,45 @@ hr {
                 <textarea id="post-content" required></textarea>
             </div>
             <div>
-                <label for="post-image">post image (optional):</label>
-                <input type="file" id="post-image" accept="image/*">
-            </div>
+    <label for="post-image-url">URL da Imagem (opcional - para imagens já hospedadas ou externas):</label>
+    <input type="url" id="post-image-url" placeholder="Ex: https://seusite.com/caminho/para/imagem.jpg">
+</div>
+
+<div>
+    <label for="post-image-file">Ou, Upload de Imagem (opcional - via Firebase Storage):</label>
+    <input type="file" id="post-image-file" accept="image/*">
+</div>
             <button type="button" id="publish-post-btn">publicar</button>
             <div id="post-message" class="message"></div>
             <hr>
 
             <form id="dream-journal-form">
-                <h2>Registrar Novo Sonho</h2>
-                <label for="dream-content">Conteúdo do Sonho:</label>
+                <h2>register new dream</h2>
+                <label for="dream-content">dream content:</label>
                 <textarea id="dream-content"></textarea>
-                <button type="button" id="publish-dream-btn">Registrar Sonho</button>
+                <button type="button" id="publish-dream-btn">register dream</button>
                 <div id="dream-message" class="message"></div>
             </form>
+            <hr>
+
+            <form id="private-entry-form">
+    <h2>Nova Entrada Privada</h2>
+    <label for="private-entry-content">Conteúdo da Entrada:</label>
+    <textarea id="private-entry-content" required></textarea>
+    <button type="button" id="publish-private-entry-btn">Publicar Entrada Privada</button>
+    <div id="private-entry-message" class="message"></div>
+</form>
             <hr>
 
             <button type="button" id="logout-btn">sair</button>
         </div>
     </div>
+</body>
 
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"></script>
+<script type="module" src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js"></script>
+<script type="module" src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js"></script>
+<script type="module" src="https://www.gstatic.com/firebasejs/10.12.2/firebase-storage.js"></script>
     <script type="module" src="admin.js"></script>
 </body>
 </html>
