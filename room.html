@@ -111,6 +111,20 @@
     height: 100px;
 }
 
+
+.visible-img{
+top: 430px;
+    left: 550px;
+     position: absolute; /* Posiciona o link em relação a #room-container */
+    height: 200px !important;
+display: inline-block;
+cursor: pointer; /* Indica que é clicável */
+    z-index: 11; /* Garante que o link esteja acima da imagem */
+    display: block; /* Garante que o link ocupe a largura e altura definidas */
+}
+
+
+
 </style>
 
 </head>
@@ -230,6 +244,7 @@
 
             <a href="link-do-livro.html" class="invisible-link" id="link-livro"></a>
             <a href="link-do-quadro.html" class="invisible-link" id="link-quadro"></a>
+            <img src="imgs/webgraphics/pixels/kit.png" class="visible-img"  style="height: 200px">                 
             </div>
     </div>
 </div>
