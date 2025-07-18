@@ -30,7 +30,15 @@
 
 
 
+/* Cursor padrão para todo o site */
+body {
+  cursor: url('caminho/para/sua/rockcursornormal.png'), auto;
+}
 
+/* Cursor para elementos interativos (links, botões, etc.) */
+a, button, input[type="submit"], input[type="button"], select {
+  cursor: url('caminho/para/sua/rockcursorselect.png'), pointer;
+}
 
 
 
@@ -885,7 +893,7 @@ max-width: 300px;!important
 
 .scroll{
 
-max-height: 860px;
+max-height: 850px;
 overflow: auto;
 overflow-y: scroll  
   overflow: auto;

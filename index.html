@@ -25,6 +25,16 @@
    
 <style>
 
+/* Cursor padrão para todo o site */
+body {
+  cursor: url('imgs/cursor/ROCKcursornormal.cur'), auto;
+}
+
+/* Cursor para elementos interativos (links, botões, etc.) */
+a, button, input[type="submit"], input[type="button"], select {
+  cursor: url('imgs/cursor/ROCKcursorselect.cur'), pointer;
+}
+
    /* Main Container transparente */
     #containerprincipal {
       border-radius: 1.25rem;
@@ -49,6 +59,51 @@
       color: #534F4A;
     }
 
+    .galeria-container {
+    width: 700px;
+    height: 300px;
+    border: 4px solid #534f4a;
+     border-radius: 8px;
+    overflow: auto; /* Habilita o scroll quando o conteúdo excede as dimensões */
+    padding: 10px;
+    box-sizing: border-box;
+
+    /* Adicione estas duas linhas para centralizar */
+    margin-left: auto;
+    margin-right: auto;
+    /* Ou, como um atalho: */
+    /* margin: 0 auto; */
+}
+
+        .galeria-grid {
+            display: grid;
+            /* Garante que as imagens apareçam lado a lado.
+               'repeat(auto-fill, minmax(180px, 1fr))' criará o máximo de colunas possível,
+               com cada coluna tendo no mínimo 180px e crescendo para preencher o espaço. */
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); 
+            gap: 15px; /* Espaço entre as imagens */
+            padding: 5px;
+            justify-items: center; /* Centraliza as imagens dentro de suas células no grid */
+            align-items: center; /* Centraliza verticalmente as imagens dentro de suas células */
+        }
+
+        .galeria-grid img {
+            max-width: 100%; /* A imagem não excederá a largura da sua célula */
+            height: 120px; /* Altura fixa para as miniaturas. Ajuste se precisar */
+            
+            /* ESSENCIAL: Garante que a imagem inteira seja visível, redimensionando-a para caber */
+            object-fit: contain; 
+            
+            display: block;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease;
+        }
+
+        .galeria-grid img:hover {
+            transform: scale(1.05); /* Leve aumento ao passar o mouse */
+        }
 
 </style>
 
@@ -185,12 +240,17 @@
             <div class="maincollums">
             </div>
             <hr>
+             <div class="spotify">
+                 
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6B8MXoqO8DFZ0nWEHrM4cG?utm_source=generator&theme=0" width="100%" height="153" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div> 
+            <hr>
             <div class="interests">
             </div>
             <div class="caixamaisclaraInterests">
                 <div class="column">
                     <H2 class="likes">LIKES</H2>
-                    <H4>cats, psychology, dark clothes, my chemical romance, art, gaming, rain and cold weather, my boyfriend, photography, nature, sleeping, anime, piercings, tattoos, black nail polish social causes, my family, </H4>
+                    <H4>cats, psychology, dark clothes, my chemical romance, art, gaming, rain and cold weather, my boyfriend, photography, nature, sleeping, anime, piercings, tattoos, black nail polish, social causes, my family, </H4>
                 </div>
                 <div class="divider"></div>
                 <div class="column">
@@ -212,7 +272,7 @@
                 </tr>
                  <tr>
                     <td style="border: 1px solid black; padding: 8px;">games</td>
-                    <td style="border: 1px solid black; padding: 8px;">minecraft, stardew valley, cs:go, lol, </td>
+                    <td style="border: 1px solid black; padding: 8px;">minecraft, stardew valley, cs:go, lol, the sims, animal crossing, rythm heaven,</td>
                 </tr>
                  <tr>
                     <td style="border: 1px solid black; padding: 8px;">hobbies</td>
@@ -231,22 +291,41 @@
                     <td style="border: 1px solid black; padding: 8px;">fluttershy, pearl (steven universe), jinx, vex,</td>
                 </tr>
                   <tr>
-                    <td style="border: 1px solid black; padding: 8px;">pokemon</td>
-                    <td style="border: 1px solid black; padding: 8px;">litwick, lanpent, chandelure, <img src="imgs/webgraphics/pixels/litwick.webp" style="max-height: 30px"> sprigatito</td>
+                    <td style="border: 1px solid black; padding: 8px;">colors</td>
+                    <td style="border: 1px solid black; padding: 8px;"> black, gray, brown, red, low saturated and dark tones</td>
+                </tr>
+                 <tr>
+                    <td style="border: 1px solid black; padding: 8px;">smells</td>
+                    <td style="border: 1px solid black; padding: 8px;">rain, good herbs, ocean, home, my cats bellies, my bf, chocolate, cinnamon</td>
+                </tr>
+                  <tr>
+                    <td style="border: 1px solid black; padding: 8px;">actress</td>
+                    <td style="border: 1px solid black; padding: 8px;">kristen stewart, keanu reeves, mads mikkelsen, sophie tatcher, </td>
                 </tr>
             </table>
                 </div>
             </div>
             <hr>
-            <div class="spotify">
-                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6B8MXoqO8DFZ0nWEHrM4cG?utm_source=generator&theme=0" width="100%" height="400" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-            </div>
+           
             <h2>send me a msg, drawing</h2>
             <h2>or music!!</h2>
       
         <iframe src="https://minkurosu.straw.page" width="100%" height="550" style="border:;overflow:hidden;" scrolling="no" frameborder="0" allowfullscreen></iframe>
-        <br>
-        <hr>
+    
+     
+
+
+        <h3>art by mutuals:</h3>
+          <br>
+    <div class="galeria-container">
+        <div class="galeria-grid">
+            <img src="imgs/artbyyou/gatoemo.webp" alt="Descrição da Imagem 1">
+              <img src="imgs/artbyyou/Screenshot_20250718_175121_Gallery.jpg" alt="Descrição da Imagem 1">
+                <img src="imgs/artbyyou/Screenshot_20250718_175137_Gallery.jpg" alt="Descrição da Imagem 1">
+                  <img src="imgs/artbyyou/Screenshot_20250718_175151_Gallery.jpg" alt="Descrição da Imagem 1">
+            </div>
+    </div>
+
           </div>
     </main>
 
@@ -375,16 +454,15 @@
         <div class="scroll">
           <img src="imgs/webgraphics/blinkies/cinto.gif" id="blinkies" class="desaturate">
                <img src="imgs/webgraphics/blinkies/catlover2.gif" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/mcr.gif" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/blinkie-psychology.gif" id="blinkies" class="desaturate">
+<img src="imgs/webgraphics/blinkies/artistblinkie.gif" id="blinkies" class="desaturate">
+              
                
                 <img src="imgs/webgraphics/blinkies/nightperson.gif" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/artistblinkie.gif" id="blinkies" class="desaturate">
+                
                 <img src="imgs/webgraphics/blinkies/peace.gif" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/neurodivergent.webp" id="blinkies" class="desaturate">
-               
+                 <img src="imgs/webgraphics/blinkies/blinkie-psychology.gif" id="blinkies" class="desaturate">
                 <img src="imgs/webgraphics/blinkies/catBlinkie.gif" id="blinkies" class="desaturate">
-
+                <img src="imgs/webgraphics/blinkies/minecraftvegetarian.webp"  id="blinkies" class="desaturate">
                             <img src="imgs/webgraphics/blinkies/neurodivergent.webp" id="blinkies" class="desaturate"> 
 
             <img src="imgs/webgraphics/blinkies/piercingobsessed.webp"id="blinkies" class="desaturate">
@@ -397,6 +475,9 @@
                   <img src="imgs/webgraphics/blinkies/hopelessromantic.gif" id="blinkies" class="desaturate">
                 <img src="imgs/webgraphics/blinkies/imissmybf.gif" id="blinkies" class="desaturate">
                <img src="imgs/webgraphics/blinkies/iloveblack.gif" id="blinkies" class="desaturate">
+
+ <img src="imgs/webgraphics/blinkies/vampires.gif" id="blinkies" class="desaturate">
+
                 <img src="imgs/webgraphics/blinkies/cinto.gif" id="blinkies" class="desaturate">
                 <img src="imgs/webgraphics/blinkies/fluttershymarijuana.webp" id="blinkies" class="desaturate">
                 
@@ -406,7 +487,7 @@
                       <img src="imgs/webgraphics/blinkies/typeonegative.webp"id="blinkies" class="desaturate">
             <img src="imgs/webgraphics/blinkies/mybackhurts.gif"id="blinkies" class="desaturate">
               <img src="imgs/webgraphics/blinkies/libra.gif"id="blinkies" class="desaturate">
-             <img src="imgs/webgraphics/blinkies/vampires.gif" id="blinkies" class="desaturate">
+            
                 <img src="imgs/webgraphics/blinkies/catnip.webp" id="blinkies" class="desaturate">
                   <img src="imgs/webgraphics/blinkies/youmaynotrestnow.webp" id="blinkies" class="desaturate">
                 <img src="imgs/webgraphics/blinkies/atmyfuckinglimit.webp" id="blinkies" class="desaturate">
@@ -424,7 +505,6 @@
                                   <img src="imgs/webgraphics/blinkies/normal-ppl-worry-me.gif" id="blinkies" class="desaturate">
                  <img src="imgs/webgraphics/blinkies/horrormovies.gif" id="blinkies" class="desaturate">
                 <img src="imgs/webgraphics/blinkies/y10.gif"id="blinkies" class="desaturate">
-             <img src="imgs/webgraphics/blinkies/imissmybf.gif" id="blinkies" class="desaturate">
             
                     <img src="imgs/webgraphics/blinkies/ilovethesea.gif" id="blinkies" class="desaturate">
                  <img src="imgs/webgraphics/blinkies/bekindtoanimals.gif" id="blinkies" class="desaturate">

@@ -57,19 +57,29 @@ header {
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
-/* Container principal (#container, ajustado para 70rem) */
-#container {
-    background-color: #1B1917;
-    padding: 1.25rem;
-    border-radius: 1.25rem;
-    box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
-    text-align: center;
-    margin: 0 auto;
-    width: 100%;
-    max-width: 70rem; /* Posts mais largos */
-    box-sizing: border-box;
-    color: #534F4A;
-}
+   /* Main Container transparente */
+    #containerprincipal {
+      border-radius: 1.25rem;
+      text-align: center;
+      margin: 0 auto;
+      width: 100%;
+      max-width: 50rem;
+      box-sizing: border-box;
+      color: #534F4A;
+    }
+ /*  Container colorido */
+    #container {
+      background-color: #1B1917;
+      padding: 1.25rem;
+      border-radius: 1.25rem;
+      box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
+      text-align: center;
+      margin: 0 auto;
+      width: 100%;
+      max-width: 50rem;
+      box-sizing: border-box;
+      color: #534F4A;
+    }
 
 /* ========================================= */
 /* ESTILOS ESPECÍFICOS PARA OS POSTS DO BLOG */
@@ -319,8 +329,8 @@ header {
             </header>
             <div id="container">
               <main id="containerprincipal">
-            
-            <div id="container">
+             
+           
                 <div class="caixamaisclara">
                     <img id="logobig" src="imgs/site_imgs/logo.png" alt="Logo" data-position="center">
                    
@@ -330,7 +340,7 @@ header {
                 <div class="caixamaisclaraCenterSimple">
                  <h4>sorry if there any foreign readers, i kinda wanna do my entries in brazilian portuguese 'cause it's my first language, so feel free to translate if you're interested enough to read.</h4>
                <div id="google_translate_element"></div>
-            </div>
+            
 </div>
                <hr>
                 <div class="caixamaisclara" id="dreams-container">
@@ -338,7 +348,8 @@ header {
                 </div>
             </div>
     </main>
-        </div>
+        </div> 
+    </div>
             </main>
 
     <aside class="sidebar sidebar-right">
