@@ -29,41 +29,41 @@ h4{
     font-size: 24px;
 }
 .layout-with-sidebars {
-    display: flex !important; /* Torna o contêiner um flex container */
-    justify-content: space-between !important; /* Ou center, dependendo de como você quer as sidebars */
-    align-items: flex-start !important; /* Alinha os itens no topo */
+    display: flex !important; 
+    justify-content: space-between !important; 
+    align-items: flex-start !important; 
 }
 
 .sidebar {
-    width: auto !important; /* Largura fixa para as sidebars. Ajuste este valor conforme necessário. */
-    flex-shrink: 0 !important; /* Impede que as sidebars encolham */
+    width: auto !important; 
+    flex-shrink: 0 !important; 
 }
 
 #containerprincipal {
-    flex-grow: 1 !important; /* Permite que ele preencha o espaço restante */
-    width: auto !important; /* Garante que a largura seja automática */
-    padding: 0 20px !important; /* Exemplo de padding, ajuste conforme necessário */
-    min-width: 0 !important; /* Importante para flexbox para evitar estouro de conteúdo */
+    flex-grow: 1 !important; 
+    width: auto !important; 
+    padding: 0 20px !important; 
+    min-width: 0 !important; 
     max-width: auto !important; 
    
 }
-/* Para a imagem room.png dentro do #room-container */
+
 #room-container img {
-    width: 100%; /* A imagem ocupará 100% da largura do seu contêiner pai */
-    height: auto; /* A altura se ajustará automaticamente para manter a proporção */
-    display: block; /* Remove qualquer espaço extra abaixo da imagem */
-    object-fit: contain; /* Garante que a imagem seja dimensionada para caber, mantendo a proporção */
+    width: 100%; 
+    height: auto; 
+    display: block; 
+    object-fit: contain; 
 }
 
-/* O contêiner pai da imagem, para garantir que os links relativos funcionem */
+
 #room-container {
     position: relative;
-    width: 100%; /* Ele também deve ocupar 100% do espaço disponível */
-    height: auto; /* A altura do contêiner se ajusta à altura da imagem responsiva */
-    overflow: hidden; /* Garante que nada transborde */
+    width: 100%; 
+    height: auto; 
+    overflow: hidden; 
 }
 
-  /* Main Container transparente */
+
     #containerprincipal {
       border-radius: 1.25rem;
       text-align: center;
@@ -73,7 +73,7 @@ h4{
       box-sizing: border-box;
       color: #534F4A;
     }
- /*  Container colorido */
+
     #container {
       background-color: #1B1917;
     
@@ -88,15 +88,15 @@ h4{
     }
 
 
-/* Media Query para Telas Menores (Celulares, Tablets - até 768px de largura) */
+
 @media (max-width: 768px) {
     #container {
-        max-width: 50rem; /* Limita a largura máxima do contêiner a 50rem */
-        width: 100%; /* Garante que ele ocupe 100% da largura disponível até o limite de 50rem */
-        margin: 0 auto; /* Centraliza o contêiner dentro do espaço disponível */
+        max-width: 50rem; 
+        width: 100%; 
+        margin: 0 auto;
     }
 
-    /* Outros ajustes para celular, se necessário, como os que você já tem para sidebars */
+    
     .layout-with-sidebars {
         flex-direction: column;
         align-items: center;
@@ -109,7 +109,7 @@ h4{
         max-width: none;
     }
 }
-/* Se maincollums e column também estiverem limitando a largura, adicione: */
+
 .maincollums {
     width: 100% !important;
 }
@@ -120,15 +120,15 @@ h4{
 
 
 .invisible-link {
-    position: absolute; /* Posiciona o link em relação a #room-container */
-    background-color: rgba(255, 0, 0, 0); /* Totalmente transparente. Mude o '0' para '0.1' para ver a área do link durante o desenvolvimento. */
-    cursor: pointer; /* Indica que é clicável */
-    z-index: 10; /* Garante que o link esteja acima da imagem */
-    display: block; /* Garante que o link ocupe a largura e altura definidas */
+    position: absolute; 
+    background-color: rgba(255, 0, 0, 0); 
+    cursor: pointer; 
+    z-index: 10; 
+    display: block; 
 }
 
 
-/* Dimensões da imagem room.png: Largura = 980px, Altura = 800px */
+
 
 #link-apollo {
     top: 66% !important;
@@ -151,7 +151,7 @@ h4{
     height: 68.75% !important;
 }
 
-/* Cavalete manchado */
+
 #link-cavalete {
     top: 45% !important;
     left: 20.41% !important;
@@ -159,7 +159,7 @@ h4{
     height: 47.5% !important;
 }
 
-/* Mesa digitalizadora em cima da mesa principal */
+
 #link-mesa-digitalizadora {
     top: 63.125% !important;
     left: 55.10% !important;
@@ -167,7 +167,7 @@ h4{
     height: 7.5% !important;
 }
 
-/* Fotos na parede */
+
 #link-fotos-parede {
     top: 36.25% !important;
     left: 64.29% !important;
@@ -175,7 +175,7 @@ h4{
     height: 12.5% !important;
 }
 
-/* Notebook */
+
 #link-notebook {
     top: 63.75% !important;
     left: 65.31% !important;
@@ -183,7 +183,7 @@ h4{
     height: 6.25% !important;
 }
 
-/* Desenhos de papel na parede */
+
 #link-desenhos-parede {
     top: 36.25% !important;
     left: 61.65% !important;
@@ -191,7 +191,7 @@ h4{
     height: 19.75% !important;
 }
 
-/* Caixa de música com álbuns em cima */
+
 #link-caixa-musica {
     top: 74% !important;
     left: 58.45% !important;
@@ -205,15 +205,14 @@ h4{
 
 
 
-/* O .visible-img que você forneceu: */
 .visible-img {
-    top: 430px; /* Este valor ainda é em pixels e será relativo ao viewport se o pai for fixo */
+    top: 430px; 
     left: 10%;
-    position: fixed; /* Este elemento será fixo em relação ao viewport */
+    position: fixed; 
     height: 100px !important;
-    display: inline-block; /* Ou 'block' dependendo do que ele é */
+    display: inline-block; 
     cursor: pointer;
-    z-index: 11; /* Estará acima do #room-container */
+    z-index: 11; 
     display: block;
 }
 
@@ -332,19 +331,19 @@ h4{
     <div class="maincollums">
         <div class="column" id="room-container"> <img src="imgs/site_imgs/room-overlay.png" alt="Meu Quarto">
 
-            <a href="link-apollo.html" class="invisible-link" id="link-apollo"></a>
+            <a href="apollo.html" class="invisible-link" id="link-apollo"></a>
 
-            <a href="link-jupiter.html" class="invisible-link" id="link-jupiter"></a>
+            <a href="jupiter.html" class="invisible-link" id="link-jupiter"></a>
 
-            <a href="link-do-livro.html" class="invisible-link" id="link-livro"></a>
-            <a href="link-do-quadro.html" class="invisible-link" id="link-quadro"></a>
-           <a href="link-mesa-digitalizadora.html" class="invisible-link" id="link-mesa-digitalizadora"></a>
-            <a href="link-da-estante.html" class="invisible-link" id="link-estante-livros"></a>
-            <a href="link-cavalete.html" class="invisible-link" id="link-cavalete"></a>
-           <a href="link-fotos-parede.html" class="invisible-link" id="link-fotos-parede"></a>
-    <a href="link-notebook.html" class="invisible-link" id="link-notebook"></a>
+            <a href="reads.html" class="invisible-link" id="link-livro"></a>
+           
+           <a href="portfolio-art.html" class="invisible-link" id="link-mesa-digitalizadora"></a>
+            <a href="readings.html" class="invisible-link" id="readings"></a>
+            <a href="paintings.html" class="invisible-link" id="link-cavalete"></a>
+           <a href="feed.html" class="invisible-link" id="feed"></a>
+    <a href="blog.html" class="invisible-link" id="link-notebook"></a>
     <a href="link-desenhos-parede.html" class="invisible-link" id="link-desenhos-parede"></a>
-    <a href="link-caixa-musica.html" class="invisible-link" id="link-caixa-musica"></a>
+    <a href="music.html" class="invisible-link" id="music"></a>
 
     
         
