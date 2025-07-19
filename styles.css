@@ -14,7 +14,7 @@
 }
 
 
-  /* General Settings */
+ 
   html {
     font-size: 16px;
   }
@@ -30,12 +30,12 @@
 
 
 
-/* Cursor padrão para todo o site */
-body {
+
+html {
   cursor: url('caminho/para/sua/rockcursornormal.png'), auto;
 }
 
-/* Cursor para elementos interativos (links, botões, etc.) */
+
 a, button, input[type="submit"], input[type="button"], select {
   cursor: url('caminho/para/sua/rockcursorselect.png'), pointer;
 }
@@ -47,88 +47,72 @@ a, button, input[type="submit"], input[type="button"], select {
 
 
 
-@media (max-width: 768px) { /* Usando 768px como breakpoint para melhor compatibilidade */
+@media (max-width: 768px) { 
 
-    /* 1. Resetar o BODY para mobile */
+    
     body {
-        transform: none !important; /* Remove qualquer transformação de escala */
-        transform-origin: initial !important; /* Reseta a origem da transformação */
-        position: static !important; /* Remove position: absolute; - volta ao fluxo normal */
-        overflow-x: auto !important; /* Permite rolagem horizontal se o conteúdo vazar (para debug e ajuste) */
-                                     /* Idealmente, após o ajuste, não haverá necessidade de rolagem */
-        width: 100%; /* Garante que o body ocupe 100% da largura do viewport */
-        min-width: unset; /* Remove qualquer largura mínima que possa causar overflow */
+        transform: none !important; 
+        transform-origin: initial !important; 
+        position: static !important; 
+        overflow-x: auto !important; 
+        width: 100%; 
+        min-width: unset; 
     }
 
-    /* 2. Ajustar o layout principal (.layout-with-sidebars) para empilhar */
-    /* Isso sobrescreve a regra global 'display: grid' para telas grandes */
+    
     .layout-with-sidebars {
-        display: flex; /* Muda para flexbox no mobile */
-        flex-direction: column; /* Empilha as sidebars e o conteúdo principal verticalmente */
-        width: 100%; /* Ocupa 100% da largura disponível */
-        max-width: 100%; /* Garante que não ultrapasse a largura da tela */
-        margin: 0 auto; /* Centraliza o container */
-       
-        padding: 0; /* Remova qualquer padding que possa causar overflow */
+        display: flex; 
+        flex-direction: column; 
+        width: 100%; 
+        max-width: 100%; 
+        margin: 0 auto; 
+        padding: 0; 
     }
 
-    /* 3. Gerenciar as Sidebars no Mobile */
-    /* Se você quer que as sidebars sejam visíveis, elas precisam se adaptar. */
-    /* Se você preferir escondê-las, mantenha 'display: none;'. */
-   
-    /* Se você realmente quer escondê-las, descomente a linha abaixo: */
-    /* .sidebar { display: none; } */
-
-
-    /* 4. Ajustar o Container Principal de Conteúdo */
+    
     #containerprincipal {
-        width: 100%; /* Garante que o conteúdo principal ocupe a largura total */
-        max-width: 100%; /* Previne que ele vaze */
-        margin: 0 auto; /* Centraliza o conteúdo principal */
-        padding: 0 10px; /* Adiciona um pequeno padding nas laterais */
-        box-sizing: border-box; /* Inclui padding na largura total */
+        width: 100%; 
+        max-width: 100%; 
+        margin: 0 auto; 
+        padding: 0 10px; 
+        box-sizing: border-box;
     }
 
-    /* 5. Corrigir e ajustar `.maincollums` para Mobile */
-    /* Esta é a regra mais crítica que causa o overflow horizontal. */
+    
     .maincollums {
-        display: flex; /* Use flexbox para controle */
-        flex-direction: column; /* Empilha as colunas verticalmente */
-        width: 100%; /* Ocupa 100% da largura disponível */
-        max-width: 100%; /* Garante que não vaze */
-        gap: 0; /* Remover gap que pode somar e causar overflow */
-        padding: 0; /* Remover padding que pode causar overflow */
-        /* Remova ou sobrescreva explicitamente a regra global de grid-template-columns */
-        grid-template-columns: unset !important; /* Desativa a regra de grid para mobile */
+        display: flex; 
+        flex-direction: column;
+        width: 100%; 
+        max-width: 100%; 
+        gap: 0; 
+        padding: 0; 
+        grid-template-columns: unset !important; 
     }
 
     .column {
-        flex: none; /* Remove flex-grow para que ocupe a largura total definida */
-        width: 100%; /* Ocupa 100% da largura do maincollums */
-        margin: 5px 0; /* Margem vertical, remove horizontal */
-        padding: 5px; /* Adiciona padding interno */
-        box-sizing: border-box; /* Inclui padding na largura */
-        /* Remover regras de column-rule que podem interferir */
+        flex: none; 
+        width: 100%; 
+        margin: 5px 0; 
+        padding: 5px; 
+        box-sizing: border-box; 
         -webkit-column-rule: none;
         -moz-column-rule: none;
         column-rule: none;
     }
     
     .divider {
-        display: none; /* Esconder divisores entre colunas no mobile */
+        display: none; 
     }
 
-    /* 6. Corrigir valores inválidos de flex-direction */
-    /* Altere todos os 'flex-direction: flex;' para 'flex-direction: column;' ou 'row' conforme a intenção */
-    /* Exemplo para .caixamaisclara: */
+  
     .caixamaisclara {
         display: flex;
-        flex-direction: column;   /* CORRIGIDO: de 'flex' para 'column' */
-        align-items: center;      /* Centralizado na largura */
-        justify-content: center; /* Centraliza conteúdo verticalmente se houver espaço */
-        width: 100%; /* Garante que ocupe a largura total disponível */
-        max-width: 100%; /* Previne overflow */
-        box-sizing: border-box; /* Inclui padding na largura */
+        flex-direction: column;   
+        align-items: center;     
+        justify-content: center; 
+        width: 100%; 
+        max-width: 100%; /
+        box-sizing: border-box; 
     }
 
 
@@ -192,24 +176,24 @@ a, button, input[type="submit"], input[type="button"], select {
 
   
 a {
-    text-decoration: none; /* Remove o sublinhado */
-    color: #534F4A; /* Define uma cor padrão para todos os links, como a de seu site */
+    text-decoration: none; 
+    color: #534F4A; 
 }
 
 .marked-link {
-    text-decoration: underline; /* Remove o sublinhado */
-    color: #534F4A; /* Define uma cor padrão para todos os links, como a de seu site */
+    text-decoration: underline; 
+    color: #534F4A; 
 }
 
-/* Opcional: Se você quiser que os links mudem de cor ao passar o mouse */
+
 a:hover {
-    color: #a7a7a7; /* Exemplo: muda para um amarelo ao passar o mouse */
-    text-decoration: underline; /* Opcional: Adiciona o sublinhado de volta ao passar o mouse */
+    color: #a7a7a7; 
+    text-decoration: underline;
 }
 
 
 body > .layout-with-sidebars {
-  /* força grid mesmo dentro do flex */
+ 
   display: grid !important;
   grid-template-columns: auto 1fr auto;
 }
@@ -232,7 +216,7 @@ body > .layout-with-sidebars {
   
   }
 
-  /* Navbar */
+  
   .navbar {
     display: flex;
     justify-content: center;
@@ -281,30 +265,26 @@ body > .layout-with-sidebars {
 
 
 
-/* empilha e centraliza */
 .caixamaisclara {
   display: flex;
-  flex-direction: flex;   /* empilhado */
-  align-items: center;      /* centralizado na largura */
+  flex-direction: flex; 
+  align-items: center;      
 }
 
-/* empilha e centraliza */
 .caixamaisclara {
   display: flex;
-  flex-direction: flex;   /* empilhado */
-  align-items: center;      /* centralizado na largura */
+  flex-direction: flex;   
+  align-items: center;     
 }
 
 
-/* espaçamento entre os “botões” */
 .caixamaisclara .side-item {
-  margin: 3px;        /* cima/baixo 10 px */
+  margin: 3px;        
 max-width: 300px;
 }
 
-/* mesmo visual do navbar, agora ocupando a largura do item */
 .caixamaisclara .side-item a {
-  display: block;           /* vira “bloco”, não inline-block */
+  display: block;           
   padding: 3px;
   text-align: center;
   text-decoration: none;
@@ -323,22 +303,20 @@ max-width: 300px;
 }
 
 
-/* empilha e centraliza */
 .caixamaisclara .side-item {
   display: flex;
-  flex-direction: column;   /* empilhado */
-  align-items: center;      /* centralizado na largura */
+  flex-direction: column;   
+  align-items: center;      
 }
 
 
-/* empilha e centraliza */
 .caixamaisclara .sidebar {
   display: flex;
-  flex-direction: column;   /* empilhado */
+  flex-direction: column;   
   margin: 5px; !important
   max-width: 280px;
   display: flex;
-  flex-direction: flex;   /* empilhado */
+  flex-direction: flex;   
   align-items: center;
 }
 
@@ -346,8 +324,8 @@ max-width: 300px;
 .nav-side {
   display: flex;
   flex-direction: row;
-  align-items: center; /* centraliza horizontalmente */
-  gap: 10px; /* espaço entre os itens */
+  align-items: center; 
+  gap: 10px; 
   justify-content: space-around;
   flex-wrap: wrap;
 }
@@ -419,8 +397,6 @@ max-width: 300px;
 
 
 
-
-   /* Main Container transparente */
     #containerprincipal {
       border-radius: 1.25rem;
       text-align: center;
@@ -430,7 +406,7 @@ max-width: 300px;
       box-sizing: border-box;
       color: #534F4A;
     }
- /*  Container colorido */
+
     #container {
       background-color: #1B1917;
       padding: 1.25rem;
@@ -445,7 +421,6 @@ max-width: 300px;
     }
 
 
-  /* Main Container */
   #container {
     background-color: #1B1917;
     padding: 1.25rem;
@@ -458,7 +433,6 @@ max-width: 300px;
     color: #534F4A;
   }
 
-  /* Logo */
   #logopatinha {
     height: 5rem;
     transition: transform 0.3s ease-in-out;
@@ -496,7 +470,6 @@ max-width: 300px;
 }
 
 
- /* Logo patinha */
  #logopatinha {
     height: 5rem;
     transition: transform 0.3s ease-in-out;
@@ -588,25 +561,16 @@ max-width: 300px;
     border-radius: 0.9375rem;
     box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
     display: flex;
-    align-items: center; /* Já centraliza o conteúdo verticalmente */
+    align-items: center;
+    
 
-    /* ----- NOVAS PROPRIEDADES PARA CENTRALIZAR ----- */
-
-    /* 1. Para centralizar o CONTEÚDO DENTRO da caixa horizontalmente: */
     justify-content: center; 
 
-    /* 2. Para centralizar a PRÓPRIA CAIXA horizontalmente na página: */
-    /* Substitua o 'margin: 2px;' por este: */
-    margin: 0 auto; /* Define 0 de margem em cima/baixo e 'auto' nas laterais para centralizar */
+    
+    margin: 0 auto; 
 
-    /* 3. IMPORTANTE: Para 'margin: auto' funcionar, o elemento precisa ter uma largura definida. */
-    /* Se a caixa for ocupar 100% da largura, ela já estará "centralizada" (ocupando tudo). */
-    /* Se você quer que ela tenha uma largura menor e fique no centro, adicione uma largura: */
-    max-width: 500px; /* Exemplo: define uma largura máxima para a caixa */
-    /* Ou, se o conteúdo ditar a largura e ela não for 100%: */
-    /* width: fit-content; */ 
-
-    /* ----------------------------------------------- */
+    max-width: 500px; 
+    
 
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
@@ -705,14 +669,13 @@ max-width: 300px;
     transition: transform 0.2s ease-in-out;
   }
 
-  /* GRIDFEED  /* 
-
+ 
   
 
     .grid-feed {
       display: grid;
-      grid-template-columns: repeat(3, 1fr); /* 3 colunas */
-      gap: 10px; /* Espaço entre as imagens */
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px; 
       max-width: 800px;
   
       
@@ -737,12 +700,12 @@ max-width: 300px;
 
 
     .grid-feed a img{
-  transition: transform 0.1s ease-in-out; /* Suaviza o aumento ao passar o mouse */
+  transition: transform 0.1s ease-in-out;
   object-fit: cover;
 }
 
 .grid-feed a:hover img {
-  transform: scale(1.05); /* Aumenta a imagem suavemente */
+  transform: scale(1.05); 
   transition: transform 0.1s ease-in-out;
 }
 
@@ -755,12 +718,11 @@ max-width: 300px;
  color: #534f4a;
  border-color:#24211e
  }
-/* GRID FEED /*
 
 
 
 
-/* Ajustar o tamanho e a exibição dos vídeos */
+
 .boxfoto video {
   width: 200px;
   height: 200px;
@@ -768,26 +730,25 @@ max-width: 300px;
   border-radius: 0.3125rem;
 }
 
-/* Garantir que imagens dentro de .boxfoto sejam quadradas */
 .boxfoto img {
   object-fit: cover;
-  border-radius: 0.3125rem; /* ajustar se necessário */
+  border-radius: 0.3125rem; 
 }
 
 
-/* Ajustar as imagens na seção about-content */
+
 .about-content img {
   width: 200px;
   height: 200px;
   object-fit: cover;
-  border-radius: 0.3125rem; /* ajustar se necessário */
+  border-radius: 0.3125rem; 
 }
 
 .fotosworks:hover,
 .boxfoto video:hover,
 .about-content img:hover {
   transform: scale(1.05);
-  transition: transform 0.2s ease-in-out;; /* Aumenta o tamanho em 10% */
+  transition: transform 0.2s ease-in-out;; 
 }
 
 
@@ -866,10 +827,10 @@ max-width: 300px;!important
 
 
   display: flex;
-  flex-direction: column;       /* conteúdo em coluna, se for texto e imagens */
-  justify-content: center;      /* centraliza verticalmente */
-  align-items: center;          /* centraliza horizontalmente */
-  text-align: center;           /* centraliza texto */
+  flex-direction: column;      
+  justify-content: center;     
+  align-items: center;          
+  text-align: center;          
 }
 
 
@@ -882,10 +843,10 @@ transition: transform 0.3s ease, box-shadow 0.3s ease;
 box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
 max-width: 300px;!important
   display: flex;
-  flex-direction: column;       /* conteúdo em coluna, se for texto e imagens */
-  justify-content: center;      /* centraliza verticalmente */
-  align-items: center;          /* centraliza horizontalmente */
-  text-align: center;           /* centraliza texto */
+  flex-direction: column;       
+  justify-content: center;      
+  align-items: center;         
+  text-align: center;        
 }
 
 
@@ -897,13 +858,13 @@ max-height: 850px;
 overflow: auto;
 overflow-y: scroll  
   overflow: auto;
-  scrollbar-width: none;        /* Firefox */
-  -ms-overflow-style: none;     /* IE/Edge */
+  scrollbar-width: none;        
+  -ms-overflow-style: none;     
 }
 
 
 .scroll-box::-webkit-scrollbar {
-  display: none;                /* Chrome, Safari, Edge (WebKit) */
+  display: none;                
 }
 
 #blinkies{
@@ -913,12 +874,12 @@ overflow-y: scroll
 }
 
 .desaturate {
-  filter: saturate(0.3);           /* diminui a saturação */
-  transition: filter 0.3s ease;    /* suaviza a transição */
+  filter: saturate(0.3);           
+  transition: filter 0.3s ease;   
 }
 
 .desaturate:hover {
-  filter: saturate(1);             /* saturação normal ao passar o mouse */
+  filter: saturate(1);            
 }
 
 #nomeSide{
@@ -933,8 +894,8 @@ overflow-y: scroll
   align-items: flex-start;
   gap: 10px;
 grid-template-columns: 300px 1fr 1000px; !important
-  -webkit-column-rule: 1px solid #dbdbdb; /* Chrome, Safari, Opera */
-            -moz-column-rule: 1px solid #dbdbdb; /* Firefox */
+  -webkit-column-rule: 1px solid #dbdbdb; 
+            -moz-column-rule: 1px solid #dbdbdb; 
             column-rule: 1px solid #dbdbdb;
 }
 
@@ -943,8 +904,8 @@ grid-template-columns: 300px 1fr 1000px; !important
   flex: 1;
  margin: 5px;
   justify-content: left;
-   -webkit-column-rule: 1px solid #dbdbdb; /* Chrome, Safari, Opera */
-            -moz-column-rule: 1px solid #dbdbdb; /* Firefox */
+   -webkit-column-rule: 1px solid #dbdbdb; 
+            -moz-column-rule: 1px solid #dbdbdb; 
             column-rule: 1px solid #dbdbdb;
 }
 
@@ -1026,7 +987,6 @@ margin-left: 3rem;
 
 
 
-/* --- TABELA --- */
 table {
     border: 3px solid black;
     border-collapse: collapse;
@@ -1062,10 +1022,9 @@ th {
 
 .track-inner {
     display: inline-block;
-    animation: scroll-right 60s linear infinite; /* Altere para scroll-right */
+    animation: scroll-right 60s linear infinite;
 }
 
-/* Pausa a animação ao passar o mouse */
 .track:hover .track-inner {
     animation-play-state: paused;
 }
@@ -1078,99 +1037,86 @@ th {
     margin: 0 5px;
 }
 
-/* Animação de rolagem para a direita */
 @keyframes scroll-right {
     0% {
-        transform: translateX(-50%); /* Começa com a metade duplicada visível */
+        transform: translateX(-50%); 
     }
     100% {
-        transform: translateX(0%); /* Termina com a primeira metade visível */
+        transform: translateX(0%); 
     }
 }
-/* Seu CSS Existente */
 
-/* Estilos gerais para o contêiner da grid */
 .skin-grid-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   padding: 20px;
-  max-width: 1200px; /* Adicione um max-width para controlar a largura da grid */
-  margin: 0 auto; /* Centraliza a grid */
+  max-width: 1200px; 
+  margin: 0 auto; 
   border-radius: 8px;
 
-  /* Importante: Remova qualquer `width: [valor fixo];` que possa estar causando o transbordo */
-  /* Se ainda vazar, tente adicionar: */
-  /* overflow-x: hidden; */
-}
-
-/* NOVO CSS PARA O CONTÊINER .content-column */
+ 
 .content-column {
-    display: flex; /* Habilita Flexbox */
-    flex-direction: column; /* Organiza os itens (h3 e skin-grid-container) em coluna */
-    align-items: center; /* Centraliza os itens horizontalmente dentro do .content-column */
-    /* Se você quiser que o .content-column não ocupe 100% da largura, defina um max-width e margin: auto */
-    max-width: 1300px; /* Exemplo: um pouco maior que a grid para acomodar padding se houver */
-    margin: 0 auto; /* Centraliza o próprio .content-column dentro do .caixamaisclara */
-    padding: 10px; /* Opcional: Adicione um padding interno ao .content-column se desejar */
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    
+    max-width: 1300px; 
+    margin: 0 auto; 
+    padding: 10px; 
 }
 
-/* NOVO CSS PARA O TÍTULO h3 DENTRO DE .content-column */
-/* Como o h3 agora está dentro de .content-column, ajustamos o seletor */
 .content-column h3 {
  
   
-  font-size: 2.5em; /* Tamanho do título */
-  text-align: center; /* Centraliza o texto do título */
-  margin-top: 0; /* Remove margem superior padrão do h3 */
-  margin-bottom: 20px; /* Espaço abaixo do título antes da grid */
-  padding-top: 20px; /* Adiciona padding na parte superior para afastar do topo da .caixamaisclara ou .content-column */
-  letter-spacing: 1px; /* Opcional: espaçamento entre letras */
-  text-transform: uppercase; /* Opcional: letras maiúsculas */
+  font-size: 2.5em;
+  text-align: center; 
+  margin-top: 0; 
+  margin-bottom: 20px; 
+  padding-top: 20px; 
+  letter-spacing: 1px; 
+  text-transform: uppercase; 
 }
 
-/* Estilos para cada item de skin */
 .skin-item {
   background-color: #534f4a15 ;
-  border: 4px solid #534f4ac2; /* Borda sutil */
-  border-radius: 8px; /* Cantos arredondados */
-  padding: 15px; /* Preenchimento interno */
-  text-align: center; /* Centraliza a imagem e o título */
-  display: flex; /* Usa flexbox para organizar conteúdo interno */
-  flex-direction: column; /* Organiza itens em coluna */
-  justify-content: space-between; /* Espaço entre imagem e título */
-  align-items: center; /* Centraliza horizontalmente */
-  transition: transform 0.2s ease-in-out; /* Efeito de transição ao passar o mouse */
+  border: 4px solid #534f4ac2;
+  border-radius: 8px; 
+  padding: 15px; 
+  text-align: center; 
+  display: flex;
+  flex-direction: column; 
+  justify-content: space-between;
+  align-items: center; 
+  transition: transform 0.2s ease-in-out; 
 }
 
 .skin-item:hover {
-  transform: translateY(-5px); /* Levanta o item um pouco ao passar o mouse */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Sombra mais pronunciada */
+  transform: translateY(-5px); 
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); 
 }
 
-/* Estilos para a imagem da skin */
+
 .skin-item img {
-  max-width: 100%; /* Garante que a imagem não transborde */
-  height: auto; /* Mantém a proporção da imagem */
-  display: block; /* Remove espaço extra abaixo da imagem */
-  margin-bottom: 10px; /* Espaço entre a imagem e o título */
-  border-radius: 4px; /* Cantos arredondados para a imagem */
+  max-width: 100%; 
+  height: auto; 
+  display: block; 
+  margin-bottom: 10px; 
+  border-radius: 4px; 
 }
 
-/* Estilos para o título da skin */
 .skin-title {
-  font-size: 1rem; /* Tamanho pequeno para o título */
-  color: #534f4a; /* Cor escura para o texto */
-  margin: 0; /* Remove margens padrão do parágrafo */
-  padding-top: 5px; /* Pequeno espaçamento acima do título */
+  font-size: 1rem; 
+  color: #534f4a; 
+  margin: 0; 
+  padding-top: 5px; 
   
-  font-weight: 500; /* Um pouco mais encorpado */
+  font-weight: 500; 
 }
 
-/* Media Queries para responsividade */
 @media (max-width: 768px) {
   .skin-grid-container {
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Reduz o min-width em telas menores */
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     gap: 15px;
   }
   .skin-item {
@@ -1183,7 +1129,7 @@ th {
 
 @media (max-width: 480px) {
   .skin-grid-container {
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Ainda menor para celulares */
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); 
     gap: 10px;
   }
   .skin-item {
@@ -1206,9 +1152,9 @@ th {
     outline-offset: 4px;
     transition: filter 250ms;
     display: inline-block;
-    text-decoration: none; /* Remove sublinhado */
-    display: block;  /* Garante que o botão ocupe a largura total do container */
-    width: 100%;  /* Faz com que cada botão tenha a largura máxima disponível */
+    text-decoration: none; 
+    display: block;  
+    width: 100%; 
   }
   .shadow {
     position: absolute;
@@ -1273,8 +1219,6 @@ th {
   }
 
 
-/* Primeiro, vamos garantir que a classe base .pushable se comporte como um elemento inline-block
-   para que ele possa sentar-se lado a lado com outros elementos. */
 .pushable {
     position: relative;
     border: none;
@@ -1283,12 +1227,9 @@ th {
     cursor: pointer;
     outline-offset: 4px;
     transition: filter 250ms;
-    /* CHAVE: Mude para inline-block para permitir que fiquem lado a lado */
+  
     display: inline-block; 
-    text-decoration: none; /* Remove sublinhado */
-    /* REMOVA ou COMENTE as linhas abaixo que forçam largura total ou comportamento de bloco: */
-    /* display: block; */ /* Isso faria com que cada botão ocupasse sua própria linha */
-    /* width: 100%; */   /* Isso faria com que cada botão ocupasse 100% da largura do pai */
+    text-decoration: none; 
 }
 
 .shadow {
@@ -1319,9 +1260,9 @@ th {
     );
 }
 .front {
-    display: block; /* Mantenha display: block aqui para que o padding e a largura dentro do botão funcionem */
+    display: block; 
     position: relative;
-    padding: 12px 42px; /* Este padding define o tamanho "extra" ao redor do texto */
+    padding: 12px 42px; 
     border-radius: 12px;
     font-size: 1.25rem;
     color: #494541;
@@ -1329,9 +1270,7 @@ th {
     will-change: transform;
     transform: translateY(-4px);
     transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
-    white-space: nowrap; /* Impede que o texto dentro do botão quebre linha */
-    /* Se quiser que o texto se ajuste ao tamanho e o botão não tenha largura mínima,
-       remova qualquer 'min-width' ou 'width' fixos que você possa ter adicionado aqui. */
+    white-space: nowrap;
 }
 .pushable:hover {
     filter: brightness(110%);
@@ -1356,9 +1295,6 @@ th {
     outline: none;
 }
 
-/* ----------------------------------------------- */
-/* Estilos base para os botões "pushable" (aplicados a todos os botões com esta classe) */
-/* ----------------------------------------------- */
 .pushable {
     position: relative;
     border: none;
@@ -1367,8 +1303,8 @@ th {
     cursor: pointer;
     outline-offset: 4px;
     transition: filter 250ms;
-    display: inline-block; /* ESSENCIAL: Permite que os botões fiquem lado a lado */
-    text-decoration: none; /* Remove sublinhado padrão dos links */
+    display: inline-block; 
+    text-decoration: none; 
 }
 
 .shadow {
@@ -1401,14 +1337,14 @@ th {
 }
 
 .front {
-    display: block; /* Mantém o bloco para padding e alinhamento do texto */
+    display: block; 
     position: relative;
-    /* AJUSTES PARA BOTÕES MENORES: */
-    font-size: 1rem; /* Tamanho da fonte reduzido */
-    padding: 8px 20px; /* Padding reduzido (vertical 8px, horizontal 20px) */
-    /* AJUSTE PARA LARGURA DOS BOTÕES (OPCIONAL): */
-    min-width: 150px; /* Define uma largura mínima para todos os botões */
-    text-align: center; /* Centraliza o texto dentro do botão */
+    
+    font-size: 1rem; 
+    padding: 8px 20px; 
+   
+    min-width: 150px; 
+    text-align: center; 
 
     border-radius: 12px;
     color: #504a43;
@@ -1416,7 +1352,7 @@ th {
     will-change: transform;
     transform: translateY(-4px);
     transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
-    white-space: nowrap; /* Impede que o texto quebre linha */
+    white-space: nowrap; 
 }
 
 .pushable:hover {
@@ -1447,14 +1383,13 @@ th {
     outline: none;
 }
 
-/* Estilo para o botão de jogo ativo (clicado) - opcional */
 .game-button-link.active .front {
-    transform: translateY(-2px); /* Botão "afundado" quando ativo */
-    background: hsl(30, 4%, 15%); /* Cor mais escura para o botão ativo */
-    box-shadow: inset 0 0 5px rgba(0,0,0,0.3); /* Sombra interna para dar um efeito de "pressionado" */
+    transform: translateY(-2px); /* botão "afundado" quando ativo */
+    background: hsl(30, 4%, 15%); 
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.3); /
 }
 .game-button-link.active .shadow {
-    transform: translateY(1px); /* Sombra mais próxima para o botão ativo */
+    transform: translateY(1px); 
 }
 
 .screenshots {
@@ -1463,9 +1398,6 @@ th {
 }
 
 
-/* ----------------------------------------------- */
-/* Seção "My Games" - Contêiner principal da seção de jogos */
-/* ----------------------------------------------- */
 .games-section {
     background-color: #1B1917;
     padding: 20px;
@@ -1484,100 +1416,81 @@ th {
    
     color: #534F4A;
     text-transform: uppercase;
-    text-align: center; /* Centraliza o texto do título horizontalmente */
+    text-align: center; 
     
-    /* ZERA MARGENS PADRÕES E DEFINE APENAS O ESPAÇO INFERIOR */
-    margin-top: 0; /* Remove qualquer margem superior padrão do H1 */
-    margin-bottom: 20px; /* Controla o espaço ABAIXO do título. Ajuste este valor! */
-                          /* Um valor menor (ex: 10px, 5px) deixará mais perto dos botões. */
-                          /* Um valor maior (ex: 30px, 40px) deixará mais longe. */
-
-    /* Mantenha suas outras propriedades de fonte, cor, tamanho, etc. */
-    /* Exemplo: font-family: "Born2bSportyFS", Arial, sans-serif; */
-    /* font-size: 2.5em; */
-    /* color: #f0f0f0; */
+    margin-top: 0; 
+    margin-bottom: 20px; 
 
 }
 
-/* CONTÊINER DOS BOTÕES DE JOGOS: ESSENCIAL PARA BOTÕES LADO A LADO */
+
 .games-button-container {
-    display: flex; /* Habilita Flexbox para alinhar os botões lado a lado */
-    flex-wrap: wrap; /* Permite que os botões quebrem para a próxima linha em telas menores */
-    justify-content: center; /* Centraliza os botões horizontalmente no contêiner */
-    gap: 10px; /* Espaço entre os botões (reduzido para botões menores) */
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    gap: 10px; 
    
- margin-top: 0; /* Geralmente, defina como 0 ou um valor pequeno, pois a margem do título já fará o espaçamento */
+ margin-top: 0; 
 padding: 10px;
 width: 100%;
   }
 
-/* O elemento .game-button-link é apenas um wrapper para o .pushable. */
+
 .game-button-link {
-    /* Não precisa de estilos de largura aqui, pois o .pushable agora é inline-block e o flexbox gerencia */
+  
 }
 
-/* ----------------------------------------------- */
-/* Wrapper e estilos para o iframe (para garantir proporção e responsividade) */
-/* ----------------------------------------------- */
+
+
+
 
 .game-iframe-wrapper {
-    /* Mantenha essas propriedades do último ajuste */
+   
     position: relative;
     width: 100%;
     overflow: hidden;
-    background-color: transparent; /* Mude para transparente, ou a cor que realmente deseja */
+    background-color: transparent; 
     border-radius: 0.9375rem;
-    box-shadow: none; /* Remova qualquer sombra que possa parecer uma borda */
-    padding: 0; /* Certifique-se de que não há padding aqui se não quiser */
+    box-shadow: none; 
+    padding: 0; 
     box-sizing: border-box;
 }
 
 .game-iframe-wrapper iframe {
-    /* Certifique-se que estas estão comentadas ou removidas como discutimos */
-    /* position: absolute; */
-    /* top: 0; */
-    /* left: 0; */
-    /* height: 100%; */
-
+ 
     width: 100%;
-    border: none; /* Isso remove a borda padrão do iframe */
-    border-radius: 0; /* Garanta que o iframe não tenha bordas arredondadas próprias que "cortem" */
-    margin: 0; /* Adicione para garantir que não haja margem padrão */
-    padding: 0; /* Adicione para garantir que não haja padding padrão */
-    background-color: transparent; /* Garanta que o fundo do iframe seja transparente */
+    border: none; 
+    border-radius: 0; 
+    margin: 0; 
+    padding: 0; 
+    background-color: transparent; 
 }
 
-/* Esta é a classe aplicada diretamente ao seu iframe no games.html */
-#gameIframe, .gameIframe { /* Use o ID e/ou a classe que está aplicada ao seu iframe */
+
+#gameIframe, .gameIframe { 
     width: 100%;
     border: none;
-    overflow: hidden; /* **ESSENCIAL: Isso impede que o elemento iframe tenha sua própria barra de rolagem** */
+    overflow: hidden; 
     margin: 0;
     padding: 0;
     background-color: transparent;
     outline: none;
-    /* E certifique-se de que não há NENHUMA altura fixa aqui. */
-    /* A altura deve ser definida SOMENTE pelo seu JavaScript. */
+   
 }
-/* ----------------------------------------------- */
-/* Seção "Portfolio Buttons" (choose one!) - Botões de portfólio (comportamento similar) */
-/* ----------------------------------------------- */
+
+
 .button-container.portfolio-buttons {
-    display: flex; /* Garante que os botões fiquem lado a lado */
-    flex-wrap: wrap; /* Permite que quebrem linha */
-    justify-content: center; /* Centraliza */
-    gap: 10px; /* Espaçamento entre os botões (ajustado para botões menores) */
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 10px; 
     padding: 10px;
-    margin-top: 10px; /* Margem superior ajustada */
+    margin-top: 10px; 
 }
 
 .contact-links {
-    /* Certifique-se de que não há display: block; ou width: 100%; aqui que force quebra de linha */
+ 
 }
-
-/* ----------------------------------------------- */
-/* Media Queries para Responsividade (ajustes para telas menores) */
-/* ----------------------------------------------- */
 
 @media (max-width: 768px) {
     .games-section {
@@ -1589,12 +1502,9 @@ width: 100%;
         margin-bottom: 20px;
     }
     .games-button-container {
-        gap: 8px; /* Espaçamento menor em telas de tablet */
+        gap: 8px;
     }
-    /* Se quiser que os botões ocupem metade da largura em tablets: */
-    /* .game-button-link {
-        flex-basis: calc(50% - 8px); 
-    } */
+  
 }
 
 @media (max-width: 480px) {
@@ -1607,11 +1517,10 @@ width: 100%;
         margin-bottom: 15px;
     }
     .games-button-container {
-        flex-direction: column; /* Empilha os botões verticalmente em telas muito pequenas */
-        gap: 6px; /* Espaçamento ainda menor */
-    }
+        flex-direction: column;
+        gap: 6px; 
     .game-button-link {
-        width: 100%; /* Força a largura total em telas muito pequenas para melhor usabilidade */
+        width: 100%; 
     }
 }
 
@@ -1619,11 +1528,10 @@ width: 100%;
 
 
 #lastfm-song-cell {
-    /* Exemplo de estilização para a célula da tabela */
+   
      text-transform: lowercase;
     font-size: 1.1em;
-    color: #534F4A; /* Cor do seu texto principal */
-    /* Mantenha os estilos de border e padding que você já tem na tag <td> no HTML */
+    color: #534F4A; 
 }
 
  /* ////////// LINKS ////////////// */  
@@ -1634,7 +1542,7 @@ width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto; /* Centraliza a imagem */
+    margin: 0 auto; 
 }
 .imagem-circular img{
   max-width: 15rem;

@@ -27,7 +27,7 @@
 <style>
     
 
-/* Header (ajustado para 70rem para combinar com o container) */
+
 header {
     background-color: #1B1917;
     padding: 5px;
@@ -39,12 +39,12 @@ header {
     align-items: center;
     box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5);
     width: 100%;
-    max-width: 70rem; /* Posts mais largos */
+    max-width: 70rem; 
     box-sizing: border-box;
     max-height: 5rem;
 }
 
-/* caixamaisclara geral (onde está o posts-container, ajustada para 70rem) */
+
 .caixamaisclara {
     display: flex;
     flex-direction: column;
@@ -57,7 +57,7 @@ header {
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
-   /* Main Container transparente */
+
     #containerprincipal {
       border-radius: 1.25rem;
       text-align: center;
@@ -67,7 +67,7 @@ header {
       box-sizing: border-box;
       color: #534F4A;
     }
- /*  Container colorido */
+
     #container {
       background-color: #1B1917;
       padding: 1.25rem;
@@ -81,24 +81,24 @@ header {
       color: #534F4A;
     }
 
-/* ========================================= */
-/* ESTILOS ESPECÍFICOS PARA OS POSTS DO BLOG */
-/* ========================================= */
 
-/* Container que envolve todos os posts */
+
+
+
+
+
+
 #posts-container {
     padding: 10px;
 }
 
-/* Estilo para a mensagem de "Carregando Posts..." ou "Nenhum post encontrado" */
 #posts-container h2 {
     text-align: left;
-    font-family: "Born2bSportyFS", serif; /* Mantenho MoreSugar para esse H2 específico de "Carregando Posts..." */
+    font-family: "Born2bSportyFS", serif; 
     color: #534F4A;
     margin-bottom: 20px;
 }
 
-/* Estilos para os posts individuais */
 .blog-post {
     background-color: transparent;
     border: none;
@@ -107,10 +107,10 @@ header {
     border-radius: 0;
     box-shadow: none;
     word-wrap: break-word;
-    text-align: left; /* Garante que todo o conteúdo do post seja alinhado à esquerda por padrão */
+    text-align: left;
 }
 
-/* Estilos para o cabeçalho de informação do post (@minkurosu • Data) */
+
 .post-info-header {
     display: flex;
     align-items: center;
@@ -131,12 +131,12 @@ header {
 }
 
 .post-date {
-    /* Estilo para a data, pode ser ajustado */
+    
 }
 
-/* Estilos para o título de cada post (h2 dentro de .blog-post) */
+
 .blog-post h2 {
-    font-family: "Born2bSportyFS", sans-serif; /* ALTERADO: MESMA FONTE DO CORPO */
+    font-family: "Born2bSportyFS", sans-serif; /
     color: #534F4A;
     margin-top: 0;
     margin-bottom: 10px;
@@ -145,7 +145,6 @@ header {
     text-align: left;
 }
 
-/* Estilos para as imagens dentro dos postsaaa */
 .blog-post img {
     max-width: 100%;
     height: auto;
@@ -155,7 +154,6 @@ header {
     box-shadow: 0 1px 3px rgba(0,0,0,0.05);
 }
 
-/* Estilos para o parágrafo do conteúdo do post */
 .blog-post {
     background-color: transparent;
     border: none;
@@ -166,13 +164,11 @@ header {
     word-wrap: break-word;
     text-align: left;
     
-    /* ----- ADICIONE ESTAS DUAS LINHAS ----- */
-    width: 100%;              /* Garante que o post ocupe 100% da largura do seu contêiner pai */
-    box-sizing: border-box;   /* Inclui o padding e a borda no cálculo da largura total */
-    /* ------------------------------------- */
+    width: 100%;              
+    box-sizing: border-box;  
+   
 }
 
-/* Estilos para a linha divisória (hr) */
 .post-divider {
     border: none;
     border-top: 1px solid #534f4a;
@@ -185,8 +181,8 @@ header {
 .nav-side {
   display: flex;
   flex-direction: row;
-  align-items: center; /* centraliza horizontalmente */
-  gap: 10px; /* espaço entre os itens */
+  align-items: center; 
+  gap: 10px; 
   justify-content: space-around;
   flex-wrap: wrap;
 }
@@ -198,9 +194,9 @@ header {
 }
 
 .caixamaisclara h4,
-.caixamaisclaraCenterSimple h4 { /* Adicione esta linha se você usa caixamaisclaraCenterSimple em outros lugares */
+.caixamaisclaraCenterSimple h4 { 
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-    /* Você pode adicionar !important se precisar de mais prioridade, mas geralmente não é necessário aqui */
+   
  width: 100% !important;
    text-align: center; 
     margin-left: auto;
@@ -209,70 +205,68 @@ header {
 
 }
 
-/* Opcional: Para ter certeza absoluta que o widget do Google Translate não tenha sombra de texto, adicione: */
 #google_translate_element {
     text-shadow: none !important;
       text-align: center; 
     margin-left: auto;
     margin-right: auto;
      box-sizing: border-box;
-     
-    /* Mantenha outros estilos que você já tenha para #google_translate_element aqui */
+  
 }
 
 #google_translate_element {
-    /* Define a cor de fundo desejada */
-    background-color: #505050 !important; /* Exemplo: um cinza claro. Mude para a cor que quiser! */
+   
+    background-color: #505050 !important;
      text-decoration: none;
-    /* Adicione padding se quiser um espaçamento interno */
+    
     padding: 5px !important; 
     
-    /* Opcional: borda arredondada */
     border-radius: 8px !important; 
     
-    /* Opcional: uma borda */
     border: 1px solid #505050 !important;
-    
-    /* Certifique-se de que ele esteja visível, caso você tenha aplicado display: none anteriormente */
+   
     display: block !important; 
 }
 
 .blog-post .translate-button {
-    /* Define o display como inline-block para que o botão ocupe apenas a largura do seu conteúdo */
-    display: inline-block; 
     
-    /* Remove qualquer largura fixa ou máxima que possa estar sendo aplicada */
+    display: inline-block; 
+   
     width: auto; 
     max-width: none;
     
-    /* Adiciona um espaçamento acima do botão para separá-lo do conteúdo do post */
+   
     margin-top: 15px; 
     
-    /* Adiciona um preenchimento interno para o botão */
     padding: 8px 15px; 
     
-    /* Estilos básicos para o botão (ajuste conforme o design do seu blog) */
-    background-color: #007bff; /* Cor de fundo azul, por exemplo */
-    color: #a7a7a7; /* Cor do texto */
+    background-color: #007bff; 
+    color: #a7a7a7; 
     border: none;
     border-radius: 2px;
     cursor: pointer;
     font-size: 0.9em;
     text-decoration: none;
-    transition: background-color 0.3s ease; /* Efeito de transição ao passar o mouse */
+    transition: background-color 0.3s ease; 
 }
 
 .blog-post .translate-button:hover {
-    background-color: #0056b3; /* Cor mais escura ao passar o mouse */
+    background-color: #0056b3; 
+
+
+
+
 }
 
-/* Se você tem um divisor <hr> logo após o botão, pode querer ajustar o margin-top dele também */
+
+
+
 .blog-post .post-divider {
-    margin-top: 25px; /* Mais espaço entre o botão e o divisor */
+    margin-top: 25px; 
 }
 
 .goog-te-gadget-simple {
-    /* background-color: #FFF; */
+    
     border-left: 1px solid #a7a7a7;
     border-top: 1px solid #a7a7a7;
     border-bottom: 1px solid #a7a7a7;

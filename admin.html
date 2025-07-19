@@ -5,25 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel - @minkurosu</title>
     <link rel="stylesheet" href="styles.css"> </head>
-    <style>/* --- Estilos para o Painel de Administração (admin.html) --- */
+    <style>
 
-/* --- Seu styles.css (Versão Ajeitada) --- */
 
-/* Garante que o contêiner principal (#container) empilhe seus filhos */
 #container {
-    display: flex; /* Ativa o Flexbox */
-    flex-direction: column; /* Organiza os filhos (como as caixas .caixamaisclara) em uma coluna */
-    align-items: center; /* Centraliza os filhos horizontalmente dentro do container */
-    max-width: 900px; /* Define uma largura máxima para todo o conteúdo do site. Ajuste conforme sua preferência. */
-    margin: 0 auto; /* Centraliza o container na página */
-    padding: 20px; /* Adiciona um padding interno para não colar nas bordas da tela */
-    box-sizing: border-box; /* Garante que o padding seja incluído na largura total */
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    max-width: 900px; 
+    margin: 0 auto; 
+    padding: 20px; 
+    box-sizing: border-box; 
 }
 
-/* Estilos gerais para as caixas de conteúdo (logo, posts, login, etc.) */
 .caixamaisclara {
-    background-color: #24211e; /* ADICIONADO: Fundo branco para a caixa */
-    border: 1px solid #ddd; /* ADICIONADO: Borda sutil, consistente com a ideia de "caixa" */
+    background-color: #24211e; 
+    border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     padding: 25px;
@@ -34,10 +31,9 @@
     text-align: left;
 }
 
-/* Estilos para as caixas principais (Login e Criar Post) */
 .admin-form-box {
-    background-color: #24211e; /* ADICIONADO: Fundo branco para a caixa de admin */
-    margin: 30px auto; /* ADICIONADO: Centraliza a caixa horizontalmente e dá margem vertical */
+    background-color: #24211e; 
+    margin: 30px auto; 
     
     display: flex;
     flex-direction: column;
@@ -51,18 +47,16 @@
     border: 1px solid #534F4A;
 }
 
-/* Estilos para o título principal (Login do Administrador / Criar Novo Post) */
 .admin-form-box h1 {
     margin-top: 0;
     margin-bottom: 25px;
     color: #24211e;
-    font-family: "Born2bSportyFS", sans-serif; /* Removido o ; duplicado */
+    font-family: "Born2bSportyFS", sans-serif; 
     text-align: center;
     font-size: 2.2em;
     letter-spacing: 1px;
 }
 
-/* Estilos para os formulários dentro das caixas admin */
 .admin-form-box form {
     width: 100%;
     display: flex;
@@ -70,14 +64,12 @@
     gap: 18px;
 }
 
-/* Estilos para cada div que contém um label e um input */
 .admin-form-box form div {
     display: flex;
     flex-direction: column;
     width: 100%;
 }
 
-/* Estilos para os rótulos (labels) */
 .admin-form-box label {
     margin-bottom: 8px;
     font-weight: bold;
@@ -86,7 +78,6 @@
     font-size: 0.95em;
 }
 
-/* Estilos para os campos de input de texto, email, senha e textarea */
 .admin-form-box input[type="text"],
 .admin-form-box input[type="email"],
 .admin-form-box input[type="password"],
@@ -101,17 +92,15 @@
     box-sizing: border-box;
 }
 
-/* Estilo específico para o textarea (conteúdo do post) */
 .admin-form-box textarea {
     min-height: 120px;
     resize: vertical;
 }
 
-/* Estilos para os botões */
 .admin-form-box button {
     padding: 12px 20px;
-    background-color: #333; /* Seu cinza/marrom */
-    color: #24211e; /* Alterado para branco para melhor contraste com o fundo escuro */
+    background-color: #333; 
+    color: #24211e; 
     border: none;
     border-radius: 6px;
     cursor: pointer;
@@ -123,16 +112,16 @@
 }
 
 .admin-form-box button:hover {
-    background-color: #6C6661; /* Cor um pouco mais clara para hover */
+    background-color: #6C6661; 
     transform: translateY(-1px);
 }
 
 .admin-form-box button:active {
-    background-color: #4A4641; /* Cor um pouco mais escura para active */
+    background-color: #4A4641; 
     transform: translateY(0);
 }
 
-/* Estilos para a linha horizontal */
+
 hr {
     border: none;
     border-top: 1px solid #eee;
@@ -140,47 +129,46 @@ hr {
     width: 80%;
 }
 
-/* Estilos para mensagens de status (info, success, error) */
+
 .message {
-    margin-top: 18px; /* Espaço acima da mensagem */
-    padding: 12px; /* Preenchimento interno */
-    border-radius: 6px; /* Cantos arredondados */
-    text-align: center; /* Centraliza o texto */
-    font-weight: bold; /* Texto em negrito */
+    margin-top: 18px; 
+    padding: 12px; 
+    border-radius: 6px; 
+    text-align: center; 
+    font-weight: bold; 
     font-family: "Born2bSportyFS", sans-serif;
     font-size: 0.9em;
 }
 
 .message.info {
-    background-color:  /* Fundo azul claro */
-    color: #007bff; /* Texto azul */
+    background-color:  
+    color: #007bff; 
 }
 
 .message.success {
-    background-color: #534F4A; /* Fundo verde claro */
-    color: #28a745; /* Texto verde */
+    background-color: #534F4A; 
+    color: #28a745; 
 }
 
 .message.error {
-    background-color: #534F4A; /* Fundo vermelho claro */
-    color: #dc3545; /* Texto vermelho */
+    background-color: #534F4A; 
+    color: #dc3545; 
 }
 
-/* Estilos para a linha horizontal divisória (hr) */
 .admin-form-box hr {
-    border: none; /* Remove a borda padrão */
-    border-top: 1px solid #534F4A; /* Adiciona uma borda superior cinza claro */
-    margin: 25px 0; /* Margem superior e inferior para espaçamento */
-    width: 90%; /* Largura da linha, ajuste se necessário */
+    border: none; 
+    border-top: 1px solid #534F4A; 
+    margin: 25px 0; 
+    width: 90%; 
 }
 
-/* Estilos para o link de Sair */
+
 #logout-btn {
-    background-color: #dc3545; /* Cor vermelha para o botão de sair */
+    background-color: #dc3545; 
 }
 
 #logout-btn:hover {
-    background-color: #c82333; /* Cor mais escura ao passar o mouse */
+    background-color: #c82333; 
 }
 </style>
 <body>
