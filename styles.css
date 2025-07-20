@@ -570,16 +570,19 @@ height: auto
     #statuscafe-username {
     color: #53504b; /* Exemplo: Vermelho. Mude para a cor que desejar. */
     font-weight: bold; /* Opcional: para deixar o nome em negrito */
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 #statuscafe-content {
     color: #53504b; /* Exemplo: Azul. Mude para a cor que desejar. */
     font-size: 1.1em; /* Opcional: para aumentar um pouco o tamanho da fonte */
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 /* Se você quiser que todo o conteúdo dentro da div 'statuscafe' tenha a mesma cor */
 #statuscafe {
     color: #53504b; /* Exemplo: Verde. Mude para a cor que desejar. */
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 
@@ -648,6 +651,7 @@ height: auto
   .about-content .about-text {
     flex-grow: 1;
     text-align: center;
+     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
   }
 
   .boxfoto {
@@ -659,18 +663,21 @@ height: auto
 
   h1 {
     font-size: 2rem;
+     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
   }
 
   h2 {
     font-size: 3rem;
     margin: 0;
     padding: 0;
+     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
   }
 
   h3 {
     font-size: 1.7rem;
     margin: 0;
     padding: 0;
+     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
   }
 
   
@@ -678,10 +685,12 @@ height: auto
       font-size: 1rem;
       margin: 5px;
       padding: 8px;
+       text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     }
     
   .h2text {
     margin: 0;
+     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
   }
 
   .conjuntoblocos {
@@ -716,7 +725,7 @@ height: auto
       max-width: 800px;
       max-height: 800px;
       display: block;
-     
+     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     }
 
 
@@ -728,7 +737,7 @@ height: auto
 
 
 
-    .grid-feed a img{a
+    .grid-feed a img{
   object-fit: cover;
 }
 
@@ -791,7 +800,7 @@ height: auto
   margin: 0.08em;
   text-shadow: 1px 1px 2px black;
    font-family: "OldEnglishGothicPixelRegular", serif; !important
-    
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
    
 }
 
@@ -802,7 +811,7 @@ height: auto
   margin: 0.3rem;
   text-shadow: 1px 1px 2px black;
    font-family: 
-    
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
    
 }
 
@@ -812,7 +821,7 @@ height: auto
   margin: 0rem;
   text-shadow: 1px 1px 2px black;
    font-family: 
-    
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
    
 }
 
@@ -821,7 +830,7 @@ height: auto
 .sidebar p, .sidebar a {
   font-size: 1rem;
   line-height: 1.4;
-
+text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 .sidebar a {
@@ -830,11 +839,12 @@ height: auto
   text-decoration: none;
   transition: color 0.2s ease;
   color:#53504b;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 .sidebar a:hover {
    color: #1B1917;
-   
+   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 } 
 
 #sidepic{
@@ -925,6 +935,7 @@ grid-template-columns: 300px 1fr 1000px; !important
   -webkit-column-rule: 1px solid #dbdbdb; 
             -moz-column-rule: 1px solid #dbdbdb; 
             column-rule: 1px solid #dbdbdb;
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 
@@ -940,6 +951,7 @@ grid-template-columns: 300px 1fr 1000px; !important
 .column h1, .column p {
   margin: 0;
   text-align: justify;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 .column h4{
@@ -949,7 +961,7 @@ grid-template-columns: 300px 1fr 1000px; !important
    max-width: 500px;
    padding: 2px;
    margin: 8px;
-   
+   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 .welcome{
@@ -975,7 +987,7 @@ margin-left: 3rem;
    text-align: center;
    text-indent: 20px;
    max-width: 500px;
- 
+ text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
    
 }
 .divider {
@@ -986,18 +998,6 @@ margin-left: 3rem;
   min-height: 100px;
 }
 
-#niuplayer {
-    border: solid 5px black;
-    padding: 1em;
-    border-radius:20px;
-    background-color: #c2c2c2;
-}
-#niuplayer button {
-    background-color: #fff;
-    border: solid 5px black;
-    padding: 0.5em;
-    border-radius:20px;
-}
 
 
 .caixamaisclaraInterests {
@@ -1082,7 +1082,7 @@ th {
   max-width: 1200px; 
   margin: 0 auto; 
   border-radius: 8px;
-
+text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
  
 .content-column {
@@ -1097,7 +1097,7 @@ th {
 
 .content-column h3 {
  
-  
+ text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; 
   font-size: 2.5em;
   text-align: center; 
   margin-top: 0; 
@@ -1139,7 +1139,7 @@ th {
   color: #53504b; 
   margin: 0; 
   padding-top: 5px; 
-  
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
   font-weight: 500; 
 }
 
@@ -1219,6 +1219,7 @@ th {
     border-radius: 12px;
     font-size: 1.25rem;
     color: #7c756d;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     background: hsl(30, 4%, 20%);
     will-change: transform;
     transform: translateY(-4px);
@@ -1256,7 +1257,7 @@ th {
     cursor: pointer;
     outline-offset: 4px;
     transition: filter 250ms;
-  
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     display: inline-block; 
     text-decoration: none; 
 }
@@ -1449,7 +1450,7 @@ th {
     
     margin-top: 0; 
     margin-bottom: 20px; 
-
+text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 
@@ -1561,6 +1562,7 @@ width: 100%;
      text-transform: lowercase;
     font-size: 1.1em;
     color: #53504b; 
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
  /* ////////// LINKS ////////////// */  
@@ -1591,32 +1593,34 @@ width: 100%;
     padding: .5em;
     background-color: rgba(240, 255, 255, 0);
     border: 1px solid rgba(25, 25, 112, 0);
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 #statuscafe-username {
     margin-bottom: .5em;
      color: #534F4A;
+     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 #statuscafe-content {
     margin: 0 1em 0.5em 1em;
     color: #53504b;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 #statuscafe {
     margin: 0 1em 0.5em 1em;
     color: #53504b;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 #statuscafe-content a {
     font-weight: bold;
      color:#53504b;
+     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
-#statuscafe-content a {
-    font-weight: bold;
-     color:#53504b;
-}
 
 
 .status-username {
     margin-bottom: .5em;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
