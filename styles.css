@@ -131,7 +131,7 @@ a, button, input[type="submit"], input[type="button"], select {
   }
 
   .navbar a {
-      color: #534F4A;
+      color: #54514c;
       background-color: #24211e;
 
 } 
@@ -177,7 +177,7 @@ a, button, input[type="submit"], input[type="button"], select {
   
 a {
     text-decoration: none; 
-    color: #534F4A; 
+    color: #54514c; 
 }
 
 .marked-link {
@@ -243,7 +243,7 @@ body > .layout-with-sidebars {
 
   .navbar a {
     text-decoration: none;
-    color: #534F4A;
+    color: #54514c;
     background-color: #24211e;
     padding: 3px 10px;
     border-radius: 0.625rem;
@@ -255,7 +255,7 @@ body > .layout-with-sidebars {
   }
 
   .navbar a:hover {
-     background-color: #534f4a;
+     background-color: #54514c;
       color: #1B1917;
       transform: scale(1.15);
       transition: 0.2s;
@@ -288,7 +288,7 @@ max-width: 300px;
   padding: 3px;
   text-align: center;
   text-decoration: none;
-  color: #534F4A;
+  color: #54514c;
   background: #24211e;
   border: .3125rem solid #272525;
   border-radius: .625rem;
@@ -297,7 +297,7 @@ max-width: 300px;
 }
 
 .caixamaisclara .side-item a:hover {
-  background: #534f4a;
+  background: #54514c;
   color: #1B1917;
   transform: scale(1.15);
 }
@@ -364,7 +364,7 @@ max-width: 300px;
 
   .side-item a {
     text-decoration: none;
-      color: #534F4A;
+      color: #54514c;
     background-color: #24211e;
     padding: 3px 10px;
     border-radius: 0.625rem;
@@ -417,7 +417,7 @@ max-width: 300px;
       width: 100%;
 
       box-sizing: border-box;
-      color: #534F4A;
+      color: #54514c;
     }
 
 
@@ -430,7 +430,7 @@ max-width: 300px;
     margin: 0 auto;
     width: 100%;
     box-sizing: border-box;
-    color: #534F4A;
+    color: #54514c;
   }
 
   #logopatinha {
@@ -469,6 +469,15 @@ max-width: 300px;
   }
 }
 
+
+.whiskers {
+-webkit-mask-image: url(https://i.imgur.com/RVv0Knw.png);
+-webkit-mask-size: 100%;
+-webkit-mask-repeat: no-repeat;
+-webkit-mask-position: center;
+width: 200px;
+height: auto
+} 
 
  #logopatinha {
     height: 5rem;
@@ -554,7 +563,23 @@ max-width: 300px;
  }
  
 
-    
+    #statuscafe-username {
+    color: #534f4a; /* Exemplo: Vermelho. Mude para a cor que desejar. */
+    font-weight: bold; /* Opcional: para deixar o nome em negrito */
+}
+
+#statuscafe-content {
+    color: #534f4a; /* Exemplo: Azul. Mude para a cor que desejar. */
+    font-size: 1.1em; /* Opcional: para aumentar um pouco o tamanho da fonte */
+}
+
+/* Se você quiser que todo o conteúdo dentro da div 'statuscafe' tenha a mesma cor */
+#statuscafe {
+    color: #534f4a; /* Exemplo: Verde. Mude para a cor que desejar. */
+}
+
+
+
 .caixamaisclaraCenter {
     background-color: #24211e;
     padding: 0.3125rem;
@@ -589,7 +614,7 @@ max-width: 300px;
 
   hr {
     border: 5px;
-    border-top: 0.0625rem solid #534f4a;
+    border-top: 3px solid #534f4a;
     margin: 1.25rem 0;
   }
 
@@ -699,8 +724,7 @@ max-width: 300px;
 
 
 
-    .grid-feed a img{
-  transition: transform 0.1s ease-in-out;
+    .grid-feed a img{a
   object-fit: cover;
 }
 
@@ -1570,4 +1594,24 @@ width: 100%;
 #statuscafe-content {
     margin: 0 1em 0.5em 1em;
     color: #534F4A;
+}
+
+#statuscafe {
+    margin: 0 1em 0.5em 1em;
+    color: #534F4A;
+}
+
+#statuscafe-content a {
+    font-weight: bold;
+     color: #534F4A;
+}
+
+#statuscafe-content a {
+    font-weight: bold;
+     color: #534F4A;
+}
+
+
+.status-username {
+    margin-bottom: .5em;
 }

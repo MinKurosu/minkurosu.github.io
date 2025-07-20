@@ -16,7 +16,7 @@
      <meta name="viewport" content="width=1200px, initial-scale=0.9, minimum-scale=0.2, maximum-scale=1.0, user-scalable=yes">
     <meta property="og:image" content="https://i.ibb.co/RC2v9zg/sitethumbnail.png"/>
     <meta property="og:image" content="imgs/site_imgs/sitethumbnail.png"/>
-    <meta name="color-scheme" content="light only">
+   
 
     <link rel="stylesheet" href="styles.css">
     <title>@minkurosu</title>
@@ -25,17 +25,17 @@
    
 <style>
 
-/* Cursor padrão para todo o site */
-body {
+
+html, body, iframe{
   cursor: url('imgs/cursor/ROCKcursornormal.cur'), auto;
 }
 
-/* Cursor para elementos interativos (links, botões, etc.) */
+
 a, button, input[type="submit"], input[type="button"], select {
   cursor: url('imgs/cursor/ROCKcursorselect.cur'), pointer;
 }
 
-   /* Main Container transparente */
+ 
     #containerprincipal {
       border-radius: 1.25rem;
       text-align: center;
@@ -45,7 +45,7 @@ a, button, input[type="submit"], input[type="button"], select {
       box-sizing: border-box;
       color: #534F4A;
     }
- /*  Container colorido */
+
     #container {
       background-color: #1B1917;
       padding: 1.25rem;
@@ -64,34 +64,30 @@ a, button, input[type="submit"], input[type="button"], select {
     height: 300px;
     border: 4px solid #534f4a;
      border-radius: 8px;
-    overflow: auto; /* Habilita o scroll quando o conteúdo excede as dimensões */
+    overflow: auto; 
     padding: 10px;
     box-sizing: border-box;
 
-    /* Adicione estas duas linhas para centralizar */
     margin-left: auto;
     margin-right: auto;
-    /* Ou, como um atalho: */
-    /* margin: 0 auto; */
+ 
 }
 
         .galeria-grid {
             display: grid;
-            /* Garante que as imagens apareçam lado a lado.
-               'repeat(auto-fill, minmax(180px, 1fr))' criará o máximo de colunas possível,
-               com cada coluna tendo no mínimo 180px e crescendo para preencher o espaço. */
+    
             grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); 
-            gap: 15px; /* Espaço entre as imagens */
+            gap: 15px; 
             padding: 5px;
-            justify-items: center; /* Centraliza as imagens dentro de suas células no grid */
-            align-items: center; /* Centraliza verticalmente as imagens dentro de suas células */
+            justify-items: center; 
+            align-items: center; 
         }
 
         .galeria-grid img {
-            max-width: 100%; /* A imagem não excederá a largura da sua célula */
-            height: 120px; /* Altura fixa para as miniaturas. Ajuste se precisar */
+            max-width: 100%; 
+            height: 120px; 
             
-            /* ESSENCIAL: Garante que a imagem inteira seja visível, redimensionando-a para caber */
+           
             object-fit: contain; 
             
             display: block;
@@ -102,8 +98,18 @@ a, button, input[type="submit"], input[type="button"], select {
         }
 
         .galeria-grid img:hover {
-            transform: scale(1.05); /* Leve aumento ao passar o mouse */
+            transform: scale(1.05); 
         }
+
+.whiskers {
+-webkit-mask-image: url(https://i.imgur.com/RVv0Knw.png);
+-webkit-mask-size: 100%;
+-webkit-mask-repeat: no-repeat;
+-webkit-mask-position: center;
+width: 200px;
+height: auto
+} 
+
 
 </style>
 
@@ -114,7 +120,7 @@ a, button, input[type="submit"], input[type="button"], select {
 
     <aside class="sidebar">
         <div class="box">
-            <img id="sidepic" src="imgs/site_imgs/euirl.jpg" alt="eu irl" height="1700px">
+            <img id="sidepic" src="imgs/site_imgs/euirl.jpg" alt="eu irl"  height="1700px">
         </div>
         <div class="box">
             <h2 id="nomeSide">min</h2>
@@ -143,7 +149,8 @@ a, button, input[type="submit"], input[type="button"], select {
                  <div class="side-item"><a href="blog.html">blog</a></div>
                    <div class="side-item"><a href="room.html">room</a></div>
                 <div class="side-item"><a href="oldtwitter.html">thoughts</a></div>
-                
+                <div class="side-item"><a href="guestbook.html">guestbook</a></div>
+                 <div class="side-item"><a href="toybox.html">toybox</a></div>
            <hr>
        <br>
        <div class="caixamaisclaraColumnSimple">
@@ -173,8 +180,9 @@ a, button, input[type="submit"], input[type="button"], select {
 
             
              <script src="lastfm-widget.js"></script>
+             
              <iframe src="https://www3.cbox.ws/box/?boxid=3547381&boxtag=umWjBq" width="100%" height="250px" border-radius: "0.9375rem" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>	
-
+  <img src="imgs/webgraphics/blinkies/ilovecomments.gif" alt="talksoftly" class="desaturate">
 <div class="caixamaisclara" style="width: 100%;">
               <a href="https://tamanotchi.world/24409c"><img src="https://tamanotchi.world/i2/24409" alt="It's tamaNOTchi! Click to feed!"></a>
        
@@ -231,7 +239,7 @@ a, button, input[type="submit"], input[type="button"], select {
                     </div>
                     <div class="column">
                         <h3>PLEASE DO NOT INTERACT if:</h3>
-                        <img src="imgs/webgraphics/pixels/angy.gif">
+                        <img src="imgs/webgraphics/pixels/hiss.gif">
                         <h4>dni if you're alt-right / incel / racist / zionist / nazi /homophobic / transphobic / psychophobic / any hate-based phobic, or any of those terrible shit. </h4>
                         <h4>I also highly advise not visiting my site if you're my family member or know me from work or something alike.</h4>
                     </div>
@@ -306,7 +314,23 @@ a, button, input[type="submit"], input[type="button"], select {
                 </div>
             </div>
             <hr>
-           
+
+
+
+<div class="caixamaisclara">
+  <iframe src="https://minkurosu.atabook.org" width="100%" height="300" style="border:;overflow:hidden;" scrolling="no" frameborder="0" allowfullscreen></iframe>
+
+</div>
+
+
+
+
+
+
+
+
+
+           <hr>
             <h2>send me a msg, drawing</h2>
             <h2>or music!!</h2>
       
@@ -337,9 +361,9 @@ a, button, input[type="submit"], input[type="button"], select {
             <div class="box">     
                 
                 <div class="stamps">
-   <div class="carousel-container">
+   <div class="carousel-container" >
         <div class="track track-1">
-            <div class="track-inner">
+            <div class="track-inner desaturate" >
                 <img src="imgs/webgraphics/stamps/3dsowner.jpg" alt="3dsowner">
                 
                  <img src="imgs/webgraphics/stamps/a101.jpg" alt="a101">
@@ -348,13 +372,19 @@ a, button, input[type="submit"], input[type="button"], select {
                 <img src="imgs/webgraphics/stamps/addictmc.png" alt="addictmc">
                 <img src="imgs/webgraphics/stamps/awesome.gif" alt="awesome">
                  <img src="imgs/webgraphics/stamps/avanged.jpg" alt="awesome">
-            
+              <img src="imgs/webgraphics/stamps/aaaaaaaaaaaaaa.gif" alt="awesome">
+     <img src="imgs/webgraphics/stamps/avanged.jpg" alt="avanged">
+              <img src="imgs/webgraphics/stamps/alwaystired.png" alt="always tired">
                 <img src="imgs/webgraphics/stamps/believe.png" alt="believe">
                 <img src="imgs/webgraphics/stamps/blackcat.gif" alt="blackcat">
                 <img src="imgs/webgraphics/stamps/boop.gif" alt="boop">
+                 <img src="imgs/webgraphics/stamps/bSUqMP3.gif" alt="long cat">
+                  <img src="imgs/webgraphics/stamps/blackcatrain.gif" alt="boop">
                 <img src="imgs/webgraphics/stamps/catlover.webp" alt="catlover">
                 <img src="imgs/webgraphics/stamps/catsinside.png" alt="catsinside">
                 <img src="imgs/webgraphics/stamps/ceilingstars.png" alt="ceilingstars">
+                               <img src="imgs/webgraphics/stamps/chipichipi.gif" alt="chipichipi">
+               
                 <img src="imgs/webgraphics/stamps/chococat.png" alt="chococat">
                 <img src="imgs/webgraphics/stamps/choker.gif" alt="choker">
                  <img src="imgs/webgraphics/stamps/converse.gif" alt="choker">
@@ -370,13 +400,16 @@ a, button, input[type="submit"], input[type="button"], select {
                     <img src="imgs/webgraphics/stamps/fluttershypsycho.png" alt="flutterbat">
                 <img src="imgs/webgraphics/stamps/icollectplushies.png" alt="icollectplushies">
                  <img src="imgs/webgraphics/stamps/glasses.gif" alt="icollectplushies">
-                <img src="imgs/webgraphics/stamps/phobiaofpublicpools.png" alt="ilikeastayingupallnight">
+                               <img src="imgs/webgraphics/stamps/gatinhos.gif" alt="gatinhos">
+                 <img src="imgs/webgraphics/stamps/phobiaofpublicpools.png" alt="ilikeastayingupallnight">
                  <img src="imgs/webgraphics/stamps/iloveemo.gif" alt="e79">
+          <img src="imgs/webgraphics/stamps/bugs.png" alt="e79">
          
                 <img src="imgs/webgraphics/stamps/ilovestamps.gif" alt="ilovestamps">    
                 <img src="imgs/webgraphics/stamps/iwasemobeforeitwallcool.jpg" alt="iwasemobeforeitwascool">
                 <img src="imgs/webgraphics/stamps/ilovestars.gif" alt="ilovestars">
-               <img src="imgs/webgraphics/stamps/ishouldbestudying.webp" alt="ilovestars">
+                           <img src="imgs/webgraphics/stamps/iloveallkitties.webp" alt="ilovestars">
+                <img src="imgs/webgraphics/stamps/ishouldbestudying.webp" alt="ilovestars">
                 <img src="imgs/webgraphics/stamps/louiswain.png" alt="imhigh">
                 <img src="imgs/webgraphics/stamps/imwaycooleronline.gif" alt="imwaycooleronline">
                 <img src="imgs/webgraphics/stamps/isuportdrawinginmathclass.png" alt="isudportdrawinginmathclass">
@@ -384,22 +417,24 @@ a, button, input[type="submit"], input[type="button"], select {
                 <img src="imgs/webgraphics/stamps/iwishilivedinminecraft.gif" alt="iwishlivedinminecraft">
                 <img src="imgs/webgraphics/stamps/solongandgoodnight.webp" alt="helena">
                 <img src="imgs/webgraphics/stamps/jinx.webp" alt="jinx">
+                           <img src="imgs/webgraphics/stamps/jinx2.webp" alt="jinx">
                 <img src="imgs/webgraphics/stamps/kindness.gif" alt="kindness">
-                 <img src="imgs/webgraphics/stamps/stmpkinder.gif" alt="kindness">
+                         <img src="imgs/webgraphics/stamps/stmpkinder.gif" alt="kindness">
+                <img src="imgs/webgraphics/stamps/stmpkinder.gif" alt="kindness">
                 <img src="imgs/webgraphics/stamps/louiswain.png" alt="louiswain">
                 <img src="imgs/webgraphics/stamps/louiswainstamp.png" alt="louiswainstamp">
                 <img src="imgs/webgraphics/stamps/lis.gif" alt="lsd">
-                
+                <img src="imgs/webgraphics/stamps/l_stamp.gif" alt="l">
             </div>
         </div>
 
         <div class="track track-2">
-            <div class="track-inner">
+            <div class="track-inner desaturate">
                 <img src="imgs/webgraphics/stamps/maxwell.gif" alt="maxwell" class="desaturate">
         
                 <img src="imgs/webgraphics/stamps/mcrred.png" alt="mcrred" class="desaturate">
                 <img src="imgs/webgraphics/stamps/mentallillness.png" alt="mentalillness">
-             
+             <img src="imgs/webgraphics/stamps/meancat.webp" alt="stoop">
                 <img src="imgs/webgraphics/stamps/mychem.gif" alt="mychem">
                 <img src="imgs/webgraphics/stamps/nerdswonka.png" alt="nerdswonka">
                  <img src="imgs/webgraphics/stamps/nekoatsume.gif" alt="nerdswonka">
@@ -416,6 +451,7 @@ a, button, input[type="submit"], input[type="button"], select {
                 <img src="imgs/webgraphics/stamps/psychedelic.gif" alt="psychedelic">
                 <img src="imgs/webgraphics/stamps/puter.gif" alt="puter">
                   <img src="imgs/webgraphics/stamps/pearl.gif" alt="puter">
+                      <img src="imgs/webgraphics/stamps/plink.gif" alt="puter">
                 <img src="imgs/webgraphics/stamps/pride.png" alt="pride">
                 <img src="imgs/webgraphics/stamps/overwatch.png" alt="rain">
                 <img src="imgs/webgraphics/stamps/osu.png" alt="rain">      
@@ -424,6 +460,8 @@ a, button, input[type="submit"], input[type="button"], select {
                 <img src="imgs/webgraphics/stamps/steam.png" alt="steam">
                  <img src="imgs/webgraphics/stamps/stringworm.gif" alt="steam">
                 <img src="imgs/webgraphics/stamps/stevenuniverse.gif" alt="stevenuniverse">
+               <img src="imgs/webgraphics/stamps/shakingcat.gif" alt="supportgrass">
+               
                 <img src="imgs/webgraphics/stamps/supportgrass.png" alt="supportgrass">
                 <img src="imgs/webgraphics/stamps/supportminecraft.png" alt="supportminecraft">
                  <img src="imgs/webgraphics/stamps/space.webp" alt="uwu">
@@ -431,7 +469,9 @@ a, button, input[type="submit"], input[type="button"], select {
                   <img src="imgs/webgraphics/stamps/tabletuser.png" alt="tabletuser">
                 <img src="imgs/webgraphics/stamps/tubbs.png" alt="tubbs">
                  <img src="imgs/webgraphics/stamps/threecheers.jpg" alt="talksoftly">
-                <img src="imgs/webgraphics/stamps/tomodachi.png" alt="talksoftly">
+                 <img src="imgs/webgraphics/stamps/terraria.png" alt="talksoftly">
+                 <img src="imgs/webgraphics/stamps/tomodachi.png" alt="talksoftly">
+                 <img src="imgs/webgraphics/stamps/transformice.gif" alt="talksoftly">
                 <img src="imgs/webgraphics/stamps/tumblr_inline_p25mcqZLDR1ux8fd4_500.gif" alt="haveyoutanekyourmedstoday?">
                 <img src="imgs/webgraphics/stamps/tv.gif" alt="tv">
                 <img src="imgs/webgraphics/stamps/twilightapple.png" alt="twilightapple">
@@ -487,7 +527,7 @@ a, button, input[type="submit"], input[type="button"], select {
                       <img src="imgs/webgraphics/blinkies/typeonegative.webp"id="blinkies" class="desaturate">
             <img src="imgs/webgraphics/blinkies/mybackhurts.gif"id="blinkies" class="desaturate">
               <img src="imgs/webgraphics/blinkies/libra.gif"id="blinkies" class="desaturate">
-            
+             <img src="imgs/webgraphics/blinkies/greeneyedcat.gif"id="blinkies" class="desaturate">
                 <img src="imgs/webgraphics/blinkies/catnip.webp" id="blinkies" class="desaturate">
                   <img src="imgs/webgraphics/blinkies/youmaynotrestnow.webp" id="blinkies" class="desaturate">
                 <img src="imgs/webgraphics/blinkies/atmyfuckinglimit.webp" id="blinkies" class="desaturate">
@@ -505,7 +545,7 @@ a, button, input[type="submit"], input[type="button"], select {
                                   <img src="imgs/webgraphics/blinkies/normal-ppl-worry-me.gif" id="blinkies" class="desaturate">
                  <img src="imgs/webgraphics/blinkies/horrormovies.gif" id="blinkies" class="desaturate">
                 <img src="imgs/webgraphics/blinkies/y10.gif"id="blinkies" class="desaturate">
-            
+             <img src="imgs/webgraphics/blinkies/bigsis.gif"id="blinkies" class="desaturate">
                     <img src="imgs/webgraphics/blinkies/ilovethesea.gif" id="blinkies" class="desaturate">
                  <img src="imgs/webgraphics/blinkies/bekindtoanimals.gif" id="blinkies" class="desaturate">
                   <img src="imgs/webgraphics/blinkies/drawing in class.gif" id="blinkies" class="desaturate">
@@ -518,7 +558,8 @@ a, button, input[type="submit"], input[type="button"], select {
                   <img src="imgs/webgraphics/blinkies/stalking.webp" id="blinkies" class="desaturate">
                  <img src="imgs/webgraphics/blinkies/normal-ppl-worry-me.gif" id="blinkies" class="desaturate">
                 <img src="imgs/webgraphics/blinkies/sillycat.webp" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/hellraiser.webp" id="blinkies" class="desaturate">
+                <img src="imgs/webgraphics/blinkies/piracyyy.webp" id="blinkies" class="desaturate">
+
                 <img src="imgs/webgraphics/blinkies/washyourhands.gif" id="blinkies" class="desaturate">
                 <img src="imgs/webgraphics/blinkies/mmmyummisubstances.webp" id="blinkies" class="desaturate">           </div>
         <h3>(scrollable!!)</h3>
