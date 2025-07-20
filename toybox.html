@@ -101,9 +101,155 @@ a, button, input[type="submit"], input[type="button"], select {
             transform: scale(1.05); 
         }
 
-.toybox img{
-  
+
+Com certeza! Para criar essa estrutura em HTML e CSS, onde você pode adicionar imagens dentro dos espaços e controlar o z-index, vamos seguir os passos abaixo.
+
+HTML (index.html)
+HTML
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estante de Livros</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="grid-container">
+        <div class="bookshelf-item">
+            <img src="bookshelf.webp" alt="Estante de Livros" class="bookshelf-img">
+            <div class="image-slot slot-top">
+                </div>
+            <div class="image-slot slot-bottom">
+                </div>
+        </div>
+        <div class="bookshelf-item">
+            <img src="bookshelf.webp" alt="Estante de Livros" class="bookshelf-img">
+            <div class="image-slot slot-top">
+                </div>
+            <div class="image-slot slot-bottom">
+                </div>
+        </div>
+        <div class="bookshelf-item">
+            <img src="bookshelf.webp" alt="Estante de Livros" class="bookshelf-img">
+            <div class="image-slot slot-top">
+                </div>
+            <div class="image-slot slot-bottom">
+                </div>
+        </div>
+        <div class="bookshelf-item">
+            <img src="bookshelf.webp" alt="Estante de Livros" class="bookshelf-img">
+            <div class="image-slot slot-top">
+                </div>
+            <div class="image-slot slot-bottom">
+                </div>
+        </div>
+        <div class="bookshelf-item">
+            <img src="bookshelf.webp" alt="Estante de Livros" class="bookshelf-img">
+            <div class="image-slot slot-top">
+                </div>
+            <div class="image-slot slot-bottom">
+                </div>
+        </div>
+        <div class="bookshelf-item">
+            <img src="bookshelf.webp" alt="Estante de Livros" class="bookshelf-img">
+            <div class="image-slot slot-top">
+                </div>
+            <div class="image-slot slot-bottom">
+                </div>
+        </div>
+    </div>
+</body>
+</html>
+CSS (style.css)
+CSS
+
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alinha o grid ao topo */
+    min-height: 100vh;
+    background-color: #f0f0f0;
 }
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas iguais */
+    max-width: 900px; /* Largura máxima para a grade */
+    width: 100%;
+}
+
+
+.bookshelf-item {
+    position: relative; /* Essencial para posicionar os slots dos itens dentro */
+    width: 100%; /* Cada estante ocupa 100% da sua coluna na grid */
+    /* Este padding-bottom é uma técnica para manter a proporção da imagem. */
+    /* Ajuste o valor para a proporção correta da sua 'bookshelf.webp'. */
+    /* Se a imagem for 50px de largura e 80px de altura, seria (80/50)*100% = 160% */
+    padding-bottom: 100%; /* Valor de exemplo. Ajuste para a sua imagem bookshelf.webp */
+    overflow: hidden; /* Garante que nada transborde do container da estante */
+    /* Opcional: Borda para visualizar o container da estante */
+    /* border: 1px solid lightgray; */
+}
+
+.bookshelf-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Garante que a imagem da estante se ajuste sem cortar */
+    z-index: 1; /* A imagem da estante fica por baixo dos itens */
+}
+
+.item-slot {
+    position: absolute; /* Posiciona o slot em relação ao .bookshelf-item */
+     border-radius: 5px; /* Bordas levemente arredondadas para os slots, opcional */
+    display: flex; /* Para centralizar a imagem do item dentro do slot */
+    justify-content: center;
+    align-items: flex-end;
+    overflow: hidden; /* Garante que a imagem do item não vaze do slot */
+    z-index: 10; /* Z-index alto para as imagens inseridas ficarem acima da estante */
+   }
+
+/* Ajuste esses valores para o slot superior dentro de CADA estante */
+.item-slot.top-slot {
+    top: 10%;   /* Posição do topo do slot (ajuste) */
+    left: 7%;  /* Posição da esquerda do slot (ajuste) */
+    width: 85%; /* Largura do slot (ajuste) */
+    height: 33%; /* Altura do slot (ajuste) */
+    /* O transform abaixo pode ser útil para centralizar o slot se você usar left/top como centro */
+    /* transform: translate(-50%, -50%); */
+}
+
+/* Ajuste esses valores para o slot inferior dentro de CADA estante */
+.item-slot.bottom-slot {
+    top: 63%;   /* Posição do topo do slot (ajuste) */
+    left: 8%;  /* Posição da esquerda do slot (ajuste) */
+    width: 85%; /* Largura do slot (ajuste) */
+    height: 32%; /* Altura do slot (ajuste) */
+    /* transform: translate(-50%, -50%); */
+}
+
+.inserted-item-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ajusta a imagem do item para caber dentro do slot sem cortar */
+    /* object-fit: cover; // Use 'cover' se quiser que a imagem preencha o slot, cortando se necessário */
+}
+
+
+
+
+
+
+
+
+
 </style>
 
 </head>
@@ -215,44 +361,172 @@ a, button, input[type="submit"], input[type="button"], select {
             </nav>
         </header>
         <div id="container">
-            <div class="caixamaisclara">
-                <div class="toybox">
+       <div class="grid-container">
+        <div class="bookshelf-item">
+            <img src="imgs/site_imgs/bookshelf.jpg" alt="Estante de Livros" class="bookshelf-img">
+            <div class="item-slot top-slot">
+                <img src="imgs/webgraphics/pixels/jupi.gif" style="height: 50px;">
+                 <img src="imgs/webgraphics/pixels/apollo.gif" style="height: 50px;">
+                  <img src="imgs/webgraphics/pixels/jupi2.webp" style="height: 40px;">
+              <img src="imgs/webgraphics/pixels/ftul9o.gif" style="height: 40px;">
                
-                <img src="imgs/webgraphics/pixels/happyhappyhappy.gif" style="height:100px">
-            <img src="imgs/webgraphics/pixels/discokitten.gif" style="height:100px">
-                <img src="imgs/webgraphics/pixels/looker.gif" style="height:100px">
-            <img src="imgs/webgraphics/pixels/kitten.gif" style="height:100px">
-            <img src="imgs/webgraphics/pixels/groomingkitten.gif" style="height:100px">
-            <img src="imgs/webgraphics/pixels/cat.png" style="height:100px">
-            <img src="imgs/webgraphics/pixels/earcats.gif" style="height:100px">
-            <img src="imgs/webgraphics/pixels/twins.gif" style="height:100px">
-<img src="imgs/webgraphics/pixels/breathing.gif" style="height:100px">
-             <img src="imgs/webgraphics/pixels/ponytown-trot.gif" style="height:100px">
-            <img src="imgs/webgraphics/pixels/fluttershy2.gif" style="height:100px">
-            <img src="imgs/webgraphics/pixels/minsy.webp" style="height:100px">
-            <br>
-             <img src="imgs/webgraphics/pixels/kitties.gif" style="height:30px">
-            <img src="imgs/webgraphics/pixels/cat3.gif" style="height:30px">
-             <img src="imgs/webgraphics/pixels/catdivider.png" style="height:20px">
-            <img src="imgs/webgraphics/pixels/catsd.gif" style="height:30px">
-           <img src="imgs/webgraphics/pixels/mlp.png" style="height:30px">
-            <br>
-             <img src="imgs/webgraphics/pixels/tumblr_ltuzmz1J5z1r2nnw5540.gif" style="height:30px">
-                        <img src="imgs/webgraphics/pixels/tumblr_26f1d2aca7b06057de5ea579d393d424_2f8b714a_75.webp" style="height:30px">
-             <img src="imgs/webgraphics/pixels/tumblr_98ed7b9b625f296f8b0667fbe5d099ef_52d8bcdd_75.webp" style="height:30px">
-             <img src="imgs/webgraphics/pixels/jupi.gif" style="height:30px">
-             <img src="imgs/webgraphics/pixels/apollo.gif" style="height:30px">
-            <img src="imgs/webgraphics/pixels/jupi2.webp" style="height:30px">
-            <img src="imgs/webgraphics/pixels/hiss.gif" style="height:30px">
-            <img src="imgs/webgraphics/pixels/gatin2.gif" style="height:30px">
-            <img src="imgs/webgraphics/pixels/catloaf.gif" style="height:30px">
-            <img src="imgs/webgraphics/pixels/be491fff.gif" style="height:30px">
-            <img src="imgs/webgraphics/pixels/worm.webp" style="height:30px">
+                
+            </div>
+            <div class="item-slot bottom-slot">
+                <img src="imgs/webgraphics/pixels/ponytown-trot.gif" style="height: 80px;">
+                <img src="imgs/webgraphics/pixels/fluttershy2.gif" style="height: 80px;">
+                
+                </div>
         </div>
-        
-          </div>
-    </main>
 
+        <div class="bookshelf-item">
+            <img src="imgs/site_imgs/bookshelf.jpg" alt="Estante de Livros" class="bookshelf-img">
+            <div class="item-slot top-slot">
+                <img src="imgs/webgraphics/pixels/happyhappyhappy.gif" style="height: 80px;">
+                <img src="imgs/webgraphics/pixels/discokitten.gif" style="height: 80px;">
+                
+                </div>
+            <div class="item-slot bottom-slot">
+                <img src="imgs/webgraphics/pixels/kitten.gif" style="height: 80px;">
+                <img src="imgs/webgraphics/pixels/looker.gif" style="height: 80px;">
+                
+                </div>
+        </div>
+
+        <div class="bookshelf-item">
+            <img src="imgs/site_imgs/bookshelf.jpg" alt="Estante de Livros" class="bookshelf-img">
+            <div class="item-slot top-slot">
+                <img src="" style="height: 80px;">
+                <img src="imgs/webgraphics/pixels/cat.png" style="height: 50px;">
+                  <img src="imgs/webgraphics/pixels/earcats.gif" style="height: 80px;">
+               
+                </div>
+            <div class="item-slot bottom-slot">
+                <img src="imgs/webgraphics/pixels/a_iconsleep.gif" style="height: 80px;">
+                <img src="imgs/webgraphics/pixels/breathing.gif" style="height: 80px;">
+                
+                </div>
+        </div>
+
+        <div class="bookshelf-item">
+            <img src="imgs/site_imgs/bookshelf.jpg" alt="Estante de Livros" class="bookshelf-img">
+            <div class="item-slot top-slot">
+                  <img src="imgs/webgraphics/pixels/artwork-bat.gif" style="height: 50px;">
+               <img src="imgs/webgraphics/pixels/artwork-muertos.gif" style="height: 50px;">
+               <img src="imgs/webgraphics/pixels/artwork-pumpkin.gif" style="height: 50px;">
+               <img src="imgs/webgraphics/pixels/artwork-vampire.gif" style="height: 50px;">
+               
+                </div>
+            <div class="item-slot bottom-slot">
+               <img src="imgs/webgraphics/pixels/HalloweenCatVampire-paused.gif" style="height: 50px;">
+               <img src="imgs/webgraphics/pixels/hillhouse2.gif" style="height: 50px;">
+               <img src="imgs/webgraphics/pixels/kittyfriends.gif" style="height: 50px;">
+               
+                </div>
+        </div>
+
+        <div class="bookshelf-item">
+            <img src="imgs/site_imgs/bookshelf.jpg" alt="Estante de Livros" class="bookshelf-img">
+            <div class="item-slot top-slot">
+               <img src="imgs/webgraphics/pixels/be491fff.gif" style="height: 40px;">
+               <img src="imgs/webgraphics/pixels/catloaf.gif" style="height: 40px;">
+              
+             
+                  <img src="imgs/webgraphics/pixels/gatin2.gif" style="height: 40px;">
+                </div>
+            <div class="item-slot bottom-slot">
+                <img src="imgs/webgraphics/pixels/hiss.gif" style="height: 30px;">
+                
+                  <img src="imgs/webgraphics/pixels/kitty1.gif" style="height: 40px;">
+                <img src="imgs/webgraphics/pixels/kitty2.gif" style="height: 40px;">
+                <img src="imgs/webgraphics/pixels/kitty-solariabwcat.png" style="height: 40px;">
+                
+                </div>
+        </div>
+
+        <div class="bookshelf-item">
+            <img src="imgs/site_imgs/bookshelf.jpg" alt="Estante de Livros" class="bookshelf-img">
+            <div class="item-slot top-slot">
+                <img src="imgs/webgraphics/pixels/litwickshiny.gif" style="height: 60px;">
+                <img src="imgs/webgraphics/pixels/chandelure.png" style="height: 60px;">
+                <img src="imgs/webgraphics/pixels/mimikyu.png" style="height: 60px;">
+                
+                </div>
+            <div class="item-slot bottom-slot">
+               <img src="imgs/webgraphics/pixels/sprigatito.webp" style="height: 50px;">
+                
+            </div>
+        </div>
+
+   
+
+
+     <div class="bookshelf-item">
+            <img src="imgs/site_imgs/bookshelf.jpg" alt="Estante de Livros" class="bookshelf-img">
+            <div class="item-slot top-slot">
+                
+            </div>
+            <div class="item-slot bottom-slot">
+               
+                </div>
+        </div>
+
+        <div class="bookshelf-item">
+            <img src="imgs/site_imgs/bookshelf.jpg" alt="Estante de Livros" class="bookshelf-img">
+            <div class="item-slot top-slot">
+               
+                </div>
+            <div class="item-slot bottom-slot">
+               
+                </div>
+        </div>
+
+        <div class="bookshelf-item">
+            <img src="imgs/site_imgs/bookshelf.jpg" alt="Estante de Livros" class="bookshelf-img">
+            <div class="item-slot top-slot">
+             
+                </div>
+            <div class="item-slot bottom-slot">
+               
+                </div>
+        </div>
+
+        <div class="bookshelf-item">
+            <img src="imgs/site_imgs/bookshelf.jpg" alt="Estante de Livros" class="bookshelf-img">
+            <div class="item-slot top-slot">
+              
+                </div>
+            <div class="item-slot bottom-slot">
+               
+                </div>
+        </div>
+
+        <div class="bookshelf-item">
+            <img src="imgs/site_imgs/bookshelf.jpg" alt="Estante de Livros" class="bookshelf-img">
+            <div class="item-slot top-slot">
+             
+             
+                 </div>
+            <div class="item-slot bottom-slot">
+                
+                </div>
+        </div>
+
+        <div class="bookshelf-item">
+            <img src="imgs/site_imgs/bookshelf.jpg" alt="Estante de Livros" class="bookshelf-img">
+            <div class="item-slot top-slot">
+               
+                </div>
+            <div class="item-slot bottom-slot">
+              
+            </div>
+        </div>
+
+        </div>
+        </div>
+         
+    </main>
+,
     <aside class="sidebar sidebar-right">
   
       
