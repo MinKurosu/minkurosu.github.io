@@ -178,17 +178,20 @@ a, button, input[type="submit"], input[type="button"], select {
 a {
     text-decoration: none; 
     color: #54514c; 
+      text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 .marked-link {
     text-decoration: underline; 
     color: #534F4A; 
+      text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 
 a:hover {
     color: #a7a7a7; 
     text-decoration: underline;
+      text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 
@@ -244,6 +247,7 @@ body > .layout-with-sidebars {
   .navbar a {
     text-decoration: none;
     color: #54514c;
+      text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     background-color: #24211e;
     padding: 3px 10px;
     border-radius: 0.625rem;
@@ -288,7 +292,7 @@ max-width: 300px;
   padding: 3px;
   text-align: center;
   text-decoration: none;
-  color: #54514c;
+  color: #53504bs;
   background: #24211e;
   border: .3125rem solid #272525;
   border-radius: .625rem;
@@ -358,13 +362,13 @@ max-width: 300px;
 
 
         .navbar a {
-            color: #534F4A;
+            color:#53504b;
             background-color: #24211e;
         }
 
   .side-item a {
     text-decoration: none;
-      color: #54514c;
+      color: #53504b;
     background-color: #24211e;
     padding: 3px 10px;
     border-radius: 0.625rem;
@@ -376,7 +380,7 @@ max-width: 300px;
   }
 
   .side-item :hover {
-    background-color: #534f4a;
+    background-color: #53504b;
     color: #1B1917;
         transform: scale(1.10);
     transition: 0.1s;
@@ -404,7 +408,7 @@ max-width: 300px;
       width: 100%;
       
       box-sizing: border-box;
-      color: #534F4A;
+      color: #53504b;
     }
 
     #container {
@@ -430,7 +434,7 @@ max-width: 300px;
     margin: 0 auto;
     width: 100%;
     box-sizing: border-box;
-    color: #54514c;
+    color: #53504b;
   }
 
   #logopatinha {
@@ -564,18 +568,18 @@ height: auto
  
 
     #statuscafe-username {
-    color: #534f4a; /* Exemplo: Vermelho. Mude para a cor que desejar. */
+    color: #53504b; /* Exemplo: Vermelho. Mude para a cor que desejar. */
     font-weight: bold; /* Opcional: para deixar o nome em negrito */
 }
 
 #statuscafe-content {
-    color: #534f4a; /* Exemplo: Azul. Mude para a cor que desejar. */
+    color: #53504b; /* Exemplo: Azul. Mude para a cor que desejar. */
     font-size: 1.1em; /* Opcional: para aumentar um pouco o tamanho da fonte */
 }
 
 /* Se você quiser que todo o conteúdo dentro da div 'statuscafe' tenha a mesma cor */
 #statuscafe {
-    color: #534f4a; /* Exemplo: Verde. Mude para a cor que desejar. */
+    color: #53504b; /* Exemplo: Verde. Mude para a cor que desejar. */
 }
 
 
@@ -614,7 +618,7 @@ height: auto
 
   hr {
     border: 5px;
-    border-top: 3px solid #534f4a;
+    border-top: 3px solid #53504b;
     margin: 1.25rem 0;
   }
 
@@ -739,7 +743,7 @@ height: auto
 
   .fancybox__caption {
  font-size: 25px;
- color: #534f4a;
+ color: #53504b;
  border-color:#24211e
  }
 
@@ -783,7 +787,7 @@ height: auto
 
 .sidebar h2 {
   font-size: 64px;
- color: #534F4A;
+ color: #53504b;
   margin: 0.08em;
   text-shadow: 1px 1px 2px black;
    font-family: "OldEnglishGothicPixelRegular", serif; !important
@@ -794,7 +798,7 @@ height: auto
 
 .sidebar h3 {
   font-size: 18px;
- color: #534F4A;
+ color: #53504b;
   margin: 0.3rem;
   text-shadow: 1px 1px 2px black;
    font-family: 
@@ -804,7 +808,7 @@ height: auto
 
 .sidebar h4 {
   font-size: 18px;
- color: #534F4A;
+ color: #53504b;
   margin: 0rem;
   text-shadow: 1px 1px 2px black;
    font-family: 
@@ -825,7 +829,7 @@ height: auto
   margin-top: 0.25rem;
   text-decoration: none;
   transition: color 0.2s ease;
-  color:#534F4A;
+  color:#53504b;
 }
 
 .sidebar a:hover {
@@ -976,7 +980,7 @@ margin-left: 3rem;
 }
 .divider {
   width: 1.5px;
-  background-color:#534f4a;
+  background-color:#53504b;
   margin: 0 10px;
   height: auto;
   min-height: 100px;
@@ -1017,7 +1021,7 @@ table {
     border-spacing: 0;
     border-radius: 10px;
     overflow: hidden;
-    color: #534F4A;
+    color: #53504b;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
@@ -1079,6 +1083,7 @@ th {
   margin: 0 auto; 
   border-radius: 8px;
 
+}
  
 .content-column {
     display: flex;
@@ -1131,7 +1136,7 @@ th {
 
 .skin-title {
   font-size: 1rem; 
-  color: #534f4a; 
+  color: #53504b; 
   margin: 0; 
   padding-top: 5px; 
   
@@ -1430,7 +1435,7 @@ th {
     max-width: 50rem;
     margin: 20px auto;
     text-align: center;
-    color: #534F4A;
+    color:#53504b;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
@@ -1438,7 +1443,7 @@ th {
    text-align: center;
     font-size: 3rem;
    
-    color: #534F4A;
+    color: #53504b;
     text-transform: uppercase;
     text-align: center; 
     
@@ -1555,7 +1560,7 @@ width: 100%;
    
      text-transform: lowercase;
     font-size: 1.1em;
-    color: #534F4A; 
+    color: #53504b; 
 }
 
  /* ////////// LINKS ////////////// */  
@@ -1582,7 +1587,7 @@ width: 100%;
 
 
 #statuscafe {
-   color: #534F4A;
+   color: #53504b;
     padding: .5em;
     background-color: rgba(240, 255, 255, 0);
     border: 1px solid rgba(25, 25, 112, 0);
@@ -1593,22 +1598,22 @@ width: 100%;
 }
 #statuscafe-content {
     margin: 0 1em 0.5em 1em;
-    color: #534F4A;
+    color: #53504b;
 }
 
 #statuscafe {
     margin: 0 1em 0.5em 1em;
-    color: #534F4A;
+    color: #53504b;
 }
 
 #statuscafe-content a {
     font-weight: bold;
-     color: #534F4A;
+     color:#53504b;
 }
 
 #statuscafe-content a {
     font-weight: bold;
-     color: #534F4A;
+     color:#53504b;
 }
 
 
