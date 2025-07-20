@@ -171,29 +171,25 @@ body {
     font-family: sans-serif;
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Alinha o grid ao topo */
+    align-items: flex-start; 
     min-height: 100vh;
     background-color: #f0f0f0;
 }
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 colunas iguais */
-    max-width: 900px; /* Largura máxima para a grade */
+    grid-template-columns: repeat(3, 1fr); 
+    max-width: 900px; 
     width: 100%;
 }
 
 
 .bookshelf-item {
-    position: relative; /* Essencial para posicionar os slots dos itens dentro */
-    width: 100%; /* Cada estante ocupa 100% da sua coluna na grid */
-    /* Este padding-bottom é uma técnica para manter a proporção da imagem. */
-    /* Ajuste o valor para a proporção correta da sua 'bookshelf.webp'. */
-    /* Se a imagem for 50px de largura e 80px de altura, seria (80/50)*100% = 160% */
-    padding-bottom: 100%; /* Valor de exemplo. Ajuste para a sua imagem bookshelf.webp */
-    overflow: hidden; /* Garante que nada transborde do container da estante */
-    /* Opcional: Borda para visualizar o container da estante */
-    /* border: 1px solid lightgray; */
+    position: relative; 
+    width: 100%; 
+   
+    padding-bottom: 100%; 
+    overflow: hidden;
 }
 
 .bookshelf-img {
@@ -202,44 +198,41 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: contain; /* Garante que a imagem da estante se ajuste sem cortar */
-    z-index: 1; /* A imagem da estante fica por baixo dos itens */
+    object-fit: contain; 
+    z-index: 1;
 }
 
 .item-slot {
-    position: absolute; /* Posiciona o slot em relação ao .bookshelf-item */
-     border-radius: 5px; /* Bordas levemente arredondadas para os slots, opcional */
-    display: flex; /* Para centralizar a imagem do item dentro do slot */
+    position: absolute; 
+    display: flex; 
     justify-content: center;
     align-items: flex-end;
-    overflow: hidden; /* Garante que a imagem do item não vaze do slot */
-    z-index: 10; /* Z-index alto para as imagens inseridas ficarem acima da estante */
+    overflow: hidden; 
+    z-index: 10; 
    }
 
-/* Ajuste esses valores para o slot superior dentro de CADA estante */
+
 .item-slot.top-slot {
-    top: 10%;   /* Posição do topo do slot (ajuste) */
-    left: 7%;  /* Posição da esquerda do slot (ajuste) */
-    width: 85%; /* Largura do slot (ajuste) */
-    height: 33%; /* Altura do slot (ajuste) */
-    /* O transform abaixo pode ser útil para centralizar o slot se você usar left/top como centro */
-    /* transform: translate(-50%, -50%); */
+    top: 10%;   
+    left: 7%; 
+    width: 85%; 
+    height: 33%; 
+
 }
 
-/* Ajuste esses valores para o slot inferior dentro de CADA estante */
+
 .item-slot.bottom-slot {
-    top: 63%;   /* Posição do topo do slot (ajuste) */
-    left: 8%;  /* Posição da esquerda do slot (ajuste) */
-    width: 85%; /* Largura do slot (ajuste) */
-    height: 32%; /* Altura do slot (ajuste) */
-    /* transform: translate(-50%, -50%); */
+    top: 63%;   
+    left: 8%;  
+    width: 85%; 
+    height: 32%; 
 }
 
 .inserted-item-img {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* Ajusta a imagem do item para caber dentro do slot sem cortar */
-    /* object-fit: cover; // Use 'cover' se quiser que a imagem preencha o slot, cortando se necessário */
+    object-fit: contain; 
+   
 }
 
 
