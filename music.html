@@ -13,17 +13,247 @@
     </script>
     <script> window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches </script>
     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=0., minimum-scale=0.2, maximum-scale=1.0, user-scalable=yes">
+     <meta name="viewport" content="initial-scale=1, minimum-scale=0.2, maximum-scale=2.0, user-scalable=yes">
     <meta property="og:image" content="https://i.ibb.co/RC2v9zg/sitethumbnail.png"/>
     <meta property="og:image" content="imgs/site_imgs/sitethumbnail.png"/>
-    <meta name="color-scheme" content="light only">
+   
 
     <link rel="stylesheet" href="styles.css">
     <title>@minkurosu</title>
    
     <link rel="icon" type="image/ico" href="imgs/site_imgs/favicon.ico"/>
    
+<style>
 
+
+html, body, iframe{
+  cursor: url('imgs/cursor/ROCKcursornormal.cur'), auto;
+}
+
+
+a, button, input[type="submit"], input[type="button"], select {
+  cursor: url('imgs/cursor/ROCKcursorselect.cur'), pointer;
+}
+
+ 
+    #containerprincipal {
+      border-radius: 1.25rem;
+      text-align: center;
+      margin: 0 auto;
+      width: 100%;
+      max-width: 50rem;
+      box-sizing: border-box;
+      color: #534F4A;
+      text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    }
+
+    #container {
+      background-color: #1B1917;
+      padding: 1.25rem;
+      border-radius: 1.25rem;
+      box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
+      text-align: center;
+      margin: 0 auto;
+      width: 100%;
+      max-width: 50rem;
+      box-sizing: border-box;
+      color: #534F4A;
+      text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    }
+
+    .galeria-container {
+    width: 700px;
+    height: 300px;
+    border: 4px solid #534f4a;
+     border-radius: 8px;
+    overflow: auto; 
+    padding: 10px;
+    box-sizing: border-box;
+
+    margin-left: auto;
+    margin-right: auto;
+ 
+}
+
+        .galeria-grid {
+            display: grid;
+    
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); 
+            gap: 15px; 
+            padding: 5px;
+            justify-items: center; 
+            align-items: center; 
+        }
+
+        .galeria-grid img {
+            max-width: 100%; 
+            height: 120px; 
+            
+           
+            object-fit: contain; 
+            
+            display: block;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease;
+        }
+
+        .galeria-grid img:hover {
+            transform: scale(1.05); 
+        }
+
+.whiskers {
+-webkit-mask-image: url(https://i.imgur.com/RVv0Knw.png);
+-webkit-mask-size: 100%;
+-webkit-mask-repeat: no-repeat;
+-webkit-mask-position: center;
+width: 200px;
+height: auto
+} 
+
+
+Se você alterou o CSS e as playlists ainda estão diminuindo gradativamente, mesmo com os min-width e flex-shrink: 0, a causa quase certamente está relacionada a um dos seguintes pontos, ou uma combinação deles:
+
+O min-width do iframe é ainda MAIOR do que o valor que você está usando: O Spotify é um serviço externo, e a largura mínima que o player precisa para se renderizar sem cortar elementos pode ser surpreendentemente grande. Se o seu min-width atual (e.g., 380px ou 400px) ainda for menor do que o mínimo que o player exige para mostrar todas as informações (nome da música, artista, botões, etc.) sem truncar, ele continuará encolhendo ou "bugando".
+
+Solução: Este é o passo mais crítico. Você precisa descobrir o min-width exato do player do Spotify.
+
+Abra o seu navegador (Chrome, Firefox).
+
+Clique com o botão direito em uma das playlists que está com o problema e selecione "Inspecionar" (ou "Inspect Element").
+
+Na janela do desenvolvedor, navegue na árvore HTML até encontrar o iframe real (não o playlist-iframe-placeholder, mas o <iframe> dentro dele).
+
+Na aba "Computed" (ou "Calculated Styles"), observe a largura que o navegador está atribuindo ao iframe.
+
+Agora, vá para a aba "Styles" e localize o CSS do seu .playlist-iframe-placeholder. Tente aumentar o valor do min-width manualmente lá, passo a passo (ex: de 380px para 390px, 400px, 410px...), enquanto observa o iframe na página. O min-width ideal é o menor valor que faz o player do Spotify exibir tudo corretamente, sem cortar o texto do título da música ou os controles. Assim que encontrar esse valor, aplique-o no seu CSS. É comum ser algo em torno de 380px a 450px para esses players em linha.
+
+Espaço Horizontal Insuficiente no Container Pai (.all-playlists-wrapper ou .playlist-section-item):
+
+Mesmo que você defina min-width para os itens internos, se o container principal (.all-playlists-wrapper ou até mesmo o body) tiver uma max-width muito restritiva, ou se você tiver muitos gaps e paddings somando, pode não haver espaço suficiente para todos os elementos em uma única linha.
+
+Solução:
+
+Aumente o max-width do .all-playlists-wrapper: Tente um valor maior, como 1200px ou 1400px. Isso dará mais espaço total para todas as playlists.
+
+Revise os padding e gap: Certifique-se de que os valores de padding no .playlist-section-item e gap entre o texto e o iframe não estão consumindo muito espaço desnecessariamente.
+
+Outras Regras CSS Sobrescrevendo:
+
+É possível que haja alguma outra regra CSS em seu projeto (talvez de um framework, ou de um CSS padrão do navegador, ou de outro arquivo CSS que esteja sendo carregado) que esteja sobrescrevendo suas propriedades width, min-width, ou flex.
+
+Solução: No Inspetor de Elementos, quando você selecionar o playlist-iframe-placeholder (ou o iframe real), na aba "Styles", observe se alguma das suas regras de width, min-width, max-width, flex-basis, flex-grow, flex-shrink está riscada ou tem uma fonte mais clara, indicando que outra regra está tendo precedência. Se sim, você precisaria aumentar a especificidade do seu seletor (ex: body .all-playlists-wrapper .playlist-section-item .playlist-iframe-placeholder { ... }) ou usar !important (como último recurso) para forçar a aplicação do seu estilo.
+
+Exemplo de CSS Refinado (focando no min-width e max-width para teste):
+
+CSS
+
+body {
+    background-color: #333;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.all-playlists-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+    /* Aumentado para dar mais espaço, teste valores maiores se necessário */
+    max-width: 1200px; /* Considere 1200px ou até 1400px */
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.playlist-section-item {
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    /* Ajustar min-width da seção pode ser necessário se o wrapper for muito estreito */
+    min-width: 700px; /* Calcule (min-text-width + min-iframe-width + gap + padding) */
+    box-sizing: border-box;
+}
+
+.playlist-text {
+    /* Desativa crescimento/encolhimento para 40% o máximo possível */
+    flex: 0 0 40%;
+    max-width: 40%;
+    /* Adicione um min-width para o texto também, para evitar que ele fique muito estreito */
+    min-width: 250px; /* Valor seguro para o texto não ficar ilegível */
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.playlist-text h1 {
+   
+    font-size: 2.2em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px #000;
+}
+
+.playlist-text p {
+
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+.playlist-iframe-placeholder {
+    /* Desativa crescimento/encolhimento para 60% o máximo possível */
+    flex: 0 0 60%;
+    max-width: 60%;
+    /* ESTE É O VALOR MAIS IMPORTANTE PARA TESTAR */
+    min-width: 420px; /* AUMENTADO SIGNIFICATIVAMENTE PARA TESTE. TESTE ESTE VALOR INTENSIVAMENTE! */
+    height: 152px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.playlist-iframe-placeholder iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+}
+
+@media (max-width: 768px) {
+    .playlist-section-item {
+        flex-direction: column;
+        align-items: center;
+        min-width: unset; /* Reseta o min-width da seção em telas pequenas */
+    }
+
+    .playlist-text,
+    .playlist-iframe-placeholder {
+        width: 100%;
+        max-width: 100%;
+        min-width: unset;
+        flex-basis: auto;
+        flex-shrink: 1;
+        flex-grow: 1;
+    }
+
+    .playlist-text {
+        text-align: center;
+    }
+
+    .all-playlists-wrapper {
+        padding: 0 10px;
+    }
+}
+
+</style>
 
 </head>
 <body>
@@ -32,53 +262,78 @@
 
     <aside class="sidebar">
         <div class="box">
-            <img id="sidepic" src="imgs/site_imgs/euirl.jpg" alt="eu irl" height="1700px">
+            <img id="sidepic" src="imgs/site_imgs/euirl.jpg" alt="eu irl"  height="1700px">
         </div>
         <div class="box">
             <h2 id="nomeSide">min</h2>
-            <h3> 22yo • they/she/he • brazil </h3>
+            <h3> 22yo • they/she/he • brasil </h3>
             <h3>psychology student & freelance artist</h3>
             <h3>(digital art & live2d)</h3>
             <h1 id="nl"><script src="https://webneko.net/n20171213.js"></script><a href="https://webneko.net">Neko</a></h1>
+<br>
+ 
 
-            
-       
-              <!-- Começa aqui -->
-<script language="javascript" type="text/javascript" src="//counter1.fc2.com/counter.php?id=40451086&main=1"></script><noscript><img src="//counter1.fc2.com/counter_img.php?id=40451086&main=1" /></noscript>
-<!-- Termina aqui -->
+<div class="caixamaisclaraColumn">
+    <script language="javascript" type="text/javascript" src="//counter1.fc2.com/counter.php?id=40451086&main=1" style="color:#534F4A"></script><noscript><img src="//counter1.fc2.com/counter_img.php?id=40451086&main=1" style="color:#534F4A"/></noscript>
+
+    <div id="statuscafe"><div id="statuscafe-username"></div><div id="statuscafe-content"></div></div><script src="https://status.cafe/current-status.js?name=minkurosu" defer></script>
+<script language="javascript" type="text/javascript" src="//counter1.fc2.com/views.php?id=40451086&main=1"></script><noscript><img src="//counter1.fc2.com/counter_now.php?id=40451086&main=1" /></noscript>
+<div class="buttons">
 
 
+</div>
         </div>
-        <div class="box">
+       <br>
             <div class="nav-side">
                 <div class="side-item"><a href="music.html">music</a></div>
-                <div class="side-item"><a href="quizzes.html">quizzes</a></div>
-                <div class="side-item"><a href="minecraft.html">minecraft</a></div>
-                <div class="side-item"><a href="links.html">links</a></div>
-                <div class="side-item"><a href="links.html">links</a></div>
-                <div class="side-item"><a href="links.html">links</a></div>
-                <div class="side-item"><a href="links.html">links</a></div>
-                <div class="side-item"><a href="links.html">links</a></div>
-            </div>
-        </div>
-        <div class="box">
+                <div class="side-item"><a href="games.html">games</a></div>
+                 <div class="side-item"><a href="dream-journal.html">dream-journal</a></div>
+                 <div class="side-item"><a href="blog.html">blog</a></div>
+                   <div class="side-item"><a href="room.html">room</a></div>
+                <div class="side-item"><a href="oldtwitter.html">thoughts</a></div>
+                <div class="side-item"><a href="guestbook.html">guestbook</a></div>
+                 <div class="side-item"><a href="toybox.html">toybox</a></div>
+                   <div class="side-item"><a href="quizzes.html">quiz/tests</a></div>
+           <hr>
+       <br>
+       <div class="caixamaisclaraColumnSimple">
             <h3>what am i up to?</h3>
             <table style="border-collapse: collapse; width: 100%; background-color: transparent;">
                 <tr>
-                    <th style="border: 1px solid black; padding: 8px;">a</th>
-                    <th style="border: 1px solid black; padding: 8px;">a</th>
+            
+                    <td style="border: 1px solid black; padding: 8px;">feeling</td>
+                    <td style="border: 1px solid black; padding: 8px;"><a href="https://www.imood.com/users/minkurosu"><img src="https://moods.imood.com/display/uname-minkurosu/fg-8a8278/trans-1/imood.gif" alt="The current mood of minkurosu at www.imood.com" border="0"></a></td>
+                </tr>
                 </tr>
                 <tr>
-                    <td style="border: 1px solid black; padding: 8px;">aa</td>
-                    <td style="border: 1px solid black; padding: 8px;">a</td>
+                    <td style="border: 1px solid black; padding: 8px;">last song</td>
+                   <td id="lastfm-song-cell" style="border: 1px solid black; padding: 8px;">loading...</td>
                 </tr>
                 <tr>
-                    <td style="border: 1px solid black; padding: 8px;">a</td>
-                    <td style="border: 1px solid black; padding: 8px;">a</td>
+                    <td style="border: 1px solid black; padding: 8px;">last movie watched</td>
+                    <td style="border: 1px solid black; padding: 8px;">mickey 17</td>
                 </tr>
-            </table>
-        </div>
-    
+                <tr>
+                    <td style="border: 1px solid black; padding: 8px;">current hyperfocus:</td>
+                    <td style="border: 1px solid black; padding: 8px;">coding this page and trying to write my final college thesis</td>
+                </tr>
+
+            </table>  
+            </div>
+
+            
+             <script src="lastfm-widget.js"></script>
+             
+             <iframe src="https://www3.cbox.ws/box/?boxid=3547381&boxtag=umWjBq" width="100%" height="250px" border-radius: "0.9375rem" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>	
+
+<div class="caixamaisclara" style="width: 100%;">
+              <a href="https://tamanotchi.world/24409c"><img src="https://tamanotchi.world/i2/24409" alt="It's tamaNOTchi! Click to feed!"></a>
+       
+
+            <img src="imgs/webgraphics/pixels/ponytown-trot.gif" style="height: 100px;">
+</div> 
+</div>  
+    </div>
     </aside>
 
     <main id="containerprincipal">
@@ -109,76 +364,88 @@
                 </div>
             </nav>
         </header>
+        
         <div id="container">
+           <h1>MY PLAYLISTS</h1>
+
             <div class="caixamaisclara">
-                <img id="logobig" src="imgs/site_imgs/logo.png" alt="Logo" data-position="center">
-            </div>
-            <hr>
-            <div class="caixamaisclara">
-                <div class="maincollums">
-                    <div class="column">
-                        <div class="welcome">
-                            <h2 class="nomeSide likes" style="display: inline;">welcome</h2>
-                            <img src="imgs/webgraphics/pixels/hipaw.gif" style="vertical-align: middle;"><br>
-                        </div>
-                        <h4>hii! welcome to my site. this is my little space on the internet, my attempt to have a place beside social media (cuz it ruins your mental health)</h4>
-                        <h4>this site will always be under construction, because i'll be changing and updating things often.</h4>
-                        <h4>i also swear a lot but i dont care, my page my rulez </h4>
-                    </div>
-                    <div class="column">
-                        <h3>PLEASE DO NOT INTERACT if:</h3>
-                        <img src="imgs/webgraphics/pixels/angy.gif">
-                        <h4>dni if you're alt-right / incel / racist / homophobic / transphobic / psychophobic / any hate-based phobic, or any of those terrible shit. </h4>
-                        <h4>also dont interact if you pretend to hit on me cuz i have a bf!! pls respect me (and him).</h4>
-                        <h4>I also highly advise not visiting my site if you're my family member or know me from work or something alike.</h4>
-                    </div>
-                </div>
-                <hd></hd> </div>
-            <div class="maincollums">
-            </div>
-            <hr>
-            <div class="interests">
-            </div>
-            <div class="caixamaisclaraInterests">
-                <div class="column">
-                    <H2 class="likes">LIKES</H2>
-                    <H4>cats, psychology, dark clothes, my chemical romance, art, gaming, rain and cold weather, my boyfriend, nature, sleeping, anime, piercings and tattoos, antinatalism6 </H4>
-                </div>
-                <div class="divider"></div>
-                <div class="column">
-                    <H2 class="deslikes">DESLIKES</H2>
-                    <H4>injustice, loud noises, billionaires, white ceiling lights, forced positivity, closed minds, ppl who litter, social cues, egotistical people </H4>
-                </div>
-            </div>
-            <hr>
-            <div class="caixamaisclaraInterests">
-                <div class="column">
-                    <table style="border-collapse: collapse; width: 100%; background-color: transparent;">
-                        <tr>
-                            <th style="border: 1px solid black; padding: 8px;">valor</th>
-                            <th style="border: 1px solid black; padding: 8px;">descrição</th>
-                        </tr>
-                        <tr>
-                            <td style="border: 1px solid black; padding: 8px;">a</td>
-                            <td style="border: 1px solid black; padding: 8px;">a</td>
-                        </tr>
-                        <tr>
-                            <td style="border: 1px solid black; padding: 8px;">a</td>
-                            <td style="border: 1px solid black; padding: 8px;">a</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <hr>
-            <div class="spotify">
-                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6B8MXoqO8DFZ0nWEHrM4cG?utm_source=generator&theme=0" width="100%" height="200" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-            </div>
-            <h2>send me a msg, drawing</h2>
-            <h2>or music!!</h2>
+               <div class="all-playlists-wrapper">
+
+    <div class="playlist-section-item">
+        <div class="playlist-text">
+            <h1>my main playlist</h1>
+            <p>this is the playlist i use to listen to the songs i wanna shuffle, i dont like to click on "liked songs" and random a song. i'd rather listen to few music at the time, as i get tired of them i just remove, so this playlist is always changing!</p>
         </div>
-        <iframe src="https://minkurosu.straw.page" width="100%" height="550" style="border:;overflow:hidden;" scrolling="no" frameborder="0" allowfullscreen></iframe>
-        <br>
-        <hr>
+        <div class="playlist-iframe-placeholder">
+            <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6B8MXoqO8DFZ0nWEHrM4cG?utm_source=generator&theme=0" width="500px" height="300" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+    </div>
+
+    <div class="playlist-section-item">
+        <div class="playlist-text">
+            <h1>rock</h1> <p>emo, alternative, grunge, punk, metal, screamo, etc</p>
+        </div>
+        <div class="playlist-iframe-placeholder">
+          <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6EZKTyzJ7cc2M5hGjvpE09?utm_source=generator" width="500px" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+    </div>
+
+ <div class="playlist-section-item">
+        <div class="playlist-text">
+            <h1>girlhood experience</h1> <p></p>
+        </div>
+        <div class="playlist-iframe-placeholder">
+         <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/14pB8uxMXcNkr6LZVTAeuY?utm_source=generator" width="500px" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+</div>
+    
+
+     </div>
+  
+
+
+
+
+
+
+
+
+
+           <div class="all-playlists-wrapper">
+
+    <div class="playlist-section-item">
+        <div class="playlist-text">
+            <h1>obsessive</h1>
+            <p>this is the playlist i use to listen to the songs i wanna shuffle, i dont like to click on "liked songs" and random a song. i'd rather listen to few music at the time, as i get tired of them i just remove, so this playlist is always changing!</p>
+        </div>
+        <div class="playlist-iframe-placeholder">
+           <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/02vL8iCqFmoNaumcXpxY5Y?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+    </div>
+
+    <div class="playlist-section-item">
+        <div class="playlist-text">
+            <h1>dependency</h1> <p>emo, alternative, grunge, punk, metal, screamo, etc</p>
+        </div>
+        <div class="playlist-iframe-placeholder">
+          <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6m9htKbW0TAJfJqTsVa5EQ?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+    </div>
+
+ <div class="playlist-section-item">
+        <div class="playlist-text">
+            <h1>literally me!!</h1> <p></p>
+        </div>
+        <div class="playlist-iframe-placeholder">
+        <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6a0dsTdx2EevOCedXy77Br?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+</div>
+    
+
+     </div>
+  
+     </div>
+
+
+     </div>
+
     </main>
 
     <aside class="sidebar sidebar-right">
@@ -187,92 +454,131 @@
 
            
             <div class="box">     
-                  <h3>blinkies about me</h3>
-                <h4>(scrollable)</h4>
+                
                 <div class="stamps">
-   <div class="carousel-container">
+   <div class="carousel-container" >
         <div class="track track-1">
-            <div class="track-inner">
+            <div class="track-inner desaturate" >
                 <img src="imgs/webgraphics/stamps/3dsowner.jpg" alt="3dsowner">
-                <img src="imgs/webgraphics/stamps/a101.jpg" alt="a101">
+                
+                 <img src="imgs/webgraphics/stamps/a101.jpg" alt="a101">
                 <img src="imgs/webgraphics/stamps/iloveallkitties.webp" alt="iloveallkitties">
-                 <img src="imgs/webgraphics/stamps/ilovemyds.gif" alt="ilovemyds">
+                 <img src="imgs/webgraphics/stamps/ilovemyds.png" alt="ilovemyds">
                 <img src="imgs/webgraphics/stamps/addictmc.png" alt="addictmc">
                 <img src="imgs/webgraphics/stamps/awesome.gif" alt="awesome">
-                <img src="imgs/webgraphics/stamps/behuman.jpg" alt="behuman">
+                 <img src="imgs/webgraphics/stamps/avanged.jpg" alt="awesome">
+              <img src="imgs/webgraphics/stamps/aaaaaaaaaaaaaa.gif" alt="awesome">
+     <img src="imgs/webgraphics/stamps/avanged.jpg" alt="avanged">
+              <img src="imgs/webgraphics/stamps/alwaystired.png" alt="always tired">
                 <img src="imgs/webgraphics/stamps/believe.png" alt="believe">
-                <img src="imgs/webgraphics/stamps/bestviewedwhilehigh.gif" alt="bestviewedwhilehigh">
                 <img src="imgs/webgraphics/stamps/blackcat.gif" alt="blackcat">
                 <img src="imgs/webgraphics/stamps/boop.gif" alt="boop">
-                <img src="imgs/webgraphics/stamps/catgirlobsession.gif" alt="catgirlobsession">
+                 <img src="imgs/webgraphics/stamps/bSUqMP3.gif" alt="long cat">
+                  <img src="imgs/webgraphics/stamps/blackcatrain.gif" alt="boop">
                 <img src="imgs/webgraphics/stamps/catlover.webp" alt="catlover">
                 <img src="imgs/webgraphics/stamps/catsinside.png" alt="catsinside">
                 <img src="imgs/webgraphics/stamps/ceilingstars.png" alt="ceilingstars">
+                               <img src="imgs/webgraphics/stamps/chipichipi.gif" alt="chipichipi">
+               
                 <img src="imgs/webgraphics/stamps/chococat.png" alt="chococat">
                 <img src="imgs/webgraphics/stamps/choker.gif" alt="choker">
+                 <img src="imgs/webgraphics/stamps/converse.gif" alt="choker">
+                    <img src="imgs/webgraphics/stamps/chipichipi.gif" alt="choker">
                 <img src="imgs/webgraphics/stamps/dontsteponthem.jpg" alSt="dontsteponthem">
-                <img src="imgs/webgraphics/stamps/e79.gif" alt="e79">
+                
+                <img src="imgs/webgraphics/stamps/emocouple.png" alt="e79">
+                 <img src="imgs/webgraphics/stamps/e79.gif" alt="e79">
                 <img src="imgs/webgraphics/stamps/f64.png" alt="f64">
                 <img src="imgs/webgraphics/stamps/FHX2sll.gif" alt="FHX2sll">
+                 <img src="imgs/webgraphics/stamps/greenai.png" alt="FHX2sll">
                 <img src="imgs/webgraphics/stamps/flutterbat.gif" alt="flutterbat">
-                <img src="imgs/webgraphics/stamps/give your broo.png" alt="giveyourbroo">
-                <img src="imgs/webgraphics/stamps/graphicdesign.gif" alt="graphicdesign">
+                    <img src="imgs/webgraphics/stamps/fluttershypsycho.png" alt="flutterbat">
                 <img src="imgs/webgraphics/stamps/icollectplushies.png" alt="icollectplushies">
-                <img src="imgs/webgraphics/stamps/ilikestayingupallnight.gif" alt="ilikeastayingupallnight">
-                
-               
+                 <img src="imgs/webgraphics/stamps/glasses.gif" alt="icollectplushies">
+                               <img src="imgs/webgraphics/stamps/gatinhos.gif" alt="gatinhos">
+                 <img src="imgs/webgraphics/stamps/phobiaofpublicpools.png" alt="ilikeastayingupallnight">
+                 <img src="imgs/webgraphics/stamps/iloveemo.gif" alt="e79">
+          <img src="imgs/webgraphics/stamps/bugs.png" alt="e79">
+         
                 <img src="imgs/webgraphics/stamps/ilovestamps.gif" alt="ilovestamps">    
                 <img src="imgs/webgraphics/stamps/iwasemobeforeitwallcool.jpg" alt="iwasemobeforeitwascool">
                 <img src="imgs/webgraphics/stamps/ilovestars.gif" alt="ilovestars">
-                <img src="imgs/webgraphics/stamps/imhigh.gif" alt="IMG_9366">
+                           <img src="imgs/webgraphics/stamps/iloveallkitties.webp" alt="ilovestars">
+                <img src="imgs/webgraphics/stamps/ishouldbestudying.webp" alt="ilovestars">
                 <img src="imgs/webgraphics/stamps/louiswain.png" alt="imhigh">
                 <img src="imgs/webgraphics/stamps/imwaycooleronline.gif" alt="imwaycooleronline">
-                <img src="imgs/webgraphics/stamps/is2weed.gif" alt="is2weed">
                 <img src="imgs/webgraphics/stamps/isuportdrawinginmathclass.png" alt="isudportdrawinginmathclass">
-           
+             <img src="imgs/webgraphics/stamps/entiretwilight.webp" alt="e79">
                 <img src="imgs/webgraphics/stamps/iwishilivedinminecraft.gif" alt="iwishlivedinminecraft">
+                <img src="imgs/webgraphics/stamps/solongandgoodnight.webp" alt="helena">
                 <img src="imgs/webgraphics/stamps/jinx.webp" alt="jinx">
+                           <img src="imgs/webgraphics/stamps/jinx2.webp" alt="jinx">
                 <img src="imgs/webgraphics/stamps/kindness.gif" alt="kindness">
+                      
+                <img src="imgs/webgraphics/stamps/stmpkinder.gif" alt="kindness">
                 <img src="imgs/webgraphics/stamps/louiswain.png" alt="louiswain">
                 <img src="imgs/webgraphics/stamps/louiswainstamp.png" alt="louiswainstamp">
-                <img src="imgs/webgraphics/stamps/lsd.png" alt="lsd">
+                <img src="imgs/webgraphics/stamps/lis.gif" alt="lsd">
+                <img src="imgs/webgraphics/stamps/l_stamp.gif" alt="l">
             </div>
         </div>
 
         <div class="track track-2">
-            <div class="track-inner">
+            <div class="track-inner desaturate">
                 <img src="imgs/webgraphics/stamps/maxwell.gif" alt="maxwell" class="desaturate">
-                <img src="imgs/webgraphics/stamps/mcr4x4.gif" alt="mcr4x4" class="desaturate">
+        
                 <img src="imgs/webgraphics/stamps/mcrred.png" alt="mcrred" class="desaturate">
                 <img src="imgs/webgraphics/stamps/mentallillness.png" alt="mentalillness">
-                <img src="imgs/webgraphics/stamps/minecraft.png" alt="minecraft">
+             <img src="imgs/webgraphics/stamps/meancat.webp" alt="stoop">
                 <img src="imgs/webgraphics/stamps/mychem.gif" alt="mychem">
                 <img src="imgs/webgraphics/stamps/nerdswonka.png" alt="nerdswonka">
+                 <img src="imgs/webgraphics/stamps/nekoatsume.gif" alt="nerdswonka">
+                 <img src="imgs/webgraphics/stamps/nintendogscats.png" alt="nerdswonka">
                 <img src="imgs/webgraphics/stamps/nitw.gif" alt="nitw">
                 <img src="imgs/webgraphics/stamps/nop.gif" alt="nop">
                 <img src="imgs/webgraphics/stamps/nyancat.gif" alt="nyancat">
                 <img src="imgs/webgraphics/stamps/palestine.gif" alt="palestine">
                 <img src="imgs/webgraphics/stamps/piercings.png" alt="piercings">
                 <img src="imgs/webgraphics/stamps/powder.webp" alt="powder">
+                  <img src="imgs/webgraphics/stamps/ponyo.webp" alt="powder">
                 <img src="imgs/webgraphics/stamps/ppudor.png" alt="ppudor">
+                  <img src="imgs/webgraphics/stamps/ponybffs.gif" alt="ppudor">
                 <img src="imgs/webgraphics/stamps/psychedelic.gif" alt="psychedelic">
                 <img src="imgs/webgraphics/stamps/puter.gif" alt="puter">
+                  <img src="imgs/webgraphics/stamps/pearl.gif" alt="puter">
+                      <img src="imgs/webgraphics/stamps/plink.gif" alt="puter">
+                <img src="imgs/webgraphics/stamps/pride.png" alt="pride">
+                <img src="imgs/webgraphics/stamps/overwatch.png" alt="rain">
+                <img src="imgs/webgraphics/stamps/osu.png" alt="rain">      
                 <img src="imgs/webgraphics/stamps/rain.gif" alt="rain">
                 <img src="imgs/webgraphics/stamps/stars.gif" alt="stars">
                 <img src="imgs/webgraphics/stamps/steam.png" alt="steam">
+                 <img src="imgs/webgraphics/stamps/stringworm.gif" alt="steam">
                 <img src="imgs/webgraphics/stamps/stevenuniverse.gif" alt="stevenuniverse">
+               <img src="imgs/webgraphics/stamps/shakingcat.gif" alt="supportgrass">
+               
                 <img src="imgs/webgraphics/stamps/supportgrass.png" alt="supportgrass">
-                <img src="imgs/webgraphics/stamps/talksoftly.png" alt="talksoftly">
+                <img src="imgs/webgraphics/stamps/supportminecraft.png" alt="supportminecraft">
+                 <img src="imgs/webgraphics/stamps/space.webp" alt="uwu">
+                 <img src="imgs/webgraphics/stamps/talksoftly.png" alt="talksoftly">
+                  <img src="imgs/webgraphics/stamps/tabletuser.png" alt="tabletuser">
                 <img src="imgs/webgraphics/stamps/tubbs.png" alt="tubbs">
+                 <img src="imgs/webgraphics/stamps/threecheers.jpg" alt="talksoftly">
+                 <img src="imgs/webgraphics/stamps/terraria.png" alt="talksoftly">
+                 <img src="imgs/webgraphics/stamps/tomodachi.png" alt="talksoftly">
+                 <img src="imgs/webgraphics/stamps/transformice.gif" alt="talksoftly">
                 <img src="imgs/webgraphics/stamps/tumblr_inline_p25mcqZLDR1ux8fd4_500.gif" alt="haveyoutanekyourmedstoday?">
-                
+                <img src="imgs/webgraphics/stamps/tv.gif" alt="tv">
                 <img src="imgs/webgraphics/stamps/twilightapple.png" alt="twilightapple">
+                 <img src="imgs/webgraphics/stamps/transformice.gif" alt="transformice">
                 <img src="imgs/webgraphics/stamps/uwu.png" alt="uwu">
+                <img src="imgs/webgraphics/stamps/vegetarian.jpg" alt="uwu">
                 <img src="imgs/webgraphics/stamps/weirdnoises.png" alt="weirdnoises">
                 <img src="imgs/webgraphics/stamps/weirdpeople.png" alt="weirdpeople">
                 <img src="imgs/webgraphics/stamps/xfiles.gif" alt="xfiles">
-                <img src="imgs/webgraphics/stamps/xfiles.jpg" alt="xfiles">
+            
                 <img src="imgs/webgraphics/stamps/yaoi.gif" alt="yaoi">
+                 <img src="imgs/webgraphics/stamps/youareanidiot.gif" alt="yaoi">
                 <img src="imgs/webgraphics/stamps/yaoi.png" alt="yaoi">
                 <img src="imgs/webgraphics/stamps/youcanfeelsafearoundme.gif" alt="youcanfeelsafearoundme">
             </div>
@@ -283,50 +589,82 @@
         <div class="scroll">
           <img src="imgs/webgraphics/blinkies/cinto.gif" id="blinkies" class="desaturate">
                <img src="imgs/webgraphics/blinkies/catlover2.gif" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/mcr.gif" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/blinkie-psychology.gif" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/vampires.gif" id="blinkies" class="desaturate">
+<img src="imgs/webgraphics/blinkies/artistblinkie.gif" id="blinkies" class="desaturate">
+              
+               
                 <img src="imgs/webgraphics/blinkies/nightperson.gif" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/artistblinkie.gif" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/peace.gif" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/gothicandloneliness.webp" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/fluttershymarijuana.webp" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/freelanceartist.webp" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/catnip.webp" id="blinkies" class="desaturate">
-                            <img src="imgs/webgraphics/blinkies/neurodivergent.webp" id="blinkies" class="desaturate"> 
-                            <img src="imgs/webgraphics/blinkies/piercingobsessed.webp"id="blinkies" class="desaturate">
-            <img src="imgs/webgraphics/blinkies/cinto.gif" id="blinkies" class="desaturate">
-
-                <img src="imgs/webgraphics/blinkies/brasil.gif" id="blinkies" class="desaturate">
                 
+                <img src="imgs/webgraphics/blinkies/peace.gif" id="blinkies" class="desaturate">
+                 <img src="imgs/webgraphics/blinkies/blinkie-psychology.gif" id="blinkies" class="desaturate">
+                <img src="imgs/webgraphics/blinkies/catBlinkie.gif" id="blinkies" class="desaturate">
+                <img src="imgs/webgraphics/blinkies/minecraftvegetarian.webp"  id="blinkies" class="desaturate">
+                            <img src="imgs/webgraphics/blinkies/neurodivergent.webp" id="blinkies" class="desaturate"> 
+
+            <img src="imgs/webgraphics/blinkies/piercingobsessed.webp"id="blinkies" class="desaturate">
+                <img src="imgs/webgraphics/blinkies/brasil.gif" id="blinkies" class="desaturate">
+                <img src="imgs/webgraphics/blinkies/sensitive.gif" id="blinkies" class="desaturate">
                 <img src="imgs/webgraphics/blinkies/grumpy.gif" id="blinkies" class="desaturate">
                 <img src="imgs/webgraphics/blinkies/nonbinary.webp" id="blinkies" class="desaturate">
+                <img src="imgs/webgraphics/blinkies/naturelover.gif" id="blinkies" class="desaturate">
+                  <img src="imgs/webgraphics/blinkies/catsovereverything.gif" id="blinkies" class="desaturate">
+                  <img src="imgs/webgraphics/blinkies/hopelessromantic.gif" id="blinkies" class="desaturate">
                 <img src="imgs/webgraphics/blinkies/imissmybf.gif" id="blinkies" class="desaturate">
+               <img src="imgs/webgraphics/blinkies/iloveblack.gif" id="blinkies" class="desaturate">
+
+ <img src="imgs/webgraphics/blinkies/vampires.gif" id="blinkies" class="desaturate">
+
+                <img src="imgs/webgraphics/blinkies/cinto.gif" id="blinkies" class="desaturate">
+                <img src="imgs/webgraphics/blinkies/fluttershymarijuana.webp" id="blinkies" class="desaturate">
+                
+                <img src="imgs/webgraphics/blinkies/gothicandloneliness.webp"id="blinkies" class="desaturate">
+                 <img src="imgs/webgraphics/blinkies/ilovemycomputer.gif"id="blinkies" class="desaturate">
+                   <img src="imgs/webgraphics/blinkies/chocoholic.gif"id="blinkies" class="desaturate">
+                      <img src="imgs/webgraphics/blinkies/typeonegative.webp"id="blinkies" class="desaturate">
+            <img src="imgs/webgraphics/blinkies/mybackhurts.gif"id="blinkies" class="desaturate">
+              <img src="imgs/webgraphics/blinkies/libra.gif"id="blinkies" class="desaturate">
+             <img src="imgs/webgraphics/blinkies/greeneyedcat.gif"id="blinkies" class="desaturate">
+                <img src="imgs/webgraphics/blinkies/catnip.webp" id="blinkies" class="desaturate">
+                  <img src="imgs/webgraphics/blinkies/youmaynotrestnow.webp" id="blinkies" class="desaturate">
                 <img src="imgs/webgraphics/blinkies/atmyfuckinglimit.webp" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/freepalestine.gif" id="blinkies" class="desaturate">
                 <img src="imgs/webgraphics/blinkies/icant.gif" id="blinkies" class="desaturate">
+                   <img src="imgs/webgraphics/blinkies/yaoi.gif" id="blinkies" class="desaturate">
+                 <img src="imgs/webgraphics/blinkies/oldcatlady.webp" id="blinkies" class="desaturate">
                 <img src="imgs/webgraphics/blinkies/iloverevenge.gif" id="blinkies" class="desaturate">
+                 <img src="imgs/webgraphics/blinkies/iwanttobelieve.webp" id="blinkies" class="desaturate">
                 <img src="imgs/webgraphics/blinkies/demolitionlovers.gif" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/hopelessromantic.gif" id="blinkies" class="desaturate">
+                <img src="imgs/webgraphics/blinkies/ego.gif" id="blinkies" class="desaturate">
                 <img src="imgs/webgraphics/blinkies/cring.webp" id="blinkies" class="desaturate">
                 <img src="imgs/webgraphics/blinkies/iwannagohome.webp" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/dont-bother.gif" id="blinkies" class="desaturate">
+                 <img src="imgs/webgraphics/blinkies/obsessivecompulsive.webp" id="blinkies" class="desaturate">
+                 <img src="imgs/webgraphics/blinkies/ocd.webp" id="blinkies" class="desaturate">
+                                  <img src="imgs/webgraphics/blinkies/normal-ppl-worry-me.gif" id="blinkies" class="desaturate">
+                 <img src="imgs/webgraphics/blinkies/horrormovies.gif" id="blinkies" class="desaturate">
+                <img src="imgs/webgraphics/blinkies/y10.gif"id="blinkies" class="desaturate">
+             <img src="imgs/webgraphics/blinkies/bigsis.gif"id="blinkies" class="desaturate">
+                    <img src="imgs/webgraphics/blinkies/ilovethesea.gif" id="blinkies" class="desaturate">
+                 <img src="imgs/webgraphics/blinkies/bekindtoanimals.gif" id="blinkies" class="desaturate">
+                  <img src="imgs/webgraphics/blinkies/drawing in class.gif" id="blinkies" class="desaturate">
                 <img src="imgs/webgraphics/blinkies/sebastian.gif" id="blinkies" class="desaturate">
                 <img src="imgs/webgraphics/blinkies/stevenuniverse.webp" id="blinkies" class="desaturate">
                 <img src="imgs/webgraphics/blinkies/scully.gif" id="blinkies" class="desaturate">
                 <img src="imgs/webgraphics/blinkies/opinionated.webp" id="blinkies" class="desaturate">
                 <img src="imgs/webgraphics/blinkies/copycat.gif" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/.gif" id="blinkies" class="desaturate">
+                <img src="imgs/webgraphics/blinkies/revenge.gif" id="blinkies" class="desaturate">
+                  <img src="imgs/webgraphics/blinkies/stalking.webp" id="blinkies" class="desaturate">
+                 <img src="imgs/webgraphics/blinkies/normal-ppl-worry-me.gif" id="blinkies" class="desaturate">
                 <img src="imgs/webgraphics/blinkies/sillycat.webp" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/hellraiser.webp" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/washyourhands.gif" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/mmmyummisubstances.webp" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/pms.gif" id="blinkies" class="desaturate">
-            </div>
-        
+                <img src="imgs/webgraphics/blinkies/piracyyy.webp" id="blinkies" class="desaturate">
 
-       
-    
+                <img src="imgs/webgraphics/blinkies/washyourhands.gif" id="blinkies" class="desaturate">
+                <img src="imgs/webgraphics/blinkies/mmmyummisubstances.webp" id="blinkies" class="desaturate">           </div>
+        <h3>(scrollable!!)</h3>
+
+        <h3>neighbors/pages i love</h3>
+        <div class="scroll">
+
+
+        </div>
+    </div>
 </div>
 </div>
         </div>
@@ -336,8 +674,9 @@
     </aside>
 
 </div>
- <script src="https://unpkg.com/webamp@1.4.0/built/webamp.bundle.min.js"></script>
+
  <script src="script.js"></script>
+
 
 
 

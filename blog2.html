@@ -13,7 +13,7 @@
     </script>
     <script> window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches </script>
     <meta charset="UTF-8">
-     <meta name="viewport" content="width=1200px, initial-scale=0.9, minimum-scale=0.2, maximum-scale=1.0, user-scalable=yes">
+     <meta name="viewport" content="initial-scale=1, minimum-scale=0.2, maximum-scale=2.0, user-scalable=yes">
     <meta property="og:image" content="https://i.ibb.co/RC2v9zg/sitethumbnail.png"/>
     <meta property="og:image" content="imgs/site_imgs/sitethumbnail.png"/>
    
@@ -36,6 +36,34 @@ a, button, input[type="submit"], input[type="button"], select {
 }
 
  
+header {
+    background-color: #1B1917;
+    padding: 5px;
+    background-attachment: fixed;
+    margin-bottom: 2%;
+    border-radius: 0 0 1.25rem 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 70rem;
+    box-sizing: border-box;
+    max-height: 5rem;
+}
+
+.caixamaisclara {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #24211e;
+    padding: 0.3125rem;
+    border-radius: 0.9375rem;
+    box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
+    margin: 2px;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
     #containerprincipal {
       border-radius: 1.25rem;
       text-align: center;
@@ -59,188 +87,186 @@ a, button, input[type="submit"], input[type="button"], select {
       color: #534F4A;
     }
 
-    .galeria-container {
-    width: 700px;
-    height: 300px;
-    border: 4px solid #534f4a;
-     border-radius: 8px;
-    overflow: auto; 
-    padding: 10px;
-    box-sizing: border-box;
 
+
+
+
+
+
+
+
+#posts-container {
+    padding: 10px;
+}
+
+#posts-container h2 {
+    text-align: left;
+    font-family: "Born2bSportyFS", serif; 
+    color: #534F4A;
+    margin-bottom: 20px;
+}
+
+.blog-post {
+    background-color: transparent;
+    border: none;
+    padding: 5px 0;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+    word-wrap: break-word;
+    text-align: left;
+}
+
+.post-info-header {
+    display: flex;
+    align-items: center;
+    font-family: "Born2bSportyFS", sans-serif;
+    color: #534F4A;
+    font-size: 0.9em;
+    margin-bottom: 8px;
+    gap: 5px;
+}
+
+.post-author-name {
+    font-weight: bold;
+}
+
+.post-separator {
+    font-size: 1.2em;
+    line-height: 1;
+}
+
+
+.blog-post h2 {
+    font-family: "Born2bSportyFS", sans-serif; 
+    color: #534F4A;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    line-height: 1.2;
+    text-align: left;
+}
+
+.blog-post img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.blog-post {
+    background-color: transparent;
+    border: none;
+    padding: 5px 0;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+    word-wrap: break-word;
+    text-align: left;
+    
+    width: 100%;              
+    box-sizing: border-box;   
+
+}
+
+.post-divider {
+    border: none;
+    border-top: 1px solid #534f4a;
+    margin: 20px 0;
+    width: 100%;
+}
+
+
+
+.nav-side {
+  display: flex;
+  flex-direction: row;
+  align-items: center; 
+  gap: 10px; 
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+
+.caixamaisclaraCenterSimple{
+     box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
+     flex-direction: column
+}
+
+.caixamaisclara h4,
+.caixamaisclaraCenterSimple h4 { 
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    
+ width: 100% !important;
+   text-align: center; 
     margin-left: auto;
     margin-right: auto;
- 
+ box-sizing: border-box;
+
 }
 
-        .galeria-grid {
-            display: grid;
+#google_translate_element {
+    text-shadow: none !important;
+      text-align: center; 
+    margin-left: auto;
+    margin-right: auto;
+     box-sizing: border-box;
+   
+}
+
+#google_translate_element {
+  
+    background-color: #505050 !important; 
+     text-decoration: none;
+    padding: 5px !important; 
+    border-radius: 8px !important; 
+    border: 1px solid #505050 !important;
+    display: block !important; 
+}
+
+.blog-post .translate-button {
+   
+    display: inline-block; 
+    width: auto; 
+    max-width: none;
+    margin-top: 15px; 
+    padding: 8px 15px; 
     
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); 
-            gap: 15px; 
-            padding: 5px;
-            justify-items: center; 
-            align-items: center; 
-        }
-
-        .galeria-grid img {
-            max-width: 100%; 
-            height: 120px; 
-            
-           
-            object-fit: contain; 
-            
-            display: block;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-            transition: transform 0.2s ease;
-        }
-
-        .galeria-grid img:hover {
-            transform: scale(1.05); 
-        }
-
-
-Com certeza! Para criar essa estrutura em HTML e CSS, onde você pode adicionar imagens dentro dos espaços e controlar o z-index, vamos seguir os passos abaixo.
-
-HTML (index.html)
-HTML
-
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estante de Livros</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="grid-container">
-        <div class="bookshelf-item">
-            <img src="bookshelf.webp" alt="Estante de Livros" class="bookshelf-img">
-            <div class="image-slot slot-top">
-                </div>
-            <div class="image-slot slot-bottom">
-                </div>
-        </div>
-        <div class="bookshelf-item">
-            <img src="bookshelf.webp" alt="Estante de Livros" class="bookshelf-img">
-            <div class="image-slot slot-top">
-                </div>
-            <div class="image-slot slot-bottom">
-                </div>
-        </div>
-        <div class="bookshelf-item">
-            <img src="bookshelf.webp" alt="Estante de Livros" class="bookshelf-img">
-            <div class="image-slot slot-top">
-                </div>
-            <div class="image-slot slot-bottom">
-                </div>
-        </div>
-        <div class="bookshelf-item">
-            <img src="bookshelf.webp" alt="Estante de Livros" class="bookshelf-img">
-            <div class="image-slot slot-top">
-                </div>
-            <div class="image-slot slot-bottom">
-                </div>
-        </div>
-        <div class="bookshelf-item">
-            <img src="bookshelf.webp" alt="Estante de Livros" class="bookshelf-img">
-            <div class="image-slot slot-top">
-                </div>
-            <div class="image-slot slot-bottom">
-                </div>
-        </div>
-        <div class="bookshelf-item">
-            <img src="bookshelf.webp" alt="Estante de Livros" class="bookshelf-img">
-            <div class="image-slot slot-top">
-                </div>
-            <div class="image-slot slot-bottom">
-                </div>
-        </div>
-    </div>
-</body>
-</html>
-CSS (style.css)
-CSS
-
-body {
-    margin: 0;
-    padding: 20px;
-    font-family: sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start; 
-    min-height: 100vh;
-    background-color: #f0f0f0;
+  
+    background-color: #007bff; 
+    color: #a7a7a7; 
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 0.9em;
+    text-decoration: none;
+    transition: background-color 0.3s ease; /
 }
 
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    max-width: 900px; 
-    width: 100%;
+.blog-post .translate-button:hover {
+    background-color: #0056b3; 
 }
 
 
-.bookshelf-item {
-    position: relative; 
-    width: 100%; 
-   
-    padding-bottom: 100%; 
-    overflow: hidden;
+.blog-post .post-divider {
+    margin-top: 25px; 
 }
 
-.bookshelf-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: contain; 
-    z-index: 1;
+.goog-te-gadget-simple {
+
+    border-left: 1px solid #a7a7a7;
+    border-top: 1px solid #a7a7a7;
+    border-bottom: 1px solid #a7a7a7;
+    border-right: 1px solid #a7a7a7;
+    font-size: 10pt;
+    display: inline-block;
+    padding-top: 1px;
+    padding-bottom: 2px;
+    cursor: pointer;
+     text-decoration: none;
 }
-
-.item-slot {
-    position: absolute; 
-    display: flex; 
-    justify-content: center;
-    align-items: flex-end;
-    overflow: hidden; 
-    z-index: 10; 
-   }
-
-
-.item-slot.top-slot {
-    top: 10%;   
-    left: 7%; 
-    width: 85%; 
-    height: 33%; 
-
-}
-
-
-.item-slot.bottom-slot {
-    top: 63%;   
-    left: 8%;  
-    width: 85%; 
-    height: 32%; 
-}
-
-.inserted-item-img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain; 
-   
-}
-
-
-
-
-
-
-
 
 
 </style>
@@ -252,7 +278,7 @@ body {
 
     <aside class="sidebar">
         <div class="box">
-            <img id="sidepic" src="imgs/site_imgs/euirl.jpg" alt="eu irl" height="1700px">
+            <img id="sidepic" src="imgs/site_imgs/euirl.jpg" alt="eu irl"  height="1700px">
         </div>
         <div class="box">
             <h2 id="nomeSide">min</h2>
@@ -264,7 +290,7 @@ body {
  
 
 <div class="caixamaisclaraColumn">
-    <script language="javascript" type="text/javascript" src="//counter1.fc2.com/counter.php?id=40451086&main=1"></script><noscript><img src="//counter1.fc2.com/counter_img.php?id=40451086&main=1" /></noscript>
+    <script language="javascript" type="text/javascript" src="//counter1.fc2.com/counter.php?id=40451086&main=1" style="color:#534F4A"></script><noscript><img src="//counter1.fc2.com/counter_img.php?id=40451086&main=1" style="color:#534F4A"/></noscript>
 
     <div id="statuscafe"><div id="statuscafe-username"></div><div id="statuscafe-content"></div></div><script src="https://status.cafe/current-status.js?name=minkurosu" defer></script>
 <script language="javascript" type="text/javascript" src="//counter1.fc2.com/views.php?id=40451086&main=1"></script><noscript><img src="//counter1.fc2.com/counter_now.php?id=40451086&main=1" /></noscript>
@@ -283,6 +309,7 @@ body {
                 <div class="side-item"><a href="oldtwitter.html">thoughts</a></div>
                 <div class="side-item"><a href="guestbook.html">guestbook</a></div>
                  <div class="side-item"><a href="toybox.html">toybox</a></div>
+                   <div class="side-item"><a href="quizzes.html">quiz/tests</a></div>
            <hr>
        <br>
        <div class="caixamaisclaraColumnSimple">
@@ -314,6 +341,7 @@ body {
              <script src="lastfm-widget.js"></script>
              
              <iframe src="https://www3.cbox.ws/box/?boxid=3547381&boxtag=umWjBq" width="100%" height="250px" border-radius: "0.9375rem" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>	
+
 <div class="caixamaisclara" style="width: 100%;">
               <a href="https://tamanotchi.world/24409c"><img src="https://tamanotchi.world/i2/24409" alt="It's tamaNOTchi! Click to feed!"></a>
        
@@ -353,168 +381,25 @@ body {
             </nav>
         </header>
         <div id="container">
-       <div class="grid-container">
-        <div class="bookshelf-item">
-            <img src="imgs/site_imgs/bookshelf.jpg" alt="Estante de Livros" class="bookshelf-img">
-            <div class="item-slot top-slot">
-                <img src="imgs/webgraphics/pixels/jupi.gif" style="height: 50px;">
-                 <img src="imgs/webgraphics/pixels/apollo.gif" style="height: 50px;">
-                <img src="imgs/webgraphics/pixels/jupi2.webp" style="height: 40px;">
-                <img src="imgs/webgraphics/pixels/ftul9o.gif" style="height: 40px;">
-               
+             <div id="container">
+                <div class="caixamaisclara">
+                    <img id="logobig" src="imgs/site_imgs/logo.png" alt="Logo" data-position="center">
+                </div>
+                <hr>
+                 <div class="caixamaisclaraCenterSimple">
+                 <h4>sorry if there any foreign readers, i kinda wanna do my entries in brazilian portuguese 'cause it's my first language, so feel free to translate if you're interested enough to read.</h4>
+                 
+                <div class="nav-item">
+          <a href="admin.html" target="_self" class="nav-link">admin</a>
+          <br>        </div>
+                 <div id="google_translate_element"></div>
             </div>
-            <div class="item-slot bottom-slot">
-                <img src="imgs/webgraphics/pixels/ponytown-sit.gif" style="height: 80px;">
-                <img src="imgs/webgraphics/pixels/fluttershy2.gif" style="height: 80px;">
-                
+                 <br>
+                <div class="caixamaisclara" id="posts-container">
+                    
+                    <h2>loading posts...</h2> 
                 </div>
-        </div>
-
-        <div class="bookshelf-item">
-            <img src="imgs/site_imgs/bookshelf.jpg" alt="Estante de Livros" class="bookshelf-img">
-            <div class="item-slot top-slot">
-                <img src="imgs/webgraphics/pixels/happyhappyhappy.gif" style="height: 80px;">
-                <img src="imgs/webgraphics/pixels/discokitten.gif" style="height: 80px;">
-                
-                </div>
-            <div class="item-slot bottom-slot">
-                <img src="imgs/webgraphics/pixels/kitten.gif" style="height: 80px;">
-                <img src="imgs/webgraphics/pixels/looker.gif" style="height: 80px;">
-                
-                </div>
-        </div>
-
-        <div class="bookshelf-item">
-            <img src="imgs/site_imgs/bookshelf.jpg" alt="Estante de Livros" class="bookshelf-img">
-            <div class="item-slot top-slot">
-                <img src="" style="height: 80px;">
-                <img src="imgs/webgraphics/pixels/cat.png" style="height: 50px;">
-                  <img src="imgs/webgraphics/pixels/earcats.gif" style="height: 80px;">
-               
-                </div>
-            <div class="item-slot bottom-slot">
-                <img src="imgs/webgraphics/pixels/a_iconsleep.gif" style="height: 60px;">
-                <img src="imgs/webgraphics/pixels/breathing.gif" style="height: 60px;">
-                
-                </div>
-        </div>
-
-        <div class="bookshelf-item">
-            <img src="imgs/site_imgs/bookshelf.jpg" alt="Estante de Livros" class="bookshelf-img">
-            <div class="item-slot top-slot">
-                  <img src="imgs/webgraphics/pixels/artwork-bat.gif" style="height: 50px;">
-               <img src="imgs/webgraphics/pixels/artwork-muertos.gif" style="height: 50px;">
-               <img src="imgs/webgraphics/pixels/artwork-pumpkin.gif" style="height: 50px;">
-               <img src="imgs/webgraphics/pixels/artwork-vampire.gif" style="height: 50px;">
-               
-                </div>
-            <div class="item-slot bottom-slot">
-               <img src="imgs/webgraphics/pixels/HalloweenCatVampire-paused.gif" style="height: 50px;">
-               <img src="imgs/webgraphics/pixels/hillhouse2.gif" style="height: 50px;">
-               <img src="imgs/webgraphics/pixels/kittyfriends.gif" style="height: 50px;">
-               
-                </div>
-        </div>
-
-        <div class="bookshelf-item">
-            <img src="imgs/site_imgs/bookshelf.jpg" alt="Estante de Livros" class="bookshelf-img">
-            <div class="item-slot top-slot">
-                <img src="imgs/webgraphics/pixels/be491fff.gif" style="height: 40px;">
-               <img src="imgs/webgraphics/pixels/catloaf.gif" style="height: 40px;">
               
-             
-                  <img src="imgs/webgraphics/pixels/gatin2.gif" style="height: 40px;">
-                </div>
-            <div class="item-slot bottom-slot">
-                <img src="imgs/webgraphics/pixels/hiss.gif" style="height: 30px;">
-                
-                 <img src="imgs/webgraphics/pixels/kitty1.gif" style="height: 40px;">
-                <img src="imgs/webgraphics/pixels/kitty2.gif" style="height: 40px;">
-                <img src="imgs/webgraphics/pixels/kitty-solariabwcat.png" style="height: 40px;">
-                
-                </div>
-        </div>
-
-        <div class="bookshelf-item">
-            <img src="imgs/site_imgs/bookshelf.jpg" alt="Estante de Livros" class="bookshelf-img">
-            <div class="item-slot top-slot">
-                <img src="imgs/webgraphics/pixels/litwickshiny.gif" style="height: 60px;">
-                <img src="imgs/webgraphics/pixels/chandelure.png" style="height: 60px;">
-                <img src="imgs/webgraphics/pixels/mimikyu.png" style="height: 60px;">
-                
-                </div>
-            <div class="item-slot bottom-slot">
-               <img src="imgs/webgraphics/pixels/sprigatito.webp" style="height: 50px;">
-                
-            </div>
-        </div>
-
-        </div>
-
-
-            <div class="grid-container">
-        <div class="bookshelf-item">
-            <img src="imgs/site_imgs/bookshelf.jpg" alt="Estante de Livros" class="bookshelf-img">
-            <div class="item-slot top-slot">
-               <img src="imgs/webgraphics/pixels/pepe.png" style="height: 80px;">
-            </div>
-            <div class="item-slot bottom-slot">
-               
-                </div>
-        </div>
-
-        <div class="bookshelf-item">
-            <img src="imgs/site_imgs/bookshelf.jpg" alt="Estante de Livros" class="bookshelf-img">
-            <div class="item-slot top-slot">
-               <img src="imgs/webgraphics/pixels/switchminecraft.png" style="height: 50px;">
-                <img src="imgs/webgraphics/pixels/mcbee.gif" style="height: 50px;">
-            </div>
-            <div class="item-slot bottom-slot">
-              
-                </div>
-        </div>
-
-        <div class="bookshelf-item">
-            <img src="imgs/site_imgs/bookshelf.jpg" alt="Estante de Livros" class="bookshelf-img">
-            <div class="item-slot top-slot">
-                <img src="" style="height: 80px;">
-              
-                </div>
-            <div class="item-slot bottom-slot">
-               
-                </div>
-        </div>
-
-        <div class="bookshelf-item">
-            <img src="imgs/site_imgs/bookshelf.jpg" alt="Estante de Livros" class="bookshelf-img">
-            <div class="item-slot top-slot">
-           
-                </div>
-            <div class="item-slot bottom-slot">
-              
-                </div>
-        </div>
-
-        <div class="bookshelf-item">
-            <img src="imgs/site_imgs/bookshelf.jpg" alt="Estante de Livros" class="bookshelf-img">
-            <div class="item-slot top-slot">
-            
-             
-                </div>
-            <div class="item-slot bottom-slot">
-               
-                </div>
-        </div>
-
-        <div class="bookshelf-item">
-            <img src="imgs/site_imgs/bookshelf.jpg" alt="Estante de Livros" class="bookshelf-img">
-            <div class="item-slot top-slot">
-               
-                </div>
-            <div class="item-slot bottom-slot">
-                
-            </div>
-        </div>
           </div>
     </main>
 
@@ -585,7 +470,7 @@ body {
                            <img src="imgs/webgraphics/stamps/jinx2.webp" alt="jinx">
                 <img src="imgs/webgraphics/stamps/kindness.gif" alt="kindness">
                          <img src="imgs/webgraphics/stamps/stmpkinder.gif" alt="kindness">
-        
+             
                 <img src="imgs/webgraphics/stamps/louiswain.png" alt="louiswain">
                 <img src="imgs/webgraphics/stamps/louiswainstamp.png" alt="louiswainstamp">
                 <img src="imgs/webgraphics/stamps/lis.gif" alt="lsd">
@@ -730,7 +615,7 @@ body {
         <h3>(scrollable!!)</h3>
 
        
-    
+    </div>
 </div>
 </div>
         </div>
@@ -741,7 +626,20 @@ body {
 
 </div>
 
+
  <script src="script.js"></script>
+ <script type="module" src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js"></script>
+    <script type="module" src="blog.js"></script>
+
+   
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'pt', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 
 
