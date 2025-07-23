@@ -15,7 +15,7 @@
 }
 
 body {
-  background: #e6ecf0;
+  background: #1A1A1A;
   font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
   text-rendering: optimizeLegibility !important; /* font sempre com o melhor estilo possivel */
   -webkit-font-smoothing: antialiased !important; /* font sempre com o melhor estilo possivel */
@@ -27,6 +27,7 @@ body {
   width: 1200px;
   padding: 0 30px;
   justify-content: space-between;
+  background-color: #1A1A1A;
 }
 
 header#main-header {
@@ -35,8 +36,8 @@ header#main-header {
   position: relative;
   z-index: 1;
   justify-content: center;
-  background-color: #FFF;
-  box-shadow: 0 1px 1px #00000040;
+  background-color: #1A1A1A; /* Fundo quase preto para distinção */
+  box-shadow: 0 1px 1px #000000B0; /* Sombra mais escura */
 }
 
 header#main-header nav {
@@ -53,13 +54,14 @@ header#main-header nav ul li {
   display: flex;
   align-items: center;
   font-size: 13px;
-  color: #667580;
+  color: #B3B3B3; /* Cor do texto mais clara */
   font-weight: bold;
   margin-left: 30px;
 }
 
 header#main-header nav ul li:hover {
   cursor: pointer;
+  color: #3BB9E3; /* Mantém a cor do hover azul */
 }
 
 header#main-header nav ul li:first-child {
@@ -68,6 +70,7 @@ header#main-header nav ul li:first-child {
 
 header#main-header nav ul li img {
   margin-right: 7px;
+  filter: invert(100%); /* Inverte as cores dos ícones para ficarem brancos */
 }
 
 header#main-header div.side {
@@ -80,13 +83,14 @@ header#main-header div.side input {
   height: 34px;
   padding: 0 30px 0px 12px;
   border-radius: 16px;
-  color: #667581;
+  color: #E1E8ED; /* Cor do texto dentro do input */
   font-size: 12px;
-  background: #F5F8FA;
-  border: solid 1px #E6ECF0;
+  background: #252525; /* Fundo do input escuro */
+  border: solid 1px #3A3A3A; /* Borda do input mais escura */
   background-repeat: no-repeat;
   background-position: 190px center;
-  background-image: url('images/search.svg');
+  /* Ícone de busca branco */
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23E1E8ED" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>');
 }
 
 header#main-header div.side img {
@@ -117,15 +121,15 @@ div.banner {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #3BB9E3;
+  background: #3BB9E3; /* Mantido o azul para o banner */
 }
 
 .bar {
   height: 60px;
   display: flex;
   justify-content: center;
-  background-color: #FFF;
-  box-shadow: 0 1px 1px #00000040;
+  background-color: #1A1A1A; /* Fundo quase preto */
+  box-shadow: 0 1px 1px #000000B0; /* Sombra mais escura */
 }
 
 .bar .container {
@@ -160,13 +164,13 @@ div.banner {
 }
 
 .bar .container ul li span {
-  color: #667580;
+  color: #B3B3B3; /* Cor do texto mais clara */
   font-size: 12px;
   font-weight: bold;
 }
 
 .bar .container ul li strong {
-  color: #667580;
+  color: #E1E8ED; /* Cor do texto para claro */
   font-size: 18px;
   margin-top: 2px;
   font-weight: bold;
@@ -189,7 +193,7 @@ div.banner {
   font-weight: bold;
   border-radius: 16px;
   border: 1px solid #3BB9E3;
-  background-color: #FFF;
+  background-color: #1A1A1A; /* Fundo do botão escuro */
 }
 
 .bar .container .actions {
@@ -210,24 +214,23 @@ div.banner {
   height: 200px;
   border-radius: 50%;
   margin-top: -130px;
-  border: 5px solid #FFF;
+  border: 5px solid #1A1A1A; /* Borda da imagem de perfil preta */
 }
 
 .wrapper-content aside.profile h1 {
   font-size: 21px;
   margin-top: 10px;
-  color: #1f2226;
+  color: #E1E8ED; /* Cor do texto claro */
 }
 
 .wrapper-content aside.profile span {
   font-size: 14px;
-  color: #53626C;
-
+  color: #B3B3B3; /* Cor do texto mais clara */
 }
 
 .wrapper-content aside.profile p {
   font-size: 14px;
-  color: #1f2226;
+  color: #E1E8ED; /* Cor do texto claro */
   margin-top: 15px;
 }
 
@@ -238,7 +241,7 @@ div.banner {
 
 .wrapper-content aside.profile ul.list li {
   font-size: 14px;
-  color: #657786;
+  color: #B3B3B3; /* Cor do texto mais clara */
   display: flex;
   margin-top: 5px;
   align-items: center;
@@ -250,6 +253,7 @@ div.banner {
 
 .wrapper-content aside.profile ul.list img {
   margin-right: 10px;
+  filter: invert(100%); /* Inverte as cores dos ícones para ficarem brancos */
 }
 
 .wrapper-content aside.profile .widget {
@@ -266,6 +270,7 @@ div.banner {
 
 .wrapper-content aside.profile .widget strong img {
   margin-right: 5px;
+  filter: invert(100%); /* Inverte as cores dos ícones para ficarem brancos */
 }
 
 .wrapper-content aside.profile .followers ul {
@@ -281,7 +286,7 @@ div.banner {
   width: 45px;
   flex: 1 0 auto;
   border-radius: 50%;
-  background: #D0D5D9;
+  background: #252525; /* Fundo escuro para placeholders */
   margin: 0 5px 10px 0px;
 }
 
@@ -298,18 +303,25 @@ div.banner {
   height: 80px;
   flex-shrink: 0;
   border-radius: 8px;
-  background: #D0D5D9;
+  background: #252525; /* Fundo escuro para placeholders */
   margin: 0 5px 5px 0px;
+}
+
+.wrapper-content aside.profile .images li img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 .wrapper-content .timeline {
   flex: 1;
-  background: #FFF;
+  background: #1A1A1A; /* Fundo quase preto */
   margin: 10px 20px 0px;
 }
 
 .wrapper-content .timeline nav {
-  border-bottom: 1px solid #E6ECF0;
+  border-bottom: 1px solid #3A3A3A; /* Borda mais escura */
   padding: 10px 15px;
 }
 
@@ -327,193 +339,267 @@ div.banner {
 
 .wrapper-content .timeline nav a.active {
   margin: 0;
-  color: #1f2226;
+  color: #E1E8ED; /* Cor do texto claro */
 }
 
 .wrapper-content .timeline nav a.tweets {
   list-style: none;
 }
 
-.wrapper-content .timeline ul.tweets li {
-  border-bottom: 1px solid #e6ecf0;
+/* ESTILOS PARA A LISTA DINÂMICA DE TWEETS */
+#tweets-container {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#tweets-container li {
+  border-bottom: 1px solid #3A3A3A; /* Borda mais escura */
   padding: 10px 15px;
   display: flex;
 }
 
-.wrapper-content .timeline ul.tweets li > img {
+#tweets-container li > img {
   width: 48px;
   height: 48px;
   border-radius: 50%;
 }
 
-.wrapper-content .timeline ul.tweets li .info {
+#tweets-container li .info {
   margin-left: 10px;
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
-.wrapper-content .timeline ul.tweets li .info strong {
+#tweets-container li .info strong {
   font-size: 14px;
-  color: #1f2326; 
+  color: #E1E8ED; /* Cor do texto claro */
 }
 
-.wrapper-content .timeline ul.tweets li .info strong span {
+#tweets-container li .info strong span {
   font-size: 13px;
-  color: #1f2326; 
+  color: #B3B3B3; /* Cor do @username mais clara */
   font-weight: normal;
 }
 
-.wrapper-content .timeline ul.tweets li .info p {
+#tweets-container li .info p {
   font-size: 14px;
-  color: #1f2326;
+  color: #E1E8ED; /* Cor do texto claro */
   margin-top: 5px;
+  word-wrap: break-word;
 }
 
-.wrapper-content .timeline ul.tweets li .actions {
-  display: flex;
-  margin-top: 20px;
-}
-
-.wrapper-content .timeline ul.tweets li .actions a {
+#tweets-container li .info strong {
   display: flex;
   align-items: center;
-  text-decoration: none;
-  color: #667580;
-  font-weight: bold;
-  font-size: 12px;
-  margin-left: 30px;
+  flex-wrap: wrap;
+  gap: 0.25em;
 }
 
-.wrapper-content .timeline ul.tweets li .actions a:first-child {
-  margin-left: 0px;
-}
-
-.wrapper-content .timeline ul.tweets li .actions a img {
-  margin-right: 5px; 
-}
-
-.wrapper-content aside.widgets {
-  width: 290px;
-  margin-top: 10px;
-}
-
-.wrapper-content aside.widgets .widget {
-  padding: 15px;
-  background: #FFF;
-}
-
-.wrapper-content aside.widgets .widget .title {
-  display: flex;
-  align-items: baseline;
-}
-
-.wrapper-content aside.widgets .widget .title strong {
-  font-size: 18px;
-  color: #1F2226;
-}
-
-.wrapper-content aside.widgets .widget .title a {
-  color: #3BB9E3;
-  font-size: 12px;
-  position: relative;
-  text-decoration: none;
-  padding-left: 10px;
-}
-
-.wrapper-content aside.widgets .widget .title a::before {
-  content: "";
-  width: 2px;
-  height: 2px;
-  margin-left: 5px;
-  margin-right: 50px;
-  border-radius: 50%;
-  background: #222222;
-  position: absolute;
-  left: 2px;
-  top: 6px;
-}
-
-.wrapper-content aside.widgets .follow ul {
-  list-style: none;
-  margin-top: 10px;
-}
-
-.wrapper-content aside.widgets .follow ul li {
-  display: flex;
-  justify-content: space-between;
-  padding-bottom: 10px;
-  margin-bottom: 10px;
-  border-bottom: 1px solid #CCD6DD;
-}
-
-.wrapper-content aside.widgets .follow ul li:last-child {
-  margin-bottom: 0;
-  padding-bottom: 0;
-  border: 0;
-}
-
-.wrapper-content aside.widgets .follow ul li .profile {
-  display: flex;
-  align-items: center;
-}
-
-.wrapper-content aside.widgets .follow ul li .profile img {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-}
-
-.wrapper-content aside.widgets .follow ul li .profile .info {
-  display: flex;
-  margin-left: 10px;
-  flex-direction: column;
-}
-
-.wrapper-content aside.widgets .follow ul li .profile .info strong {
-  font-size: 14px;
-  color: #1F2326;
-}
-
-.wrapper-content aside.widgets .follow ul li .profile .info strong span {
-  color: #9A9A9A;
+#tweets-container li .info strong span {
   font-weight: normal;
+  color: #B3B3B3; /* Cor do @username mais clara */
 }
 
-.wrapper-content aside.widgets .follow ul li .profile .info button {
-  height: 27px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 4px;
-  width: 90px;
-  font-weight: bold;
-  font-size: 14px;
-  color: #3BB9E3;
-  border-radius: 16px;
-  border: 1px solid #3BB9E3;
-  background: #FFF;
+
+/* Novos estilos para a seção secreta */
+#secret-section {
+    background-color: #1A1A1A;
+    border: 1px solid #3A3A3A;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-.wrapper-content aside.widgets .follow ul li > a {
-  color: #CCD6DD;
-  text-decoration: none;
-  font-size: 14px;
+#secret-section h2 {
+    color: #3BB9E3;
+    margin-bottom: 15px;
 }
-</Style>
 
-</head>
+#secret-section p {
+    color: #E1E8ED;
+}
+
+#secret-section input[type="password"] {
+    padding: 10px;
+    border: 1px solid #3A3A3A;
+    border-radius: 5px;
+    margin-right: 10px;
+    width: 200px;
+    background-color: #252525;
+    color: #E1E8ED;
+}
+
+#secret-section button {
+    background-color: #3BB9E3;
+    color:#1A1A1A;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#secret-section button:hover {
+    background-color: #2da0c7;
+}
+
+#secret-posts-container {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    display: none;
+    text-align: left;
+}
+
+#secret-posts-container li {
+    border-bottom: 1px solid #3A3A3A;
+    padding: 10px 15px;
+    display: flex;
+}
+
+#secret-posts-container li > img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
+
+#secret-posts-container li .info {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 0; /* CORREÇÃO APLICADA */
+}
+
+#secret-posts-container li .info strong {
+    font-size: 14px;
+    color: #E1E8ED;
+}
+
+#secret-posts-container li .info strong span {
+    font-size: 13px;
+    color: #B3B3B3;
+    font-weight: normal;
+}
+
+#secret-posts-container li .info p {
+    font-size: 14px;
+    color: #E1E8ED;
+    margin-top: 5px;
+    word-wrap: break-word;   /* Mantido para compatibilidade */
+    word-break: break-all;   /* CORREÇÃO APLICADA */
+}
+
+#secret-posts-container li .actions {
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 15px;
+}
+
+#secret-posts-container li .actions a {
+    color: #B3B3B3;
+    font-size: 12px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+#secret-posts-container li .actions img {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+    border-radius: 0;
+    filter: invert(100%);
+}
+   
+
+#google_translate_element {
+    text-shadow: none !important;
+      text-align: center; 
+    margin-left: auto;
+    margin-right: auto;
+     box-sizing: border-box;
+   
+}
+
+#google_translate_element {
+  text-shadow: none;
+    background-color: #505050 !important; 
+     text-decoration: none;
+    padding: 5px !important; 
+    border-radius: 8px !important; 
+    border: 1px solid #505050 !important;
+    display: block !important; 
+}
+
+.blog-post .translate-button {
+   
+    display: inline-block; 
+    width: auto; 
+    max-width: none;
+    margin-top: 15px; 
+    padding: 8px 15px; 
+    
+  
+    background-color: #007bff; 
+    color: #a7a7a7; 
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 0.9em;
+    text-decoration: none;
+    transition: background-color 0.3s ease; /
+}
+
+.blog-post .translate-button:hover {
+    background-color: #0056b3; 
+}
+
+
+
+
+.goog-te-gadget-simple {
+
+    border-left: 1px solid #a7a7a7;
+    border-top: 1px solid #a7a7a7;
+    border-bottom: 1px solid #a7a7a7;
+    border-right: 1px solid #a7a7a7;
+    font-size: 10pt;
+    display: inline-block;
+    padding-top: 1px;
+    padding-bottom: 2px;
+    cursor: pointer;
+     text-decoration: none;
+}
+
+   .goog-te-gadget-simple a {
+        text-decoration: none;
+        text-shadow: none;
+        font-family: borntobesp;
+   }
+
+.blog-post .post-divider {
+    margin-top: 25px; 
+}
+
+span{
+   text-decoration: none;
+  text-shadow: none
+}
+</style>
+
 <body>
-
-
-
   <div class="banner">
     <img src="imgs\site_imgs\images\1500x500.jpeg">
   </div>
 
-  <div class="bar">
-    
-    </div>
-  </div>
+  <div class="bar"></div>
 
   <div class="wrapper-content">
     <div class="container">
@@ -521,433 +607,65 @@ div.banner {
         <img src="https://pbs.twimg.com/profile_images/1853559456900042752/PFV06W_5_400x400.jpg" class="avatar" alt="Gabriel de Jesus">
         <h1>min*</h1>
         <span>@minkurosu</span>
-        <p>neurotica obsessiva, manic pixie disappointment, tentativa frustrada de artista, killjoy de carteirinha e cronicamente online | 
-@masquemerdagab
- ♡</p>
+        <p>neurotica obsessiva, manic pixie disappointment, tentativa frustrada de artista, killjoy de carteirinha e cronicamente online | @masquemerdagab ♡</p>
   
         <ul class="list">
           <li><img src="imgs/site_imgs/images/place.svg" alt="Place">brasil</li>
           <li><img src="imgs/site_imgs/images/url.svg" alt="URL">minkurosu.github.io</li>
           <li><img src="imgs/site_imgs/images/joined.svg" alt="Joined">Joined April 2015</li>
           <li><img src="imgs/site_imgs/images/born.svg" alt="Born">Born October 3rd</li>
+      
         </ul>
         
-       
+       <div class="widget images">
+  <strong><img src="imgs/site_imgs/images/images.svg" alt="Images"> 420 photos and videos</strong>
+  <ul>
+    <li><img src="https://media1.tenor.com/m/dxPl_UoR8J0AAAAC/fire-writing.gif" alt="Descrição da Imagem 1"></li>
+    <li><img src="https://media.tenor.com/0JQpO_fucCIAAAAM/typing.gif" alt="Descrição da Imagem 2"></li>
+    <li><img src="https://media1.tenor.com/m/4E04tezHmg4AAAAC/cat-shaking.gif" alt="Descrição da Imagem 3"></li>
+    <li><img src="https://media.tenor.com/QlfIY2CvKiEAAAAM/twilight-bella-swan.gif" alt="Descrição da Imagem 4"></li>
+    <li><img src="https://preview.redd.it/gif-happy-to-traumatized-emoji-v0-nk0my3m3o0od1.gif?width=220&auto=webp&s=67807b9e7a040e6aba61b1c944d614ae7c254fad" alt="Descrição da Imagem 5"></li>
+    <li><img src="https://img1.picmix.com/output/stamp/normal/2/5/4/3/2593452_07c9a.gif" alt="Descrição da Imagem 6"></li>
+  </ul>
+</div>
 
-        <div class="widget images">
-          <strong><img src="imgs/site_imgs/images/images.svg" alt="Images"> 266 Photos and videos</strong>
-          <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
-        </div>
+ <section id="secret-section">
+            <h2>close friends</h2>
+            <p>insira a palavra secreta</p>
+            <input type="password" id="secret-password" placeholder="Digite a senha">
+            <button id="unlock-button">unlock</button>
+            <div id="password-message" style="color: red; margin-top: 10px;"></div>
+
+            <ul id="secret-posts-container" class="tweets">
+                
+
+
+
+                
+            </ul>
+        </section>
 
       </aside>
 
       <section class="timeline">
         <nav>
-          <a href="" class="active">Tweets</a>
-          
-    
+          <a href="#" class="active">posts</a>
+          <a href="admin.html" target="_blank" style="color: #3BB9E3; float: right;">admin</a>
         </nav>
 
-        <ul class="tweets">
-
-          <li>
-            <img src="https://pbs.twimg.com/profile_images/1853559456900042752/PFV06W_5_400x400.jpg" alt="Avatar">
-            <div class="info">
-              <strong>min* <span>@mincruzm</span></strong>
-              <p>eu ❤️ ficar em casa quietinha deitadinha no pc pqp como amo dias tranquilos</p>
-            
-              <div class="actions">
-                <a href=""><img src="imgs/site_imgs/images/comments.svg" alt="Comments"> 4</a>
-                <a href=""><img src="imgs/site_imgs/images/retweet.svg" alt="Retweet"> 2</a>
-                <a href=""><img src="imgs/site_imgs/images/like.svg" alt="Like"> 0</a>
-              </div>
-            </div>
-          </li>
-
-               <li>
-            <img src="https://pbs.twimg.com/profile_images/1853559456900042752/PFV06W_5_400x400.jpg" alt="Avatar">
-            <div class="info">
-              <strong>min* <span>@mincruzm</span></strong>
-              <p>preciso de um leque preto q faz trac pro show do mcr</p>
-            
-              <div class="actions">
-                <a href=""><img src="imgs/site_imgs/images/comments.svg" alt="Comments"> 4</a>
-                <a href=""><img src="imgs/site_imgs/images/retweet.svg" alt="Retweet"> 2</a>
-                <a href=""><img src="imgs/site_imgs/images/like.svg" alt="Like"> 0</a>
-              </div>
-            </div>
-          </li>
-
-    <li>
-            <img src="https://pbs.twimg.com/profile_images/1853559456900042752/PFV06W_5_400x400.jpg" alt="Avatar">
-            <div class="info">
-              <strong>min* <span>@mincruzm</span></strong>
-              <p>AI VSF NEOCITIES É A COISA MAIS FODA DA INTERNET PFV APRENDAM A PROGRAMAR E FAÇAM BLOGS VAMOS LARGAR ESSAS REDES SOCIAIS CRL 😭😭😭😭😭😭</p>
-            
-              <div class="actions">
-                <a href=""><img src="imgs/site_imgs/images/comments.svg" alt="Comments"> 4</a>
-                <a href=""><img src="imgs/site_imgs/images/retweet.svg" alt="Retweet"> 2</a>
-                <a href=""><img src="imgs/site_imgs/images/like.svg" alt="Like"> 0</a>
-              </div>
-            </div>
-          </li>
-
-          
-    <li>
-            <img src="https://pbs.twimg.com/profile_images/1853559456900042752/PFV06W_5_400x400.jpg" alt="Avatar">
-            <div class="info">
-              <strong>min* <span>@mincruzm</span></strong>
-              <p>eu posso ser uma fudida fraca anemica e fragil mas pelo menos o sifu do kung fu gosta de mim e acredita no meu potencial</p>
-            
-              <div class="actions">
-                <a href=""><img src="imgs/site_imgs/images/comments.svg" alt="Comments"> 4</a>
-                <a href=""><img src="imgs/site_imgs/images/retweet.svg" alt="Retweet"> 2</a>
-                <a href=""><img src="imgs/site_imgs/images/like.svg" alt="Like"> 0</a>
-              </div>
-            </div>
-          </li>
-          
-
-
-
-          
-    <li>
-            <img src="https://pbs.twimg.com/profile_images/1853559456900042752/PFV06W_5_400x400.jpg" alt="Avatar">
-            <div class="info">
-              <strong>min* <span>@mincruzm</span></strong>
-              <p>sera q gerard way ja leu judith butler?</p>
-            
-              <div class="actions">
-                <a href=""><img src="imgs/site_imgs/images/comments.svg" alt="Comments"> 4</a>
-                <a href=""><img src="imgs/site_imgs/images/retweet.svg" alt="Retweet"> 2</a>
-                <a href=""><img src="imgs/site_imgs/images/like.svg" alt="Like"> 0</a>
-              </div>
-            </div>
-          </li>
-
-    <li>
-            <img src="https://pbs.twimg.com/profile_images/1853559456900042752/PFV06W_5_400x400.jpg" alt="Avatar">
-            <div class="info">
-              <strong>min* <span>@mincruzm</span></strong>
-              <p>olha nunca tinha me acontecido de uma atividade (fisica? mental? espiritual?) me interessar tanto... sera q me encontrei e deixarei de ser sedentaria??!!</p>
-            
-              <div class="actions">
-                <a href=""><img src="imgs/site_imgs/images/comments.svg" alt="Comments"> 4</a>
-                <a href=""><img src="imgs/site_imgs/images/retweet.svg" alt="Retweet"> 2</a>
-                <a href=""><img src="imgs/site_imgs/images/like.svg" alt="Like"> 0</a>
-              </div>
-            </div>
-          </li>
-
- <li>
-            <img src="https://pbs.twimg.com/profile_images/1853559456900042752/PFV06W_5_400x400.jpg" alt="Avatar">
-            <div class="info">
-              <strong>min* <span>@mincruzm</span></strong>
-              <p>olha nunca tinha me acontecido de uma atividade (fisica? mental? espiritual?) me interessar tanto... sera q me encontrei e deixarei de ser sedentaria??!!</p>
-            
-              <div class="actions">
-                <a href=""><img src="imgs/site_imgs/images/comments.svg" alt="Comments"> 4</a>
-                <a href=""><img src="imgs/site_imgs/images/retweet.svg" alt="Retweet"> 2</a>
-                <a href=""><img src="imgs/site_imgs/images/like.svg" alt="Like"> 0</a>
-              </div>
-            </div>
-          </li>
-
- <li>
-            <img src="https://pbs.twimg.com/profile_images/1853559456900042752/PFV06W_5_400x400.jpg" alt="Avatar">
-            <div class="info">
-              <strong>min* <span>@mincruzm</span></strong>
-              <p>eu amo mexer no computador queria todo o tempo do mundo so pra ficar fuçando nele</p>
-            
-              <div class="actions">
-                <a href=""><img src="imgs/site_imgs/images/comments.svg" alt="Comments"> 4</a>
-                <a href=""><img src="imgs/site_imgs/images/retweet.svg" alt="Retweet"> 2</a>
-                <a href=""><img src="imgs/site_imgs/images/like.svg" alt="Like"> 0</a>
-              </div>
-            </div>
-          </li>
-
- <li>
-            <img src="https://pbs.twimg.com/profile_images/1853559456900042752/PFV06W_5_400x400.jpg" alt="Avatar">
-            <div class="info">
-              <strong>min* <span>@mincruzm</span></strong>
-              <p>estou mto reflexivo e emocionada  um deck de cartinha de pergunta q eu comprei igual da minha psicologa qnd tinha 13/14 anos  me ajudou hoje a fazer uma sessao de terapia com um adolescente</p>
-            
-              <div class="actions">
-                <a href=""><img src="imgs/site_imgs/images/comments.svg" alt="Comments"> 4</a>
-                <a href=""><img src="imgs/site_imgs/images/retweet.svg" alt="Retweet"> 2</a>
-                <a href=""><img src="imgs/site_imgs/images/like.svg" alt="Like"> 0</a>
-              </div>
-            </div>
-          </li>
-
- <li>
-            <img src="https://pbs.twimg.com/profile_images/1853559456900042752/PFV06W_5_400x400.jpg" alt="Avatar">
-            <div class="info">
-              <strong>min* <span>@mincruzm</span></strong>
-              <p>q os estados unidos sucumba em ruinas e o brasil se erga como superpotencia  amem</p>
-            
-              <div class="actions">
-                <a href=""><img src="imgs/site_imgs/images/comments.svg" alt="Comments"> 4</a>
-                <a href=""><img src="imgs/site_imgs/images/retweet.svg" alt="Retweet"> 2</a>
-                <a href=""><img src="imgs/site_imgs/images/like.svg" alt="Like"> 0</a>
-              </div>
-            </div>
-          </li>
-
- <li>
-            <img src="https://pbs.twimg.com/profile_images/1853559456900042752/PFV06W_5_400x400.jpg" alt="Avatar">
-            <div class="info">
-              <strong>min* <span>@mincruzm</span></strong>
-              <p>aff vei eu nao posso morrer sem morar algum tempo no japao cara.... to mto bolado</p>
-            
-              <div class="actions">
-                <a href=""><img src="imgs/site_imgs/images/comments.svg" alt="Comments"> 4</a>
-                <a href=""><img src="imgs/site_imgs/images/retweet.svg" alt="Retweet"> 2</a>
-                <a href=""><img src="imgs/site_imgs/images/like.svg" alt="Like"> 0</a>
-              </div>
-            </div>
-          </li>
-
- <li>
-            <img src="https://pbs.twimg.com/profile_images/1853559456900042752/PFV06W_5_400x400.jpg" alt="Avatar">
-            <div class="info">
-              <strong>min* <span>@mincruzm</span></strong>
-              <p>aff vei eu nao posso morrer sem morar algum tempo no japao cara.... to mto bolado</p>
-            
-              <div class="actions">
-                <a href=""><img src="imgs/site_imgs/images/comments.svg" alt="Comments"> 4</a>
-                <a href=""><img src="imgs/site_imgs/images/retweet.svg" alt="Retweet"> 2</a>
-                <a href=""><img src="imgs/site_imgs/images/like.svg" alt="Like"> 0</a>
-              </div>
-            </div>
-          </li>
-
- <li>
-            <img src="https://pbs.twimg.com/profile_images/1853559456900042752/PFV06W_5_400x400.jpg" alt="Avatar">
-            <div class="info">
-              <strong>min* <span>@mincruzm</span></strong>
-              <p>gente to me sentindo a pessoa mais feliz do mundo pelo show do mcr e olha q nem vou pista premium</p>
-            
-              <div class="actions">
-                <a href=""><img src="imgs/site_imgs/images/comments.svg" alt="Comments"> 4</a>
-                <a href=""><img src="imgs/site_imgs/images/retweet.svg" alt="Retweet"> 2</a>
-                <a href=""><img src="imgs/site_imgs/images/like.svg" alt="Like"> 0</a>
-              </div>
-            </div>
-          </li>
-
- <li>
-            <img src="https://pbs.twimg.com/profile_images/1853559456900042752/PFV06W_5_400x400.jpg" alt="Avatar">
-            <div class="info">
-              <strong>min* <span>@mincruzm</span></strong>
-              <p>o professor de kung fu priorizando as meninas pq sao as q mais vao precisar de autodefesa 💖</p>
-            
-              <div class="actions">
-                <a href=""><img src="imgs/site_imgs/images/comments.svg" alt="Comments"> 4</a>
-                <a href=""><img src="imgs/site_imgs/images/retweet.svg" alt="Retweet"> 2</a>
-                <a href=""><img src="imgs/site_imgs/images/like.svg" alt="Like"> 0</a>
-              </div>
-            </div>
-          </li>
-
- <li>
-            <img src="https://pbs.twimg.com/profile_images/1853559456900042752/PFV06W_5_400x400.jpg" alt="Avatar">
-            <div class="info">
-              <strong>min* <span>@mincruzm</span></strong>
-              <p>vsf vei nao consigo escutar stomacheaches nem hesitant alien pq TODAS AS MUSICAS SAO MTO FEITAS UMA PRO OUTRO VSFFFFFFFF AAAAAAA q dor meu deus so queria q frerard tivesse continuado sendo real</p>
-            
-              <div class="actions">
-                <a href=""><img src="imgs/site_imgs/images/comments.svg" alt="Comments"> 4</a>
-                <a href=""><img src="imgs/site_imgs/images/retweet.svg" alt="Retweet"> 2</a>
-                <a href=""><img src="imgs/site_imgs/images/like.svg" alt="Like"> 0</a>
-              </div>
-            </div>
-          </li>
-
- <li>
-            <img src="https://pbs.twimg.com/profile_images/1853559456900042752/PFV06W_5_400x400.jpg" alt="Avatar">
-            <div class="info">
-              <strong>min* <span>@mincruzm</span></strong>
-              <p>queria tanto consagrar ayuhuasca mas o medo de desbloquear uma psicose eh gigante</p>
-            
-              <div class="actions">
-                <a href=""><img src="imgs/site_imgs/images/comments.svg" alt="Comments"> 4</a>
-                <a href=""><img src="imgs/site_imgs/images/retweet.svg" alt="Retweet"> 2</a>
-                <a href=""><img src="imgs/site_imgs/images/like.svg" alt="Like"> 0</a>
-              </div>
-            </div>
-          </li>
-
- <li>
-            <img src="https://pbs.twimg.com/profile_images/1853559456900042752/PFV06W_5_400x400.jpg" alt="Avatar">
-            <div class="info">
-              <strong>min* <span>@mincruzm</span></strong>
-              <p>deve fazer uns 5 meses q nao gasto dinheiro com salao 💖 como eu amo cortar o cabelo em casa</p>
-            
-              <div class="actions">
-                <a href=""><img src="imgs/site_imgs/images/comments.svg" alt="Comments"> 4</a>
-                <a href=""><img src="imgs/site_imgs/images/retweet.svg" alt="Retweet"> 2</a>
-                <a href=""><img src="imgs/site_imgs/images/like.svg" alt="Like"> 0</a>
-              </div>
-            </div>
-          </li>
-
-
- <li>
-            <img src="https://pbs.twimg.com/profile_images/1853559456900042752/PFV06W_5_400x400.jpg" alt="Avatar">
-            <div class="info">
-              <strong>min* <span>@mincruzm</span></strong>
-              <p>bateu a crise existencial mensal se eu volto pros piercings prata ou continuo com eles preto</p>
-            
-              <div class="actions">
-                <a href=""><img src="imgs/site_imgs/images/comments.svg" alt="Comments"> 4</a>
-                <a href=""><img src="imgs/site_imgs/images/retweet.svg" alt="Retweet"> 2</a>
-                <a href=""><img src="imgs/site_imgs/images/like.svg" alt="Like"> 0</a>
-              </div>
-            </div>
-          </li>
-
-
- <li>
-            <img src="https://pbs.twimg.com/profile_images/1853559456900042752/PFV06W_5_400x400.jpg" alt="Avatar">
-            <div class="info">
-              <strong>min* <span>@mincruzm</span></strong>
-              <p>queria conseguir extinguir minha capacidade de sentir cringe</p>
-            
-              <div class="actions">
-                <a href=""><img src="imgs/site_imgs/images/comments.svg" alt="Comments"> 4</a>
-                <a href=""><img src="imgs/site_imgs/images/retweet.svg" alt="Retweet"> 2</a>
-                <a href=""><img src="imgs/site_imgs/images/like.svg" alt="Like"> 0</a>
-              </div>
-            </div>
-          </li>
-
-
- <li>
-            <img src="https://pbs.twimg.com/profile_images/1853559456900042752/PFV06W_5_400x400.jpg" alt="Avatar">
-            <div class="info">
-              <strong>min* <span>@mincruzm</span></strong>
-              <p>como eu amo o som do silencio</p>
-            
-              <div class="actions">
-                <a href=""><img src="imgs/site_imgs/images/comments.svg" alt="Comments"> 4</a>
-                <a href=""><img src="imgs/site_imgs/images/retweet.svg" alt="Retweet"> 2</a>
-                <a href=""><img src="imgs/site_imgs/images/like.svg" alt="Like"> 0</a>
-              </div>
-            </div>
-          </li>
-
-
- <li>
-            <img src="https://pbs.twimg.com/profile_images/1853559456900042752/PFV06W_5_400x400.jpg" alt="Avatar">
-            <div class="info">
-              <strong>min* <span>@mincruzm</span></strong>
-              <p></p>
-            
-              <div class="actions">
-                <a href=""><img src="imgs/site_imgs/images/comments.svg" alt="Comments"> 4</a>
-                <a href=""><img src="imgs/site_imgs/images/retweet.svg" alt="Retweet"> 2</a>
-                <a href=""><img src="imgs/site_imgs/images/like.svg" alt="Like"> 0</a>
-              </div>
-            </div>
-          </li>
-
-
- <li>
-            <img src="https://pbs.twimg.com/profile_images/1853559456900042752/PFV06W_5_400x400.jpg" alt="Avatar">
-            <div class="info">
-              <strong>min* <span>@mincruzm</span></strong>
-              <p></p>
-            
-              <div class="actions">
-                <a href=""><img src="imgs/site_imgs/images/comments.svg" alt="Comments"> 4</a>
-                <a href=""><img src="imgs/site_imgs/images/retweet.svg" alt="Retweet"> 2</a>
-                <a href=""><img src="imgs/site_imgs/images/like.svg" alt="Like"> 0</a>
-              </div>
-            </div>
-          </li>
-
-
- <li>
-            <img src="https://pbs.twimg.com/profile_images/1853559456900042752/PFV06W_5_400x400.jpg" alt="Avatar">
-            <div class="info">
-              <strong>min* <span>@mincruzm</span></strong>
-              <p></p>
-            
-              <div class="actions">
-                <a href=""><img src="imgs/site_imgs/images/comments.svg" alt="Comments"> 4</a>
-                <a href=""><img src="imgs/site_imgs/images/retweet.svg" alt="Retweet"> 2</a>
-                <a href=""><img src="imgs/site_imgs/images/like.svg" alt="Like"> 0</a>
-              </div>
-            </div>
-          </li>
-
-
- <li>
-            <img src="https://pbs.twimg.com/profile_images/1853559456900042752/PFV06W_5_400x400.jpg" alt="Avatar">
-            <div class="info">
-              <strong>min* <span>@mincruzm</span></strong>
-              <p></p>
-            
-              <div class="actions">
-                <a href=""><img src="imgs/site_imgs/images/comments.svg" alt="Comments"> 4</a>
-                <a href=""><img src="imgs/site_imgs/images/retweet.svg" alt="Retweet"> 2</a>
-                <a href=""><img src="imgs/site_imgs/images/like.svg" alt="Like"> 0</a>
-              </div>
-            </div>
-          </li>
-
-
- <li>
-            <img src="https://pbs.twimg.com/profile_images/1853559456900042752/PFV06W_5_400x400.jpg" alt="Avatar">
-            <div class="info">
-              <strong>min* <span>@mincruzm</span></strong>
-              <p></p>
-            
-              <div class="actions">
-                <a href=""><img src="imgs/site_imgs/images/comments.svg" alt="Comments"> 4</a>
-                <a href=""><img src="imgs/site_imgs/images/retweet.svg" alt="Retweet"> 2</a>
-                <a href=""><img src="imgs/site_imgs/images/like.svg" alt="Like"> 0</a>
-              </div>
-            </div>
-          </li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        <ul id="tweets-container" class="tweets">
+            <li style="justify-content: center; padding: 20px; font-weight: bold; color: #667580;">loading <thoughts class=""></thoughts></li>
         </ul>
-      </section>
 
+        
+      </section>
+      
     </div>
   </div>
 
-
+  <script type="module" src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"></script>
+  <script type="module" src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js"></script>
+  <script type="module" src="twt-loader.js"></script>
+<script type="module" src="secret-loader.js"></script>
 </body>
 </html>

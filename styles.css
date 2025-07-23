@@ -90,7 +90,7 @@ a, button, input[type="submit"], input[type="button"], select {
       background-color: #24211e;
 
 } 
-
+}
 
   html, body {
  
@@ -130,11 +130,6 @@ a, button, input[type="submit"], input[type="button"], select {
   }
 
   
-a {
-    text-decoration: none; 
-    color: #54514c; 
-      text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-}
 
 .marked-link {
     text-decoration: underline; 

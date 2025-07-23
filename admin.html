@@ -191,7 +191,7 @@ hr {
 
         <div id="admin-panel-section" class="caixamaisclara admin-form-box" style="display: none;">
             
-            <h1>new post</h1>
+           <h2>new post</h2>
             <div>
                 <label for="post-title">post title:</label>
                 <textarea id="post-title"></textarea>
@@ -213,6 +213,15 @@ hr {
             <div id="post-message" class="message"></div>
             <hr>
 
+ <form id="private-entry-form">
+    <h2>close friends</h2>
+    <label for="private-entry-content">Conteúdo da Entrada:</label>
+    <textarea id="private-entry-content" required></textarea>
+    <button type="button" id="publish-private-entry-btn">Publicar Entrada Privada</button>
+    <div id="private-entry-message" class="message"></div>
+</form>
+
+
             <form id="dream-journal-form">
                 <h2>register new dream</h2>
                 <label for="dream-content">dream content:</label>
@@ -222,13 +231,7 @@ hr {
             </form>
             <hr>
 
-            <form id="private-entry-form">
-    <h2>Nova Entrada Privada</h2>
-    <label for="private-entry-content">Conteúdo da Entrada:</label>
-    <textarea id="private-entry-content" required></textarea>
-    <button type="button" id="publish-private-entry-btn">Publicar Entrada Privada</button>
-    <div id="private-entry-message" class="message"></div>
-</form>
+           
             <hr>
 
             <button type="button" id="logout-btn">sair</button>
