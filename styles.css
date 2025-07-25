@@ -1610,7 +1610,9 @@ display: flex;
 
 
 
-
+  .my-button {
+            border: 1px solid white; /* Borda de 1px, sólida e branca */
+        }
 
 
 

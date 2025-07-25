@@ -14,7 +14,7 @@ async function fetchLastFmTrack() {
     }
 
     // CORREÇÃO AQUI: Usando HTTPS e as variáveis corretas
-    const apiUrl = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${LASTFM_USERNAME}&api_key=${LASTFM_API_KEY}&format=json&limit=1`;
+    const apiUrl = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${minkurosu}&api_key=${a2ef624a3dff8ec934580b0577d18cb5}&format=json&limit=1`;
 
     try {
         const response = await fetch(apiUrl); 
