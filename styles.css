@@ -869,6 +869,27 @@ overflow-y: scroll
   display: none;                
 }
 
+
+.button-wall {
+    display: grid; /* Usa CSS Grid para o layout bidimensional. */
+    grid-template-columns: repeat(3, 1fr); /* Define exatamente 2 colunas de largura igual (1 fração do espaço disponível cada). */
+    gap: 5px; /* Espaço entre os botões, tanto na horizontal quanto na vertical. */
+    width: 100%; /* Faz a div .button-wall ocupar 100% da largura do seu contêiner pai, adaptando-se a ele. */
+    justify-content: center; /* Centraliza os itens horizontalmente dentro do grid, se houver espaço extra. */
+    /* align-items: start; Não é estritamente necessário para este layout, mas pode ser útil se os itens tiverem alturas diferentes. */
+    padding: 5px; /* Adiciona um pequeno preenchimento interno, se desejar. */
+    box-sizing: border-box; /* Garante que padding e border sejam incluídos na largura e altura totais do elemento. */
+}
+
+/* Estilos para as imagens dentro da div .button-wall */
+.button-wall img {
+    width: 88px; /* Define a largura fixa de cada imagem de botão. */
+    height: 31px; /* Define a altura fixa de cada imagem de botão. */
+    display: block; /* Garante que a imagem se comporte como um bloco, permitindo margens automáticas. */
+    object-fit: contain; /* Redimensiona a imagem para caber dentro de suas dimensões, mantendo as proporções. */
+    margin: 0 auto; /* Centraliza cada imagem individualmente dentro de sua célula de grid. */
+}
+
 #blinkies{
  width: 100%;
  max-height: 33.58px;
