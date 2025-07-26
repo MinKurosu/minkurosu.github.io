@@ -26,7 +26,7 @@ const storage = getStorage(app);
 let loginForm, loginEmailInput, loginPasswordInput, loginBtn, loginMessage;
 let adminPanelSection, logoutBtn;
 // Elementos do formulário de Blog
-let postTitleInput, postContentInput, publishPostBtn, postMessage;
+let postContentInput, publishPostBtn, postMessage;
 let postImageFile, postImageUrl; // ATUALIZADO: Variáveis para os dois campos de imagem
 
 // NOVO: Elementos do formulário de Sonhos
@@ -53,8 +53,20 @@ document.addEventListener('DOMContentLoaded', () => {
     adminPanelSection = document.getElementById('admin-panel-section');
     logoutBtn = document.getElementById('logout-btn');
 
+
+
+     // **NOVO: Elementos do formulário de Blog**
+   
+    const blogContentInput = document.getElementById('blog-content');
+    const blogImageUrlInput = document.getElementById('blog-image-url');
+    const publishBlogBtn = document.getElementById('publish-blog-btn');
+    const blogMessage = document.getElementById('blog-message');
+
+
+
+
     // Atribuição de elementos do formulário de Blog
-    postTitleInput = document.getElementById('post-title');
+   
     postContentInput = document.getElementById('post-content');
     publishPostBtn = document.getElementById('publish-post-btn');
     postMessage = document.getElementById('post-message');
@@ -123,18 +135,46 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Evento de Publicação de POST DE BLOG (AGORA COM LÓGICA ATUALIZADA PARA URL/ARQUIVO)
+
+     // **NOVO: Evento de Publicação de POST DE BLOG**
+    if (publishBlogBtn) {
+        publishBlogBtn.addEventListener('click', async () => {
+          
+            const content = blogContentInput.value;
+            const imageUrl = blogImageUrlInput.value.trim();
+
+
+
+            try {
+                showMessage(blogMessage, 'Publicando post...', 'info');
+                // Salva na nova coleção 'blog_posts'
+                await addDoc(collection(db, 'blog_posts'), {
+                   
+                    content: content,
+                    imageUrl: imageUrl, // Salva a URL da imagem (pode estar vazia)
+                    timestamp: serverTimestamp()
+                });
+
+                showMessage(blogMessage, 'Post publicado com sucesso!', 'success');
+               
+                blogContentInput.value = '';
+                blogImageUrlInput.value = '';
+            } catch (error) {
+                showMessage(blogMessage, `Erro ao publicar: ${error.message}`, 'error');
+            }
+        });
+    }
+
+
+
+    // Evento de Publicação de POST DE THOUGHTS (AGORA COM LÓGICA ATUALIZADA PARA URL/ARQUIVO)
     if (publishPostBtn) {
         publishPostBtn.addEventListener('click', async () => {
-            const title = postTitleInput.value;
             const content = postContentInput.value;
             const selectedFile = postImageFile.files[0]; // Pega o arquivo selecionado, se houver
             const enteredUrl = postImageUrl.value.trim(); // Pega a URL digitada, se houver
 
-            if (!title.trim() || !content.trim()) {
-                showMessage(postMessage, 'Por favor, preencha o título e o conteúdo do post.', 'error');
-                return;
-            }
+          
 
             try {
                 showMessage(postMessage, 'Publicando post...', 'info');
@@ -154,14 +194,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Adiciona o post ao Firestore
                 await addDoc(collection(db, 'posts'), {
-                    title: title,
+                   
                     content: content,
                     imageUrl: finalImageUrl, // Salva a URL final (do upload ou digitada)
                     timestamp: serverTimestamp()
                 });
 
                 showMessage(postMessage, 'Post publicado com sucesso!', 'success');
-                postTitleInput.value = '';
+            
                 postContentInput.value = '';
                 postImageFile.value = ''; // Limpa o campo de arquivo
                 postImageUrl.value = '';  // Limpa o campo de URL
@@ -201,6 +241,37 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     
     // Evento de Logout (sem alterações)

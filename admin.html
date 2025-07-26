@@ -193,10 +193,7 @@ hr {
         <div id="admin-panel-section" class="caixamaisclara admin-form-box" style="display: none;">
             
            <h2>new post</h2>
-            <div>
-                <label for="post-title">post title:</label>
-                <textarea id="post-title"></textarea>
-            </div>
+           
             <div>
                 <label for="post-content">post text:</label>
                 <textarea id="post-content" required></textarea>
@@ -232,8 +229,25 @@ hr {
             </form>
             <hr>
 
-           
+          <form id="blog-post-form">
+                <h2>novo post do blog</h2>
+                <div>
+                    <label for="blog-title">título do post:</label>
+                    <input type="text" id="blog-title" required>
+                </div>
+                <div>
+                    <label for="blog-content">conteúdo do post:</label>
+                    <textarea id="blog-content" rows="6" required></textarea>
+                </div>
+                <div>
+                    <label for="blog-image-url">URL da imagem (opcional):</label>
+                    <input type="url" id="blog-image-url" placeholder="https://exemplo.com/imagem.jpg">
+                </div>
+                <button type="button" id="publish-blog-btn">publicar no blog</button>
+                <div id="blog-message" class="message"></div>
+            </form>
             <hr>
+           
 
             <button type="button" id="logout-btn">sair</button>
         </div>
