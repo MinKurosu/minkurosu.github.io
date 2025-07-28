@@ -1636,4 +1636,7 @@ display: flex;
         }
 
 
-
+element.style{
+    color:#53504b;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
