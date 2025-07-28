@@ -164,7 +164,49 @@ a, button, input[type="submit"], input[type="button"], select {
         .photo-19 {  height: 18%; top: 40%; left: 70%; }
         .photo-20 { height: 14%; top: 70%; left: 25%; }
 
-        
+        .letter-photo {
+    position: absolute; /* Allows exact positioning over the fridge */
+    width: 6%; /* Small size for letters. Adjust as needed. */
+    height: 5%; /* Maintains image aspect ratio */
+    border: none; /* Removes border from normal photos */
+    box-shadow: none; /* Removes shadow from normal photos */
+    z-index: 20; /* Ensures letters are visible above the fridge */
+    user-select: none; /* Prevents text selection when dragging */
+}
+
+.letter-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensures the letter image fits without cropping */
+}
+
+
+/* Specific positioning for the word "YAOI" */
+/* Adjust 'top' and 'left' values to fine-tune placement */
+#letter-y { top: 28%; left: 2%; transform: rotate(-10deg); }
+#letter-a1 { top: 28%; left: 6%; transform: rotate(2deg); }
+#letter-o { top: 28%; left: 11%; transform: rotate(-1deg); }
+#letter-i {
+    top: 27%;
+    left: 14%;
+    transform: rotate(4deg);
+    height: 6%; /* Ajustado para ser menor que as outras letras */
+}
+
+
+/* Specific positioning for the word "GAY" */
+/* Adjust 'top' and 'left' values to fine-tune placement */
+#letter-g { top: 90%; left: 80%; transform: rotate(1deg); }
+#letter-a2 { top: 91%; left: 85%; transform: rotate(-2deg); }
+#letter-y2 { top: 91%; left: 90%; transform: rotate(3deg); }
+
+/* Optional: Hover effect for letters, similar to normal photos */
+.letter-photo.draggable:hover {
+    transform: translate(var(--x, 0px), var(--y, 0px)) rotate(calc(var(--rotation, 0) * 1deg + 5deg));
+    z-index: 20; /* Bring to front on hover */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
 
   /* Efeito de hover */
         .photo.draggable:hover {
@@ -212,11 +254,10 @@ a, button, input[type="submit"], input[type="button"], select {
  
 
 <div class="caixamaisclaraColumn">
-    <script language="javascript" type="text/javascript" src="//counter1.fc2.com/counter.php?id=40451086&main=1" style="color:#534F4A"></script><noscript><img src="//counter1.fc2.com/counter_img.php?id=40451086&main=1" style="color:#534F4A"/></noscript>
+   
 
     <div id="statuscafe"><div id="statuscafe-username"></div><div id="statuscafe-content"></div></div><script src="https://status.cafe/current-status.js?name=minkurosu" defer></script>
-<script language="javascript" type="text/javascript" src="//counter1.fc2.com/views.php?id=40451086&main=1"></script><noscript><img src="//counter1.fc2.com/counter_now.php?id=40451086&main=1" /></noscript>
-<div class="buttons">
+<script language="javascript" type="text/javascript" src="//counter1.fc2.com/counter.php?id=40451086&main=1" style="color:#534F4A"></script><noscript><img src="//counter1.fc2.com/counter_img.php?id=40451086&main=1" style="color:#534F4A"/></noscript><div class="buttons">
 
 
 </div>
@@ -310,6 +351,32 @@ a, button, input[type="submit"], input[type="button"], select {
         <div class="refrigerator-container">
             <div class="photo-area">
            
+
+  <!-- Imagens de letras para "YAOI" -->
+                <div class="letter-photo draggable" id="letter-y" data-rotation="0" data-x="0" data-y="0">
+                    <img src="imgs/site_imgs/fridge/letters/y.png" alt="Letra Y">
+                </div>
+                <div class="letter-photo draggable" id="letter-a1" data-rotation="0" data-x="0" data-y="0">
+                    <img src="imgs/site_imgs/fridge/letters/a.png" alt="Letra A">
+                </div>
+                <div class="letter-photo draggable" id="letter-o" data-rotation="0" data-x="0" data-y="0">
+                    <img src="imgs/site_imgs/fridge/letters/o.png" alt="Letra O">
+                </div>
+                <div class="letter-photo draggable" id="letter-i" data-rotation="0" data-x="0" data-y="0">
+                    <img src="imgs/site_imgs/fridge/letters/i.png" alt="Letra I">
+                </div>
+
+                <!-- Imagens de letras para "GAY" -->
+                <div class="letter-photo draggable" id="letter-g" data-rotation="0" data-x="0" data-y="0">
+                    <img src="imgs/site_imgs/fridge/letters/g.png" alt="Letra G">
+                </div>
+                <div class="letter-photo draggable" id="letter-a2" data-rotation="0" data-x="0" data-y="0">
+                    <img src="imgs/site_imgs/fridge/letters/a.png" alt="Letra A">
+                </div>
+                <div class="letter-photo draggable" id="letter-y2" data-rotation="0" data-x="0" data-y="0">
+                    <img src="imgs/site_imgs/fridge/letters/y.png" alt="Letra Y">
+                </div>
+
 
 
 
