@@ -1,49 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="oneko.js"></script>
-    <script>NekoType="black"</script>
+ <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4K5KDKEJ2E"></script>
 <script>
-  $.fancybox.getInstance().$refs.container.toggleClass('fancybox-show-caption');
-  </script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4K5KDKEJ2E"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-4K5KDKEJ2E');
-    </script>
-    <script> window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches </script>
-    <meta charset="UTF-8">
-     <meta name="viewport" content="width=1200px, initial-scale=0.9, minimum-scale=0.2, maximum-scale=1.0, user-scalable=yes">
-    <meta property="og:image" content="https://i.ibb.co/RC2v9zg/sitethumbnail.png"/>
-    <meta property="og:image" content="imgs/site_imgs/sitethumbnail.png"/>
-   
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-    <link rel="stylesheet" href="styles.css">
-    <title>@minkurosu</title>
-   
-    <link rel="icon" type="image/ico" href="imgs/site_imgs/favicon.ico"/>
-     <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
-          />
-<style>
-
-
-html, body, iframe{
-  cursor: url('imgs/cursor/ROCKcursornormal.cur'), auto;
+  gtag('config', 'G-4K5KDKEJ2E');
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1600px, initial-scale=0.4, maximum-scale=1.0, user-scalable=yes">
+  <link rel="stylesheet" href="styles.css">
+  <title>prices & tos</title>
+  <link rel="icon" type="image/ico" href="imgs/site_imgs/favicon.ico"/>
+  <style>
+        
+     /* Scale for viewports between 600px and 1200px */
+     @media (min-width: 400px) and (max-width: 1200px) {
+  body {
+    transform: scale(1.2);
+    transform-origin: top; 
+  }
+  .caixamaisclara {
+    max-width: 50rem;
+    }
 }
 
-
-a, button, input[type="submit"], input[type="button"], select {
-  cursor: url('imgs/cursor/ROCKcursorselect.cur'), pointer;
 }
 
- 
     @font-face {
-     font-family: "Born2bSportyFS";
-  src: url(fonts/Born2bSportyFS.otf) format('truetype');
+      font-family: "MoreSugar";
+      src: url(fonts/MoreSugar-Regular.ttf) format('truetype');
     }
 
     /* General Settings */
@@ -51,44 +40,43 @@ a, button, input[type="submit"], input[type="button"], select {
       font-size: 16px;
     }
 
-    #logopatinha{
-box-shadow: none;
-    }
+    html {
+  scroll-behavior: smooth;
+}
 
 
     body, html {
       height: 100%;
-      margin: 0 auto;
+      margin: 0;
       padding: 0;
-      background-attachment: fixed;
       background-image: url(imgs/site_imgs/wood2.png);
+      background-attachment: fixed;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
-      font-family: "Born2bSportyFS";
+      font-family: "MoreSugar", sans-serif;
       font-size: 16px;
-      z-index: 1;
     }
 
     /* Header */
     header {
       background-color: #1B1917;
       padding: 5px;
-      margin: 0 auto;
+      margin-bottom: 2%;
       border-radius: 0 0 1.25rem 1.25rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
       box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5);
       width: 100%;
-      max-width: 70rem;
+      max-width: 50rem;
       box-sizing: border-box;
       max-height: 5rem;
     }
 
-      /* Navbar */
-      .navbar {
+    /* Navbar */
+    .navbar {
       display: flex;
       justify-content: center;
       width: 100%;
@@ -97,9 +85,17 @@ box-shadow: none;
     .nav-item{
   font-size: 1.5rem;
 }
-   
+    .navbar .divitems {
+      display: inline-flex;
+      justify-content: center;
+      flex-wrap: nowrap;
+    }
 
-
+    .navbar .divitems .nav-item {
+      white-space: nowrap;
+      padding: 0.0625rem;
+      padding-right: 0.625rem;
+    }
 
     .navbar a {
       text-decoration: none;
@@ -107,30 +103,21 @@ box-shadow: none;
       background-color: #24211e;
       padding: 3px 10px;
       border-radius: 0.625rem;
-      transition: transform 0.2s ease-in-out;
+      transition: background-color 0.3s;
       display: inline-block;
       border: 0.3125rem solid #272525;
       box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5);
       margin: 0.625rem;
-      
     }
 
     .navbar a:hover {
       background-color: #534f4a;
       color: #1B1917;
-      transform: scale(1.10); /* Aumenta a imagem suavemente */
-      transition: transform 0.2s ease-in-out;
+      transform: scale(1.15);
+      transition: 0.2s;
     }
   
-    .navbar a {
-  transition: transform 0.2s ease-in-out; /* Aplica a transição ao estado normal também */
-}
 
-.navbar a:hover {
-  background-color: #534f4a;
-  color: #1B1917;
-  transform: scale(1.10); /* Aumenta a imagem suavemente */
-}
 
 
     /* Main Container */
@@ -142,13 +129,23 @@ box-shadow: none;
       text-align: center;
       margin: 0 auto;
       width: 100%;
-      max-width: 70rem;
+      max-width: 50rem;
       box-sizing: border-box;
       color: #534F4A;
     }
 
 /* Logo */
-
+/* Logo */
+#logopatinha {
+    height: 5rem;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  #logopatinha:hover {
+    transform: scale(1.10) translateY(2px);
+    transition: 0.1s;
+  }
+  
 #logobig {
   max-width: 100%;
   max-height: 200px;
@@ -174,19 +171,27 @@ box-shadow: none;
   }
 }
 
-  
+    .caixalogo {
+      background-color: rgba(68, 64, 60, 0.16);
+      border-radius: 0.625rem;
+      box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
+    }
 
     .caixamaisclara {
-background-color: #1B1917;
-  padding: 0.9375rem;
-  border-radius: 0.9375rem;
-  box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-  
-}
+      background-color: #24211e;
+      padding: 0.3125rem;
+      border-radius: 0.9375rem;
+      box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      margin: 2px;
+      text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    }
+
+    .caixamaisclara img {
+      border-radius: 0.3125rem;
+    }
 
     .about-text {
       max-width: 60%;
@@ -210,11 +215,32 @@ background-color: #1B1917;
       justify-content: center;
     }
 
+    #euvtuber, #euirl {
+      height: 18.75rem;
+    }
+
+    .about-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
     .about-content img {
       margin: 0 0.625rem;
       border-radius: 1rem;
     }
+
+    #euirl, #euvtuber {
+  transition: transform 0.3s ease-in-out;
+}
+
+#euirl:hover, #euvtuber:hover {
+  transform: scale(1.05);
+}
+
+
+
+
 
 
     .about-content .about-text {
@@ -222,7 +248,12 @@ background-color: #1B1917;
       text-align: center;
     }
 
-
+    .boxfoto {
+      width: calc(25% - 2px);
+      display: flex;
+      gap: 2rem;
+      border-radius: 1rem;
+    }
 
     h1 {
       font-size: 2rem;
@@ -235,11 +266,15 @@ background-color: #1B1917;
     }
 
     h3 {
-      font-size: 1.7rem;
+      font-size: 1.5rem;
       margin: 0;
       padding: 0;
+      text-align: center;
     }
 
+h4{
+    font-size: 1rem;
+}
     .h2text {
       margin: 0;
     }
@@ -248,3301 +283,307 @@ background-color: #1B1917;
       border-radius: 0rem;
     }
 
-    .grid-feed {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr); /* 3 colunas */
-      gap: 10px; /* Espaço entre as imagens */
-      max-width: 800px;
-  
-      
-    }
-
-    .grid-feed a{
-      display: block;
-      position: relative;
-      max-width: 800px;
-      max-height: 800px;
-      display: block;
-     
-    }
-
-
-    .grid-img {
-      position: relative;
-      
-      
-    }
-
-
-
-    .grid-feed a img{
-  transition: transform 0.1s ease-in-out; /* Suaviza o aumento ao passar o mouse */
-  object-fit: cover;
+    .fotosworks {
+      height: 200px;
+      border-radius: 1rem;
+      transition: transform 0.1s ease-in-out;
 }
 
-.grid-feed a:hover img {
-  transform: scale(1.05); /* Aumenta a imagem suavemente */
-  transition: transform 0.1s ease-in-out;
+.fotosworks:hover {
+  transform: scale(1.1) translateY(5px);
 }
 
-.caixamaisclara img {
-    border-radius: 6px;
+
+.caixaprices{
+ 
+}
+
+#pricesimages{
+    max-width: 100%;
+}
+
+.pushable {
+    position: relative;
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+    transition: filter 250ms;
+    display: inline-block;
+    margin: auto;
+    text-decoration: none; /* Remove sublinhado */
+    display: block;  /* Garante que o botão ocupe a largura total do container */
+    width: 40%;  /* Faz com que cada botão tenha a largura máxima disponível */
+  }
+  .shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: hsl(0deg 0% 0% / 0.25);
+    will-change: transform;
+    transform: translateY(2px);
+    transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+  }
+  .edge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: linear-gradient(
+      to left,
+      hsl(43, 9%, 15%) 92%,
+      hsl(30, 4%, 18%) 8%,
+      hsl(43, 9%, 15%) 92%,
+      hsl(60, 2%, 11%) 100%
+    );
+  }
+  .front {
+    display: block;
+    position: relative;
+    padding: 12px 42px;
+    border-radius: 12px;
+    font-size: 1.25rem;
+    color: #7c756d;
+    background: hsl(30, 4%, 20%);
+    will-change: transform;
+    transform: translateY(-4px);
+    transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+  }
+  .pushable:hover {
+    filter: brightness(110%);
+  }
+  .pushable:hover .front {
+    transform: translateY(-6px);
+    transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+  }
+  .pushable:active .front {
+    transform: translateY(-2px);
+    transition: transform 34ms;
+  }
+  .pushable:hover .shadow {
+    transform: translateY(4px);
+    transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+  }
+  .pushable:active .shadow {
+    transform: translateY(1px);
+    transition: transform 34ms;
+  }
+  .pushable:focus:not(:focus-visible) {
+    outline: none;
   }
 
-  .fancybox__caption {
- font-size: 25px;
- color: #534f4a;
- border-color:#24211e
- }
+  .terms {
+    text-align: justify;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.2; /* Melhor legibilidade */
+}
 
+th {
+  background-color: rgba(255, 255, 255, 0.1); /* Branco com 60% de transparência */
+}
+td{
+    background-color: rgba(255, 255, 255, 0.05); /* Branco com 60% de transparência */
 
+}
+table {
+  border: 3px solid black; /* Aumenta o contorno da tabela */
+  border-collapse: collapse; /* Faz as bordas se fundirem */
+  border-spacing: 2; /* Garante que as bordas não se sobreponham */
+  border-radius: 10px; /* Arredonda as bordas da tabela */
+  overflow: hidden; /* Garante que as bordas arredondadas se apliquem corretamente */
+}
 
+th, td {
+  border: 2px solid black; /* Aumenta o contorno das células */
+}
 
-</style>
-
+video{
+    max
+}
+  </style>
 </head>
 <body>
-
-<div class="layout-with-sidebars">
-
-    <aside class="sidebar">
-        <div class="box">
-            <img id="sidepic" src="imgs/site_imgs/euirl.jpg" alt="eu irl"  height="1700px">
+  <header id="header" class="fixed-top">
+    <div id="divpatinha"><img src="imgs/site_imgs/patinha.png" id="logopatinha" alt="logo da barra de navegação"></div>
+    <nav class="navbar">
+      <div class="divitems">
+        <div class="nav-item">
+    <a href="#" onclick="history.back(); return false;" class="nav-link">back</a>
+</div>
+        <div class="nav-item">
+          <a href="index.html" target="_self" class="nav-link">home</a>
         </div>
-        <div class="box">
-            <h2 id="nomeSide">min</h2>
-            <h3> 22yo • they/she/he • brasil </h3>
-            <h3>psychology student & freelance artist</h3>
-            <h3>(digital art & live2d)</h3>
-            <h1 id="nl"><script src="https://webneko.net/n20171213.js"></script><a href="https://webneko.net">Neko</a></h1>
+        <div class="nav-item">
+          <a href="feed.html" target="_self" class="nav-link">feed</a>
+        </div>
+        <div class="nav-item">
+          <a href="links.html" target="_self" class="nav-link">links</a>
+        </div>
+        <div class="nav-item">
+          <a href="portfolio-menu.html" target="_self" class="nav-link">portfolio</a>
+        </div>
+    
+       
+      </div>
+    </nav>
+  </header>
+  <div id="container">
+    <div class="caixamaisclara">
+        <div class= "caixaprices">
+           <h2>pricings</h2>
 <br>
- 
-
-<div class="caixamaisclaraColumn">
-    <script language="javascript" type="text/javascript" src="//counter1.fc2.com/counter.php?id=40451086&main=1" style="color:#534F4A"></script><noscript><img src="//counter1.fc2.com/counter_img.php?id=40451086&main=1" style="color:#534F4A"/></noscript>
-
-    <div id="statuscafe"><div id="statuscafe-username"></div><div id="statuscafe-content"></div></div><script src="https://status.cafe/current-status.js?name=minkurosu" defer></script>
-<script language="javascript" type="text/javascript" src="//counter1.fc2.com/views.php?id=40451086&main=1"></script><noscript><img src="//counter1.fc2.com/counter_now.php?id=40451086&main=1" /></noscript>
-<div class="buttons">
-
-
-</div>
-        </div>
-       <br>
-            <div class="nav-side">
-                <div class="side-item"><a href="music.html">music</a></div>
-                <div class="side-item"><a href="games.html">games</a></div>
-                 <div class="side-item"><a href="dream-journal.html">dream-journal</a></div>
-                 <div class="side-item"><a href="blog.html">blog</a></div>
-                   <div class="side-item"><a href="room.html">room</a></div>
-                <div class="side-item"><a href="oldtwitter.html">thoughts</a></div>
-                <div class="side-item"><a href="guestbook.html">guestbook</a></div>
-                 <div class="side-item"><a href="toybox.html">toybox</a></div>
-           <hr>
-       <br>
-       <div class="caixamaisclaraColumnSimple">
-            <h3>what am i up to?</h3>
-            <table style="border-collapse: collapse; width: 100%; background-color: transparent;">
-                <tr>
-            
-                    <td style="border: 1px solid black; padding: 8px;">feeling</td>
-                    <td style="border: 1px solid black; padding: 8px;"><a href="https://www.imood.com/users/minkurosu"><img src="https://moods.imood.com/display/uname-minkurosu/fg-8a8278/trans-1/imood.gif" alt="The current mood of minkurosu at www.imood.com" border="0"></a></td>
-                </tr>
-                </tr>
-                <tr>
-                    <td style="border: 1px solid black; padding: 8px;">last song</td>
-                   <td id="lastfm-song-cell" style="border: 1px solid black; padding: 8px;">loading...</td>
-                </tr>
-                <tr>
-                    <td style="border: 1px solid black; padding: 8px;">last movie watched</td>
-                    <td style="border: 1px solid black; padding: 8px;">mickey 17</td>
-                </tr>
-                <tr>
-                    <td style="border: 1px solid black; padding: 8px;">current hyperfocus:</td>
-                    <td style="border: 1px solid black; padding: 8px;">coding this page and trying to write my final college thesis</td>
-                </tr>
-
-            </table>  
-            </div>
-
-            
-             <script src="lastfm-widget.js"></script>
-             
-             <iframe src="https://www3.cbox.ws/box/?boxid=3547381&boxtag=umWjBq" width="100%" height="250px" border-radius: "0.9375rem" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>	
-  <img src="imgs/webgraphics/blinkies/ilovecomments.gif" alt="talksoftly" class="desaturate">
-<div class="caixamaisclara" style="width: 100%;">
-              <a href="https://tamanotchi.world/24409c"><img src="https://tamanotchi.world/i2/24409" alt="It's tamaNOTchi! Click to feed!"></a>
-       
-
-            <img src="imgs/webgraphics/pixels/ponytown-trot.gif" style="height: 100px;">
-</div> 
-</div>  
-    </div>
-    </aside>
-
-    <main id="containerprincipal">
-        <header id="header" class="fixed-top">
-            <div id="divpatinha">
-                <img src="imgs/site_imgs/patinha.png" id="logopatinha" alt="logo da barra de navegação">
-            </div>
-            <nav class="navbar">
-                <div class="divitems">
-                    <div class="nav-item">
-                        <a href="#" onclick="history.back(); return false;" class="nav-link">back</a>
-                    </div>
-                    <div class="nav-item">
-                        <a href="index.html" target="_self" class="nav-link">home</a>
-                    </div>
-                    <div class="nav-item">
-                        <a href="feed.html" target="_self" class="nav-link">feed</a>
-                    </div>
-                    <div class="nav-item">
-                        <a href="blog.html" target="_self" class="nav-link">blog</a>
-                    </div>
-                    <div class="nav-item">
-                        <a href="links.html" target="_self" class="nav-link">links</a>
-                    </div>
-                    <div class="nav-item">
-                        <a href="portfolio-menu.html" target="_self" class="nav-link">portfolio</a>
-                    </div>
-                </div>
-            </nav>
-        </header>
-       
-            <div class="caixamaisclara">
-              <div class="grid-feed">
-   
-     
- 
-   
-    <a
-         data-fancybox="gallery"
-         href="imgs/feed/morcego.png"
-         data-caption="🦇"
-         >
-        <img src="imgs/feed/morcego.png" width="250" height="250"  alt="" />
-      </a>
- 
-      <a
-      data-fancybox="gallery"
-      href="imgs/feed/3471666579232484651_229670069.jpg"
-      data-caption="my way or the highway
-📸: @leticiahottfotos <3" >
-     <img src="imgs/feed/3471666579232484651_229670069.jpg" width="250" height="250" alt="" />
-   </a>
-
-    <a
-   data-fancybox="gallery"
-   href="imgs/feed/354801412_646262653717498_1848050448632852524_n_17977021157143910.png"
-   data-caption="i can't quit you baby"
-   >
-  <img src="imgs/feed/354801412_646262653717498_1848050448632852524_n_17977021157143910.png" width="250" height="250" alt="" />
-</a>
-
- <a
-         data-fancybox="gallery"
-         href="imgs/feed/gabmin.jpg"
-         data-caption="🖤"
-         >
-        <img src="imgs/feed/gabmin.jpg" width="250" height="250"  alt="" />
-      </a>
-     
-      <a
-         data-fancybox="gallery"
-         href="imgs/feed/ritalee.jpg"
-         data-caption="padroeira das loucas"
-         >
-        <img src="imgs/feed/ritalee.jpg" width="250" height="250"  alt="" />
-      </a>
-  
- <a
-         data-fancybox="gallery"
-         href="imgs/feed/carnaval2025.jpg"
-         data-caption="carnaval 2025"
-         >
-        <img src="imgs/feed/carnaval2025.jpg" width="250" height="250"  alt="" />
-      </a>
-  
-
-<a
-data-fancybox="gallery"
-href="imgs/feed/3479649688146091081_229670069.jpg"
-data-caption="halloween psicodélico da @gardenpsychedelia e do @bazznectar no @oca_247 q foi inesquecivel 🦴"
->
-<img src="imgs/feed/3479649688146091081_229670069.jpg" width="250" height="250" alt="" />
-</a>
-
-<a
-data-fancybox="gallery"
-href="imgs/feed/3479649688154517773_229670069.jpg"
-data-caption="🕯️"
->
-<img src="imgs/feed/3479649688154517773_229670069.jpg" width="250" height="250" alt="" />
-</a>
-
-<a
-data-fancybox="gallery"
-href="imgs/feed/3463858598439963487_229670069.jpg"
-data-caption="you've got your mother in a whirl, she's not sure if you're a boy or a girl
-hey, babe, your hair's alright, hey, babe, let's go out tonight"
->
-<img src="imgs/feed/3463858598439963487_229670069.jpg" width="250" height="250" alt="" />
-</a>
-
-<a
-data-fancybox="gallery"
-href="imgs/feed/3438317599266122590_229670069.jpg"
-data-caption="📸: @leticiahottfotos"
->
-<img src="imgs/feed/3438317599266122590_229670069.jpg" width="250" height="250" alt="" />
-</a>
-
-<a
-data-fancybox="gallery"
-href="imgs/feed/gardenpsychedelia.png"
-data-caption="🪴"
->
-<img src="imgs/feed/gardenpsychedelia.png" width="250" height="250" alt=""/>
-</a>
-
-<a
-data-fancybox="gallery"
-href="imgs/feed/445122994_775992851264535_1798794635818356266_n_18031041310996897.png"
-data-caption="domingo de cachu"
->
-<img src="imgs/feed/445122994_775992851264535_1798794635818356266_n_18031041310996897.png" width="250" height="250" alt=""/>
-</a>
-
-<a
-data-fancybox="gallery"
-href="imgs/feed/426092047_1552982525487744_5257432832356080158_n_17991144203565018.png"
-data-caption="carnavrau 🐚"
->
-<img src="imgs/feed/426092047_1552982525487744_5257432832356080158_n_17991144203565018.png" width="250" height="250" alt=""/>
-</a>
-
-<a
-data-fancybox="gallery"
-href="imgs/feed/420836652_1495135711055866_4179943012179118039_n_17902313054927649.png"
-data-caption="make me bad"
->
-<img src="imgs/feed/420836652_1495135711055866_4179943012179118039_n_17902313054927649.png" width="250" height="250" alt=""/>
-</a>
-
-<a
-data-fancybox="gallery"
-href="imgs/feed/419032011_729156312513499_9214248630835624547_n_18055395166523540.png"
-data-caption="ilha grande"
->
-<img src="imgs/feed/419032011_729156312513499_9214248630835624547_n_18055395166523540.png" width="250" height="250" alt=""/>
-</a>
-
-<a
-data-fancybox="gallery"
-href="imgs/feed/409224427_374549895085404_8735905788697766129_n_17977704635479745.png"
-data-caption="go vegan"
->
-<img src="imgs/feed/409224427_374549895085404_8735905788697766129_n_17977704635479745.png" width="250" height="250" alt=""/>
-</a>
-
-<a
-data-fancybox="gallery"
-href="imgs/feed/ily.png"
-data-caption="you're all i need"
->
-<img src="imgs/feed/ily.png" width="250" height="250" alt=""/>
-</a>
-
-<a
-data-fancybox="gallery"
-href="imgs/feed/401982850_1005626103838246_4493612367282585875_n_18115621003334274.png"
-data-caption="uff lugar de combinar roupinhas"
->
-<img src="imgs/feed/401982850_1005626103838246_4493612367282585875_n_18115621003334274.png" width="250" height="250" alt=""/>
-</a>
-
-<a
-data-fancybox="gallery"
-href="imgs/feed/397355970_1262357671097700_4520818507332411667_n_18027563284668819.png"
-data-caption="gatinhos da uff"
->
-<img src="imgs/feed/397355970_1262357671097700_4520818507332411667_n_18027563284668819.png" width="250" height="250" alt=""/>
-</a>
-
-<a
-data-fancybox="gallery"
-href="imgs/feed/381311821_1418716338709565_1325100872889950868_n_18196048540284845.png"
-data-caption="talvez eu goste demais desse cantinho"
->
-<img src="imgs/feed/381311821_1418716338709565_1325100872889950868_n_18196048540284845.png" width="250" height="250" alt=""/>
-</a>
-
-<a
-data-fancybox="gallery"
-href="imgs/feed/369169957_825105262622668_4370557693006365516_n_17891050607876844.png"
-data-caption="into the woods"
->
-<img src="imgs/feed/369169957_825105262622668_4370557693006365516_n_17891050607876844.png" width="250" height="250" alt=""/>
-</a>
-
-<a
-data-fancybox="gallery"
-href="imgs/feed/359676570_1281671176051603_6240681789574852749_n_17844844440017402.png"
-data-caption="inspired by the fear of being average"
->
-<img src="imgs/feed/359676570_1281671176051603_6240681789574852749_n_17844844440017402.png" width="250" height="250" alt=""/>
-</a>
-
-
-<a
-data-fancybox="gallery"
-href="imgs/feed/357784312_648970040472979_9052297466494994648_n_17981837174502531.png"
-data-caption="cachoeira da babilonia"
->
-<img src="imgs/feed/357784312_648970040472979_9052297466494994648_n_17981837174502531.png" width="250" height="250" alt=""/>
-</a>
-
-<a
-data-fancybox="gallery"
-href="imgs/feed/354690656_990819811942464_73347386362552945_n_17985432605004574.png"
-data-caption="rockstar girlfriend"
->
-<img src="imgs/feed/354690656_990819811942464_73347386362552945_n_17985432605004574.png" width="250" height="250" alt=""/>
-</a>
-
-
-<a
-data-fancybox="gallery"
-href="imgs/feed/354411400_934499944514330_5914957932245925851_n_18007738657812607.png"
-data-caption="buzios"
->
-<img src="imgs/feed/354411400_934499944514330_5914957932245925851_n_18007738657812607.png" width="250" height="250" alt=""/>
-</a>
-
-<a
-data-fancybox="gallery"
-href="imgs/feed/352742044_1277184593201910_1116441006859171930_n_18025301965554649.png"
-data-caption="rebel girl"
->
-<img src="imgs/feed/352742044_1277184593201910_1116441006859171930_n_18025301965554649.png" width="250" height="250" alt=""/>
-</a>
-
-<a
-data-fancybox="gallery"
-href="imgs/feed/352813613_1778060222614022_3453599044081414371_n_17976573269112644.png"
-data-caption=">:("
->
-<img src="imgs/feed/352813613_1778060222614022_3453599044081414371_n_17976573269112644.png" width="250" height="250" alt=""/>
-</a>
-
-<a
-data-fancybox="gallery"
-href="imgs/feed/0805.png"
-data-caption="obg por me ensinar a viver sz"
->
-<img src="imgs/feed/0805.png" width="250" height="250" alt=""/>
-</a>
-
-<a
-data-fancybox="gallery"
-href="imgs/feed/351458387_603312831770766_8700257408493077192_n_17992145362876247.png"
-data-caption="🥀"
->
-<img src="imgs/feed/351458387_603312831770766_8700257408493077192_n_17992145362876247.png" width="250" height="250" alt=""/>
-</a>
-
-<a
-data-fancybox="gallery"
-href="imgs/feed/350517596_184483631240353_2690800182353136037_n_17973844487158522.png"
-data-caption="fumodromo da uff"
->
-<img src="imgs/feed/350517596_184483631240353_2690800182353136037_n_17973844487158522.png" width="250" height="250" alt=""/>
-</a>
-
-<a
-data-fancybox="gallery"
-href="imgs/feed/am.png"
-data-caption="am"
->
-<img src="imgs/feed/am.png" width="250" height="250" alt=""/>
-</a>
-
-<a
-data-fancybox="gallery"
-href="imgs/feed/348592528_158441930365298_7747974649611648834_n_18291445408128725.png"
-data-caption="omg ramona flowers hii!!"
->
-<img src="imgs/feed/348592528_158441930365298_7747974649611648834_n_18291445408128725.png" width="250" height="250" alt=""/>
-</a>
-
-<a
-data-fancybox="gallery"
-href="imgs/feed/347335333_1551580995370922_4900515948033609105_n_17921674961706180.png"
-data-caption="viva la revolucion"
->
-<img src="imgs/feed/347335333_1551580995370922_4900515948033609105_n_17921674961706180.png" width="250" height="250" alt=""/>
-</a>
-
-<a
-data-fancybox="gallery"
-href="imgs/feed/us.png"
-data-caption="sz"
->
-<img src="imgs/feed/us.png" width="250" height="250" alt=""/>
-</a>
-
-
-<a
-data-fancybox="gallery"
-href="imgs/feed/cat.png"
-data-caption="meow"
->
-<img src="imgs/feed/cat.png" width="250" height="250" alt=""/>
-</a>
-
-<a
-data-fancybox="gallery"
-href="imgs/feed/343568498_936194974360160_2433552058836292256_n_17959784015324754.png"
-data-caption="patinhas por aí"
->
-<img src="imgs/feed/343568498_936194974360160_2433552058836292256_n_17959784015324754.png" width="250" height="250" alt=""/>
-</a>
-
-<a
-data-fancybox="gallery"
-href="imgs/feed/3072323420185083671_229670069.jpg"
-data-caption="editzin q fiz em homenagem ao album novo da melanie"
->
-<img src="imgs/feed/3072323420185083671_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a
-data-fancybox="gallery"
-href="imgs/feed/3046893447517381064_229670069_1.jpg"
-data-caption="🦇"
->
-<img src="imgs/feed/3046893447517381064_229670069_1.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a
-data-fancybox="gallery"
-href="imgs/feed/3008520498268011937_229670069.jpg"
-data-caption="my suggestion is to keep your distance, cuz right now im dangerous"
->
-<img src="imgs/feed/3008520498268011937_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a
-data-fancybox="gallery"
-href="imgs/feed/3006368725751172135_229670069.jpg"
-data-caption="musgos e liquens"
->
-<img src="imgs/feed/3006368725751172135_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a
-data-fancybox="gallery"
-href="imgs/feed/2980181345977254386_229670069.jpg"
-data-caption="the ghost of you"
->
-<img src="imgs/feed/2980181345977254386_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a
-data-fancybox="gallery"
-href="imgs/feed/2966518785088693869_229670069.jpg"
-data-caption="trust no one"
->
-<img src="imgs/feed/2966518785088693869_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a
-data-fancybox="gallery"
-href="imgs/feed/2954954501087138821_229670069_1.jpg"
-data-caption="jupi <3"
->
-<img src="imgs/feed/2954954501087138821_229670069_1.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a
-data-fancybox="gallery"
-href="imgs/feed/2952650406640631612_229670069.jpg"
-data-caption=""
->
-<img src="imgs/feed/2952650406640631612_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a
-data-fancybox="gallery"
-href="imgs/feed/2948206959959115735_229670069_1.jpg"
-data-caption="apollo <3"
->
-<img src="imgs/feed/2948206959959115735_229670069_1.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a
-data-fancybox="gallery"
-href="imgs/feed/2917234270810324686_229670069.jpg"
-data-caption="The Metropolitan Museum of Art, New York"
->
-<img src="imgs/feed/2917234270810324686_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a
-data-fancybox="gallery"
-href="imgs/feed/2905634027547344227_229670069.jpg"
-data-caption=" "
->
-<img src="imgs/feed/2905634027547344227_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a
-data-fancybox="gallery"
-href="imgs/feed/2891759499838296923_229670069.jpg"
-data-caption=""
->
-<img src="imgs/feed/2891759499838296923_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a
-data-fancybox="gallery"
-href="imgs/feed/2887241385368944188_229670069.jpg"
-data-caption="The Metropolitan Museum of Art, New York"
->
-<img src="imgs/feed/2887241385368944188_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a
-data-fancybox="gallery"
-href="imgs/feed/2882826697176595796_229670069.jpg"
-data-caption="if I am killed simply for living, let death be kinder than man"
->
-<img src="imgs/feed/2882826697176595796_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a
-data-fancybox="gallery"
-href="imgs/feed/2877357867637945566_229670069.jpg"
-data-caption="blep"
->
-<img src="imgs/feed/2877357867637945566_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-
-<a
-data-fancybox="gallery"
-href="imgs/feed/2874990278316121087_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/2874990278316121087_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a
-data-fancybox="gallery"
-href="imgs/feed/2873002387490808537_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/2873002387490808537_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a
-data-fancybox="gallery"
-href="imgs/feed/2861413434438691269_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/2861413434438691269_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a
-data-fancybox="gallery"
-href="imgs/feed/2843270150327465836_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/2843270150327465836_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a
-data-fancybox="gallery"
-href="imgs/feed/2815037059779985354_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/2815037059779985354_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a
-data-fancybox="gallery"
-href="imgs/feed/2780994255512764384_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/2780994255512764384_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a
-data-fancybox="gallery"
-href="imgs/feed/2743286696488408378_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/2743286696488408378_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a
-data-fancybox="gallery"
-href="imgs/feed/2711421198318608648_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/2711421198318608648_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a
-data-fancybox="gallery"
-href="imgs/feed/2702657908721419099_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/2702657908721419099_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a
-data-fancybox="gallery"
-href="imgs/feed/2662859113753723303_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/2662859113753723303_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/2654118497331445825_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/2654118497331445825_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/2627981545850300134_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/2627981545850300134_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/2625899155627881240_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/2625899155627881240_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/2606164064085223411_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/2606164064085223411_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/2496839806268548467_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/2496839806268548467_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/2492410878867095122_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/2492410878867095122_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/2486665983611216009_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/2486665983611216009_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/2476452850426871174_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/2476452850426871174_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/2465640621095973624_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/2465640621095973624_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/2461338154342427705_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/2461338154342427705_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/2448925616640126939_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/2448925616640126939_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/2439588812141211686_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/2439588812141211686_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/2432312693155315138_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/2432312693155315138_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/2418548072518817447_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/2418548072518817447_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/2408431884765914895_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/2408431884765914895_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/2397571539495068068_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/2397571539495068068_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/2392479720474162475_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/2392479720474162475_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/2383073029299357114_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/2383073029299357114_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/2376362111777633560_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/2376362111777633560_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/2371447107601151919_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/2371447107601151919_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/2368519439813480444_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/2368519439813480444_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/2362782108473106694_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/2362782108473106694_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/2356179677002007717_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/2356179677002007717_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/2351842030456514862_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/2351842030456514862_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/2339536407920389366_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/2339536407920389366_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/2336708340902620782_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/2336708340902620782_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/2330767824902150017_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/2330767824902150017_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/2317820058315117230_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/2317820058315117230_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/2293050206761258322_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/2293050206761258322_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/2280704070125884805_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/2280704070125884805_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/2247256234902424006_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/2247256234902424006_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/2238120111777323118_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/2238120111777323118_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/2231477107092173992_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/2231477107092173992_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/2222238334231983722_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/2222238334231983722_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/2217815860882763409_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/2217815860882763409_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/2204728105709669994_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/2204728105709669994_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/2190955108760643578_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/2190955108760643578_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/2182296688935495063_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/2182296688935495063_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/2177182701927452542_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/2177182701927452542_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/2168410577649652325_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/2168410577649652325_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/2163411379699094360_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/2163411379699094360_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/2159695734637762049_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/2159695734637762049_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/2147478892011820450_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/2147478892011820450_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/2133015944430198813_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/2133015944430198813_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/2121995117496819209_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/2121995117496819209_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/2118412932915395776_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/2118412932915395776_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/2116279690649095171_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/2116279690649095171_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/2099578756204222410_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/2099578756204222410_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/2096018120270552890_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/2096018120270552890_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a data-fancybox="gallery"
-   href="imgs/feed/2096735082718125788_229670069.mp4"
-   data-caption="trip">
-   <img src="imgs/feed/disney.jpg" width="250" height="250" alt="Thumb do vídeo"/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/2096824735445945639_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/2096824735445945639_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/2095231295004147516_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/2095231295004147516_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/2026539976484852476_229670069_1.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/2026539976484852476_229670069_1.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/2012725017682579879_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/2012725017682579879_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/2006906624421145274_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/2006906624421145274_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1990985942273537967_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1990985942273537967_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1978602871880662286_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1978602871880662286_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1976430123398015478_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1976430123398015478_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1969193545885587335_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1969193545885587335_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1957587702195107601_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1957587702195107601_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1761958342101740917_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1761958342101740917_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1749604018344440073_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1749604018344440073_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1735817527509843067_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1735817527509843067_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1726412266549399440_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1726412266549399440_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1720610058268459586_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1720610058268459586_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1714057300123913014_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1714057300123913014_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1711156366234358660_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1711156366234358660_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1701015269415991616_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1701015269415991616_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1697389491704994537_2296700691697389491704994537_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1697389491704994537_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1695215429910206456_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1695215429910206456_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1689416963116108364_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1689416963116108364_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1682171255140996947_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1682171255140996947_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1677820093348467399_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1677820093348467399_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1676370760258448823_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1676370760258448823_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1674197125049388611_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1674197125049388611_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1671297714984722293_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1671297714984722293_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1667674262528127545_229670069_1.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1667674262528127545_229670069_1.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1663336342094737628_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1663336342094737628_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1654627968603741409_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1654627968603741409_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1642303887875268601_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1642303887875268601_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1634333558225786870_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1634333558225786870_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1624942599927162566_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1624942599927162566_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1617694472543184662_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1617694472543184662_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1606091639415485189_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1606091639415485189_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1595953092884276963_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1595953092884276963_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1589427585669804634_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1589427585669804634_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1584354275558781607_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1584354275558781607_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1577831788880713287_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1577831788880713287_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1574932464924489549_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1574932464924489549_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1577831788880713287_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1577831788880713287_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1569134094532303922_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1569134094532303922_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1564060539658547264_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1564060539658547264_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1548115507336236630_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1548115507336236630_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1554638605678081230_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1554638605678081230_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1540867786154151360_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1540867786154151360_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1537968634197705001_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1537968634197705001_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1535794490169615622_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1535794490169615622_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1530719187084602138_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1530719187084602138_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1527821668088360098_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1527821668088360098_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1524922613398240955_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1524922613398240955_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1520574347495724790_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1520574347495724790_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1517675495541232277_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1517675495541232277_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1511876546536578138_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1511876546536578138_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1507528540941012838_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1507528540941012838_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1494482444970940412_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1494482444970940412_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1489408679627131796_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1489408679627131796_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1483620479423991031_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1483620479423991031_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1479256412110441988_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1479256412110441988_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1467665514276824982_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1467665514276824982_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1461868942880177637_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1461868942880177637_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1459694587190457247_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1459694587190457247_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1456793822566411169_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1456793822566411169_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1453140169183843880_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1453140169183843880_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1440095459204764334_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1440095459204764334_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1437195055332752721_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1437195055332752721_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1433573100360578116_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1433573100360578116_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1431397578436354714_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1431397578436354714_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1429222624143936642_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1429222624143936642_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1424152262720996063_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1424152262720996063_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1420524977988235320_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1420524977988235320_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1416178808457614044_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1416178808457614044_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1414000776821171027_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1414000776821171027_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1411105128241209475_229670069.jpg."
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1411105128241209475_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1407481270691116241_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1407481270691116241_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1405306972345905817_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1405306972345905817_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1399508678088681589_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1399508678088681589_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1395883030828811027_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1395883030828811027_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1393710553155548456_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1393710553155548456_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1391536140415058967_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1391536140415058967_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1390086703524312204_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1390086703524312204_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1386463340641681706_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1386463340641681706_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1387911964038975795_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1387911964038975795_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1383563551864458467_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1383563551864458467_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1380664764275718027_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1380664764275718027_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1376316653570998210_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1376316653570998210_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1374141466058525687_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1374141466058525687_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1368343675537455785_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1368343675537455785_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1366169677965745213_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1366169677965745213_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1350245852606450167_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1350245852606450167_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1348804921495870714_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1348804921495870714_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1341557063797241885_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1341557063797241885_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1340099061969864809_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1340099061969864809_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1336455284151603893_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1336455284151603893_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1335033537972037122_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1335033537972037122_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1333584469903149245_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1333584469903149245_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1332135224440384624_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1332135224440384624_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1330685602866126761_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1330685602866126761_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1329961640553046624_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1329961640553046624_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1325612066749218318_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1325612066749218318_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1324878344961800806_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1324878344961800806_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1322712645963157865_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1322712645963157865_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1319809085189593740_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1319809085189593740_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1317639233914010165_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1317639233914010165_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1316914922081018251_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1316914922081018251_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1316186678172168351_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1316186678172168351_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1314734804407491257_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1314734804407491257_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1314734804407491257_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1314015807613535455_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1313290428926029179_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1313290428926029179_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1312566277381925705_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1312566277381925705_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1311843327809431250_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1311843327809431250_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1310391526447019968_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1310391526447019968_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1309665561538458784_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1309665561538458784_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1308217297660226405_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1308217297660226405_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1306043085323484228_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1306043085323484228_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1305321323501674666_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1305321323501674666_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1303144535736381820_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1303144535736381820_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1300245199306217519_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1300245199306217519_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1297345695078932060_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1297345695078932060_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1298070606663487731_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1298070606663487731_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1297346016102473319_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1297346016102473319_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1294441207045145232_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1294441207045145232_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1293721475778189164_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1293721475778189164_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1292997031489195855_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1292997031489195855_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1290822348056640548_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1290822348056640548_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1290098812421784227_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1290098812421784227_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1289365398638861214_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1289365398638861214_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1288647979012324810_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1288647979012324810_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1287923424623060491_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1287923424623060491_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1285749861933505150_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1285749861933505150_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1284299583119963305_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1284299583119963305_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1282850140432728051_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1282850140432728051_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1282132815303916296_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1282132815303916296_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1282124973826036846_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1282124973826036846_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1281400302985813268_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1281400302985813268_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1280675399731180347_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1280675399731180347_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1279226201956751530_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1279226201956751530_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1277776497486142422_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1277776497486142422_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1277052252946766168_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1277052252946766168_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1275602294150339399_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1275602294150339399_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1274877415927126379_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1274877415927126379_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1274153239729740677_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1274153239729740677_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1273428874763508344_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1273428874763508344_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1272710102087964840_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1272710102087964840_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1271978314663270936_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1271978314663270936_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1271253954856033075_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1271253954856033075_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1269079869094959558_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1269079869094959558_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1268354628685208530_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1268354628685208530_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1266905110752074737_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1266905110752074737_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1264732926923316093_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1264732926923316093_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1260383556140604312_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1260383556140604312_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1259658377345178178_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1259658377345178178_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1258932933159360789_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1258932933159360789_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1256760835246725728_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1256760835246725728_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1256035947435333901_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1256035947435333901_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1255308473718085846_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1255308473718085846_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1254586291073390897_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1254586291073390897_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1252410218990606766_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1252410218990606766_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1251687410840967930_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1251687410840967930_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1249513419820833676_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1249513419820833676_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1247332502016695125_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1247332502016695125_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1244438297418209827_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1244438297418209827_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1241537753859037874_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1241537753859037874_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1237911185370716869_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1237911185370716869_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1237197759979788887_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1237197759979788887_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1235745637291596473_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1235745637291596473_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1233563962860181834_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1233563962860181834_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1232840545664048113_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1232840545664048113_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1231393385592461312_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1231393385592461312_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1228493012934400904_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1228493012934400904_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1227045508795668542_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1227045508795668542_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1226318901529352657_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1226318901529352657_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1225598017617337183_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1225598017617337183_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1225593450968193701_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1225593450968193701_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1224875237770860972_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1224875237770860972_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1224868192992696524_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1224868192992696524_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1221973560206105598_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1221973560206105598_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1219076091977735015_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1219076091977735015_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1214730751090695073_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1214730751090695073_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1211114423356300260_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1211114423356300260_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1209680800006609383_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1209680800006609383_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1208199654865443613_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1208199654865443613_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1207477661291583782_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1207477661291583782_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1205327510594722794_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1205327510594722794_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1203862814087781086_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1203862814087781086_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1203175380211538352_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1203175380211538352_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1202420252592380192_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1202420252592380192_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1201700233101252682_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1201700233101252682_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1201700233101252682_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1201700233101252682_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1198817229660035466_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1198817229660035466_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1198097637627206609_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1198097637627206609_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1195912230466558194_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1195912230466558194_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1195907677029472337_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1195907677029472337_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1195188839468046857_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1195188839468046857_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1195183640603072867_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1195183640603072867_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1194465694683568541_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1194465694683568541_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1190837814619609181_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1190837814619609181_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1188650505702807689_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1188650505702807689_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1186463979518630441_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1186463979518630441_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1185729388545645254_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1185729388545645254_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1185004633374923689_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1185004633374923689_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1184273991037163995_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1184273991037163995_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1182818435856407281_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1182818435856407281_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1180644679977343969_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1180644679977343969_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1179919106724403805_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1179919106724403805_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1178467938299091304_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1178467938299091304_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1177745225804749359_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1177745225804749359_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1177743516181273091_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1177743516181273091_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1177024694038108392_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1177024694038108392_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1176301816573401334_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1176301816573401334_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1175564468466292928_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1175564468466292928_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1174841387158412167_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1174841387158412167_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1173396228281538720_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1173396228281538720_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1172664161138710611_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1172664161138710611_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1171943683436648708_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1171943683436648708_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1171937456757479522_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1171937456757479522_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1170502430614428369_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1170502430614428369_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1169065241519135725_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1169065241519135725_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1164692387105151786_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1164692387105151786_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1164688187289836187_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1164688187289836187_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1163252920435677955_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1163252920435677955_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1162523465371163064_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1162523465371163064_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1161076654483774372_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1161076654483774372_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1158876040488098078_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1158876040488098078_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1158211902891956638_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1158211902891956638_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1158166802195355718_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1158166802195355718_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1156686937407429494_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1156686937407429494_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1155999260924254619_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1155999260924254619_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1152565129494207312_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1152565129494207312_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1151654111138093907_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1151654111138093907_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1149482282231339439_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1149482282231339439_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1148062481386641694_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1148062481386641694_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1148060702540372185_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1148060702540372185_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1145791107477608876_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1145791107477608876_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1145129026541656514_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1145129026541656514_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1144413569866079117_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1144413569866079117_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1144409966229134102_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1144409966229134102_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1143643672030550421_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1143643672030550421_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1142908618459388611_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1142908618459388611_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-<a 
-data-fancybox="gallery"
-href="imgs/feed/1142902247605213698_229670069.jpg"
-data-caption="aaaaaaaa"
->
-<img src="imgs/feed/1142902247605213698_229670069.jpg" width="250" height="250" alt=""/>
-</a>
-
-
-          </div>
-    </main>
-
-    <aside class="sidebar sidebar-right">
-  
+<h3>terms of service:</h3>
+<br>
+<div class="terms">
+
+
+    <div class="button-container">
+        <div class="contact-links">
+            <a href="portfolio-rig.html" class="pushable" target="_self">
+                <span class="shadow"></span>
+                <span class="edge"></span>
+                <span class="front">english version</span>
+            </a>
+    
+            <div class="terms">
+                <p>- pagamento em brl (R$) por pix ou transferência.</p>
+                <p>- 50% do pagamento no início, 50% no final.</p>
+                <p>- revisões ilimitadas, mas mudanças serão cobradas de acordo!</p>
+                <p>- uso comercial +60% do valor.</p>
+                <p>- reembolso: 100% antes do início, 40% durante ou proporcional ao progresso.</p>
+                <p>- por favor, me credite nas redes sociais.</p>
+                <p>- a duração do processo depende da complexidade e da minha disponibilidade, mas sempre irei avisando e atualizando!!</p>
+                <p>- proibido uso como NFT, a menos que acordado previamente e eu receba porcentagens rs</p>
+                <p>- eu não faço a arte do modelo, apenas faço o rig, ou seja, a animação, pois ainda acho muito trabalhoso pra mim.</p>
+                <p>- os valores estao sujeito a mudanças dependendo do nivel de complexidade do rig.</p>
+                <p>- podemos negociar caso você queira adicionar conteúdos do rig complexo no simples.</p>
+              </div>  
+        
       
-
-           
-            <div class="box">     
-                
-                <div class="stamps">
-   <div class="carousel-container" >
-        <div class="track track-1">
-            <div class="track-inner desaturate" >
-                <img src="imgs/webgraphics/stamps/3dsowner.jpg" alt="3dsowner">
-                
-                 <img src="imgs/webgraphics/stamps/a101.jpg" alt="a101">
-                <img src="imgs/webgraphics/stamps/iloveallkitties.webp" alt="iloveallkitties">
-                 <img src="imgs/webgraphics/stamps/ilovemyds.png" alt="ilovemyds">
-                <img src="imgs/webgraphics/stamps/addictmc.png" alt="addictmc">
-                <img src="imgs/webgraphics/stamps/awesome.gif" alt="awesome">
-                 <img src="imgs/webgraphics/stamps/avanged.jpg" alt="awesome">
-              <img src="imgs/webgraphics/stamps/aaaaaaaaaaaaaa.gif" alt="awesome">
-     <img src="imgs/webgraphics/stamps/avanged.jpg" alt="avanged">
-              <img src="imgs/webgraphics/stamps/alwaystired.png" alt="always tired">
-                <img src="imgs/webgraphics/stamps/believe.png" alt="believe">
-                <img src="imgs/webgraphics/stamps/blackcat.gif" alt="blackcat">
-                <img src="imgs/webgraphics/stamps/boop.gif" alt="boop">
-                 <img src="imgs/webgraphics/stamps/bSUqMP3.gif" alt="long cat">
-                  <img src="imgs/webgraphics/stamps/blackcatrain.gif" alt="boop">
-                <img src="imgs/webgraphics/stamps/catlover.webp" alt="catlover">
-                <img src="imgs/webgraphics/stamps/catsinside.png" alt="catsinside">
-                <img src="imgs/webgraphics/stamps/ceilingstars.png" alt="ceilingstars">
-                               <img src="imgs/webgraphics/stamps/chipichipi.gif" alt="chipichipi">
-               
-                <img src="imgs/webgraphics/stamps/chococat.png" alt="chococat">
-                <img src="imgs/webgraphics/stamps/choker.gif" alt="choker">
-                 <img src="imgs/webgraphics/stamps/converse.gif" alt="choker">
-                    <img src="imgs/webgraphics/stamps/chipichipi.gif" alt="choker">
-                <img src="imgs/webgraphics/stamps/dontsteponthem.jpg" alSt="dontsteponthem">
-                
-                <img src="imgs/webgraphics/stamps/emocouple.png" alt="e79">
-                 <img src="imgs/webgraphics/stamps/e79.gif" alt="e79">
-                <img src="imgs/webgraphics/stamps/f64.png" alt="f64">
-                <img src="imgs/webgraphics/stamps/FHX2sll.gif" alt="FHX2sll">
-                 <img src="imgs/webgraphics/stamps/greenai.png" alt="FHX2sll">
-                <img src="imgs/webgraphics/stamps/flutterbat.gif" alt="flutterbat">
-                    <img src="imgs/webgraphics/stamps/fluttershypsycho.png" alt="flutterbat">
-                <img src="imgs/webgraphics/stamps/icollectplushies.png" alt="icollectplushies">
-                 <img src="imgs/webgraphics/stamps/glasses.gif" alt="icollectplushies">
-                               <img src="imgs/webgraphics/stamps/gatinhos.gif" alt="gatinhos">
-                 <img src="imgs/webgraphics/stamps/phobiaofpublicpools.png" alt="ilikeastayingupallnight">
-                 <img src="imgs/webgraphics/stamps/iloveemo.gif" alt="e79">
-          <img src="imgs/webgraphics/stamps/bugs.png" alt="e79">
-         
-                <img src="imgs/webgraphics/stamps/ilovestamps.gif" alt="ilovestamps">    
-                <img src="imgs/webgraphics/stamps/iwasemobeforeitwallcool.jpg" alt="iwasemobeforeitwascool">
-                <img src="imgs/webgraphics/stamps/ilovestars.gif" alt="ilovestars">
-                           <img src="imgs/webgraphics/stamps/iloveallkitties.webp" alt="ilovestars">
-                <img src="imgs/webgraphics/stamps/ishouldbestudying.webp" alt="ilovestars">
-                <img src="imgs/webgraphics/stamps/louiswain.png" alt="imhigh">
-                <img src="imgs/webgraphics/stamps/imwaycooleronline.gif" alt="imwaycooleronline">
-                <img src="imgs/webgraphics/stamps/isuportdrawinginmathclass.png" alt="isudportdrawinginmathclass">
-             <img src="imgs/webgraphics/stamps/entiretwilight.webp" alt="e79">
-                <img src="imgs/webgraphics/stamps/iwishilivedinminecraft.gif" alt="iwishlivedinminecraft">
-                <img src="imgs/webgraphics/stamps/solongandgoodnight.webp" alt="helena">
-                <img src="imgs/webgraphics/stamps/jinx.webp" alt="jinx">
-                           <img src="imgs/webgraphics/stamps/jinx2.webp" alt="jinx">
-                <img src="imgs/webgraphics/stamps/kindness.gif" alt="kindness">
-                         <img src="imgs/webgraphics/stamps/stmpkinder.gif" alt="kindness">
-                <img src="imgs/webgraphics/stamps/stmpkinder.gif" alt="kindness">
-                <img src="imgs/webgraphics/stamps/louiswain.png" alt="louiswain">
-                <img src="imgs/webgraphics/stamps/louiswainstamp.png" alt="louiswainstamp">
-                <img src="imgs/webgraphics/stamps/lis.gif" alt="lsd">
-                <img src="imgs/webgraphics/stamps/l_stamp.gif" alt="l">
-            </div>
-        </div>
-
-        <div class="track track-2">
-            <div class="track-inner desaturate">
-                <img src="imgs/webgraphics/stamps/maxwell.gif" alt="maxwell" class="desaturate">
         
-                <img src="imgs/webgraphics/stamps/mcrred.png" alt="mcrred" class="desaturate">
-                <img src="imgs/webgraphics/stamps/mentallillness.png" alt="mentalillness">
-             <img src="imgs/webgraphics/stamps/meancat.webp" alt="stoop">
-                <img src="imgs/webgraphics/stamps/mychem.gif" alt="mychem">
-                <img src="imgs/webgraphics/stamps/nerdswonka.png" alt="nerdswonka">
-                 <img src="imgs/webgraphics/stamps/nekoatsume.gif" alt="nerdswonka">
-                 <img src="imgs/webgraphics/stamps/nintendogscats.png" alt="nerdswonka">
-                <img src="imgs/webgraphics/stamps/nitw.gif" alt="nitw">
-                <img src="imgs/webgraphics/stamps/nop.gif" alt="nop">
-                <img src="imgs/webgraphics/stamps/nyancat.gif" alt="nyancat">
-                <img src="imgs/webgraphics/stamps/palestine.gif" alt="palestine">
-                <img src="imgs/webgraphics/stamps/piercings.png" alt="piercings">
-                <img src="imgs/webgraphics/stamps/powder.webp" alt="powder">
-                  <img src="imgs/webgraphics/stamps/ponyo.webp" alt="powder">
-                <img src="imgs/webgraphics/stamps/ppudor.png" alt="ppudor">
-                  <img src="imgs/webgraphics/stamps/ponybffs.gif" alt="ppudor">
-                <img src="imgs/webgraphics/stamps/psychedelic.gif" alt="psychedelic">
-                <img src="imgs/webgraphics/stamps/puter.gif" alt="puter">
-                  <img src="imgs/webgraphics/stamps/pearl.gif" alt="puter">
-                      <img src="imgs/webgraphics/stamps/plink.gif" alt="puter">
-                <img src="imgs/webgraphics/stamps/pride.png" alt="pride">
-                <img src="imgs/webgraphics/stamps/overwatch.png" alt="rain">
-                <img src="imgs/webgraphics/stamps/osu.png" alt="rain">      
-                <img src="imgs/webgraphics/stamps/rain.gif" alt="rain">
-                <img src="imgs/webgraphics/stamps/stars.gif" alt="stars">
-                <img src="imgs/webgraphics/stamps/steam.png" alt="steam">
-                 <img src="imgs/webgraphics/stamps/stringworm.gif" alt="steam">
-                <img src="imgs/webgraphics/stamps/stevenuniverse.gif" alt="stevenuniverse">
-               <img src="imgs/webgraphics/stamps/shakingcat.gif" alt="supportgrass">
-               
-                <img src="imgs/webgraphics/stamps/supportgrass.png" alt="supportgrass">
-                <img src="imgs/webgraphics/stamps/supportminecraft.png" alt="supportminecraft">
-                 <img src="imgs/webgraphics/stamps/space.webp" alt="uwu">
-                 <img src="imgs/webgraphics/stamps/talksoftly.png" alt="talksoftly">
-                  <img src="imgs/webgraphics/stamps/tabletuser.png" alt="tabletuser">
-                <img src="imgs/webgraphics/stamps/tubbs.png" alt="tubbs">
-                 <img src="imgs/webgraphics/stamps/threecheers.jpg" alt="talksoftly">
-                 <img src="imgs/webgraphics/stamps/terraria.png" alt="talksoftly">
-                 <img src="imgs/webgraphics/stamps/tomodachi.png" alt="talksoftly">
-                 <img src="imgs/webgraphics/stamps/transformice.gif" alt="talksoftly">
-                <img src="imgs/webgraphics/stamps/tumblr_inline_p25mcqZLDR1ux8fd4_500.gif" alt="haveyoutanekyourmedstoday?">
-                <img src="imgs/webgraphics/stamps/tv.gif" alt="tv">
-                <img src="imgs/webgraphics/stamps/twilightapple.png" alt="twilightapple">
-                 <img src="imgs/webgraphics/stamps/transformice.gif" alt="transformice">
-                <img src="imgs/webgraphics/stamps/uwu.png" alt="uwu">
-                <img src="imgs/webgraphics/stamps/vegetarian.jpg" alt="uwu">
-                <img src="imgs/webgraphics/stamps/weirdnoises.png" alt="weirdnoises">
-                <img src="imgs/webgraphics/stamps/weirdpeople.png" alt="weirdpeople">
-                <img src="imgs/webgraphics/stamps/xfiles.gif" alt="xfiles">
-            
-                <img src="imgs/webgraphics/stamps/yaoi.gif" alt="yaoi">
-                 <img src="imgs/webgraphics/stamps/youareanidiot.gif" alt="yaoi">
-                <img src="imgs/webgraphics/stamps/yaoi.png" alt="yaoi">
-                <img src="imgs/webgraphics/stamps/youcanfeelsafearoundme.gif" alt="youcanfeelsafearoundme">
-            </div>
-       
+  
+    <br>
+    <h3>tabela de preços:</h3>
+    <br>
+    <table style="border-collapse: collapse; width: 100%; background-color: transparent;">
+        <tr>
+            <th style="border: 1px solid black; padding: 8px;">descrição</th>
+            <th style="border: 1px solid black; padding: 8px;">valor</th>
+        </tr>
+        <tr><td style="border: 1px solid black; padding: 8px;">rig lite (quase um pngtuber)</td><td style="border: 1px solid black; padding: 8px;">R$95ss
+        <tr><td style="border: 1px solid black; padding: 8px;">rig halfbody simples</td><td style="border: 1px solid black; padding: 8px;">R$ 200</td></tr>
+
+        <tr><td style="border: 1px solid black; padding: 8px;">rig fullbody simples</td><td style="border: 1px solid black; padding: 8px;">R$ 220</td></tr>
+
+        <tr><td style="border: 1px solid black; padding: 8px;">rig halfbody detalhado</td><td style="border: 1px solid black; padding: 8px;">R$ 380</td></tr>
+
+        <tr><td style="border: 1px solid black; padding: 8px;">rig fullbody detalhado</td><td style="border: 1px solid black; padding: 8px;">R$ 400</td></tr>
+
+        <tr><td style="border: 1px solid black; padding: 8px;">rig fullbody + vbridger + extra physics</td><td style="border: 1px solid black; padding: 8px;">R$ 500</td></tr>
+
+        <tr><td style="border: 1px solid black; padding: 8px;">rig vtuber pet/chibi complexo</td><td style="border: 1px solid black; padding: 8px;">R$ 180 +- depende das camadas</td></tr>
+
+        <tr><td style="border: 1px solid black; padding: 8px;">adicional toggle (on/off)</td><td style="border: 1px solid black; padding: 8px;">R $5 +-</td></tr>
+
+        <tr><td style="border: 1px solid black; padding: 8px;">adicional com expressão/movimento/física</td><td style="border: 1px solid black; padding: 8px;">R$ 10</td></tr>
+
+        <tr><td style="border: 1px solid black; padding: 8px;">adicional com motion/animação (.can3)</td><td style="border: 1px solid black; padding: 8px;">R$ 15-20</td></tr>
+        
+        <tr><td style="border: 1px solid black; padding: 8px;">adicional partes do corpo extra (rabo, orelhas, olho...)</td><td style="border: 1px solid black; padding: 8px;">R$ 15</td></tr>
+
+        <tr><td style="border: 1px solid black; padding: 8px;">adicional angulos da cabeça wide-range</td><td style="border: 1px solid black; padding: 8px;">R$ 50</td></tr>
+
+        <tr><td style="border: 1px solid black; padding: 8px;">adicional boca vbridger</td><td style="border: 1px solid black; padding: 8px;">R$ 50</td></tr>
+
+   <tr><td style="border: 1px solid black; padding: 8px;">physics augmentation @ vtube studio</td><td style="border: 1px solid black; padding: 8px;">R$ 20</td></tr>
+
+        <tr><td style="border: 1px solid black; padding: 8px;">rework em qualquer parte</td><td style="border: 1px solid black; padding: 8px;">valor a combinar</td></tr>
+
+        <tr><td style="border: 1px solid black; padding: 8px;">animação de objetos/props</td><td style="border: 1px solid black; padding: 8px;">valor a combinar</td></tr>
+
+     
+    </table>
+    <p> * preços podem mudar dependendo da complexidade e número de camadas.</p>
+  <br>
+    <div class="button-container">
+      <div class="button-container">
+        <div class="contact-links">
+          <a href="portfolio-rig.html" class="pushable" target="_self">
+            <span class="shadow"></span>
+            <span class="edge"></span>
+            <span class="front">exemplos de rig!</span>
+          </a>
         </div>
 
+        <br>
+<div class="exp"
+<br>
+<hr>
+<br>
 
-        <div class="scroll">
-          <img src="imgs/webgraphics/blinkies/cinto.gif" id="blinkies" class="desaturate">
-               <img src="imgs/webgraphics/blinkies/catlover2.gif" id="blinkies" class="desaturate">
-<img src="imgs/webgraphics/blinkies/artistblinkie.gif" id="blinkies" class="desaturate">
-              
-               
-                <img src="imgs/webgraphics/blinkies/nightperson.gif" id="blinkies" class="desaturate">
-                
-                <img src="imgs/webgraphics/blinkies/peace.gif" id="blinkies" class="desaturate">
-                 <img src="imgs/webgraphics/blinkies/blinkie-psychology.gif" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/catBlinkie.gif" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/minecraftvegetarian.webp"  id="blinkies" class="desaturate">
-                            <img src="imgs/webgraphics/blinkies/neurodivergent.webp" id="blinkies" class="desaturate"> 
+<h3>todos os rigs incluem:</h3>
+<ul>
+    <li>movimento da íris</li>
+    <li>movimento de piscar</li>
+    <li>movimento da sobrancelha cima-baixo (ângulo y)</li>
+    <li>física do cabelo</li>
+    <li>ângulo x da cabeça simples</li>
+    <li>movimento de abrir, fechar e sorrir da boca</li>
+</ul>
 
-            <img src="imgs/webgraphics/blinkies/piercingobsessed.webp"id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/brasil.gif" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/sensitive.gif" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/grumpy.gif" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/nonbinary.webp" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/naturelover.gif" id="blinkies" class="desaturate">
-                  <img src="imgs/webgraphics/blinkies/catsovereverything.gif" id="blinkies" class="desaturate">
-                  <img src="imgs/webgraphics/blinkies/hopelessromantic.gif" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/imissmybf.gif" id="blinkies" class="desaturate">
-               <img src="imgs/webgraphics/blinkies/iloveblack.gif" id="blinkies" class="desaturate">
+<h3>rig lite:</h3>
+<ul>
+    <li>os itens básicos citados acima</li>
+</ul>
 
- <img src="imgs/webgraphics/blinkies/vampires.gif" id="blinkies" class="desaturate">
+<h3>rig simples:</h3>
+<ul>
+    <li>itens do rig lite citados acima</li>
+    <li>ângulos x e y da cabeça</li>
+    <li>ângulos x e y do corpo</li>
+    <li>movimento olho abrindo, fechando e sorrindo</li>
+    <li>movimento da íris</li>
+    <li>física básica do cabelo e busto (apenas ângulo x)</li>
+    <li>sobrancelha y + forma</li>
+    <li>movimento simples da boca</li>
+    <li>1 toggle</li>
+</ul>
 
-                <img src="imgs/webgraphics/blinkies/cinto.gif" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/fluttershymarijuana.webp" id="blinkies" class="desaturate">
-                
-                <img src="imgs/webgraphics/blinkies/gothicandloneliness.webp"id="blinkies" class="desaturate">
-                 <img src="imgs/webgraphics/blinkies/ilovemycomputer.gif"id="blinkies" class="desaturate">
-                   <img src="imgs/webgraphics/blinkies/chocoholic.gif"id="blinkies" class="desaturate">
-                      <img src="imgs/webgraphics/blinkies/typeonegative.webp"id="blinkies" class="desaturate">
-            <img src="imgs/webgraphics/blinkies/mybackhurts.gif"id="blinkies" class="desaturate">
-              <img src="imgs/webgraphics/blinkies/libra.gif"id="blinkies" class="desaturate">
-             <img src="imgs/webgraphics/blinkies/greeneyedcat.gif"id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/catnip.webp" id="blinkies" class="desaturate">
-                  <img src="imgs/webgraphics/blinkies/youmaynotrestnow.webp" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/atmyfuckinglimit.webp" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/icant.gif" id="blinkies" class="desaturate">
-                   <img src="imgs/webgraphics/blinkies/yaoi.gif" id="blinkies" class="desaturate">
-                 <img src="imgs/webgraphics/blinkies/oldcatlady.webp" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/iloverevenge.gif" id="blinkies" class="desaturate">
-                 <img src="imgs/webgraphics/blinkies/iwanttobelieve.webp" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/demolitionlovers.gif" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/ego.gif" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/cring.webp" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/iwannagohome.webp" id="blinkies" class="desaturate">
-                 <img src="imgs/webgraphics/blinkies/obsessivecompulsive.webp" id="blinkies" class="desaturate">
-                 <img src="imgs/webgraphics/blinkies/ocd.webp" id="blinkies" class="desaturate">
-                                  <img src="imgs/webgraphics/blinkies/normal-ppl-worry-me.gif" id="blinkies" class="desaturate">
-                 <img src="imgs/webgraphics/blinkies/horrormovies.gif" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/y10.gif"id="blinkies" class="desaturate">
-             <img src="imgs/webgraphics/blinkies/bigsis.gif"id="blinkies" class="desaturate">
-                    <img src="imgs/webgraphics/blinkies/ilovethesea.gif" id="blinkies" class="desaturate">
-                 <img src="imgs/webgraphics/blinkies/bekindtoanimals.gif" id="blinkies" class="desaturate">
-                  <img src="imgs/webgraphics/blinkies/drawing in class.gif" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/sebastian.gif" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/stevenuniverse.webp" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/scully.gif" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/opinionated.webp" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/copycat.gif" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/revenge.gif" id="blinkies" class="desaturate">
-                  <img src="imgs/webgraphics/blinkies/stalking.webp" id="blinkies" class="desaturate">
-                 <img src="imgs/webgraphics/blinkies/normal-ppl-worry-me.gif" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/sillycat.webp" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/piracyyy.webp" id="blinkies" class="desaturate">
+<h3>rig detalhado inclui:</h3>
+<ul>
+    <li>+ itens acima</li>
+    <li>ângulos x, y e z da cabeça</li>
+    <li>ângulos x, y e z do corpo</li>
+    <li>física da perna e braços</li>
+    <li>ângulo de inclinação da sobrancelha e mudança da forma</li>
+    <li>movimento detalhado da boca</li>
+    <li>físicas em ângulos x e y, mais complexas e mais detalhistas, no cabelo, corpo, roupas, olhos, etc.</li>
+</ul>
 
-                <img src="imgs/webgraphics/blinkies/washyourhands.gif" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/mmmyummisubstances.webp" id="blinkies" class="desaturate">           </div>
-        <h3>(scrollable!!)</h3>
-
-        <h3>neighbors/pages i love</h3>
-        <div class="scroll">
-
-            
-        </div>
-    </div>
+<h3>adicional vbridger inclui:</h3>
+<ul>
+  <li>+ itens acima</li>
+    <li>modelo da boca detalhada</li>
+    <li>boca x</li>
+    <li>encher bochechas</li>
+    <li>língua para fora</li>
+    <li>eye squint</li>
+    <li>mais variação de movimento dos lábios</li>
+    <li> breathing</lis>
+</ul>
+  </div>
 </div>
 </div>
-        </div>
-        
-        </div>
-        
-    </aside>
-
+</div><div class="exemplosrig"
+<br>
+<br>
 </div>
-
-
-
-
-
-
- </body>
-
- <script src="script.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
-    <script>
-      Fancybox.bind('[data-fancybox="gallery"]', {
-        //
-      });    
-    </script>
+</body>
 </html>
