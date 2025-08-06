@@ -3,6 +3,7 @@
 <head>
     <script src="oneko.js"></script>
     <script>NekoType="black"</script>
+ <script src="carregar-sidebars.js"></script>
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4K5KDKEJ2E"></script>
     <script>
@@ -18,8 +19,8 @@
     <meta property="og:image" content="imgs/site_imgs/sitethumbnail.png"/>
    
 
-    <link rel="stylesheet" href="styles.css">
-    <title>@minkurosu</title>
+    <link rel="stylesheet" href="styles.css" id="theme-stylesheet">
+      <title>@minkurosu</title>
    
     <link rel="icon" type="image/ico" href="imgs/site_imgs/favicon.ico"/>
    
@@ -35,11 +36,28 @@ a, button, input[type="submit"], input[type="button"], select {
   cursor: url('imgs/cursor/ROCKcursorselect.cur'), pointer;
 }
 
- 
-   
+ .caixamaisclaraCenterSimple{
+     box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
+     flex-direction: column
+}
+
+
+   #theme-toggle-button {
+    background: none !important; 
+    appearance: none;        
+    -webkit-appearance: none; 
+    -moz-appearance: none;   
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0; 
+    cursor: pointer;
+    outline: none;
+}
+
 
 header {
-    background-color: #1B1917;
+ 
     padding: 5px;
     background-attachment: fixed;
     margin-bottom: 2%;
@@ -59,39 +77,10 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #24211e;
-    padding: 0.3125rem;
-    border-radius: 0.9375rem;
-    box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
-    margin: 2px;
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 
-    #containerprincipal {
-      border-radius: 1.25rem;
-      text-align: center;
-      margin: 0 auto;
-      width: 100%;
-      max-width: 50rem;
-      box-sizing: border-box;
-      color: #534F4A;
-    }
-
-    #container {
-      background-color: #1B1917;
-      padding: 1.25rem;
-      border-radius: 1.25rem;
-      box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
-      text-align: center;
-      margin: 0 auto;
-      width: 100%;
-      max-width: 50rem;
-      box-sizing: border-box;
-      color: #534F4A;
-    }
-
-
+ 
 
 
 
@@ -102,12 +91,7 @@ header {
     padding: 10px;
 }
 
-#posts-container h2 {
-    text-align: left;
-    font-family: "Born2bSportyFS", serif; 
-    color: #534F4A;
-    margin-bottom: 20px;
-}
+
 
 .blog-post {
     background-color: transparent;
@@ -121,15 +105,7 @@ header {
 }
 
 
-.post-info-header {
-    display: flex;
-    align-items: center;
-    font-family: "Born2bSportyFS", sans-serif;
-    color: #534F4A;
-    font-size: 0.9em;
-    margin-bottom: 8px;
-    gap: 5px;
-}
+
 
 .post-author-name {
     font-weight: bold;
@@ -145,15 +121,6 @@ header {
 }
 
 
-.blog-post h2 {
-    font-family: "Born2bSportyFS", sans-serif; /
-    color: #534F4A;
-    margin-top: 0;
-    margin-bottom: 10px;
-    font-size: 1.2em;
-    line-height: 1.2;
-    text-align: left;
-}
 
 .blog-post img {
     max-width: 100%;
@@ -164,129 +131,21 @@ header {
     box-shadow: 0 1px 3px rgba(0,0,0,0.05);
 }
 
-.blog-post {
-    background-color: transparent;
+
+
+
+
+#theme-toggle-button {
+    background: none !important; 
+    appearance: none;        
+    -webkit-appearance: none; 
+    -moz-appearance: none;   
+    background: none;
     border: none;
-    padding: 5px 0;
-    margin: 0;
-    border-radius: 0;
-    box-shadow: none;
-    word-wrap: break-word;
-    text-align: left;
-    
-    width: 100%;              
-    box-sizing: border-box;  
-   
-}
-
-.post-divider {
-    border: none;
-    border-top: 1px solid #534f4a;
-    margin: 20px 0;
-    width: 100%;
-}
-
-
-
-.nav-side {
-  display: flex;
-  flex-direction: row;
-  align-items: center; 
-  gap: 10px; 
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-
-
-.caixamaisclaraCenterSimple{
-     box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
-     flex-direction: column
-}
-
-.caixamaisclara h4,
-.caixamaisclaraCenterSimple h4 { 
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-   
- width: 100% !important;
-   text-align: center; 
-    margin-left: auto;
-    margin-right: auto;
- box-sizing: border-box;
-
-}
-
-#google_translate_element {
-    text-shadow: none !important;
-      text-align: center; 
-    margin-left: auto;
-    margin-right: auto;
-     box-sizing: border-box;
-  
-}
-
-#google_translate_element {
-   
-    background-color: #505050 !important;
-     text-decoration: none;
-    
-    padding: 5px !important; 
-    
-    border-radius: 8px !important; 
-    
-    border: 1px solid #505050 !important;
-   
-    display: block !important; 
-}
-
-.blog-post .translate-button {
-    
-    display: inline-block; 
-   
-    width: auto; 
-    max-width: none;
-    
-   
-    margin-top: 15px; 
-    
-    padding: 8px 15px; 
-    
-    background-color: #007bff; 
-    color: #a7a7a7; 
-    border: none;
-    border-radius: 2px;
+    padding: 0;
+    margin: 0; 
     cursor: pointer;
-    font-size: 0.9em;
-    text-decoration: none;
-    transition: background-color 0.3s ease; 
-}
-
-.blog-post .translate-button:hover {
-    background-color: #0056b3; 
-
-
-
-
-}
-
-
-
-
-.blog-post .post-divider {
-    margin-top: 25px; 
-}
-
-.goog-te-gadget-simple {
-    
-    border-left: 1px solid #a7a7a7;
-    border-top: 1px solid #a7a7a7;
-    border-bottom: 1px solid #a7a7a7;
-    border-right: 1px solid #a7a7a7;
-    font-size: 10pt;
-    display: inline-block;
-    padding-top: 1px;
-    padding-bottom: 2px;
-    cursor: pointer;
-     text-decoration: none;
+    outline: none;
 }
 
 </style>
@@ -296,85 +155,8 @@ header {
 
 <div class="layout-with-sidebars">
 
-    <aside class="sidebar">
-        <div class="box">
-            <img id="sidepic" src="imgs/site_imgs/euirl.jpg" alt="eu irl"  height="1700px">
-        </div>
-        <div class="box">
-            <h2 id="nomeSide">min</h2>
-            <h3> 22yo • they/she/he • brasil </h3>
-            <h3>psychology student & freelance artist</h3>
-            <h3>(digital art & live2d)</h3>
-            <h1 id="nl"><script src="https://webneko.net/n20171213.js"></script><a href="https://webneko.net">Neko</a></h1>
-           
- <br>
- 
-
-<div class="caixamaisclaraColumn">
-
-    <div id="statuscafe"><div id="statuscafe-username"></div><div id="statuscafe-content"></div></div><script src="https://status.cafe/current-status.js?name=minkurosu" defer></script>
-<script language="javascript" type="text/javascript" src="//counter1.fc2.com/counter.php?id=40451086&main=1" style="color:#534F4A"></script><noscript><img src="//counter1.fc2.com/counter_img.php?id=40451086&main=1" style="color:#534F4A"/></noscript><div class="buttons">
-
-
-</div>
-        </div>
-       <br>
-            <div class="nav-side">
-                <div class="side-item"><a href="music.html">music</a></div>
-                <div class="side-item"><a href="games.html">games</a></div>
-                 <div class="side-item"><a href="dream-journal.html">dream-journal</a></div>
-                 <div class="side-item"><a href="blog.html">blog</a></div>
-                   <div class="side-item"><a href="room.html">room</a></div>
-                <div class="side-item"><a href="thoughts.html">thoughts</a></div>
-                 <div class="side-item"><a href="yaoifridge.html">yaoi fridge</a></div>
-                <div class="side-item"><a href="guestbook.html">guestbook</a></div>
-                 <div class="side-item"><a href="toybox.html">toybox</a></div>
-                  <div class="side-item"><a href="minverso.html">minverso</a></div>
-                   <div class="side-item"><a href="quizzes.html">quiz/tests</a></div>
-         <div class="side-item"><a href="webweaving.html">webweaving</a></div>
-         
-         
-                   <hr>
-       <br>
-       <div class="caixamaisclaraColumnSimple">
-            <h3>what am i up to?</h3>
-        
-            <table style="border-collapse: collapse; width: 100%; background-color: transparent;">
-                <tr>
-            
-                    <td style="border: 1px solid black; padding: 8px;">feeling</td>
-                    <td style="border: 1px solid black; padding: 8px;"><a href="https://www.imood.com/users/minkurosu"><img src="https://moods.imood.com/display/uname-minkurosu/fg-8a8278/trans-1/imood.gif" alt="The current mood of minkurosu at www.imood.com" border="0"></a></td>
-                </tr>
-                </tr>
-                <tr>
-                    <td style="border: 1px solid black; padding: 8px;">last song</td>
-                   <td id="lastfm-song-cell" style="border: 1px solid black; padding: 8px;">loading...</td>
-                </tr>
-                <tr>
-                    <td style="border: 1px solid black; padding: 8px;">last movie watched</td>
-                    <td style="border: 1px solid black; padding: 8px;">mickey 17</td>
-                </tr>
-                <tr>
-                    <td style="border: 1px solid black; padding: 8px;">current hyperfocus:</td>
-                    <td style="border: 1px solid black; padding: 8px;">coding this page and trying to write my final college thesis</td>
-                </tr>
-
-            </table>  
-            </div>
-
-            
-          
-             
-             <iframe src="https://www3.cbox.ws/box/?boxid=3547381&boxtag=umWjBq" width="100%" height="250px" border-radius: "0.9375rem" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>	
-
-<div class="caixamaisclara" style="width: 100%;">
-              <a href="https://tamanotchi.world/24409c"><img src="https://tamanotchi.world/i2/24409" alt="It's tamaNOTchi! Click to feed!"></a>
-       
-</div> 
-</div>  
-    </div>
-    </aside>
-
+   <aside id="sidebar-esquerda-container" class="sidebar">
+        </aside>
     <main id="containerprincipal">
             <header id="header" class="fixed-top">
                 <div id="divpatinha">
@@ -429,264 +211,13 @@ header {
             </div>
     </main>
 
-    <aside class="sidebar sidebar-right">
-  
-      
-
-           
-            <div class="box">     
-                
-                <div class="stamps">
-   <div class="carousel-container" >
-        <div class="track track-1">
-            <div class="track-inner desaturate" >
-                <img src="imgs/webgraphics/stamps/3dsowner.jpg" alt="3dsowner">
-                
-                 <img src="imgs/webgraphics/stamps/a101.jpg" alt="a101">
-                <img src="imgs/webgraphics/stamps/iloveallkitties.webp" alt="iloveallkitties">
-                 <img src="imgs/webgraphics/stamps/ilovemyds.png" alt="ilovemyds">
-                <img src="imgs/webgraphics/stamps/addictmc.png" alt="addictmc">
-                <img src="imgs/webgraphics/stamps/awesome.gif" alt="awesome">
-                 <img src="imgs/webgraphics/stamps/avanged.jpg" alt="awesome">
-              <img src="imgs/webgraphics/stamps/aaaaaaaaaaaaaa.gif" alt="awesome">
-     <img src="imgs/webgraphics/stamps/avanged.jpg" alt="avanged">
-              <img src="imgs/webgraphics/stamps/alwaystired.png" alt="always tired">
-                <img src="imgs/webgraphics/stamps/believe.png" alt="believe">
-                <img src="imgs/webgraphics/stamps/blackcat.gif" alt="blackcat">
-                <img src="imgs/webgraphics/stamps/boop.gif" alt="boop">
-                 <img src="imgs/webgraphics/stamps/bSUqMP3.gif" alt="long cat">
-                  <img src="imgs/webgraphics/stamps/blackcatrain.gif" alt="boop">
-                <img src="imgs/webgraphics/stamps/catlover.webp" alt="catlover">
-                <img src="imgs/webgraphics/stamps/catsinside.png" alt="catsinside">
-                <img src="imgs/webgraphics/stamps/ceilingstars.png" alt="ceilingstars">
-                               <img src="imgs/webgraphics/stamps/chipichipi.gif" alt="chipichipi">
-               
-                <img src="imgs/webgraphics/stamps/chococat.png" alt="chococat">
-                <img src="imgs/webgraphics/stamps/choker.gif" alt="choker">
-                 <img src="imgs/webgraphics/stamps/converse.gif" alt="choker">
-                    <img src="imgs/webgraphics/stamps/chipichipi.gif" alt="choker">
-                <img src="imgs/webgraphics/stamps/dontsteponthem.jpg" alSt="dontsteponthem">
-                
-                <img src="imgs/webgraphics/stamps/emocouple.png" alt="e79">
-                 <img src="imgs/webgraphics/stamps/e79.gif" alt="e79">
-                <img src="imgs/webgraphics/stamps/f64.png" alt="f64">
-                <img src="imgs/webgraphics/stamps/FHX2sll.gif" alt="FHX2sll">
-                 <img src="imgs/webgraphics/stamps/greenai.png" alt="FHX2sll">
-                <img src="imgs/webgraphics/stamps/flutterbat.gif" alt="flutterbat">
-                    <img src="imgs/webgraphics/stamps/fluttershypsycho.png" alt="flutterbat">
-                <img src="imgs/webgraphics/stamps/icollectplushies.png" alt="icollectplushies">
-                 <img src="imgs/webgraphics/stamps/glasses.gif" alt="icollectplushies">
-                               <img src="imgs/webgraphics/stamps/gatinhos.gif" alt="gatinhos">
-                 <img src="imgs/webgraphics/stamps/phobiaofpublicpools.png" alt="ilikeastayingupallnight">
-                 <img src="imgs/webgraphics/stamps/iloveemo.gif" alt="e79">
-          <img src="imgs/webgraphics/stamps/bugs.png" alt="e79">
-         
-                <img src="imgs/webgraphics/stamps/ilovestamps.gif" alt="ilovestamps">    
-                <img src="imgs/webgraphics/stamps/iwasemobeforeitwallcool.jpg" alt="iwasemobeforeitwascool">
-                <img src="imgs/webgraphics/stamps/ilovestars.gif" alt="ilovestars">
-                           <img src="imgs/webgraphics/stamps/iloveallkitties.webp" alt="ilovestars">
-                <img src="imgs/webgraphics/stamps/ishouldbestudying.webp" alt="ilovestars">
-                <img src="imgs/webgraphics/stamps/louiswain.png" alt="imhigh">
-                <img src="imgs/webgraphics/stamps/imwaycooleronline.gif" alt="imwaycooleronline">
-                <img src="imgs/webgraphics/stamps/isuportdrawinginmathclass.png" alt="isudportdrawinginmathclass">
-             <img src="imgs/webgraphics/stamps/entiretwilight.webp" alt="e79">
-                <img src="imgs/webgraphics/stamps/iwishilivedinminecraft.gif" alt="iwishlivedinminecraft">
-                <img src="imgs/webgraphics/stamps/solongandgoodnight.webp" alt="helena">
-                <img src="imgs/webgraphics/stamps/jinx.webp" alt="jinx">
-                           <img src="imgs/webgraphics/stamps/jinx2.webp" alt="jinx">
-                <img src="imgs/webgraphics/stamps/kindness.gif" alt="kindness">
-                         <img src="imgs/webgraphics/stamps/stmpkinder.gif" alt="kindness">
-             
-                <img src="imgs/webgraphics/stamps/louiswain.png" alt="louiswain">
-                <img src="imgs/webgraphics/stamps/louiswainstamp.png" alt="louiswainstamp">
-                <img src="imgs/webgraphics/stamps/lis.gif" alt="lsd">
-                <img src="imgs/webgraphics/stamps/l_stamp.gif" alt="l">
-            </div>
-        </div>
-
-        <div class="track track-2">
-            <div class="track-inner desaturate">
-                <img src="imgs/webgraphics/stamps/maxwell.gif" alt="maxwell" class="desaturate">
-        
-                <img src="imgs/webgraphics/stamps/mcrred.png" alt="mcrred" class="desaturate">
-                <img src="imgs/webgraphics/stamps/mentallillness.png" alt="mentalillness">
-             <img src="imgs/webgraphics/stamps/meancat.webp" alt="stoop">
-                <img src="imgs/webgraphics/stamps/mychem.gif" alt="mychem">
-                <img src="imgs/webgraphics/stamps/nerdswonka.png" alt="nerdswonka">
-                 <img src="imgs/webgraphics/stamps/nekoatsume.gif" alt="nerdswonka">
-                 <img src="imgs/webgraphics/stamps/nintendogscats.png" alt="nerdswonka">
-                <img src="imgs/webgraphics/stamps/nitw.gif" alt="nitw">
-                <img src="imgs/webgraphics/stamps/nop.gif" alt="nop">
-                <img src="imgs/webgraphics/stamps/nyancat.gif" alt="nyancat">
-                <img src="imgs/webgraphics/stamps/palestine.gif" alt="palestine">
-                <img src="imgs/webgraphics/stamps/piercings.png" alt="piercings">
-                <img src="imgs/webgraphics/stamps/powder.webp" alt="powder">
-                  <img src="imgs/webgraphics/stamps/ponyo.webp" alt="powder">
-                <img src="imgs/webgraphics/stamps/ppudor.png" alt="ppudor">
-                  <img src="imgs/webgraphics/stamps/ponybffs.gif" alt="ppudor">
-                <img src="imgs/webgraphics/stamps/psychedelic.gif" alt="psychedelic">
-                <img src="imgs/webgraphics/stamps/puter.gif" alt="puter">
-                  <img src="imgs/webgraphics/stamps/pearl.gif" alt="puter">
-                      <img src="imgs/webgraphics/stamps/plink.gif" alt="puter">
-                <img src="imgs/webgraphics/stamps/pride.png" alt="pride">
-                <img src="imgs/webgraphics/stamps/overwatch.png" alt="rain">
-                <img src="imgs/webgraphics/stamps/osu.png" alt="rain">      
-                <img src="imgs/webgraphics/stamps/rain.gif" alt="rain">
-                <img src="imgs/webgraphics/stamps/stars.gif" alt="stars">
-                <img src="imgs/webgraphics/stamps/steam.png" alt="steam">
-                 <img src="imgs/webgraphics/stamps/stringworm.gif" alt="steam">
-                <img src="imgs/webgraphics/stamps/stevenuniverse.gif" alt="stevenuniverse">
-               <img src="imgs/webgraphics/stamps/shakingcat.gif" alt="supportgrass">
-               
-                <img src="imgs/webgraphics/stamps/supportgrass.png" alt="supportgrass">
-                <img src="imgs/webgraphics/stamps/supportminecraft.png" alt="supportminecraft">
-                 <img src="imgs/webgraphics/stamps/space.webp" alt="uwu">
-                 <img src="imgs/webgraphics/stamps/talksoftly.png" alt="talksoftly">
-                  <img src="imgs/webgraphics/stamps/tabletuser.png" alt="tabletuser">
-                <img src="imgs/webgraphics/stamps/tubbs.png" alt="tubbs">
-                 <img src="imgs/webgraphics/stamps/threecheers.jpg" alt="talksoftly">
-                 <img src="imgs/webgraphics/stamps/terraria.png" alt="talksoftly">
-                 <img src="imgs/webgraphics/stamps/tomodachi.png" alt="talksoftly">
-                 <img src="imgs/webgraphics/stamps/transformice.gif" alt="talksoftly">
-                <img src="imgs/webgraphics/stamps/tumblr_inline_p25mcqZLDR1ux8fd4_500.gif" alt="haveyoutanekyourmedstoday?">
-                <img src="imgs/webgraphics/stamps/tv.gif" alt="tv">
-                <img src="imgs/webgraphics/stamps/twilightapple.png" alt="twilightapple">
-                 <img src="imgs/webgraphics/stamps/transformice.gif" alt="transformice">
-                <img src="imgs/webgraphics/stamps/uwu.png" alt="uwu">
-                <img src="imgs/webgraphics/stamps/vegetarian.jpg" alt="uwu">
-                <img src="imgs/webgraphics/stamps/weirdnoises.png" alt="weirdnoises">
-                <img src="imgs/webgraphics/stamps/weirdpeople.png" alt="weirdpeople">
-                <img src="imgs/webgraphics/stamps/xfiles.gif" alt="xfiles">
-            
-                <img src="imgs/webgraphics/stamps/yaoi.gif" alt="yaoi">
-                 <img src="imgs/webgraphics/stamps/youareanidiot.gif" alt="yaoi">
-                <img src="imgs/webgraphics/stamps/yaoi.png" alt="yaoi">
-                <img src="imgs/webgraphics/stamps/youcanfeelsafearoundme.gif" alt="youcanfeelsafearoundme">
-            </div>
-       
-        </div>
-
-
-        <div class="scroll">
-          <img src="imgs/webgraphics/blinkies/cinto.gif" id="blinkies" class="desaturate">
-               <img src="imgs/webgraphics/blinkies/catlover2.gif" id="blinkies" class="desaturate">
-<img src="imgs/webgraphics/blinkies/artistblinkie.gif" id="blinkies" class="desaturate">
-              
-               
-                <img src="imgs/webgraphics/blinkies/nightperson.gif" id="blinkies" class="desaturate">
-                
-                <img src="imgs/webgraphics/blinkies/peace.gif" id="blinkies" class="desaturate">
-                 <img src="imgs/webgraphics/blinkies/blinkie-psychology.gif" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/catBlinkie.gif" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/minecraftvegetarian.webp"  id="blinkies" class="desaturate">
-                            <img src="imgs/webgraphics/blinkies/neurodivergent.webp" id="blinkies" class="desaturate"> 
-
-            <img src="imgs/webgraphics/blinkies/piercingobsessed.webp"id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/brasil.gif" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/sensitive.gif" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/grumpy.gif" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/nonbinary.webp" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/naturelover.gif" id="blinkies" class="desaturate">
-                  <img src="imgs/webgraphics/blinkies/catsovereverything.gif" id="blinkies" class="desaturate">
-                  <img src="imgs/webgraphics/blinkies/hopelessromantic.gif" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/imissmybf.gif" id="blinkies" class="desaturate">
-               <img src="imgs/webgraphics/blinkies/iloveblack.gif" id="blinkies" class="desaturate">
-
- <img src="imgs/webgraphics/blinkies/vampires.gif" id="blinkies" class="desaturate">
-
-                <img src="imgs/webgraphics/blinkies/cinto.gif" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/fluttershymarijuana.webp" id="blinkies" class="desaturate">
-                
-                <img src="imgs/webgraphics/blinkies/gothicandloneliness.webp"id="blinkies" class="desaturate">
-                 <img src="imgs/webgraphics/blinkies/ilovemycomputer.gif"id="blinkies" class="desaturate">
-                   <img src="imgs/webgraphics/blinkies/chocoholic.gif"id="blinkies" class="desaturate">
-                      <img src="imgs/webgraphics/blinkies/typeonegative.webp"id="blinkies" class="desaturate">
-            <img src="imgs/webgraphics/blinkies/mybackhurts.gif"id="blinkies" class="desaturate">
-              <img src="imgs/webgraphics/blinkies/libra.gif"id="blinkies" class="desaturate">
-             <img src="imgs/webgraphics/blinkies/greeneyedcat.gif"id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/catnip.webp" id="blinkies" class="desaturate">
-                  <img src="imgs/webgraphics/blinkies/youmaynotrestnow.webp" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/atmyfuckinglimit.webp" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/icant.gif" id="blinkies" class="desaturate">
-                   <img src="imgs/webgraphics/blinkies/yaoi.gif" id="blinkies" class="desaturate">
-                 <img src="imgs/webgraphics/blinkies/oldcatlady.webp" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/iloverevenge.gif" id="blinkies" class="desaturate">
-                 <img src="imgs/webgraphics/blinkies/iwanttobelieve.webp" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/demolitionlovers.gif" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/ego.gif" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/cring.webp" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/iwannagohome.webp" id="blinkies" class="desaturate">
-                 <img src="imgs/webgraphics/blinkies/obsessivecompulsive.webp" id="blinkies" class="desaturate">
-                 <img src="imgs/webgraphics/blinkies/ocd.webp" id="blinkies" class="desaturate">
-                                  <img src="imgs/webgraphics/blinkies/normal-ppl-worry-me.gif" id="blinkies" class="desaturate">
-                 <img src="imgs/webgraphics/blinkies/horrormovies.gif" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/y10.gif"id="blinkies" class="desaturate">
-             <img src="imgs/webgraphics/blinkies/bigsis.gif"id="blinkies" class="desaturate">
-                    <img src="imgs/webgraphics/blinkies/ilovethesea.gif" id="blinkies" class="desaturate">
-                 <img src="imgs/webgraphics/blinkies/bekindtoanimals.gif" id="blinkies" class="desaturate">
-                  <img src="imgs/webgraphics/blinkies/drawing in class.gif" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/sebastian.gif" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/stevenuniverse.webp" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/scully.gif" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/opinionated.webp" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/copycat.gif" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/revenge.gif" id="blinkies" class="desaturate">
-                  <img src="imgs/webgraphics/blinkies/stalking.webp" id="blinkies" class="desaturate">
-                 <img src="imgs/webgraphics/blinkies/normal-ppl-worry-me.gif" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/sillycat.webp" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/piracyyy.webp" id="blinkies" class="desaturate">
-
-                <img src="imgs/webgraphics/blinkies/washyourhands.gif" id="blinkies" class="desaturate">
-                <img src="imgs/webgraphics/blinkies/mmmyummisubstances.webp" id="blinkies" class="desaturate">           </div>
-        <h3>(scrollable!!)</h3>
- <br>
-            <H3 style="font-size: smalle;">my button! feel free to link :3 
-                <h3 style="font-size: smaller;">(also tell me at the chat box on the left if you link me , ill link you back!!)</h3>
-            </H3>
-            <img src="imgs/minkurosu-button.png" class="my-button"  style="width: 88px; height: 31px; ;">
-<br>
-  <br>
-        <H3 style="">mutuals/sites i love:</H3>
-      
-        <div class="scrollable">
-        <div class="button-wall">
-        <a href="https://lilithdev.neocities.org/"><img src="https://lilithdev.neocities.org/buttons/lilithdevbtn.gif" class="desaturate"></a>
-            <a href="https://cinni.net" target="_blank"><img src="https://cinni.net/images/button/cinni-88x31-hamham.gif" class="desaturate"></a>
-
-
-             <a href="https://coffeeplant.neocities.org"><img src="https://coffeeplant.neocities.org/images/coffeeplant.png" class="desaturate">  
-                <a href="https://miserabledolly.neocities.org/"><img src="https://miserabledolly.neocities.org/miserabledolly.gif" width="88" height="31" class="desaturate"></a>
-    <a href="https://monroevilleangel.neocities.org"> <img id="blinkiemonroevilleangel" src="https://files.catbox.moe/htzd9r.png" class="desaturate"> </a> 
-
-    <a href="https://usprisoner.neocities.org/"><img src="https://file.garden/ZrvuPPC1HzBK0srs/momoa_button.png" class="desaturate">  
-  <a href="https://edhmr.neocities.org" target="_blank"><img src="https://edhmr.neocities.org/PAGINA%20INICIAL/edhmr_botton.gif" class="desaturate"></a>
-<a href="https://slushiecafe.neocities.org/" target="_blank"><img src="https://slushiecafe.neocities.org/images/slushiecafebutton.gif" class="desaturate"></a>
- <a href="https://qtbeans.neocities.org" target="_blank"><img src="https://qtbeans.neocities.org/my%20art/qtbeansbutton2.png" class="desaturate"></a>
-<a href="https://ghostz.neocities.org/" target="_blank"><img src="https://ghostz.neocities.org/buttons/0.png" class="desaturate"></a>
-<a href="https://moonpr1sm.com/" target="_blank"><img src="https://moonpr1sm.com/pixelart/june25/newbuttoncorrect.png" class="desaturate"></a>
-<a href="https://doqmeat.com/" target="_blank"><img src="https://doqmeat.com/!g/web/doqmeat-2.png" class="desaturate"></a>
-<a href="https://grossgirl94.neocities.org" target="_blank"><img src="https://grossgirl94.neocities.org/photos/grossgirl94%20button%20transparent.gif" class="desaturate"></a>
-<a href="https://olliveen.neocities.org/" target="_blank"><img src="https://olliveen.neocities.org/img/button.gif" class="desaturate"></a>
-<a href="https://catboo.neocities.org/" target="_blank"><img src="https://catboo.neocities.org/images/sitebuttons/catboo.png" class="desaturate"></a>
-<a href="https://vulpecula.neocities.org" target="_blank"><img src="https://vulpecula.neocities.org/images/vulpbutton2.gif" class="desaturate"></a>
-
-
-
-
-</div>
-</div>
-    </div>
-</div>
-</div>
-        </div>
-        
-        </div>
-        
-    </aside>
+    <aside id="sidebar-direita-container" class="sidebar sidebar-right">
+        </aside>
 
 </div>
 <script src="lastfm-widget.js"></script>
  <script src="script.js"></script>
+  <script src="theme-switcher.js"></script>
 
 
  <script src="script.js"></script>

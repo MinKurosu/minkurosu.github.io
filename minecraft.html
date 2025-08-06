@@ -6,20 +6,20 @@
     <title>Minhas Skins de Minecraft</title> <link rel="stylesheet" href="../styles.css">
 
     <style>
-        /* CSS ESPECÍFICO PARA A PÁGINA QUE SERÁ CARREGADA NO IFRAME (skins.html) */
+ 
 
        html, body {
-        background-color: #24211e;
+        background-color: #24211e00;
         margin: 0;
         padding: 0;
-        /* CORREÇÃO AQUI: */
-       font-family: "Born2bSportyFS";
         
+       font-family: "Born2bSportyFS";
+        background-image: none;
         display: flex;
         justify-content: center;
         align-items: flex-start;
-        overflow: hidden; /* Isso define tanto overflow-x quanto overflow-y para hidden */
-        /* Certifique-se de que NENHUMA altura fixa ou min-height: 100vh; esteja aqui */
+        overflow: hidden; 
+       
     }
 
   hr {
@@ -29,15 +29,10 @@
   }
 
 
- #containerprincipal { /* Ou a classe .content-column ou .iframe-content-wrapper */
+ #containerprincipal { 
         width: 100%;
  }
-        /* REMOVED .skins { max-height: 150px ; } */ /* This class was applied to the img and the skin-item. It's better to control height via .skin-item and .skin-item img */
-
-        /* Wrapper principal para todo o conteúdo das skins/screenshots */
-       
-
-        /* Classes existentes do seu HTML de skins */
+      
         .caixamaisclara {
             background-color: #24211e;
             border-radius: 0.9375rem;
@@ -45,13 +40,13 @@
         }
 
         .content-column {
-            display: flex;           /* Transforma o .content-column em um container flexível */
-    flex-direction: column;  /* Força os itens internos (h3, div.skin-grid-container) a se empilharem verticalmente */
-    align-items: center;     /* Centraliza os itens horizontalmente dentro do .content-column */
-    width: 100%;             /* Garante que o .content-column ocupe a largura total disponível */
-    max-width: 900px;        /* Defina uma largura máxima se desejar que o conteúdo não se espalhe muito */
-    margin: 20px auto;       /* Centraliza o container na página e adiciona margem superior/inferior */
-    padding: 20px;           /* Adicione padding interno se necessário */
+            display: flex;       
+    flex-direction: column;  
+    align-items: center;     
+    width: 100%;            
+    max-width: 900px;        
+    margin: 20px auto;       
+    padding: 20px;           
     box-sizing: border-box;  
             
         }
@@ -75,10 +70,9 @@
         }
 
 
-        /* Estilos para o GRID de SKINS - Para 4 colunas verticais fixas */
         .skin-grid-container {
             display: grid;
-            grid-template-columns: repeat(3, 1fr); /* Mantendo 3 colunas para o exemplo anterior */
+            grid-template-columns: repeat(3, 1fr); 
             gap: 15px;
             justify-content: center;
             padding: 0;
@@ -86,12 +80,10 @@
         }
 
          .skin-item {
-        /* Se você definiu uma altura fixa aqui (como height: 200px;),
-           e o conteúdo (imagem + título) excede, o texto será cortado.
-           Ajuste a altura ou use min-height/flex-grow para permitir crescimento. */
-        height: 200px; /* Se o texto está cortado, pode ser porque o height é muito justo */
-        overflow: hidden; /* Se o item em si tiver overflow: hidden, o conteúdo interno será cortado */
-        /* Remova overflow: hidden se ele estiver no .skin-item e estiver cortando o P */
+      
+        height: 200px; 
+        overflow: hidden;
+  
     }
 
         .skin-item img {
@@ -114,7 +106,7 @@
             width: 100%;
         }
 
-        /* Media Queries para Responsividade (dentro do iframe) */
+
         @media (max-width: 768px) {
             .skin-grid-container {
                 grid-template-columns: repeat(3, 1fr);
@@ -204,20 +196,20 @@
 
             <h3>screenshots</h3>
             <img src="imgs/minecraft/screenshots/lardocelar.png" class="screenshots">
-            <h2 class="screenshotDescription"> "lar doce lar"</h2>
+            <h1 class="screenshotDescription"> "lar doce lar"</h2>
                 <img src="imgs/minecraft/screenshots/lardocelar2.png" class="screenshots">
           <hr>
           <br>
                 <br>
                 <img src="imgs/minecraft/screenshots/eueovenomextreme.jpg" class="screenshots">
-            <h2 class="screenshotDescription"> when i took a picture with my childhood's favorite minecraft youtuber, @venom_extreme</h2>
+            <h1 class="screenshotDescription"> when i took a picture with my childhood's favorite minecraft youtuber, @venom_extreme</h2>
                 <br>
             <img src="imgs/minecraft/screenshots/servervenom2023.png" class="screenshots">
-            <h2 class="screenshotDescription"> another picture, from the same server, with some of its members!</h2>
+            <h1 class="screenshotDescription"> another picture, from the same server, with some of its members!</h2>
                 <br>
                 <br>
                 <img src="imgs/minecraft/screenshots/serverkonan2021.png" class="screenshots">
-            <h2 class="screenshotDescription"> my friends @KonanS2's server, from 2021</h2>
+            <h1 class="screenshotDescription"> my friends @KonanS2's server, from 2021</h2>
                 <img src="imgs/minecraft/screenshots/serverkonan20212.png" class="screenshots">
            <br>
                 <br>

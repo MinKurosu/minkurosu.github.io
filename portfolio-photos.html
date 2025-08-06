@@ -1,44 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-4K5KDKEJ2E"
-    ></script>
+<head>
+    <script src="oneko.js"></script>
+    <script>NekoType="black"</script>
+    <script src="carregar-sidebars.js"></script>
+
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4K5KDKEJ2E"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
+      function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-4K5KDKEJ2E');
     </script>
-    <meta charset="UTF-8" />
-     <meta name="viewport" content="width=1600px, initial-scale=0.4, maximum-scale=1.0, user-scalable=yes">
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="script" href="index.js" />
-    <title>photography</title>
-    <link rel="icon" type="image/ico" href="imgs/site_imgs/favicon.ico" />
+    <script> window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches </script>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=1600px, initial-scale=0.4, maximum-scale=1.0, user-scalable=yes">
+    <meta property="og:image" content="https://i.ibb.co/RC2v9zg/sitethumbnail.png"/>
+    <meta property="og:image" content="imgs/site_imgs/sitethumbnail.png"/>
+   
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+   <link rel="stylesheet" href="styles.css" id="theme-stylesheet">
+    <title>@minkurosu</title>
+   
+    <link rel="icon" type="image/ico" href="imgs/site_imgs/favicon.ico"/>
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
 
 
-    <style>
-      /* Scale for viewports between 600px and 1200px */
-      @media (min-width: 400px) and (max-width: 1200px) {
-        body {
-          transform: scale(1.2);
-          transform-origin: top;
-        }
-        .caixamaisclara {
-          max-width: 100%;
+<style>
+
+
+html, body, iframe{
+  cursor: url('imgs/cursor/ROCKcursornormal.cur'), auto;
+}
+
+
+a, button, input[type="submit"], input[type="button"], select {
+  cursor: url('imgs/cursor/ROCKcursorselect.cur'), pointer;
+}
+
+ 
+
+
+        .galeria-grid {
+            display: grid;
+    
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); 
+            gap: 15px; 
+            padding: 5px;
+            justify-items: center; 
+            align-items: center; 
         }
 
-    
-      }
+        .galeria-grid img {
+            max-width: 100%; 
+            height: 120px; 
+            
+           
+            object-fit: contain; 
+            
+            display: block;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease;
+        }
+
+        .galeria-grid img:hover {
+            transform: scale(1.05); 
+        }
+
+
+
+#theme-toggle-button {
+    background: none !important; 
+    appearance: none;        
+    -webkit-appearance: none; 
+    -moz-appearance: none;   
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0; 
+    cursor: pointer;
+    outline: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       .grid-img img {
         aspect-ratio: 1 !important;
@@ -46,321 +111,28 @@
       }
 
      
-      @font-face {
-        font-family: "Born2bSportyFS";
-  src: url(fonts/Born2bSportyFS.otf) format('truetype');
-      }
+    
 
-      /* General Settings */
-      html {
-        font-size: 16px;
-      }
 
-      #logopatinha {
-        box-shadow: none;
-      }
 
-      body,
-      html {
-        height: 100%;
-        width: ;
-        margin: 0;
-        padding: 0;
-        background-image: url(imgs/site_imgs/wood2.png);
-        background-attachment: fixed;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        font-family: "Born2bSportyFS";
-        font-size: 16px;
-        z-index: 1;
-      }
-
-     /* Header */
-    header {
-      background-color: #1B1917;
-      padding: 5px;
-      margin-bottom: 2%;
-      border-radius: 0 0 1.25rem 1.25rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5);
-      width: 100%;
-      max-width: 50rem;
-      box-sizing: border-box;
-      max-height: 5rem;
-    }
-
-    /* Navbar */
-    .navbar {
-      display: flex;
-      justify-content: center;
-      width: 100%;
-      flex-wrap: nowrap;
-    }
-    .nav-item{
-  font-size: 1.5rem;
-}
-    .navbar .divitems {
-      display: inline-flex;
-      justify-content: center;
-      flex-wrap: nowrap;
-    }
-
-    .navbar .divitems .nav-item {
-      white-space: nowrap;
-      padding: 0.0625rem;
-      padding-right: 0.625rem;
-      font-size: 1.5rem;
-    }
-
-    .navbar a {
-      text-decoration: none;
-      color: #534F4A;
-      background-color: #24211e;
-      padding: 3px 10px;
-      border-radius: 0.625rem;
-      transition: background-color 0.3s;
-      display: inline-block;
-      border: 0.3125rem solid #272525;
-      box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5);
-      margin: 0.625rem;
-    }
-
-    .navbar a:hover {
-      background-color: #534f4a;
-      color: #1B1917;
-      transform: scale(1.15);
-      transition: 0.2s;
-      animation: ease-in-out;
-    }
-  
-/* Header */
-header {
-      background-color: #1B1917;
-      padding: 5px;
-      margin-bottom: 2%;
-      border-radius: 0 0 1.25rem 1.25rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5);
-      width: 100%;
-      max-width: 50rem;
-      box-sizing: border-box;
-      max-height: 5rem;
-    }
-
-    /* Navbar */
-    .navbar {
-      display: flex;
-      justify-content: center;
-      width: 100%;
-      flex-wrap: nowrap;
-    }
-    .nav-item{
-  font-size: 1.5rem;
-}
-    .navbar .divitems {
-      display: inline-flex;
-      justify-content: center;
-      flex-wrap: nowrap;
-    }
-
-    .navbar .divitems .nav-item {
-      white-space: nowrap;
-      padding: 0.0625rem;
-      padding-right: 0.625rem;
-      font-size: 1.5rem;
-    }
-
-    .navbar a {
-      text-decoration: none;
-      color: #534F4A;
-      background-color: #24211e;
-      padding: 3px 10px;
-      border-radius: 0.625rem;
-      transition: background-color 0.3s;
-      display: inline-block;
-      border: 0.3125rem solid #272525;
-      box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5);
-      margin: 0.625rem;
-    }
-
-    .navbar a:hover {
-      background-color: #534f4a;
-      color: #1B1917;
-      transform: scale(1.15);
-      transition: 0.2s;
-      animation: ease-in-out;
-    }
   
 
-      /* Logo */
-
-      #logobig {
-        max-width: 100%;
-        max-height: 200px;
-        object-fit: contain;
-        animation: breathing 2.5s infinite ease-in-out;
-        transition: transform 0.3s ease-in-out;
-      }
-
-      #logobig:hover {
-        transform: scale(1.15) translateY(10px);
-        transition: 0.2s;
-      }
-
-      @keyframes breathing {
-        0% {
-          transform: translateY(0) scale(1);
-        }
-        50% {
-          transform: translateY(-2px) scale(1);
-        }
-        100% {
-          transform: translateY(0) scale(1);
-        }
-      }
-
-      .caixalogo {
-        background-color: rgba(68, 64, 60, 0.16);
-        border-radius: 0.625rem;
-        box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
-      }
-
-      .caixamaisclara {
-        background-color: #24211e;
-        padding: 0.3125rem;
-        border-radius: 0.9375rem;
-        box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        margin: 2px;
-        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-          1px 1px 0 #000;
-      }
-
-      .caixamaisclara img {
-    border-radius: 0.3125rem;
-  
-}
-
-
-      .caixamaisclara img {
-        border-radius: 0.3125rem;
-        max-width: 50rem;
-      }
-
-      .about-text {
-        max-width: 60%;
-      }
-
-      .caixamaisclara h2 {
-        margin-top: 0;
-      }
-
-      hr {
-        border: 0;
-        border-top: 0.0625rem solid #534f4a;
-        margin: 1.25rem 0;
-      }
-
-      .section-title {
-        font-size: 1.5rem;
-        margin: 1.25rem 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      #euvtuber,
-      #euirl {
-        height: 18.75rem;
-      }
-
-      .about-content {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-
-      .about-content img {
-        margin: 0 0.625rem;
-        border-radius: 1rem;
-      }
-
-      #euirl,
-      #euvtuber {
-        transition: transform 0.3s ease-in-out;
-      }
-
-      #euirl:hover,
-      #euvtuber:hover {
-        transform: scale(1.05);
-      }
-
-      .about-content .about-text {
-        flex-grow: 1;
-        text-align: center;
-      }
-
-      .boxfoto {
-        width: calc(25% - 2px);
-        display: flex;
-        gap: 2rem;
-        border-radius: 1rem;
-        max-width: 50rem;
-      }
-
-      h1 {
-        font-size: 2rem;
-      }
-
-      h2 {
-        font-size: 2rem;
-        margin: 0;
-        padding: 0;
-      }
-
-      h3 {
-        font-size: 1.7rem;
-        margin: 0;
-        padding: 0;
-      }
-
-      .h2text {
-        margin: 0;
-      }
-
-      .conjuntoblocos {
-        border-radius: 0rem;
-      }
-
-      .fotosworks {
-        height: 200px;
-        border-radius: 1rem;
-        transition: transform 0.1s ease-in-out;
-      }
 .caixamaisclara img {
       aspect-ratio: 1;
 }
 
       .grid-feed {
         display: grid;
-        grid-template-columns: repeat(3, 1fr); /* Três colunas fixas */
-        gap: 10px; /* Espaço entre as imagens */
-        justify-items: center; /* Centraliza as imagens horizontalmente */
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 10px; 
+        justify-items: center; 
         padding: 10px;
-        max-width: 80rem; /* Largura máxima do grid */
-        margin: 0 auto; /* Centraliza o grid na página */
+        max-width: 50rem; 
+        margin: 0 auto; 
       }
 
       .grid-feed img{
-        max-width: 300px;
+        max-width: 200px;
         object-fit: cover;  
       }
 
@@ -370,12 +142,12 @@ header {
         z-index: 1;
         justify-content: center;
         display: grid;
-        grid-template-columns: repeat(3, 1fr); /* Três colunas fixas */
-        gap: 10px; /* Espaço entre as imagens */
-        justify-items: center; /* Centraliza as imagens horizontalmente */
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 10px; 
+        justify-items: center; 
         padding: 10px;
-        max-width: 80rem; /* Largura máxima do grid */
-        margin: 0 auto; /* Centraliza o grid na página */
+        max-width: 80rem; 
+        margin: 0 auto; 
       }
 
       .grid-img img {
@@ -394,30 +166,7 @@ header {
         transition: transform 0.3s ease, z-index 0s;
       }
 
-      .box {
-        width: 40%;
-        margin: 0 auto;
-        background: rgba(255, 255, 255, 0.2);
-        padding: 35px;
-        border: 2px solid #353535;
-        border-radius: 20px/50px;
-        background-clip: padding-box;
-        text-align: center;
-      }
-
-      .button {
-        font-size: 1em;
-        padding: 10px;
-        color: #353535;
-        border: 2px solid #06d85f;
-        border-radius: 20px/50px;
-        text-decoration: none;
-        cursor: pointer;
-        transition: all 0.3s ease-out;
-      }
-      .button:hover {
-        background: #06d85f;
-      }
+     
 
       .overlay {
         position: fixed;
@@ -473,24 +222,19 @@ header {
     
 
   
-      /* Definir grid de 3 colunas */
     .gallery {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);  /* 3 colunas de largura igual */
-      gap: 10px;  /* Espaçamento entre as imagens */
+      grid-template-columns: repeat(3, 1fr);  
+      gap: 10px;  
     }
 
 
-    /* Responsividade: 1 coluna para telas pequenas */
  
-    </style>
+</style>
 
-  
-  </head>
-
+</head>
 <body>
-  <!-- Google tag (gtag.js) -->
-  <script
+ <script
     async
     src="https://www.googletagmanager.com/gtag/js?id=G-DT4FG20QMR"
   ></script>
@@ -504,52 +248,51 @@ header {
     gtag('config', 'G-DT4FG20QMR');
   </script>
 
-      <!-- Adicionar o JavaScript do Fancybox -->
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
 
-  <!-- Ativar o Fancybox -->
+  
   <script>
     Fancybox.bind("[data-fancybox]", {
-      // Custom options aqui, se necessário
+
     });
   </script>
   <script>
-    console.log(Fancybox);  // Verifica se o Fancybox está disponível
+    console.log(Fancybox); 
   </script>
-
-    <header id="header" class="fixed-top">
-      <div id="divpatinha">
-        <img
-          src="imgs/site_imgs/patinha.png"
-          id="logopatinha"
-          alt="logo da barra de navegação"
-        />
-      </div>
-      <nav class="navbar">
-        <div class="divitems">
-          
-         <div class="nav-item">
-    <a href="#" onclick="history.back(); return false;" class="nav-link">back</a>
-</div>
-
-          <div class="nav-item">
-            <a href="index.html" target="_self" class="nav-link">home</a>
-          </div>
-          <div class="nav-item">
-            <a href="feed.html" target="_self" class="nav-link">feed</a>
-          </div>
-          <div class="nav-item">
-            <a href="links.html" target="_self" class="nav-link">links</a>
-          </div>
-          <div class="nav-item">
-            <a href="portfolio-menu.html" target="_self" class="nav-link">portfolio</a>
-          </div>
-         
-        </div>
-      </nav>
-    </header>
-
-    <div class="caixamaisclara">
+<div class="layout-with-sidebars">
+ <aside id="sidebar-esquerda-container" class="sidebar">
+        </aside>
+  
+    <main id="containerprincipal">
+        <header id="header" class="fixed-top">
+            <div id="divpatinha">
+                <img src="imgs/site_imgs/patinha.png" class="desaturatepics" id="logopatinha" alt="logo da barra de navegação">
+            </div>
+            <nav class="navbar">
+                <div class="divitems">
+                    <div class="nav-item">
+                        <a href="#" onclick="history.back(); return false;" class="nav-link">back</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="index.html" target="_self" class="nav-link">home</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="feed.html" target="_self" class="nav-link">feed</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="blog.html" target="_self" class="nav-link">blog</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="links.html" target="_self" class="nav-link">links</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="portfolio-menu.html" target="_self" class="nav-link">portfolio</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div id="container">
+            <div class="caixamaisclara">
       <div class="grid-feed">
       
           <a href="imgs/photography-portfolio/DSCN4875 (1).jpg" data-fancybox="gallery" data-caption="
@@ -674,23 +417,28 @@ header {
 
       </div>
     </div>
-      
+    </main>
 
+   
 
-      </div>
-      </div>
+</div>
+</div>
     </div>
+</div>
+</div>
+        </div>
+        
+        </div>
+        
+    </aside>
 
-    
-  
+</div>
+<script src="lastfm-widget.js"></script>
+ <script src="script.js"></script>
+  <script src="theme-switcher.js"></script>
 
 
+       
+ </body>
 
-    </div>
-
-    <div>
-      
-
-  </script>
-</body>
 </html>
