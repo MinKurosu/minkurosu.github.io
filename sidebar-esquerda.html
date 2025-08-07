@@ -1,33 +1,38 @@
 <style>
-    .social-links {
-  /* Estilos para a div, se precisar, como alinhamento, espaçamento, etc. */
+.social-links {
+  /* Estilos para a div */
   display: flex;
-  gap: 5px; /* Adiciona um espaço entre os ícones */
-  justify-content: center; /* Centraliza os ícones na div */
+  gap: 5px;
+  justify-content: center;
   padding: 10px;
 }
 
 .social-links a {
   display: inline-block;
-  transition: transform 0.3s ease, filter 0.3s ease; /* Transição suave para o movimento e o filtro */
+  /* Garante que a transição de filtro e transform seja suave */
+  transition: transform 0.2s ease-in-out, filter 0.2s ease;
 }
 
 .social-links a img {
   width: 16px;
   height: 16px;
-  display: block; 
+  display: block;
 }
 
-/* Classe para os ícones desaturados */
-.jumpy img {
-  filter: grayscale(100%); /* Deixa a imagem em tons de cinza */
+/* Aplica o filtro de des-saturação nas imagens */
+.social-links a img {
+  filter: grayscale(100%);
 }
 
-/* Efeito ao passar o mouse */
-.jumpy:hover {
-  transform: translateY(-5px); /* Move o ícone 5 pixels para cima */
-  filter: grayscale(0%); /* Remove o filtro de cinza, mostrando a cor original */
+/* Efeito ao passar o mouse: remove o filtro e move o ícone */
+.social-links a:hover img {
+  transform: translateY(-5px);
+     transition: transform 0.2s ease-in-out, filter 0.2s ease-in-out;
+  filter: grayscale(0%) !important; /* !important garante que sobrescreva a regra anterior */
 }
+
+
+
 </style>
 
 <script src="lastfm-widget.js"></script>
@@ -39,29 +44,29 @@
         <div class="box">
             <h2 id="nomeSide">min</h2>
             <h3> 22yo • they/she/he • brasil </h3>
-            <h3>psychology student & freelance artist</h3>
-            <h3>(digital art & live2d)</h3>
+            <h3>psychology student & freelance artist (digital art & live2d)</h3>
+           
             <div class="social-links">
-  <a href="https://www.instagram.com/yasmincruzm/" target="_blank" class="desaturate jumpy">
+  <a href="https://www.instagram.com/yasmincruzm/" target="_blank" class="social-icon jumpy">
     <img src="imgs/site_imgs/site-icons/instagram.png" alt="Instagram" width="16" height="16">
   </a>
-  <a href="https://x.com/minkurosu" target="_blank" class="desaturate jumpy">
+  <a href="https://x.com/minkurosu" target="_blank" class="social-icon">
     <img src="imgs/site_imgs/site-icons/twitter.png" alt="X (antigo Twitter)" width="16" height="16">
   </a>
 
-  <a href="https://www.twitch.tv/minkurosu/" target="_blank" class="desaturate jumpy">
+  <a href="https://www.twitch.tv/minkurosu/" target="_blank" class="social-icon">
     <img src="imgs/site_imgs/site-icons/twitch.png" alt="Twitch" width="16" height="16">
   </a>
-  <a href="https://vgen.co/minkurosu/" target="_blank" class="desaturate jumpy">
+  <a href="https://vgen.co/minkurosu/" target="_blank" class="social-icon">
     <img src="imgs/site_imgs/site-icons/vgen.png" alt="VGen" width="16" height="16" border-radius="10px">
   </a>
-  <a href="https://steamcommunity.com/id/minkurosu/" target="_blank" class="desaturate jumpy">
+  <a href="https://steamcommunity.com/id/minkurosu/" target="_blank" class="social-icon">
     <img src="imgs/site_imgs/site-icons/steam.png" alt="Steam" width="16" height="16">
   </a>
-  <a href="https://open.spotify.com/user/mimincruzm?si=04b1acd2b0a04438" target="_blank" class="desaturate jumpy">
+  <a href="https://open.spotify.com/user/mimincruzm?si=04b1acd2b0a04438" target="_blank" class="social-icon">
     <img src="imgs/site_imgs/site-icons/spotify.png" alt="Spotify" width="16" height="16">
   </a>
-  <a href="https://neocities.org/site/minkurosu" target="_blank" class="desaturate jumpy">
+  <a href="https://neocities.org/site/minkurosu" target="_blank" class="social-icon">
     <img src="imgs/site_imgs/site-icons/neocities.png" alt="Neocities" width="16" height="16">
   </a>
 </div>
