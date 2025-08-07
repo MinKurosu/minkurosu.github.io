@@ -1,3 +1,35 @@
+<style>
+    .social-links {
+  /* Estilos para a div, se precisar, como alinhamento, espaçamento, etc. */
+  display: flex;
+  gap: 5px; /* Adiciona um espaço entre os ícones */
+  justify-content: center; /* Centraliza os ícones na div */
+  padding: 10px;
+}
+
+.social-links a {
+  display: inline-block;
+  transition: transform 0.3s ease, filter 0.3s ease; /* Transição suave para o movimento e o filtro */
+}
+
+.social-links a img {
+  width: 16px;
+  height: 16px;
+  display: block; 
+}
+
+/* Classe para os ícones desaturados */
+.jumpy img {
+  filter: grayscale(100%); /* Deixa a imagem em tons de cinza */
+}
+
+/* Efeito ao passar o mouse */
+.jumpy:hover {
+  transform: translateY(-5px); /* Move o ícone 5 pixels para cima */
+  filter: grayscale(0%); /* Remove o filtro de cinza, mostrando a cor original */
+}
+</style>
+
 <script src="lastfm-widget.js"></script>
  <script src="script.js"></script>
   <script src="theme-switcher.js"></script>
@@ -9,8 +41,31 @@
             <h3> 22yo • they/she/he • brasil </h3>
             <h3>psychology student & freelance artist</h3>
             <h3>(digital art & live2d)</h3>
-            
- <br>
+            <div class="social-links">
+  <a href="https://www.instagram.com/yasmincruzm/" target="_blank" class="desaturate jumpy">
+    <img src="imgs/site_imgs/site-icons/instagram.png" alt="Instagram" width="16" height="16">
+  </a>
+  <a href="https://x.com/minkurosu" target="_blank" class="desaturate jumpy">
+    <img src="imgs/site_imgs/site-icons/twitter.png" alt="X (antigo Twitter)" width="16" height="16">
+  </a>
+
+  <a href="https://www.twitch.tv/minkurosu/" target="_blank" class="desaturate jumpy">
+    <img src="imgs/site_imgs/site-icons/twitch.png" alt="Twitch" width="16" height="16">
+  </a>
+  <a href="https://vgen.co/minkurosu/" target="_blank" class="desaturate jumpy">
+    <img src="imgs/site_imgs/site-icons/vgen.png" alt="VGen" width="16" height="16" border-radius="10px">
+  </a>
+  <a href="https://steamcommunity.com/id/minkurosu/" target="_blank" class="desaturate jumpy">
+    <img src="imgs/site_imgs/site-icons/steam.png" alt="Steam" width="16" height="16">
+  </a>
+  <a href="https://open.spotify.com/user/mimincruzm?si=04b1acd2b0a04438" target="_blank" class="desaturate jumpy">
+    <img src="imgs/site_imgs/site-icons/spotify.png" alt="Spotify" width="16" height="16">
+  </a>
+  <a href="https://neocities.org/site/minkurosu" target="_blank" class="desaturate jumpy">
+    <img src="imgs/site_imgs/site-icons/neocities.png" alt="Neocities" width="16" height="16">
+  </a>
+</div>
+
 
 
  <h3>theme changer:</h3>
