@@ -17,8 +17,7 @@ function inicializarThemeSwitcher() {
     function applySavedTheme() {
         const savedTheme = localStorage.getItem('theme');
        
-        const currentThemeKey = (savedTheme && savedTheme.includes(themeFiles.alternative)) ? 'alternative' : 'default';
-
+const currentThemeKey = (savedTheme && savedTheme.includes(themeFiles.default)) ? 'default' : 'alternative';
         if (stylesheet) {
             stylesheet.setAttribute('href', themeFiles[currentThemeKey]);
         }
