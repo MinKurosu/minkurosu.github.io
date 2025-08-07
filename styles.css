@@ -856,7 +856,7 @@ max-width: 300px;!important
 
 .scroll{
 
-max-height: 840px;
+max-height: 847px;
 overflow: auto;
 overflow-y: scroll  
   overflow: auto;
@@ -864,6 +864,15 @@ overflow-y: scroll
   -ms-overflow-style: none;     
 }
 
+.scrollSmaller{
+
+max-height: 200px;
+overflow: auto;
+overflow-y: scroll  
+  overflow: auto;
+  scrollbar-width: none;        
+  -ms-overflow-style: none;     
+}
 
 .scroll-box::-webkit-scrollbar {
   display: none;                
@@ -1033,7 +1042,7 @@ td {
 }
 
 th, td {
-    border: 2px solid black;
+   
 }
 
 th {

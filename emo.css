@@ -248,7 +248,7 @@ max-width: 300px;
   text-align: center;
   text-decoration: none;
   color: #4b4b4b;
-  background: #111111;
+  background: #141414;
   border: 0.3125rem solid #310000;
   border-radius: .625rem;
   box-shadow: 0 0 .625rem rgba(0,0,0,.5);
@@ -293,7 +293,7 @@ max-width: 300px;
   display: block;
   padding: 6px 12px;
   text-align: center;
-  background-color: #111111;
+  background-color: #141414;
 
   text-decoration: none;
   border-radius: 10px;
@@ -461,7 +461,7 @@ height: auto
 
 
   .caixamaisclara {
-     background-color: #111111;
+     background-color: #141414;
       padding: 0.3125rem;
       border-radius: 0.9375rem;
       box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
@@ -476,7 +476,7 @@ height: auto
 
 
     .caixamaisclaraCenterSimple{
- background-color: #111111;
+ background-color: #141414;
       padding: 0.3125rem;
       border-radius: 0.9375rem;
 
@@ -491,7 +491,7 @@ height: auto
 
     
     .caixamaisclaraColumn{
- background-color: #111111;
+ background-color: #141414;
       padding: 0.3125rem;
       border-radius: 0.9375rem;
       display: flex;
@@ -504,7 +504,7 @@ height: auto
     
     
     .caixamaisclaraColumnSimple{
- background-color: #111111;
+ background-color: #141414;
       padding: 0.3125rem;
       border-radius: 0.9375rem;
       display: flex;
@@ -515,7 +515,7 @@ height: auto
     }
 
 .caixamaisclaraRowSimple{
- background-color: #111111;
+ background-color: #141414;
       padding: 0.3125rem;
       border-radius: 0.9375rem;
       display: flex;
@@ -528,7 +528,7 @@ height: auto
 
 
  .caixamaisclaraCenterSimple text{
- background-color: #111111;
+ background-color: #141414;
       padding: 0.3125rem;
       border-radius: 0.9375rem;
       box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
@@ -561,7 +561,7 @@ height: auto
 
 
 .caixamaisclaraCenter {
-    background-color: #111111;
+    background-color: #141414;
     padding: 0.3125rem;
     border-radius: 0.9375rem;
     box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
@@ -594,7 +594,7 @@ height: auto
 
   hr {
     border: 5px;
-    border-top: 3px solid #310000;
+    border-top: 3px solid #310101;
     margin: 1.25rem 0;
   }
 
@@ -865,7 +865,17 @@ max-width: 300px;!important
 
 .scroll{
 
-max-height: 840px;
+max-height: 847px;
+overflow: auto;
+overflow-y: scroll  
+  overflow: auto;
+  scrollbar-width: none;        
+  -ms-overflow-style: none;     
+}
+
+.scrollSmaller{
+
+max-height: 200px;
 overflow: auto;
 overflow-y: scroll  
   overflow: auto;
@@ -1000,8 +1010,8 @@ margin-left: 3rem;
    
 }
 .divider {
-  width: 1.5px;
-  background-color:#0a0a0a;
+  width: 2px;
+  background-color:#310101;
   margin: 0 10px;
   height: auto;
   min-height: 100px;
@@ -1013,7 +1023,7 @@ margin-left: 3rem;
     display: flex;
     flex-direction: row;
     align-items: center;
-  background-color: #111111;
+  background-color: #141414;
     padding: 0.3125rem;
     border-radius: 0.9375rem;
     box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
@@ -1025,7 +1035,7 @@ margin-left: 3rem;
 
 
 table {
-    border: 3px solid #111111;
+    border: 3px solid #141414;1çççççç
     border-collapse: collapse;
     border-spacing: 0;
     border-radius: 10px;
@@ -1035,7 +1045,7 @@ table {
 }
 
 td {
-    background-color: #111111
+    background-color: #1f1f1f6c
 }
 
 th, td {
