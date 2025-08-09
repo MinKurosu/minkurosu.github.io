@@ -1,13 +1,9 @@
-// Arquivo: carregar-sidebars.js
 
-// --- FUNÇÃO AUXILIAR ATUALIZADA ---
-// Agora ela aceita um objeto de atributos para adicionar ao script
 function carregarScript(src, containerId, atributos = {}) {
     return new Promise((resolve, reject) => {
         const container = document.getElementById(containerId);
         if (!container) {
-            // Se o container não for encontrado, anexa no body como fallback
-            // ou você pode simplesmente rejeitar a promessa.
+          
             console.warn(`Container com id '${containerId}' não encontrado. O script será anexado ao body.`);
             reject(new Error(`Container com id '${containerId}' não encontrado.`));
             return;
@@ -16,7 +12,7 @@ function carregarScript(src, containerId, atributos = {}) {
         const script = document.createElement('script');
         script.src = src;
 
-        // Adiciona os atributos passados ao elemento script
+   
         Object.keys(atributos).forEach(key => {
             script.setAttribute(key, atributos[key]);
         });
@@ -24,7 +20,7 @@ function carregarScript(src, containerId, atributos = {}) {
         script.onload = () => resolve(script);
         script.onerror = () => reject(new Error(`Falha ao carregar o script ${src}`));
         
-        container.appendChild(script); // Anexa o script dentro do container específico
+        container.appendChild(script); 
     });
 }
 
@@ -53,7 +49,6 @@ document.addEventListener("DOMContentLoaded", function() {
         
         console.log('Sidebars carregadas. A iniciar scripts dependentes...');
 
-        // Inicializa Theme Switcher e LastFM
         if (typeof inicializarThemeSwitcher === 'function') inicializarThemeSwitcher();
         if (typeof inicializarLastFmWidget === 'function') inicializarLastFmWidget();
 
@@ -61,7 +56,6 @@ document.addEventListener("DOMContentLoaded", function() {
         carregarScript('https://status.cafe/current-status.js?name=minkurosu', 'statuscafe')
             .catch(error => console.error(error));
 
-        // Carrega o script do Contador FC2 no seu container específico
         carregarScript('//counter1.fc2.com/counter.php?id=40451086&main=1', 'fc2-counter-container', {
             'language': 'javascript',
             'type': 'text/javascript',

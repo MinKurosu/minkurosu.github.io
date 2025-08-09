@@ -1,11 +1,10 @@
-// admin.js
-// Importações de Firebase
+
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js';
 import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js';
 import { getFirestore, collection, addDoc, serverTimestamp } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js';
 import { getStorage, ref, uploadBytes, getDownloadURL } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-storage.js';
 
-// SUA CONFIGURAÇÃO DO FIREBASE
+
 const firebaseConfig = {
     apiKey: "AIzaSyA8-Ab2dE48sVOhmT-HfxIL5_rzDMRdcCc",
     authDomain: "minkurosu.firebaseapp.com",
@@ -16,26 +15,26 @@ const firebaseConfig = {
     measurementId: "G-M7PWC6DDRH"
 };
 
-// Inicializa o Firebase
+
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 const storage = getStorage(app);
 
-// Variáveis globais para elementos do DOM
+//DOM
 let loginForm, loginEmailInput, loginPasswordInput, loginBtn, loginMessage;
 let adminPanelSection, logoutBtn;
-// Elementos do formulário de Blog
+//blog form
 let postContentInput, publishPostBtn, postMessage;
-let postImageFile, postImageUrl; // ATUALIZADO: Variáveis para os dois campos de imagem
+let postImageFile, postImageUrl; //imgs
 
-// NOVO: Elementos do formulário de Sonhos
+// dream form
 let dreamContentInput, publishDreamBtn, dreamMessage;
-// NOVO: Elementos do formulário de Entradas Privadas
+// private form
 let privateEntryContentInput, publishPrivateBtn, privateEntryMessage;
 
 
-// Função para exibir mensagens
+// show messages
 function showMessage(element, message, type) {
     if (element) {
         element.textContent = message;
@@ -44,7 +43,7 @@ function showMessage(element, message, type) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Atribuição de elementos de Login e Painel
+    //login
     loginForm = document.getElementById('login-form');
     loginEmailInput = document.getElementById('login-email');
     loginPasswordInput = document.getElementById('login-password');
@@ -55,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-     // **NOVO: Elementos do formulário de Blog**
+     // blog form
    
     const blogContentInput = document.getElementById('blog-content');
     const blogImageUrlInput = document.getElementById('blog-image-url');
@@ -65,27 +64,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    // Atribuição de elementos do formulário de Blog
+    // blog form
    
     postContentInput = document.getElementById('post-content');
     publishPostBtn = document.getElementById('publish-post-btn');
     postMessage = document.getElementById('post-message');
-    // ATUALIZADO: Atribuição das novas variáveis de imagem
+    // imgs
     postImageUrl = document.getElementById('post-image-url');
     postImageFile = document.getElementById('post-image-file');
 
-    // NOVO: Atribuição de elementos do formulário de Sonhos
+    // dreams form
     dreamContentInput = document.getElementById('dream-content');
     publishDreamBtn = document.getElementById('publish-dream-btn');
     dreamMessage = document.getElementById('dream-message');
     
-    // NOVO: Atribuição de elementos do formulário de Entrada Privada
+    // private forms
     privateEntryContentInput = document.getElementById('private-entry-content');
     publishPrivateBtn = document.getElementById('publish-private-entry-btn');
     privateEntryMessage = document.getElementById('private-entry-message');
 
 
-    // NOVO: Evento de Publicação de ENTRADA PRIVADA
+    // publish private
     if (publishPrivateBtn) {
         publishPrivateBtn.addEventListener('click', async () => {
             const content = privateEntryContentInput.value;
@@ -97,19 +96,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
             try {
                 showMessage(privateEntryMessage, 'Publicando entrada privada...', 'info');
-                // Adiciona o documento na nova coleção 'private_entries'
+                // 'private_entries'
                 await addDoc(collection(db, 'private_entries'), {
                     content: content,
-                    timestamp: serverTimestamp() // Usar serverTimestamp para garantir ordem cronológica
+                    timestamp: serverTimestamp() // cronologic
                 });
                 showMessage(privateEntryMessage, 'Entrada privada publicada com sucesso!', 'success');
-                privateEntryContentInput.value = ''; // Limpa o campo após o envio
+                privateEntryContentInput.value = '';
             } catch (error) {
                 showMessage(privateEntryMessage, `Erro ao publicar entrada privada: ${error.message}`, 'error');
             }
         });
     }
-    // Monitora o estado de autenticação para mostrar/esconder painéis
+   
     onAuthStateChanged(auth, (user) => {
         if (adminPanelSection && loginForm) {
             if (user) {
@@ -122,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Evento de Login (sem alterações)
+    // login event
     if (loginForm) {
         loginForm.addEventListener('submit', async (e) => {
             e.preventDefault();
@@ -136,7 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-     // **NOVO: Evento de Publicação de POST DE BLOG**
+     // blog post
     if (publishBlogBtn) {
         publishBlogBtn.addEventListener('click', async () => {
           
@@ -147,11 +146,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             try {
                 showMessage(blogMessage, 'Publicando post...', 'info');
-                // Salva na nova coleção 'blog_posts'
+                //'blog_posts'
                 await addDoc(collection(db, 'blog_posts'), {
                    
                     content: content,
-                    imageUrl: imageUrl, // Salva a URL da imagem (pode estar vazia)
+                    imageUrl: imageUrl, 
                     timestamp: serverTimestamp()
                 });
 
@@ -167,24 +166,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    // Evento de Publicação de POST DE THOUGHTS (AGORA COM LÓGICA ATUALIZADA PARA URL/ARQUIVO)
+    // thoughts
     if (publishPostBtn) {
         publishPostBtn.addEventListener('click', async () => {
             const content = postContentInput.value;
-            const selectedFile = postImageFile.files[0]; // Pega o arquivo selecionado, se houver
-            const enteredUrl = postImageUrl.value.trim(); // Pega a URL digitada, se houver
+            const selectedFile = postImageFile.files[0];
+            const enteredUrl = postImageUrl.value.trim(); 
 
           
 
             try {
                 showMessage(postMessage, 'Publicando post...', 'info');
-                let finalImageUrl = ''; // Variável para a URL final da imagem
+                let finalImageUrl = ''; 
 
-                // Prioridade: 1. URL digitada, 2. Upload de arquivo (se o Firebase Storage funcionar)
+               
                 if (enteredUrl) {
-                    finalImageUrl = enteredUrl; // Usa a URL digitada
+                    finalImageUrl = enteredUrl; 
                 } else if (selectedFile) {
-                    // Lógica para upload para Firebase Storage (AINDA DEPENDE DO CORS/FATURAMENTO)
+                    
                     showMessage(postMessage, 'Enviando imagem para o Storage (se o faturamento permitir)...', 'info');
                     const storageRef = ref(storage, `blog_images/${Date.now()}_${selectedFile.name}`);
                     await uploadBytes(storageRef, selectedFile);
@@ -192,23 +191,23 @@ document.addEventListener('DOMContentLoaded', () => {
                     showMessage(postMessage, 'Imagem enviada com sucesso para o Storage!', 'success');
                 }
 
-                // Adiciona o post ao Firestore
+               
                 await addDoc(collection(db, 'posts'), {
                    
                     content: content,
-                    imageUrl: finalImageUrl, // Salva a URL final (do upload ou digitada)
+                    imageUrl: finalImageUrl, 
                     timestamp: serverTimestamp()
                 });
 
                 showMessage(postMessage, 'Post publicado com sucesso!', 'success');
             
                 postContentInput.value = '';
-                postImageFile.value = ''; // Limpa o campo de arquivo
-                postImageUrl.value = '';  // Limpa o campo de URL
+                postImageFile.value = ''; 
+                postImageUrl.value = '';  
             } catch (error) {
                 showMessage(postMessage, `Erro ao publicar post: ${error.message}`, 'error');
                 console.error("Erro detalhado:", error);
-                // Adicione uma mensagem mais clara se o erro for sobre o Firebase Storage
+             
                 if (error.code === 'storage/unauthorized' || error.message.includes('CORS policy') || error.message.includes('permission_denied')) {
                     showMessage(postMessage, 'Erro: Não foi possível fazer upload da imagem para o Firebase Storage. Isso geralmente indica problemas de CORS ou que o faturamento do Google Cloud não está ativo. Tente usar a opção "URL da Imagem" para imagens já hospedadas.', 'error');
                 }
@@ -216,12 +215,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // NOVO: Evento de Registro de SONHO
+    // dream register
     if (publishDreamBtn) {
         publishDreamBtn.addEventListener('click', async () => {
             const content = dreamContentInput.value;
 
-            // Validação independente, apenas para o campo de sonho
+            
             if (!content.trim()) {
                 showMessage(dreamMessage, 'Por favor, preencha o conteúdo do sonho.', 'error');
                 return;
@@ -229,13 +228,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
             try {
                 showMessage(dreamMessage, 'Registrando sonho...', 'info');
-                // Adiciona o documento na nova coleção 'dreams'
+                //'dreams'
                 await addDoc(collection(db, 'dreams'), {
                     content: content,
                     timestamp: serverTimestamp()
                 });
                 showMessage(dreamMessage, 'Sonho registrado com sucesso!', 'success');
-                dreamContentInput.value = ''; // Limpa o campo após o envio
+                dreamContentInput.value = '';
             } catch (error) {
                 showMessage(dreamMessage, `Erro ao registrar sonho: ${error.message}`, 'error');
             }

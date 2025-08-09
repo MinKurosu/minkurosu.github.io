@@ -1,10 +1,8 @@
-// blog.js
 
-// Importações de Firebase
+
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js';
 import { getFirestore, collection, query, orderBy, getDocs } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js';
 
-// SUA CONFIGURAÇÃO DO FIREBASE (sem alterações)
 const firebaseConfig = {
     apiKey: "AIzaSyA8-Ab2dE48sVOhmT-HfxIL5_rzDMRdcCc",
     authDomain: "minkurosu.firebaseapp.com",
@@ -15,16 +13,14 @@ const firebaseConfig = {
     measurementId: "G-M7PWC6DDRH"
 };
 
-// Inicializa o Firebase
+
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-// Get the container where blog posts will be displayed
-const blogPostsContainer = document.getElementById('posts-container'); // Make sure this ID matches your HTML
+const blogPostsContainer = document.getElementById('posts-container'); 
 
-// Função para formatar a data
 function formatTimestamp(timestamp) {
-    if (!timestamp || !timestamp.toDate) return 'Data Indisponível'; // Add check for .toDate()
+    if (!timestamp || !timestamp.toDate) return 'Data Indisponível'; 
     const date = timestamp.toDate();
     return new Intl.DateTimeFormat('pt-BR', {
         dateStyle: 'long',
@@ -37,10 +33,10 @@ async function loadBlogPosts() {
         console.error("Elemento 'posts-container' não encontrado no HTML.");
         return;
     }
-    blogPostsContainer.innerHTML = '<h2>Carregando posts...</h2>'; // Mensagem de carregamento
+    blogPostsContainer.innerHTML = '<h2>Carregando posts...</h2>'; 
 
     try {
-        // *** MUDANÇA AQUI: Altere a coleção de "blogPosts" para "blog_posts" ***
+
        const q = query(collection(db, "blog_posts"), orderBy("timestamp", "desc"));
         const querySnapshot = await getDocs(q);
 
@@ -49,15 +45,15 @@ async function loadBlogPosts() {
             return;
         }
 
-        blogPostsContainer.innerHTML = ''; // Clear loading message
+        blogPostsContainer.innerHTML = ''; 
 
         querySnapshot.forEach((doc) => {
             const post = doc.data();
             const postElement = document.createElement('article');
-            postElement.classList.add('blog-post'); // Adicione uma classe para estilização
+            postElement.classList.add('blog-post'); 
 
-            // Formata a data usando a função formatTimestamp
-            const formattedDate = formatTimestamp(post.timestamp); // Use the timestamp from Firestore
+  
+            const formattedDate = formatTimestamp(post.timestamp); 
 
             postElement.innerHTML = `
                 <h2>${post.title}</h2>
@@ -74,5 +70,5 @@ async function loadBlogPosts() {
     }
 }
 
-// Chama a função para carregar os posts quando a página é carregada
+
 document.addEventListener('DOMContentLoaded', loadBlogPosts);
