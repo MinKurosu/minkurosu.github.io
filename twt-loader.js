@@ -1,10 +1,10 @@
-// twt-loader.js (CORRIGIDO E OTIMIZADO)
 
-// Importa as funções necessárias do Firebase
+
+
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js';
 import { getFirestore, collection, query, orderBy, onSnapshot, doc, addDoc, updateDoc, increment, serverTimestamp } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js';
 
-// SUA CONFIGURAÇÃO DO FIREBASE
+
 const firebaseConfig = {
     apiKey: "AIzaSyA8-Ab2dE48sVOhmT-HfxIL5_rzDMRdcCc",
     authDomain: "minkurosu.firebaseapp.com",
@@ -15,11 +15,10 @@ const firebaseConfig = {
     measurementId: "G-M7PWC6DDRH"
 };
 
-// Inicializa o Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-// Função para formatar a data
+
 function formatTimestampMinimal(timestamp) {
     if (!timestamp) return '';
     const date = timestamp.toDate();
@@ -39,9 +38,9 @@ async function listenForPosts() {
     const q = query(postsRef, orderBy('timestamp', 'desc'));
 
     onSnapshot(q, (querySnapshot) => {
-        tweetsContainer.innerHTML = ''; // Limpa para redesenhar
+        tweetsContainer.innerHTML = ''; 
         if (querySnapshot.empty) {
-            tweetsContainer.innerHTML = '<li><p>Nenhum post encontrado.</p></li>';
+            tweetsContainer.innerHTML = '<li><p>nenhum post encontrado.</p></li>';
             return;
         }
 
@@ -56,7 +55,7 @@ async function listenForPosts() {
             postElement.dataset.postId = postId;
 
             postElement.innerHTML = `
-                <img src="https://pbs.twimg.com/profile_images/1853559456900042752/PFV06W_5_400x400.jpg" alt="Avatar">
+                <img src="imgs/site_imgs/twitteravatar.jpg" alt="Avatar">
                 <div class="info">
                     <strong>min* <span>@minkurosu • ${formatTimestampMinimal(post.timestamp)}</span></strong>
                     <p>${(post.content || '').replace(/\n/g, '<br>')}</p>
@@ -83,11 +82,11 @@ async function listenForPosts() {
         });
     }, (error) => {
         console.error("Erro ao carregar posts: ", error);
-        tweetsContainer.innerHTML = '<li><p>Ocorreu um erro ao carregar os posts.</p></li>';
+        tweetsContainer.innerHTML = '<li><p>ocorreu um erro ao carregar os posts.</p></li>';
     });
 }
 
-// Função para carregar respostas em tempo real
+
 function listenForReplies(postId) {
     const postElement = document.querySelector(`li[data-post-id="${postId}"]`);
     if (!postElement) return;
@@ -132,20 +131,20 @@ function listenForReplies(postId) {
     });
 }
 
-// --- GERENCIADORES DE EVENTOS ---
 
-// Função para lidar com cliques nos botões
+
+
 async function handleActionClick(e) {
-    // Lógica para o botão de 'reply'
+//reply//
     const replyButton = e.target.closest('.reply-button');
     if (replyButton) {
         const postElement = replyButton.closest('li[data-post-id]');
         const form = postElement.querySelector('.reply-form');
         form.classList.toggle('active');
-        return; // Encerra a função aqui
+        return; 
     }
 
-    // Lógica para o botão de 'like'
+    //like
     const likeButton = e.target.closest('.like-button');
     if (likeButton) {
         const postElement = likeButton.closest('li[data-post-id]');
@@ -168,7 +167,7 @@ async function handleActionClick(e) {
             storageKey = 'likedReplies';
             itemId = replyId;
         } else {
-            return; // Tipo de botão desconhecido
+            return; 
         }
 
         const likedItems = JSON.parse(localStorage.getItem(storageKey)) || [];
@@ -189,7 +188,6 @@ async function handleActionClick(e) {
     }
 }
 
-// Função para lidar com o envio do formulário de resposta
 async function handleReplySubmit(e) {
     if (!e.target.classList.contains('reply-form')) return;
     
@@ -223,7 +221,7 @@ async function handleReplySubmit(e) {
 }
 
 
-// Adiciona os 'ouvintes' de eventos quando o DOM está pronto
+
 document.addEventListener('DOMContentLoaded', () => {
     const tweetsContainer = document.getElementById('tweets-container');
     if (tweetsContainer) {
