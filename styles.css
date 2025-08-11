@@ -43,39 +43,6 @@ a, button, input[type="submit"], input[type="button"], select {
 
 
 
-@media (max-width: 768px) { 
-
-    
-    body {
-        transform: none !important; 
-        transform-origin: initial !important; 
-        position: static !important; 
-        overflow-x: auto !important; 
-        width: 100%; 
-        min-width: unset; 
-    }
-
-    
-    .layout-with-sidebars {
-        display: flex; 
-        flex-direction: column; 
-        width: 100%; 
-        max-width: 100%; 
-        margin: 0 auto; 
-        padding: 0; 
-    }
-
-    
-    .divider {
-        display: none; 
-    }
-
-  
-  }
-
-
-
-
 
 
 
