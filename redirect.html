@@ -3,122 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bem-vindo(a) ao Meu Site!</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/ico" href="favicon.ico"/>
+    <title>min kurosu</title>
+    <link rel="icon" type="image/ico" href="imgs/site_imgs/favicon.ico"/>
+    <link rel="style" href="emo.css">
     <style>
-
-
-.caixamaisclara-entrada {
-    background-image: url('wood.png'); /* Caminho para sua imagem wood.png */
-    background-size: cover;
-    background-position: center;
-    border-radius: 10px;
-
-    padding: 30px;
-    text-align: center;
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    max-width: 90%; /* Ajuste para responsividade */
-    max-height: 90vh; /* Limita a altura para telas menores */
-    display: flex; /* Para centralizar o conteúdo verticalmente */
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; /* Organiza itens em coluna */
+        
+  @font-face {
+  font-family: "Born2bSportyFS";
+  src: url(fonts/Born2bSportyFS.otf) format('truetype');
 }
 
-.caixamaisclara-entrada:hover {
-    transform: scale(1.03);
-   
+  #logobig {
+  max-width: 100%;
+  max-height: 200px;
+  object-fit: contain;
+  animation: breathing 2.5s infinite ease-in-out;
+  transition: transform 0.3s ease-in-out;
 }
 
-.caixamaisclara-entrada img {
-    max-width: 80%; /* Imagem menor para caber na div */
-    height: auto;
-    display: block;
-    margin: 0 auto; /* Centraliza a imagem */
-    /* Remova ou ajuste esta linha se sua imagem já for colorida ou tiver o efeito desejado */
-  
-    transition: filter 0.3s ease-in-out;
+#logobig:hover {
+  transform: scale(1.15) translateY(10px);
+  transition: 0.4s;
 }
 
-.caixamaisclara-entrada:hover img {
-    filter: grayscale(0%); /* Mantém colorida no hover */
+@keyframes breathing {
+  0% {
+    transform: translateY(-1px) scale(1);
+  }
+  50% {
+    transform: translateY(-10px) scale(1);
+  }
+  100% {
+    transform: translateY(-1px) scale(1);
+  }
 }
 
-/* Opcional: Estilos para telas muito pequenas */
-@media (max-width: 600px) {
-    .caixamaisclara-entrada {
-        padding: 15px; /* Menos padding em telas pequenas */
-    }
-    .caixamaisclara-entrada img {
-        max-width: 90%; /* Aumenta um pouco a imagem em telas pequenas */
-    }
-}
-
-        /* Estilos específicos para esta página de entrada */
         body {
             margin: 0;
             padding: 0;
-          
+            background-image: url('imgs/site_imgs/petcemetery.gif');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh; /* Ocupa a altura total da viewport */
-            overflow: hidden; /* Evita barras de rolagem */
+            min-height: 100vh;
+            overflow: hidden;
+          font-family: "Born2bSportyFS";
+            color: #524f4f; /* Cor do texto branco para contraste */
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+            cursor: pointer; /* Adiciona o cursor de clique no corpo todo */
         }
 
-        .caixamaisclara-entrada {
-            background-image: url('wood.png'); /* Caminho para sua imagem de madeira */
-            background-size: cover; /* Cobre toda a área da div */
-            background-position: center; /* Centraliza a imagem de fundo */
-            border-radius: 10px; /* Cantos arredondados, combinando com seu estilo */
-
-            padding: 30px; /* Espaçamento interno */
-            text-align: center; /* Centraliza o conteúdo (a imagem) */
-            cursor: pointer; /* Muda o cursor para indicar que é clicável */
-            transition: transform 0.3s ease-in-out; /* Transição suave para hover */
-            max-width: 90%; /* Largura máxima para responsividade */
-            aspect-ratio: 16 / 9; /* Mantém uma proporção para a caixa, ajustável se necessário */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column; /* Para alinhar a imagem e possível texto verticalmente */
+        .container {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.7); /* Fundo semi-transparente para o conteúdo */
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 80%;
+           
+            box-shadow: 0 0 10px #000000, 0 0 20px #1f1f1f; /* Brilho neon */
+            animation: pulse 1.5s infinite alternate; /* Animação de pulsar */
         }
 
-        .caixamaisclara-entrada:hover {
-            transform: scale(1.03); /* Aumenta um pouco no hover */
-         
+        .container img {
+            max-width: 100%;
+            height: auto;
+     
         }
 
-        .caixamaisclara-entrada img {
-            max-width: 80%; /* A imagem ocupa 80% da largura da div pai */
-            height: auto; /* Mantém a proporção */
-            display: block; /* Remove espaços extras */
-            margin-bottom: 20px; /* Espaço entre a imagem e um possível texto (se você adicionar depois) */
-            /* Se sua imagem já tem o efeito de "play", remova o filtro grayscale */
-          
-            transition: filter 0.3s ease-in-out;
-        }
+  #logobig {
+  max-width: 100%;
+  max-height: 400px;!important
+  object-fit: contain;
+  animation: breathing 2.5s infinite ease-in-out;
+  transition: transform 0.3s ease-in-out;
+}
 
     </style>
 </head>
 <body>
-   <div class="caixamaisclara-entrada">
-    <a href="https://minkurosu.github.io">
-        <img src="logo.png" alt="enter">
-    </a>
-</div>//
+    <div class="container" onclick="window.location.href='https://minkurosu.github.io';">
+        <img src="imgs/site_imgs/logo.png" alt="logo" style="height: 300px;"  id="logobig">
+        <h1>welcome to my site!!</h1>
+        <h2>
+           warning: <br>
+           - this site is not fully responsible<br>
+           - it contains blinky images<br>
+           - besides this page being hosted on neocities, <br>the rest of the blog is hosted on github for better usage
+        - the site is not recommended for minors, cuz im +18 and talk about anything i want there
+        </h2>
+        <p style="margin-top: 20px;">click anywhere to proceed</p>
+    </div>
+
     <script>
-        // Este script garante que o redirecionamento funcione
-        document.addEventListener('DOMContentLoaded', function() {
-            const caixaEntrada = document.querySelector('.caixamaisclara-entrada');
-            if (caixaEntrada) {
-                caixaEntrada.onclick = function() {
-                    // Redireciona para o seu arquivo index.html principal
-                    window.location.href = 'index.html'; 
-                };
-            }
+        document.body.addEventListener('click', function() {
+            window.location.href = 'https://minkurosu.github.io';
         });
     </script>
 </body>
