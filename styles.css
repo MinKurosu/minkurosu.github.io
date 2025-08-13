@@ -60,7 +60,8 @@ a, button, input[type="submit"], input[type="button"], select {
 }
 
   html, body {
- 
+   
+scrollbar-width: thin;
   margin: 0;
   padding: 0;
   background-attachment: fixed;
@@ -96,7 +97,8 @@ a, button, input[type="submit"], input[type="button"], select {
     font-size: 16px;
   }
 
-  
+
+
 
 .marked-link {
     text-decoration: underline; 

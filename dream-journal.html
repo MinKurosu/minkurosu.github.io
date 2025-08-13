@@ -1,240 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <script src="oneko.js"></script>
-    <script>NekoType="black"</script>
- <script src="carregar-sidebars.js"></script>
+  <script src="oneko.js"></script>
+  <script>NekoType = "black"</script>
+  <script src="carregar-sidebars.js"></script>
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4K5KDKEJ2E"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-4K5KDKEJ2E');
-    </script>
-    <script> window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches </script>
-    <meta charset="UTF-8">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4K5KDKEJ2E"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-4K5KDKEJ2E');
+  </script>
+  <script> window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches </script>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=1600px, initial-scale=0.4, maximum-scale=1.0, user-scalable=yes">
-    <meta property="og:image" content="https://i.ibb.co/RC2v9zg/sitethumbnail.png"/>
-    <meta property="og:image" content="imgs/site_imgs/sitethumbnail.png"/>
-   
-
-    <link rel="stylesheet" href="styles.css" id="theme-stylesheet">
-      <title>@minkurosu</title>
-   
-    <link rel="icon" type="image/ico" href="imgs/site_imgs/favicon.ico"/>
-   
-<style>
+  <meta property="og:image" content="https://i.ibb.co/RC2v9zg/sitethumbnail.png" />
+  <meta property="og:image" content="imgs/site_imgs/sitethumbnail.png" />
 
 
-html, body, iframe{
-  cursor: url('imgs/cursor/ROCKcursornormal.cur'), auto;
-}
+  <link rel="stylesheet" href="styles.css" id="theme-stylesheet">
+  <title>@minkurosu</title>
+
+  <link rel="icon" type="image/ico" href="imgs/site_imgs/favicon.ico" />
+
+  <style>
+    html,
+    body,
+    iframe {
+      cursor: url('imgs/cursor/ROCKcursornormal.cur'), auto;
+    }
 
 
-a, button, input[type="submit"], input[type="button"], select {
-  cursor: url('imgs/cursor/ROCKcursorselect.cur'), pointer;
-}
+    a,
+    button,
+    input[type="submit"],
+    input[type="button"],
+    select {
+      cursor: url('imgs/cursor/ROCKcursorselect.cur'), pointer;
+    }
 
- .caixamaisclaraCenterSimple{
-     box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
-     flex-direction: column
-}
-
-
-   #theme-toggle-button {
-    background: none !important; 
-    appearance: none;        
-    -webkit-appearance: none; 
-    -moz-appearance: none;   
-    background: none;
-    border: none;
-    padding: 0;
-    margin: 0; 
-    cursor: pointer;
-    outline: none;
-}
+    .caixamaisclaraCenterSimple {
+      box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
+      flex-direction: column
+    }
 
 
-header {
- 
-    padding: 5px;
-    background-attachment: fixed;
-    margin-bottom: 2%;
-    border-radius: 0 0 1.25rem 1.25rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5);
-    width: 100%;
-    max-width: 70rem; 
-    box-sizing: border-box;
-    max-height: 5rem;
-}
+    #theme-toggle-button {
+      background: none !important;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background: none;
+      border: none;
+      padding: 0;
+      margin: 0;
+      cursor: pointer;
+      outline: none;
+    }
 
 
-.caixamaisclara {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+    header {
+
+      padding: 5px;
+      background-attachment: fixed;
+      margin-bottom: 2%;
+      border-radius: 0 0 1.25rem 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5);
+      width: 100%;
+      max-width: 70rem;
+      box-sizing: border-box;
+      max-height: 5rem;
+    }
 
 
- 
-
-
-
-
-
-
-#posts-container {
-    padding: 10px;
-}
-
-
-
-.blog-post {
-    background-color: transparent;
-    border: none;
-    padding: 5px 0;
-    margin: 0;
-    border-radius: 0;
-    box-shadow: none;
-    word-wrap: break-word;
-    text-align: left;
-}
-
-
-
-
-.post-author-name {
-    font-weight: bold;
-}
-
-.post-separator {
-    font-size: 1.2em;
-    line-height: 1;
-}
-
-.post-date {
-    
-}
-
-
-
-.blog-post img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 10px auto;
-    border-radius: 4px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-}
+    .caixamaisclara {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
 
 
 
 
-#theme-toggle-button {
-    background: none !important; 
-    appearance: none;        
-    -webkit-appearance: none; 
-    -moz-appearance: none;   
-    background: none;
-    border: none;
-    padding: 0;
-    margin: 0; 
-    cursor: pointer;
-    outline: none;
-}
 
-</style>
+
+
+
+    #posts-container {
+      padding: 10px;
+    }
+
+
+
+    .blog-post {
+      background-color: transparent;
+      border: none;
+      padding: 5px 0;
+      margin: 0;
+      border-radius: 0;
+      box-shadow: none;
+      word-wrap: break-word;
+      text-align: left;
+    }
+
+
+
+
+    .post-author-name {
+      font-weight: bold;
+    }
+
+    .post-separator {
+      font-size: 1.2em;
+      line-height: 1;
+    }
+
+    .post-date {}
+
+    #container {
+      max-width: 50rem;
+    }
+
+    .blog-post img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 10px auto;
+      border-radius: 4px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+
+
+
+
+
+    #theme-toggle-button {
+      background: none !important;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background: none;
+      border: none;
+      padding: 0;
+      margin: 0;
+      cursor: pointer;
+      outline: none;
+    }
+  </style>
 
 </head>
+
 <body>
 
-<div class="layout-with-sidebars">
+  <div class="layout-with-sidebars">
 
-   <aside id="sidebar-esquerda-container" class="sidebar">
-        </aside>
+    <aside id="sidebar-esquerda-container" class="sidebar">
+    </aside>
     <main id="containerprincipal">
-            <header id="header" class="fixed-top">
-                <div id="divpatinha">
-                    <img src="imgs/site_imgs/patinha.png" id="logopatinha" alt="logo da barra de navegação">
-                </div>
-                <nav class="navbar">
-                 <div class="divitems">
+      <header id="header" class="fixed-top">
+        <div id="divpatinha">
+          <img src="imgs/site_imgs/patinha.png" id="logopatinha" alt="logo da barra de navegação">
+        </div>
+        <nav class="navbar">
+          <div class="divitems">
 
-         <div class="nav-item">
-    <a href="#" onclick="history.back(); return false;" class="nav-link">back</a>
-</div>
-
-        <div class="nav-item">
-          <a href="index.html" target="_self" class="nav-link">home</a>
-        </div>
-        <div class="nav-item">
-          <a href="feed.html" target="_self" class="nav-link">feed</a>
-        </div>
-        
-        <div class="nav-item">
-          <a href="blog.html" target="_self" class="nav-link">blog</a>
-        </div>
-        <div class="nav-item">
-          <a href="links.html" target="_self" class="nav-link">links</a>
-        </div>
-        <div class="nav-item">
-          <a href="portfolio-menu.html" target="_self" class="nav-link">portfolio</a>
-        </div>
-         
-                    </div>
-                </nav>
-            </header>
-            <div id="container">
-              <main id="containerprincipal">
-             
-           
-                <div class="caixamaisclara">
-                    <img id="logobig" src="imgs/site_imgs/logo.png" alt="Logo" data-position="center">
-                   
-                 <br>
-                </div>
-<br>
-                <div class="caixamaisclaraCenterSimple">
-                 <h4>sorry if there any foreign readers, i kinda wanna do my entries in brazilian portuguese 'cause it's my first language, so feel free to translate if you're interested enough to read.</h4>
-               <div id="google_translate_element"></div>
-            
-</div>
-               <hr>
-                <div class="caixamaisclara" id="dreams-container">
-                    <h2>loading dreams...</h2> 
-                </div>
+            <div class="nav-item">
+              <a href="#" onclick="history.back(); return false;" class="nav-link">back</a>
             </div>
+
+            <div class="nav-item">
+              <a href="index.html" target="_self" class="nav-link">home</a>
+            </div>
+            <div class="nav-item">
+              <a href="feed.html" target="_self" class="nav-link">feed</a>
+            </div>
+
+            <div class="nav-item">
+              <a href="blog.html" target="_self" class="nav-link">blog</a>
+            </div>
+            <div class="nav-item">
+              <a href="links.html" target="_self" class="nav-link">links</a>
+            </div>
+            <div class="nav-item">
+              <a href="portfolio-menu.html" target="_self" class="nav-link">portfolio</a>
+            </div>
+
+          </div>
+        </nav>
+      </header>
+      <div id="container">
+        <main id="containerprincipal">
+
+
+          <div class="caixamaisclara">
+            <img id="logobig" src="imgs/site_imgs/logo.png" alt="Logo" data-position="center">
+
+            <br>
+          </div>
+          <br>
+          <div class="caixamaisclaraCenterSimple">
+            <h4>sorry if there any foreign readers, i kinda wanna do my entries in brazilian portuguese 'cause it's my
+              first language, so feel free to translate if you're interested enough to read.</h4>
+            <div id="google_translate_element"></div>
+
+          </div>
+          <hr>
+          <div class="caixamaisclara" id="dreams-container">
+            <h2>loading dreams...</h2>
+          </div>
+      </div>
     </main>
 
     <aside id="sidebar-direita-container" class="sidebar sidebar-right">
-        </aside>
+    </aside>
 
-</div>
-<script src="lastfm-widget.js"></script>
- <script src="script.js"></script>
+  </div>
+  <script src="lastfm-widget.js"></script>
+  <script src="script.js"></script>
   <script src="theme-switcher.js"></script>
 
 
- <script src="script.js"></script>
- <script type="module" src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"></script>
-    <script type="module" src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js"></script>
-    <script type="module" src="dream-journal.js"></script>
- 
+  <script src="script.js"></script>
+  <script type="module" src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"></script>
+  <script type="module" src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js"></script>
+  <script type="module" src="dream-journal.js"></script>
 
 
-<script type="text/javascript">
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({pageLanguage: 'pt', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-}
-</script>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-       
- </body>
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({ pageLanguage: 'pt', layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+</body>
 
 </html>

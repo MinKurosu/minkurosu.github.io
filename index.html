@@ -1,99 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <script src="oneko.js"></script>
-    <script>NekoType="black"</script>
+    <script>NekoType = "black"</script>
     <script src="carregar-sidebars.js"></script>
 
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4K5KDKEJ2E"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-4K5KDKEJ2E');
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-4K5KDKEJ2E');
     </script>
     <script> window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches </script>
     <meta charset="UTF-8">
-  <meta name="viewport" content="width=1920px, initial-scale=0.4, maximum-scale=1.0, user-scalable=yes">
-    <meta property="og:image" content="https://i.ibb.co/RC2v9zg/sitethumbnail.png"/>
-    <meta property="og:image" content="imgs/site_imgs/sitethumbnail.png"/>
-   
+    <meta name="viewport" content="width=1920px, initial-scale=0.4, maximum-scale=1.0, user-scalable=yes">
+    <meta property="og:image" content="https://i.ibb.co/RC2v9zg/sitethumbnail.png" />
+    <meta property="og:image" content="imgs/site_imgs/sitethumbnail.png" />
 
-   <link rel="stylesheet" href="styles.css" id="theme-stylesheet">
+
+    <link rel="stylesheet" href="styles.css" id="theme-stylesheet">
     <title>@minkurosu</title>
-   
-    <link rel="icon" type="image/ico" href="imgs/site_imgs/favicon.ico"/>
-   
-<style>
+
+    <link rel="icon" type="image/ico" href="imgs/site_imgs/favicon.ico" />
+
+    <style>
+        html,
+        body,
+        iframe {
+            cursor: url('imgs/cursor/ROCKcursornormal.cur'), auto;
+        }
 
 
-html, body, iframe{
-  cursor: url('imgs/cursor/ROCKcursornormal.cur'), auto;
-}
+        a,
+        button,
+        input[type="submit"],
+        input[type="button"],
+        select {
+            cursor: url('imgs/cursor/ROCKcursorselect.cur'), pointer;
+        }
 
 
-a, button, input[type="submit"], input[type="button"], select {
-  cursor: url('imgs/cursor/ROCKcursorselect.cur'), pointer;
-}
+        #containerprincipal {
+            border-radius: 1.25rem;
+            text-align: center;
+            margin: 0 auto;
+            width: 100%;
+            max-width: 50rem;
+            box-sizing: border-box;
 
- 
-    #containerprincipal {
-      border-radius: 1.25rem;
-      text-align: center;
-      margin: 0 auto;
-      width: 100%;
-      max-width: 50rem;
-      box-sizing: border-box;
-   
-      text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-    }
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+        }
 
-    #container {
+        #container {
 
-      padding: 1.25rem;
-      border-radius: 1.25rem;
-      box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
-      text-align: center;
-      margin: 0 auto;
-      width: 100%;
-      max-width: 50rem;
-      box-sizing: border-box;
-      
-      text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-    }
+            padding: 1.25rem;
+            border-radius: 1.25rem;
+            box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
+            text-align: center;
+            margin: 0 auto;
+            width: 100%;
+            max-width: 50rem;
+            box-sizing: border-box;
 
-    .galeria-container {
-    width: 700px;
-    height: 300px;
- 
-     border-radius: 8px;
-    overflow: auto; 
-    padding: 10px;
-    box-sizing: border-box;
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+        }
 
-    margin-left: auto;
-    margin-right: auto;
- 
-}
+        .galeria-container {
+            width: 700px;
+            height: 300px;
+
+            border-radius: 8px;
+            overflow: auto;
+            padding: 10px;
+            box-sizing: border-box;
+
+            margin-left: auto;
+            margin-right: auto;
+
+        }
 
         .galeria-grid {
             display: grid;
-    
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); 
-            gap: 15px; 
+
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 15px;
             padding: 5px;
-            justify-items: center; 
-            align-items: center; 
+            justify-items: center;
+            align-items: center;
         }
 
         .galeria-grid img {
-            max-width: 100%; 
-            height: 120px; 
-            
-           
-            object-fit: contain; 
-            
+            max-width: 100%;
+            height: 120px;
+
+
+            object-fit: contain;
+
             display: block;
             border: 1px solid #ddd;
             border-radius: 5px;
@@ -102,218 +107,260 @@ a, button, input[type="submit"], input[type="button"], select {
         }
 
         .galeria-grid img:hover {
-            transform: scale(1.05); 
+            transform: scale(1.05);
         }
 
 
 
-#theme-toggle-button {
-    background: none !important; 
-    appearance: none;        
-    -webkit-appearance: none; 
-    -moz-appearance: none;   
-    background: none;
-    border: none;
-    padding: 0;
-    margin: 0; 
-    cursor: pointer;
-    outline: none;
-}
-</style>
+        #theme-toggle-button {
+            background: none !important;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background: none;
+            border: none;
+            padding: 0;
+            margin: 0;
+            cursor: pointer;
+            outline: none;
+        }
+    </style>
 
 </head>
+
 <body>
 
-<div class="layout-with-sidebars">
- <aside id="sidebar-esquerda-container" class="sidebar">
+    <div class="layout-with-sidebars">
+        <aside id="sidebar-esquerda-container" class="sidebar">
         </aside>
-  
-    <main id="containerprincipal">
-        <header id="header" class="fixed-top">
-            <div id="divpatinha">
-                <img src="imgs/site_imgs/patinha.png" class="desaturatepics" id="logopatinha" alt="logo da barra de navegação">
-            </div>
-            <nav class="navbar">
-                <div class="divitems">
-                    <div class="nav-item">
-                        <a href="#" onclick="history.back(); return false;" class="nav-link">back</a>
-                    </div>
-                    <div class="nav-item">
-                        <a href="index.html" target="_self" class="nav-link">home</a>
-                    </div>
-                    <div class="nav-item">
-                        <a href="feed.html" target="_self" class="nav-link">feed</a>
-                    </div>
-                    <div class="nav-item">
-                        <a href="blog.html" target="_self" class="nav-link">blog</a>
-                    </div>
-                    <div class="nav-item">
-                        <a href="links.html" target="_self" class="nav-link">links</a>
-                    </div>
-                    <div class="nav-item">
-                        <a href="portfolio-menu.html" target="_self" class="nav-link">portfolio</a>
-                    </div>
+
+        <main id="containerprincipal">
+            <header id="header" class="fixed-top">
+                <div id="divpatinha">
+                    <img src="imgs/site_imgs/patinha.png" class="desaturatepics" id="logopatinha"
+                        alt="logo da barra de navegação">
                 </div>
-            </nav>
-        </header>
-        <div id="container">
-            <div class="caixamaisclara">
-                <img id="logobig" src="imgs/site_imgs/logo.png" alt="Logo" data-position="center">
-            </div>
-            <hr>
-            <h1 id="nl"><script src="https://webneko.net/n20171213.js"></script><a href="https://webneko.net">Neko</a></h1>
-           
-            <div class="caixamaisclara">
-                <div class="maincollums">
-                    <div class="column">
-                        <div class="welcome">
-                            <h2 class="nomeSide likes" style="display: inline;">welcome</h2>
-                            <img src="imgs/webgraphics/pixels/hipaw.gif" style="vertical-align: middle;"><br>
+                <nav class="navbar">
+                    <div class="divitems">
+                        <div class="nav-item">
+                            <a href="#" onclick="history.back(); return false;" class="nav-link">back</a>
                         </div>
-                        <h4>hii! welcome to my site. this is my little space on the internet, my attempt to have a place beside social media (cuz it ruins your mental health)</h4>
-                        <h4>this site will always be under construction, because i'll be changing and updating things often, so careful with broken buttons!</h4>
-                        <h4>i also swear a lot but i dont care, my page my rulez </h4>
+                        <div class="nav-item">
+                            <a href="index.html" target="_self" class="nav-link">home</a>
+                        </div>
+                        <div class="nav-item">
+                            <a href="feed.html" target="_self" class="nav-link">feed</a>
+                        </div>
+                        <div class="nav-item">
+                            <a href="blog.html" target="_self" class="nav-link">blog</a>
+                        </div>
+                        <div class="nav-item">
+                            <a href="links.html" target="_self" class="nav-link">links</a>
+                        </div>
+                        <div class="nav-item">
+                            <a href="portfolio-menu.html" target="_self" class="nav-link">portfolio</a>
+                        </div>
                     </div>
+                </nav>
+            </header>
+            <div id="container">
+                <div class="caixamaisclara">
+                    <img id="logobig" src="imgs/site_imgs/logo.png" alt="Logo" data-position="center">
+                </div>
+                <hr>
+                <h1 id="nl">
+                    <script src="https://webneko.net/n20171213.js"></script><a href="https://webneko.net">Neko</a>
+                </h1>
+
+                <div class="caixamaisclara">
+                    <div class="maincollums">
+                        <div class="column">
+                            <div class="welcome">
+                                <h2 class="nomeSide likes" style="display: inline;">welcome</h2>
+                                <img src="imgs/webgraphics/pixels/hipaw.gif" style="vertical-align: middle;"><br>
+                            </div>
+                            <h4>hii! welcome to my site. this is my little space on the internet, my attempt to have a
+                                place beside social media (cuz it ruins your mental health)</h4>
+                            <h4>this site will always be under construction, because i'll be changing and updating
+                                things often, so careful with broken buttons!</h4>
+                            <h4>i also swear a lot but i dont care, my page my rulez </h4>
+                        </div>
+                        <div class="column">
+                            <h3>PLEASE DO NOT INTERACT if:</h3>
+                            <img src="imgs/webgraphics/pixels/hiss.gif">
+                            <h4>dni if you're alt-right / incel / racist / zionist / nazi /homophobic / transphobic /
+                                psychophobic / any hate-based phobic, or any of those terrible shit. </h4>
+                            <h4>I also highly advise not visiting my site if you're my family member or know me from
+                                work or something alike.</h4>
+                        </div>
+                    </div>
+                    <hd></hd>
+                </div>
+                <div class="maincollums">
+                </div>
+                <hr>
+                <div class="spotify">
+
+                    <iframe style="border-radius:12px"
+                        src="https://open.spotify.com/embed/playlist/6B8MXoqO8DFZ0nWEHrM4cG?utm_source=generator&theme=0"
+                        width="100%" height="153" frameBorder="0" allowfullscreen=""
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                        loading="lazy"></iframe>
+                </div>
+                <hr>
+
+                <div class="caixamaisclaraInterests">
                     <div class="column">
-                        <h3>PLEASE DO NOT INTERACT if:</h3>
-                        <img src="imgs/webgraphics/pixels/hiss.gif">
-                        <h4>dni if you're alt-right / incel / racist / zionist / nazi /homophobic / transphobic / psychophobic / any hate-based phobic, or any of those terrible shit. </h4>
-                        <h4>I also highly advise not visiting my site if you're my family member or know me from work or something alike.</h4>
+                        <H2 class="likes">LIKES</H2>
+                        <H4>cats, psychology, dark clothes, my chemical romance, art, gaming, rain and cold weather, my
+                            boyfriend, photography, nature, sleeping, anime, piercings, tattoos, black nail polish,
+                            social causes, my family, </H4>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="column">
+                        <H2 class="deslikes">DESLIKES</H2>
+                        <H4>capitalism, injustice, loud/annoying noises, billionaires, white ceiling lights, forced
+                            positivity, closed minds, ppl who litter, social cues, egotistical people </H4>
                     </div>
                 </div>
-                <hd></hd> </div>
-            <div class="maincollums">
-            </div>
-            <hr>
-             <div class="spotify">
-                 
-                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6B8MXoqO8DFZ0nWEHrM4cG?utm_source=generator&theme=0" width="100%" height="153" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-            </div> 
-            <hr>
-          
-            <div class="caixamaisclaraInterests">
-                <div class="column">
-                    <H2 class="likes">LIKES</H2>
-                    <H4>cats, psychology, dark clothes, my chemical romance, art, gaming, rain and cold weather, my boyfriend, photography, nature, sleeping, anime, piercings, tattoos, black nail polish, social causes, my family, </H4>
+                <br>
+                <div class="caixamaisclaraInterests">
+                    <div class="column">
+                        <table style="border-collapse: collapse; width: 100%; background-color: transparent;">
+                            <tr>
+                                <th style="border: 1px solid black; padding: 8px;">interests</th>
+                                <th style="border: 1px solid black; padding: 8px;">items</th>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid black; padding: 8px;">music</td>
+                                <td style="border: 1px solid black; padding: 8px;">my chemical romance, westkust,
+                                    melanie martinez, muse, avanged sevenfold, type o negative, <a
+                                        href="https://open.spotify.com/intl-pt/artist/2Gz78gC3i0E5nLHKwzfGGh?si=79cbe94a830942ec"
+                                        class="marked-link">garden psychedelia</a> ghost, korn, linkin park, rita lee,
+                                    lady gaga, ghost, chappel roan, jazmin bean, lil peep, deftones, paramore, soad,
+                                    ptv, </td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid black; padding: 8px;">games</td>
+                                <td style="border: 1px solid black; padding: 8px;">minecraft, stardew valley, cs:go,
+                                    lol, the sims, animal crossing, rythm heaven,</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid black; padding: 8px;">hobbies</td>
+                                <td style="border: 1px solid black; padding: 8px;">drawing, webdesign, needle felting,
+                                    kung fu (new!), studying psychology</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid black; padding: 8px;">movies and shows</td>
+                                <td style="border: 1px solid black; padding: 8px;">the x files, attack on titan, matrix,
+                                    twilight, nope, poor things, arcane, the haunting series, black mirror, yuri on ice,
+                                    steven universe, my little pony, orphan, léon. edward scissorhands, hellraiseer,
+                                    e.t, hannibal, fleabag, </td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid black; padding: 8px;">foods</td>
+                                <td style="border: 1px solid black; padding: 8px;">chocolate, cinnamon tea, nerds
+                                    candy!!!!, italian food, VEGAN FOOD FROM A SPECIFIC RESTAURANT WHERE I LIVE,
+                                    carrots, cinnamon candy and gum, carbonara w/ no bacon, milk with coffee and
+                                    chocolate powder, </td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid black; padding: 8px;">kins</td>
+                                <td style="border: 1px solid black; padding: 8px;">fluttershy, pearl (steven universe),
+                                    jinx, vex,</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid black; padding: 8px;">colors</td>
+                                <td style="border: 1px solid black; padding: 8px;"> black, gray, brown, red, low
+                                    saturated and dark tones</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid black; padding: 8px;">smells</td>
+                                <td style="border: 1px solid black; padding: 8px;">rain, good herbs, ocean, home, my
+                                    cats bellies, my bf, chocolate, cinnamon</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid black; padding: 8px;">actress</td>
+                                <td style="border: 1px solid black; padding: 8px;">kristen stewart, keanu reeves, mads
+                                    mikkelsen, sophie tatcher, </td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
-                <div class="divider"></div>
-                <div class="column">
-                    <H2 class="deslikes">DESLIKES</H2>
-                    <H4>capitalism, injustice, loud/annoying noises, billionaires, white ceiling lights, forced positivity, closed minds, ppl who litter, social cues, egotistical people </H4>
+                <hr>
+                <div class="caixamaisclaraInterests">
+                    <div class="column">
+                        <H4></H4>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="column">
+                    </div>
                 </div>
-            </div>
-         <br>
-            <div class="caixamaisclaraInterests">
-                <div class="column">
-                    <table style="border-collapse: collapse; width: 100%; background-color: transparent;">
-                <tr>
-                        <th style="border: 1px solid black; padding: 8px;">interests</th>
-                    <th style="border: 1px solid black; padding: 8px;">items</th>
-                </tr>
-                <tr>
-                    <td style="border: 1px solid black; padding: 8px;">music</td>
-                    <td style="border: 1px solid black; padding: 8px;">my chemical romance, westkust, melanie martinez, muse, avanged sevenfold, type o negative, <a href="https://open.spotify.com/intl-pt/artist/2Gz78gC3i0E5nLHKwzfGGh?si=79cbe94a830942ec" class="marked-link">garden psychedelia</a> ghost, korn, linkin park, rita lee, lady gaga, ghost, chappel roan, jazmin bean, lil peep, deftones, paramore, soad, ptv, </td>
-                </tr>
-                 <tr>
-                    <td style="border: 1px solid black; padding: 8px;">games</td>
-                    <td style="border: 1px solid black; padding: 8px;">minecraft, stardew valley, cs:go, lol, the sims, animal crossing, rythm heaven,</td>
-                </tr>
-                 <tr>
-                    <td style="border: 1px solid black; padding: 8px;">hobbies</td>
-                    <td style="border: 1px solid black; padding: 8px;">drawing, webdesign, needle felting, kung fu (new!), studying psychology</td>
-                </tr>
-                 <tr>
-                    <td style="border: 1px solid black; padding: 8px;">movies and shows</td>
-                    <td style="border: 1px solid black; padding: 8px;">the x files, attack on titan, matrix,  twilight, nope, poor things, arcane, the haunting series, black mirror, yuri on ice, steven universe, my little pony, orphan, léon. edward scissorhands, hellraiseer, e.t, hannibal, fleabag, </td>
-                </tr>
-                <tr>
-                    <td style="border: 1px solid black; padding: 8px;">foods</td>
-                    <td style="border: 1px solid black; padding: 8px;">chocolate, cinnamon tea, nerds candy!!!!, italian food, VEGAN FOOD FROM A SPECIFIC RESTAURANT WHERE I LIVE, carrots, cinnamon candy and gum, carbonara w/ no bacon, milk with coffee and chocolate powder, </td>
-                </tr>
-                 <tr>
-                    <td style="border: 1px solid black; padding: 8px;">kins</td>
-                    <td style="border: 1px solid black; padding: 8px;">fluttershy, pearl (steven universe), jinx, vex,</td>
-                </tr>
-                  <tr>
-                    <td style="border: 1px solid black; padding: 8px;">colors</td>
-                    <td style="border: 1px solid black; padding: 8px;"> black, gray, brown, red, low saturated and dark tones</td>
-                </tr>
-                 <tr>
-                    <td style="border: 1px solid black; padding: 8px;">smells</td>
-                    <td style="border: 1px solid black; padding: 8px;">rain, good herbs, ocean, home, my cats bellies, my bf, chocolate, cinnamon</td>
-                </tr>
-                  <tr>
-                    <td style="border: 1px solid black; padding: 8px;">actress</td>
-                    <td style="border: 1px solid black; padding: 8px;">kristen stewart, keanu reeves, mads mikkelsen, sophie tatcher, </td>
-                </tr>
-            </table>
+
+
+                <div class="caixamaisclara">
+                    <iframe src="https://minkurosu.atabook.org" width="100%" height="500"
+                        style="border:;overflow:hidden;" scrolling="yes" frameborder="0" allowfullscreen></iframe>
+
                 </div>
+
+
+
+
+
+
+
+
+
+                <hr>
+                <h2>send me a msg, drawing</h2>
+                <h2>or music!!</h2>
+
+                <iframe src="https://minkurosu.straw.page" width="100%" height="550" style="border:;overflow:hidden;"
+                    scrolling="no" frameborder="0" allowfullscreen></iframe>
+
+
+
+
+                <h3>art by mutuals:</h3>
+                <br>
+                <div class="galeria-container">
+                    <div class="galeria-grid">
+                        <img src="imgs/artbyyou/gatoemo.webp" alt="miau!">
+                        <img src="imgs/artbyyou/brasilsilsil.webp" alt="brasil caraleo">
+                        <img src="imgs/artbyyou/Screenshot_20250718_175121_Gallery.jpg" alt="Descrição da Imagem 1">
+                        <img src="imgs/artbyyou/Screenshot_20250718_175137_Gallery.jpg" alt="Descrição da Imagem 1">
+                        <img src="imgs/artbyyou/Screenshot_20250718_175151_Gallery.jpg" alt="Descrição da Imagem 1">
+                    </div>
+                </div>
+
             </div>
-            <hr>
+        </main>
 
 
 
-<div class="caixamaisclara">
-  <iframe src="https://minkurosu.atabook.org" width="100%" height="500" style="border:;overflow:hidden;" scrolling="yes" frameborder="0" allowfullscreen></iframe>
-
-</div>
-
-
-
-
-
-
-
-
-
-           <hr>
-            <h2>send me a msg, drawing</h2>
-            <h2>or music!!</h2>
-      
-        <iframe src="https://minkurosu.straw.page" width="100%" height="550" style="border:;overflow:hidden;" scrolling="no" frameborder="0" allowfullscreen></iframe>
-    
-     
-
-
-        <h3>art by mutuals:</h3>
-          <br>
-    <div class="galeria-container">
-        <div class="galeria-grid">
-            <img src="imgs/artbyyou/gatoemo.webp" alt="miau!">
-             <img src="imgs/artbyyou/brasilsilsil.webp" alt="brasil caraleo">
-              <img src="imgs/artbyyou/Screenshot_20250718_175121_Gallery.jpg" alt="Descrição da Imagem 1">
-                <img src="imgs/artbyyou/Screenshot_20250718_175137_Gallery.jpg" alt="Descrição da Imagem 1">
-                  <img src="imgs/artbyyou/Screenshot_20250718_175151_Gallery.jpg" alt="Descrição da Imagem 1">
-            </div>
-    </div>
-
-          </div>
-    </main>
-
-   
-
-    <aside id="sidebar-direita-container" class="sidebar sidebar-right">
+        <aside id="sidebar-direita-container" class="sidebar sidebar-right">
         </aside>
 
 
-</div>
-</div>
     </div>
-</div>
-</div>
-        </div>
-        
-        </div>
-        
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+    </div>
+
     </aside>
 
-</div>
-<script src="lastfm-widget.js"></script>
- <script src="script.js"></script>
-  <script src="theme-switcher.js"></script>
+    </div>
+    <script src="lastfm-widget.js"></script>
+    <script src="script.js"></script>
+    <script src="theme-switcher.js"></script>
 
 
-       
- </body>
+
+</body>
 
 </html>
