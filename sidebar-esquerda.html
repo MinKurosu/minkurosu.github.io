@@ -1,161 +1,178 @@
 <style>
-.social-links {
-  /* Estilos para a div */
-  display: flex;
-  gap: 5px;
-  justify-content: center;
-  padding: 10px;
-}
+  .social-links {
+    /* Estilos para a div */
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    padding: 10px;
+  }
 
-.social-links a {
-  display: inline-block;
-  /* Garante que a transição de filtro e transform seja suave */
-  transition: transform 0.2s ease-in-out, filter 0.2s ease;
-}
+  .social-links a {
+    display: inline-block;
+    /* Garante que a transição de filtro e transform seja suave */
+    transition: transform 0.2s ease-in-out, filter 0.2s ease;
+  }
 
-.social-links a img {
-  width: 16px;
-  height: 16px;
-  display: block;
-}
+  .social-links a img {
+    width: 16px;
+    height: 16px;
+    display: block;
+  }
 
-/* Aplica o filtro de des-saturação nas imagens */
-.social-links a img {
-  filter: grayscale(100%);
-}
+  /* Aplica o filtro de des-saturação nas imagens */
+  .social-links a img {
+    filter: grayscale(100%);
+  }
 
-/* Efeito ao passar o mouse: remove o filtro e move o ícone */
-.social-links a:hover img {
-  transform: translateY(-5px);
-     transition: transform 0.2s ease-in-out, filter 0.2s ease-in-out;
-  filter: grayscale(0%) !important; /* !important garante que sobrescreva a regra anterior */
-}
-
-
-
+  /* Efeito ao passar o mouse: remove o filtro e move o ícone */
+  .social-links a:hover img {
+    transform: translateY(-5px);
+    transition: transform 0.2s ease-in-out, filter 0.2s ease-in-out;
+    filter: grayscale(0%) !important;
+    /* !important garante que sobrescreva a regra anterior */
+  }
 </style>
 
 <script src="lastfm-widget.js"></script>
- <script src="script.js"></script>
-  <script src="theme-switcher.js"></script>
-        <div class="box">
-            <img id="sidepic" class="desaturatepics" src="imgs/site_imgs/euirl.jpg" alt="eu irl"  height="1700px">
-        </div>
-        <div class="box">
-            <h2 id="nomeSide">min</h2>
-            <h3> 22yo • they/she/he • brasil</h3>
-            <h3>psychology student & freelance artist (digital art & live2d)</h3>
-            <h3>⚧ • ☭ • ♎︎</h3>
-            <div class="social-links">
-  <a href="https://www.instagram.com/yasmincruzm/" target="_blank" class="social-icon jumpy">
-    <img src="imgs/site_imgs/site-icons/instagram.png" alt="Instagram" width="16" height="16">
-  </a>
-  <a href="https://x.com/minkurosu" target="_blank" class="social-icon">
-    <img src="imgs/site_imgs/site-icons/twitter.png" alt="X (antigo Twitter)" width="16" height="16">
-  </a>
-
-  <a href="https://www.twitch.tv/minkurosu/" target="_blank" class="social-icon">
-    <img src="imgs/site_imgs/site-icons/twitch.png" alt="Twitch" width="16" height="16">
-  </a>
-  <a href="https://vgen.co/minkurosu/" target="_blank" class="social-icon">
-    <img src="imgs/site_imgs/site-icons/vgen.png" alt="VGen" width="16" height="16" border-radius="10px">
-  </a>
-  <a href="https://steamcommunity.com/id/minkurosu/" target="_blank" class="social-icon">
-    <img src="imgs/site_imgs/site-icons/steam.png" alt="Steam" width="16" height="16">
-  </a>
-  <a href="https://open.spotify.com/user/mimincruzm?si=04b1acd2b0a04438" target="_blank" class="social-icon">
-    <img src="imgs/site_imgs/site-icons/spotify.png" alt="Spotify" width="16" height="16">
-  </a>
-  <a href="https://neocities.org/site/minkurosu" target="_blank" class="social-icon">
-    <img src="imgs/site_imgs/site-icons/neocities.png" alt="Neocities" width="16" height="16">
-  </a>
+<script src="script.js"></script>
+<script src="theme-switcher.js"></script>
+<div class="box">
+  <img id="sidepic" class="desaturatepics" src="imgs/site_imgs/euirl.jpg" alt="eu irl" height="1700px">
 </div>
+<div class="box">
+  <h2 id="nomeSide">min</h2>
+  <h3> 22yo • they/she/he • brasil</h3>
+  <h3>psychology student & freelance artist (digital art & live2d)</h3>
+  <h3>⚧ • ☭ • ♎︎</h3>
+  <div class="social-links">
+    <a href="https://www.instagram.com/yasmincruzm/" target="_blank" class="social-icon jumpy">
+      <img src="imgs/site_imgs/site-icons/instagram.png" alt="instagram" width="16" height="16">
+    </a>
+
+    <a href="https://x.com/minkurosu" target="_blank" class="social-icon">
+      <img src="imgs/site_imgs/site-icons/twitter.png" alt="X (antigo Twitter)" width="16" height="16">
+    </a>
+
+    <a href="https://bsky.app/profile/minkurosu.bsky.social" target="_blank" class="social-icon">
+      <img src="imgs/site_imgs/site-icons/bsky.png" alt="bsky" width="16" height="16">
+    </a>
+
+    <a href="https://www.tumblr.com/minkurosu" target="_blank" class="social-icon">
+      <img src="imgs/site_imgs/site-icons/tumblr.png" alt="tumblr" width="16" height="16">
+    </a>
+
+    <a href="https://www.twitch.tv/minkurosu/" target="_blank" class="social-icon">
+      <img src="imgs/site_imgs/site-icons/twitch.png" alt="twitch" width="16" height="16">
+    </a>
+    <a href="https://vgen.co/minkurosu/" target="_blank" class="social-icon">
+      <img src="imgs/site_imgs/site-icons/vgen.png" alt="VGen" width="16" height="16" border-radius="10px">
+    </a>
+    <a href="https://steamcommunity.com/id/minkurosu/" target="_blank" class="social-icon">
+      <img src="imgs/site_imgs/site-icons/steam.png" alt="Steam" width="16" height="16">
+    </a>
+    <a href="https://open.spotify.com/user/mimincruzm?si=04b1acd2b0a04438" target="_blank" class="social-icon">
+      <img src="imgs/site_imgs/site-icons/spotify.png" alt="Spotify" width="16" height="16">
+    </a>
+    <a href="https://neocities.org/site/minkurosu" target="_blank" class="social-icon">
+      <img src="imgs/site_imgs/site-icons/neocities.png" alt="Neocities" width="16" height="16">
+    </a>
+  </div>
 
 
 
- <h3>theme changer:</h3>
-<button id="theme-toggle-button">
+  <h3>theme changer:</h3>
+  <button id="theme-toggle-button">
     <img id="theme-icon" src="imgs/site_imgs/lua.png" alt="Theme Toggle">
-</button>
-<br>
-<br>
+  </button>
+  <br>
+  <br>
 
-<div class="caixamaisclaraColumn">
-<br>
-    <div id="statuscafe"><div id="statuscafe-username"></div><div id="statuscafe-content"></div></div><script src="https://status.cafe/current-status.js?name=minkurosu" defer></script>
+  <div class="caixamaisclaraColumn">
+    <br>
+    <div id="statuscafe">
+      <div id="statuscafe-username"></div>
+      <div id="statuscafe-content"></div>
+    </div>
+    <script src="https://status.cafe/current-status.js?name=minkurosu" defer></script>
     <br>
 
-<div id="fc2-counter-container"></div> 
+    <div id="fc2-counter-container"></div>
 
-<noscript><img src="//counter1.fc2.com/counter_img.php?id=40451086&main=1" style="color:#534F4A"/></noscript>
+    <noscript><img src="//counter1.fc2.com/counter_img.php?id=40451086&main=1" style="color:#534F4A" /></noscript>
 
-<div class="buttons">
+    <div class="buttons">
 
-</div>
-        </div>
-       <br>
-            <div class="nav-side">
-               
-                  <div class="side-item"><a href="feed.html">feed</a></div>
-              <div class="side-item"><a href="thoughts.html">posts</a></div>
-                <div class="side-item"><a href="music.html">music</a></div>
-              <div class="side-item"><a href="yaoifridge.html">yaoi fridge</a></div>
-                <div class="side-item"><a href="games.html">games</a></div>
-                <div class="side-item"><a href="room.html">room</a></div>
-                  <div class="side-item"><a href="webweaving.html">webweaving</a></div>
-                 <div class="side-item"><a href="dream-journal.html">dream journal</a></div>
-                <div class="side-item"><a href="blog.html">blog</a></div> 
-                    <div class="side-item"><a href="toybox.html">toybox</a></div>
-                    <div class="side-item"><a href="portfolio-photos.html">photography</a></div>
-                <div class="side-item"><a href="guestbook.html">guestbook</a></div>
-                  <div class="side-item"><a href="minverso.html">minverso</a></div>
-                   <div class="side-item"><a href="quizzes.html">quiz/tests</a></div>
-       
-          
-         
-         
-                   <hr>
-       <br>
-       <div class="caixamaisclaraColumnSimple">
-            <h3>what am i up to?</h3>
-        
-            <table style="border-collapse: collapse; width: 100%; background-color: transparent;">
-                <tr>
-            
-                    <td style="border: 1px solid black; padding: 8px;">feeling</td>
-                    <td style="border: 1px solid black; padding: 8px;"><a href="https://www.imood.com/users/minkurosu"><img src="https://moods.imood.com/display/uname-minkurosu/fg-8a8278/trans-1/imood.gif" alt="The current mood of minkurosu at www.imood.com" border="0"></a></td>
-                </tr>
-                </tr>
-                <tr>
-                    <td style="border: 1px solid black; padding: 8px;">last song</td>
-                   <td id="lastfm-song-cell" style="border: 1px solid black; padding: 8px;">loading...</td>
-                </tr>
-                <tr>
-                    <td style="border: 1px solid black; padding: 8px;">last movie watched</td>
-                    <td style="border: 1px solid black; padding: 8px;">wednesday</td>
-                </tr>
-                <tr>
-                    <td style="border: 1px solid black; padding: 8px;">current hyperfocus:</td>
-                    <td style="border: 1px solid black; padding: 8px;">coding this page and trying to write my final college thesis</td>
-                </tr>
-
-            </table>  
-            </div>
-
-<div class="caixamaisclara">
-            <iframe src="https://www3.cbox.ws/box/?boxid=3547381&boxtag=umWjBq" border-radius="5rem" width="100%" height="200" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>	
-          </div>
-             
-           
-
-<div class="caixamaisclara" style="width: 100%;">
-              <a href="https://tamanotchi.world/24409c"><img src="https://tamanotchi.world/i2/24409" alt="It's tamaNOTchi! Click to feed!"></a>
-       
-</div> 
-</div>  
     </div>
- 
+  </div>
+  <br>
+  <div class="nav-side">
 
-    <script src="lastfm-widget.js"></script>
- <script src="script.js"></script>
-  <script src="theme-switcher.js"></script>
+    <div class="side-item"><a href="feed.html">feed</a></div>
+    <div class="side-item"><a href="thoughts.html">posts</a></div>
+    <div class="side-item"><a href="music.html">playlists</a></div>
+    <div class="side-item"><a href="yaoifridge.html">yaoi fridge</a></div>
+    <div class="side-item"><a href="games.html">games</a></div>
+    <div class="side-item"><a href="room.html">room</a></div>
+    <div class="side-item"><a href="webweaving.html">webweaving</a></div>
+    <div class="side-item"><a href="dream-journal.html">dream journal</a></div>
+    <div class="side-item"><a href="blog.html">blog</a></div>
+    <div class="side-item"><a href="toybox.html">toybox</a></div>
+    <div class="side-item"><a href="portfolio-photos.html">photography</a></div>
+    <div class="side-item"><a href="guestbook.html">guestbook</a></div>
+    <div class="side-item"><a href="minverso.html">minverso</a></div>
+    <div class="side-item"><a href="quizzes.html">quiz/tests</a></div>
+
+
+
+
+    <hr>
+    <br>
+    <div class="caixamaisclaraColumnSimple">
+      <h3>what am i up to?</h3>
+
+      <table style="border-collapse: collapse; width: 100%; background-color: transparent;">
+        <tr>
+
+          <td style="border: 1px solid black; padding: 8px;">feeling</td>
+          <td style="border: 1px solid black; padding: 8px;"><a href="https://www.imood.com/users/minkurosu"><img
+                src="https://moods.imood.com/display/uname-minkurosu/fg-8a8278/trans-1/imood.gif"
+                alt="The current mood of minkurosu at www.imood.com" border="0"></a></td>
+        </tr>
+        </tr>
+        <tr>
+          <td style="border: 1px solid black; padding: 8px;">last song</td>
+          <td id="lastfm-song-cell" style="border: 1px solid black; padding: 8px;">loading...</td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid black; padding: 8px;">last movie watched</td>
+          <td style="border: 1px solid black; padding: 8px;">wednesday</td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid black; padding: 8px;">current hyperfocus:</td>
+          <td style="border: 1px solid black; padding: 8px;">coding this page and trying to write my final college
+            thesis</td>
+        </tr>
+
+      </table>
+    </div>
+
+    <div class="caixamaisclara">
+      <iframe src="https://www3.cbox.ws/box/?boxid=3547381&boxtag=umWjBq" border-radius="5rem" width="100%" height="200"
+        allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0"
+        scrolling="auto"></iframe>
+    </div>
+
+
+
+    <div class="caixamaisclara" style="width: 100%;">
+      <a href="https://tamanotchi.world/24409c"><img src="https://tamanotchi.world/i2/24409"
+          alt="It's tamaNOTchi! Click to feed!"></a>
+
+    </div>
+  </div>
+</div>
+
+
+<script src="lastfm-widget.js"></script>
+<script src="script.js"></script>
+<script src="theme-switcher.js"></script>
