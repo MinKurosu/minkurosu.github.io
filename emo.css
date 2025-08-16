@@ -1959,3 +1959,113 @@ th {
     box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
     flex-direction: column
   }
+
+
+  .about-me-container {
+    width: 90%;
+    max-width: 1200px;
+    background-color: #1e1e1e;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    /* Padrão para telas menores (empilhado) */
+  }
+
+  /* Estilos da seção do slideshow */
+  .slideshow-area {
+    flex: 2;
+    height: 450px;
+    background-color: #333;
+    position: relative;
+  }
+
+  /* Estilos do slideshow e das imagens */
+  .slideshow-area img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+
+  .slideshow-area img.active {
+    opacity: 1;
+  }
+
+  /* Estilos da nova seção de identificação (badges) */
+  .badges-area {
+    flex: 1;
+    padding: 20px;
+    background-color: #2a2a2a;
+  }
+
+  .badges-area h2 {
+    font-size: 1.5em;
+    color: #ffffff;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #555;
+    padding-bottom: 5px;
+    text-align: center;
+  }
+
+  .badges-container {
+    display: flex;
+    flex-direction: column;
+    /* Layout vertical para os badges */
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* Estilos da seção de conteúdo principal (texto) */
+  .content-area {
+    flex: 3;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .content-area h1 {
+    font-size: 2.5em;
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
+
+  .content-area p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+
+  .badge-img {
+    max-width: 150px;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .badge-img:hover {
+    transform: scale(1.05);
+  }
+
+  /* Layout de três colunas para telas maiores (desktop) */
+  @media (min-width: 768px) {
+    .about-me-container {
+      flex-direction: row;
+      height: 600px;
+    }
+
+    .slideshow-area {
+      border-right: 2px solid #333;
+    }
+
+    .badges-area {
+      border-right: 2px solid #333;
+    }
+  }

@@ -42,6 +42,21 @@
             cursor: url('imgs/cursor/ROCKcursorselect.cur'), pointer;
         }
 
+        a {
+            display: inline-block;
+            margin-top: 0.25rem;
+            text-decoration: none;
+            transition: color 0.2s ease;
+            color: #4b4b4b;
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+        }
+
+        a:hover {
+            color: #570000;
+            text-decoration: none;
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+        }
+
 
         #containerprincipal {
             border-radius: 1.25rem;
@@ -124,8 +139,138 @@
             cursor: pointer;
             outline: none;
         }
-    </style>
 
+        /* Container principal com o layout de três colunas */
+        .about-me-container {
+            display: flex;
+            flex-direction: row;
+
+            border-radius: 15px;
+            padding: 10px;
+            overflow: hidden;
+            height: 400px;
+
+            width: 100%;
+            max-width: 900px;
+
+            margin: auto;
+
+        }
+
+
+        .slideshow-area {
+            flex: 2.5;
+            position: relative;
+            overflow: hidden;
+
+        }
+
+        .slideshow-area img {
+            position: absolute;
+
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+
+            transition: opacity 0.5s ease-in-out;
+
+        }
+
+
+        .badges-area {
+            flex: 1;
+
+            padding: 1px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+
+            align-items: center;
+
+        }
+
+        /* A imagem na referência tem um aspecto diferente, então vamos estilizar a badge-img */
+        .badge-img {
+            max-width: 100%;
+            /* Ajusta a largura da imagem do badge */
+            height: 18px;
+            border-radius: 2px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s ease-in-out;
+            cursor: pointer;
+            /* Adiciona um cursor para indicar interatividade */
+        }
+
+
+
+        /* Estilos da seção de conteúdo principal (texto) */
+        .content-area {
+            flex: 2;
+            /* Ocupa 3 partes do espaço, a maior parte */
+            padding: 10px;
+
+            /* Cor de fundo igual a dos badges para um visual coeso */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            /* Centraliza o texto verticalmente */
+            color: #fff;
+
+        }
+
+        /* Ajusta o parágrafo para corresponder ao texto da imagem */
+        .content-area p {
+            font-size: 1.2em;
+            /* Aumenta um pouco o tamanho da fonte */
+            line-height: 1.6;
+            margin: 0;
+            text-align: left;
+            /* Alinha o texto à esquerda */
+        }
+
+        .slideshow-area img.active {
+            opacity: 1;
+            /* Apenas a imagem com a classe 'active' fica visível */
+        }
+
+        /* Layout para telas menores */
+        @media (max-width: 767px) {
+            .about-me-container {
+                flex-direction: column;
+                /* Empilha os elementos em telas menores */
+                height: auto;
+                /* Remove a altura fixa */
+            }
+
+            .slideshow-area,
+            .badges-area,
+            .content-area {
+                flex: auto;
+                border: none;
+                /* Remove as bordas em telas menores */
+            }
+
+            .slideshow-area img {
+                height: 300px;
+                /* Define uma altura para a imagem em telas menores */
+                position: static;
+            }
+        }
+
+        .scrollthin {
+            margin: 5px;
+            height: 400px;
+            overflow: auto;
+            !important overflow-y: scroll overflow: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+    </style>
+    <script src="lastfm-widget.js"></script>
 </head>
 
 <body>
@@ -207,21 +352,113 @@
                         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                         loading="lazy"></iframe>
                 </div>
-                <hr>
-                <div class="caixamaisclaraInterests">
+                <br>
+                <div class="caixamaisclara">
+                    <div class="about-me-container">
+                        <div class="slideshow-area">
+                            <!-- Exemplo de imagens de placeholder para o slideshow -->
+                            <img src="imgs/site_imgs/slideshow-me/2.jpg" alt="Foto 1" class="active">
+                            <img src="imgs/site_imgs/slideshow-me/1.jpg" alt="Foto 2">
+                            <img src="imgs/site_imgs/slideshow-me/3.jpg" alt="Foto 3">
+                            <img src="imgs/site_imgs/slideshow-me/4.jpg" alt="Foto 4">
+                        </div>
 
-                    <div class="column">
+                        <div class="badges-area">
 
-                    </div>
-                    <div class="divider"></div>
-                    <div class="column">
+                            <div class="badges-container">
+                                <div class="scrollthin">
+                                    <!-- Imagens de identificação usando URLs públicas -->
+                                    <img src="imgs/webgraphics/identitybuttons/cat.png" class="badge-img">
+
+                                    <img src="imgs/webgraphics/identitybuttons/enby.png" class="badge-img"> <img
+                                        src="imgs/webgraphics/identitybuttons/demi.png" class="badge-img">
+                                    <img src="imgs/webgraphics/identitybuttons/punk.png" class="badge-img">
+                                    <img src="imgs/webgraphics/identitybuttons/queerpunk.png" class="badge-img">
+                                    <img src="imgs/webgraphics/identitybuttons/emo.png" class="badge-img">
+
+                                    <img src="imgs/webgraphics/identitybuttons/taken.png" class="badge-img">
+                                    <img src="imgs/webgraphics/identitybuttons/neurodivergent.png" class="badge-img">
+                                    <img src="imgs/webgraphics/identitybuttons/sensitive.png" class="badge-img">
+
+                                    <img src="imgs/webgraphics/identitybuttons/schizotypal.png" class="badge-img">
+                                    <img src="imgs/webgraphics/identitybuttons/vampirekin.png" class="badge-img">
+
+                                    <img src="imgs/webgraphics/identitybuttons/intro.png" class="badge-img">
+                                    <img src="imgs/webgraphics/identitybuttons/infp.png" class="badge-img">
+                                    <img src="imgs/webgraphics/identitybuttons/veg.png" class="badge-img">
+                                    <img src="imgs/webgraphics/identitybuttons/nature.gif" class="badge-img">
+
+                                    <img src="imgs/webgraphics/identitybuttons/brasil.png" class="badge-img">
+                                    <img src="imgs/webgraphics/identitybuttons/eng2lng.png" class="badge-img">
+                                    <img src="imgs/webgraphics/identitybuttons/sun.png" class="badge-img">
+                                    <img src="imgs/webgraphics/identitybuttons/horse.png" class="badge-img">
+                                    <img src="imgs/webgraphics/identitybuttons/student.png" class="badge-img">
+                                    <img src="imgs/webgraphics/identitybuttons/artist.png" class="badge-img">
+
+                                    <img src="imgs/webgraphics/identitybuttons/righthand.png" class="badge-img">
+                                    <img src="imgs/webgraphics/identitybuttons/pc.png" class="badge-img">
+                                    <img src="imgs/webgraphics/identitybuttons/+18.png" class="badge-img">
+                                    <img src="imgs/webgraphics/identitybuttons/queer.png" class="badge-img">
+                                </div>
+
+
+
+
+                            </div>
+
+                        </div>
+
+                        <div class="content-area">
+
+                            <div class="caixamaisclaraColumnSimple">
+                                <h3>what am i up to?</h3>
+
+                                <table style="border-collapse: collapse; width: 100%; background-color: transparent;">
+                                    <tr>
+
+                                        <td style="border: 1px solid black; padding: 8px;">feeling</td>
+                                        <td style="border: 1px solid black; padding: 8px;"><a
+                                                href="https://www.imood.com/users/minkurosu"><img
+                                                    src="https://moods.imood.com/display/uname-minkurosu/fg-8a8278/trans-1/imood.gif"
+                                                    alt="The current mood of minkurosu at www.imood.com" border="0"></a>
+                                        </td>
+                                    </tr>
+                                    </tr>
+                                    <tr>
+                                        <td style="border: 1px solid black; padding: 8px;">last song</td>
+                                        <td id="lastfm-song-cell" style="border: 1px solid black; padding: 8px;">
+                                            loading...</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border: 1px solid black; padding: 8px;">last movie</td>
+                                        <td style="border: 1px solid black; padding: 8px;">wednesday</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border: 1px solid black; padding: 8px;">last book</td>
+                                        <td style="border: 1px solid black; padding: 8px;">civilization and its
+                                            discontents - sigmund freud</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border: 1px solid black; padding: 8px;">current hyperfocus:</td>
+                                        <td style="border: 1px solid black; padding: 8px;">politics, communism, coding
+                                            this page and trying
+                                            to write my final college
+                                            thesis</td>
+                                    </tr>
+
+                                </table>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
-                <hr>
+
+                <br>
                 <div class="caixamaisclaraInterests">
                     <div class="column">
                         <H2 class="likes">LIKES</H2>
-                        <H4>cats, psychology, dark clothes, my chemical romance, art, gaming, rain and cold weather, my
+                        <H4>cats, psychology, dark clothes, my chemical romance, art, gaming, rain and cold weather,
+                            my
                             boyfriend, photography, nature, sleeping, anime, piercings, tattoos, black nail polish,
                             social causes, my family, </H4>
                     </div>
@@ -245,7 +482,8 @@
                                 <td style="border: 1px solid black; padding: 8px;">my chemical romance, westkust,
                                     melanie martinez, muse, avanged sevenfold, type o negative, <a
                                         href="https://open.spotify.com/intl-pt/artist/2Gz78gC3i0E5nLHKwzfGGh?si=79cbe94a830942ec"
-                                        class="marked-link">garden psychedelia</a> ghost, korn, linkin park, rita lee,
+                                        class="marked-link">garden psychedelia</a> ghost, korn, linkin park, rita
+                                    lee,
                                     lady gaga, ghost, chappel roan, jazmin bean, lil peep, deftones, paramore, soad,
                                     ptv, </td>
                             </tr>
@@ -256,13 +494,16 @@
                             </tr>
                             <tr>
                                 <td style="border: 1px solid black; padding: 8px;">hobbies</td>
-                                <td style="border: 1px solid black; padding: 8px;">drawing, webdesign, needle felting,
+                                <td style="border: 1px solid black; padding: 8px;">drawing, webdesign, needle
+                                    felting,
                                     kung fu (new!), studying psychology</td>
                             </tr>
                             <tr>
                                 <td style="border: 1px solid black; padding: 8px;">movies and shows</td>
-                                <td style="border: 1px solid black; padding: 8px;">the x files, attack on titan, matrix,
-                                    twilight, nope, poor things, arcane, the haunting series, black mirror, yuri on ice,
+                                <td style="border: 1px solid black; padding: 8px;">the x files, attack on titan,
+                                    matrix,
+                                    twilight, nope, poor things, arcane, the haunting series, black mirror, yuri on
+                                    ice,
                                     steven universe, my little pony, orphan, léon. edward scissorhands, hellraiseer,
                                     e.t, hannibal, fleabag, </td>
                             </tr>
@@ -275,7 +516,8 @@
                             </tr>
                             <tr>
                                 <td style="border: 1px solid black; padding: 8px;">kins</td>
-                                <td style="border: 1px solid black; padding: 8px;">fluttershy, pearl (steven universe),
+                                <td style="border: 1px solid black; padding: 8px;">fluttershy, pearl (steven
+                                    universe),
                                     jinx, vex,</td>
                             </tr>
                             <tr>
@@ -290,7 +532,8 @@
                             </tr>
                             <tr>
                                 <td style="border: 1px solid black; padding: 8px;">actress</td>
-                                <td style="border: 1px solid black; padding: 8px;">kristen stewart, keanu reeves, mads
+                                <td style="border: 1px solid black; padding: 8px;">kristen stewart, keanu reeves,
+                                    mads
                                     mikkelsen, sophie tatcher, </td>
                             </tr>
                         </table>
@@ -360,7 +603,19 @@
     <script src="script.js"></script>
     <script src="theme-switcher.js"></script>
 
+    <script>
+        // Script simples para o slideshow
+        const images = document.querySelectorAll('.slideshow-area img');
+        let currentIndex = 0;
 
+        function nextSlide() {
+            images[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % images.length;
+            images[currentIndex].classList.add('active');
+        }
+
+        setInterval(nextSlide, 4000); // Muda a imagem a cada 4 segundos
+    </script>
 
 </body>
 
