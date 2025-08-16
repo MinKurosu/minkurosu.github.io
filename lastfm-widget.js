@@ -19,7 +19,7 @@ function inicializarLastFmWidget() {
 
         try {
             const response = await fetch(apiUrl);
-            
+
             if (!response.ok) {
                 throw new Error(`Erro HTTP! Status: ${response.status} - ${response.statusText}`);
             }
@@ -32,15 +32,15 @@ function inicializarLastFmWidget() {
                 const artistName = track.artist['#text'];
                 const trackUrl = track.url;
 
-                lastfmSongCell.innerHTML = `<a href="${trackUrl}" target="_blank">${songName} - ${artistName}</a>`;
-                
+                lastfmSongCell.innerHTML = `<a href="${trackUrl}" target="_blank">${songName.toLowerCase()} - ${artistName.toLowerCase()}</a>`;
+
             } else {
-                lastfmSongCell.textContent = 'Nenhuma música encontrada.';
+                lastfmSongCell.textContent = 'none.';
             }
 
         } catch (error) {
             console.error('Erro ao buscar músicas do Last.fm:', error);
-            lastfmSongCell.textContent = 'Erro ao carregar a música.';
+            lastfmSongCell.textContent = 'error';
         }
     }
 

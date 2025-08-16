@@ -50,18 +50,7 @@ select {
 
 
 
-@media (prefers-color-scheme: dark) {
 
-  header {
-    background-color: #0a0a0a;
-  }
-
-  .navbar a {
-    color: #4b4b4b;
-    background-color: #0a0a0a;
-
-  }
-}
 
 html,
 body {
@@ -207,7 +196,7 @@ header {
   background-color: #0a0a0a;
   padding: 3px 10px;
   border-radius: 0.625rem;
-  transition: background-color 0.3s;
+  transition: all 0.2s ease-in-out;
   display: inline-block;
   border: 0.3125rem solid #1a1919;
   box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5);
@@ -218,7 +207,7 @@ header {
   background-color: #0a0a0a;
   color: #310000;
   transform: scale(1.15);
-  transition: 0.2s;
+  transition: all 0.2s ease-in-out;
   animation: ease-in-out;
   border: 0.3125rem solid #310000;
 }
@@ -254,7 +243,7 @@ header {
   border: 0.3125rem solid #310000;
   border-radius: .625rem;
   box-shadow: 0 0 .625rem rgba(0, 0, 0, .5);
-  transition: background-color .3s, transform .2s;
+  transition: all 0.2s ease-in-out;
 }
 
 .caixamaisclara .side-item a:hover {
@@ -310,7 +299,7 @@ header {
 
   background-color: #ff0000;
 
-  transition: background-color 0.3s;
+  transition: all 0.2s ease-in-out;
   display: inline-block;
   border: 0.3125rem solid #310000;
   box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5);
@@ -329,7 +318,7 @@ header {
   background-color: #0a0a0a;
   padding: 3px 10px;
   border-radius: 0.625rem;
-  transition: background-color 0.3s;
+  transition: all 0.2s ease-in-out;
   display: inline-block;
   border: 0.3125rem solid #1a1919;
   box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5);
@@ -342,7 +331,7 @@ header {
   background-color: #0a0a0a;
   padding: 3px 10px;
   border-radius: 0.625rem;
-  transition: background-color 0.3s;
+  transition: all 0.2s ease-in-out;
   display: inline-block;
   border: 0.3125rem solid #310000;
   box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5);
@@ -353,7 +342,7 @@ header {
   background-color: #0a0a0a;
   color: #570000;
   transform: scale(1.10);
-  transition: 0.1s;
+  transition: all 0.2s ease-in-out;
   border: #310000;
 }
 
@@ -401,12 +390,12 @@ header {
 
 #logopatinha {
   height: 5rem;
-  transition: transform 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 #logopatinha:hover {
   transform: scale(1.10) translateY(2px);
-  transition: 0.1s;
+  transition: all 0.2s ease-in-out;
 }
 
 
@@ -683,7 +672,7 @@ h4 {
   border-radius: 0.3125rem;
   justify-content: center;
   object-fit: cover;
-  transition: transform 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 
@@ -722,7 +711,7 @@ h4 {
 
 .grid-feed a:hover img {
   transform: scale(1.05);
-  transition: transform 0.1s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .caixamaisclara img {
@@ -764,7 +753,7 @@ h4 {
 .boxfoto video:hover,
 .about-content img:hover {
   transform: scale(1.05);
-  transition: transform 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   ;
 }
 
@@ -818,7 +807,7 @@ h4 {
   display: inline-block;
   margin-top: 0.25rem;
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: all 0.2s ease-in-out;
   color: #4b4b4b;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
@@ -1040,29 +1029,37 @@ h4 {
 
 
 
+table,
+tr,
+td {
+  border: none;
+}
+
 table {
-  border: 3px solid #141414;
-  1çççççç border-collapse: collapse;
+  max-height: 80%;
+  border-collapse: collapse;
   border-spacing: 0;
   border-radius: 10px;
   overflow: hidden;
-  color: #4b4b4b;
+  color: #53504b;
+  border: none;
+
+  border-width: 0px;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 td {
-  background-color: #1f1f1f6c
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
 th,
 td {
-  border: 2px solid #111111;
+  border-width: 0px;
 }
 
 th {
-  background-color: #200a0ab0;
+  background-color: rgba(255, 255, 255, 0.1);
 }
-
 
 .track {
   width: 100%;
@@ -2018,7 +2015,7 @@ th {
     flex-direction: column;
     /* Layout vertical para os badges */
     align-items: center;
-    gap: 10px;
+    gap: 5px;
   }
 
   /* Estilos da seção de conteúdo principal (texto) */
@@ -2052,20 +2049,5 @@ th {
 
   .badge-img:hover {
     transform: scale(1.05);
-  }
-
-  /* Layout de três colunas para telas maiores (desktop) */
-  @media (min-width: 768px) {
-    .about-me-container {
-      flex-direction: row;
-      height: 600px;
-    }
-
-    .slideshow-area {
-      border-right: 2px solid #333;
-    }
-
-    .badges-area {
-      border-right: 2px solid #333;
-    }
+    transition: all 0.2s ease-in-out;
   }

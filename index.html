@@ -148,7 +148,7 @@
             border-radius: 15px;
             padding: 10px;
             overflow: hidden;
-            height: 400px;
+            height: 350px;
 
             width: 100%;
             max-width: 900px;
@@ -263,11 +263,39 @@
 
         .scrollthin {
             margin: 5px;
-            height: 400px;
+            height: 330px;
             overflow: auto;
             !important overflow-y: scroll overflow: auto;
             scrollbar-width: none;
             -ms-overflow-style: none;
+        }
+
+
+        .badge-img {
+            /* Efeito de dessaturação - A imagem começa em preto e branco */
+            filter: saturate(0%);
+
+            /* Efeito de escurecimento - A imagem começa 20% mais escura */
+            filter: brightness(80%);
+
+            /* Transições suaves para os efeitos de mudança */
+            transition: all 0.2s ease-in-out;
+        }
+
+        .badge-img:hover {
+            /* Efeito de clarear a imagem ao passar o mouse */
+            filter: brightness(100%);
+
+            /* Efeito de subir a imagem ao passar o mouse */
+            transform: translateY(-3px);
+        }
+
+        table,
+        tr,
+        td {
+            border: none;
+            border-collapse: collapse;
+            !important border-style: hidden !important;
         }
     </style>
     <script src="lastfm-widget.js"></script>
@@ -360,7 +388,7 @@
                             <img src="imgs/site_imgs/slideshow-me/2.jpg" alt="Foto 1" class="active">
                             <img src="imgs/site_imgs/slideshow-me/1.jpg" alt="Foto 2">
                             <img src="imgs/site_imgs/slideshow-me/3.jpg" alt="Foto 3">
-                            <img src="imgs/site_imgs/slideshow-me/4.jpg" alt="Foto 4">
+
                         </div>
 
                         <div class="badges-area">
@@ -411,9 +439,10 @@
                         <div class="content-area">
 
                             <div class="caixamaisclaraColumnSimple">
-                                <h3>what am i up to?</h3>
 
-                                <table style="border-collapse: collapse; width: 100%; background-color: transparent;">
+
+                                <table
+                                    style="border-collapse: collapse; width: 100%; background-color: transparent; max-height: 300px;">
                                     <tr>
 
                                         <td style="border: 1px solid black; padding: 8px;">feeling</td>
