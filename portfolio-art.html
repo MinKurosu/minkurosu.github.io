@@ -1,43 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <script src="oneko.js"></script>
-    <script>NekoType="black"</script>
-    <script src="carregar-sidebars.js"></script>
+  <script src="oneko.js"></script>
+  <script>NekoType = "black"</script>
+  <script src="carregar-sidebars.js"></script>
 
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4K5KDKEJ2E"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-4K5KDKEJ2E');
-    </script>
-    <script> window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches </script>
-    <meta charset="UTF-8">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4K5KDKEJ2E"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-4K5KDKEJ2E');
+  </script>
+  <script> window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches </script>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=1600px, initial-scale=0.4, maximum-scale=1.0, user-scalable=yes">
-    <meta property="og:image" content="https://i.ibb.co/RC2v9zg/sitethumbnail.png"/>
-    <meta property="og:image" content="imgs/site_imgs/sitethumbnail.png"/>
-   
-
-   <link rel="stylesheet" href="styles.css" id="theme-stylesheet">
-    <title>@minkurosu</title>
-   
-    <link rel="icon" type="image/ico" href="imgs/site_imgs/favicon.ico"/>
-   
-<style>
+  <meta property="og:image" content="https://i.ibb.co/RC2v9zg/sitethumbnail.png" />
+  <meta property="og:image" content="imgs/site_imgs/sitethumbnail.png" />
 
 
-html, body, iframe{
-  cursor: url('imgs/cursor/ROCKcursornormal.cur'), auto;
-}
+  <link rel="stylesheet" href="styles.css" id="theme-stylesheet">
+  <title>@minkurosu</title>
+
+  <link rel="icon" type="image/ico" href="imgs/site_imgs/favicon.ico" />
+  <div class="crt"></div>
+  <style>
+    html,
+    body,
+    iframe {
+      cursor: url('imgs/cursor/ROCKcursornormal.cur'), auto;
+    }
 
 
-a, button, input[type="submit"], input[type="button"], select {
-  cursor: url('imgs/cursor/ROCKcursorselect.cur'), pointer;
-}
+    a,
+    button,
+    input[type="submit"],
+    input[type="button"],
+    select {
+      cursor: url('imgs/cursor/ROCKcursorselect.cur'), pointer;
+    }
 
- 
+
     #containerprincipal {
       border-radius: 1.25rem;
       text-align: center;
@@ -45,7 +50,7 @@ a, button, input[type="submit"], input[type="button"], select {
       width: 100%;
       max-width: 50rem;
       box-sizing: border-box;
-   
+
       text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     }
 
@@ -59,165 +64,167 @@ a, button, input[type="submit"], input[type="button"], select {
       width: 100%;
       max-width: 50rem;
       box-sizing: border-box;
-      
+
       text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     }
 
     .galeria-container {
-    width: 700px;
-    height: 300px;
- 
-     border-radius: 8px;
-    overflow: auto; 
-    padding: 10px;
-    box-sizing: border-box;
+      width: 700px;
+      height: 300px;
 
-    margin-left: auto;
-    margin-right: auto;
- 
-}
+      border-radius: 8px;
+      overflow: auto;
+      padding: 10px;
+      box-sizing: border-box;
 
-        .galeria-grid {
-            display: grid;
-    
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); 
-            gap: 15px; 
-            padding: 5px;
-            justify-items: center; 
-            align-items: center; 
-        }
+      margin-left: auto;
+      margin-right: auto;
 
-        .galeria-grid img {
-            max-width: 100%; 
-            height: 120px; 
-            
-           
-            object-fit: contain; 
-            
-            display: block;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-            transition: transform 0.2s ease;
-        }
+    }
 
-        .galeria-grid img:hover {
-            transform: scale(1.05); 
-        }
+    .galeria-grid {
+      display: grid;
+
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 15px;
+      padding: 5px;
+      justify-items: center;
+      align-items: center;
+    }
+
+    .galeria-grid img {
+      max-width: 100%;
+      height: 120px;
 
 
+      object-fit: contain;
 
-#theme-toggle-button {
-    background: none !important; 
-    appearance: none;        
-    -webkit-appearance: none; 
-    -moz-appearance: none;   
-    background: none;
-    border: none;
-    padding: 0;
-    margin: 0; 
-    cursor: pointer;
-    outline: none;
-}
-</style>
+      display: block;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s ease;
+    }
+
+    .galeria-grid img:hover {
+      transform: scale(1.05);
+    }
+
+
+
+    #theme-toggle-button {
+      background: none !important;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background: none;
+      border: none;
+      padding: 0;
+      margin: 0;
+      cursor: pointer;
+      outline: none;
+    }
+  </style>
 
 </head>
+
 <body>
 
-<div class="layout-with-sidebars">
- <aside id="sidebar-esquerda-container" class="sidebar">
-        </aside>
-  
-    <main id="containerprincipal">
-        <header id="header" class="fixed-top">
-            <div id="divpatinha">
-                <img src="imgs/site_imgs/patinha.png" class="desaturatepics" id="logopatinha" alt="logo da barra de navegação">
-            </div>
-            <nav class="navbar">
-                <div class="divitems">
-                    <div class="nav-item">
-                        <a href="#" onclick="history.back(); return false;" class="nav-link">back</a>
-                    </div>
-                    <div class="nav-item">
-                        <a href="index.html" target="_self" class="nav-link">home</a>
-                    </div>
-                    <div class="nav-item">
-                        <a href="feed.html" target="_self" class="nav-link">feed</a>
-                    </div>
-                    <div class="nav-item">
-                        <a href="blog.html" target="_self" class="nav-link">blog</a>
-                    </div>
-                    <div class="nav-item">
-                        <a href="links.html" target="_self" class="nav-link">links</a>
-                    </div>
-                    <div class="nav-item">
-                        <a href="portfolio-menu.html" target="_self" class="nav-link">portfolio</a>
-                    </div>
-                </div>
-            </nav>
-        </header>
-        <div id="container">
-           <div class="caixamaisclara">
-      <img id="logobig" src="imgs/site_imgs/logo.png" alt="Logo" data-position="center">
-    </div>
-    <hr>
-    <div class="portfolioContent">
-      <div class="conjuntoblocos">
-        <div class="divportfolio">
-          <img src="imgs/art portfolio/GcgzfGTWkAArcsp.jpeg" class="portfolioArts" height="600px">
-          <br>
-            <img src="imgs/art portfolio/jupitercat.png" class="portfolioArts" height="600px">
-            <br>
-            <img src="imgs/art portfolio/7.png" class="portfolioArts" height="600px">
-            <br>
-            <img src="imgs/art portfolio/lispng.png" class="portfolioArts" height="600px">
-            <br>
-            <img src="imgs/art portfolio/icon1.png" class="portfolioArts" height="600px">
-            <br>
-            <img src="imgs/art portfolio/APOLLO.png" class="portfolioArts" height="600px">
-            <br>
-            <h2> live2d model art</h2>
-            <br>
-            <img src="imgs/art portfolio/minfullbodypng.png" class="portfolioArts" height="600px">
-            <br>
-
-            <img src="imgs/art portfolio/eueapollo.png" class="portfolioArts" height="600px">
-            <br>
-
-            <h2> twitch emotes</h2>
-            <img src="imgs/art portfolio/AYAYAMinPNG.png" class="portfolioArts" height="300px">
-        </div>
-      </div>
-      <br>
-    </div>
-    <hr>
-  </div>
-    </main>
-
-   
-
-    <aside id="sidebar-direita-container" class="sidebar sidebar-right">
-        </aside>
-
-
-</div>
-</div>
-    </div>
-</div>
-</div>
-        </div>
-        
-        </div>
-        
+  <div class="layout-with-sidebars">
+    <aside id="sidebar-esquerda-container" class="sidebar">
     </aside>
 
-</div>
-<script src="lastfm-widget.js"></script>
- <script src="script.js"></script>
+    <main id="containerprincipal">
+      <header id="header" class="fixed-top">
+        <div id="divpatinha">
+          <img src="imgs/site_imgs/patinha.png" class="desaturatepics" id="logopatinha"
+            alt="logo da barra de navegação">
+        </div>
+        <nav class="navbar">
+          <div class="divitems">
+            <div class="nav-item">
+              <a href="#" onclick="history.back(); return false;" class="nav-link">back</a>
+            </div>
+            <div class="nav-item">
+              <a href="index.html" target="_self" class="nav-link">home</a>
+            </div>
+            <div class="nav-item">
+              <a href="feed.html" target="_self" class="nav-link">feed</a>
+            </div>
+            <div class="nav-item">
+              <a href="blog.html" target="_self" class="nav-link">blog</a>
+            </div>
+            <div class="nav-item">
+              <a href="links.html" target="_self" class="nav-link">links</a>
+            </div>
+            <div class="nav-item">
+              <a href="portfolio-menu.html" target="_self" class="nav-link">portfolio</a>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <div id="container">
+        <div class="caixamaisclara">
+          <img id="logobig" src="imgs/site_imgs/logo.png" alt="Logo" data-position="center">
+        </div>
+        <hr>
+        <div class="portfolioContent">
+          <div class="conjuntoblocos">
+            <div class="divportfolio">
+              <img src="imgs/art portfolio/GcgzfGTWkAArcsp.jpeg" class="portfolioArts" height="600px">
+              <br>
+              <img src="imgs/art portfolio/jupitercat.png" class="portfolioArts" height="600px">
+              <br>
+              <img src="imgs/art portfolio/7.png" class="portfolioArts" height="600px">
+              <br>
+              <img src="imgs/art portfolio/lispng.png" class="portfolioArts" height="600px">
+              <br>
+              <img src="imgs/art portfolio/icon1.png" class="portfolioArts" height="600px">
+              <br>
+              <img src="imgs/art portfolio/APOLLO.png" class="portfolioArts" height="600px">
+              <br>
+              <h2> live2d model art</h2>
+              <br>
+              <img src="imgs/art portfolio/minfullbodypng.png" class="portfolioArts" height="600px">
+              <br>
+
+              <img src="imgs/art portfolio/eueapollo.png" class="portfolioArts" height="600px">
+              <br>
+
+              <h2> twitch emotes</h2>
+              <img src="imgs/art portfolio/AYAYAMinPNG.png" class="portfolioArts" height="300px">
+            </div>
+          </div>
+          <br>
+        </div>
+        <hr>
+      </div>
+    </main>
+
+
+
+    <aside id="sidebar-direita-container" class="sidebar sidebar-right">
+    </aside>
+
+
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+
+  </div>
+
+  </aside>
+
+  </div>
+  <script src="lastfm-widget.js"></script>
+  <script src="script.js"></script>
   <script src="theme-switcher.js"></script>
 
 
-       
- </body>
+
+</body>
 
 </html>

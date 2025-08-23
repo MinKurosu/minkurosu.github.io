@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>min kurosu's site</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/ico" href="favicon.ico"/>
+    <link rel="icon" type="image/ico" href="favicon.ico" />
+    <div class="crt"></div>
     <style>
         html {
             background-image: url('wood2.png');
@@ -19,8 +21,8 @@
             align-items: center;
             min-height: 100vh;
             overflow: hidden;
-           
-            color: #333; 
+
+            color: #333;
             text-align: center;
         }
 
@@ -38,19 +40,19 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            box-sizing: border-box; 
+            box-sizing: border-box;
         }
 
         .caixamaisclara-entrada:hover {
             transform: scale(1.03);
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); 
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
         }
 
         .caixamaisclara-entrada img {
             max-width: 80%;
             height: auto;
             display: block;
-            margin: 0 auto 20px auto; 
+            margin: 0 auto 20px auto;
             transition: filter 0.3s ease-in-out;
         }
 
@@ -59,11 +61,11 @@
         }
 
         .info-text {
-            color: #534F4A; 
-            margin-top: 20px; 
+            color: #534F4A;
+            margin-top: 20px;
             font-size: 0.9em;
             line-height: 1.4;
-            max-width: 80%; 
+            max-width: 80%;
         }
 
         @media (max-width: 600px) {
@@ -71,9 +73,11 @@
                 padding: 15px;
                 max-width: 95%;
             }
+
             .caixamaisclara-entrada img {
                 max-width: 90%;
             }
+
             .info-text {
                 font-size: 0.8em;
                 margin-top: 15px;
@@ -81,29 +85,34 @@
         }
     </style>
 </head>
+
 <body>
-<div class="caixamaisclara">
-   <div class="caixamaisclara-entrada">
-    <a href="https://minkurosu.github.io">
-        <img src="logo.png" alt="enter">
-    </a>
-    <div class="info-text">
-        <p>this site is best viewed on a computer monitor. please resize your browser window if needed for smaller screens.</p>
-        <p>it features a dark theme, does not have autoplay audio or video, and includes animated and colorful gifs.</p>
-        <p>although this page is hosted on neocities, the main site is hosted on github for better compatibility.</p>
-    </div>
-</div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const caixaEntrada = document.querySelector('.caixamaisclara-entrada');
-            if (caixaEntrada) {
-                caixaEntrada.onclick = function() {
-                    window.location.href = 'index.html';
-                };
-            }
-        });
-         
-    </script>
+    <div class="caixamaisclara">
+        <div class="caixamaisclara-entrada">
+            <a href="https://minkurosu.github.io">
+                <img src="logo.png" alt="enter">
+            </a>
+            <div class="info-text">
+                <p>this site is best viewed on a computer monitor. please resize your browser window if needed for
+                    smaller screens.</p>
+                <p>it features a dark theme, does not have autoplay audio or video, and includes animated and colorful
+                    gifs.</p>
+                <p>although this page is hosted on neocities, the main site is hosted on github for better
+                    compatibility.</p>
+            </div>
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const caixaEntrada = document.querySelector('.caixamaisclara-entrada');
+                if (caixaEntrada) {
+                    caixaEntrada.onclick = function () {
+                        window.location.href = 'index.html';
+                    };
+                }
+            });
+
+        </script>
     </div>
 </body>
+
 </html>

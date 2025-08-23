@@ -1,157 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <script src="oneko.js"></script>
-    <script>NekoType="black"</script>
-  <script src="carregar-sidebars.js"></script>
+    <script>NekoType = "black"</script>
+    <script src="carregar-sidebars.js"></script>
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4K5KDKEJ2E"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-4K5KDKEJ2E');
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-4K5KDKEJ2E');
     </script>
     <script> window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches </script>
     <meta charset="UTF-8">
-  <meta name="viewport" content="width=1600px, initial-scale=0.4, maximum-scale=1.0, user-scalable=yes">
-    <meta property="og:image" content="https://i.ibb.co/RC2v9zg/sitethumbnail.png"/>
-    <meta property="og:image" content="imgs/site_imgs/sitethumbnail.png"/>
-   
+    <meta name="viewport" content="width=1600px, initial-scale=0.4, maximum-scale=1.0, user-scalable=yes">
+    <meta property="og:image" content="https://i.ibb.co/RC2v9zg/sitethumbnail.png" />
+    <meta property="og:image" content="imgs/site_imgs/sitethumbnail.png" />
+
 
     <link rel="stylesheet" href="styles.css" id="theme-stylesheet">
-   
+
     <title>@minkurosu</title>
-   
-    <link rel="icon" type="image/ico" href="imgs/site_imgs/favicon.ico"/>
-   
-<style>
+
+    <link rel="icon" type="image/ico" href="imgs/site_imgs/favicon.ico" />
+    <div class="crt"></div>
+    <style>
+        html,
+        body,
+        iframe {
+            cursor: url('imgs/cursor/ROCKcursornormal.cur'), auto;
+        }
 
 
-html, body, iframe{
-  cursor: url('imgs/cursor/ROCKcursornormal.cur'), auto;
-}
-
-
-a, button, input[type="submit"], input[type="button"], select {
-  cursor: url('imgs/cursor/ROCKcursorselect.cur'), pointer;
-}
-
- 
-  
-    #container {
-
-      padding: 1.25rem;
-      border-radius: 1.25rem;
-      box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
-      text-align: center;
-      margin: 0 auto;
-      width: 100%;
-      max-width: 50rem;
-      box-sizing: border-box;
-    
-      text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-    }
+        a,
+        button,
+        input[type="submit"],
+        input[type="button"],
+        select {
+            cursor: url('imgs/cursor/ROCKcursorselect.cur'), pointer;
+        }
 
 
 
+        #container {
 
-        
+            padding: 1.25rem;
+            border-radius: 1.25rem;
+            box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
+            text-align: center;
+            margin: 0 auto;
+            width: 100%;
+            max-width: 50rem;
+            box-sizing: border-box;
+
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+        }
+
+
+
+
+
 
         .galeria-grid img:hover {
-            transform: scale(1.05); 
+            transform: scale(1.05);
         }
 
 
 
 
-.image-grid-container {
-    display: grid; 
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 20px; 
-    padding: 20px; 
-    max-width: 1200px; 
-    margin: 0 auto; 
-}
-
-
-.image-grid-container-picrew {
-    display: grid; 
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 20px; 
-    padding: 20px; 
-    max-width: 1200px; 
-    margin: 0 auto; 
-}
-
-
-
-.grid-item {
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-    text-align: center; 
-    background-color: #534f4a49; 
-    padding: 10px;
-    border-radius: 8px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-}
-
-  .grid-item:hover {
-            transform: scale(1.03); 
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15); 
+        .image-grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
 
-.grid-item img {
-    width: 100%; 
-    height: auto; 
-   
-    max-width: 250px; 
-    border-radius: 4px;
-    margin-bottom: 10px; 
-}
+        .image-grid-container-picrew {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
 
-.grid-item h3 {
-    font-size: 1.2em; 
-  
-    margin: 0; 
-}
+
+        .grid-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background-color: #534f4a49;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .grid-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+
+
+        .grid-item img {
+            width: 100%;
+            height: auto;
+
+            max-width: 250px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+
+        .grid-item h3 {
+            font-size: 1.2em;
+
+            margin: 0;
+        }
 
 
 
 
 
         .picrew-grid-container {
-           
-            columns: 3; 
-            column-gap: 20px; 
+
+            columns: 3;
+            column-gap: 20px;
 
             padding: 20px;
-            max-width: 1000px; 
-            margin: 0 auto; 
+            max-width: 1000px;
+            margin: 0 auto;
             border-radius: 8px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
         }
 
         .picrew-grid-item {
-           
-            break-inside: avoid-column; 
-            
+
+            break-inside: avoid-column;
+
             border-radius: 8px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
             overflow: hidden;
             text-align: center;
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            margin-bottom: 20px; 
-            width: 100%; 
+            margin-bottom: 20px;
+            width: 100%;
 
-           
+
             display: flex;
             flex-direction: column;
             align-items: center;
-            
+
         }
 
         .picrew-grid-item:hover {
@@ -165,20 +170,20 @@ a, button, input[type="submit"], input[type="button"], select {
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-start; 
-            height: 100%; 
+            justify-content: flex-start;
+            height: 100%;
             width: 100%;
         }
 
         .picrew-grid-item img {
             width: 100%;
-            height: auto; 
+            height: auto;
             display: block;
             border-top-left-radius: 8px;
             border-top-right-radius: 8px;
-    
-            object-fit: cover; 
-                                  
+
+            object-fit: cover;
+
         }
 
         .picrew-grid-item h3 {
@@ -189,250 +194,254 @@ a, button, input[type="submit"], input[type="button"], select {
             margin: 0 10px;
             padding: 0;
             text-align: center;
-            display: block; 
+            display: block;
         }
 
-        
+
         @media (max-width: 768px) {
             .picrew-grid-container {
-                columns: 2; 
+                columns: 2;
             }
         }
 
         @media (max-width: 480px) {
             .picrew-grid-container {
-                columns: 1; 
+                columns: 1;
             }
         }
-#theme-toggle-button {
-    background: none !important; 
-    appearance: none;        
-    -webkit-appearance: none; 
-    -moz-appearance: none;   
-    background: none;
-    border: none;
-    padding: 0;
-    margin: 0; 
-    cursor: pointer;
-    outline: none;
-}
-</style>
+
+        #theme-toggle-button {
+            background: none !important;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background: none;
+            border: none;
+            padding: 0;
+            margin: 0;
+            cursor: pointer;
+            outline: none;
+        }
+    </style>
 
 </head>
+
 <body>
 
-<div class="layout-with-sidebars">
+    <div class="layout-with-sidebars">
 
-  <aside id="sidebar-esquerda-container" class="sidebar">
+        <aside id="sidebar-esquerda-container" class="sidebar">
         </aside>
 
-    <main id="containerprincipal">
-        <header id="header" class="fixed-top">
-            <div id="divpatinha">
-                <img src="imgs/site_imgs/patinha.png" id="logopatinha" class="desaturatepics" alt="logo da barra de navegação">
-            </div>
-            <nav class="navbar">
-                <div class="divitems">
-                    <div class="nav-item">
-                        <a href="#" onclick="history.back(); return false;" class="nav-link">back</a>
-                    </div>
-                    <div class="nav-item">
-                        <a href="index.html" target="_self" class="nav-link">home</a>
-                    </div>
-                    <div class="nav-item">
-                        <a href="feed.html" target="_self" class="nav-link">feed</a>
-                    </div>
-                    <div class="nav-item">
-                        <a href="blog.html" target="_self" class="nav-link">blog</a>
-                    </div>
-                    <div class="nav-item">
-                        <a href="links.html" target="_self" class="nav-link">links</a>
-                    </div>
-                    <div class="nav-item">
-                        <a href="portfolio-menu.html" target="_self" class="nav-link">portfolio</a>
-                    </div>
+        <main id="containerprincipal">
+            <header id="header" class="fixed-top">
+                <div id="divpatinha">
+                    <img src="imgs/site_imgs/patinha.png" id="logopatinha" class="desaturatepics"
+                        alt="logo da barra de navegação">
                 </div>
-            </nav>
-        </header>
-        <div id="container">
-            <div class="caixamaisclara">
-                <img id="logobig" src="imgs/site_imgs/logo.png" alt="Logo" data-position="center">
-            </div>
-            <hr>
-          <div class="caixamaisclara">
-    <div class="games">
-        <h2>minverso</h2>
-<h3>me in games:</h3>
-        <div class="image-grid-container">
-            <div class="grid-item">
-                <img src="imgs/site_imgs/minverso/baldursgate3.png" alt="Description for Image 1">
-                <h3>baldurs gate 3</h3>
-            </div>
-
-           
-            <div class="grid-item">
-                <img src="imgs/site_imgs/minverso/growtopia.jpg" alt="Description for Image 3">
-                <h3>growtopia</h3>
-            </div>
-
-            <div class="grid-item">
-                <img src="imgs/site_imgs/minverso/ponytown.png" alt="Description for Image 4">
-                <h3>ponytown</h3>
-            </div>
-
- <div class="grid-item">
-                <img src="imgs/site_imgs/minverso/diablo.jpg" alt="Description for Image 2">
-                <h3>diablo iv</h3>
-            </div>
-
-             <div class="grid-item">
-                <img src="imgs/site_imgs/minverso/roblox.png" alt="Description for Image 2">
-                <h3>roblox</h3>
-            </div>
-
-             <div class="grid-item">
-                <img src="imgs/site_imgs/minverso/habbo.png" alt="Description for Image 2">
-                <h3>habbo</h3>
-            </div>
-  <div class="grid-item">
-                <img src="imgs/site_imgs/minverso/transformice.png" alt="Description for Image 1">
-                <h3>transformice</h3>
-            </div>
-
-  <div class="grid-item">
-                <img src="imgs/site_imgs/minverso/aot.png" alt="Description for Image 1">
-                <h3>aot</h3>
-            </div>
+                <nav class="navbar">
+                    <div class="divitems">
+                        <div class="nav-item">
+                            <a href="#" onclick="history.back(); return false;" class="nav-link">back</a>
+                        </div>
+                        <div class="nav-item">
+                            <a href="index.html" target="_self" class="nav-link">home</a>
+                        </div>
+                        <div class="nav-item">
+                            <a href="feed.html" target="_self" class="nav-link">feed</a>
+                        </div>
+                        <div class="nav-item">
+                            <a href="blog.html" target="_self" class="nav-link">blog</a>
+                        </div>
+                        <div class="nav-item">
+                            <a href="links.html" target="_self" class="nav-link">links</a>
+                        </div>
+                        <div class="nav-item">
+                            <a href="portfolio-menu.html" target="_self" class="nav-link">portfolio</a>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            <div id="container">
+                <div class="caixamaisclara">
+                    <img id="logobig" src="imgs/site_imgs/logo.png" alt="Logo" data-position="center">
+                </div>
+                <hr>
+                <div class="caixamaisclara">
+                    <div class="games">
+                        <h2>minverso</h2>
+                        <h3>me in games:</h3>
+                        <div class="image-grid-container">
+                            <div class="grid-item">
+                                <img src="imgs/site_imgs/minverso/baldursgate3.png" alt="Description for Image 1">
+                                <h3>baldurs gate 3</h3>
+                            </div>
 
 
+                            <div class="grid-item">
+                                <img src="imgs/site_imgs/minverso/growtopia.jpg" alt="Description for Image 3">
+                                <h3>growtopia</h3>
+                            </div>
 
-            </div>
+                            <div class="grid-item">
+                                <img src="imgs/site_imgs/minverso/ponytown.png" alt="Description for Image 4">
+                                <h3>ponytown</h3>
+                            </div>
+
+                            <div class="grid-item">
+                                <img src="imgs/site_imgs/minverso/diablo.jpg" alt="Description for Image 2">
+                                <h3>diablo iv</h3>
+                            </div>
+
+                            <div class="grid-item">
+                                <img src="imgs/site_imgs/minverso/roblox.png" alt="Description for Image 2">
+                                <h3>roblox</h3>
+                            </div>
+
+                            <div class="grid-item">
+                                <img src="imgs/site_imgs/minverso/habbo.png" alt="Description for Image 2">
+                                <h3>habbo</h3>
+                            </div>
+                            <div class="grid-item">
+                                <img src="imgs/site_imgs/minverso/transformice.png" alt="Description for Image 1">
+                                <h3>transformice</h3>
+                            </div>
+
+                            <div class="grid-item">
+                                <img src="imgs/site_imgs/minverso/aot.png" alt="Description for Image 1">
+                                <h3>aot</h3>
+                            </div>
 
 
 
-
-
-
-
- <h3>picrews:</h3>
-   
-    <div class="picrew-grid-container">
-        <div class="picrew-grid-item">
-            <a href="https://picrew.me/en/image_maker/2212965/complete?cd=0GgMA4exJP" target="_blank">
-                <img src="imgs/site_imgs/minverso/picrew/picrew1.png" alt="">
-                
-            </a>
-        </div>
-        
-          <div class="picrew-grid-item">
-            <a href="https://picrew.me/en/image_maker/1868017" target="_blank">
-                <img src="imgs/site_imgs/minverso/picrew/picrew2.png" alt="">
-                
-            </a>
-        </div>
-        
-        <div class="picrew-grid-item">
-            <a href="https://picrew.me/en/image_maker/2141620/" target="_blank">
-                <img src="imgs/site_imgs/minverso/picrew/picrew3.png" alt="">
-                
-            </a>
-        </div>
-
-      <div class="picrew-grid-item">
-            <a href="https://picrew.me/en/image_maker/2366392/" target="_blank">
-                <img src="imgs/site_imgs/minverso/picrew/picrew4.png" alt="">
-                
-            </a>
-        </div>
-
-         <div class="picrew-grid-item">
-            <a href="https://picrew.me/en/image_maker/2141620/" target="_blank">
-                <img src="imgs/site_imgs/minverso/picrew/picrew3.png" alt="">
-                
-            </a>
-        </div>
-        
-         <div class="picrew-grid-item">
-            <a href="https://picrew.me/en/image_maker/2141620/" target="_blank">
-                <img src="imgs/site_imgs/minverso/picrew/picrew3.png" alt="">
-                
-            </a>
-        </div>
-          <div class="picrew-grid-item">
-            <a href="https://picrew.me/en/image_maker/2141620/" target="_blank">
-                <img src="imgs/site_imgs/minverso/picrew/picrew3.png" alt="">
-                
-            </a>
-        </div>
-        
-           <div class="picrew-grid-item">
-            <a href="https://picrew.me/en/image_maker/2141620/" target="_blank">
-                <img src="imgs/site_imgs/minverso/picrew/picrew3.png" alt="">
-                
-            </a>
-        </div>
-        
-           <div class="picrew-grid-item">
-            <a href="https://picrew.me/en/image_maker/2141620/" target="_blank">
-                <img src="imgs/site_imgs/minverso/picrew/picrew3.png" alt="">
-                
-            </a>
-        </div>
-        
-           <div class="picrew-grid-item">
-            <a href="https://picrew.me/en/image_maker/2141620/" target="_blank">
-                <img src="imgs/site_imgs/minverso/picrew/picrew3.png" alt="">
-                
-            </a>
-        </div>
-        
-           <div class="picrew-grid-item">
-            <a href="https://picrew.me/en/image_maker/2141620/" target="_blank">
-                <img src="imgs/site_imgs/minverso/picrew/picrew3.png" alt="">
-                
-            </a>
-        </div>
-        
-           <div class="picrew-grid-item">
-            <a href="https://picrew.me/en/image_maker/2141620/" target="_blank">
-                <img src="imgs/site_imgs/minverso/picrew/picrew3.png" alt="">
-                
-            </a>
-        </div>
-        
-          <div class="picrew-grid-item">
-            <a href="https://picrew.me/en/image_maker/2141620/" target="_blank">
-                <img src="imgs/site_imgs/minverso/picrew/picrew3.png" alt="">
-                
-            </a>
-        </div>
-        
-
-    </div>
-
-            </div>
+                        </div>
 
 
 
 
-    </div>
-    </main>
 
-    <aside id="sidebar-direita-container" class="sidebar">
+
+
+                        <h3>picrews:</h3>
+
+                        <div class="picrew-grid-container">
+                            <div class="picrew-grid-item">
+                                <a href="https://picrew.me/en/image_maker/2212965/complete?cd=0GgMA4exJP"
+                                    target="_blank">
+                                    <img src="imgs/site_imgs/minverso/picrew/picrew1.png" alt="">
+
+                                </a>
+                            </div>
+
+                            <div class="picrew-grid-item">
+                                <a href="https://picrew.me/en/image_maker/1868017" target="_blank">
+                                    <img src="imgs/site_imgs/minverso/picrew/picrew2.png" alt="">
+
+                                </a>
+                            </div>
+
+                            <div class="picrew-grid-item">
+                                <a href="https://picrew.me/en/image_maker/2141620/" target="_blank">
+                                    <img src="imgs/site_imgs/minverso/picrew/picrew3.png" alt="">
+
+                                </a>
+                            </div>
+
+                            <div class="picrew-grid-item">
+                                <a href="https://picrew.me/en/image_maker/2366392/" target="_blank">
+                                    <img src="imgs/site_imgs/minverso/picrew/picrew4.png" alt="">
+
+                                </a>
+                            </div>
+
+                            <div class="picrew-grid-item">
+                                <a href="https://picrew.me/en/image_maker/2141620/" target="_blank">
+                                    <img src="imgs/site_imgs/minverso/picrew/picrew3.png" alt="">
+
+                                </a>
+                            </div>
+
+                            <div class="picrew-grid-item">
+                                <a href="https://picrew.me/en/image_maker/2141620/" target="_blank">
+                                    <img src="imgs/site_imgs/minverso/picrew/picrew3.png" alt="">
+
+                                </a>
+                            </div>
+                            <div class="picrew-grid-item">
+                                <a href="https://picrew.me/en/image_maker/2141620/" target="_blank">
+                                    <img src="imgs/site_imgs/minverso/picrew/picrew3.png" alt="">
+
+                                </a>
+                            </div>
+
+                            <div class="picrew-grid-item">
+                                <a href="https://picrew.me/en/image_maker/2141620/" target="_blank">
+                                    <img src="imgs/site_imgs/minverso/picrew/picrew3.png" alt="">
+
+                                </a>
+                            </div>
+
+                            <div class="picrew-grid-item">
+                                <a href="https://picrew.me/en/image_maker/2141620/" target="_blank">
+                                    <img src="imgs/site_imgs/minverso/picrew/picrew3.png" alt="">
+
+                                </a>
+                            </div>
+
+                            <div class="picrew-grid-item">
+                                <a href="https://picrew.me/en/image_maker/2141620/" target="_blank">
+                                    <img src="imgs/site_imgs/minverso/picrew/picrew3.png" alt="">
+
+                                </a>
+                            </div>
+
+                            <div class="picrew-grid-item">
+                                <a href="https://picrew.me/en/image_maker/2141620/" target="_blank">
+                                    <img src="imgs/site_imgs/minverso/picrew/picrew3.png" alt="">
+
+                                </a>
+                            </div>
+
+                            <div class="picrew-grid-item">
+                                <a href="https://picrew.me/en/image_maker/2141620/" target="_blank">
+                                    <img src="imgs/site_imgs/minverso/picrew/picrew3.png" alt="">
+
+                                </a>
+                            </div>
+
+                            <div class="picrew-grid-item">
+                                <a href="https://picrew.me/en/image_maker/2141620/" target="_blank">
+                                    <img src="imgs/site_imgs/minverso/picrew/picrew3.png" alt="">
+
+                                </a>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+
+
+
+                </div>
+        </main>
+
+        <aside id="sidebar-direita-container" class="sidebar">
         </aside>
 
 
 
-</div>
+    </div>
 
-<script src="lastfm-widget.js"></script>
- <script src="script.js"></script>
-  <script src="theme-switcher.js"></script>
-
-
+    <script src="lastfm-widget.js"></script>
+    <script src="script.js"></script>
+    <script src="theme-switcher.js"></script>
 
 
 
- </body>
+
+
+</body>
 
 </html>

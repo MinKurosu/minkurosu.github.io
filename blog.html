@@ -1,308 +1,316 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <script src="oneko.js"></script>
-    <script>NekoType="black"</script>
- <script src="carregar-sidebars.js"></script>
+    <script>NekoType = "black"</script>
+    <script src="carregar-sidebars.js"></script>
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4K5KDKEJ2E"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-4K5KDKEJ2E');
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-4K5KDKEJ2E');
     </script>
     <script> window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches </script>
     <meta charset="UTF-8">
-  <meta name="viewport" content="width=1600px, initial-scale=0.4, maximum-scale=1.0, user-scalable=yes">
-    <meta property="og:image" content="https://i.ibb.co/RC2v9zg/sitethumbnail.png"/>
-    <meta property="og:image" content="imgs/site_imgs/sitethumbnail.png"/>
-   
+    <meta name="viewport" content="width=1600px, initial-scale=0.4, maximum-scale=1.0, user-scalable=yes">
+    <meta property="og:image" content="https://i.ibb.co/RC2v9zg/sitethumbnail.png" />
+    <meta property="og:image" content="imgs/site_imgs/sitethumbnail.png" />
 
-   <link rel="stylesheet" href="styles.css" id="theme-stylesheet">
+
+    <link rel="stylesheet" href="styles.css" id="theme-stylesheet">
     <title>@minkurosu</title>
-   
-    <link rel="icon" type="image/ico" href="imgs/site_imgs/favicon.ico"/>
-   
-<style>
+
+    <link rel="icon" type="image/ico" href="imgs/site_imgs/favicon.ico" />
+    <div class="crt"></div>
+    <style>
+        html,
+        body,
+        iframe {
+            cursor: url('imgs/cursor/ROCKcursornormal.cur'), auto;
+        }
 
 
-html, body, iframe{
-  cursor: url('imgs/cursor/ROCKcursornormal.cur'), auto;
-}
-
-
-a, button, input[type="submit"], input[type="button"], select {
-  cursor: url('imgs/cursor/ROCKcursorselect.cur'), pointer;
-}
-
- 
-
-    #container {
-     
-      padding: 1.25rem;
-      border-radius: 1.25rem;
-      box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
-      text-align: center;
-      margin: 0 auto;
-      width: 100%;
-      max-width: 50rem;
-      box-sizing: border-box;
- 
-    }
+        a,
+        button,
+        input[type="submit"],
+        input[type="button"],
+        select {
+            cursor: url('imgs/cursor/ROCKcursorselect.cur'), pointer;
+        }
 
 
 
+        #container {
+
+            padding: 1.25rem;
+            border-radius: 1.25rem;
+            box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
+            text-align: center;
+            margin: 0 auto;
+            width: 100%;
+            max-width: 50rem;
+            box-sizing: border-box;
+
+        }
 
 
 
 
 
 
-#posts-container {
-    padding: 10px;
-}
-
-#posts-container h2 {
-    text-align: left;
-    font-family: "Born2bSportyFS", serif; 
-    color: #534F4A;
-    margin-bottom: 20px;
-}
-
-.blog-post {
-    background-color: transparent;
-    border: none;
-    margin: 0px;
-    border-radius: 0px;
-    box-shadow: none;
-    word-wrap: break-word;
-    text-align: left;
-}
-
-div.blog-post {
-    background-color: transparent;
-    border: none;
-    margin: 0px;
-    border-radius: 0px;
-    box-shadow: none;
-    word-wrap: break-word;
-    text-align: left;
-}
-
-.post-info-header {
-    display: flex;
-    align-items: center;
-    font-family: "Born2bSportyFS", sans-serif;
-    color: #534F4A;
-    font-size: 0.9em;
-    margin-bottom: 8px;
-    gap: 5px;
-}
-
-.post-author-name {
-    font-weight: bold;
-}
-
-.post-separator {
-    font-size: 1.2em;
-    line-height: 1;
-}
-
-
-.blog-post h1 {
-    font-family: "Born2bSportyFS", sans-serif; 
-    color: #534F4A;
-  padding: 5px;
-  margin: 5px;
-}
-
-.blog-post h2 {
-    font-family: "Born2bSportyFS", sans-serif; 
-    color: #534F4A;
-    margin-top: 0;
-    margin-bottom: 5px;
-    font-size: 1.2em;
-    line-height: 1.2;
-    text-align: left;
-}
-
-.blog-post img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 10px auto;
-    border-radius: 4px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-}
-
-.blog-post {
-    background-color: transparent;
-    border: none;
-    padding: 5px 0;
-    margin: 0;
-    border-radius: 0;
-    box-shadow: none;
-    word-wrap: break-word;
-    text-align: left;
-      padding: 10px;
-    width: 100%;              
-    box-sizing: border-box;   
-
-}
-
-.post-divider {
-    border: none;
-    border-top: 1px solid #534f4a;
-    margin: 10px 0;
-    width: 100%;
-}
 
 
 
-.nav-side {
-  display: flex;
-  flex-direction: row;
-  align-items: center; 
-  gap: 10px; 
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
+        #posts-container {
+            padding: 10px;
+        }
+
+        #posts-container h2 {
+            text-align: left;
+            font-family: "Born2bSportyFS", serif;
+            color: #534F4A;
+            margin-bottom: 20px;
+        }
+
+        .blog-post {
+            background-color: transparent;
+            border: none;
+            margin: 0px;
+            border-radius: 0px;
+            box-shadow: none;
+            word-wrap: break-word;
+            text-align: left;
+        }
+
+        div.blog-post {
+            background-color: transparent;
+            border: none;
+            margin: 0px;
+            border-radius: 0px;
+            box-shadow: none;
+            word-wrap: break-word;
+            text-align: left;
+        }
+
+        .post-info-header {
+            display: flex;
+            align-items: center;
+            font-family: "Born2bSportyFS", sans-serif;
+            color: #534F4A;
+            font-size: 0.9em;
+            margin-bottom: 8px;
+            gap: 5px;
+        }
+
+        .post-author-name {
+            font-weight: bold;
+        }
+
+        .post-separator {
+            font-size: 1.2em;
+            line-height: 1;
+        }
 
 
-.caixamaisclaraCenterSimple{
-     box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
-     flex-direction: column
-}
+        .blog-post h1 {
+            font-family: "Born2bSportyFS", sans-serif;
+            color: #534F4A;
+            padding: 5px;
+            margin: 5px;
+        }
 
-.caixamaisclara h4,
-.caixamaisclaraCenterSimple h4 { 
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-    
- width: 100% !important;
-   text-align: center; 
-    margin-left: auto;
-    margin-right: auto;
- box-sizing: border-box;
+        .blog-post h2 {
+            font-family: "Born2bSportyFS", sans-serif;
+            color: #534F4A;
+            margin-top: 0;
+            margin-bottom: 5px;
+            font-size: 1.2em;
+            line-height: 1.2;
+            text-align: left;
+        }
 
-}
+        .blog-post img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 10px auto;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
 
-#theme-toggle-button {
-    background: none !important; 
-    appearance: none;        
-    -webkit-appearance: none; 
-    -moz-appearance: none;   
-    background: none;
-    border: none;
-    padding: 0;
-    margin: 0; 
-    cursor: pointer;
-    outline: none;
-}
+        .blog-post {
+            background-color: transparent;
+            border: none;
+            padding: 5px 0;
+            margin: 0;
+            border-radius: 0;
+            box-shadow: none;
+            word-wrap: break-word;
+            text-align: left;
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
 
-#posts-container {
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-    gap: 20px; 
-   
-    padding: 1.25rem; 
-    border-radius: 0.9375rem; 
-   
+        }
 
-}
+        .post-divider {
+            border: none;
+            border-top: 1px solid #534f4a;
+            margin: 10px 0;
+            width: 100%;
+        }
 
-</style>
+
+
+        .nav-side {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+
+        .caixamaisclaraCenterSimple {
+            box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
+            flex-direction: column
+        }
+
+        .caixamaisclara h4,
+        .caixamaisclaraCenterSimple h4 {
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+
+            width: 100% !important;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            box-sizing: border-box;
+
+        }
+
+        #theme-toggle-button {
+            background: none !important;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background: none;
+            border: none;
+            padding: 0;
+            margin: 0;
+            cursor: pointer;
+            outline: none;
+        }
+
+        #posts-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+
+            padding: 1.25rem;
+            border-radius: 0.9375rem;
+
+
+        }
+    </style>
 
 </head>
+
 <body>
 
-<div class="layout-with-sidebars">
+    <div class="layout-with-sidebars">
 
-   <aside id="sidebar-esquerda-container" class="sidebar">
+        <aside id="sidebar-esquerda-container" class="sidebar">
         </aside>
 
 
-    <main id="containerprincipal">
-        <header id="header" class="fixed-top">
-            <div id="divpatinha">
-                <img src="imgs/site_imgs/patinha.png" id="logopatinha" class="desaturatepics">
-            </div>
-            <nav class="navbar">
-                <div class="divitems">
-                    <div class="nav-item">
-                        <a href="#" onclick="history.back(); return false;" class="nav-link">back</a>
-                    </div>
-                    <div class="nav-item">
-                        <a href="index.html" target="_self" class="nav-link">home</a>
-                    </div>
-                    <div class="nav-item">
-                        <a href="feed.html" target="_self" class="nav-link">feed</a>
-                    </div>
-                    <div class="nav-item">
-                        <a href="blog.html" target="_self" class="nav-link">blog</a>
-                    </div>
-                    <div class="nav-item">
-                        <a href="links.html" target="_self" class="nav-link">links</a>
-                    </div>
-                    <div class="nav-item">
-                        <a href="portfolio-menu.html" target="_self" class="nav-link">portfolio</a>
-                    </div>
+        <main id="containerprincipal">
+            <header id="header" class="fixed-top">
+                <div id="divpatinha">
+                    <img src="imgs/site_imgs/patinha.png" id="logopatinha" class="desaturatepics">
                 </div>
-            </nav>
-        </header>
-       
-             <div id="container">
+                <nav class="navbar">
+                    <div class="divitems">
+                        <div class="nav-item">
+                            <a href="#" onclick="history.back(); return false;" class="nav-link">back</a>
+                        </div>
+                        <div class="nav-item">
+                            <a href="index.html" target="_self" class="nav-link">home</a>
+                        </div>
+                        <div class="nav-item">
+                            <a href="feed.html" target="_self" class="nav-link">feed</a>
+                        </div>
+                        <div class="nav-item">
+                            <a href="blog.html" target="_self" class="nav-link">blog</a>
+                        </div>
+                        <div class="nav-item">
+                            <a href="links.html" target="_self" class="nav-link">links</a>
+                        </div>
+                        <div class="nav-item">
+                            <a href="portfolio-menu.html" target="_self" class="nav-link">portfolio</a>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+
+            <div id="container">
                 <div class="caixamaisclara">
                     <img id="logobig" src="imgs/site_imgs/logo.png" alt="Logo" data-position="center">
                 </div>
                 <hr>
-                 <div class="caixamaisclaraCenterSimple">
-                 <h4>sorry if theres any foreign readers, i kinda wanna do my entries in brazilian portuguese bc it's my first language and its more comfortable, so feel free to translate if you're interested enough to read.</h4>
-                 
-                <div class="nav-item">
-          <a href="admin.html" target="_self" class="nav-link">admin</a>
-           </div>
-          <br>
-                 <div id="google_translate_element"></div>
-            </div>
-                 <br>
-                <div class="caixamaisclara" id="posts-container">
-                    
-                    <h2>loading posts...</h2> 
-                </div>
-              
-       
-    </main>
+                <div class="caixamaisclaraCenterSimple">
+                    <h4>sorry if theres any foreign readers, i kinda wanna do my entries in brazilian portuguese bc it's
+                        my first language and its more comfortable, so feel free to translate if you're interested
+                        enough to read.</h4>
 
-  <aside id="sidebar-direita-container" class="sidebar">
+                    <div class="nav-item">
+                        <a href="admin.html" target="_self" class="nav-link">admin</a>
+                    </div>
+                    <br>
+                    <div id="google_translate_element"></div>
+                </div>
+                <br>
+                <div class="caixamaisclara" id="posts-container">
+
+                    <h2>loading posts...</h2>
+                </div>
+
+
+        </main>
+
+        <aside id="sidebar-direita-container" class="sidebar">
         </aside>
 
 
-</div>
+    </div>
 
 
- <script src="script.js"></script>
- <script type="module" src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"></script>
+    <script src="script.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"></script>
     <script type="module" src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js"></script>
     <script type="module" src="blog.js"></script>
 
-   
-
-<script type="text/javascript">
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({pageLanguage: 'pt', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-}
-</script>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ pageLanguage: 'pt', layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript"
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 
 
-<script src="lastfm-widget.js"></script>
- <script src="script.js"></script>
-  <script src="theme-switcher.js"></script>
- </body>
+
+
+    <script src="lastfm-widget.js"></script>
+    <script src="script.js"></script>
+    <script src="theme-switcher.js"></script>
+</body>
 
 </html>

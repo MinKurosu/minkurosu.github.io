@@ -1,101 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <script src="oneko.js"></script>
-    <script>NekoType="black"</script>
-    <script src="carregar-sidebars.js"></script>
+  <script src="oneko.js"></script>
+  <script>NekoType = "black"</script>
+  <script src="carregar-sidebars.js"></script>
 
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4K5KDKEJ2E"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-4K5KDKEJ2E');
-    </script>
-    <script> window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches </script>
-    <meta charset="UTF-8">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4K5KDKEJ2E"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-4K5KDKEJ2E');
+  </script>
+  <script> window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches </script>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=1600px, initial-scale=0.4, maximum-scale=1.0, user-scalable=yes">
-    <meta property="og:image" content="https://i.ibb.co/RC2v9zg/sitethumbnail.png"/>
-    <meta property="og:image" content="imgs/site_imgs/sitethumbnail.png"/>
-   
-
-   <link rel="stylesheet" href="styles.css" id="theme-stylesheet">
-    <title>@minkurosu</title>
-   
-    <link rel="icon" type="image/ico" href="imgs/site_imgs/favicon.ico"/>
-   
-<style>
+  <meta property="og:image" content="https://i.ibb.co/RC2v9zg/sitethumbnail.png" />
+  <meta property="og:image" content="imgs/site_imgs/sitethumbnail.png" />
 
 
-html, body, iframe{
-  cursor: url('imgs/cursor/ROCKcursornormal.cur'), auto;
-}
+  <link rel="stylesheet" href="styles.css" id="theme-stylesheet">
+  <title>@minkurosu</title>
 
-
-a, button, input[type="submit"], input[type="button"], select {
-  cursor: url('imgs/cursor/ROCKcursorselect.cur'), pointer;
-}
-
- 
-  
-     /* Scale for viewports between 600px and 1200px */
- /* Scale for viewports between 600px and 1200px */
- @media (min-width: 400px) and (max-width: 1200px) {
-        body {
-          transform: scale(1.2);
-          transform-origin: top;
-        }
-        .caixamaisclara {
-          max-width: 100%;
-        }
-
-        .button-link {
-    width: 20rem;
-    padding: 10px;
-    margin: 10px;
-    padding: 10px;
-        }
-
-        .button-link{
-          font-size: 3rem;
-        }
-
-        #h2{
-          font-size: 2rem;
-        }
-}
-
-    
-     
-.nav-item{
-  font-size: 1.3rem;
-}
-
-  .button-container .contact-links {
-    flex: 0 0 100%; /* Garante que cada botão ocupe 100% da largura */
-    font-size: 1.4rem; /* Aumenta o tamanho da fonte */
-   
-    
-  }
-
-    /* Styles specific to contact page */
-    @font-face {
-     font-family: "Born2bSportyFS";
-  src: url(fonts/Born2bSportyFS.otf) format('truetype');
+  <link rel="icon" type="image/ico" href="imgs/site_imgs/favicon.ico" />
+  <div class="crt"></div>
+  <style>
+    html,
+    body,
+    iframe {
+      cursor: url('imgs/cursor/ROCKcursornormal.cur'), auto;
     }
 
 
-   
-   
-a:hover{
-  text-decoration: none;
-}
+    a,
+    button,
+    input[type="submit"],
+    input[type="button"],
+    select {
+      cursor: url('imgs/cursor/ROCKcursorselect.cur'), pointer;
+    }
+
+
+
+    /* Scale for viewports between 600px and 1200px */
+    /* Scale for viewports between 600px and 1200px */
+    @media (min-width: 400px) and (max-width: 1200px) {
+      body {
+        transform: scale(1.2);
+        transform-origin: top;
+      }
+
+      .caixamaisclara {
+        max-width: 100%;
+      }
+
+      .button-link {
+        width: 20rem;
+        padding: 10px;
+        margin: 10px;
+        padding: 10px;
+      }
+
+      .button-link {
+        font-size: 3rem;
+      }
+
+      #h2 {
+        font-size: 2rem;
+      }
+    }
+
+
+
+    .nav-item {
+      font-size: 1.3rem;
+    }
+
+    .button-container .contact-links {
+      flex: 0 0 100%;
+      /* Garante que cada botão ocupe 100% da largura */
+      font-size: 1.4rem;
+      /* Aumenta o tamanho da fonte */
+
+
+    }
+
+    /* Styles specific to contact page */
+    @font-face {
+      font-family: "Born2bSportyFS";
+      src: url(fonts/Born2bSportyFS.otf) format('truetype');
+    }
 
 
 
 
-   
+    a:hover {
+      text-decoration: none;
+    }
+
+
+
+
+
 
     .button-container .contact-links {
       flex: 0 0 calc(25% - 10px);
@@ -105,234 +113,237 @@ a:hover{
       width: 80%;
       padding: 10px;
       margin: 30px;
-      
-      
-      
+
+
+
     }
 
     .contact-links {
-  margin-bottom: 15px; /* Espaço entre os botões */
-}
+      margin-bottom: 15px;
+      /* Espaço entre os botões */
+    }
 
- 
 
-      .imagem-circular {
-    overflow: ;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto; 
-}
-.imagem-circular img{
-  max-width: 15rem;
-  max-height: 15rem;
-  border-radius: 50%;
-   box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5);
-}
 
-.imagem-circular:hover{
-  transform: scale(1.05);
-  transition: 0.3s ease-in-out, transform 0.3s ease-in-out;
-}
+    .imagem-circular {
+      overflow: ;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+    }
 
-#theme-toggle-button {
-    background: none !important; 
-    appearance: none;        
-    -webkit-appearance: none; 
-    -moz-appearance: none;   
-    background: none;
-    border: none;
-    padding: 0;
-    margin: 0; 
-    cursor: pointer;
-    outline: none;
-}
+    .imagem-circular img {
+      max-width: 15rem;
+      max-height: 15rem;
+      border-radius: 50%;
+      box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5);
+    }
 
-</style>
+    .imagem-circular:hover {
+      transform: scale(1.05);
+      transition: 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
+
+    #theme-toggle-button {
+      background: none !important;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background: none;
+      border: none;
+      padding: 0;
+      margin: 0;
+      cursor: pointer;
+      outline: none;
+    }
+  </style>
 
 </head>
+
 <body>
 
-<div class="layout-with-sidebars">
- <aside id="sidebar-esquerda-container" class="sidebar">
-        </aside>
-  
-   <main id="containerprincipal">
-        <header id="header" class="fixed-top">
-            <div id="divpatinha">
-                <img src="imgs/site_imgs/patinha.png" id="logopatinha" class="desaturatepics" alt="logo da barra de navegação">
+  <div class="layout-with-sidebars">
+    <aside id="sidebar-esquerda-container" class="sidebar">
+    </aside>
+
+    <main id="containerprincipal">
+      <header id="header" class="fixed-top">
+        <div id="divpatinha">
+          <img src="imgs/site_imgs/patinha.png" id="logopatinha" class="desaturatepics"
+            alt="logo da barra de navegação">
+        </div>
+        <nav class="navbar">
+          <div class="divitems">
+            <div class="nav-item">
+              <a href="#" onclick="history.back(); return false;" class="nav-link">back</a>
             </div>
-            <nav class="navbar">
-                <div class="divitems">
-                    <div class="nav-item">
-                        <a href="#" onclick="history.back(); return false;" class="nav-link">back</a>
-                    </div>
-                    <div class="nav-item">
-                        <a href="index.html" target="_self" class="nav-link">home</a>
-                    </div>
-                    <div class="nav-item">
-                        <a href="feed.html" target="_self" class="nav-link">feed</a>
-                    </div>
-                    <div class="nav-item">
-                        <a href="blog.html" target="_self" class="nav-link">blog</a>
-                    </div>
-                    <div class="nav-item">
-                        <a href="links.html" target="_self" class="nav-link">links</a>
-                    </div>
-                    <div class="nav-item">
-                        <a href="portfolio-menu.html" target="_self" class="nav-link">portfolio</a>
-                    </div>
-                </div>
-            </nav>
-        </header>
-        <div id="container">
-            <div class="caixamaisclara">
-          
-    
-      <div class="conjuntoblocos">
-        <br>
-        <h2 class="h2text"></h2>
-      
-        
-        <div class="imagem-circular">
-          <img src="imgs/site_imgs/iconredondo.jpg" alt="Imagem Circular">
-      </div>
- 
-     <br>
-      <br>
-      <div class="contact-links">
-          <a href="https://instagram.com/yasmincruzm" class="pushable" target="_blank">
-            <span class="shadow"></span>
-            <span class="edge"></span>
-            <span class="front">personal instagram</span>
-          </a>
-</div>
-
-      
-     
-        <div class="contact-links">
-          <a href="https://instagram.com/minkurosu" class="pushable" target="_blank">
-            <span class="shadow"></span>
-            <span class="edge"></span>
-            <span class="front">art instagram</span>
-          </a>
-        </div>
-        
-         <div class="contact-links">
-          <a href="https://x.com/MinKurosu" class="pushable" target="_blank">
-            <span class="shadow"></span>
-            <span class="edge"></span>
-            <span class="front">art twitter</span>
-          </a>
-        </div>
-        
-
-        <div class="contact-links">
-          <a href="https://bsky.app/profile/minkurosu.bsky.social" class="pushable" target="_blank">
-            <span class="shadow"></span>
-            <span class="edge"></span>
-            <span class="front">art bluesky</span>
-          </a>
-        </div>
-     
-         <div class="contact-links">
-          <a href="https://twitch.tv/minkurosu" class="pushable" target="_blank">
-            <span class="shadow"></span>
-            <span class="edge"></span>
-            <span class="front">twitch</span>
-          </a>
-        </div>
-
-   <div class="contact-links">
-          <a href="https://vgen.co/MinKurosu" class="pushable" target="_blank">
-            <span class="shadow"></span>
-            <span class="edge"></span>
-            <span class="front">vgen</span>
-          </a>
-        </div>
-        <div class="contact-links">
-          <a href="https://discord.gg/AjND37mu2h" class="pushable" target="_blank">
-            <span class="shadow"></span>
-            <span class="edge"></span>
-            <span class="front">discord</span>
-          </a>
-        </div>
-         <div class="contact-links">
-          <a href="https://steamcommunity.com/id/minkurosu/02" class="pushable" target="_blank">
-            <span class="shadow"></span>
-            <span class="edge"></span>
-            <span class="front">steam</span>
-          </a>
-        </div>
-       
-       
-       
-         
-        <div class="contact-links">
-          <a href="https://open.spotify.com/user/mimincruzm" class="pushable" target="_blank">
-            <span class="shadow"></span>
-            <span class="edge"></span>
-            <span class="front">spotify</span>
-          </a>
-        </div>
-        <div class="contact-links">
-          <a href="https://neocities.org/site/minkurosu" class="pushable" target="_blank">
-            <span class="shadow"></span>
-            <span class="edge"></span>
-            <span class="front">neocities</span>
-          </a>
-        </div>
-        <div class="contact-links">
-          <a href="https://trello.com/b/FLKUzYRd/commissions" class="pushable" target="_blank">
-            <span class="shadow"></span>
-            <span class="edge"></span>
-            <span class="front">trello</span>
-          </a>
-        </div>
-        <div class="contact-links">
-          <a href="https://github.com/MinKurosu" class="pushable" target="_blank">
-            <span class="shadow"></span>
-            <span class="edge"></span>
-            <span class="front">github</span>
-          </a>
-        </div>
-    
-      </div>
-            
-           
-        
+            <div class="nav-item">
+              <a href="index.html" target="_self" class="nav-link">home</a>
+            </div>
+            <div class="nav-item">
+              <a href="feed.html" target="_self" class="nav-link">feed</a>
+            </div>
+            <div class="nav-item">
+              <a href="blog.html" target="_self" class="nav-link">blog</a>
+            </div>
+            <div class="nav-item">
+              <a href="links.html" target="_self" class="nav-link">links</a>
+            </div>
+            <div class="nav-item">
+              <a href="portfolio-menu.html" target="_self" class="nav-link">portfolio</a>
+            </div>
           </div>
+        </nav>
+      </header>
+      <div id="container">
+        <div class="caixamaisclara">
+
+
+          <div class="conjuntoblocos">
+            <br>
+            <h2 class="h2text"></h2>
+
+
+            <div class="imagem-circular">
+              <img src="imgs/site_imgs/iconredondo.jpg" alt="Imagem Circular">
+            </div>
+
+            <br>
+            <br>
+            <div class="contact-links">
+              <a href="https://instagram.com/yasmincruzm" class="pushable" target="_blank">
+                <span class="shadow"></span>
+                <span class="edge"></span>
+                <span class="front">personal instagram</span>
+              </a>
+            </div>
+
+
+
+            <div class="contact-links">
+              <a href="https://instagram.com/minkurosu" class="pushable" target="_blank">
+                <span class="shadow"></span>
+                <span class="edge"></span>
+                <span class="front">art instagram</span>
+              </a>
+            </div>
+
+            <div class="contact-links">
+              <a href="https://x.com/MinKurosu" class="pushable" target="_blank">
+                <span class="shadow"></span>
+                <span class="edge"></span>
+                <span class="front">art twitter</span>
+              </a>
+            </div>
+
+
+            <div class="contact-links">
+              <a href="https://bsky.app/profile/minkurosu.bsky.social" class="pushable" target="_blank">
+                <span class="shadow"></span>
+                <span class="edge"></span>
+                <span class="front">art bluesky</span>
+              </a>
+            </div>
+
+            <div class="contact-links">
+              <a href="https://twitch.tv/minkurosu" class="pushable" target="_blank">
+                <span class="shadow"></span>
+                <span class="edge"></span>
+                <span class="front">twitch</span>
+              </a>
+            </div>
+
+            <div class="contact-links">
+              <a href="https://vgen.co/MinKurosu" class="pushable" target="_blank">
+                <span class="shadow"></span>
+                <span class="edge"></span>
+                <span class="front">vgen</span>
+              </a>
+            </div>
+            <div class="contact-links">
+              <a href="https://discord.gg/AjND37mu2h" class="pushable" target="_blank">
+                <span class="shadow"></span>
+                <span class="edge"></span>
+                <span class="front">discord</span>
+              </a>
+            </div>
+            <div class="contact-links">
+              <a href="https://steamcommunity.com/id/minkurosu/02" class="pushable" target="_blank">
+                <span class="shadow"></span>
+                <span class="edge"></span>
+                <span class="front">steam</span>
+              </a>
+            </div>
+
+
+
+
+            <div class="contact-links">
+              <a href="https://open.spotify.com/user/mimincruzm" class="pushable" target="_blank">
+                <span class="shadow"></span>
+                <span class="edge"></span>
+                <span class="front">spotify</span>
+              </a>
+            </div>
+            <div class="contact-links">
+              <a href="https://neocities.org/site/minkurosu" class="pushable" target="_blank">
+                <span class="shadow"></span>
+                <span class="edge"></span>
+                <span class="front">neocities</span>
+              </a>
+            </div>
+            <div class="contact-links">
+              <a href="https://trello.com/b/FLKUzYRd/commissions" class="pushable" target="_blank">
+                <span class="shadow"></span>
+                <span class="edge"></span>
+                <span class="front">trello</span>
+              </a>
+            </div>
+            <div class="contact-links">
+              <a href="https://github.com/MinKurosu" class="pushable" target="_blank">
+                <span class="shadow"></span>
+                <span class="edge"></span>
+                <span class="front">github</span>
+              </a>
+            </div>
+
+          </div>
+
+
+
         </div>
-    
+      </div>
+
 
     </main>
 
 
-   
+
 
     <aside id="sidebar-direita-container" class="sidebar sidebar-right">
-        </aside>
-
-
-</div>
-</div>
-    </div>
-</div>
-</div>
-        </div>
-        
-        </div>
-        
     </aside>
 
-</div>
-<script src="lastfm-widget.js"></script>
- <script src="script.js"></script>
+
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+
+  </div>
+
+  </aside>
+
+  </div>
+  <script src="lastfm-widget.js"></script>
+  <script src="script.js"></script>
   <script src="theme-switcher.js"></script>
 
 
-       
- </body>
+
+</body>
 
 </html>
