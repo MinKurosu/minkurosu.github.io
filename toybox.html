@@ -195,6 +195,62 @@
             cursor: pointer;
             outline: none;
         }
+
+
+
+
+
+
+        .bookshelf-item,
+        .item-slot {
+            overflow: visible;
+            /* permite que a tooltip "saia" do contêiner */
+
+        }
+
+        /* CSS para tooltip */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            z-index: 1000;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: max-content;
+            max-width: 200px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 8px;
+            position: absolute;
+            z-index: 1000;
+            bottom: 125%;
+            /* posição acima da imagem */
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 12px;
+        }
+
+        .tooltip .tooltiptext::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            /* seta apontando para a imagem */
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 5px;
+            border-style: solid;
+            border-color: #555 transparent transparent transparent;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
     </style>
 
 </head>
@@ -239,40 +295,50 @@
                 <div class="grid-container">
                     <div class="bookshelf-item">
                         <img src="imgs/site_imgs/bookshelf.jpg" alt="Estante de Livros" class="bookshelf-img">
+
                         <div class="item-slot top-slot">
-                            <img src="imgs/webgraphics/pixels/jupi.gif" style="height: 50px;">
-                            <img src="imgs/webgraphics/pixels/apollo.gif" style="height: 50px;">
-                            <img src="imgs/webgraphics/pixels/jupi2.webp" style="height: 40px;">
-                            <img src="imgs/webgraphics/pixels/ftul9o.gif" style="height: 40px;">
-
+                            <img src="imgs/webgraphics/pixels/jupi.gif" style="height: 50px;"
+                                data-desc="creds tba sorryyyyy">
+                            <img src="imgs/webgraphics/pixels/apollo.gif" style="height: 50px;"
+                                data-desc="creds tba sorryyyyy">
+                            <img src="imgs/webgraphics/pixels/jupi2.webp" style="height: 40px;"
+                                data-desc="creds tba sorryyyyy">
+                            <img src="imgs/webgraphics/pixels/ftul9o.gif" style="height: 40px;"
+                                data-desc="creds tba sorryyyyy">
                         </div>
-                        <div class="item-slot bottom-slot">
-                            <img src="imgs/webgraphics/pixels/ponytown-sit.gif" style="height: 80px;">
-                            <img src="imgs/webgraphics/pixels/fluttershy2.gif" style="height: 80px;">
 
+                        <div class="item-slot bottom-slot">
+                            <img src="imgs/webgraphics/pixels/ponytown-sit.gif" style="height: 80px;"
+                                data-desc="my ponytown pony">
+                            <img src="imgs/webgraphics/pixels/fluttershy2.gif" style="height: 80px;"
+                                data-desc="Fluttershy sorrindo">
                         </div>
                     </div>
 
                     <div class="bookshelf-item">
                         <img src="imgs/site_imgs/bookshelf.jpg" alt="Estante de Livros" class="bookshelf-img">
+
                         <div class="item-slot top-slot">
-                            <img src="imgs/webgraphics/pixels/happyhappyhappy.gif" style="height: 70px;">
+                            <img src="imgs/webgraphics/pixels/happyhappyhappy.gif" style="height: 70px;"
+                                data-desc="happy happy happy">
                             <img src="imgs/webgraphics/pixels/discokitten.gif" style="height: 60px;">
                             <img src="imgs/webgraphics/pixels/crunch.gif" style="height: 70px;">
-
                         </div>
+
                         <div class="item-slot bottom-slot">
                             <img src="imgs/webgraphics/pixels/kitten.gif" style="height: 80px;">
                             <img src="imgs/webgraphics/pixels/waccat.gif" style="height: 70px;">
                             <img src="imgs/webgraphics/pixels/looker.gif" style="height: 70px;">
                         </div>
+
                     </div>
+
 
                     <div class="bookshelf-item">
                         <img src="imgs/site_imgs/bookshelf.jpg" alt="Estante de Livros" class="bookshelf-img">
                         <div class="item-slot top-slot">
                             <img src="" style="height: 80px;">
-                            <img src="imgs/webgraphics/pixels/cat.png" style="height: 50px;">
+                            <img src="imgs/webgraphics/pixels/cat.png" style="height: 50px;" data-desc="aaaaaa">
                             <img src="imgs/webgraphics/pixels/1cbac115.gif" style="height: 50px;">
 
                         </div>
@@ -402,12 +468,23 @@
                     <div class="bookshelf-item">
                         <img src="imgs/site_imgs/bookshelf.jpg" alt="Estante de Livros" class="bookshelf-img">
                         <div class="item-slot top-slot">
-                            <img src="imgs/webgraphics/pixels/pepe.png" style="height: 80px;">
+                            <img src="imgs/webgraphics/pixels/pepe.png" style=" height: 90px;">
                         </div>
                         <div class="item-slot bottom-slot">
-
+                            <img src="https://kid-koda.neocities.org/cliques/cds/threecheers.jpg"
+                                data-desc="by kid-koda.neocities.org" style="height: 80px;">
                         </div>
                     </div>
+
+
+
+
+
+
+
+
+
+
 
                     <div class="bookshelf-item">
                         <img src="imgs/site_imgs/bookshelf.jpg" alt="Estante de Livros" class="bookshelf-img">
@@ -487,5 +564,21 @@
 
 
 </body>
+<script>
+    // JS para adicionar tooltips automaticamente
+    document.querySelectorAll('.item-slot img[data-desc]').forEach(img => {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'tooltip';
+
+        const tooltipSpan = document.createElement('span');
+        tooltipSpan.className = 'tooltiptext';
+        tooltipSpan.textContent = img.getAttribute('data-desc');
+
+        img.parentNode.insertBefore(wrapper, img);
+        wrapper.appendChild(img);
+        wrapper.appendChild(tooltipSpan);
+    });
+
+</script>
 
 </html>

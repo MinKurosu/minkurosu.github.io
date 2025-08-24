@@ -1,372 +1,373 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <script src="oneko.js"></script>
-    <script>NekoType="black"</script>
+    <script>NekoType = "black"</script>
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4K5KDKEJ2E"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-4K5KDKEJ2E');
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-4K5KDKEJ2E');
     </script>
     <script> window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches </script>
     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=0., minimum-scale=0.2, maximum-scale=1.0, user-scalable=yes">
-    <meta property="og:image" content="https://i.ibb.co/RC2v9zg/sitethumbnail.png"/>
-    <meta property="og:image" content="imgs/site_imgs/sitethumbnail.png"/>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=0., minimum-scale=0.2, maximum-scale=1.0, user-scalable=yes">
+    <meta property="og:image" content="https://i.ibb.co/RC2v9zg/sitethumbnail.png" />
+    <meta property="og:image" content="imgs/site_imgs/sitethumbnail.png" />
     <meta name="color-scheme" content="light only">
 
     <link rel="stylesheet" href="styles.css">
     <title>@minkurosu - Dream Journal</title>
-   
-    <link rel="icon" type="image/ico" href="imgs/site_imgs/favicon.ico"/>
-   
 
-<style>
-    
+    <link rel="icon" type="image/ico" href="imgs/site_imgs/favicon.ico" />
 
-/* Header (ajustado para 70rem para combinar com o container) */
-header {
-    background-color: #1B1917;
-    padding: 5px;
-    background-attachment: fixed;
-    margin-bottom: 2%;
-    border-radius: 0 0 1.25rem 1.25rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5);
-    width: 100%;
-    max-width: 70rem; /* Posts mais largos */
-    box-sizing: border-box;
-    max-height: 5rem;
-}
 
-/* caixamaisclara geral (onde está o posts-container, ajustada para 70rem) */
-.caixamaisclara {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #24211e;
-    padding: 0.3125rem;
-    border-radius: 0.9375rem;
-    box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
-    margin: 2px;
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-}
+    <style>
+        header {
+            background-color: #1B1917;
+            padding: 5px;
+            background-attachment: fixed;
+            margin-bottom: 2%;
+            border-radius: 0 0 1.25rem 1.25rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5);
+            width: 100%;
+            max-width: 70rem;
 
-/* Container principal (#container, ajustado para 70rem) */
-#container {
-    background-color: #1B1917;
-    padding: 1.25rem;
-    border-radius: 1.25rem;
-    box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
-    text-align: center;
-    margin: 0 auto;
-    width: 100%;
-    max-width: 70rem; /* Posts mais largos */
-    box-sizing: border-box;
-    color: #534F4A;
-}
+            box-sizing: border-box;
+            max-height: 5rem;
+        }
 
-/* ========================================= */
-/* ESTILOS ESPECÍFICOS PARA OS POSTS DO BLOG */
-/* ========================================= */
+        .caixamaisclara {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #24211e;
+            padding: 0.3125rem;
+            border-radius: 0.9375rem;
+            box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
+            margin: 2px;
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+        }
 
-/* Container que envolve todos os posts */
-#posts-container {
-    padding: 10px;
-}
 
-/* Estilo para a mensagem de "Carregando Posts..." ou "Nenhum post encontrado" */
-#posts-container h2 {
-    text-align: left;
-    font-family: "Born2bSportyFS", serif; /* Mantenho MoreSugar para esse H2 específico de "Carregando Posts..." */
-    color: #534F4A;
-    margin-bottom: 20px;
-}
+        #container {
+            background-color: #1B1917;
+            padding: 1.25rem;
+            border-radius: 1.25rem;
+            box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
+            text-align: center;
+            margin: 0 auto;
+            width: 100%;
+            max-width: 70rem;
 
-/* Estilos para os posts individuais */
-.blog-post {
-    background-color: transparent;
-    border: none;
-    padding: 5px 0;
-    margin: 0;
-    border-radius: 0;
-    box-shadow: none;
-    word-wrap: break-word;
-    text-align: left; /* Garante que todo o conteúdo do post seja alinhado à esquerda por padrão */
-}
+            box-sizing: border-box;
+            color: #534F4A;
+        }
 
-/* Estilos para o cabeçalho de informação do post (@minkurosu • Data) */
-.post-info-header {
-    display: flex;
-    align-items: center;
-    font-family: "Born2bSportyFS", sans-serif;
-    color: #534F4A;
-    font-size: 0.9em;
-    margin-bottom: 8px;
-    gap: 5px;
-}
 
-.post-author-name {
-    font-weight: bold;
-}
+        #posts-container {
+            padding: 10px;
+        }
 
-.post-separator {
-    font-size: 1.2em;
-    line-height: 1;
-}
 
-.post-date {
-    /* Estilo para a data, pode ser ajustado */
-}
+        #posts-container h2 {
+            text-align: left;
+            font-family: "MinFont";
+            color: #534F4A;
+            margin-bottom: 20px;
+        }
 
-/* Estilos para o título de cada post (h2 dentro de .blog-post) */
-.blog-post h2 {
-    font-family: "Born2bSportyFS", sans-serif; /* ALTERADO: MESMA FONTE DO CORPO */
-    color: #534F4A;
-    margin-top: 0;
-    margin-bottom: 10px;
-    font-size: 1.2em;
-    line-height: 1.2;
-    text-align: left;
-}
+        .blog-post {
+            background-color: transparent;
+            border: none;
+            padding: 5px 0;
+            margin: 0;
+            border-radius: 0;
+            box-shadow: none;
+            word-wrap: break-word;
+            text-align: left;
 
-/* Estilos para as imagens dentro dos postsaaa */
-.blog-post img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 10px auto;
-    border-radius: 4px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-}
+        }
 
-/* Estilos para o parágrafo do conteúdo do post */
-.blog-post {
-    background-color: transparent;
-    border: none;
-    padding: 5px 0;
-    margin: 0;
-    border-radius: 0;
-    box-shadow: none;
-    word-wrap: break-word;
-    text-align: left;
-    
-    /* ----- ADICIONE ESTAS DUAS LINHAS ----- */
-    width: 100%;              /* Garante que o post ocupe 100% da largura do seu contêiner pai */
-    box-sizing: border-box;   /* Inclui o padding e a borda no cálculo da largura total */
-    /* ------------------------------------- */
-}
 
-/* Estilos para a linha divisória (hr) */
-.post-divider {
-    border: none;
-    border-top: 1px solid #534f4a;
-    margin: 20px 0;
-    width: 100%;
-}
+        .post-info-header {
+            display: flex;
+            align-items: center;
+            font-family: "MinFont";
+            color: #534F4A;
+            font-size: 0.9em;
+            margin-bottom: 8px;
+            gap: 5px;
+        }
+
+        .post-author-name {
+            font-weight: bold;
+        }
+
+        .post-separator {
+            font-size: 1.2em;
+            line-height: 1;
+        }
+
+        .post-date {}
+
+
+        .blog-post h2 {
+            font-family: "MinFont";
+
+            color: #534F4A;
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+            line-height: 1.2;
+            text-align: left;
+        }
+
+
+        .blog-post img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 10px auto;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+
+        .blog-post {
+            background-color: transparent;
+            border: none;
+            padding: 5px 0;
+            margin: 0;
+            border-radius: 0;
+            box-shadow: none;
+            word-wrap: break-word;
+            text-align: left;
+
+
+            width: 100%;
+
+            box-sizing: border-box;
+
+        }
+
+        .post-divider {
+            border: none;
+            border-top: 1px solid #534f4a;
+            margin: 20px 0;
+            width: 100%;
+        }
 
 
 
-.nav-side {
-  display: flex;
-  flex-direction: row;
-  align-items: center; /* centraliza horizontalmente */
-  gap: 10px; /* espaço entre os itens */
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
+        .nav-side {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            gap: 10px;
+
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
 
 
-.caixamaisclaraCenterSimple{
-     box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
-     flex-direction: column
-}
+        .caixamaisclaraCenterSimple {
+            box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
+            flex-direction: column
+        }
 
-.caixamaisclara h4,
-.caixamaisclaraCenterSimple h4 { /* Adicione esta linha se você usa caixamaisclaraCenterSimple em outros lugares */
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-    /* Você pode adicionar !important se precisar de mais prioridade, mas geralmente não é necessário aqui */
- width: 100% !important;
-   text-align: center; 
-    margin-left: auto;
-    margin-right: auto;
- box-sizing: border-box;
+        .caixamaisclara h4,
+        .caixamaisclaraCenterSimple h4 {
 
-}
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 
-/* Opcional: Para ter certeza absoluta que o widget do Google Translate não tenha sombra de texto, adicione: */
-#google_translate_element {
-    text-shadow: none !important;
-      text-align: center; 
-    margin-left: auto;
-    margin-right: auto;
-     box-sizing: border-box;
-     
-    /* Mantenha outros estilos que você já tenha para #google_translate_element aqui */
-}
+            width: 100% !important;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            box-sizing: border-box;
 
-#google_translate_element {
-    /* Define a cor de fundo desejada */
-    background-color: #505050 !important; /* Exemplo: um cinza claro. Mude para a cor que quiser! */
-     text-decoration: none;
-    /* Adicione padding se quiser um espaçamento interno */
-    padding: 5px !important; 
-    
-    /* Opcional: borda arredondada */
-    border-radius: 8px !important; 
-    
-    /* Opcional: uma borda */
-    border: 1px solid #505050 !important;
-    
-    /* Certifique-se de que ele esteja visível, caso você tenha aplicado display: none anteriormente */
-    display: block !important; 
-}
+        }
 
-.blog-post .translate-button {
-    /* Define o display como inline-block para que o botão ocupe apenas a largura do seu conteúdo */
-    display: inline-block; 
-    
-    /* Remove qualquer largura fixa ou máxima que possa estar sendo aplicada */
-    width: auto; 
-    max-width: none;
-    
-    /* Adiciona um espaçamento acima do botão para separá-lo do conteúdo do post */
-    margin-top: 15px; 
-    
-    /* Adiciona um preenchimento interno para o botão */
-    padding: 8px 15px; 
-    
-    /* Estilos básicos para o botão (ajuste conforme o design do seu blog) */
-    background-color: #007bff; /* Cor de fundo azul, por exemplo */
-    color: #a7a7a7; /* Cor do texto */
-    border: none;
-    border-radius: 2px;
-    cursor: pointer;
-    font-size: 0.9em;
-    text-decoration: none;
-    transition: background-color 0.3s ease; /* Efeito de transição ao passar o mouse */
-}
+        #google_translate_element {
+            text-shadow: none !important;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            box-sizing: border-box;
 
-.blog-post .translate-button:hover {
-    background-color: #0056b3; /* Cor mais escura ao passar o mouse */
-}
 
-/* Se você tem um divisor <hr> logo após o botão, pode querer ajustar o margin-top dele também */
-.blog-post .post-divider {
-    margin-top: 25px; /* Mais espaço entre o botão e o divisor */
-}
+        }
 
-.goog-te-gadget-simple {
-    /* background-color: #FFF; */
-    border-left: 1px solid #a7a7a7;
-    border-top: 1px solid #a7a7a7;
-    border-bottom: 1px solid #a7a7a7;
-    border-right: 1px solid #a7a7a7;
-    font-size: 10pt;
-    display: inline-block;
-    padding-top: 1px;
-    padding-bottom: 2px;
-    cursor: pointer;
-     text-decoration: none;
-}
+        #google_translate_element {
 
-</style>
+            background-color: #505050 !important;
+
+            text-decoration: none;
+
+            padding: 5px !important;
+
+
+            border-radius: 8px !important;
+
+
+            border: 1px solid #505050 !important;
+
+
+            display: block !important;
+        }
+
+        .blog-post .translate-button {
+
+            display: inline-block;
+
+            width: auto;
+            max-width: none;
+
+            margin-top: 15px;
+
+            padding: 8px 15px;
+
+            background-color: #007bff;
+
+            color: #a7a7a7;
+
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+            font-size: 0.9em;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+
+        }
+
+        .blog-post .translate-button:hover {
+            background-color: #0056b3;
+
+        }
+
+
+        .blog-post .post-divider {
+            margin-top: 25px;
+
+        }
+
+        .goog-te-gadget-simple {
+
+            border-left: 1px solid #a7a7a7;
+            border-top: 1px solid #a7a7a7;
+            border-bottom: 1px solid #a7a7a7;
+            border-right: 1px solid #a7a7a7;
+            font-size: 10pt;
+            display: inline-block;
+            padding-top: 1px;
+            padding-bottom: 2px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+    </style>
 </head>
+
 <body>
 
-<div class="layout-with-sidebars">
+    <div class="layout-with-sidebars">
 
-    <aside class="sidebar">
-    
-    </aside>
+        <aside class="sidebar">
 
-    <main id="containerprincipal">
+        </aside>
+
+        <main id="containerprincipal">
             <header id="header" class="fixed-top">
                 <div id="divpatinha">
                     <img src="imgs/site_imgs/patinha.png" id="logopatinha" alt="logo da barra de navegação">
                 </div>
                 <nav class="navbar">
-                 <div class="divitems">
+                    <div class="divitems">
 
-         <div class="nav-item">
-    <a href="#" onclick="history.back(); return false;" class="nav-link">back</a>
-</div>
+                        <div class="nav-item">
+                            <a href="#" onclick="history.back(); return false;" class="nav-link">back</a>
+                        </div>
 
-        <div class="nav-item">
-          <a href="index.html" target="_self" class="nav-link">home</a>
-        </div>
-        <div class="nav-item">
-          <a href="feed.html" target="_self" class="nav-link">feed</a>
-        </div>
-        
-        <div class="nav-item">
-          <a href="blog.html" target="_self" class="nav-link">blog</a>
-        </div>
-        <div class="nav-item">
-          <a href="links.html" target="_self" class="nav-link">links</a>
-        </div>
-        <div class="nav-item">
-          <a href="portfolio-menu.html" target="_self" class="nav-link">portfolio</a>
-        </div>
-         
+                        <div class="nav-item">
+                            <a href="index.html" target="_self" class="nav-link">home</a>
+                        </div>
+                        <div class="nav-item">
+                            <a href="feed.html" target="_self" class="nav-link">feed</a>
+                        </div>
+
+                        <div class="nav-item">
+                            <a href="blog.html" target="_self" class="nav-link">blog</a>
+                        </div>
+                        <div class="nav-item">
+                            <a href="links.html" target="_self" class="nav-link">links</a>
+                        </div>
+                        <div class="nav-item">
+                            <a href="portfolio-menu.html" target="_self" class="nav-link">portfolio</a>
+                        </div>
+
                     </div>
                 </nav>
             </header>
             <div id="container">
-              <main id="containerprincipal">
-            
-            <div id="container">
-                <div class="caixamaisclara">
-                    <img id="logobig" src="imgs/site_imgs/logo.png" alt="Logo" data-position="center">
-                   
-                 <br>
-                 </div>
-               <hr>
- <div class="caixamaisclara"">
+                <main id="containerprincipal">
+
+                    <div id="container">
+                        <div class="caixamaisclara">
+                            <img id="logobig" src="imgs/site_imgs/logo.png" alt="Logo" data-position="center">
+
+                            <br>
+                        </div>
+                        <hr>
+                        <div class="caixamaisclara"">
             <h1>Private Entries</h1>
             <hr>
-            <div id="private-access-section"> 
-                <form id="password-form">
-                    <h2>who are you?</h2>
-                    <input type="password" id="password-input" placeholder="digite a senha" required>
-                    <button type="submit" id="password-submit-btn">entrar</button>
-                    <p id="password-message"></p>
-                </form>
+            <div id=" private-access-section">
+                            <form id="password-form">
+                                <h2>who are you?</h2>
+                                <input type="password" id="password-input" placeholder="digite a senha" required>
+                                <button type="submit" id="password-submit-btn">entrar</button>
+                                <p id="password-message"></p>
+                            </form>
 
-                <div id="private-entries-display" style="display:none;">
-                    <h2>loading private entries...</h2> 
-                </div>
-            </div>
-        </div>
-    </main>
-            </main>
+                            <div id="private-entries-display" style="display:none;">
+                                <h2>loading private entries...</h2>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+        </main>
 
-    <aside class="sidebar sidebar-right">
-  
-    </aside>
+        <aside class="sidebar sidebar-right">
 
-</div>
+        </aside>
 
- <script src="private.js"></script>
- <script type="module" src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"></script>
+    </div>
+
+    <script src="private.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"></script>
     <script type="module" src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js"></script>
-  <script type="module" src="private.js"></script>
- 
+    <script type="module" src="private.js"></script>
 
 
-<script type="text/javascript">
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({pageLanguage: 'pt', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-}
-</script>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ pageLanguage: 'pt', layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript"
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 
 </body>
 <script type="module" src="private.js"></script>
+
 </html>
