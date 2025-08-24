@@ -10,14 +10,51 @@
             box-sizing: border-box;
         }
 
+        body {
+            font-family: ;
+            margin: 0;
+            padding: 20px;
+            color: #4b4b4b;
+        }
+
+        /* Novo contêiner para centralizar a área de desenho e controles */
+        #drawing-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 0 auto 30px;
+            max-width: 600px;
+        }
 
         canvas {
             border: 1px solid black;
             cursor: crosshair;
-
         }
 
+        /* Contêiner para alinhar os botões horizontalmente */
+        .controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+            /* Permite que os botões quebrem para a próxima linha em telas pequenas */
+            justify-content: center;
+        }
 
+        /* Estilo para os seletores de cor */
+        .stroke-color {
+            width: 20px;
+            height: 20px;
+
+            cursor: pointer;
+        }
+
+        /* Estilo da galeria no formato de colunas */
         #gallery {
             width: 700px;
             overflow: auto;
@@ -33,7 +70,7 @@
             display: inline-block;
             width: 100%;
             margin-bottom: 15px;
-            border: 1px solid #ccc;
+
             padding: 5px;
             text-align: center;
             break-inside: avoid;
@@ -55,20 +92,19 @@
 
 <body>
 
-    <canvas id="drawboxcanvas" width="500" height="500"></canvas>
-    <br>
-    <div onclick="change_color(this)" style="background:red" class="stroke-color"></div>
-    <div onclick="change_color(this)" style="background:blue" class="stroke-color"></div>
-
-    <button onclick="Restore()">undo</button>
-    <button onclick="Clear()">clear</button>
-
-    <input type="color" oninput="stroke_color = this.value">
-    <input type="range" min="1" max="100" oninput="stroke_width = this.value">
-
-    <button id="submit">submit drawing</button>
-    <p id="status"></p>
-
+    <div id="drawing-container">
+        <canvas id="drawboxcanvas" width="500" height="500"></canvas>
+        <div class="controls">
+            <div onclick="change_color(this)" style="background:red" class="stroke-color"></div>
+            <div onclick="change_color(this)" style="background:blue" class="stroke-color"></div>
+            <button onclick="Restore()">undo</button>
+            <button onclick="Clear()">clear</button>
+            <input type="color" oninput="stroke_color = this.value">
+            <input type="range" min="1" max="100" oninput="stroke_width = this.value">
+            <button id="submit">submit drawing</button>
+        </div>
+        <p id="status"></p>
+    </div>
 
     <h1>submitted drawings ☻</h1>
 
@@ -86,7 +122,7 @@
             <img src="imgs/artbyyou/Screenshot_20250718_175137_Gallery.jpg" alt="Descrição da Imagem 1">
         </div>
         <div class="image-container">
-            <img src="imgs/artbyyou/Screenshot_20250718_175151_Gallery.jpg" alt="Descrição da Imagem 1">
+            <img src="imgs/artbyou/Screenshot_20250718_175151_Gallery.jpg" alt="Descrição da Imagem 1">
         </div>
     </div>
 

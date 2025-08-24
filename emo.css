@@ -4,7 +4,7 @@
 }
 
 @font-face {
-  font-family: "Born2bSportyFS";
+  font-family: "MinFont";
   src: url(fonts/minFont.ttf) format('truetype');
 }
 
@@ -187,7 +187,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  font-family: "Born2bSportyFS";
+  font-family: "MinFont";
   font-style: bold;
   font-size: 16px;
 }
@@ -206,7 +206,7 @@ html {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  font-family: "Born2bSportyFS";
+  font-family: "MinFont";
   font-size: 16px;
 }
 
@@ -1822,7 +1822,7 @@ th {
 
   #posts-container h2 {
     text-align: left;
-    font-family: "Born2bSportyFS", serif;
+    font-family: "MinFont";
     color: #534F4A;
     margin-bottom: 20px;
   }
@@ -1835,7 +1835,7 @@ th {
 
   #posts-container h2 {
     text-align: left;
-    font-family: "Born2bSportyFS", serif;
+    font-family: "MinFont";
     color: #534F4A;
     margin-bottom: 20px;
   }
@@ -1864,7 +1864,7 @@ th {
   .post-info-header {
     display: flex;
     align-items: center;
-    font-family: "Born2bSportyFS", sans-serif;
+    font-family: "MinFont";
     color: #534F4A;
     font-size: 0.9em;
     margin-bottom: 8px;
@@ -1882,14 +1882,14 @@ th {
 
 
   .blog-post h1 {
-    font-family: "Born2bSportyFS", sans-serif;
+    font-family: "MinFont";
     color: #534F4A;
     padding: 5px;
     margin: 5px;
   }
 
   .blog-post h2 {
-    font-family: "Born2bSportyFS", sans-serif;
+    font-family: "MinFont";
     color: #534F4A;
     margin-top: 0;
     margin-bottom: 5px;
@@ -2020,7 +2020,7 @@ th {
   .goog-te-gadget-simple a {
     text-decoration: none;
     text-shadow: none;
-    font-family: borntobesp;
+    font-family: MinFont;
   }
 
   .blog-post .post-divider {
