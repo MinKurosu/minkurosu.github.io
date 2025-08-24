@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DRAWBOX</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+
+        canvas {
+            border: 1px solid black;
+            cursor: crosshair;
+
+        }
+
+
+        #gallery {
+            width: 700px;
+            overflow: auto;
+            padding: 10px;
+            box-sizing: border-box;
+            margin-left: auto;
+            margin-right: auto;
+            column-count: 3;
+            column-gap: 15px;
+        }
+
+        .image-container {
+            display: inline-block;
+            width: 100%;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            padding: 5px;
+            text-align: center;
+            break-inside: avoid;
+            border-radius: 0px;
+            transition: transform 0.2s ease;
+        }
+
+        .image-container:hover {
+            transform: scale(1.05);
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <canvas id="drawboxcanvas" width="500" height="500"></canvas>
+    <br>
+    <div onclick="change_color(this)" style="background:red" class="stroke-color"></div>
+    <div onclick="change_color(this)" style="background:blue" class="stroke-color"></div>
+
+    <button onclick="Restore()">undo</button>
+    <button onclick="Clear()">clear</button>
+
+    <input type="color" oninput="stroke_color = this.value">
+    <input type="range" min="1" max="100" oninput="stroke_width = this.value">
+
+    <button id="submit">submit drawing</button>
+    <p id="status"></p>
+
+
+    <h1>submitted drawings ☻</h1>
+
+    <div id="gallery">
+        <div class="image-container">
+            <img src="imgs/artbyyou/gatoemo.webp" alt="miau!">
+        </div>
+        <div class="image-container">
+            <img src="imgs/artbyyou/brasilsilsil.webp" alt="brasil caraleo">
+        </div>
+        <div class="image-container">
+            <img src="imgs/artbyyou/Screenshot_20250718_175121_Gallery.jpg" alt="Descrição da Imagem 1">
+        </div>
+        <div class="image-container">
+            <img src="imgs/artbyyou/Screenshot_20250718_175137_Gallery.jpg" alt="Descrição da Imagem 1">
+        </div>
+        <div class="image-container">
+            <img src="imgs/artbyyou/Screenshot_20250718_175151_Gallery.jpg" alt="Descrição da Imagem 1">
+        </div>
+    </div>
+
+    <script src="drawbox.js"></script>
+
+</body>
+
+</html>
