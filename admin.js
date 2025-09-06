@@ -54,8 +54,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-     // blog form
-   
+    // blog form
+
     const blogContentInput = document.getElementById('blog-content');
     const blogImageUrlInput = document.getElementById('blog-image-url');
     const publishBlogBtn = document.getElementById('publish-blog-btn');
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // blog form
-   
+
     postContentInput = document.getElementById('post-content');
     publishPostBtn = document.getElementById('publish-post-btn');
     postMessage = document.getElementById('post-message');
@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
     dreamContentInput = document.getElementById('dream-content');
     publishDreamBtn = document.getElementById('publish-dream-btn');
     dreamMessage = document.getElementById('dream-message');
-    
+
     // private forms
     privateEntryContentInput = document.getElementById('private-entry-content');
     publishPrivateBtn = document.getElementById('publish-private-entry-btn');
@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-   
+
     onAuthStateChanged(auth, (user) => {
         if (adminPanelSection && loginForm) {
             if (user) {
@@ -135,10 +135,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-     // blog post
+    // blog post
     if (publishBlogBtn) {
         publishBlogBtn.addEventListener('click', async () => {
-          
+
             const content = blogContentInput.value;
             const imageUrl = blogImageUrlInput.value.trim();
 
@@ -148,14 +148,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 showMessage(blogMessage, 'Publicando post...', 'info');
                 //'blog_posts'
                 await addDoc(collection(db, 'blog_posts'), {
-                   
+
                     content: content,
-                    imageUrl: imageUrl, 
+                    imageUrl: imageUrl,
                     timestamp: serverTimestamp()
                 });
 
                 showMessage(blogMessage, 'Post publicado com sucesso!', 'success');
-               
+
                 blogContentInput.value = '';
                 blogImageUrlInput.value = '';
             } catch (error) {
@@ -171,19 +171,19 @@ document.addEventListener('DOMContentLoaded', () => {
         publishPostBtn.addEventListener('click', async () => {
             const content = postContentInput.value;
             const selectedFile = postImageFile.files[0];
-            const enteredUrl = postImageUrl.value.trim(); 
+            const enteredUrl = postImageUrl.value.trim();
 
-          
+
 
             try {
                 showMessage(postMessage, 'Publicando post...', 'info');
-                let finalImageUrl = ''; 
+                let finalImageUrl = '';
 
-               
+
                 if (enteredUrl) {
-                    finalImageUrl = enteredUrl; 
+                    finalImageUrl = enteredUrl;
                 } else if (selectedFile) {
-                    
+
                     showMessage(postMessage, 'Enviando imagem para o Storage (se o faturamento permitir)...', 'info');
                     const storageRef = ref(storage, `blog_images/${Date.now()}_${selectedFile.name}`);
                     await uploadBytes(storageRef, selectedFile);
@@ -191,23 +191,23 @@ document.addEventListener('DOMContentLoaded', () => {
                     showMessage(postMessage, 'Imagem enviada com sucesso para o Storage!', 'success');
                 }
 
-               
+
                 await addDoc(collection(db, 'posts'), {
-                   
+
                     content: content,
-                    imageUrl: finalImageUrl, 
+                    imageUrl: finalImageUrl,
                     timestamp: serverTimestamp()
                 });
 
                 showMessage(postMessage, 'Post publicado com sucesso!', 'success');
-            
+
                 postContentInput.value = '';
-                postImageFile.value = ''; 
-                postImageUrl.value = '';  
+                postImageFile.value = '';
+                postImageUrl.value = '';
             } catch (error) {
                 showMessage(postMessage, `Erro ao publicar post: ${error.message}`, 'error');
                 console.error("Erro detalhado:", error);
-             
+
                 if (error.code === 'storage/unauthorized' || error.message.includes('CORS policy') || error.message.includes('permission_denied')) {
                     showMessage(postMessage, 'Erro: Não foi possível fazer upload da imagem para o Firebase Storage. Isso geralmente indica problemas de CORS ou que o faturamento do Google Cloud não está ativo. Tente usar a opção "URL da Imagem" para imagens já hospedadas.', 'error');
                 }
@@ -220,7 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
         publishDreamBtn.addEventListener('click', async () => {
             const content = dreamContentInput.value;
 
-            
+
             if (!content.trim()) {
                 showMessage(dreamMessage, 'Por favor, preencha o conteúdo do sonho.', 'error');
                 return;
@@ -272,8 +272,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    
-    // Evento de Logout (sem alterações)
+
     if (logoutBtn) {
         logoutBtn.addEventListener('click', async () => {
             try {

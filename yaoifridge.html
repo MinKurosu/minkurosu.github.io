@@ -2,24 +2,10 @@
 <html lang="en">
 
 <head>
-    <script src="oneko.js"></script>
-    <script>NekoType = "black"</script>
-    <script src="carregar-sidebars.js"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4K5KDKEJ2E"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-4K5KDKEJ2E');
-    </script>
-    <script> window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches </script>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=1600px, initial-scale=0.4, maximum-scale=1.0, user-scalable=yes">
     <meta property="og:image" content="https://i.ibb.co/RC2v9zg/sitethumbnail.png" />
     <meta property="og:image" content="imgs/site_imgs/sitethumbnail.png" />
-    <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
 
-    <link rel="stylesheet" href="styles.css" id="theme-stylesheet">
     <title>@minkurosu</title>
 
     <link rel="icon" type="image/ico" href="imgs/site_imgs/favicon.ico" />
@@ -31,7 +17,6 @@
             cursor: url('imgs/cursor/ROCKcursornormal.cur'), auto;
         }
 
-
         a,
         button,
         input[type="submit"],
@@ -39,7 +24,6 @@
         select {
             cursor: url('imgs/cursor/ROCKcursorselect.cur'), pointer;
         }
-
 
         #containerprincipal {
             border-radius: 1.25rem;
@@ -72,15 +56,12 @@
             overflow: auto;
             padding: 10px;
             box-sizing: border-box;
-
             margin-left: auto;
             margin-right: auto;
-
         }
 
         .galeria-grid {
             display: grid;
-
             grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
             gap: 15px;
             padding: 5px;
@@ -91,10 +72,7 @@
         .galeria-grid img {
             max-width: 100%;
             height: 120px;
-
-
             object-fit: contain;
-
             display: block;
             border: 1px solid #ddd;
             border-radius: 5px;
@@ -106,13 +84,10 @@
             transform: scale(1.05);
         }
 
-
-
-        .refrigerator-container {
+        .yaoifridge-container {
             position: relative;
             width: 100%;
             padding-top: 160%;
-
             background-image: url('imgs/site_imgs/fridge2.avif');
             background-size: 100% 100%;
             background-repeat: no-repeat;
@@ -126,7 +101,6 @@
             left: 0%;
             width: 100%;
             height: 62%;
-
             overflow: hidden;
         }
 
@@ -134,7 +108,6 @@
             position: absolute;
             border: 2px solid #fff;
             box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-
             user-select: none;
         }
 
@@ -144,7 +117,6 @@
             height: 100%;
             object-fit: cover;
         }
-
 
         .photo-1 {
             height: 22%;
@@ -178,7 +150,7 @@
 
         .photo-6 {
             height: 18%;
-            top: 50%;
+            top: 40%;
             left: 75%;
         }
 
@@ -276,7 +248,6 @@
             object-fit: contain;
         }
 
-
         #letter-y {
             top: 28%;
             left: 2%;
@@ -302,7 +273,6 @@
             height: 6%;
         }
 
-
         #letter-g {
             top: 90%;
             left: 80%;
@@ -321,16 +291,13 @@
             transform: rotate(3deg);
         }
 
-
         .letter-photo.draggable:hover {
             transform: translate(var(--x, 0px), var(--y, 0px)) rotate(calc(var(--rotation, 0) * 1deg + 5deg));
             z-index: 20;
             transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
         }
 
-
         .photo.draggable:hover {
-
             transform: translate(var(--x, 0px), var(--y, 0px)) rotate(calc(var(--rotation, 0) * 1deg + 5deg));
             z-index: 10;
             box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.4);
@@ -351,10 +318,6 @@
             background-color: #f1f1f1;
         }
 
-
-
-
-
         #theme-toggle-button {
             background: none !important;
             appearance: none;
@@ -368,196 +331,83 @@
             outline: none;
         }
     </style>
-
 </head>
 
 <body>
-
-    <div class="layout-with-sidebars">
-
-        <aside id="sidebar-esquerda-container" class="sidebar">
-        </aside>
-
-        <main id="containerprincipal">
-            <header id="header" class="fixed-top">
-                <div id="divpatinha">
-                    <img src="imgs/site_imgs/patinha.png" id="logopatinha" alt="logo da barra de navegação">
+    <div class="parent-container-example">
+        <div class="yaoifridge-container">
+            <div class="photo-area">
+                <div class="letter-photo draggable" id="letter-y" data-rotation="0" data-x="0" data-y="0">
+                    <img src="imgs/site_imgs/fridge/letters/y.png" alt="Y">
                 </div>
-                <nav class="navbar">
-                    <div class="divitems">
-                        <div class="nav-item">
-                            <a href="#" onclick="history.back(); return false;" class="nav-link">back</a>
-                        </div>
-                        <div class="nav-item">
-                            <a href="index.html" target="_self" class="nav-link">home</a>
-                        </div>
-                        <div class="nav-item">
-                            <a href="feed.html" target="_self" class="nav-link">feed</a>
-                        </div>
-                        <div class="nav-item">
-                            <a href="blog.html" target="_self" class="nav-link">blog</a>
-                        </div>
-                        <div class="nav-item">
-                            <a href="links.html" target="_self" class="nav-link">links</a>
-                        </div>
-                        <div class="nav-item">
-                            <a href="portfolio-menu.html" target="_self" class="nav-link">portfolio</a>
-                        </div>
-                    </div>
-                </nav>
-            </header>
-            <div id="container">
-
-
-                <div class="parent-container-example">
-                    <div class="refrigerator-container">
-                        <div class="photo-area">
-
-
-                            <div class="letter-photo draggable" id="letter-y" data-rotation="0" data-x="0" data-y="0">
-                                <img src="imgs/site_imgs/fridge/letters/y.png" alt="Letra Y">
-                            </div>
-                            <div class="letter-photo draggable" id="letter-a1" data-rotation="0" data-x="0" data-y="0">
-                                <img src="imgs/site_imgs/fridge/letters/a.png" alt="Letra A">
-                            </div>
-                            <div class="letter-photo draggable" id="letter-o" data-rotation="0" data-x="0" data-y="0">
-                                <img src="imgs/site_imgs/fridge/letters/o.png" alt="Letra O">
-                            </div>
-                            <div class="letter-photo draggable" id="letter-i" data-rotation="0" data-x="0" data-y="0">
-                                <img src="imgs/site_imgs/fridge/letters/i.png" alt="Letra I">
-                            </div>
-
-
-                            <div class="letter-photo draggable" id="letter-g" data-rotation="0" data-x="0" data-y="0">
-                                <img src="imgs/site_imgs/fridge/letters/g.png" alt="Letra G">
-                            </div>
-                            <div class="letter-photo draggable" id="letter-a2" data-rotation="0" data-x="0" data-y="0">
-                                <img src="imgs/site_imgs/fridge/letters/a.png" alt="Letra A">
-                            </div>
-                            <div class="letter-photo draggable" id="letter-y2" data-rotation="0" data-x="0" data-y="0">
-                                <img src="imgs/site_imgs/fridge/letters/y.png" alt="Letra Y">
-                            </div>
-
-
-
-
-                            <div class="photo photo-1 draggable" data-rotation="-1" data-x="0" data-y="0">
-                                <img src="imgs/site_imgs/fridge/frerard.gif" alt="my otp">
-                            </div>
-                            <div class="photo photo-2 draggable" data-rotation="2" data-x="0" data-y="0">
-                                <img src="imgs/site_imgs/fridge/freud.jpg" alt="">
-                            </div>
-
-                            <div class="photo photo-4 draggable" data-rotation="1" data-x="0" data-y="0">
-                                <img src="imgs/site_imgs/fridge/eruri1.jpg" alt="">
-                            </div>
-                            <div class="photo photo-5 draggable" data-rotation="-2" data-x="0" data-y="0">
-                                <img src="imgs/site_imgs/fridge/eruri2.jpg" alt="">
-                            </div>
-                            <div class="photo photo-6 draggable" data-rotation="3" data-x="0" data-y="0">
-                                <img src="imgs/site_imgs/fridge/reibert.jpg">
-                            </div>
-                            <div class="photo photo-7 draggable" data-rotation="-1" data-x="0" data-y="0">
-                                <img src="imgs/site_imgs/fridge/vikturi.jpg">
-                            </div>
-                            <div class="photo photo-8 draggable" data-rotation="2" data-x="0" data-y="0">
-                                <img src="imgs/site_imgs/fridge/yarichin.jpg">
-                            </div>
-                            <div class="photo photo-9 draggable" data-rotation="4" data-x="0" data-y="0">
-                                <img src="imgs/site_imgs/fridge/bloodbank.jpg">
-                            </div>
-
-                            <div class="photo photo-11 draggable" data-rotation="1" data-x="0" data-y="0">
-                                <img src="imgs/site_imgs/fridge/erasermic.jpg">
-                            </div>
-                            <div class="photo photo-12 draggable" data-rotation="-3" data-x="0" data-y="0">
-                                <img src="imgs/site_imgs/fridge/jayvik.jpeg">
-                            </div>
-                            <div class="photo photo-13 draggable" data-rotation="2" data-x="0" data-y="0">
-                                <img src="imgs/site_imgs/fridge/hannibal.jpg">
-                            </div>
-                            <div class="photo photo-14 draggable" data-rotation="-1" data-x="0" data-y="0">
-                                <img src="imgs/site_imgs/fridge/given.jpg">
-                            </div>
-
-
-
-                        </div>
-                    </div>
-
-
-
-
-
-
-
+                <div class="letter-photo draggable" id="letter-a1" data-rotation="0" data-x="0" data-y="0">
+                    <img src="imgs/site_imgs/fridge/letters/a.png" alt="A">
                 </div>
+                <div class="letter-photo draggable" id="letter-o" data-rotation="0" data-x="0" data-y="0">
+                    <img src="imgs/site_imgs/fridge/letters/o.png" alt="O">
+                </div>
+                <div class="letter-photo draggable" id="letter-i" data-rotation="0" data-x="0" data-y="0">
+                    <img src="imgs/site_imgs/fridge/letters/i.png" alt="I">
+                </div>
+                <div class="letter-photo draggable" id="letter-g" data-rotation="0" data-x="0" data-y="0">
+                    <img src="imgs/site_imgs/fridge/letters/g.png" alt="G">
+                </div>
+                <div class="letter-photo draggable" id="letter-a2" data-rotation="0" data-x="0" data-y="0">
+                    <img src="imgs/site_imgs/fridge/letters/a.png" alt="A">
+                </div>
+                <div class="letter-photo draggable" id="letter-y2" data-rotation="0" data-x="0" data-y="0">
+                    <img src="imgs/site_imgs/fridge/letters/y.png" alt="Y">
+                </div>
+
+                <div class="photo photo-1 draggable" data-rotation="-1" data-x="0" data-y="0">
+                    <img src="imgs/site_imgs/fridge/frerard.gif" alt="my otp">
+                </div>
+                <div class="photo photo-2 draggable" data-rotation="2" data-x="0" data-y="0">
+                    <img src="imgs/site_imgs/fridge/freud.jpg" alt="">
+                </div>
+                <div class="photo photo-4 draggable" data-rotation="1" data-x="0" data-y="0">
+                    <img src="imgs/site_imgs/fridge/eruri1.jpg" alt="">
+                </div>
+                <div class="photo photo-5 draggable" data-rotation="-2" data-x="0" data-y="0">
+                    <img src="imgs/site_imgs/fridge/eruri2.jpg" alt="">
+                </div>
+
+
+
+                <div class="photo photo-6 draggable" data-rotation="3" data-x="0" data-y="0">
+                    <img src="imgs/site_imgs/fridge/reibert.jpg">
+                </div>
+                <div class="photo photo-7 draggable" data-rotation="-1" data-x="0" data-y="0">
+                    <img src="imgs/site_imgs/fridge/vikturi.jpg">
+                </div>
+                <div class="photo photo-8 draggable" data-rotation="2" data-x="0" data-y="0">
+                    <img src="imgs/site_imgs/fridge/yarichin.jpg">
+                </div>
+                <div class="photo photo-9 draggable" data-rotation="4" data-x="0" data-y="0">
+                    <img src="imgs/site_imgs/fridge/bloodbank.jpg">
+                </div>
+                <div class="photo photo-11 draggable" data-rotation="1" data-x="0" data-y="0">
+                    <img src="imgs/site_imgs/fridge/erasermic.jpg">
+                </div>
+                <div class="photo photo-12 draggable" data-rotation="-3" data-x="0" data-y="0">
+                    <img src="imgs/site_imgs/fridge/jayvik.jpeg">
+                </div>
+                <div class="photo photo-13 draggable" data-rotation="2" data-x="0" data-y="0">
+                    <img src="imgs/site_imgs/fridge/hannibal.jpg">
+                </div>
+                <div class="photo photo-14 draggable" data-rotation="-1" data-x="0" data-y="0">
+                    <img src="imgs/site_imgs/fridge/given.jpg">
+                </div>
+
+                <div class="photo photo-15 draggable" data-rotation="-2" data-x="0" data-y="0">
+                    <img src="imgs/site_imgs/fridge/jayvik.gif" alt="">
+                </div>
+
+
+
             </div>
-        </main>
-
-        <aside id="sidebar-direita-container" class="sidebar">
-        </aside>
-
+        </div>
     </div>
-
-    <script src="lastfm-widget.js"></script>
-    <script src="script.js"></script>
-    <script src="theme-switcher.js"></script>
-
-
-    <script>
-
-        function applyTransform(target, x, y, rotation) {
-            target.style.transform = 'translate(' + x + 'px, ' + y + 'px) rotate(' + rotation + 'deg)';
-        }
-
-
-        interact('.draggable')
-            .draggable({
-                inertia: true,
-                modifiers: [
-                    interact.modifiers.restrictRect({
-                        restriction: 'parent',
-                        endOnly: true
-                    })
-                ],
-                autoScroll: true,
-
-                listeners: {
-
-                    move: dragMoveListener
-                }
-            });
-
-        function dragMoveListener(event) {
-            var target = event.target;
-
-            var x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx;
-            var y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
-
-            var rotation = target.getAttribute('data-rotation') || '0';
-
-            applyTransform(target, x, y, rotation);
-
-            target.setAttribute('data-x', x);
-            target.setAttribute('data-y', y);
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            document.querySelectorAll('.draggable').forEach(photo => {
-                const rotation = photo.getAttribute('data-rotation') || '0';
-                const x = parseFloat(photo.getAttribute('data-x')) || 0;
-                const y = parseFloat(photo.getAttribute('data-y')) || 0;
-                applyTransform(photo, x, y, rotation);
-            });
-        });
-
-        window.dragMoveListener = dragMoveListener;
-    </script>
-
-
 </body>
-
-
 
 </html>

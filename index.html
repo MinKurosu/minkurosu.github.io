@@ -2,10 +2,76 @@
 <html lang="en">
 
 <head>
-    <script src="oneko.js"></script>
+    <script src="lastfm-widget.js"></script>
+    <script src="index.js"></script>
+    <script src="script.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4K5KDKEJ2E"></script>
+    <script src="script.js"></script>
+    <script src="theme-switcher.js"></script>
     <script>NekoType = "black"</script>
-    <script src="carregar-sidebars.js"></script>
 
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js"></script>
+
+
+
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ pageLanguage: 'pt', layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript"
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+
+
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ pageLanguage: 'pt', layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript"
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+    <script>
+        $.fancybox.getInstance().$refs.container.toggleClass('fancybox-show-caption');
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4K5KDKEJ2E"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-4K5KDKEJ2E');
+    </script>
+    <script> window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches </script>
+    <script src="load-pages.js"></script>
+    <script src="script.js"></script>
+    <script src="theme-switcher.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <script>
+        Fancybox.bind('[data-fancybox="gallery"]', {
+            //
+        });    
+    </script>
+    <script>
+        const images = document.querySelectorAll('.slideshow-area img');
+        let currentIndex = 0;
+
+        function nextSlide() {
+            images[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % images.length;
+            images[currentIndex].classList.add('active');
+        }
+
+        setInterval(nextSlide, 4000); // Muda a imagem a cada 4 segundos
+    </script>
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4K5KDKEJ2E"></script>
     <script>
@@ -21,7 +87,7 @@
     <meta property="og:image" content="imgs/site_imgs/sitethumbnail.png" />
 
 
-    <link rel="stylesheet" href="styles.css" id="theme-stylesheet">
+    <link rel="stylesheet" href="emo.css" id="theme-stylesheet">
     <title>min kurosu</title>
 
     <link rel="icon" type="image/ico" href="imgs/site_imgs/favicon.ico" />
@@ -81,48 +147,6 @@
             box-sizing: border-box;
 
             text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-        }
-
-        .galeria-container {
-            width: 700px;
-            height: 300px;
-
-            border-radius: 8px;
-            overflow: auto;
-            padding: 10px;
-            box-sizing: border-box;
-
-            margin-left: auto;
-            margin-right: auto;
-
-        }
-
-        .galeria-grid {
-            display: grid;
-
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-            gap: 15px;
-            padding: 5px;
-            justify-items: center;
-            align-items: center;
-        }
-
-        .galeria-grid img {
-            max-width: 100%;
-            height: 120px;
-
-
-            object-fit: contain;
-
-            display: block;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-            transition: transform 0.2s ease;
-        }
-
-        .galeria-grid img:hover {
-            transform: scale(1.05);
         }
 
 
@@ -300,7 +324,6 @@
 
 
 
-
         /* Estilo para o primeiro iframe */
         .caixa-iframe-onlnbrd {
 
@@ -321,13 +344,115 @@
             padding: 5px;
         }
     </style>
-    <script src="lastfm-widget.js"></script>
 </head>
 
 <body>
 
     <div class="layout-with-sidebars">
         <aside id="sidebar-esquerda-container" class="sidebar">
+            <div class="box">
+                <img id="sidepic" class="desaturatepics" src="imgs/site_imgs/euirl.jpg" alt="eu irl" height="1700px">
+            </div>
+            <div class="box">
+                <h2 id="nomeSide">min</h2>
+                <h3> 22yo • they/she/he • brasil</h3>
+                <h3>psychology student & <br>freelance artist<br> (digital art & live2d)</h3>
+                <h3>⚧ • ☭ • ♎︎</h3>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/yasmincruzm/" target="_blank" class="social-icon jumpy">
+                        <img src="imgs/site_imgs/site-icons/instagram.png" alt="instagram" width="16" height="16">
+                    </a>
+
+                    <a href="https://x.com/minkurosu" target="_blank" class="social-icon">
+                        <img src="imgs/site_imgs/site-icons/twitter.png" alt="X (antigo Twitter)" width="16"
+                            height="16">
+                    </a>
+
+                    <a href="https://bsky.app/profile/minkurosu.bsky.social" target="_blank" class="social-icon">
+                        <img src="imgs/site_imgs/site-icons/bsky.png" alt="bsky" width="16" height="16">
+                    </a>
+
+                    <a href="https://www.tumblr.com/minkurosu" target="_blank" class="social-icon">
+                        <img src="imgs/site_imgs/site-icons/tumblr.png" alt="tumblr" width="16" height="16">
+                    </a>
+
+                    <a href="https://www.twitch.tv/minkurosu/" target="_blank" class="social-icon">
+                        <img src="imgs/site_imgs/site-icons/twitch.png" alt="twitch" width="16" height="16">
+                    </a>
+                    <a href="https://vgen.co/minkurosu/" target="_blank" class="social-icon">
+                        <img src="imgs/site_imgs/site-icons/vgen.png" alt="VGen" width="16" height="16"
+                            border-radius="10px">
+                    </a>
+                    <a href="https://steamcommunity.com/id/minkurosu/" target="_blank" class="social-icon">
+                        <img src="imgs/site_imgs/site-icons/steam.png" alt="Steam" width="16" height="16">
+                    </a>
+                    <a href="https://open.spotify.com/user/mimincruzm?si=04b1acd2b0a04438" target="_blank"
+                        class="social-icon">
+                        <img src="imgs/site_imgs/site-icons/spotify.png" alt="Spotify" width="16" height="16">
+                    </a>
+                    <a href="https://neocities.org/site/minkurosu" target="_blank" class="social-icon">
+                        <img src="imgs/site_imgs/site-icons/neocities.png" alt="Neocities" width="16" height="16">
+                    </a>
+                </div>
+
+
+                <h3>theme changer:</h3>
+                <button id="theme-toggle-button">
+                    <img id="theme-icon" src="imgs/site_imgs/lua.png" alt="Theme Toggle">
+                </button>
+                <br>
+                <a href="https://arab.org/click-to-help/palestine/">🍉 if you cant donate, click to help! 🇵🇸</a></p>
+                <script src="https://webneko.net/n20171213.js"></script><a href="https://webneko.net"></a>
+
+                <br>
+
+                <div class="caixamaisclaraColumn">
+                    <br>
+                    <div id="statuscafe">
+                        <div id="statuscafe-username"></div>
+                        <div id="statuscafe-content"></div>
+                    </div>
+                    <script src="https://status.cafe/current-status.js?name=minkurosu" defer></script>
+                    <br>
+
+                    <div id="fc2-counter-container"></div>
+
+                    <noscript><img src="//counter1.fc2.com/counter_img.php?id=40451086&main=1"
+                            style="color:#534F4A" /></noscript>
+                    <br>
+                    <div class="buttons">
+
+                    </div>
+
+                </div>
+
+                <hr>
+                <div class="nav-side">
+                    <div class="side-item"><a href="#" data-page="feed" class="nav-link">feed</a></div>
+                    <div class="side-item"><a href="#" data-page="thoughts" class="nav-link">posts</a></div>
+                    <div class="side-item"><a href="#" data-page="portfolio-photos" class="nav-link">photography</a>
+                    </div>
+                    <div class="side-item"><a href="#" data-page="dream-journal" class="nav-link">dream journal</a>
+                    </div>
+                    <div class="side-item"><a href="#" data-page="webweaving" class="nav-link">webweaving</a></div>
+                    <div class="side-item"><a href="#" data-page="music" class="nav-link">playlists</a></div>
+                    <div class="side-item"><a href="#" data-page="blog" class="nav-link">blog</a></div>
+                    <div class="side-item"><a href="#" data-page="toybox" class="nav-link">toybox</a></div>
+                    <div class="side-item"><a href="#" data-page="yaoifridge" class="nav-link">yaoi fridge</a></div>
+                    <div class="side-item"><a href="#" data-page="games" class="nav-link">games</a></div>
+                    <div class="side-item"><a href="#" data-page="room" class="nav-link">room</a></div>
+                    <div class="side-item"><a href="#" data-page="guestbook" class="nav-link">guestbook</a></div>
+                    <div class="side-item"><a href="#" data-page="minverso" class="nav-link">minverso</a></div>
+                    <div class="side-item"><a href="#" data-page="quizzes" class="nav-link">quiz/tests</a></div>
+                </div>
+
+                <hr>
+                <a href="https://tamanotchi.world/24409c"><img src="https://tamanotchi.world/i2/24409"></a>
+
+
+
+            </div>
+
         </aside>
 
         <main id="containerprincipal">
@@ -336,295 +461,450 @@
                     <img src="imgs/site_imgs/patinha.png" class="desaturatepics" id="logopatinha"
                         alt="logo da barra de navegação">
                 </div>
+
                 <nav class="navbar">
                     <div class="divitems">
                         <div class="nav-item">
-                            <a href="#" onclick="history.back(); return false;" class="nav-link">back</a>
+                            <a href="#" data-page="back" class="nav-link">back</a>
                         </div>
                         <div class="nav-item">
-                            <a href="index.html" target="_self" class="nav-link">home</a>
+                            <a href="#" data-page="aboutme" class="nav-link">home</a>
                         </div>
                         <div class="nav-item">
-                            <a href="feed.html" target="_self" class="nav-link">feed</a>
+                            <a href="#" data-page="feed" class="nav-link">feed</a>
                         </div>
                         <div class="nav-item">
-                            <a href="blog.html" target="_self" class="nav-link">blog</a>
+                            <a href="#" data-page="blog" class="nav-link">blog</a>
                         </div>
                         <div class="nav-item">
-                            <a href="links.html" target="_self" class="nav-link">links</a>
+                            <a href="#" data-page="links" class="nav-link">links</a>
                         </div>
                         <div class="nav-item">
-                            <a href="portfolio-menu.html" target="_self" class="nav-link">portfolio</a>
+                            <a href="#" data-page="portfolio-menu" class="nav-link">portfolio</a>
                         </div>
                     </div>
                 </nav>
+
+                </nav>
+                <h1 id=nl>
+                </h1>
             </header>
             <div id="container">
-                <div class="caixamaisclara">
-                    <img id="logobig" src="imgs/site_imgs/logo.png" alt="Logo" data-position="center">
-                </div>
-                <hr>
-                <h1 id="nl">
-                    <script src="https://webneko.net/n20171213.js"></script><a href="https://webneko.net">Neko</a>
-                </h1>
 
-                <div class="caixamaisclara">
-                    <div class="maincollums">
-                        <div class="column">
-                            <div class="welcome">
-                                <h2 class="nomeSide likes" style="display: inline;">welcome</h2>
-                                <img src="imgs/webgraphics/pixels/hipaw.gif" style="vertical-align: middle;"><br>
-                            </div>
-                            <h4>hii! welcome to my site. this is my little space on the internet, my attempt to have a
-                                place beside social media (cuz it ruins your mental health)</h4>
-                            <h4>this site will always be under construction, because i'll be changing and updating
-                                things often, so careful with broken buttons!</h4>
-                            <h4>i also swear a lot but i dont care, my page my rulez </h4>
-                        </div>
-                        <div class="column">
-                            <h3>PLEASE DO NOT INTERACT if:</h3>
-                            <img src="imgs/webgraphics/pixels/hiss.gif">
-                            <h4>dni if you're alt-right / incel / racist / zionist / nazi /homophobic / transphobic /
-                                psychophobic / any hate-based phobic, or any of those terrible shit. </h4>
-                            <h4>i also highly advise not visiting my site if you're my family member or know me from
-                                work or something alike.</h4>
-                        </div>
-                    </div>
-                    <hd></hd>
-                </div>
-                <div class="maincollums">
-                </div>
-                <hr>
-                <div class="spotify">
-
-                    <iframe style="border-radius:12px"
-                        src="https://open.spotify.com/embed/playlist/6B8MXoqO8DFZ0nWEHrM4cG?utm_source=generator&theme=0"
-                        width="100%" height="153" frameBorder="0" allowfullscreen=""
-                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                        loading="lazy"></iframe>
-                </div>
-                <br>
-                <div class="caixamaisclara">
-                    <div class="about-me-container">
-                        <div class="slideshow-area">
-                            <!-- Exemplo de imagens de placeholder para o slideshow -->
-                            <img src="imgs/site_imgs/slideshow-me/2.jpg" alt="Foto 1" class="active">
-                            <img src="imgs/site_imgs/slideshow-me/1.jpg" alt="Foto 2">
-                            <img src="imgs/site_imgs/slideshow-me/3.jpg" alt="Foto 3">
-
-                        </div>
-
-                        <div class="badges-area">
-
-                            <div class="badges-container">
-                                <div class="scrollthin">
-                                    <!-- Imagens de identificação usando URLs públicas -->
-                                    <img src="imgs/webgraphics/identitybuttons/cat.png" class="badge-img">
-
-                                    <img src="imgs/webgraphics/identitybuttons/enby.png" class="badge-img"> <img
-                                        src="imgs/webgraphics/identitybuttons/demi.png" class="badge-img">
-                                    <img src="imgs/webgraphics/identitybuttons/punk.png" class="badge-img">
-                                    <img src="imgs/webgraphics/identitybuttons/queerpunk.png" class="badge-img">
-                                    <img src="imgs/webgraphics/identitybuttons/emo.png" class="badge-img">
-
-                                    <img src="imgs/webgraphics/identitybuttons/taken.png" class="badge-img">
-                                    <img src="imgs/webgraphics/identitybuttons/neurodivergent.png" class="badge-img">
-                                    <img src="imgs/webgraphics/identitybuttons/sensitive.png" class="badge-img">
-
-                                    <img src="imgs/webgraphics/identitybuttons/schizotypal.png" class="badge-img">
-                                    <img src="imgs/webgraphics/identitybuttons/vampirekin.png" class="badge-img">
-
-                                    <img src="imgs/webgraphics/identitybuttons/intro.png" class="badge-img">
-                                    <img src="imgs/webgraphics/identitybuttons/infp.png" class="badge-img">
-                                    <img src="imgs/webgraphics/identitybuttons/veg.png" class="badge-img">
-                                    <img src="imgs/webgraphics/identitybuttons/nature.gif" class="badge-img">
-
-                                    <img src="imgs/webgraphics/identitybuttons/brasil.png" class="badge-img">
-                                    <img src="imgs/webgraphics/identitybuttons/eng2lng.png" class="badge-img">
-                                    <img src="imgs/webgraphics/identitybuttons/sun.png" class="badge-img">
-                                    <img src="imgs/webgraphics/identitybuttons/horse.png" class="badge-img">
-                                    <img src="imgs/webgraphics/identitybuttons/student.png" class="badge-img">
-                                    <img src="imgs/webgraphics/identitybuttons/artist.png" class="badge-img">
-
-                                    <img src="imgs/webgraphics/identitybuttons/righthand.png" class="badge-img">
-                                    <img src="imgs/webgraphics/identitybuttons/pc.png" class="badge-img">
-                                    <img src="imgs/webgraphics/identitybuttons/+18.png" class="badge-img">
-                                    <img src="imgs/webgraphics/identitybuttons/queer.png" class="badge-img">
-                                </div>
-
-
-
-
-                            </div>
-
-                        </div>
-
-                        <div class="content-area">
-
-                            <div class="caixamaisclaraColumnSimple">
-
-
-                                <table
-                                    style="border-collapse: collapse; width: 100%; background-color: transparent; max-height: 300px;">
-                                    <tr>
-
-                                        <td style="border: 1px solid black; padding: 8px;">feeling</td>
-                                        <td style="border: 1px solid black; padding: 8px;"><a
-                                                href="https://www.imood.com/users/minkurosu"><img
-                                                    src="https://moods.imood.com/display/uname-minkurosu/fg-8a8278/trans-1/imood.gif"
-                                                    alt="The current mood of minkurosu at www.imood.com" border="0"></a>
-                                        </td>
-                                    </tr>
-                                    </tr>
-                                    <tr>
-                                        <td style="border: 1px solid black; padding: 8px;">last song</td>
-                                        <td id="lastfm-song-cell" style="border: 1px solid black; padding: 8px;">
-                                            loading...</td>
-                                    </tr>
-                                    <tr>
-                                        <td style="border: 1px solid black; padding: 8px;">last movie</td>
-                                        <td style="border: 1px solid black; padding: 8px;">wednesday</td>
-                                    </tr>
-                                    <tr>
-                                        <td style="border: 1px solid black; padding: 8px;">last book</td>
-                                        <td style="border: 1px solid black; padding: 8px;">civilization and its
-                                            discontents - sigmund freud</td>
-                                    </tr>
-                                    <tr>
-                                        <td style="border: 1px solid black; padding: 8px;">current hyperfocus:</td>
-                                        <td style="border: 1px solid black; padding: 8px;">politics, communism, coding
-                                            this page and trying
-                                            to write my final college
-                                            thesis</td>
-                                    </tr>
-
-                                </table>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-                <br>
-                <div class="caixamaisclaraInterests">
-                    <div class="column">
-                        <H2 class="likes">LIKES</H2>
-                        <H4>cats, psychology, dark clothes, my chemical romance, art, gaming, rain and cold weather,
-                            my
-                            boyfriend, photography, nature, sleeping, anime, piercings, tattoos, black nail polish,
-                            social causes, my family, </H4>
-                    </div>
-                    <div class="divider"></div>
-                    <div class="column">
-                        <H2 class="deslikes">DESLIKES</H2>
-                        <H4>capitalism, injustice, loud/annoying noises, billionaires, white ceiling lights, forced
-                            positivity, closed minds, ppl who litter, social cues, egotistical people </H4>
-                    </div>
-                </div>
-                <br>
-                <div class="caixamaisclaraInterests">
-                    <div class="column">
-                        <table style="border-collapse: collapse; width: 100%; background-color: transparent;">
-                            <tr>
-                                <th style="border: 1px solid black; padding: 8px;">interests</th>
-                                <th style="border: 1px solid black; padding: 8px;">items</th>
-                            </tr>
-                            <tr>
-                                <td style="border: 1px solid black; padding: 8px;">music</td>
-                                <td style="border: 1px solid black; padding: 8px;">my chemical romance, westkust,
-                                    melanie martinez, muse, avanged sevenfold, type o negative, <a
-                                        href="https://open.spotify.com/intl-pt/artist/2Gz78gC3i0E5nLHKwzfGGh?si=79cbe94a830942ec"
-                                        class="marked-link">garden psychedelia</a>, ghost, korn, linkin park, rita
-                                    lee,
-                                    lady gaga, ghost, chappel roan, jazmin bean, lil peep, deftones, paramore, soad,
-                                    ptv, </td>
-                            </tr>
-                            <tr>
-                                <td style="border: 1px solid black; padding: 8px;">games</td>
-                                <td style="border: 1px solid black; padding: 8px;">minecraft, stardew valley, cs:go,
-                                    lol, the sims, animal crossing, rythm heaven,</td>
-                            </tr>
-                            <tr>
-                                <td style="border: 1px solid black; padding: 8px;">hobbies</td>
-                                <td style="border: 1px solid black; padding: 8px;">drawing, webdesign, needle
-                                    felting,
-                                    kung fu (new!), studying psychology</td>
-                            </tr>
-                            <tr>
-                                <td style="border: 1px solid black; padding: 8px;">movies and shows</td>
-                                <td style="border: 1px solid black; padding: 8px;">the x files, attack on titan,
-                                    matrix,
-                                    twilight, nope, poor things, arcane, the haunting series, black mirror, yuri on
-                                    ice,
-                                    steven universe, my little pony, orphan, léon. edward scissorhands, hellraiseer,
-                                    e.t, hannibal, fleabag, </td>
-                            </tr>
-                            <tr>
-                                <td style="border: 1px solid black; padding: 8px;">foods</td>
-                                <td style="border: 1px solid black; padding: 8px;">chocolate, cinnamon tea, nerds
-                                    candy!!!!, avocado vitamin, italian food, VEGAN FOOD FROM A SPECIFIC RESTAURANT
-                                    WHERE I LIVE,
-                                    carrots, cinnamon candy and gum, carbonara w/ no bacon, milk with coffee and
-                                    chocolate powder, </td>
-                            </tr>
-                            <tr>
-                                <td style="border: 1px solid black; padding: 8px;">kins</td>
-                                <td style="border: 1px solid black; padding: 8px;">fluttershy, pearl (steven
-                                    universe),
-                                    jinx, vex,</td>
-                            </tr>
-                            <tr>
-                                <td style="border: 1px solid black; padding: 8px;">colors</td>
-                                <td style="border: 1px solid black; padding: 8px;"> black, gray, brown, red, low
-                                    saturated and dark tones</td>
-                            </tr>
-                            <tr>
-                                <td style="border: 1px solid black; padding: 8px;">smells</td>
-                                <td style="border: 1px solid black; padding: 8px;">rain, good herbs, ocean, home, my
-                                    cats bellies, my bf, chocolate, cinnamon</td>
-                            </tr>
-                            <tr>
-                                <td style="border: 1px solid black; padding: 8px;">actress</td>
-                                <td style="border: 1px solid black; padding: 8px;">kristen stewart, keanu reeves,
-                                    mads
-                                    mikkelsen, sophie tatcher, </td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-                <hr>
-
-
-                <div class="caixamaisclaraInterests">
-                    <div class="caixa-iframe-onlnbrd">
-                        <h2>leave a drawing <br> (BE NICE)</h2>
-                        <iframe src="https://onlnbrd.com/b/JLeicUoP" style="border:0px #ffffff none;" name="myiFrame"
-                            scrolling="no" frameborder="1" marginheight="0px" marginwidth="0px" height="400px"
-                            width="100%" allowfullscreen></iframe>
-                    </div>
-
-                    <div class="caixa-iframe-minkurosu">
-                        <iframe src="https://minkurosu.atabook.org" width="100%" height="500"
-                            style="border:;overflow:hidden;" scrolling="yes" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                </div>
-
-                <br>
-                <h2>send me a drawing!</h2>
-
-                <div id="drawbox-container" class="caixa-iframe-drawbox" style="width: 100%; height: 800px;">
-                    <iframe style="width:100%; height:100%; border:none;" src="drawbox.html" title="Drawbox"></iframe>
-                </div>
-
-
-
-            </div>
         </main>
 
 
 
         <aside id="sidebar-direita-container" class="sidebar sidebar-right">
-        </aside>
+            <aside class="sidebar sidebar-right">
+
+
+
+
+                <div class="box">
+
+                    <div class="stamps">
+                        <div class="carousel-container">
+                            <div class="track track-1">
+                                <div class="track-inner desaturate">
+                                    <img src="imgs/webgraphics/stamps/3dsowner.jpg" alt="3dsowner">
+
+                                    <img src="imgs/webgraphics/stamps/a101.jpg" alt="a101">
+                                    <img src="imgs/webgraphics/stamps/iloveallkitties.webp" alt="iloveallkitties">
+                                    <img src="imgs/webgraphics/stamps/ilovemyds.png" alt="ilovemyds">
+                                    <img src="imgs/webgraphics/stamps/addictmc.png" alt="addictmc">
+                                    <img src="imgs/webgraphics/stamps/awesome.gif" alt="awesome">
+                                    <img src="imgs/webgraphics/stamps/avanged.jpg" alt="awesome">
+                                    <img src="imgs/webgraphics/stamps/aaaaaaaaaaaaaa.gif" alt="awesome">
+                                    <img src="imgs/webgraphics/stamps/always_tired.gif" alSt="dontsteponthem">
+
+                                    <img src="imgs/webgraphics/stamps/avanged.jpg" alt="avanged">
+                                    <img src="imgs/webgraphics/stamps/alwaystired.png" alt="always tired">
+                                    <img src="imgs/webgraphics/stamps/believe.png" alt="believe">
+                                    <img src="imgs/webgraphics/stamps/blackcat.gif" alt="blackcat">
+                                    <img src="imgs/webgraphics/stamps/boop.gif" alt="boop">
+                                    <img src="imgs/webgraphics/stamps/bSUqMP3.gif" alt="long cat">
+                                    <img src="imgs/webgraphics/stamps/blackcatrain.gif" alt="boop">
+                                    <img src="imgs/webgraphics/stamps/catlover.webp" alt="catlover">
+                                    <img src="imgs/webgraphics/stamps/catsinside.png" alt="catsinside">
+                                    <img src="imgs/webgraphics/stamps/ceilingstars.png" alt="ceilingstars">
+                                    <img src="imgs/webgraphics/stamps/chipichipi.gif" alt="chipichipi">
+
+                                    <img src="imgs/webgraphics/stamps/chococat.png" alt="chococat">
+                                    <img src="imgs/webgraphics/stamps/choker.gif" alt="choker">
+                                    <img src="imgs/webgraphics/stamps/converse.gif" alt="choker">
+                                    <img src="imgs/webgraphics/stamps/chipichipi.gif" alt="choker">
+                                    <img src="imgs/webgraphics/stamps/dontsteponthem.jpg" alSt="dontsteponthem">
+                                    <img src="imgs/webgraphics/stamps/DemisexualFlagStamp.png" alSt="dontsteponthem">
+                                    <img src="imgs/webgraphics/stamps/demo.jpg" alSt="dontsteponthem">
+
+                                    <img src="imgs/webgraphics/stamps/emocouple.png" alt="e79">
+                                    <img src="imgs/webgraphics/stamps/e79.gif" alt="e79">
+                                    <img src="imgs/webgraphics/stamps/f64.png" alt="f64">
+                                    <img src="imgs/webgraphics/stamps/greenai.png" alt="">
+                                    <img src="imgs/webgraphics/stamps/flutterbat.gif" alt="flutterbat">
+                                    <img src="imgs/webgraphics/stamps/fluttershypsycho.png" alt="flutterbat">
+                                    <img src="imgs/webgraphics/stamps/icollectplushies.png" alt="icollectplushies">
+                                    <img src="imgs/webgraphics/stamps/glasses.gif" alt="icollectplushies">
+                                    <img src="imgs/webgraphics/stamps/gatinhos.gif" alt="gatinhos">
+                                    <img src="imgs/webgraphics/stamps/phobiaofpublicpools.png"
+                                        alt="ilikeastayingupallnight">
+                                    <img src="imgs/webgraphics/stamps/iloveemo.gif" alt="e79">
+                                    <img src="imgs/webgraphics/stamps/bugs.png" alt="e79">
+                                    <img src="imgs/webgraphics/stamps/helpimonfire.gif" alSt="dontsteponthem">
+                                    <img src="imgs/webgraphics/stamps/gatinhos.gif" alSt="dontsteponthem">
+
+                                    <img src="imgs/webgraphics/stamps/ilovestamps.gif" alt="ilovestamps">
+                                    <img src="imgs/webgraphics/stamps/iwasemobeforeitwallcool.jpg"
+                                        alt="iwasemobeforeitwascool">
+                                    <img src="imgs/webgraphics/stamps/ilovestars.gif" alt="ilovestars">
+                                    <img src="imgs/webgraphics/stamps/iloveallkitties.webp" alt="ilovestars">
+                                    <img src="imgs/webgraphics/stamps/ishouldbestudying.webp" alt="ilovestars">
+                                    <img src="imgs/webgraphics/stamps/louiswain.png" alt="imhigh">
+                                    <img src="imgs/webgraphics/stamps/imwaycooleronline.gif" alt="imwaycooleronline">
+                                    <img src="imgs/webgraphics/stamps/isuportdrawinginmathclass.png"
+                                        alt="isudportdrawinginmathclass">
+                                    <img src="imgs/webgraphics/stamps/entiretwilight.webp" alt="e79">
+                                    <img src="imgs/webgraphics/stamps/iwishilivedinminecraft.gif"
+                                        alt="iwishlivedinminecraft">
+                                    <img src="imgs/webgraphics/stamps/solongandgoodnight.webp" alt="helena">
+                                    <img src="imgs/webgraphics/stamps/jinx.webp" alt="jinx">
+                                    <img src="imgs/webgraphics/stamps/jinx2.webp" alt="jinx">
+                                    <img src="imgs/webgraphics/stamps/kindness.gif" alt="kindness">
+                                    <img src="imgs/webgraphics/stamps/stmpkinder.gif" alt="kindness">
+
+                                    <img src="imgs/webgraphics/stamps/louiswain.png" alt="louiswain">
+                                    <img src="imgs/webgraphics/stamps/louiswainstamp.png" alt="louiswainstamp">
+                                    <img src="imgs/webgraphics/stamps/lis.gif" alt="lsd">
+                                    <img src="imgs/webgraphics/stamps/l_stamp.gif" alt="l">
+                                </div>
+                            </div>
+
+                            <div class="track track-2">
+                                <div class="track-inner desaturate">
+                                    <img src="imgs/webgraphics/stamps/maxwell.gif" alt="maxwell" class="desaturate">
+
+                                    <img src="imgs/webgraphics/stamps/mcrred.png" alt="mcrred" class="desaturate">
+                                    <img src="imgs/webgraphics/stamps/mentallillness.png" alt="mentalillness">
+                                    <img src="imgs/webgraphics/stamps/meancat.webp" alt="stoop">
+                                    <img src="imgs/webgraphics/stamps/mychem.gif" alt="mychem">
+                                    <img src="imgs/webgraphics/stamps/nerdswonka.png" alt="nerdswonka">
+                                    <img src="imgs/webgraphics/stamps/nekoatsume.gif" alt="nerdswonka">
+                                    <img src="imgs/webgraphics/stamps/nintendogscats.png" alt="nerdswonka">
+                                    <img src="imgs/webgraphics/stamps/nitw.gif" alt="nitw">
+                                    <img src="imgs/webgraphics/stamps/nop.gif" alt="nop">
+                                    <img src="imgs/webgraphics/stamps/nyancat.gif" alt="nyancat">
+                                    <img src="imgs/webgraphics/stamps/palestine.gif" alt="palestine">
+                                    <img src="imgs/webgraphics/stamps/piercings.png" alt="piercings">
+                                    <img src="imgs/webgraphics/stamps/powder.webp" alt="powder">
+                                    <img src="imgs/webgraphics/stamps/ponyo.webp" alt="powder">
+                                    <img src="imgs/webgraphics/stamps/ppudor.png" alt="ppudor">
+                                    <img src="imgs/webgraphics/stamps/ponybffs.gif" alt="ppudor">
+                                    <img src="imgs/webgraphics/stamps/psychedelic.gif" alt="psychedelic">
+                                    <img src="imgs/webgraphics/stamps/puter.gif" alt="puter">
+                                    <img src="imgs/webgraphics/stamps/punkrebel.gif" alSt="dontsteponthem">
+
+                                    <img src="imgs/webgraphics/stamps/pearl.gif" alt="puter">
+                                    <img src="imgs/webgraphics/stamps/plink.gif" alt="puter">
+                                    <img src="imgs/webgraphics/stamps/pride.png" alt="pride">
+                                    <img src="imgs/webgraphics/stamps/overwatch.png" alt="rain">
+                                    <img src="imgs/webgraphics/stamps/osu.png" alt="rain">
+                                    <img src="imgs/webgraphics/stamps/rain.gif" alt="rain">
+                                    <img src="imgs/webgraphics/stamps/ratm.webp" alSt="dontsteponthem">
+                                    <img src="imgs/webgraphics/stamps/thecandycoating-universal.gif"
+                                        alSt="dontsteponthem">
+
+                                    <img src="imgs/webgraphics/stamps/stars.gif" alt="stars">
+                                    <img src="imgs/webgraphics/stamps/steam.png" alt="steam">
+                                    <img src="imgs/webgraphics/stamps/stringworm.gif" alt="steam">
+                                    <img src="imgs/webgraphics/stamps/stevenuniverse.gif" alt="stevenuniverse">
+                                    <img src="imgs/webgraphics/stamps/shakingcat.gif" alt="supportgrass">
+
+                                    <img src="imgs/webgraphics/stamps/supportgrass.png" alt="supportgrass">
+                                    <img src="imgs/webgraphics/stamps/supportminecraft.png" alt="supportminecraft">
+                                    <img src="imgs/webgraphics/stamps/space.webp" alt="uwu">
+                                    <img src="imgs/webgraphics/stamps/talksoftly.png" alt="talksoftly">
+                                    <img src="imgs/webgraphics/stamps/tabletuser.png" alt="tabletuser">
+                                    <img src="imgs/webgraphics/stamps/tubbs.png" alt="tubbs">
+                                    <img src="imgs/webgraphics/stamps/threecheers.jpg" alt="talksoftly">
+                                    <img src="imgs/webgraphics/stamps/terraria.png" alt="talksoftly">
+                                    <img src="imgs/webgraphics/stamps/tomodachi.png" alt="talksoftly">
+                                    <img src="imgs/webgraphics/stamps/transformice.gif" alt="talksoftly">
+                                    <img src="imgs/webgraphics/stamps/tumblr_inline_p25mcqZLDR1ux8fd4_500.gif"
+                                        alt="haveyoutanekyourmedstoday?">
+                                    <img src="imgs/webgraphics/stamps/tv.gif" alt="tv">
+                                    <img src="imgs/webgraphics/stamps/twilightapple.png" alt="twilightapple">
+                                    <img src="imgs/webgraphics/stamps/transformice.gif" alt="transformice">
+                                    <img src="imgs/webgraphics/stamps/uwu.png" alt="uwu">
+                                    <img src="imgs/webgraphics/stamps/vegetarian.jpg" alt="uwu">
+                                    <img src="imgs/webgraphics/stamps/weirdnoises.png" alt="weirdnoises">
+                                    <img src="imgs/webgraphics/stamps/weirdpeople.png" alt="weirdpeople">
+                                    <img src="imgs/webgraphics/stamps/xfiles.gif" alt="xfiles">
+
+                                    <img src="imgs/webgraphics/stamps/yaoi.gif" alt="yaoi">
+                                    <img src="imgs/webgraphics/stamps/youareanidiot.gif" alt="yaoi">
+                                    <img src="imgs/webgraphics/stamps/yaoi.png" alt="yaoi">
+                                    <img src="imgs/webgraphics/stamps/youcanfeelsafearoundme.gif"
+                                        alt="youcanfeelsafearoundme">
+                                </div>
+
+                            </div>
+
+
+                            <div class="scroll">
+                                <img src="imgs/webgraphics/blinkies/cinto.gif" id="blinkies" class="desaturate">
+                                <img src="imgs/webgraphics/blinkies/catlover2.gif" id="blinkies" class="desaturate">
+                                <img src="imgs/webgraphics/blinkies/artistblinkie.gif" id="blinkies" class="desaturate">
+
+
+                                <img src="imgs/webgraphics/blinkies/nightperson.gif" id="blinkies" class="desaturate">
+
+                                <img src="imgs/webgraphics/blinkies/peace.gif" id="blinkies" class="desaturate">
+                                <img src="imgs/webgraphics/blinkies/blinkie-psychology.gif" id="blinkies"
+                                    class="desaturate">
+                                <img src="imgs/webgraphics/blinkies/catBlinkie.gif" id="blinkies" class="desaturate">
+                                <img src="imgs/webgraphics/blinkies/minecraftvegetarian.webp" id="blinkies"
+                                    class="desaturate">
+                                <img src="imgs/webgraphics/blinkies/neurodivergent.webp" id="blinkies"
+                                    class="desaturate">
+
+                                <img src="imgs/webgraphics/blinkies/piercingobsessed.webp" id="blinkies"
+                                    class="desaturate">
+                                <img src="imgs/webgraphics/blinkies/brasil.gif" id="blinkies" class="desaturate">
+                                <img src="imgs/webgraphics/blinkies/sensitive.gif" id="blinkies" class="desaturate">
+                                <img src="imgs/webgraphics/blinkies/grumpy.gif" id="blinkies" class="desaturate">
+                                <img src="imgs/webgraphics/blinkies/nonbinary.webp" id="blinkies" class="desaturate">
+                                <img src="imgs/webgraphics/blinkies/naturelover.gif" id="blinkies" class="desaturate">
+                                <img src="imgs/webgraphics/blinkies/catsovereverything.gif" id="blinkies"
+                                    class="desaturate">
+                                <img src="imgs/webgraphics/blinkies/hopelessromantic.gif" id="blinkies"
+                                    class="desaturate">
+                                <img src="imgs/webgraphics/blinkies/ilovemybf.gif" id="blinkies" class="desaturate">
+                                <img src="imgs/webgraphics/blinkies/iloveblack.gif" id="blinkies" class="desaturate">
+
+                                <img src="imgs/webgraphics/blinkies/vampires.gif" id="blinkies" class="desaturate">
+
+                                <img src="imgs/webgraphics/blinkies/cinto.gif" id="blinkies" class="desaturate">
+                                <img src="imgs/webgraphics/blinkies/fluttershymarijuana.webp" id="blinkies"
+                                    class="desaturate">
+                                <img src="imgs/webgraphics/blinkies/cringebutfree.gif" id="blinkies" class="desaturate">
+                                <img src="imgs/webgraphics/blinkies/selfexpression.gif" id="blinkies"
+                                    class="desaturate">
+
+                                <img src="imgs/webgraphics/blinkies/gothicandloneliness.webp" id="blinkies"
+                                    class="desaturate">
+                                <img src="imgs/webgraphics/blinkies/ilovemycomputer.gif" id="blinkies"
+                                    class="desaturate">
+                                <img src="imgs/webgraphics/blinkies/chocoholic.gif" id="blinkies" class="desaturate">
+                                <img src="imgs/webgraphics/blinkies/typeonegative.webp" id="blinkies"
+                                    class="desaturate">
+                                <img src="imgs/webgraphics/blinkies/mybackhurts.gif" id="blinkies" class="desaturate">
+                                <img src="imgs/webgraphics/blinkies/libra.gif" id="blinkies" class="desaturate">
+                                <img src="imgs/webgraphics/blinkies/greeneyedcat.gif" id="blinkies" class="desaturate">
+                                <img src="imgs/webgraphics/blinkies/catnip.webp" id="blinkies" class="desaturate">
+                                <img src="imgs/webgraphics/blinkies/youmaynotrestnow.webp" id="blinkies"
+                                    class="desaturate">
+                                <img src="imgs/webgraphics/blinkies/atmyfuckinglimit.webp" id="blinkies"
+                                    class="desaturate">
+                                <img src="imgs/webgraphics/blinkies/icant.gif" id="blinkies" class="desaturate">
+                                <img src="imgs/webgraphics/blinkies/yaoi.gif" id="blinkies" class="desaturate">
+                                <img src="imgs/webgraphics/blinkies/oldcatlady.webp" id="blinkies" class="desaturate">
+                                <img src="imgs/webgraphics/blinkies/iloverevenge.gif" id="blinkies" class="desaturate">
+                                <img src="imgs/webgraphics/blinkies/iwanttobelieve.webp" id="blinkies"
+                                    class="desaturate">
+                                <img src="imgs/webgraphics/blinkies/demolitionlovers.gif" id="blinkies"
+                                    class="desaturate">
+                                <img src="imgs/webgraphics/blinkies/ego.gif" id="blinkies" class="desaturate">
+                                <img src="imgs/webgraphics/blinkies/cring.webp" id="blinkies" class="desaturate">
+                                <img src="imgs/webgraphics/blinkies/iwannagohome.webp" id="blinkies" class="desaturate">
+                                <img src="imgs/webgraphics/blinkies/obsessivecompulsive.webp" id="blinkies"
+                                    class="desaturate">
+                                <img src="imgs/webgraphics/blinkies/ocd.webp" id="blinkies" class="desaturate">
+                                <img src="imgs/webgraphics/blinkies/normal-ppl-worry-me.gif" id="blinkies"
+                                    class="desaturate">
+                                <img src="imgs/webgraphics/blinkies/horrormovies.gif" id="blinkies" class="desaturate">
+                                <img src="imgs/webgraphics/blinkies/y10.gif" id="blinkies" class="desaturate">
+                                <img src="imgs/webgraphics/blinkies/bigsis.gif" id="blinkies" class="desaturate">
+                                <img src="imgs/webgraphics/blinkies/ilovethesea.gif" id="blinkies" class="desaturate">
+                                <img src="imgs/webgraphics/blinkies/bekindtoanimals.gif" id="blinkies"
+                                    class="desaturate">
+                                <img src="imgs/webgraphics/blinkies/drawing in class.gif" id="blinkies"
+                                    class="desaturate">
+                                <img src="imgs/webgraphics/blinkies/sebastian.gif" id="blinkies" class="desaturate">
+                                <img src="imgs/webgraphics/blinkies/stevenuniverse.webp" id="blinkies"
+                                    class="desaturate">
+                                <img src="imgs/webgraphics/blinkies/scully.gif" id="blinkies" class="desaturate">
+                                <img src="imgs/webgraphics/blinkies/opinionated.webp" id="blinkies" class="desaturate">
+                                <img src="imgs/webgraphics/blinkies/copycat.gif" id="blinkies" class="desaturate">
+                                <img src="imgs/webgraphics/blinkies/revenge.gif" id="blinkies" class="desaturate">
+                                <img src="imgs/webgraphics/blinkies/stalking.webp" id="blinkies" class="desaturate">
+                                <img src="imgs/webgraphics/blinkies/normal-ppl-worry-me.gif" id="blinkies"
+                                    class="desaturate">
+                                <img src="imgs/webgraphics/blinkies/sillycat.webp" id="blinkies" class="desaturate">
+                                <img src="imgs/webgraphics/blinkies/piracyyy.webp" id="blinkies" class="desaturate">
+
+                                <img src="imgs/webgraphics/blinkies/washyourhands.gif" id="blinkies" class="desaturate">
+                                <img src="imgs/webgraphics/blinkies/mmmyummisubstances.webp" id="blinkies"
+                                    class="desaturate">
+                            </div>
+                            <h3>(scrollable!!)</h3>
+                            <br>
+
+                            <div class="caixamaisclaraColumn">
+                                <div class="scrollSmaller">
+                                    <H3>UPDATES</H3>
+                                    <hr>
+                                    <h4>24/08/2025 - added new drawbox (by drawbox.nekoweb.org)</h4>
+                                    <h4>23/08/2025 - added crt effect</h4>
+                                    <h4>15/08/2025 - added a new section @ main!</h4>
+                                    <h4>14/08/2025 - added a whole new font, made by me with bitfontmaker2</h4>
+                                    <h4>07/08/2025 - added site update list!</h4>
+                                    <h4>05/08/2025 - added new site theme!! (damn i really like the new one)</h4>
+                                    <h4>04/08/2025 - made the sides the same for every page with JS</h4>
+                                    <h4>28/07/2025 - added yaoi fridge page</h4>
+                                    <h4>25/07/2025 - added webweaving page</h4>
+                                    <h4>20/07/2025 - added toybox</h4>
+                                    <h4>09/07/2025 - added translation to blogs</h4>
+                                    <h4>05/08/2025 - added games page!</h4>
+
+                                </div>
+                            </div>
+                            <br>
+                            <div class="caixamaisclaraColumn">
+                                <div class="scrollSmaller">
+                                    <H3>TO DO LIST</H3>
+                                    <hr>
+                                    <h4>- whats in my bag</h4>
+                                    <h4>- shrine to my cats, my bf & mcr</h4>
+                                    <h4>- notebook page</h4>
+                                    <h4>- memories page</h4>
+                                    <h4>- put all pages inside index so it wont reload whole page when navigating</h4>
+                                </div>
+                            </div>
+
+                            <br>
+                            <div class="caixamaisclaraColumn">
+                                <H3 style="font-size: smalle;">my button! feel free to link :3
+                                    <h3 style="font-size: smaller;">(also tell me at the chat box on the left if you
+                                        link me ,
+                                        ill link you
+                                        back!!)</h3>
+                                </H3>
+                                <img src="imgs/minkurosu-button.png" class="my-button"
+                                    style="width: 88px; height: 31px; ;">
+                                <br>
+                                <br>
+
+                                <H3 style="">mutuals/sites i love:</H3>
+
+                                <div class="scrollable">
+                                    <div class="button-wall">
+                                        <a href="https://lilithdev.neocities.org/"><img
+                                                src="https://lilithdev.neocities.org/buttons/lilithdevbtn.gif"
+                                                class="desaturate"></a>
+                                        <a href="https://cinni.net" target="_blank"><img
+                                                src="https://cinni.net/images/button/cinni-88x31-hamham.gif"
+                                                class="desaturate"></a>
+
+
+                                        <a href="https://coffeeplant.neocities.org"><img
+                                                src="https://coffeeplant.neocities.org/images/coffeeplant.png"
+                                                class="desaturate">
+                                            <a href="https://miserabledolly.neocities.org/"><img
+                                                    src="https://miserabledolly.neocities.org/miserabledolly.gif"
+                                                    width="88" height="31" class="desaturate"></a>
+                                            <a href="https://monroevilleangel.neocities.org"> <img
+                                                    id="blinkiemonroevilleangel"
+                                                    src="https://files.catbox.moe/htzd9r.png" class="desaturate"> </a>
+
+                                            <a href="https://usprisoner.neocities.org/"><img
+                                                    src="https://usprisoner.neocities.org/momoa_button.png"
+                                                    class="desaturate">
+                                                <a href="https://edhmr.neocities.org" target="_blank"><img
+                                                        src="https://edhmr.neocities.org/PAGINA%20INICIAL/edhmr_botton.gif"
+                                                        class="desaturate"></a>
+                                                <a href="https://slushiecafe.neocities.org/" target="_blank"><img
+                                                        src="https://slushiecafe.neocities.org/images/slushiecafebutton.gif"
+                                                        class="desaturate"></a>
+                                                <a href="https://qtbeans.neocities.org" target="_blank"><img
+                                                        src="https://qtbeans.neocities.org/my%20art/qtbeansbutton2.png"
+                                                        class="desaturate"></a>
+                                                <a href="https://ghostz.neocities.org/" target="_blank"><img
+                                                        src="https://ghostz.neocities.org/buttons/0.png"
+                                                        class="desaturate"></a>
+                                                <a href="https://moonpr1sm.com/" target="_blank"><img
+                                                        src="https://moonpr1sm.com/pixelart/june25/newbuttoncorrect.png"
+                                                        class="desaturate"></a>
+                                                <a href="https://doqmeat.com/" target="_blank"><img
+                                                        src="https://doqmeat.com/!g/web/doqmeat-2.png"
+                                                        class="desaturate"></a>
+                                                <a href="https://grossgirl94.neocities.org" target="_blank"><img
+                                                        src="https://grossgirl94.neocities.org/photos/grossgirl94%20button%20transparent.gif"
+                                                        class="desaturate"></a>
+                                                <a href="https://olliveen.neocities.org/" target="_blank"><img
+                                                        src="https://olliveen.neocities.org/img/button.gif"
+                                                        class="desaturate"></a>
+                                                <a href="https://catboo.neocities.org/" target="_blank"><img
+                                                        src="https://catboo.neocities.org/images/sitebuttons/catboo.png"
+                                                        class="desaturate"></a>
+                                                <a href="https://vulpecula.neocities.org" target="_blank"><img
+                                                        src="https://vulpecula.neocities.org/images/vulpbutton2.gif"
+                                                        class="desaturate"></a>
+                                                <a href="https://mcr5isreal.neocities.org/"><img
+                                                        src="https://mcr5isreal.neocities.org/button.png"
+                                                        title="MCR 5 IS REAL" class="desaturate"></a>
+                                                <a href="https://yogomagpie.neocities.org/about"><img
+                                                        src="imgs/webgraphics/buttons/YMbutton.gif"
+                                                        class="desaturate"></a>
+
+
+                                                <a href="https://vilevampire.neocities.org/"><img
+                                                        src="https://vilevampire.neocities.org/pictures/buttons/vilevampire.gif"
+                                                        alt="vilevampire on neocities" class="desaturate"></a>
+
+                                                <a href="https://wanillaberry.neocities.org/"><img
+                                                        src=" https://file.garden/Z_RjuJFUvSUt-EAj/WEBSITE/HOMEPAGE/wanillaberry.gif"
+                                                        alt="" class="desaturate"></a>
+
+
+                                                <a href="https://bandaid91.neocities.org"><img
+                                                        src="https://files.catbox.moe/u2t9c6.gif" alt="bandaid91"
+                                                        class="desaturate"></a>
+
+                                                <a href="https://ridvenge.com"><img
+                                                        src="https://files.catbox.moe/oawzpf.gif" alt="bandaid91"
+                                                        class="desaturate"></a>
+
+                                                <a href="https://ridvenge.com" target="_blank"><img
+                                                        src="https://files.catbox.moe/oawzpf.gif"
+                                                        class="desaturate"></a>
+
+
+                                                <a href='https://mewardgay.neocities.org/'><img
+                                                        src="https://i.ibb.co/cS1H1wCL/Untitled-design-1.gif"
+                                                        width='88px'></a>
+
+                                                <a href="https://sugarbunny.neocities.org"><img
+                                                        src="https://files.catbox.moe/0vx0m6.png"></a>
+
+
+
+
+
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    </div>
+
+    </div>
+
+    </aside>
 
 
     </div>
@@ -639,22 +919,69 @@
     </aside>
 
     </div>
-    <script src="lastfm-widget.js"></script>
     <script src="script.js"></script>
     <script src="theme-switcher.js"></script>
-
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js"></script>
+    <script type="module" src="dream-journal.js"></script>
     <script>
-        // Script simples para o slideshow
-        const images = document.querySelectorAll('.slideshow-area img');
-        let currentIndex = 0;
+        document.addEventListener('DOMContentLoaded', function () {
 
-        function nextSlide() {
-            images[currentIndex].classList.remove('active');
-            currentIndex = (currentIndex + 1) % images.length;
-            images[currentIndex].classList.add('active');
-        }
+            // --- CÓDIGO DO SLIDESHOW CORRIGIDO ---
+            const slideshowContainer = document.querySelector('.slideshow-container');
+            if (slideshowContainer) {
+                let currentIndex = 0; // Declarado apenas uma vez
+                const images = slideshowContainer.querySelectorAll('img');
+                const totalImages = images.length;
 
-        setInterval(nextSlide, 4000); // Muda a imagem a cada 4 segundos
+                if (totalImages > 0) {
+                    images[currentIndex].classList.add('active');
+
+                    function nextSlide() {
+                        if (images[currentIndex]) {
+                            images[currentIndex].classList.remove('active');
+                        }
+                        currentIndex = (currentIndex + 1) % totalImages;
+                        if (images[currentIndex]) {
+                            images[currentIndex].classList.add('active');
+                        }
+                    }
+                    setInterval(nextSlide, 3000);
+                }
+            }
+
+            // --- CÓDIGO DO IFRAME DE JOGOS CORRIGIDO ---
+            const gameIframe = document.getElementById('game-iframe');
+            if (gameIframe) {
+                const gameButtons = document.querySelectorAll('.game-button');
+
+                function resizeIframe() {
+                    try {
+                        const iframeBody = gameIframe.contentWindow.document.body;
+                        const iframeHeight = iframeBody.scrollHeight;
+                        gameIframe.style.height = (iframeHeight > 150 ? iframeHeight : 800) + 'px';
+                    } catch (e) {
+                        gameIframe.style.height = '800px';
+                    }
+                }
+
+                gameButtons.forEach(button => {
+                    button.addEventListener('click', function (event) {
+                        event.preventDefault();
+                        const gameSrc = this.getAttribute('data-src');
+                        gameIframe.src = gameSrc;
+                        gameButtons.forEach(btn => btn.classList.remove('active'));
+                        this.classList.add('active');
+                    });
+                });
+
+                gameIframe.onload = resizeIframe;
+
+                if (gameButtons.length > 0) {
+                    gameButtons[0].click();
+                }
+            }
+        });
     </script>
 
 </body>

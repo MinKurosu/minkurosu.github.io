@@ -121,14 +121,10 @@
             min-height: 100vh;
             position: relative;
             width: 100%;
-            /* Add padding-top to body to prevent content from going behind fixed header */
             padding-top: 5rem;
-            /* Adjust based on your header's max-height (5rem + any header top/bottom padding) */
             overflow-x: hidden;
-            /* Added to prevent horizontal scroll if notes go off-screen */
         }
 
-        /* Novo container para as imagens de background empilhadas */
         .background-container {
             position: fixed;
             top: 0;
@@ -153,7 +149,6 @@
             position: relative;
             width: 100%;
             min-height: 4800px;
-            /* AUMENTE MUITO ESTA ALTURA para acomodar notas gigantes e espalhadas */
             margin: 20px 0;
             z-index: 1;
         }
@@ -193,7 +188,6 @@
             box-sizing: border-box;
         }
 
-        /* Ajustes para o layout principal (se estiver limitando a largura) */
         .layout-with-sidebars,
         #containerprincipal,
         main {
@@ -204,7 +198,6 @@
         }
 
 
-        /* Media Queries para Responsividade */
         @media (max-width: 1400px) {
             .scattered-blocks-wrapper {
                 min-height: 4200px;

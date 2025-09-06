@@ -475,7 +475,6 @@
     flex-direction: column;
     width: 100%;
     min-width: 0;
-    /* CORREÇÃO APLICADA */
   }
 
   #secret-posts-container li .info strong {
@@ -521,75 +520,6 @@
   }
 
 
-  #google_translate_element {
-    text-shadow: none !important;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    box-sizing: border-box;
-
-  }
-
-  #google_translate_element {
-    text-shadow: none;
-    background-color: #505050 !important;
-    text-decoration: none;
-    padding: 5px !important;
-    border-radius: 8px !important;
-    border: 1px solid #505050 !important;
-    display: block !important;
-  }
-
-  .blog-post .translate-button {
-
-    display: inline-block;
-    width: auto;
-    max-width: none;
-    margin-top: 15px;
-    padding: 8px 15px;
-
-
-    background-color: #007bff;
-    color: #a7a7a7;
-    border: none;
-    border-radius: 2px;
-    cursor: pointer;
-    font-size: 0.9em;
-    text-decoration: none;
-    transition: background-color 0.3s ease;/
-  }
-
-  .blog-post .translate-button:hover {
-    background-color: #0056b3;
-  }
-
-
-
-
-  .goog-te-gadget-simple {
-
-    border-left: 1px solid #a7a7a7;
-    border-top: 1px solid #a7a7a7;
-    border-bottom: 1px solid #a7a7a7;
-    border-right: 1px solid #a7a7a7;
-    font-size: 10pt;
-    display: inline-block;
-    padding-top: 1px;
-    padding-bottom: 2px;
-    cursor: pointer;
-    text-decoration: none;
-  }
-
-  .goog-te-gadget-simple a {
-    text-decoration: none;
-    text-shadow: none;
-    font-family: borntobesp;
-  }
-
-  .blog-post .post-divider {
-    margin-top: 25px;
-  }
-
   span {
     text-decoration: none;
     text-shadow: none
@@ -608,7 +538,7 @@
     display: flex;
     align-items: center;
     gap: 6px;
-    color: #B3B3B3;
+    color: #1a1a1a;
     cursor: pointer;
     font-size: 13px;
     font-weight: 500;
@@ -747,6 +677,16 @@
     margin-top: 8px;
   }
 </style>
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'pt', // Assuming your page is in Portuguese
+      ; includedLanguages: 'en,es,fr,ko,ja,pt,gn,it,de,ru,zh-CN', layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+  }, 'google_translate_element');
+  }
+</script>
+<script type="text/javascript"
+  src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 <body>
   <div class="banner">
@@ -757,7 +697,9 @@
 
   <div class="wrapper-content">
     <div class="container">
+
       <aside class="profile">
+
         <img src="imgs/site_imgs/twitteravatar.jpg" class="avatar" alt="">
         <h1>min*</h1>
         <span>@minkurosu</span>
@@ -772,6 +714,7 @@
         </ul>
 
         <div class="widget images">
+          <br>
           <strong><img src="imgs/site_imgs/images/images.svg" alt="Images"> 420 photos and videos</strong>
           <ul>
             <li><img src="https://media1.tenor.com/m/dxPl_UoR8J0AAAAC/fire-writing.gif" alt="Descrição da Imagem 1">
@@ -805,12 +748,14 @@
       <section class="timeline">
         <nav>
           <a href="#" class="active">posts</a>
-          <a href="admin.html" target="_blank" style="color: #3BB9E3; float: right;">admin</a>
+          <div id="google_translate_element"></div>
         </nav>
+
 
         <ul id="tweets-container" class="tweets">
           <li style="justify-content: center; padding: 20px; font-weight: bold; color: #667580;">loading <thoughts
               class=""></thoughts>
+
           </li>
         </ul>
 

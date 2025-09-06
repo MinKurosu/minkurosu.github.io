@@ -75,7 +75,7 @@ body {
 }
 
 body {
-
+  max-width: 100%;
   margin: 0;
   padding: 0;
   display: flex;
@@ -124,7 +124,7 @@ body>.layout-with-sidebars {
   grid-template-columns: auto 1fr auto;
 }
 
-/* Header */
+
 header {
   background-color: #1B1917;
 
@@ -356,7 +356,8 @@ header {
   box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
   text-align: center;
   margin: 0 auto;
-  width: 100%;
+  max-width: 800px;
+
   box-sizing: border-box;
   color: #53504b;
 }
@@ -509,24 +510,18 @@ header {
 
 #statuscafe-username {
   color: #53504b;
-  /* Exemplo: Vermelho. Mude para a cor que desejar. */
   font-weight: bold;
-  /* Opcional: para deixar o nome em negrito */
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 #statuscafe-content {
   color: #53504b;
-  /* Exemplo: Azul. Mude para a cor que desejar. */
   font-size: 1.1em;
-  /* Opcional: para aumentar um pouco o tamanho da fonte */
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
-/* Se você quiser que todo o conteúdo dentro da div 'statuscafe' tenha a mesma cor */
 #statuscafe {
   color: #53504b;
-  /* Exemplo: Verde. Mude para a cor que desejar. */
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
@@ -866,20 +861,12 @@ h4 {
 
 .button-wall {
   display: grid;
-  /* Usa CSS Grid para o layout bidimensional. */
   grid-template-columns: repeat(3, 1fr);
-  /* Define exatamente 2 colunas de largura igual (1 fração do espaço disponível cada). */
   gap: 5px;
-  /* Espaço entre os botões, tanto na horizontal quanto na vertical. */
   width: 100%;
-  /* Faz a div .button-wall ocupar 100% da largura do seu contêiner pai, adaptando-se a ele. */
   justify-content: center;
-  /* Centraliza os itens horizontalmente dentro do grid, se houver espaço extra. */
-  /* align-items: start; Não é estritamente necessário para este layout, mas pode ser útil se os itens tiverem alturas diferentes. */
   padding: 5px;
-  /* Adiciona um pequeno preenchimento interno, se desejar. */
   box-sizing: border-box;
-  /* Garante que padding e border sejam incluídos na largura e altura totais do elemento. */
 }
 
 .button-wall img {
@@ -900,12 +887,13 @@ h4 {
 }
 
 .desaturate {
-  filter: saturate(0.2);
+  filter: saturate(0.1);
   transition: filter 0.3s ease;
 }
 
+
 .desaturatepics {
-  filter: saturate(0.9);
+  filter: saturate(0.2);
   transition: filter 0.3s ease;
 }
 
@@ -917,7 +905,6 @@ h4 {
 .desaturate:hover {
   filter: saturate(1);
 }
-
 
 
 #nomeSide {
@@ -1060,8 +1047,9 @@ th {
 
 .track-inner {
   display: inline-block;
-  animation: scroll-right 60s linear infinite;
+  animation: scroll-right 400s linear infinite;
 }
+
 
 .track:hover .track-inner {
   animation-play-state: paused;
@@ -1442,7 +1430,6 @@ th {
 
 .game-button-link.active .front {
   transform: translateY(-2px);
-  /* botão "afundado" quando ativo */
   background: hsl(30, 4%, 15%);
   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);/
 }
@@ -1677,7 +1664,6 @@ th {
 
   .my-button {
     border: 1px solid white;
-    /* Borda de 1px, sólida e branca */
   }
 
 
@@ -1936,4 +1922,43 @@ th {
   .caixamaisclaraCenterSimple {
     box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
     flex-direction: column
+  }
+
+
+
+
+
+
+
+
+
+
+
+  .social-links {
+
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    padding: 10px;
+  }
+
+  .social-links a {
+    display: inline-block;
+    transition: transform 0.2s ease-in-out, filter 0.2s ease;
+  }
+
+  .social-links a img {
+    width: 16px;
+    height: 16px;
+    display: block;
+  }
+
+  .social-links a img {
+    filter: grayscale(100%);
+  }
+
+  .social-links a:hover img {
+    transform: translateY(-5px);
+    transition: transform 0.2s ease-in-out, filter 0.2s ease-in-out;
+    filter: grayscale(0%) !important;
   }

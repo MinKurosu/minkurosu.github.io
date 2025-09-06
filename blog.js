@@ -1,5 +1,3 @@
-
-
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js';
 import { getFirestore, collection, query, orderBy, getDocs } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js';
 
@@ -17,10 +15,10 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-const blogPostsContainer = document.getElementById('posts-container'); 
+const blogPostsContainer = document.getElementById('posts-container');
 
 function formatTimestamp(timestamp) {
-    if (!timestamp || !timestamp.toDate) return 'Data Indisponível'; 
+    if (!timestamp || !timestamp.toDate) return 'Data Indisponível';
     const date = timestamp.toDate();
     return new Intl.DateTimeFormat('pt-BR', {
         dateStyle: 'long',
@@ -33,27 +31,27 @@ async function loadBlogPosts() {
         console.error("Elemento 'posts-container' não encontrado no HTML.");
         return;
     }
-    blogPostsContainer.innerHTML = '<h2>Carregando posts...</h2>'; 
+    blogPostsContainer.innerHTML = '<h2>Carregando posts...</h2>';
 
     try {
 
-       const q = query(collection(db, "blog_posts"), orderBy("timestamp", "desc"));
-        const querySnapshot = await getDocs(q);
+        // CORRIGIDO: Mudei o caminho da coleção para o caminho correto
+        const q = query(collection(db, "blog_posts"), orderBy("timestamp", "desc")); const querySnapshot = await getDocs(q);
 
         if (querySnapshot.empty) {
-            blogPostsContainer.innerHTML = '<p>Nenhum post de blog encontrado ainda.</p>';
+            blogPostsContainer.innerHTML = '<p>nenhum post de blog encontrado ainda.</p>';
             return;
         }
 
-        blogPostsContainer.innerHTML = ''; 
+        blogPostsContainer.innerHTML = '';
 
         querySnapshot.forEach((doc) => {
             const post = doc.data();
             const postElement = document.createElement('article');
-            postElement.classList.add('blog-post'); 
+            postElement.classList.add('blog-post');
 
-  
-            const formattedDate = formatTimestamp(post.timestamp); 
+
+            const formattedDate = formatTimestamp(post.timestamp);
 
             postElement.innerHTML = `
                 <h2>${post.title}</h2>

@@ -2,10 +2,29 @@
 <html lang="en">
 
 <head>
+
+    <script src="script.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js"></script>
+    <script type="module" src="blog.js"></script>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'pt',
+                includedLanguages: 'en,es,fr', // Adicione as línguas que você quer oferecer
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript"
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+    <script src="lastfm-widget.js"></script>
+    <script src="script.js"></script>
     <script src="oneko.js"></script>
     <script>NekoType = "black"</script>
-    <script src="carregar-sidebars.js"></script>
-
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4K5KDKEJ2E"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -20,7 +39,6 @@
     <meta property="og:image" content="imgs/site_imgs/sitethumbnail.png" />
 
 
-    <link rel="stylesheet" href="styles.css" id="theme-stylesheet">
     <title>@minkurosu</title>
 
     <link rel="icon" type="image/ico" href="imgs/site_imgs/favicon.ico" />
@@ -229,33 +247,7 @@
 
 
         <main id="containerprincipal">
-            <header id="header" class="fixed-top">
-                <div id="divpatinha">
-                    <img src="imgs/site_imgs/patinha.png" id="logopatinha" class="desaturatepics">
-                </div>
-                <nav class="navbar">
-                    <div class="divitems">
-                        <div class="nav-item">
-                            <a href="#" onclick="history.back(); return false;" class="nav-link">back</a>
-                        </div>
-                        <div class="nav-item">
-                            <a href="index.html" target="_self" class="nav-link">home</a>
-                        </div>
-                        <div class="nav-item">
-                            <a href="feed.html" target="_self" class="nav-link">feed</a>
-                        </div>
-                        <div class="nav-item">
-                            <a href="blog.html" target="_self" class="nav-link">blog</a>
-                        </div>
-                        <div class="nav-item">
-                            <a href="links.html" target="_self" class="nav-link">links</a>
-                        </div>
-                        <div class="nav-item">
-                            <a href="portfolio-menu.html" target="_self" class="nav-link">portfolio</a>
-                        </div>
-                    </div>
-                </nav>
-            </header>
+
 
             <div id="container">
                 <div class="caixamaisclara">
@@ -282,35 +274,12 @@
 
         </main>
 
-        <aside id="sidebar-direita-container" class="sidebar">
-        </aside>
 
 
     </div>
 
 
-    <script src="script.js"></script>
-    <script type="module" src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"></script>
-    <script type="module" src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js"></script>
-    <script type="module" src="blog.js"></script>
 
-
-
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({ pageLanguage: 'pt', layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
-        }
-    </script>
-    <script type="text/javascript"
-        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-
-
-
-
-    <script src="lastfm-widget.js"></script>
-    <script src="script.js"></script>
-    <script src="theme-switcher.js"></script>
 </body>
 
 </html>

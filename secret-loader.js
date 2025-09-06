@@ -1,10 +1,8 @@
 // secret-loader.js
 
-// Importa as funções necessárias do Firebase
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js';
 import { getFirestore, collection, getDocs, query, orderBy } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js';
 
-// SUA CONFIGURAÇÃO DO FIREBASE (a mesma do seu admin.js e twt-loader.js)
 const firebaseConfig = {
     apiKey: "AIzaSyA8-Ab2dE48sVOhmT-HfxIL5_rzDMRdcCc",
     authDomain: "minkurosu.firebaseapp.com",
@@ -15,11 +13,9 @@ const firebaseConfig = {
     measurementId: "G-M7PWC6DDRH"
 };
 
-// Inicializa o Firebase (só precisamos do Firestore aqui)
-const app = initializeApp(firebaseConfig, 'secret-app'); // Dê um nome único para evitar conflitos
+const app = initializeApp(firebaseConfig, 'secret-app');
 const db = getFirestore(app);
 
-// Função para formatar data e hora (similar ao twt-loader.js)
 function formatTimestampMinimal(timestamp) {
     if (!timestamp) return 'Data Indisponível';
     const date = timestamp.toDate();
@@ -31,7 +27,6 @@ function formatTimestampMinimal(timestamp) {
     return `${day}/${month}/${year} ${hours}:${minutes}`;
 }
 
-// Função para carregar os posts da coleção 'private_entries'
 async function loadSecretPosts() {
     const secretPostsContainer = document.getElementById('secret-posts-container');
     if (!secretPostsContainer) {
@@ -39,12 +34,11 @@ async function loadSecretPosts() {
         return;
     }
 
-    // Mostra uma mensagem de carregamento
     secretPostsContainer.innerHTML = '<li style="justify-content: center; padding: 20px; font-weight: bold; color: #667580;">loading secrets...</li>';
 
     try {
-        const postsRef = collection(db, 'private_entries'); // <<--- Acessa a coleção correta!
-        const q = query(postsRef, orderBy('timestamp', 'desc')); // Ordena do mais novo para o mais antigo
+        const postsRef = collection(db, 'private_entries');
+        const q = query(postsRef, orderBy('timestamp', 'desc'));
         const querySnapshot = await getDocs(q);
 
         if (querySnapshot.empty) {
@@ -52,10 +46,8 @@ async function loadSecretPosts() {
             return;
         }
 
-        // Limpa a mensagem de carregamento
         secretPostsContainer.innerHTML = '';
 
-        // Itera sobre os documentos e cria o HTML
         querySnapshot.forEach(doc => {
             const post = doc.data();
             const postContent = post.content || '';
@@ -63,8 +55,7 @@ async function loadSecretPosts() {
             const formattedTimestamp = formatTimestampMinimal(postTimestamp);
 
             const postElement = document.createElement('li');
-            
-            // HTML do post, com o mesmo estilo dos outros tweets
+
             postElement.innerHTML = `
                 <img src="https://pbs.twimg.com/profile_images/1853559456900042752/PFV06W_5_400x400.jpg" alt="Avatar">
                 <div class="info">
@@ -72,7 +63,7 @@ async function loadSecretPosts() {
                     <p>${postContent.replace(/\n/g, '<br>')}</p>
                 </div>
             `;
-            
+
             secretPostsContainer.appendChild(postElement);
         });
 
@@ -83,35 +74,31 @@ async function loadSecretPosts() {
 }
 
 
-// Lógica principal para o desbloqueio da seção
 document.addEventListener('DOMContentLoaded', () => {
     const unlockButton = document.getElementById('unlock-button');
     const secretPasswordInput = document.getElementById('secret-password');
     const secretPostsContainer = document.getElementById('secret-posts-container');
     const passwordMessage = document.getElementById('password-message');
-    
-    // ATENÇÃO: A senha ainda está no código do cliente, o que não é seguro para produção.
-    const CORRECT_PASSWORD = 'lili'; 
+
+    const CORRECT_PASSWORD = 'lili';
 
     if (unlockButton && secretPasswordInput && secretPostsContainer && passwordMessage) {
         unlockButton.addEventListener('click', () => {
             const enteredPassword = secretPasswordInput.value;
 
             if (enteredPassword === CORRECT_PASSWORD) {
-                // Esconde o formulário de senha
                 const formContainer = document.querySelector('#secret-section p, #secret-section input, #secret-section button');
                 document.getElementById('secret-password').style.display = 'none';
                 document.getElementById('unlock-button').style.display = 'none';
                 document.querySelector('#secret-section p').style.display = 'none';
                 passwordMessage.textContent = '';
-                
-                // Exibe o container e carrega os posts
-                secretPostsContainer.style.display = 'block'; 
-                loadSecretPosts(); // <<--- CHAMA A FUNÇÃO PARA CARREGAR OS DADOS DO FIREBASE
+
+                secretPostsContainer.style.display = 'block';
+                loadSecretPosts();
 
             } else {
                 passwordMessage.textContent = 'Senha incorreta. Tente novamente.';
-                secretPasswordInput.value = ''; 
+                secretPasswordInput.value = '';
             }
         });
     } else {

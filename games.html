@@ -4,8 +4,6 @@
 <head>
     <script src="oneko.js"></script>
     <script>NekoType = "black"</script>
-    <script src="carregar-sidebars.js"></script>
-
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4K5KDKEJ2E"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -15,25 +13,12 @@
     </script>
     <script> window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches </script>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=1600px, initial-scale=0.4, maximum-scale=1.0, user-scalable=yes">
     <meta property="og:image" content="https://i.ibb.co/RC2v9zg/sitethumbnail.png" />
     <meta property="og:image" content="imgs/site_imgs/sitethumbnail.png" />
-    <meta name="color-scheme" content="light only">
-
-    <link rel="stylesheet" href="styles.css" id="theme-stylesheet">
-
     <title>@minkurosu</title>
-
     <link rel="icon" type="image/ico" href="imgs/site_imgs/favicon.ico" />
     <div class="crt"></div>
     <Style>
-        hr {
-            border: 5px;
-            border-top: 0.0625rem solid #ececec;
-            margin: 1.25rem 0;
-        }
-
-
         a {
             text-decoration: none;
         }
@@ -42,20 +27,12 @@
             text-decoration: none;
         }
 
-
-
-
-
         .caixamaisclaraInterests {
             display: flex;
             flex-direction: column;
             align-items: center;
             width: 100%;
-
         }
-
-
-
 
         .games-button-container {
             display: flex;
@@ -64,7 +41,6 @@
             gap: 10px;
             margin-top: 0;
             padding: 0;
-
         }
 
         #theme-toggle-button {
@@ -79,184 +55,85 @@
             cursor: pointer;
             outline: none;
         }
-    </Style>
 
+        #gameContent {
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: transparent;
+        }
+    </Style>
 </head>
 
 <body>
-
-    <div class="layout-with-sidebars">
-
-        <aside id="sidebar-esquerda-container" class="sidebar">
-        </aside>
-
-        <main id="containerprincipal">
-            <header id="header" class="fixed-top">
-                <div id="divpatinha">
-                    <img src="imgs/site_imgs/patinha.png" id="logopatinha" alt="logo da barra de navegação">
+    <main>
+        <div class="games-section">
+            <div class="caixamaisclaraInterests">
+                <h1 class="games-title">choose a game!</h1>
+                <div class="games-button-container">
+                    <a href="#" class="pushable game-button-link" data-src="minecraft.html">
+                        <span class="shadow"></span>
+                        <span class="edge"></span>
+                        <span class="front">minecraft</span>
+                    </a>
+                    <a href="#" class="pushable game-button-link" data-src="growtopia.html">
+                        <span class="shadow"></span>
+                        <span class="edge"></span>
+                        <span class="front">growtopia</span>
+                    </a>
+                    <a href="#" class="pushable game-button-link" data-src="stardewvalley.html">
+                        <span class="shadow"></span>
+                        <span class="edge"></span>
+                        <span class="front">stardew valley</span>
+                    </a>
+                    <a href="#" class="pushable game-button-link" data-src="baldursgate.html">
+                        <span class="shadow"></span>
+                        <span class="edge"></span>
+                        <span class="front">baldurs gate 3</span>
+                    </a>
                 </div>
-                <nav class="navbar">
-                    <div class="divitems">
-                        <div class="nav-item">
-                            <a href="#" onclick="history.back(); return false;" class="nav-link">back</a>
-                        </div>
-                        <div class="nav-item">
-                            <a href="index.html" target="_self" class="nav-link">home</a>
-                        </div>
-                        <div class="nav-item">
-                            <a href="feed.html" target="_self" class="nav-link">feed</a>
-                        </div>
-                        <div class="nav-item">
-                            <a href="blog.html" target="_self" class="nav-link">blog</a>
-                        </div>
-                        <div class="nav-item">
-                            <a href="links.html" target="_self" class="nav-link">links</a>
-                        </div>
-                        <div class="nav-item">
-                            <a href="portfolio-menu.html" target="_self" class="nav-link">portfolio</a>
-                        </div>
-                    </div>
-                </nav>
-            </header>
-
-
-            <div class="games-section">
-                <div class="caixamaisclaraInterests">
-                    <h1 class="games-title">choose a game!</h1>
-                    <div class="games-button-container">
-                        <a href="#" class="pushable game-button-link" data-src="minecraft.html">
-                            <span class="shadow"></span>
-                            <span class="edge"></span>
-                            <span class="front">minecraft</span>
-                        </a>
-
-                        <a href="#" class="pushable game-button-link" data-src="growtopia.html">
-                            <span class="shadow"></span>
-                            <span class="edge"></span>
-                            <span class="front">growtopia</span>
-                        </a>
-                        <a href="#" class="pushable game-button-link" data-src="stardewvalley.html">
-                            <span class="shadow"></span>
-                            <span class="edge"></span>
-                            <span class="front">stardew valley</span>
-                        </a>
-                        <a href="#" class="pushable game-button-link" data-src="baldursgate.html">
-                            <span class="shadow"></span>
-                            <span class="edge"></span>
-                            <span class="front">baldurs gate 3</span>
-
-                    </div>
-                </div>
-                <br>
-                <div class="game-iframe-wrapper">
-                    <iframe id="gameIframe" src="about:blank" frameborder="0"></iframe>
-                </div>
-
-
-
             </div>
+            <br>
+            <div id="gameContent">
+            </div>
+        </div>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const gameButtons = document.querySelectorAll('.game-button-link');
+            const gameContentDiv = document.getElementById('gameContent');
 
-
-
-        </main>
-        <aside id="sidebar-direita-container" class="sidebar">
-        </aside>
-
-        <script src="lastfm-widget.js"></script>
-        <script src="script.js"></script>
-        <script src="theme-switcher.js"></script>
-
-
-
-        <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
-        <script>
-            Fancybox.bind('[data-fancybox="gallery"]', {
-                //
-            });    
-        </script>
-
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                const gameButtons = document.querySelectorAll('.game-button-link');
-                const gameIframe = document.getElementById('gameIframe');
-
-                function resizeIframe() {
-                    try {
-                        if (gameIframe.contentWindow && gameIframe.contentWindow.document) {
-                            const iframeDoc = gameIframe.contentWindow.document;
-
-                            let maxContentY = 0;
-                            const iframeElements = iframeDoc.querySelectorAll('body *');
-
-                            iframeElements.forEach(el => {
-                                const rect = el.getBoundingClientRect();
-                                const elementBottom = rect.bottom + iframeDoc.defaultView.scrollY;
-
-                                if (elementBottom > maxContentY) {
-                                    maxContentY = elementBottom;
-                                }
-                            });
-
-                            let contentHeight = maxContentY > 0 ? maxContentY : iframeDoc.documentElement.scrollHeight;
-
-
-                            gameIframe.style.height = (contentHeight + 100) + 'px';
-                            console.log('Iframe resized to (maxContentY):', (contentHeight + 100) + 'px');
+            function loadContent(url) {
+                fetch(url)
+                    .then(response => response.text())
+                    .then(data => {
+                        const parser = new DOMParser();
+                        const doc = parser.parseFromString(data, 'text/html');
+                        const mainContent = doc.querySelector('main');
+                        if (mainContent) {
+                            gameContentDiv.innerHTML = mainContent.innerHTML;
                         } else {
-
-                            gameIframe.style.height = '800px';
-                            console.warn("Iframe content not accessible. Setting default height.");
+                            gameContentDiv.innerHTML = '<h1>Conteúdo não encontrado.</h1>';
                         }
-                    } catch (e) {
-                        console.warn("Erro ao redimensionar iframe (provável Same-Origin Policy ou conteúdo não carregado):", e);
+                    })
+                    .catch(error => console.error('Erro ao carregar o conteúdo:', error));
+            }
 
-                        gameIframe.style.height = '800px';
-                    }
-                }
-
-                gameButtons.forEach(button => {
-                    button.addEventListener('click', function (event) {
-                        event.preventDefault();
-                        const gameSrc = this.getAttribute('data-src');
-                        gameIframe.src = gameSrc;
-
-                        gameButtons.forEach(btn => btn.classList.remove('active'));
-                        this.classList.add('active');
-                    });
-                });
-
-                gameIframe.onload = function () {
-                    resizeIframe();
-                    setTimeout(resizeIframe, 300);
-                    setTimeout(resizeIframe, 1000);
-                    setTimeout(resizeIframe, 2000);
-                };
-
-                if (gameButtons.length > 0) {
-                    gameIframe.style.height = '500px';
-                    gameButtons[0].click();
-                }
-
-                window.addEventListener('resize', function () {
-                    clearTimeout(window.iframeResizeTimer);
-                    window.iframeResizeTimer = setTimeout(resizeIframe, 200);
+            gameButtons.forEach(button => {
+                button.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    const gameSrc = this.getAttribute('data-src');
+                    gameButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    loadContent(gameSrc);
                 });
             });
-        </script>
-        <aside class="sidebar sidebar-right">
 
-
-
-
-
-
-        </aside>
-
-    </div>
-
-
-
-
+            if (gameButtons.length > 0) {
+                gameButtons[0].click();
+            }
+        });
+    </script>
 </body>
 
 </html>

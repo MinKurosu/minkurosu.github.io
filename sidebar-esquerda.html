@@ -1,6 +1,5 @@
 <style>
   .social-links {
-    /* Estilos para a div */
     display: flex;
     gap: 5px;
     justify-content: center;
@@ -9,7 +8,6 @@
 
   .social-links a {
     display: inline-block;
-    /* Garante que a transição de filtro e transform seja suave */
     transition: transform 0.2s ease-in-out, filter 0.2s ease;
   }
 
@@ -19,17 +17,14 @@
     display: block;
   }
 
-  /* Aplica o filtro de des-saturação nas imagens */
   .social-links a img {
     filter: grayscale(100%);
   }
 
-  /* Efeito ao passar o mouse: remove o filtro e move o ícone */
   .social-links a:hover img {
     transform: translateY(-5px);
     transition: transform 0.2s ease-in-out, filter 0.2s ease-in-out;
     filter: grayscale(0%) !important;
-    /* !important garante que sobrescreva a regra anterior */
   }
 </style>
 

@@ -4,7 +4,6 @@
 <head>
     <script src="oneko.js"></script>
     <script>NekoType = "black"</script>
-    <script src="carregar-sidebars.js"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4K5KDKEJ2E"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -14,323 +13,177 @@
     </script>
     <script> window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches </script>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=1600px, initial-scale=0.4, maximum-scale=1.0, user-scalable=yes">
     <meta property="og:image" content="https://i.ibb.co/RC2v9zg/sitethumbnail.png" />
     <meta property="og:image" content="imgs/site_imgs/sitethumbnail.png" />
 
-    <link rel="stylesheet" href="styles.css" id="theme-stylesheet">
     <title>@minkurosu</title>
 
     <link rel="icon" type="image/ico" href="imgs/site_imgs/favicon.ico" />
-
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
     <div class="crt"></div>
     <style>
-        html,
-        body,
-        iframe {
-            cursor: url('imgs/cursor/ROCKcursornormal.cur'), auto;
+        /* --- CSS ESTILO PINTEREST --- */
+        /* Garante que o container da galeria não tenha padding */
+        #webweaving-container .caixamaisclara {
+            padding: 0 !important;
         }
 
-
-        a,
-        button,
-        input[type="submit"],
-        input[type="button"],
-        select {
-            cursor: url('imgs/cursor/ROCKcursorselect.cur'), pointer;
-        }
-
-
-        #containerprincipal {
-            border-radius: 1.25rem;
-            text-align: center;
-            margin: 0 auto;
-            width: 100%;
-            max-width: 50rem;
-            box-sizing: border-box;
-            color: #534F4A;
-            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-        }
-
-        #container {
-            background-color: #1B1917;
-            padding: 1.25rem;
-            border-radius: 1.25rem;
-            box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
-            text-align: center;
-            margin: 0 auto;
-            width: 100%;
-            max-width: 50rem;
-            box-sizing: border-box;
-            color: #534F4A;
-            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-        }
-
-        .galeria-container {
-            width: 700px;
-
-            overflow: auto;
-            padding: 10px;
-            box-sizing: border-box;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .galeria-grid {
-
-
-
+        /* Define a galeria com 3 colunas e um espaçamento de 15px entre elas */
+        #webweaving-container .galeria-grid {
             column-count: 3;
-            column-gap: 15px;
-            padding: 5px;
+
+            padding: 0px !important;
         }
 
-        .galeria-grid img {
+        /* Define o espaçamento inferior de 15px para cada imagem */
+        #webweaving-container .galeria-grid a {
+            display: inline-block;
+            width: 100%;
+            margin: 5px !important;
+            /* Adiciona 15px de margem apenas na parte de baixo */
+            padding: 0px !important;
+            break-inside: avoid;
+            margin-bottom: 0px;
+            margin-top: 0px;
+        }
 
-            display: block;
+        #webweaving-container .galeria-grid img {
             width: 100%;
             height: auto;
-            margin-bottom: 15px;
-            break-inside: avoid;
-            border-radius: 0px;
+            display: block;
+            border-radius: 6px;
             transition: transform 0.2s ease;
+            margin-bottom: 0px;
+            margin-top: 0px;
         }
 
-
-        .galeria-grid img:hover {
+        /* Efeito de zoom ao passar o mouse */
+        #webweaving-container .galeria-grid img:hover {
             transform: scale(1.05);
         }
 
-
-        #img-gallery a {
-            height: 300px;
-        }
-
-
-
-
-        #theme-toggle-button {
-            background: none !important;
-            appearance: none;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            background: none;
-            border: none;
-            padding: 0;
-            margin: 0;
-            cursor: pointer;
-            outline: none;
+        /* Garante que o container da galeria ocupe a largura total e não tenha padding */
+        .galeria-container {
+            width: 100% !important;
+            overflow: auto;
+            padding: 0 !important;
+            box-sizing: border-box;
+            margin-left: auto;
+            margin-right: auto;
         }
     </style>
 
 </head>
 
 <body>
-
     <div class="layout-with-sidebars">
-
-
-        <aside id="sidebar-esquerda-container" class="sidebar sidebar-right">
-        </aside>
-
-
         <main id="containerprincipal">
-            <header id="header" class="fixed-top">
-                <div id="divpatinha">
-                    <img src="imgs/site_imgs/patinha.png" id="logopatinha" alt="logo da barra de navegação">
-                </div>
-                <nav class="navbar">
-                    <div class="divitems">
-                        <div class="nav-item">
-                            <a href="#" onclick="history.back(); return false;" class="nav-link">back</a>
-                        </div>
-                        <div class="nav-item">
-                            <a href="index.html" target="_self" class="nav-link">home</a>
-                        </div>
-                        <div class="nav-item">
-                            <a href="feed.html" target="_self" class="nav-link">feed</a>
-                        </div>
-                        <div class="nav-item">
-                            <a href="blog.html" target="_self" class="nav-link">blog</a>
-                        </div>
-                        <div class="nav-item">
-                            <a href="links.html" target="_self" class="nav-link">links</a>
-                        </div>
-                        <div class="nav-item">
-                            <a href="portfolio-menu.html" target="_self" class="nav-link">portfolio</a>
-                        </div>
-                    </div>
-                </nav>
-            </header>
-            <div id="container">
+            <div id="webweaving-container">
                 <div class="caixamaisclara">
                     <div class="galeria-grid">
                         <a data-fancybox="gallery"
                             href="https://i.pinimg.com/736x/76/dc/3c/76dc3c59d3c3c875f5bd49b8e8ba36e4.jpg"
-                            data-caption="">
-                            <img src="https://i.pinimg.com/736x/76/dc/3c/76dc3c59d3c3c875f5bd49b8e8ba36e4.jpg">
-                        </a>
-
-                        <a data-fancybox="gallery" href="imgs/memes/puter.jpeg" data-caption="">
-                            <img src="imgs/memes/puter.jpeg">
-                        </a>
-
-                        <a data-fancybox="gallery" href="imgs/memes/kitten.jpeg" data-caption="">
-                            <img src="imgs/memes/kitten.jpeg">
-                        </a>
-
-                        <a data-fancybox="gallery" href="imgs/memes/twt1.png" data-caption="">
-                            <img src="imgs/memes/twt1.png">
-                        </a>
-
-                        <a data-fancybox="gallery" href="imgs/memes/twt2.png" data-caption="">
-                            <img src="imgs/memes/twt2.png">
-                        </a>
+                            data-caption=""><img
+                                src="https://i.pinimg.com/736x/76/dc/3c/76dc3c59d3c3c875f5bd49b8e8ba36e4.jpg"></a>
+                        <a data-fancybox="gallery" href="imgs/memes/puter.jpeg" data-caption=""><img
+                                src="imgs/memes/puter.jpeg"></a>
+                        <a data-fancybox="gallery" href="imgs/memes/kitten.jpeg" data-caption=""><img
+                                src="imgs/memes/kitten.jpeg"></a>
+                        <a data-fancybox="gallery" href="imgs/memes/twt1.png" data-caption=""><img
+                                src="imgs/memes/twt1.png"></a>
+                        <a data-fancybox="gallery" href="imgs/memes/twt2.png" data-caption=""><img
+                                src="imgs/memes/twt2.png"></a>
                         <a data-fancybox="gallery"
-                            href="https://pbs.twimg.com/media/Gx7e99jXQAAiMVQ?format=jpg&name=900x900" data-caption="">
-                            <img src="https://pbs.twimg.com/media/Gx7e99jXQAAiMVQ?format=jpg&name=900x900">
-                        </a>
-
-
-
+                            href="https://pbs.twimg.com/media/Gx7e99jXQAAiMVQ?format=jpg&name=900x900"
+                            data-caption=""><img
+                                src="https://pbs.twimg.com/media/Gx7e99jXQAAiMVQ?format=jpg&name=900x900"></a>
                         <a data-fancybox="gallery"
                             href="https://i.pinimg.com/736x/8c/08/81/8c08814fe804d68864bfb11b57ae88c3.jpg"
-                            data-caption="">
-                            <img src="https://i.pinimg.com/736x/8c/08/81/8c08814fe804d68864bfb11b57ae88c3.jpg">
-                        </a>
+                            data-caption=""><img
+                                src="https://i.pinimg.com/736x/8c/08/81/8c08814fe804d68864bfb11b57ae88c3.jpg"></a>
                         <a data-fancybox="gallery"
                             href="https://i.pinimg.com/736x/ce/29/0c/ce290ce95a19dc681f5812526cc330cf.jpg"
-                            data-caption="">
-                            <img src="https://i.pinimg.com/736x/ce/29/0c/ce290ce95a19dc681f5812526cc330cf.jpg">
-                        </a>
+                            data-caption=""><img
+                                src="https://i.pinimg.com/736x/ce/29/0c/ce290ce95a19dc681f5812526cc330cf.jpg"></a>
                         <a data-fancybox="gallery"
                             href="https://i.pinimg.com/736x/ed/4a/d9/ed4ad93954bfae0540ff41c0e2a33115.jpg"
-                            data-caption="">
-                            <img src="https://i.pinimg.com/736x/ed/4a/d9/ed4ad93954bfae0540ff41c0e2a33115.jpg">
-                        </a>
-
-                        <a data-fancybox="gallery" href="imgs/memes/339.webp" data-caption="">
-                            <img src="imgs/memes/339.webp">
-                        </a>
+                            data-caption=""><img
+                                src="https://i.pinimg.com/736x/ed/4a/d9/ed4ad93954bfae0540ff41c0e2a33115.jpg"></a>
+                        <a data-fancybox="gallery" href="imgs/memes/339.webp" data-caption=""><img
+                                src="imgs/memes/339.webp"></a>
                         <a data-fancybox="gallery"
                             href="https://i.pinimg.com/1200x/1f/fc/b5/1ffcb56f8442b576bedfa807be32dacc.jpg"
-                            data-caption="">
-                            <img src="https://i.pinimg.com/1200x/1f/fc/b5/1ffcb56f8442b576bedfa807be32dacc.jpg">
-                        </a>
+                            data-caption=""><img
+                                src="https://i.pinimg.com/1200x/1f/fc/b5/1ffcb56f8442b576bedfa807be32dacc.jpg"></a>
                         <a data-fancybox="gallery"
                             href="https://i.pinimg.com/736x/6f/17/65/6f17658edea2d5ea0a5811c75e3a50cd.jpg"
-                            data-caption="">
-                            <img src="https://i.pinimg.com/736x/6f/17/65/6f17658edea2d5ea0a5811c75e3a50cd.jpg">
-                        </a>
+                            data-caption=""><img
+                                src="https://i.pinimg.com/736x/6f/17/65/6f17658edea2d5ea0a_sto-o-c-sto-ca.jpg"></a>
                         <a data-fancybox="gallery"
                             href="https://i.pinimg.com/1200x/3c/2f/2f/3c2f2ff1882aff04493f1fad0844fb8c.jpg"
-                            data-caption="">
-                            <img src="https://i.pinimg.com/1200x/3c/2f/2f/3c2f2ff1882aff04493f1fad0844fb8c.jpg">
-                        </a>
+                            data-caption=""><img
+                                src="https://i.pinimg.com/1200x/3c/2f/2f/3c2f2ff1882aff04493f1fad0844fb8c.jpg"></a>
                         <a data-fancybox="gallery"
                             href="https://i.pinimg.com/1200x/8e/67/6e/8e676e228fe6167a18b799bff30d3623.jpg"
-                            data-caption="">
-                            <img src="https://i.pinimg.com/1200x/8e/67/6e/8e676e228fe6167a18b799bff30d3623.jpg">
-                        </a>
+                            data-caption=""><img
+                                src="https://i.pinimg.com/1200x/8e/67/6e/8e676e228fe6167a18b799bff30d3623.jpg"></a>
                         <a data-fancybox="gallery"
                             href="https://i.pinimg.com/736x/20/4a/55/204a5595226b13687c3a8166ec8da93e.jpg"
-                            data-caption="">
-                            <img src="https://i.pinimg.com/736x/20/4a/55/204a5595226b13687c3a8166ec8da93e.jpg">
-                        </a>
+                            data-caption=""><img
+                                src="https://i.pinimg.com/736x/20/4a/55/204a5595226b13687c3a8166ec8da93e.jpg"></a>
                         <a data-fancybox="gallery"
                             href="https://i.pinimg.com/1200x/21/f8/e0/21f8e0cb5ebe85a6bdbda180aa1edfc2.jpg"
-                            data-caption="">
-                            <img src="https://i.pinimg.com/1200x/21/f8/e0/21f8e0cb5ebe85a6bdbda180aa1edfc2.jpg">
-                        </a>
+                            data-caption=""><img
+                                src="https://i.pinimg.com/1200x/21/f8/e0/21f8e0cb5ebe85a6bdbda180aa1edfc2.jpg"></a>
                         <a data-fancybox="gallery"
                             href="https://i.pinimg.com/1200x/8b/69/bc/8b69bcad77847a4aa416172e3dbc9270.jpg"
-                            data-caption="">
-                            <img src="https://i.pinimg.com/1200x/8b/69/bc/8b69bcad77847a4aa416172e3dbc9270.jpg">
-                        </a>
+                            data-caption=""><img
+                                src="https://i.pinimg.com/1200x/8b/69/bc/8b69bcad77847a4aa416172e3dbc9270.jpg"></a>
                         <a data-fancybox="gallery"
                             href="https://i.pinimg.com/736x/92/2a/17/922a170bba418bf481fe530a97be0824.jpg"
-                            data-caption="">
-                            <img src="https://i.pinimg.com/736x/92/2a/17/922a170bba418bf481fe530a97be0824.jpg">
-                        </a>
-                        <a data-fancybox="gallery" href="imgs/memes/302.webp" data-caption="">
-                            <img src="imgs/memes/302.webp">
-                        </a>
-                        <a data-fancybox="gallery" href="imgs/memes/303.webp" data-caption="">
-                            <img src="imgs/memes/303.webp">
-                        </a>
-                        <a data-fancybox="gallery" href="imgs/memes/311.webp" data-caption="">
-                            <img src="imgs/memes/311.webp">
-                        </a>
-
-
-
-                        <a data-fancybox="gallery" href="imgs/memes/329.webp" data-caption="">
-                            <img src="imgs/memes/329.webp">
-                        </a>
-                        <a data-fancybox="gallery" href="imgs/memes/336.webp" data-caption="">
-                            <img src="imgs/memes/336.webp">
-                        </a>
+                            data-caption=""><img
+                                src="https://i.pinimg.com/736x/92/2a/17/922a170bba418bf481fe530a97be0824.jpg"></a>
+                        <a data-fancybox="gallery" href="imgs/memes/302.webp" data-caption=""><img
+                                src="imgs/memes/302.webp"></a>
+                        <a data-fancybox="gallery" href="imgs/memes/303.webp" data-caption=""><img
+                                src="imgs/memes/303.webp"></a>
+                        <a data-fancybox="gallery" href="imgs/memes/311.webp" data-caption=""><img
+                                src="imgs/memes/311.webp"></a>
+                        <a data-fancybox="gallery" href="imgs/memes/329.webp" data-caption=""><img
+                                src="imgs/memes/329.webp"></a>
+                        <a data-fancybox="gallery" href="imgs/memes/336.webp" data-caption=""><img
+                                src="imgs/memes/336.webp"></a>
                         <a data-fancybox="gallery"
                             href="https://i.pinimg.com/736x/5e/11/05/5e1105589df1654f8ff22c10c6a79539.jpg"
-                            data-caption="">
-                            <img src="https://i.pinimg.com/736x/5e/11/05/5e1105589df1654f8ff22c10c6a79539.jpg">
-                        </a>
+                            data-caption=""><img
+                                src="https://i.pinimg.com/736x/5e/11/05/5e1105589df1654f8ff22c10c6a79539.jpg"></a>
                         <a data-fancybox="gallery"
                             href="https://i.pinimg.com/1200x/e5/da/c2/e5dac2729971c41054888052d9890390.jpg"
-                            data-caption="">
-                            <img src="https://i.pinimg.com/1200x/e5/da/c2/e5dac2729971c41054888052d9890390.jpg">
-                        </a>
-
+                            data-caption=""><img
+                                src="https://i.pinimg.com/1200x/e5/da/c2/e5dac2729971c41054888052d9890390.jpg"></a>
                         <a data-fancybox="gallery"
                             href="https://i.pinimg.com/736x/66/37/9b/66379be36acea8fd990529d8c7aa6e2e.jpg"
-                            data-caption="">
-                            <img src="https://i.pinimg.com/736x/66/37/9b/66379be36acea8fd990529d8c7aa6e2e.jpg">
-                        </a>
-
+                            data-caption=""><img
+                                src="https://i.pinimg.com/736x/66/37/9b/66379be36acea8fd990529d8c7aa6e2e.jpg"></a>
                         <a data-fancybox="gallery"
                             href="https://i.pinimg.com/736x/5e/11/05/5e1105589df1654f8ff22c10c6a79539.jpg"
-                            data-caption="">
-                            <img src="https://i.pinimg.com/736x/5e/11/05/5e1105589df1654f8ff22c10c6a79539.jpg">
-                        </a>
-
-                        <a data-fancybox="gallery" href="imgs/memes/mamaedormiu.jpeg" data-caption="">
-                            <img src="imgs/memes/mamaedormiu.jpeg">
-                        </a>
-
-
-
-
+                            data-caption=""><img
+                                src="https://i.pinimg.com/736x/5e/11/05/5e1105589df1654f8ff22c10c6a79539.jpg"></a>
+                        <a data-fancybox="gallery" href="imgs/memes/mamaedormiu.jpeg" data-caption=""><img
+                                src="imgs/memes/mamaedormiu.jpeg"></a>
                     </div>
-
-
                 </div>
+            </div>
         </main>
-
-
-        <aside id="sidebar-direita-container" class="sidebar sidebar-right">
-        </aside>
-
-
     </div>
 
     <script src="script.js"></script>
     <script src="lastfm-widget.js"></script>
-    <script src="script.js"></script>
     <script src="theme-switcher.js"></script>
-
-
-
-
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <script>
+        Fancybox.bind('[data-fancybox="gallery"]', {});
+    </script>
 </body>
-
-<script src="script.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
-<script>
-    Fancybox.bind('[data-fancybox="gallery"]', {
-        //
-    });    
-</script>
 
 </html>

@@ -2,27 +2,27 @@
 <html lang="en">
 
 <head>
-    <script src="oneko.js"></script>
-    <script>NekoType = "black"</script>
-    <script src="carregar-sidebars.js"></script>
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4K5KDKEJ2E"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
         gtag('js', new Date());
         gtag('config', 'G-4K5KDKEJ2E');
     </script>
-    <script> window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches </script>
+    <script>
+        window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+    </script>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=1600px, initial-scale=0.4, maximum-scale=1.0, user-scalable=yes">
     <meta property="og:image" content="https://i.ibb.co/RC2v9zg/sitethumbnail.png" />
     <meta property="og:image" content="imgs/site_imgs/sitethumbnail.png" />
 
-    <link rel="stylesheet" href="styles.css" id="theme-stylesheet">
     <title>@minkurosu</title>
 
     <link rel="icon" type="image/ico" href="imgs/site_imgs/favicon.ico" />
-
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
     <div class="crt"></div>
@@ -33,7 +33,6 @@
             cursor: url('imgs/cursor/ROCKcursornormal.cur'), auto;
         }
 
-
         a,
         button,
         input[type="submit"],
@@ -41,7 +40,6 @@
         select {
             cursor: url('imgs/cursor/ROCKcursorselect.cur'), pointer;
         }
-
 
         #containerprincipal {
             border-radius: 1.25rem;
@@ -68,48 +66,33 @@
             text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
         }
 
-        .galeria-container {
-            width: 700px;
-
-            overflow: auto;
-            padding: 10px;
-            box-sizing: border-box;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
         .galeria-grid {
-
-
-
             column-count: 3;
             column-gap: 15px;
             padding: 5px;
+            box-sizing: border-box;
+        }
+
+        .galeria-grid a,
+        .galeria-grid .results,
+        .galeria-grid .galeria-item {
+            display: inline-block;
+            width: 100%;
+            margin-bottom: 15px;
+            break-inside: avoid;
         }
 
         .galeria-grid img {
-
-            display: block;
-            width: 100%;
+            max-width: 100%;
             height: auto;
-            margin-bottom: 15px;
-            break-inside: avoid;
+            display: block;
             border-radius: 0px;
             transition: transform 0.2s ease;
         }
 
-
-        .galeria-grid img:hover {
+        .galeria-grid a:hover img {
             transform: scale(1.05);
         }
-
-
-        #img-gallery a {
-            height: 300px;
-        }
-
-
-
 
         #theme-toggle-button {
             background: none !important;
@@ -132,38 +115,11 @@
     <div class="layout-with-sidebars">
 
 
-        <aside id="sidebar-esquerda-container" class="sidebar sidebar-right">
-        </aside>
+
 
 
         <main id="containerprincipal">
-            <header id="header" class="fixed-top">
-                <div id="divpatinha">
-                    <img src="imgs/site_imgs/patinha.png" id="logopatinha" alt="logo da barra de navegação">
-                </div>
-                <nav class="navbar">
-                    <div class="divitems">
-                        <div class="nav-item">
-                            <a href="#" onclick="history.back(); return false;" class="nav-link">back</a>
-                        </div>
-                        <div class="nav-item">
-                            <a href="index.html" target="_self" class="nav-link">home</a>
-                        </div>
-                        <div class="nav-item">
-                            <a href="feed.html" target="_self" class="nav-link">feed</a>
-                        </div>
-                        <div class="nav-item">
-                            <a href="blog.html" target="_self" class="nav-link">blog</a>
-                        </div>
-                        <div class="nav-item">
-                            <a href="links.html" target="_self" class="nav-link">links</a>
-                        </div>
-                        <div class="nav-item">
-                            <a href="portfolio-menu.html" target="_self" class="nav-link">portfolio</a>
-                        </div>
-                    </div>
-                </nav>
-            </header>
+
             <div id="container">
                 <div class="caixamaisclara">
                     <div class="galeria-grid">
@@ -198,9 +154,7 @@
                         </a>
 
 
-                        <a data-fancybox="gallery" href="https://i.imgur.com/3usQQPL.png" data-caption="">
-                            <img src="https://i.imgur.com/3usQQPL.png">
-                        </a>
+
 
 
                         <a href="http://thousandroads.net/misc/pmdquiz/"><img
@@ -210,75 +164,55 @@
                         <a href="https://quiz.pikminbloom.com/#/result"><img
                                 src="imgs/quizzes/result_kosumosu_en.webp" /></a>
 
-                        <div class="results"
-                            style="width: 200px;background-color: #fff;color: #000;display: block;padding: 10px;border: 1px solid;margin: 0 auto;font-family: 'times';font-size: '15pt';">
-                            <p style="margin: 0">This page is protected by a</p>
-                            <h1 class="title" style="margin: 0">FROG</h1>
-                            <img class="image" style="max-width: 160px;border: 1px solid" alt="FROG"
-                                src="https://i.ibb.co/wBgz80w/frog.jpg">
-                            <p class="description">The pictured frog, a Red-Banded Rubber Frog, releases a milky toxic
-                                substance through its skin, and is toxic to both humans and other frogs.</p>
-                            <small>
-                                <a href="https://hekate.neocities.org">Want your own? Visit hekate.neocities.org!</a>
+                        <div class="results">
+
+                            <img class="image" src="https://i.ibb.co/wBgz80w/frog.jpg">
+                            <a href="https://hekate.neocities.org">web guardian quiz hekate.neocities.org!</a>
                             </small>
                         </div>
+
+                        <a href="https://uquiz.com/quiz/MntFFK/to-whom-does-your-heart-belong"><img
+                                src="imgs/quizzes/uquiz.png" /></a>
+                        <a href="https://uquiz.com/quiz/tjZ8p6/what-form-of-love-do-you-embody"><img
+                                src="imgs/quizzes/love.png" /></a>
+                        <A href="https://www.theotaku.com/quizzes/view/1349/what_is_your_anime_eye_color%3F"><img
+                                border="0" src="http://www.theotaku.com/guru_results/1349_pink.jpg"
+                                alt="What Is Your Anime Eye Color?" /><br /></a>
+                        <A href="https://www.theotaku.com/quizzes/view/1349/what_is_your_anime_eye_color%3F"></A>
+                        <A href="https://www.theotaku.com/quizzes/view/2910/what_type_of_movie_are_you%3F"><img
+                                border="0" src="http://www.theotaku.com/guru_results/2910_Animation.jpg"
+                                alt="What Type Of Movie Are You?" /><br /></a>
+                        <A href="https://www.theotaku.com/quizzes/view/2910/what_type_of_movie_are_you%3F"></A>
+                        <a href="http://www.theotaku.com"></a>
+                        <a href="http://www.springhole.net" target="SH.net"><img
+                                src="http://i213.photobucket.com/albums/cc224/SyeraMiktayee/QuizPics/whatfairy_firefairy.gif"></a>
+                        <div class="galeria-item">
+                            <img
+                                src="https://web.archive.org/web/20040812013343im_/http://www.drudabear.com/cheerbearaward.jpg">
+                            <a href="https://web.archive.org/web/20040812013343/http://www.drudabear.com/quiz.htm">See
+                                what Care Bear you are.</a>
+                        </div>
+                        <div class="galeria-item">
+                            <A href="https://www.theotaku.com/quizzes/view/1592/what_is_your_anime_hair_color%3F"><img
+                                    border="0" src="http://www.theotaku.com/guru_results/1592_Brunette.jpg"
+                                    alt="What Is Your Anime Hair Color?" /><br /></a>
+                            <A
+                                href="https://www.theotaku.com/quizzes/view/1592/what_is_your_anime_hair_color%3F"></A><br /><a
+                                href="http://www.theotaku.com" title="Anime"></a>
+                        </div>
                     </div>
-
-                    <a href="https://uquiz.com/quiz/MntFFK/to-whom-does-your-heart-belong"><img
-                            src="imgs/quizzes/uquiz.png" /></a>
-
-                    <a href="http://www.springhole.net" target="SH.net"><img
-                            src="http://i213.photobucket.com/albums/cc224/SyeraMiktayee/QuizPics/whatfairy_firefairy.gif"></a>
-
-                    <a href="https://uquiz.com/quiz/tjZ8p6/what-form-of-love-do-you-embody"><img
-                            src="imgs/quizzes/love.png" /></a>
-
-
-
-                    <A href="https://www.theotaku.com/quizzes/view/1349/what_is_your_anime_eye_color%3F"><img border="0"
-                            src="http://www.theotaku.com/guru_results/1349_pink.jpg"
-                            alt="What Is Your Anime Eye Color?" /><br /></a><A
-                        href="https://www.theotaku.com/quizzes/view/1349/what_is_your_anime_eye_color%3F">What Is Your
-                        Anime Eye Color?</A><br />Hosted By theOtaku.com: <a href="http://www.theotaku.com"
-                        title="Anime">Anime</a>
-
-
-                    <A href="https://www.theotaku.com/quizzes/view/2910/what_type_of_movie_are_you%3F"><img border="0"
-                            src="http://www.theotaku.com/guru_results/2910_Animation.jpg"
-                            alt="What Type Of Movie Are You?" /><br /></a><A
-                        href="https://www.theotaku.com/quizzes/view/2910/what_type_of_movie_are_you%3F">What Type Of
-                        Movie Are You?</A><br />Hosted By theOtaku.com: <a href="http://www.theotaku.com"
-                        title="Anime">Anime</a>
-
-
-
-
-                    <img
-                        src="https://web.archive.org/web/20040812013343im_/http://www.drudabear.com/cheerbearaward.jpg">
-                    <a href="https://web.archive.org/web/20040812013343/http://www.drudabear.com/quiz.htm">See what Care
-                        Bear you are.</a>
-<A href="https://www.theotaku.com/quizzes/view/1592/what_is_your_anime_hair_color%3F"><img border="0" src="http://www.theotaku.com/guru_results/1592_Brunette.jpg" alt="What Is Your Anime Hair Color?" /><br /></a><A href="https://www.theotaku.com/quizzes/view/1592/what_is_your_anime_hair_color%3F">What Is Your Anime Hair Color?</A><br />Hosted By theOtaku.com: <a href="http://www.theotaku.com" title="Anime">Anime</a>
-
-
-
-
-
-
-
-
                 </div>
+            </div>
         </main>
 
 
-        <aside id="sidebar-direita-container" class="sidebar sidebar-right">
-        </aside>
+
 
 
     </div>
 
     <script src="script.js"></script>
     <script src="lastfm-widget.js"></script>
-    <script src="script.js"></script>
     <script src="theme-switcher.js"></script>
 
 
@@ -286,12 +220,11 @@
 
 </body>
 
-<script src="script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
 <script>
     Fancybox.bind('[data-fancybox="gallery"]', {
-        //
-    });    
+
+    });
 </script>
 
 </html>
