@@ -164,7 +164,6 @@
             outline: none;
         }
 
-        /* Container principal com o layout de três colunas */
         .about-me-container {
             display: flex;
             flex-direction: row;
@@ -217,57 +216,43 @@
 
         }
 
-        /* A imagem na referência tem um aspecto diferente, então vamos estilizar a badge-img */
         .badge-img {
             max-width: 100%;
-            /* Ajusta a largura da imagem do badge */
             height: 18px;
             border-radius: 2px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
             transition: transform 0.2s ease-in-out;
             cursor: pointer;
-            /* Adiciona um cursor para indicar interatividade */
         }
 
 
 
-        /* Estilos da seção de conteúdo principal (texto) */
         .content-area {
             flex: 2;
-            /* Ocupa 3 partes do espaço, a maior parte */
             padding: 10px;
 
-            /* Cor de fundo igual a dos badges para um visual coeso */
             display: flex;
             flex-direction: column;
             justify-content: center;
-            /* Centraliza o texto verticalmente */
             color: #fff;
 
         }
 
-        /* Ajusta o parágrafo para corresponder ao texto da imagem */
         .content-area p {
             font-size: 1.2em;
-            /* Aumenta um pouco o tamanho da fonte */
             line-height: 1.6;
             margin: 0;
             text-align: left;
-            /* Alinha o texto à esquerda */
         }
 
         .slideshow-area img.active {
             opacity: 1;
-            /* Apenas a imagem com a classe 'active' fica visível */
         }
 
-        /* Layout para telas menores */
         @media (max-width: 767px) {
             .about-me-container {
                 flex-direction: column;
-                /* Empilha os elementos em telas menores */
                 height: auto;
-                /* Remove a altura fixa */
             }
 
             .slideshow-area,
@@ -275,12 +260,10 @@
             .content-area {
                 flex: auto;
                 border: none;
-                /* Remove as bordas em telas menores */
             }
 
             .slideshow-area img {
                 height: 300px;
-                /* Define uma altura para a imagem em telas menores */
                 position: static;
             }
         }
@@ -296,21 +279,16 @@
 
 
         .badge-img {
-            /* Efeito de dessaturação - A imagem começa em preto e branco */
             filter: saturate(0%);
 
-            /* Efeito de escurecimento - A imagem começa 20% mais escura */
             filter: brightness(80%);
 
-            /* Transições suaves para os efeitos de mudança */
             transition: all 0.2s ease-in-out;
         }
 
         .badge-img:hover {
-            /* Efeito de clarear a imagem ao passar o mouse */
             filter: brightness(100%);
 
-            /* Efeito de subir a imagem ao passar o mouse */
             transform: translateY(-3px);
         }
 
@@ -324,21 +302,18 @@
 
 
 
-        /* Estilo para o primeiro iframe */
         .caixa-iframe-onlnbrd {
 
             padding: 10px;
             margin-bottom: 20px;
         }
 
-        /* Estilo para o segundo iframe */
         .caixa-iframe-minkurosu {
 
             padding: 15px;
             margin-bottom: 20px;
         }
 
-        /* Estilo para o terceiro iframe */
         .caixa-iframe-drawbox {
 
             padding: 5px;
@@ -927,10 +902,9 @@
     <script>
         document.addEventListener('DOMContentLoaded', function () {
 
-            // --- CÓDIGO DO SLIDESHOW CORRIGIDO ---
             const slideshowContainer = document.querySelector('.slideshow-container');
             if (slideshowContainer) {
-                let currentIndex = 0; // Declarado apenas uma vez
+                let currentIndex = 0;
                 const images = slideshowContainer.querySelectorAll('img');
                 const totalImages = images.length;
 
@@ -950,7 +924,6 @@
                 }
             }
 
-            // --- CÓDIGO DO IFRAME DE JOGOS CORRIGIDO ---
             const gameIframe = document.getElementById('game-iframe');
             if (gameIframe) {
                 const gameButtons = document.querySelectorAll('.game-button');
