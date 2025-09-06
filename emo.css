@@ -2134,48 +2134,6 @@ th {
 
 
 
-
-
-
-
-
-
-  .social-links {
-
-    display: flex;
-    gap: 5px;
-    justify-content: center;
-    padding: 10px;
-  }
-
-  .social-links a {
-    display: inline-block;
-    transition: transform 0.2s ease-in-out, filter 0.2s ease;
-  }
-
-  .social-links a img {
-    width: 16px;
-    height: 16px;
-    display: block;
-  }
-
-  .social-links a img {
-    filter: grayscale(100%);
-  }
-
-  .social-links a:hover img {
-    transform: translateY(-5px);
-    transition: transform 0.2s ease-in-out, filter 0.2s ease-in-out;
-    filter: grayscale(0%) !important;
-  }
-
-
-
-
-
-
-
-
   .galeria-container {
     width: 700px;
 

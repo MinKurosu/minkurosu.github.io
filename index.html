@@ -93,6 +93,40 @@
     <link rel="icon" type="image/ico" href="imgs/site_imgs/favicon.ico" />
     <div class="crt"></div>
     <style>
+        /* Container dos ícones sociais */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            /* Permite quebrar a linha se não houver espaço */
+            gap: 4px;
+            /* Espaço entre os ícones */
+            padding: 10px 0;
+        }
+
+        /* Estilo da IMAGEM dentro do link */
+        .social-links .social-icon img {
+            /* 1. EFEITO INICIAL: Preto e branco (sem saturação) */
+            filter: grayscale(100%);
+
+            /* 2. ANIMAÇÃO SUAVE */
+            transition: filter 0.3s ease, transform 0.3s ease;
+
+            /* Garante que a imagem não tenha espaços extras */
+            display: block;
+        }
+
+        /* Efeito ao passar o mouse sobre o LINK */
+        .social-links .social-icon:hover img {
+            /* 3. IMAGEM VOLTA A FICAR COLORIDA */
+            filter: grayscale(0%);
+
+            /* 4. IMAGEM SOBE UM POUCO */
+            transform: translateY(-5px);
+        }
+
+
         html,
         body,
         iframe {
@@ -295,6 +329,7 @@
         table,
         tr,
         td {
+            ;
             border: none;
             border-collapse: collapse;
             !important border-style: hidden !important;
@@ -334,35 +369,29 @@
                 <h3>psychology student & <br>freelance artist<br> (digital art & live2d)</h3>
                 <h3>⚧ • ☭ • ♎︎</h3>
                 <div class="social-links">
-                    <a href="https://www.instagram.com/yasmincruzm/" target="_blank" class="social-icon jumpy">
+                    <a href="https://www.instagram.com/yasmincruzm/" target="_blank" class="social-icon">
                         <img src="imgs/site_imgs/site-icons/instagram.png" alt="instagram" width="16" height="16">
                     </a>
-
                     <a href="https://x.com/minkurosu" target="_blank" class="social-icon">
                         <img src="imgs/site_imgs/site-icons/twitter.png" alt="X (antigo Twitter)" width="16"
                             height="16">
                     </a>
-
                     <a href="https://bsky.app/profile/minkurosu.bsky.social" target="_blank" class="social-icon">
                         <img src="imgs/site_imgs/site-icons/bsky.png" alt="bsky" width="16" height="16">
                     </a>
-
                     <a href="https://www.tumblr.com/minkurosu" target="_blank" class="social-icon">
                         <img src="imgs/site_imgs/site-icons/tumblr.png" alt="tumblr" width="16" height="16">
                     </a>
-
                     <a href="https://www.twitch.tv/minkurosu/" target="_blank" class="social-icon">
                         <img src="imgs/site_imgs/site-icons/twitch.png" alt="twitch" width="16" height="16">
                     </a>
                     <a href="https://vgen.co/minkurosu/" target="_blank" class="social-icon">
-                        <img src="imgs/site_imgs/site-icons/vgen.png" alt="VGen" width="16" height="16"
-                            border-radius="10px">
+                        <img src="imgs/site_imgs/site-icons/vgen.png" alt="VGen" width="16" height="16">
                     </a>
                     <a href="https://steamcommunity.com/id/minkurosu/" target="_blank" class="social-icon">
                         <img src="imgs/site_imgs/site-icons/steam.png" alt="Steam" width="16" height="16">
                     </a>
-                    <a href="https://open.spotify.com/user/mimincruzm?si=04b1acd2b0a04438" target="_blank"
-                        class="social-icon">
+                    <a href="https://spotify.com/" target="_blank" class="social-icon">
                         <img src="imgs/site_imgs/site-icons/spotify.png" alt="Spotify" width="16" height="16">
                     </a>
                     <a href="https://neocities.org/site/minkurosu" target="_blank" class="social-icon">

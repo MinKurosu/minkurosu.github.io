@@ -1,60 +1,46 @@
 <script src="lastfm-widget.js"></script>
 <style>
-    /* 1. Container para a tabela rolar em telas pequenas */
     .table-container {
         overflow-x: auto;
-        /* ADICIONA A BARRA DE ROLAGEM horizontal quando necessário */
         border-radius: 8px;
-        /* As bordas arredondadas ficam no container */
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-        /* A sombra fica no container */
         margin: 25px 0;
-        /* Espaçamento externo */
     }
 
-    /* 2. Estilos da tabela, agora sem os contornos */
     .styled-table {
         width: 100%;
         border-collapse: collapse;
         font-family: "MinFont", sans-serif;
         font-size: 1rem;
         color: #a7a7a7;
-        /* Largura mínima para evitar que o conteúdo se achate */
         min-width: 600px;
     }
 
-    /* Cabeçalho da tabela */
     .styled-table thead tr {
         background-color: #1a1a1a;
         color: #ffffff;
         text-align: center;
     }
 
-    /* Células (th e td) - SEM BORDAS */
     .styled-table th,
     .styled-table td {
         padding: 12px 15px;
-        /* Mantém o espaçamento interno para o texto respirar */
     }
 
-    /* Adiciona uma linha sutil abaixo de cada fileira para separação visual */
     .styled-table tbody tr {
         border-bottom: 1px solid #2a2a2a;
     }
 
-    /* Efeito "zebra" com cores alternadas para facilitar a leitura */
     .styled-table tbody tr:nth-of-type(even) {
         background-color: #242424;
     }
 
-    /* Remove a linha da última fileira para um acabamento mais limpo */
     .styled-table tbody tr:last-of-type {
         border-bottom: none;
     }
 
 
 
-    /* Centraliza o texto de colunas específicas, como antes */
     .styled-table td:nth-child(2),
     .styled-table td:nth-child(3) {
         text-align: center;
