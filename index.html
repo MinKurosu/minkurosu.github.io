@@ -412,6 +412,7 @@
                             src="//counter1.fc2.com/counter_img.php?id=40522267&main=1" /></noscript>
 
                     <br>
+
                     <div class="buttons">
 
                     </div>
@@ -887,6 +888,9 @@
                                                 <a href="https://nomnomnami.com/" target="_blank"><img
                                                         src="https://nomnomnami.com/images/site_button.gif"
                                                         alt="nomnomnami" class="desaturate"></a>
+                                                <a href="https://gnab.nekoweb.org/" target="_blank">
+                                                    <img src="https://sillyxannie.neocities.org/gnabp!xel.png"
+                                                        alt="!! gnab.nekoweb.org !!"></a>
 
 
                                     </div>
@@ -978,7 +982,21 @@
             }
         });
     </script>
+    <script>
+        document.querySelectorAll('.item-slot img[data-desc]').forEach(img => {
+            const wrapper = document.createElement('div');
+            wrapper.className = 'tooltip';
 
+            const tooltipSpan = document.createElement('span');
+            tooltipSpan.className = 'tooltiptext';
+            tooltipSpan.textContent = img.getAttribute('data-desc');
+
+            img.parentNode.insertBefore(wrapper, img);
+            wrapper.appendChild(img);
+            wrapper.appendChild(tooltipSpan);
+        });
+
+    </script>
 </body>
 
 </html>
