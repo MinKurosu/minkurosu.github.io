@@ -70,7 +70,7 @@
             images[currentIndex].classList.add('active');
         }
 
-        setInterval(nextSlide, 4000); // Muda a imagem a cada 4 segundos
+        setInterval(nextSlide, 4000); 
     </script>
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4K5KDKEJ2E"></script>
@@ -93,36 +93,23 @@
     <link rel="icon" type="image/ico" href="imgs/site_imgs/favicon.ico" />
     <div class="crt"></div>
     <style>
-        /* Container dos ícones sociais */
         .social-links {
             display: flex;
             justify-content: center;
             align-items: center;
             flex-wrap: wrap;
-            /* Permite quebrar a linha se não houver espaço */
             gap: 4px;
-            /* Espaço entre os ícones */
             padding: 10px 0;
         }
 
-        /* Estilo da IMAGEM dentro do link */
         .social-links .social-icon img {
-            /* 1. EFEITO INICIAL: Preto e branco (sem saturação) */
             filter: grayscale(100%);
-
-            /* 2. ANIMAÇÃO SUAVE */
             transition: filter 0.3s ease, transform 0.3s ease;
-
-            /* Garante que a imagem não tenha espaços extras */
             display: block;
         }
 
-        /* Efeito ao passar o mouse sobre o LINK */
         .social-links .social-icon:hover img {
-            /* 3. IMAGEM VOLTA A FICAR COLORIDA */
             filter: grayscale(0%);
-
-            /* 4. IMAGEM SOBE UM POUCO */
             transform: translateY(-5px);
         }
 
