@@ -27,73 +27,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
     <div class="crt"></div>
     <style>
-        html,
-        body,
-        iframe {
-            cursor: url('imgs/cursor/ROCKcursornormal.cur'), auto;
-        }
-
-        a,
-        button,
-        input[type="submit"],
-        input[type="button"],
-        select {
-            cursor: url('imgs/cursor/ROCKcursorselect.cur'), pointer;
-        }
-
-        #containerprincipal {
-            border-radius: 1.25rem;
-            text-align: center;
-            margin: 0 auto;
-            width: 100%;
-            max-width: 50rem;
-            box-sizing: border-box;
-            color: #534F4A;
-            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-        }
-
-        #container {
-            background-color: #1B1917;
-            padding: 1.25rem;
-            border-radius: 1.25rem;
-            box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
-            text-align: center;
-            margin: 0 auto;
-            width: 100%;
-            max-width: 50rem;
-            box-sizing: border-box;
-            color: #534F4A;
-            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-        }
-
-        .galeria-grid {
-            column-count: 3;
-            column-gap: 15px;
-            padding: 5px;
-            box-sizing: border-box;
-        }
-
-        .galeria-grid a,
-        .galeria-grid .results,
-        .galeria-grid .galeria-item {
-            display: inline-block;
-            width: 100%;
-            margin-bottom: 15px;
-            break-inside: avoid;
-        }
-
-        .galeria-grid img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 0px;
-            transition: transform 0.2s ease;
-        }
-
-        .galeria-grid a:hover img {
-            transform: scale(1.05);
-        }
-
         #theme-toggle-button {
             background: none !important;
             appearance: none;
@@ -105,6 +38,22 @@
             margin: 0;
             cursor: pointer;
             outline: none;
+        }
+
+        .galeria-grid {
+            /* Define o número de colunas, garantindo que elas se ajustem */
+            column-count: 3;
+            /* Espaçamento entre as colunas */
+            column-gap: 15px;
+        }
+
+        .galeria-grid img {
+            /* Garante que a imagem se ajuste à largura da coluna */
+            width: 100%;
+            /* Previne quebra de linha indesejada */
+            break-inside: avoid;
+            /* Adiciona margem na parte inferior para separar as imagens */
+            margin-bottom: 15px;
         }
     </style>
 
@@ -129,10 +78,10 @@
 
 
                         <a data-fancybox="gallery"
-                            href="https://web.archive.org/web/20030228025847/http://www.zenhex.com/tests/tarot/"
+                            href="https://web.archive.org/web/20030228025847im_/http://www.zenhex.com/tests/tarot/0.jpg"
                             data-caption="">
-                            <img
-                                src="https://web.archive.org/web/20030228025847im_/http://www.zenhex.com/tests/tarot/0.jpg">
+                            <img src="
+                            https://web.archive.org/web/20030228025847im_/http://www.zenhex.com/tests/tarot/0.jpg">
                         </a>
 
 
@@ -153,9 +102,7 @@
                             <img src="http://www.theotaku.com/guru_results/2665_Wise_Old_Man.jpg">
                         </a>
 
-                        <a data-fancybox="gallery"
-                            href="https://uquiz.com/Result/static/lite/n6wI2E/748196/personality/824643?&s=f59ca3ec-855b-4183-bd36-cfd036761b6c"
-                            data-caption="">
+                        <a data-fancybox="gallery" href="imgs/quizzes/kindoftouch.png" data-caption="">
                             <img src="imgs/quizzes/kindoftouch.png">
                         </a>
 
@@ -174,10 +121,9 @@
 
 
                         <a href="http://thousandroads.net/misc/pmdquiz/"><img
-                                src="http://thousandroads.net/misc/pmdquiz/static/results/Cubone.png"
-                                alt="I am Cubone!" /></a>
+                                src="http://thousandroads.net/misc/pmdquiz/static/results/Cubone.png" /></a>
 
-                        <a href="https://quiz.pikminbloom.com/#/result"><img
+                        <a href=" https://quiz.pikminbloom.com/#/result"><img
                                 src="imgs/quizzes/result_kosumosu_en.webp" /></a>
 
                         <div class="results">
@@ -205,8 +151,7 @@
                         <div class="galeria-item">
                             <img
                                 src="https://web.archive.org/web/20040812013343im_/http://www.drudabear.com/cheerbearaward.jpg">
-                            <a href="https://web.archive.org/web/20040812013343/http://www.drudabear.com/quiz.htm">See
-                                what Care Bear you are.</a>
+                            <a href="https://web.archive.org/web/20040812013343/http://www.drudabear.com/quiz.htm"></a>
                         </div>
                         <div class="galeria-item">
                             <A href="https://www.theotaku.com/quizzes/view/1592/what_is_your_anime_hair_color%3F"><img
@@ -242,14 +187,10 @@
                                 <img src="imgs/quizzes/16sm.png">
                             </a>
 
-                            <a data-fancybox="gallery"
-                                href="https://www.gotoquiz.com/results/what_is_your_gender_expression" data-caption="">
-                                <img src="imgs/quizzes/gender.png">
-                            </a>
+
 
                             <a href="http://www.dragonflycave.com/quizzes/what-pokemon-are-you"><img
-                                    src="http://www.dragonflycave.com/wpay/primeape.gif" alt="I am a Primeape!"
-                                    title="Find out what Pokémon you are at The Cave of Dragonflies"></a>
+                                    src="http://www.dragonflycave.com/wpay/primeape.gif"></a>
 
 
                             <a data-fancybox="gallery"
@@ -262,11 +203,10 @@
 
                             <img
                                 src="https://web.archive.org/web/20020628140753im_/http://broken.blackroses.com/members/quizlets/odd.jpg">
-                            <br>Take the <a
-                                href="https://web.archive.org/web/20020628140753/http://understudie.com/quiz/bears/"
-                                target="new">Bear Quiz</a> by <a
+                            <br><a href="https://web.archive.org/web/20020628140753/http://understudie.com/quiz/bears/"
+                                target="new"></a><a
                                 href="https://web.archive.org/web/20020628140753/http://understudie.com/"
-                                target="_new">Krysten</a>
+                                target="_new"></a>
 
 
                             <a href="http://www.nerdtests.com/ft_loser.php?im">
@@ -279,10 +219,8 @@
                                     <img src="https://www.nerdtests.com/mq/badge/85ff49a7267274a3.jpg" border="0"
                                         alt="How EMO are u?! -- Make and Take a Fun Quiz @ NerdTests.com's User Tests!"
                                         title="How EMO are u?! Test -- Make and Take a Fun Test @ NerdTests.com's User Tests!">
-                                </a><br /><span style="font-size:10px; ">My Result: a lil more emo than most
-                                    emos..</span><br /><span style="font-size:10px; ">-= <a
-                                        href="https://www.nerdtests.com/mq/uttake.php?id=293366">click to take @
-                                        NerdTests.com</a> =-</span>
+                                </a><br /><span style="font-size:10px; "></span><br /><span style="font-size:10px; ">-=
+                                    <a href="https://www.nerdtests.com/mq/uttake.php?id=293366"></a></span>
                             </div>
 
                             <center><a href="http://www.springhole.net" target="SH.net"><img
@@ -290,10 +228,78 @@
                             </center>
 
 
+                            <a href="http://www.nerdtests.com/ft_weird.php?im">
+                                <img src="http://www.nerdtests.com/thetester/images/php/wq.php?val=5339"
+                                    alt="What is your weird quotient? Click to find out!"> </a>
+
+                            <a href="http://www.dragonflycave.com/quizzes/what-pokemon-are-you"><img
+                                    src="http://www.dragonflycave.com/wpay/mewtwo.gif" alt="I am a Mewtwo!"
+                                    title="Find out what Pokémon you are at The Cave of Dragonflies"></a>
 
 
 
+
+
+
+                            <b>The Dante's Inferno Test
+                                <?= ($topLevel > 1 ? 'has banished you' : 'has sent you') ?> to <i>
+                                    <?= ($topLevel > 0 ? 'the ' : '') ?>
+                                    <?= $nn[$topLevel] ?>!
+                                </i>
+                            </b><br>Here is how you matched up against all the levels:<br>
+                            <table cellspacing="1"
+                                style="margin: 5px; background-color: #000; border: none; font: 10pt arial,verdana,'sans serif';">
+                                <tr
+                                    style="font: bold 12pt arial,verdana,'sans serif'; text-align: center; color: #fff; background-color: #333;">
+                                    <th><b>Level</b></th>
+                                    <th><b>Score</b></th>
+                                </tr>
+                                <?php
+for ($i = 0; $i < 10; ++$i) {
+    $color = $c[$i];
+    echo '<tr style="background-color: #'. $color .'; color: #eee;"><td style="padding: 4px;"><b><a href="http://www.4degreez.com/misc/dante-inferno-information.html#'. $i .'" style="color: #f34; text-decoration: underline;">'. $n[$i] .'</a></b> ('. $sin[$i] .')</td>';
+
+    if ($lev[$i] < -15)
+        echo '<td style="color: #34b; background-color: #333; padding: 4px;"><b>Very Low</b></td>';
+    else if ($lev[$i] < 15)
+        echo '<td style="color: #46d; background-color: #333; padding: 4px;"><b>Low</b></td>';
+    else if ($lev[$i] < 35)
+        echo '<td style="color: #a3a; background-color: #333; padding: 4px;"><b>Moderate</b></td>';
+    else if ($lev[$i] < 65)
+        echo '<td style="color: #f13; background-color: #333; padding: 4px;"><b>High</b></td>';
+    else if ($lev[$i] < 100)
+        echo '<td style="color: #c40033; background-color: #333; padding: 4px;"><b>Very High</b></td>';
+    else
+        echo '<td style="color: #e24; background-color: #333; padding: 4px;"><b>Extreme</b></td>';
+    echo '</tr>';
+}
+?>
+                            </table><br><b>Take the <a href="http://www.4degreez.com/misc/dante-inferno-test.mv">
+                                    <?= $linktext ?>
+                                </a></b>
+
+
+
+
+
+                            <a href="emocowboy.neocities.org "><img src="https://i.imgur.com/XIV7FQj.png">quiz at
+                                emocowboy.neocities.org</a>
+
+                            <a href="emocowboy.neocities.org "><img src="https://imgur.com/poH0TDo.png">Take the quiz at
+                                emocowboy.neocities.org</a>
+
+
+                            <a href="https://andou.gay/quiz/donutquiz"><img
+                                    src="https://andou.gay/quiz/mmdonut.png"></a>
+
+                            <a href="https://cadnomori.neocities.org/quizzes/conjurer.png"><img
+                                    src="https://cadnomori.neocities.org/quizzes/conjurer.png"></a>
+
+                            <a href="https://thel3tterm.neocities.org/bonus/quiz.html"><img
+                                    src="https://thel3tterm.neocities.org/resources/seraph_result.gif" alt="Seraph"
+                                    title="You are the substance of existence. With your hands and the very essence of yourself you craft all that could be into all that is. You are form against chaos, and a shield against violence. You hold onto your memories and the things you cherish as tightly as you can, and the things you cherish are inumerable. Some see your actions as rigid and anxious, resenting your resistance to change. You and I both know, however, that your love and fear are one and the same, and that within you, within the abyss of your memories and experiences, within the past tense, all things are eternal."></a>
                         </div>
+
                     </div>
                 </div>
             </div>

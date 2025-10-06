@@ -2,6 +2,25 @@ document.addEventListener('DOMContentLoaded', function () {
   const mainContainer = document.getElementById('container');
   const dynamicLinks = document.querySelectorAll('[data-page], .nav-link[href="#"][onclick="history.back(); return false;"]');
 
+  function reinitializeGoogleTranslate() {
+    const translateElement = document.getElementById('google_translate_element');
+    if (!translateElement) return;
+
+    // Limpa o conteúdo anterior
+    translateElement.innerHTML = '';
+
+    // Aguarda e reinicializa
+    setTimeout(() => {
+      if (typeof google !== 'undefined' && google.translate && google.translate.TranslateElement) {
+        new google.translate.TranslateElement({
+          pageLanguage: 'pt',
+          includedLanguages: 'en,es,fr,ko,ja,pt,gn,it,de,ru,zh-CN',
+          layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        }, 'google_translate_element');
+      }
+    }, 300);
+  }
+
   function loadContent(pageName) {
     const url = `${pageName}.html`;
     fetch(url)
@@ -19,15 +38,14 @@ document.addEventListener('DOMContentLoaded', function () {
         if (contentToLoad) {
           mainContainer.innerHTML = contentToLoad.innerHTML;
 
-          // --- INÍCIO DA CORREÇÃO ---
-          // Adicionamos um pequeno delay para garantir que o DOM foi atualizado
-          // antes de executar scripts que dependem do novo conteúdo.
           setTimeout(() => {
             if (typeof inicializarLastFmWidget === 'function') {
               inicializarLastFmWidget();
             }
-          }, 100); // 100 milissegundos é um tempo seguro.
-          // --- FIM DA CORREÇÃO ---
+
+            // Sempre tenta reinicializar o tradutor quando carrega uma nova página
+            reinitializeGoogleTranslate();
+          }, 100);
 
         } else {
           mainContainer.innerHTML = '<p>Conteúdo não encontrado.</p>';

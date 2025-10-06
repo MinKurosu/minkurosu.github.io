@@ -678,16 +678,6 @@
     margin-top: 8px;
   }
 </style>
-<script type="text/javascript">
-  function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
-      pageLanguage: 'pt', // Assuming your page is in Portuguese
-      ; includedLanguages: 'en,es,fr,ko,ja,pt,gn,it,de,ru,zh-CN', layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-  }, 'google_translate_element');
-  }
-</script>
-<script type="text/javascript"
-  src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 <body>
   <div class="banner">
@@ -713,6 +703,7 @@
           <li><img src="imgs/site_imgs/images/born.svg" alt="Born">born October 3rd</li>
 
         </ul>
+        <br>
         <div id="google_translate_element"></div>
 
         <div class="widget images">
@@ -771,7 +762,11 @@
   <script type="module" src="secret-loader.js"></script>
   <script type="text/javascript">
     function googleTranslateElementInit() {
-      new google.translate.TranslateElement({ pageLanguage: 'pt', layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
+      new google.translate.TranslateElement({
+        pageLanguage: 'pt',
+        includedLanguages: 'en,es,fr,ko,ja,pt,gn,it,de,ru,zh-CN',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
     }
   </script>
   <script type="text/javascript"

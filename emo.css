@@ -966,6 +966,19 @@ h4 {
 }
 
 
+
+.scrollMedium {
+
+  height: 400px;
+  overflow: auto;
+  overflow-y: scroll overflow: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+
+
+
 .scroll-box::-webkit-scrollbar {
   display: none;
 }
