@@ -19,32 +19,46 @@ function inicializarThemeSwitcher() {
             return;
         }
 
+
         stylesheet.setAttribute('href', themeFiles[themeKey]);
-        themeIcon.setAttribute('src', iconFiles[themeKey]);
+
+        const iconToShow = (themeKey === 'default') ? 'sol.png' : 'lua.png';
+        themeIcon.setAttribute('src', 'imgs/site_imgs/' + iconToShow);
 
         localStorage.setItem('theme', themeFiles[themeKey]);
     }
 
     function applySavedTheme() {
         const savedTheme = localStorage.getItem('theme');
-        const currentThemeKey = (savedTheme && savedTheme.includes(themeFiles.default)) ? 'default' : 'alternative';
+
+
+        if (!savedTheme) {
+            applyTheme('default');
+            return;
+        }
+
+        const currentThemeKey = savedTheme.includes('emo.css') ? 'default' : 'alternative';
         applyTheme(currentThemeKey);
     }
+
 
     applySavedTheme();
 
     if (themeToggleButton) {
         themeToggleButton.addEventListener('click', function () {
             const currentHref = stylesheet.getAttribute('href');
-            const newThemeKey = (currentHref && currentHref.includes(themeFiles.default)) ? 'alternative' : 'default';
+
+            const newThemeKey = (currentHref && currentHref.includes('emo.css')) ? 'alternative' : 'default';
 
             applyTheme(newThemeKey);
+
 
             if (portfolioIframe && portfolioIframe.contentWindow) {
                 portfolioIframe.contentWindow.postMessage({ theme: newThemeKey }, '*');
             }
         });
     }
+
 
     window.addEventListener('message', (event) => {
         if (event.data && event.data.theme) {
