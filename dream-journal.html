@@ -2,33 +2,16 @@
 <html lang="en">
 
 <head>
-  <script src="oneko.js"></script>
-  <script>NekoType = "black"</script>
-
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4K5KDKEJ2E"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-4K5KDKEJ2E');
-  </script>
-  <script> window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches </script>
   <meta charset="UTF-8">
   <meta property="og:image" content="https://i.ibb.co/RC2v9zg/sitethumbnail.png" />
-  <meta property="og:image" content="imgs/site_imgs/sitethumbnail.png" />
+  <title>Dream Journal</title>
 
-
-  <title>@minkurosu</title>
-
-  <link rel="icon" type="image/ico" href="imgs/site_imgs/favicon.ico" />
-  <div class="crt"></div>
   <style>
     html,
     body,
     iframe {
       cursor: url('imgs/cursor/ROCKcursornormal.cur'), auto;
     }
-
 
     a,
     button,
@@ -40,40 +23,10 @@
 
     .caixamaisclaraCenterSimple {
       box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
-      flex-direction: column
+      flex-direction: column;
+      padding: 15px;
+      margin: 20px 0;
     }
-
-
-    #theme-toggle-button {
-      background: none !important;
-      appearance: none;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      background: none;
-      border: none;
-      padding: 0;
-      margin: 0;
-      cursor: pointer;
-      outline: none;
-    }
-
-
-    header {
-
-      padding: 5px;
-      background-attachment: fixed;
-      margin-bottom: 2%;
-      border-radius: 0 0 1.25rem 1.25rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5);
-      width: 100%;
-      max-width: 70rem;
-      box-sizing: border-box;
-      max-height: 5rem;
-    }
-
 
     .caixamaisclara {
       display: flex;
@@ -81,19 +34,9 @@
       align-items: center;
     }
 
-
-
-
-
-
-
-
-
     #posts-container {
       padding: 10px;
     }
-
-
 
     .blog-post {
       background-color: transparent;
@@ -106,22 +49,20 @@
       text-align: left;
     }
 
-
-
-
-    .post-author-name {
-      font-weight: bold;
+    .blog-post h1 {
+      color: #534F4A;
+      text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     }
 
-    .post-separator {
-      font-size: 1.2em;
-      line-height: 1;
+    .blog-post p {
+      color: #534F4A;
+      text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+      line-height: 1.6;
     }
 
-    .post-date {}
-
-    #container {
-      max-width: 50rem;
+    .post-divider {
+      margin: 20px 0;
+      border-top: 1px solid #534F4A;
     }
 
     .blog-post img {
@@ -134,72 +75,52 @@
     }
 
 
+    #google_translate_element {
+      margin: 10px 0;
+    }
 
 
+    .goog-te-banner-frame,
+    .skiptranslate iframe {
+      display: none !important;
+    }
 
-    #theme-toggle-button {
-      background: none !important;
-      appearance: none;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      background: none;
-      border: none;
-      padding: 0;
-      margin: 0;
-      cursor: pointer;
-      outline: none;
+    body {
+      top: 0 !important;
     }
   </style>
 
 </head>
 
 <body>
-
-  <div class="layout-with-sidebars">
-
-
-    <main id="containerprincipal">
-
-      <div id="container">
-        <main id="containerprincipal">
-
-
-          <div class="caixamaisclara">
-            <img id="logobig" src="imgs/site_imgs/logo.png" alt="Logo" data-position="center">
-
-            <br>
-          </div>
-          <br>
-          <div class="caixamaisclaraCenterSimple">
-            <h4>sorry if there any foreign readers, i kinda wanna do my entries in brazilian portuguese 'cause it's my
-              first language, so feel free to translate if you're interested enough to read.</h4>
-            <div id="google_translate_element"></div>
-
-          </div>
-          <hr>
-          <div class="caixamaisclara" id="dreams-container">
-            <h2>loading dreams...</h2>
-          </div>
-      </div>
-    </main>
-
-
+  <div class="caixamaisclara">
+    <img id="logobig" src="imgs/site_imgs/logo.png" alt="Logo" data-position="center">
+    <br>
   </div>
-  <script src="lastfm-widget.js"></script>
-  <script src="script.js"></script>
-  <script src="theme-switcher.js"></script>
 
+  <br>
 
-  <script src="script.js"></script>
-  <script type="module" src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"></script>
-  <script type="module" src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js"></script>
+  <div class="caixamaisclaraCenterSimple">
+    <h4>sorry if there any foreign readers, i kinda wanna do my entries in brazilian portuguese 'cause it's my
+      first language, so feel free to translate if you're interested enough to read.</h4>
+    <div id="google_translate_element"></div>
+  </div>
+
+  <hr>
+
+  <div class="caixamaisclara" id="dreams-container">
+    <h2>loading dreams...</h2>
+  </div>
+
   <script type="module" src="dream-journal.js"></script>
-
-
 
   <script type="text/javascript">
     function googleTranslateElementInit() {
-      new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+      new google.translate.TranslateElement({
+        pageLanguage: 'pt',
+        includedLanguages: 'en,es,fr,ko,ja,pt,gn,it,de,ru,zh-CN',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
     }
   </script>
   <script type="text/javascript"
@@ -207,16 +128,5 @@
 
 
 </body>
-<script type="text/javascript">
-  function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
-      pageLanguage: 'pt',
-      includedLanguages: 'en,es,fr,ko,ja,pt,gn,it,de,ru,zh-CN',
-      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-    }, 'google_translate_element');
-  }
-</script>
-<script type="text/javascript"
-  src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </html>

@@ -2,31 +2,9 @@
 <html lang="en">
 
 <head>
-    <script src="oneko.js"></script>
-    <script>NekoType = "black"</script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4K5KDKEJ2E"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-4K5KDKEJ2E');
-    </script>
-    <script> window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches </script>
     <meta charset="UTF-8">
-    <meta property="og:image" content="https://i.ibb.co/RC2v9zg/sitethumbnail.png" />
-    <meta property="og:image" content="imgs/site_imgs/sitethumbnail.png" />
-    <title>@minkurosu</title>
-    <link rel="icon" type="image/ico" href="imgs/site_imgs/favicon.ico" />
-    <div class="crt"></div>
-    <Style>
-        a {
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: none;
-        }
-
+    <title>Games</title>
+    <style>
         .caixamaisclaraInterests {
             display: flex;
             flex-direction: column;
@@ -34,26 +12,22 @@
             width: 100%;
         }
 
+        .games-title {
+            text-align: center;
+            margin: 20px 0;
+            color: #534F4A;
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+            text-transform: lowercase;
+            font-size: 2em;
+        }
+
         .games-button-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 10px;
-            margin-top: 0;
+            margin: 20px 0;
             padding: 0;
-        }
-
-        #theme-toggle-button {
-            background: none !important;
-            appearance: none;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            background: none;
-            border: none;
-            padding: 0;
-            margin: 0;
-            cursor: pointer;
-            outline: none;
         }
 
         #gameContent {
@@ -61,78 +35,203 @@
             padding: 20px;
             box-sizing: border-box;
             background-color: transparent;
+            min-height: 400px;
+            color: #610000;
         }
-    </Style>
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .skin-title {
+            font-size: 1rem;
+            color: #610000;
+
+
+        }
+
+        #gameContent:not(:empty) {
+            animation: fadeIn 0.3s ease-in;
+        }
+    </style>
 </head>
 
 <body>
-    <main>
-        <div class="games-section">
-            <div class="caixamaisclaraInterests">
-                <h1 class="games-title">choose a game!</h1>
-                <div class="games-button-container">
-                    <a href="#" class="pushable game-button-link" data-src="minecraft.html">
-                        <span class="shadow"></span>
-                        <span class="edge"></span>
-                        <span class="front">minecraft</span>
-                    </a>
-                    <a href="#" class="pushable game-button-link" data-src="growtopia.html">
-                        <span class="shadow"></span>
-                        <span class="edge"></span>
-                        <span class="front">growtopia</span>
-                    </a>
-                    <a href="#" class="pushable game-button-link" data-src="stardewvalley.html">
-                        <span class="shadow"></span>
-                        <span class="edge"></span>
-                        <span class="front">stardew valley</span>
-                    </a>
-                    <a href="#" class="pushable game-button-link" data-src="baldursgate.html">
-                        <span class="shadow"></span>
-                        <span class="edge"></span>
-                        <span class="front">baldurs gate 3</span>
-                    </a>
-                </div>
-            </div>
-            <br>
-            <div id="gameContent">
+    <div class="games-section">
+        <div class="caixamaisclaraInterests">
+            <h1 class="games-title">choose a game!</h1>
+            <div class="games-button-container">
+                <a href="#" class="pushable game-button-link" data-src="minecraft.html">
+                    <span class="shadow"></span>
+                    <span class="edge"></span>
+                    <span class="front">minecraft</span>
+                </a>
+                <a href="#" class="pushable game-button-link" data-src="growtopia.html">
+                    <span class="shadow"></span>
+                    <span class="edge"></span>
+                    <span class="front">growtopia</span>
+                </a>
+                <a href="#" class="pushable game-button-link" data-src="stardewvalley.html">
+                    <span class="shadow"></span>
+                    <span class="edge"></span>
+                    <span class="front">stardew valley</span>
+                </a>
+                <a href="#" class="pushable game-button-link" data-src="baldursgate.html">
+                    <span class="shadow"></span>
+                    <span class="edge"></span>
+                    <span class="front">baldurs gate 3</span>
+                </a>
             </div>
         </div>
-    </main>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const gameButtons = document.querySelectorAll('.game-button-link');
-            const gameContentDiv = document.getElementById('gameContent');
 
-            function loadContent(url) {
-                fetch(url)
-                    .then(response => response.text())
-                    .then(data => {
-                        const parser = new DOMParser();
-                        const doc = parser.parseFromString(data, 'text/html');
-                        const mainContent = doc.querySelector('main');
-                        if (mainContent) {
-                            gameContentDiv.innerHTML = mainContent.innerHTML;
-                        } else {
-                            gameContentDiv.innerHTML = '<h1>Conteúdo não encontrado.</h1>';
-                        }
-                    })
-                    .catch(error => console.error('Erro ao carregar o conteúdo:', error));
+        <div id="gameContent"></div>
+    </div>
+
+    <script>
+
+        (function () {
+            'use strict';
+
+            console.log('🎮 Games.html carregado!');
+
+            let initialized = false;
+
+            function initializeGames() {
+                if (initialized) {
+                    console.log('⚠️ Já inicializado, ignorando...');
+                    return;
+                }
+
+                const buttons = document.querySelectorAll('.game-button-link');
+                const contentDiv = document.getElementById('gameContent');
+
+                if (!contentDiv) {
+                    console.log('❌ gameContent não encontrado');
+                    return;
+                }
+
+                if (buttons.length === 0) {
+                    console.log('❌ Botões não encontrados');
+                    return;
+                }
+
+                console.log(`✅ Inicializando ${buttons.length} botões...`);
+                initialized = true;
+
+                function loadGame(url) {
+                    console.log('📥 Carregando:', url);
+                    contentDiv.innerHTML = '<h1 style="text-align:center;padding:20px;color:#534F4A;text-shadow:-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000;">Loading...</h1>';
+
+                    fetch(url)
+                        .then(response => {
+                            if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                            return response.text();
+                        })
+                        .then(html => {
+                            console.log('✅ HTML recebido');
+
+                            const parser = new DOMParser();
+                            const doc = parser.parseFromString(html, 'text/html');
+                            const main = doc.querySelector('main') || doc.querySelector('body');
+
+                            if (!main) {
+                                throw new Error('Conteúdo não encontrado');
+                            }
+
+                            contentDiv.innerHTML = main.innerHTML;
+                            console.log('✨ Conteúdo inserido!');
+
+                            // Executa scripts
+                            const scripts = contentDiv.querySelectorAll('script');
+                            console.log(`📜 Executando ${scripts.length} scripts...`);
+
+                            scripts.forEach((oldScript) => {
+                                const newScript = document.createElement('script');
+
+                                if (oldScript.src) {
+                                    newScript.src = oldScript.src;
+                                } else {
+                                    newScript.textContent = oldScript.textContent;
+                                }
+
+                                oldScript.parentNode.removeChild(oldScript);
+                                document.body.appendChild(newScript);
+                            });
+
+                            console.log('✅ Scripts executados!');
+                        })
+                        .catch(error => {
+                            console.error('❌ Erro:', error);
+                            contentDiv.innerHTML = `
+                            <div style="text-align:center;padding:40px;">
+                                <h1 style="color:#8B0000;text-shadow:-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000;">
+                                    Error loading ${url}
+                                </h1>
+                                <p style="color:#534F4A;text-shadow:-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000;">
+                                    ${error.message}
+                                </p>
+                            </div>
+                        `;
+                        });
+                }
+
+                buttons.forEach((btn) => {
+                    const newBtn = btn.cloneNode(true);
+                    btn.parentNode.replaceChild(newBtn, btn);
+                });
+
+                const freshButtons = document.querySelectorAll('.game-button-link');
+
+                freshButtons.forEach((button) => {
+                    button.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+
+                        const gameSrc = this.getAttribute('data-src');
+                        console.log('🖱️ Clique:', gameSrc);
+
+                        freshButtons.forEach(b => b.classList.remove('active'));
+
+                        this.classList.add('active');
+
+                        loadGame(gameSrc);
+                    });
+                });
+
+                console.log(' loading primeiro jogo...');
+                if (freshButtons[0]) {
+                    freshButtons[0].click();
+                }
             }
 
-            gameButtons.forEach(button => {
-                button.addEventListener('click', function (event) {
-                    event.preventDefault();
-                    const gameSrc = this.getAttribute('data-src');
-                    gameButtons.forEach(btn => btn.classList.remove('active'));
-                    this.classList.add('active');
-                    loadContent(gameSrc);
-                });
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initializeGames);
+            } else {
+                initializeGames();
+            }
+
+            setTimeout(initializeGames, 100);
+            setTimeout(initializeGames, 300);
+
+            window.addEventListener('load', function () {
+                if (!initialized) {
+                    console.log('🔄 Tentando inicializar no window.load...');
+                    initializeGames();
+                }
             });
 
-            if (gameButtons.length > 0) {
-                gameButtons[0].click();
-            }
-        });
+            window.initGamesPage = initializeGames;
+
+        })();
     </script>
 </body>
 

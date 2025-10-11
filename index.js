@@ -6,10 +6,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const translateElement = document.getElementById('google_translate_element');
     if (!translateElement) return;
 
-    // Limpa o conteúdo anterior
     translateElement.innerHTML = '';
 
-    // Aguarda e reinicializa
+
     setTimeout(() => {
       if (typeof google !== 'undefined' && google.translate && google.translate.TranslateElement) {
         new google.translate.TranslateElement({
@@ -26,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
     fetch(url)
       .then(response => {
         if (!response.ok) {
-          throw new Error('Erro ao carregar o conteúdo: ' + response.statusText);
+          throw new Error('error, click again to try to reload.' + response.statusText);
         }
         return response.text();
       })
@@ -43,17 +42,15 @@ document.addEventListener('DOMContentLoaded', function () {
               inicializarLastFmWidget();
             }
 
-            // Sempre tenta reinicializar o tradutor quando carrega uma nova página
-            reinitializeGoogleTranslate();
-          }, 100);
 
-        } else {
-          mainContainer.innerHTML = '<p>Conteúdo não encontrado.</p>';
-        }
+
+          } else {
+            mainContainer.innerHTML = '<p>error, click again to try to reload.</p>';
+          }
       })
       .catch(error => {
-        console.error('Erro ao carregar o conteúdo:', error);
-        mainContainer.innerHTML = '<p>Ocorreu um erro ao carregar a página.</p>';
+        console.error('error, click again to try to reload.', error);
+        mainContainer.innerHTML = '<p>error, click again to try to reload.';
       });
   }
 
