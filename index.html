@@ -2,10 +2,10 @@
 <html lang="en">
 
 <head>
+    <script type="module" src="firebase-config.js"></script>
     <script src="lastfm-widget.js"></script>
     <script src="index.js"></script>
     <script src="script.js"></script>
-    <script type="module" src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4K5KDKEJ2E"></script>
     <script src="script.js"></script>
@@ -51,18 +51,7 @@
             //
         });    
     </script>
-    <script>
-        const images = document.querySelectorAll('.slideshow-area img');
-        let currentIndex = 0;
 
-        function nextSlide() {
-            images[currentIndex].classList.remove('active');
-            currentIndex = (currentIndex + 1) % images.length;
-            images[currentIndex].classList.add('active');
-        }
-
-        setInterval(nextSlide, 4000); 
-    </script>
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4K5KDKEJ2E"></script>
     <script>
@@ -1072,66 +1061,8 @@
     </div>
     <script src=" script.js"></script>
     <script src="theme-switcher.js"></script>
-    <script type="module" src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"></script>
-    <script type="module" src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js"></script>
     <script type="module" src="dream-journal.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
 
-            const slideshowContainer = document.querySelector('.slideshow-container');
-            if (slideshowContainer) {
-                let currentIndex = 0;
-                const images = slideshowContainer.querySelectorAll('img');
-                const totalImages = images.length;
-
-                if (totalImages > 0) {
-                    images[currentIndex].classList.add('active');
-
-                    function nextSlide() {
-                        if (images[currentIndex]) {
-                            images[currentIndex].classList.remove('active');
-                        }
-                        currentIndex = (currentIndex + 1) % totalImages;
-                        if (images[currentIndex]) {
-                            images[currentIndex].classList.add('active');
-                        }
-                    }
-                    setInterval(nextSlide, 3000);
-                }
-            }
-
-            const gameIframe = document.getElementById('game-iframe');
-            if (gameIframe) {
-                const gameButtons = document.querySelectorAll('.game-button');
-
-                function resizeIframe() {
-                    try {
-                        const iframeBody = gameIframe.contentWindow.document.body;
-                        const iframeHeight = iframeBody.scrollHeight;
-                        gameIframe.style.height = (iframeHeight > 150 ? iframeHeight : 800) + 'px';
-                    } catch (e) {
-                        gameIframe.style.height = '800px';
-                    }
-                }
-
-                gameButtons.forEach(button => {
-                    button.addEventListener('click', function (event) {
-                        event.preventDefault();
-                        const gameSrc = this.getAttribute('data-src');
-                        gameIframe.src = gameSrc;
-                        gameButtons.forEach(btn => btn.classList.remove('active'));
-                        this.classList.add('active');
-                    });
-                });
-
-                gameIframe.onload = resizeIframe;
-
-                if (gameButtons.length > 0) {
-                    gameButtons[0].click();
-                }
-            }
-        });
-    </script>
     <script>
         document.querySelectorAll('.item-slot img[data-desc]').forEach(img => {
             const wrapper = document.createElement('div');

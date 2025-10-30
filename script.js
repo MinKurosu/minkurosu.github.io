@@ -78,4 +78,37 @@ function initializeDrag() {
         const y = parseFloat(item.dataset.y) || 0;
         applyTransform(item, x, y, rotation);
     });
+
+
+    function initializeSlideshow() {
+        let slideIndex = 0;
+        // Seleciona todas as imagens dentro da área do slideshow
+        const slides = document.querySelectorAll('.slideshow-area img');
+
+        // Se não houver imagens, saia da função
+        if (slides.length === 0) {
+            return;
+        }
+
+        function showSlides() {
+
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+            });
+
+
+            slideIndex++;
+            if (slideIndex >= slides.length) {
+                slideIndex = 0;
+            }
+
+            slides[slideIndex].classList.add('active');
+
+
+            setTimeout(showSlides, 4000);
+        }
+
+
+        setTimeout(showSlides, 4000);
+    }
 }
