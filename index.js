@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', function () {
   const mainContainer = document.getElementById('container');
   const dynamicLinks = document.querySelectorAll('[data-page], .nav-link[href="#"][onclick="history.back(); return false;"]');
 
-
   function initializeSlideshow() {
     const slideshowArea = document.querySelector('.slideshow-area');
     if (!slideshowArea) return;
@@ -12,15 +11,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let currentIndex = 0;
 
-
     images.forEach(img => img.classList.remove('active'));
-
     images[0].classList.add('active');
 
     if (window.slideshowInterval) {
       clearInterval(window.slideshowInterval);
     }
-
 
     function nextSlide() {
       images[currentIndex].classList.remove('active');
@@ -53,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
     fetch(url)
       .then(response => {
         if (!response.ok) {
-          throw new Error('erro ao carregar o conteúdo: ' + response.statusText);
+          throw new Error('error loading content: ' + response.statusText);
         }
         return response.text();
       })
@@ -70,38 +66,46 @@ document.addEventListener('DOMContentLoaded', function () {
               inicializarLastFmWidget();
             }
 
-
             initializeSlideshow();
-
-
             reinitializeGoogleTranslate();
+
+       
+            if (typeof Fancybox !== 'undefined') {
+              Fancybox.bind('[data-fancybox="gallery"]', {});
+              console.log('✅ fancybox initialized in index.js');
+            }
           }, 100);
 
         } else {
-          mainContainer.innerHTML = '<p>conteúdo não encontrado.</p>';
+          mainContainer.innerHTML = '<p>content not found. please click the button again to try reloading the content.</p>';
         }
       })
       .catch(error => {
-        console.error('erro ao carregar o conteúdo:', error);
-        mainContainer.innerHTML = '<p>ocorreu um erro ao carregar a página.</p>';
+        console.error('error loading content:', error);
+        mainContainer.innerHTML = '<p>an error occurred while loading the page. please click the button again to try reloading the content.</p>';
       });
   }
 
   function handleNavLinkClick(event) {
     event.preventDefault();
+
     if (this.getAttribute('onclick') && this.getAttribute('onclick').includes('history.back')) {
       history.back();
       return;
     }
+    
     const page = this.getAttribute('data-page');
     if (page) {
       history.pushState({ page: page }, '', `${page}.html`);
       loadContent(page);
     }
+    
+
     const allLinks = document.querySelectorAll('.nav-link');
     allLinks.forEach(link => link.classList.remove('active'));
     this.classList.add('active');
   }
+
 
   dynamicLinks.forEach(link => link.addEventListener('click', handleNavLinkClick));
 
@@ -113,6 +117,7 @@ document.addEventListener('DOMContentLoaded', function () {
       loadContent('aboutme');
     }
   });
+
 
   loadContent('aboutme');
 });
