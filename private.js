@@ -25,7 +25,7 @@ const passwordForm = document.getElementById('password-form');
 const passwordInput = document.getElementById('password-input');
 const passwordMessage = document.getElementById('password-message');
 const privateEntriesDisplay = document.getElementById('private-entries-display');
-const CORRECT_PASSWORD = "lili";
+const CORRECT_PASSWORD = "hopelessnightmare";
 
 function formatTimestampForTitle(timestamp) {
     if (!timestamp || !timestamp.toDate) return 'Data Indisponível';
