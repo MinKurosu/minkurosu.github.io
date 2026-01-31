@@ -28,3 +28,6 @@ dist/
 *.sln
 *.js.map
 *.ts.map
+.js
+admin.html
+private.html
