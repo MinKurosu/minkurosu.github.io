@@ -1,3 +1,10 @@
+if (window.LASTFM_WIDGET_LOADED) {
+    console.log('widget já carregado, pulando...');
+    return;
+}
+window.LASTFM_WIDGET_LOADED = true;
+
+const LASTFM_USERNAME = 'seu_usuario';
 
 const LASTFM_USERNAME = 'minkurosu';
 const LASTFM_API_KEY = 'a2ef624a3dff8ec934580b0577d18cb5';
