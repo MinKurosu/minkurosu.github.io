@@ -1,56 +1,66 @@
-if (window.LASTFM_WIDGET_LOADED) {
-    console.log('widget já carregado, pulando...');
-    return;
-}
-window.LASTFM_WIDGET_LOADED = true;
-
-
-
-const LASTFM_USERNAME = 'minkurosu';
-const LASTFM_API_KEY = 'a2ef624a3dff8ec934580b0577d18cb5';
-
-async function fetchLastFmTrack() {
-    console.log("[Last.fm] Procurando pela música mais recente...");
-    const lastfmSongCell = document.getElementById('lastfm-song-cell');
-
-    if (!lastfmSongCell) {
-        console.error("[Last.fm] ERRO: Elemento 'lastfm-song-cell' não encontrado. O script não pode continuar.");
+(function() {
+    'use strict';
+    
+    if (window.LASTFM_WIDGET_LOADED) {
+        console.log('🎵 last.fm widget already loaded, skipping...');
         return;
     }
-    console.log("[Last.fm] Elemento 'lastfm-song-cell' encontrado com sucesso.");
+    window.LASTFM_WIDGET_LOADED = true;
 
-    const apiUrl = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${minkurosu}&api_key=${a2ef624a3dff8ec934580b0577d18cb5}&format=json&limit=1`;
+    const LASTFM_USERNAME = 'minkurosu';
+    const LASTFM_API_KEY = 'a2ef624a3dff8ec934580b0577d18cb5';
 
-    try {
-        const response = await fetch(apiUrl);
-        if (!response.ok) {
-            throw new Error(`Erro HTTP! Status: ${response.status}`);
+    async function fetchLastFmTrack() {
+        console.log("[last.fm] searching for most recent track...");
+        const lastfmSongCell = document.getElementById('lastfm-song-cell');
+
+        if (!lastfmSongCell) {
+            console.error("[last.fm] error: element 'lastfm-song-cell' not found. script cannot continue.");
+            return;
         }
-        const data = await response.json();
+        console.log("[last.fm] element 'lastfm-song-cell' found successfully.");
 
-        if (data.recenttracks && data.recenttracks.track && data.recenttracks.track.length > 0) {
-            const track = data.recenttracks.track[0];
-            const songName = track.name;
-            const artistName = track.artist['#text'];
-            const trackUrl = track.url;
+        const apiUrl = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${LASTFM_USERNAME}&api_key=${LASTFM_API_KEY}&format=json&limit=1`;
 
+        try {
+            const response = await fetch(apiUrl);
+            if (!response.ok) {
+                throw new Error(`http error! status: ${response.status}`);
+            }
+            const data = await response.json();
 
-            const newContent = `<a href="${trackUrl}" target="_blank">${songName.toLowerCase()} - ${artistName.toLowerCase()}</a>`;
-            lastfmSongCell.innerHTML = newContent;
-            console.log(`[Last.fm] Sucesso! Música atualizada para: ${songName} - ${artistName}`);
+            if (data.recenttracks && data.recenttracks.track && data.recenttracks.track.length > 0) {
+                const track = data.recenttracks.track[0];
+                const songName = track.name;
+                const artistName = track.artist['#text'];
+                const trackUrl = track.url;
 
-        } else {
-            lastfmSongCell.textContent = 'nenhuma música recente.';
-            console.log("[Last.fm] Nenhuma música recente encontrada.");
+                const newContent = `<a href="${trackUrl}" target="_blank">${songName.toLowerCase()} - ${artistName.toLowerCase()}</a>`;
+                lastfmSongCell.innerHTML = newContent;
+                console.log(`[last.fm] success! track updated to: ${songName} - ${artistName}`);
+
+            } else {
+                lastfmSongCell.textContent = 'no recent tracks.';
+                console.log("[last.fm] no recent tracks found.");
+            }
+        } catch (error) {
+            console.error("[last.fm] failed to fetch api data:", error);
+            lastfmSongCell.textContent = 'error loading.';
         }
-    } catch (error) {
-        console.error("[Last.fm] Falha ao buscar dados da API:", error);
-        lastfmSongCell.textContent = 'erro ao carregar.';
     }
-}
 
-function inicializarLastFmWidget() {
-    console.log("[Last.fm] Inicializando o widget...");
-    fetchLastFmTrack();
+   
+    window.inicializarLastFmWidget = function() {
+        console.log("[last.fm] initializing widget...");
+        fetchLastFmTrack();
+    };
 
-}
+    
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', window.inicializarLastFmWidget);
+    } else {
+    
+        window.inicializarLastFmWidget();
+    }
+
+})();
