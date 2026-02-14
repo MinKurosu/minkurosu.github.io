@@ -62,10 +62,6 @@ document.addEventListener('DOMContentLoaded', function () {
           mainContainer.innerHTML = contentToLoad.innerHTML;
 
           setTimeout(() => {
-            if (typeof inicializarLastFmWidget === 'function') {
-              inicializarLastFmWidget();
-            }
-
             initializeSlideshow();
             reinitializeGoogleTranslate();
 
@@ -74,7 +70,13 @@ document.addEventListener('DOMContentLoaded', function () {
               Fancybox.bind('[data-fancybox="gallery"]', {});
               console.log('✅ fancybox initialized in index.js');
             }
-          }, 100);
+
+            // ✅ Chama o widget Last.fm DEPOIS de tudo estar carregado
+            if (typeof inicializarLastFmWidget === 'function') {
+              console.log('🎵 calling lastfm widget initialization...');
+              inicializarLastFmWidget();
+            }
+          }, 200); // Aumentado de 100 para 200ms
 
         } else {
           mainContainer.innerHTML = '<p>content not found. please click the button again to try reloading the content.</p>';

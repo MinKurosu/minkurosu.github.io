@@ -1,12 +1,15 @@
+// ✅ CÓDIGO CORRIGIDO - lastfm-widget.js
 (function() {
     'use strict';
     
+    // prevent multiple executions
     if (window.LASTFM_WIDGET_LOADED) {
         console.log('🎵 last.fm widget already loaded, skipping...');
         return;
     }
     window.LASTFM_WIDGET_LOADED = true;
 
+    // configuration
     const LASTFM_USERNAME = 'minkurosu';
     const LASTFM_API_KEY = 'a2ef624a3dff8ec934580b0577d18cb5';
 
@@ -20,6 +23,7 @@
         }
         console.log("[last.fm] element 'lastfm-song-cell' found successfully.");
 
+        // ✅ CORRIGIDO: Usando as variáveis LASTFM_USERNAME e LASTFM_API_KEY
         const apiUrl = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${LASTFM_USERNAME}&api_key=${LASTFM_API_KEY}&format=json&limit=1`;
 
         try {
@@ -49,18 +53,13 @@
         }
     }
 
-   
+    // ✅ Torna a função global para ser chamada pelo index.js
     window.inicializarLastFmWidget = function() {
         console.log("[last.fm] initializing widget...");
-        fetchLastFmTrack();
+        // Aguarda um momento para garantir que o DOM está pronto
+        setTimeout(() => {
+            fetchLastFmTrack();
+        }, 100);
     };
-
-    
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', window.inicializarLastFmWidget);
-    } else {
-    
-        window.inicializarLastFmWidget();
-    }
 
 })();
