@@ -1,4 +1,4 @@
-// ✅ CÓDIGO CORRIGIDO - lastfm-widget.js
+
 (function() {
     'use strict';
     
