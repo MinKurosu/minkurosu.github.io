@@ -1,55 +1,124 @@
-(function() {
-    'use strict';
-    
-    const LASTFM_USERNAME = 'minkurosu';
-    const LASTFM_API_KEY = 'a2ef624a3dff8ec934580b0577d18cb5';
+document.addEventListener('DOMContentLoaded', function () {
+  const mainContainer = document.getElementById('container');
+  const dynamicLinks = document.querySelectorAll('[data-page], .nav-link[href="#"][onclick="history.back(); return false;"]');
 
-    async function fetchLastFmTrack() {
-        console.log("[last.fm] searching for most recent track...");
-        const lastfmSongCell = document.getElementById('lastfm-song-cell');
+  function initializeSlideshow() {
+    const slideshowArea = document.querySelector('.slideshow-area');
+    if (!slideshowArea) return;
 
-        if (!lastfmSongCell) {
-            console.error("[last.fm] error: element 'lastfm-song-cell' not found. script cannot continue.");
-            return;
-        }
-        console.log("[last.fm] element 'lastfm-song-cell' found successfully.");
+    const images = slideshowArea.querySelectorAll('img');
+    if (images.length === 0) return;
 
-        const apiUrl = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${LASTFM_USERNAME}&api_key=${LASTFM_API_KEY}&format=json&limit=1`;
+    let currentIndex = 0;
 
-        try {
-            const response = await fetch(apiUrl);
-            if (!response.ok) {
-                throw new Error(`http error! status: ${response.status}`);
-            }
-            const data = await response.json();
+    images.forEach(img => img.classList.remove('active'));
+    images[0].classList.add('active');
 
-            if (data.recenttracks && data.recenttracks.track && data.recenttracks.track.length > 0) {
-                const track = data.recenttracks.track[0];
-                const songName = track.name;
-                const artistName = track.artist['#text'];
-                const trackUrl = track.url;
-
-                const newContent = `<a href="${trackUrl}" target="_blank">${songName.toLowerCase()} - ${artistName.toLowerCase()}</a>`;
-                lastfmSongCell.innerHTML = newContent;
-                console.log(`[last.fm] success! track updated to: ${songName} - ${artistName}`);
-
-            } else {
-                lastfmSongCell.textContent = 'no recent tracks.';
-                console.log("[last.fm] no recent tracks found.");
-            }
-        } catch (error) {
-            console.error("[last.fm] failed to fetch api data:", error);
-            lastfmSongCell.textContent = 'error loading.';
-        }
+    if (window.slideshowInterval) {
+      clearInterval(window.slideshowInterval);
     }
 
-    window.inicializarLastFmWidget = function() {
-        console.log("[last.fm] initializing widget...");
-        setTimeout(() => {
-            fetchLastFmTrack();
-        }, 100);
-    };
+    function nextSlide() {
+      images[currentIndex].classList.remove('active');
+      currentIndex = (currentIndex + 1) % images.length;
+      images[currentIndex].classList.add('active');
+    }
 
-    console.log("[last.fm] widget script loaded and ready!");
+    window.slideshowInterval = setInterval(nextSlide, 4000);
+  }
 
-})();
+  function reinitializeGoogleTranslate() {
+    const translateElement = document.getElementById('google_translate_element');
+    if (!translateElement) return;
+
+    translateElement.innerHTML = '';
+
+    setTimeout(() => {
+      if (typeof google !== 'undefined' && google.translate && google.translate.TranslateElement) {
+        new google.translate.TranslateElement({
+          pageLanguage: 'pt',
+          includedLanguages: 'en,es,fr,ko,ja,pt,gn,it,de,ru,zh-CN',
+          layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        }, 'google_translate_element');
+      }
+    }, 300);
+  }
+
+  function loadContent(pageName) {
+    const url = `${pageName}.html`;
+    fetch(url)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('error loading content: ' + response.statusText);
+        }
+        return response.text();
+      })
+      .then(data => {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(data, 'text/html');
+        const contentToLoad = doc.querySelector('#container');
+
+        if (contentToLoad) {
+          mainContainer.innerHTML = contentToLoad.innerHTML;
+
+          setTimeout(() => {
+            initializeSlideshow();
+            reinitializeGoogleTranslate();
+
+       
+            if (typeof Fancybox !== 'undefined') {
+              Fancybox.bind('[data-fancybox="gallery"]', {});
+              console.log('✅ fancybox initialized in index.js');
+            }
+
+            if (typeof inicializarLastFmWidget === 'function') {
+              console.log('🎵 calling lastfm widget initialization...');
+              inicializarLastFmWidget();
+            }
+          }, 200);
+
+        } else {
+          mainContainer.innerHTML = '<p>content not found. please click the button again to try reloading the content.</p>';
+        }
+      })
+      .catch(error => {
+        console.error('error loading content:', error);
+        mainContainer.innerHTML = '<p>an error occurred while loading the page. please click the button again to try reloading the content.</p>';
+      });
+  }
+
+  function handleNavLinkClick(event) {
+    event.preventDefault();
+
+    if (this.getAttribute('onclick') && this.getAttribute('onclick').includes('history.back')) {
+      history.back();
+      return;
+    }
+    
+    const page = this.getAttribute('data-page');
+    if (page) {
+      history.pushState({ page: page }, '', `${page}.html`);
+      loadContent(page);
+    }
+    
+
+    const allLinks = document.querySelectorAll('.nav-link');
+    allLinks.forEach(link => link.classList.remove('active'));
+    this.classList.add('active');
+  }
+
+
+  dynamicLinks.forEach(link => link.addEventListener('click', handleNavLinkClick));
+
+  window.addEventListener('popstate', function (event) {
+    const state = event.state;
+    if (state && state.page) {
+      loadContent(state.page);
+    } else {
+      loadContent('aboutme');
+    }
+  });
+
+
+  loadContent('aboutme');
+});
