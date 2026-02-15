@@ -26,22 +26,166 @@
             text-transform: uppercase;
         }
 
-        /* ... resto dos estilos ... */
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            color: #534F4A;
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+            text-transform: lowercase;
+        }
+
+        h5 {
+            text-align: center;
+            color: #534F4A;
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+        }
+
+        .screenshots {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .screenshots:hover {
+            transform: scale(1.02);
+        }
+
+        .screenshotDescription {
+            font-size: 0.9em;
+            margin-top: 8px;
+            margin-bottom: 20px;
+        }
+
+        hr {
+            border: 5px;
+            border-top: 0.0625rem solid #ececec;
+            margin: 1.25rem 0;
+        }
+
+        .skin-grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            justify-content: center;
+            padding: 0;
+            max-width: 100%;
+        }
+
+        .skin-item {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .skin-item img {
+            width: 100%;
+            max-height: 150px;
+            object-fit: contain;
+            border-radius: 4px;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .skin-title {
+            font-size: 0.9em;
+            color: #534F4A;
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+            margin: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .skin-grid-container {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 10px;
+            }
+
+            .skin-item {
+                height: 180px;
+            }
+
+            .skin-item img {
+                max-height: 130px;
+            }
+        }
+
+        @media (max-width: 550px) {
+            .skin-grid-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .skin-item {
+                padding: 8px;
+                height: 160px;
+            }
+
+            .skin-item img {
+                max-height: 110px;
+            }
+
+            .skin-title {
+                font-size: 0.8em;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .skin-grid-container {
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            .skin-item {
+                height: 200px;
+            }
+
+            .skin-item img {
+                max-height: 150px;
+            }
+        }
     </style>
 
     <div class="content-column">
         <h5>whenever i die, this is what i would leave behind and would make people know a little bit about myself</h5>
         <br>
 
-        <img src="imgs/site_imgs/mystuff/prateleira.jpg" class="screenshots">
+        <a href="imgs/site_imgs/mystuff/prateleira.jpg" class="thumbs_small" data-fancybox="mystuff-gallery">
+            <img src="imgs/site_imgs/mystuff/prateleira.jpg" class="screenshots">
+        </a>
         <h5 class="screenshotDescription">"my interests shelf"</h5>
 
         <br>
-        <img src="imgs/site_imgs/mystuff/bolsa.jpeg" class="screenshots">
+
+        <a href="imgs/site_imgs/mystuff/bolsa.jpeg" class="thumbs_small" data-fancybox="mystuff-gallery">
+            <img src="imgs/site_imgs/mystuff/bolsa.jpeg" class="screenshots">
+        </a>
         <h5 class="screenshotDescription">"my itabag"</h5>
 
         <br>
-        <img src="imgs/site_imgs/mystuff/bookshelf.jpeg" class="screenshots">
+
+        <a href="imgs/site_imgs/mystuff/bookshelf.jpeg" class="thumbs_small" data-fancybox="mystuff-gallery">
+            <img src="imgs/site_imgs/mystuff/bookshelf.jpeg" class="screenshots">
+        </a>
         <h5 class="screenshotDescription">"my manga and book collection"</h5>
+
+        <br>
     </div>
+
+    <script>
+        if (typeof $ !== 'undefined' && $.fancybox) {
+            $('.thumbs_small').fancybox({
+                openEffect: 'elastic',
+                closeEffect: 'elastic',
+                prevEffect: 'fade',
+                nextEffect: 'fade',
+                fitToView: false,
+                maxWidth: "90%"
+            });
+            console.log('✅ Fancybox initialized for mystuff page');
+        }
+    </script>
 </div>
