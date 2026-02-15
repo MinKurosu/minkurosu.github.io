@@ -1,259 +1,139 @@
-<!DOCTYPE html>
-<html lang="en">
+<div id="container">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/css/jquery.fancybox.min.css">
+    
+    <style>
+        .content-column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
 
-<head>
+        h5 {
+            text-align: center;
+            color: #534F4A;
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+        }
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=1920px, initial-scale=0.4, maximum-scale=1.0, user-scalable=yes">
-  <meta property="og:image" content="https://i.ibb.co/RC2v9zg/sitethumbnail.png" />
-  <meta property="og:image" content="imgs/site_imgs/sitethumbnail.png" />
+        .screenshotDescription {
+            font-size: 0.9em;
+            margin-top: 8px;
+            margin-bottom: 30px;
+        }
 
-
-
-  <title>@minkurosu</title>
-
-  <link rel="icon" type="image/ico" href="imgs/site_imgs/favicon.ico" />
-
-  <div class="crt"></div>
-  <style>
-    html,
-    body,
-    iframe {
-      cursor: url('imgs/cursor/ROCKcursornormal.cur'), auto;
-    }
-
-
-    a,
-    button,
-    input[type="submit"],
-    input[type="button"],
-    select {
-      cursor: url('imgs/cursor/ROCKcursorselect.cur'), pointer;
-    }
-
-    #theme-toggle-button {
-      background: none !important;
-      appearance: none;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      background: none;
-      border: none;
-      padding: 0;
-      margin: 0;
-      cursor: pointer;
-      outline: none;
-    }
-
-
-
-
-    body,
-    html {
-      height: 100%;
-      margin: 0 auto;
-      padding: 0;
-      background-attachment: fixed;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      font-family: "MinFont";
-      font-size: 16px;
-      z-index: 1;
-    }
-
-
-    /* Navbar */
-    .navbar {
-      display: flex;
-      justify-content: center;
-      width: 100%;
-      flex-wrap: nowrap;
-    }
-
-
-
-
-
-
-
-    /* Logo */
-
-    #logobig {
-      max-width: 100%;
-      max-height: 200px;
-      object-fit: contain;
-      animation: breathing 2.5s infinite ease-in-out;
-      transition: transform 0.3s ease-in-out;
-    }
-
-    #logobig:hover {
-      transform: scale(1.15) translateY(10px);
-      transition: 0.2s;
-    }
-
-    @keyframes breathing {
-      0% {
-        transform: translateY(0) scale(1);
-      }
-
-      50% {
-        transform: translateY(-2px) scale(1);
-      }
-
-      100% {
-        transform: translateY(0) scale(1);
-      }
-    }
-
-
-
-    .caixamaisclara {
-      padding: 0.9375rem;
-      border-radius: 0.9375rem;
-      box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-
-    }
-
-    .about-text {
-      max-width: 60%;
-    }
-
-
-    hr {
-      border: 0;
-      border-top: 0.0625rem solid #534f4a;
-      margin: 1.25rem 0;
-    }
-
-
-
-
-    .grid-feed {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-
-      gap: 10px;
-
-      max-width: 800px;
-
-
-    }
-
-    .grid-feed a {
-      display: block;
-      position: relative;
-      max-width: 800px;
-      max-height: 800px;
-      display: block;
-
-    }
-
-
-
-    #container img {
-      max-width: 100%;
-      display: block;
-
-    }
-
-    .fancybox__caption {
-      font-size: 25px;
-      color: #534f4a;
-      border-color: #24211e
-    }
-
-    a[data-fancybox="gallery"] {
-      display: block;
-      width: 250px;
-      height: 250px;
-      overflow: hidden;
-      border-radius: 8px;
-    }
-
-    a[data-fancybox="gallery"] img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-
-      object-position: center;
-    }
-
-
-    /* Para o conteúdo dentro da descrição */
-#fancybox-title {
-  padding: 1.5rem !important;
-  max-width: 800px !important;
-  margin: 0 auto !important;
-}
-
-#fancybox-title div {
-  padding: 1.5rem !important;
-  max-width: 800px !important;
-  margin: 0 auto !important;
-}
-
-#gallery {
-    max-height: 800px;
-}
-
-  /* Usando estilos da galeria do emo.css */
         .galeria-container {
             width: 100%;
-            max-width: 700px;
+            max-width: 800px;
             overflow: auto;
             padding: 10px;
             box-sizing: border-box;
             margin-left: auto;
             margin-right: auto;
         }
-  </style>
 
-</head>
+        .galeria-grid {
+            column-count: 1;
+            column-gap: 15px;
+            padding: 5px;
+        }
 
-<body>
+        .galeria-grid a {
+            display: block;
+            margin-bottom: 30px;
+            break-inside: avoid;
+        }
+
+        .galeria-grid img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            transition: transform 0.2s ease;
+            cursor: pointer;
+        }
+
+        .galeria-grid img:hover {
+            transform: scale(1.02);
+        }
+
+        .fancybox-title {
+            font-size: 25px;
+            color: #534f4a;
+            border-color: #24211e;
+        }
+
+        #fancybox-title {
+            padding: 1.5rem !important;
+            max-width: 800px !important;
+            margin: 0 auto !important;
+        }
+
+        #fancybox-title div {
+            padding: 1.5rem !important;
+            max-width: 800px !important;
+            margin: 0 auto !important;
+        }
+
+        @media (max-width: 768px) {
+            .galeria-container {
+                max-width: 100%;
+            }
+        }
+    </style>
+
     <div class="content-column">
         <h5>whenever i die, this is what i would leave behind and would make people know a little bit about myself</h5>
         <br>
 
+        <!-- Galeria -->
+        <div class="galeria-container">
+            <div class="galeria-grid">
+                
+                <a href="imgs/site_imgs/mystuff/prateleira.jpg" 
+                   class="thumbs_small" 
+                   data-caption="my interests shelf">
+                    <img src="imgs/site_imgs/mystuff/prateleira.jpg" alt="my interests shelf">
+                </a>
+                <h5 class="screenshotDescription">"my interests shelf"</h5>
 
-           <a data-fancybox="gallery" href="imgs/site_imgs/mystuff/prateleira.jpg" data-caption="">
-          <img src="imgs/site_imgs/mystuff/prateleira.jpg" style="max-height: 800px;" alt="" />
-        </a>
- <h5 class="screenshotDescription">"my interests shelf"</h5>
+                <a href="imgs/site_imgs/mystuff/bolsa.jpeg" 
+                   class="thumbs_small" 
+                   data-caption="my itabag">
+                    <img src="imgs/site_imgs/mystuff/bolsa.jpeg" alt="my itabag">
+                </a>
+                <h5 class="screenshotDescription">"my itabag"</h5>
 
+                <a href="imgs/site_imgs/mystuff/bookshelf.jpeg" 
+                   class="thumbs_small" 
+                   data-caption="my manga and book collection">
+                    <img src="imgs/site_imgs/mystuff/bookshelf.jpeg" alt="my manga and book collection">
+                </a>
+                <h5 class="screenshotDescription">"my manga and book collection"</h5>
 
-    
+            </div>
+        </div>
 
-        <br>
-
-             <a data-fancybox="gallery" href="imgs/site_imgs/mystuff/bolsa.jpeg" data-caption="">
-          <img src="imgs/site_imgs/mystuff/bolsa.jpeg" style="max-height: 800px;" alt="" />
-        </a>
- <h5 class="screenshotDescription">"my itabag"</h5>
-
-
-    
-
-        <br>
-
-             <a data-fancybox="gallery" href="imgs/site_imgs/mystuff/bookshelf.jpeg" data-caption="">
-          <img src="imgs/site_imgs/mystuff/bookshelf.jpeg" style="max-height: 800px;" alt="" />
-        </a>
- <h5 class="screenshotDescription">"my physical manga & book collection"</h5>
-
-
-    
-
-        <br>
     </div>
-</body>
 
-
-
-
-</html>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+            $('.thumbs_small').fancybox({
+                openEffect: 'elastic',
+                closeEffect: 'elastic',
+                prevEffect: 'fade',
+                nextEffect: 'fade',
+                fitToView: false,
+                maxWidth: "90%"
+            });
+            console.log('fancybox v2 initialized for page');
+        });
+    </script>
+</div>
