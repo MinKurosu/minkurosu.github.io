@@ -1,6 +1,4 @@
 <div id="container">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/css/jquery.fancybox.min.css">
-    
     <style>
         .content-column {
             display: flex;
@@ -27,7 +25,7 @@
 
         .galeria-container {
             width: 100%;
-            max-width: 800px;
+            max-width: 700px;
             overflow: auto;
             padding: 10px;
             box-sizing: border-box;
@@ -60,22 +58,10 @@
             transform: scale(1.02);
         }
 
-        .fancybox-title {
+        .fancybox__caption {
             font-size: 25px;
             color: #534f4a;
             border-color: #24211e;
-        }
-
-        #fancybox-title {
-            padding: 1.5rem !important;
-            max-width: 800px !important;
-            margin: 0 auto !important;
-        }
-
-        #fancybox-title div {
-            padding: 1.5rem !important;
-            max-width: 800px !important;
-            margin: 0 auto !important;
         }
 
         @media (max-width: 768px) {
@@ -89,26 +75,25 @@
         <h5>whenever i die, this is what i would leave behind and would make people know a little bit about myself</h5>
         <br>
 
-        <!-- Galeria -->
         <div class="galeria-container">
             <div class="galeria-grid">
                 
-                <a href="imgs/site_imgs/mystuff/prateleira.jpg" 
-                   class="thumbs_small" 
+                <a data-fancybox="mystuff-gallery" 
+                   href="imgs/site_imgs/mystuff/prateleira.jpg" 
                    data-caption="my interests shelf">
                     <img src="imgs/site_imgs/mystuff/prateleira.jpg" alt="my interests shelf">
                 </a>
                 <h5 class="screenshotDescription">"my interests shelf"</h5>
 
-                <a href="imgs/site_imgs/mystuff/bolsa.jpeg" 
-                   class="thumbs_small" 
+                <a data-fancybox="mystuff-gallery" 
+                   href="imgs/site_imgs/mystuff/bolsa.jpeg" 
                    data-caption="my itabag">
                     <img src="imgs/site_imgs/mystuff/bolsa.jpeg" alt="my itabag">
                 </a>
                 <h5 class="screenshotDescription">"my itabag"</h5>
 
-                <a href="imgs/site_imgs/mystuff/bookshelf.jpeg" 
-                   class="thumbs_small" 
+                <a data-fancybox="mystuff-gallery" 
+                   href="imgs/site_imgs/mystuff/bookshelf.jpeg" 
                    data-caption="my manga and book collection">
                     <img src="imgs/site_imgs/mystuff/bookshelf.jpeg" alt="my manga and book collection">
                 </a>
@@ -119,21 +104,25 @@
 
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js"></script>
-    
     <script>
-        $(document).ready(function() {
-            $('.thumbs_small').fancybox({
-                openEffect: 'elastic',
-                closeEffect: 'elastic',
-                prevEffect: 'fade',
-                nextEffect: 'fade',
-                fitToView: false,
-                maxWidth: "90%"
-            });
-            console.log('fancybox v2 initialized for page');
-        });
+        setTimeout(function() {
+            if (typeof Fancybox !== 'undefined') {
+                Fancybox.destroy();
+                
+                Fancybox.bind('[data-fancybox="mystuff-gallery"]', {
+                    Toolbar: {
+                        display: {
+                            left: ["infobar"],
+                            middle: [],
+                            right: ["slideshow", "thumbs", "close"],
+                        },
+                    },
+                });
+                
+                console.log('fancybox initialized for mystuff gallery');
+            } else {
+                console.error('fancybox not available');
+            }
+        }, 300);
     </script>
 </div>
