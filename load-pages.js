@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
         fetch(fileName)
             .then(response => {
                 if (!response.ok) {
-                    throw new Error(`Não foi possível carregar a página: ${response.statusText}`);
+                    throw new Error(`error loading page: ${response.statusText}`);
                 }
                 return response.text();
             })
@@ -27,11 +27,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     if (oldScript.src) {
                         newScript.src = oldScript.src;
-                        console.log(`  ↳ Script externo ${index + 1}:`, oldScript.src);
+                        console.log(`  ↳ script externo ${index + 1}:`, oldScript.src);
                     }
                     else {
                         newScript.textContent = oldScript.textContent;
-                        console.log(`  ↳ Script inline ${index + 1}`);
+                        console.log(`  ↳ script inline ${index + 1}`);
                     }
 
                     oldScript.remove();
@@ -55,14 +55,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
                 if (pageName === 'games') {
-                    console.log('🎮 Página games carregada, aguardando inicialização...');
+                    console.log('initializing...');
 
                     setTimeout(() => {
                         if (typeof window.initGamesPage === 'function') {
-                            console.log('🎮 Inicializando games page manualmente...');
+                            console.log('🎮 initializing...');
                             window.initGamesPage();
                         } else {
-                            console.log('🎮 Tentando inicializar games automaticamente...');
+                            console.log('🎮 initializing...');
                             const gameButtons = document.querySelectorAll('.game-button-link');
                             if (gameButtons.length > 0 && gameButtons[0].onclick === null) {
                                 const gameScripts = document.querySelectorAll('script');
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                         try {
                                             eval(script.textContent);
                                         } catch (e) {
-                                            console.error('Erro ao executar script:', e);
+                                            console.error('script error:', e);
                                         }
                                     }
                                 });
@@ -80,11 +80,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     }, 200);
                 }
 
-                console.log(`✅ Página ${pageName} carregada com sucesso!`);
+                console.log(`✅ page ${pageName} loaded!`);
             })
             .catch(error => {
-                console.error('❌ Erro ao carregar a página:', error);
-                mainContainer.innerHTML = '<p>Erro ao carregar o conteúdo. Por favor, verifique se o arquivo existe e tente novamente.</p>';
+                console.error('❌ error loading page:', error);
+                mainContainer.innerHTML = '<p>error loading page.</p>';
             });
     }
 
