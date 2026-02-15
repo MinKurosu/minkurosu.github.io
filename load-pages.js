@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 mainContainer.innerHTML = html;
 
                 const scripts = mainContainer.querySelectorAll('script');
-                console.log(`📜 Encontrados ${scripts.length} scripts na página ${pageName}`);
+                console.log(` found ${scripts.length} scripts ${pageName}`);
 
                 scripts.forEach((oldScript, index) => {
                     const newScript = document.createElement('script');
