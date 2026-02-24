@@ -2,6 +2,51 @@
 <html lang="en">
 
 <head>
+    <script>
+    let dragOffsetX = 0;
+    let dragOffsetY = 0;
+
+    document.querySelectorAll('.draggable').forEach(el => {
+        const rotation = parseFloat(el.dataset.rotation) || 0;
+        el.style.transform = `rotate(${rotation}deg)`;
+        el.setAttribute('draggable', true);
+
+        el.addEventListener('dragstart', (ev) => {
+            ev.dataTransfer.setData('text', el.id || '');
+            const rect = el.getBoundingClientRect();
+            dragOffsetX = ev.clientX - rect.left;
+            dragOffsetY = ev.clientY - rect.top;
+            setTimeout(() => el.style.opacity = '0.4', 0);
+        });
+
+        el.addEventListener('dragend', () => {
+            el.style.opacity = '1';
+        });
+    });
+
+    const area = document.querySelector('.photo-area');
+
+    area.addEventListener('dragover', (ev) => {
+        ev.preventDefault();
+    });
+
+    area.addEventListener('drop', (ev) => {
+        ev.preventDefault();
+        const rect = area.getBoundingClientRect();
+        const x = ev.clientX - rect.left - dragOffsetX;
+        const y = ev.clientY - rect.top - dragOffsetY;
+
+        const id = ev.dataTransfer.getData('text');
+        const el = id ? document.getElementById(id) : document.querySelector('.draggable[style*="0.4"]');
+
+        if (!el) return;
+
+        const rotation = parseFloat(el.dataset.rotation) || 0;
+        el.style.left = x + 'px';
+        el.style.top = y + 'px';
+        el.style.transform = `rotate(${rotation}deg)`;
+    });
+</script>
     <meta charset="UTF-8">
     <meta property="og:image" content="https://i.ibb.co/RC2v9zg/sitethumbnail.png" />
     <meta property="og:image" content="imgs/site_imgs/sitethumbnail.png" />
