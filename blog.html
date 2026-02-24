@@ -12,7 +12,7 @@
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
                 pageLanguage: 'pt',
-                includedLanguages: 'en,es,fr', // Adicione as línguas que você quer oferecer
+                includedLanguages: 'en,es,fr,ko,ja,pt,gn,it,de,ru,zh-CN',
                 layout: google.translate.TranslateElement.InlineLayout.SIMPLE
             }, 'google_translate_element');
         }
@@ -231,8 +231,64 @@
 
             padding: 1.25rem;
             border-radius: 0.9375rem;
+        }
 
+=        .post-info-header {
+            display: flex;
+            align-items: center;
+            font-family: "MinFont";
+            color: #534F4A;
+            font-size: 0.9em;
+            margin-bottom: 8px;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
 
+        .post-date {
+            font-weight: bold;
+            color: #7c1d1d;
+        }
+
+        .post-time {
+            color: #534F4A;
+            font-size: 0.85em;
+            opacity: 0.8;
+        }
+
+        .post-separator {
+            color: #534F4A;
+            opacity: 0.5;
+        }
+
+        /* === imagem dentro do post === */
+        .post-image-wrapper {
+            margin: 10px 0;
+            width: 100%;
+        }
+
+        .post-image-wrapper img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+            margin: 0;
+        }
+
+        /* === layout quando tem imagem lado a lado com texto === */
+        .post-body {
+            width: 100%;
+        }
+
+        .post-body.has-image {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .post-text {
+            word-wrap: break-word;
+            line-height: 1.6;
         }
     </style>
 
@@ -268,7 +324,84 @@
                 <br>
                 <div class="caixamaisclara" id="posts-container">
 
-                    <h2>loading posts...</h2>
+                    <!-- ============================================
+                   
+            
+
+                    <div class="blog-post">
+                        <div class="post-info-header">
+                            <span class="post-date">DD/MM/AAAA</span>
+                            <span class="post-separator">·</span>
+                            <span class="post-time">HH:MM</span>
+                        </div>
+                        <h2 class="post-title">Título do post</h2>
+                        <div class="post-image-wrapper">
+                            <img src="URL_DA_IMAGEM" alt="descrição da imagem">
+                        </div>
+                        <div class="post-text">
+                            <p>Texto do post aqui...</p>
+                        </div>
+                        <hr class="post-divider">
+                    </div>
+
+                    SEM IMAGEM:
+                    <div class="blog-post">
+                        <div class="post-info-header">
+                            <span class="post-date">DD/MM/AAAA</span>
+                            <span class="post-separator">·</span>
+                            <span class="post-time">HH:MM</span>
+                        </div>
+                        <h2 class="post-title">Título do post</h2>
+                        <div class="post-text">
+                            <p>texto do post...</p>
+                        </div>
+                        <hr class="post-divider">
+                    </div>
+                    ============================================ -->
+
+                    <!-- POST  -->
+
+
+
+                    <div class="blog-post">
+                        <div class="post-info-header">
+                            <span class="post-date">23/02/2026</span>
+                            <span class="post-separator">·</span>
+                            <span class="post-time">23:00</span>
+                        </div>
+                        <h2 class="post-title">lol</h2>
+                        <div class="post-text">
+                            <p>eu do ultimo post nem esperava a bomba q ia vim (sobre os arquivos lá.. podre), espero que nao tenha um futuro post se referindo a esse se as coisas piorarem :D </p>
+                        </div>
+                        <hr class="post-divider">
+                    </div>
+
+                    <div class="blog-post">
+                        <div class="post-info-header">
+                            <span class="post-date">05/08/2025</span>
+                            <span class="post-separator">·</span>
+                            <span class="post-time">04:03</span>
+                        </div>
+                        <h2 class="post-title">pensamentos da madrugada</h2>
+                        <div class="post-text">
+                            <p>sao 4h da manha e nao consigo dormir, nao consigo parar de pensar em como o mundo é podre, pensei em vim aqui desabafar. agora que comecei a escrever parece q dá um branco, nao consigo nem pensar por onde começar a escrever. oq mais anda me destroindo é a sensação de impotência, nao tem NADA que a gnt possa fazer, parece q ja estamos destinados a nos extinguir, a ganancia dos 1% vai causar o fim da porra do planeta, antes fosse so da nossa especie, que COM CERTEZA a natureza encontraria um jeito de contornar a situação. isso nao é nem questao de partido antes que me chamem de comunista, sei la nao acha que o jeito q o mundo funciona nao vai ter consequencia?? que a existencia de bilionarios é insustentavel? ate pq ate parece que so nos meros cidadãos fazendo nossa reciclagem vai salvar algum planeta. sem falar da porra de um genocídio. mal aconteceu um, que diziam "jamais esquecer", e na real nunca terminou, ne? tudo consequencia de uma mesma historia.. sei la, não sou capaz de comentar, mas é muito dificil viver o dia a dia enquanto isso tudo acontece, pra que continuar estudando pra tentar um futuro economicamente seguro, se o mundo ta quebrando em tudo? sei la, parece q quanto mais eu envelheço, mais eu percebo como as pessoas são podres, e mais vontade de morrer eu sinto.</p>
+                        </div>
+                        <hr class="post-divider">
+                    </div>
+
+                    <div class="blog-post">
+                        <div class="post-info-header">
+                            <span class="post-date">26/07/2025</span>
+                            <span class="post-separator">·</span>
+                            <span class="post-time">01:49</span>
+                        </div>
+                        <h2 class="post-title">recesso!</h2>
+                        <div class="post-text">
+                            <p>finalmente estou de "férias" da facul, 1mÊszinho de descanso SÓ QUE NÃO!! vou ter q aproveitar esse tempo pra dar uma adiantada no meu tcc, fora as commissions que peguei. Confesso que o que ta me dando um gás é o show do my chemical romance, mesmo faltando 200 dias, sei que meu esforço vai ser muito bem recompensado!!!!</p>
+                        </div>
+                        <hr class="post-divider">
+                    </div>
+
                 </div>
 
 
