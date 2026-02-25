@@ -2,43 +2,38 @@
 <html lang="en">
 
 <head>
-    <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        let active = null, ox = 0, oy = 0;
+   A API nativa de drag-and-drop do HTML5 é bem simples. Aqui está como implementar substituindo o seu <script> atual:
+html
 
-        document.querySelectorAll('.draggable').forEach(el => {
-            const rot = parseFloat(el.dataset.rotation) || 0;
-            el.style.transform = `rotate(${rot}deg)`;
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    let dragEl = null, ox = 0, oy = 0;
 
-            el.addEventListener('pointerdown', e => {
-                e.preventDefault();
-                const area = el.closest('.photo-area');
-                const ar = area.getBoundingClientRect();
-                const er = el.getBoundingClientRect();
-                ox = e.clientX - er.left;
-                oy = e.clientY - er.top;
-                active = { el, area, rot };
-                el.style.zIndex = 100;
-                el.setPointerCapture(e.pointerId);
-            });
+    document.querySelectorAll('.draggable').forEach(el => {
+        el.setAttribute('draggable', true);
+        el.style.transform = `rotate(${el.dataset.rotation || 0}deg)`;
 
-            el.addEventListener('pointermove', e => {
-                if (!active || active.el !== el) return;
-                const ar = active.area.getBoundingClientRect();
-                el.style.left = (e.clientX - ar.left - ox) + 'px';
-                el.style.top  = (e.clientY - ar.top  - oy) + 'px';
-                el.style.transform = `rotate(${active.rot}deg)`;
-            });
+        el.addEventListener('dragstart', e => {
+            dragEl = el;
+            ox = e.clientX - el.getBoundingClientRect().left;
+            oy = e.clientY - el.getBoundingClientRect().top;
+            el.style.opacity = '0.5';
+        });
 
-            el.addEventListener('pointerup', () => {
-                if (active && active.el === el) {
-                    el.style.zIndex = '';
-                    active = null;
-                }
-            });
+        el.addEventListener('dragend', e => {
+            const area = el.closest('.photo-area').getBoundingClientRect();
+            el.style.left = (e.clientX - area.left - ox) + 'px';
+            el.style.top  = (e.clientY - area.top  - oy) + 'px';
+            el.style.opacity = '1';
+            dragEl = null;
         });
     });
-    </script>
+
+    document.querySelectorAll('.photo-area').forEach(area => {
+        area.addEventListener('dragover', e => e.preventDefault());
+    });
+});
+</script>
     <meta charset="UTF-8">
     <meta property="og:image" content="https://i.ibb.co/RC2v9zg/sitethumbnail.png" />
     <meta property="og:image" content="imgs/site_imgs/sitethumbnail.png" />
@@ -328,18 +323,7 @@
             transform: rotate(3deg);
         }
 
-        .letter-photo.draggable:hover {
-            transform: translate(var(--x, 0px), var(--y, 0px)) rotate(calc(var(--rotation, 0) * 1deg + 5deg));
-            z-index: 20;
-            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-        }
-
-        .photo.draggable:hover {
-            transform: translate(var(--x, 0px), var(--y, 0px)) rotate(calc(var(--rotation, 0) * 1deg + 5deg));
-            z-index: 10;
-            box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.4);
-            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-        }
+      
 
         ::-webkit-scrollbar {
             width: 8px;
