@@ -27,23 +27,6 @@ document.addEventListener('DOMContentLoaded', function () {
     window.slideshowInterval = setInterval(nextSlide, 4000);
   }
 
-  function reinitializeGoogleTranslate() {
-    const translateElement = document.getElementById('google_translate_element');
-    if (!translateElement) return;
-
-    translateElement.innerHTML = '';
-
-    setTimeout(() => {
-      if (typeof google !== 'undefined' && google.translate && google.translate.TranslateElement) {
-        new google.translate.TranslateElement({
-          pageLanguage: 'pt',
-          includedLanguages: 'en,es,fr,ko,ja,pt,gn,it,de,ru,zh-CN',
-          layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-        }, 'google_translate_element');
-      }
-    }, 300);
-  }
-
   function loadContent(pageName) {
     const url = `${pageName}.html`;
     fetch(url)
@@ -63,7 +46,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
           setTimeout(() => {
             initializeSlideshow();
-            reinitializeGoogleTranslate();
 
        
             if (typeof Fancybox !== 'undefined') {
