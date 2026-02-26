@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             msg(postMsg, 'publishing...', 'info');
 
-            // if there's a file upload, get its url and append to content
+         
             if (file) {
                 msg(postMsg, 'uploading image...', 'info');
                 const storageRef = ref(storage, `blog_images/${Date.now()}_${file.name}`);
@@ -97,14 +97,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 content = content ? `${content}\n${fileUrl}` : fileUrl;
             }
 
-            // if there's a manual url, append to content
+            
             if (enteredUrl) {
                 content = content ? `${content}\n${enteredUrl}` : enteredUrl;
             }
 
             await addDoc(collection(db, 'posts'), {
                 content,
-                imageUrl: '', // keep field for backwards compat but empty
+                imageUrl: '', 
                 timestamp: serverTimestamp()
             });
 

@@ -20,13 +20,13 @@ async function loadYaoifridgeContent() {
     try {
         const container = document.getElementById('container');
         if (!container) {
-            console.error('Elemento #container não foi encontrado na página.');
+            console.error('elemento #container não foi encontrado');
             return;
         }
 
         const response = await fetch('yaoifridge.html');
         if (!response.ok) {
-            throw new Error(`Erro ao buscar o arquivo: ${response.statusText}`);
+            throw new Error(`erro ao buscar o arquivo: ${response.statusText}`);
         }
         const html = await response.text();
 
@@ -35,7 +35,7 @@ async function loadYaoifridgeContent() {
         initializeDrag();
 
     } catch (error) {
-        console.error('Erro ao carregar o conteúdo do yaoifridge:', error);
+        console.error('erro ao carregar o conteúdo do yaoifridge:', error);
     }
 }
 
