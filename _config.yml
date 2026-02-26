@@ -1,0 +1,2 @@
+exclude:
+  - meu-blog-firebase/node_modules/
