@@ -1,3 +1,10 @@
+const observer = new MutationObserver(() => {
+  const banner = document.querySelector('.goog-te-banner-frame');
+  if (banner) banner.style.display = 'none';
+  document.body.style.top = '0';
+});
+observer.observe(document.body, { childList: true, subtree: true });
+
 
 document.addEventListener('DOMContentLoaded', () => {
     const tracks = document.querySelectorAll('.track-inner');
@@ -82,10 +89,8 @@ function initializeDrag() {
 
     function initializeSlideshow() {
         let slideIndex = 0;
-        // Seleciona todas as imagens dentro da área do slideshow
         const slides = document.querySelectorAll('.slideshow-area img');
 
-        // Se não houver imagens, saia da função
         if (slides.length === 0) {
             return;
         }
