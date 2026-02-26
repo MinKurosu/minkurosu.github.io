@@ -19,7 +19,6 @@
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
 
-    <script src="script.js"></script>
     <script src="theme-switcher.js"></script>
     <script>NekoType = "black"</script>
 
@@ -33,13 +32,8 @@
 
 
 
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({ pageLanguage: 'pt', layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
-        }
-    </script>
-    <script type="text/javascript"
-        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+   
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
     <script>
@@ -54,7 +48,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
     <script>
         Fancybox.bind('[data-fancybox="gallery"]', {
-            //
+            
         });    
     </script>
 
@@ -74,6 +68,45 @@
     <link rel="icon" type="image/ico" href="imgs/site_imgs/favicon.ico" />
     <div class="crt"></div>
     <style>
+#google_translate_element .goog-te-gadget-simple {
+  background-color: #1a1a1a !important;
+  border: 1px solid #444 !important;
+  border-radius: 8px !important;
+  padding: 2px 6px !important;
+  font-family: "MinFont", sans-serif !important;
+}
+
+.goog-te-gadget-simple .goog-te-gadget-icon {
+  display: none !important;
+}
+
+
+
+#google_translate_element .goog-te-gadget-simple span,
+#google_translate_element .goog-te-gadget-simple a,
+#google_translate_element .goog-te-gadget-simple a span,
+.goog-te-gadget-simple .goog-te-menu-value span {
+  color: #d5d5d5 !important;
+  font-family: "MinFont", sans-serif !important;
+  font-size: 12px !important;
+  text-shadow: none !important;
+  text-decoration: none !important;
+}
+
+#google_translate_element .goog-te-gadget-simple .goog-te-menu-value span:last-child {
+  color: #888 !important;
+}
+
+#google_translate_element a {
+  text-shadow: none !important;
+  text-decoration: none !important;
+}
+
+.goog-te-menu-frame {
+  border-radius: 8px !important;
+  overflow: hidden !important;
+}
+
         .social-links {
             display: flex;
             justify-content: center;
@@ -434,13 +467,16 @@
 
                 <h3>theme changer:</h3>
                 <button id="theme-toggle-button">
+                    
                     <img id="theme-icon" src="imgs/site_imgs/lua.png" alt="Theme Toggle">
                 </button>
                 <br>
+                <h3>translate:</h3>
+<div id="google_translate_element"></div>
+<br>
                 <a href="https://arab.org/click-to-help/palestine/">🍉 if you cant donate, click to help! 🇵🇸</a></p>
                 <script src="https://webneko.net/n20171213.js"></script><a href="https://webneko.net"></a>
-
-
+   <br>
                 <div class="caixamaisclaraColumn">
                     <br>
                     <div id="statuscafe">
@@ -1262,7 +1298,6 @@
     </aside>
 
     </div>
-    <script src=" script.js"></script>
     <script src="theme-switcher.js"></script>
     <script type="module" src="dream-journal.js"></script>
 
@@ -1281,7 +1316,16 @@
         });
 
     </script>
-
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({ 
+            pageLanguage: 'en',
+            includedLanguages: 'en,es,fr,ko,ja,pt,gn,it,de,ru,zh-CN',
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE 
+        }, 'google_translate_element');
+    }
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 
 </html>
