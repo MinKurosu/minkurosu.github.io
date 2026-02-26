@@ -992,15 +992,16 @@ h5 {
 
 .button-wall {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(88px, 1fr));
+  grid-template-columns: repeat(3, 88px);
   gap: 3px;
-  width: 100%;
+  width: fit-content;
   padding: 2px;
   box-sizing: border-box;
+  margin: 0 auto;
 }
 
 .button-wall img {
-  width: 100%;
+  width: 88px;
   height: 31px;
   display: block;
   object-fit: cover;

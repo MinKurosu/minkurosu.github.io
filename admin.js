@@ -1,9 +1,7 @@
-
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js';
 import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js';
 import { getFirestore, collection, addDoc, serverTimestamp } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js';
 import { getStorage, ref, uploadBytes, getDownloadURL } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-storage.js';
-
 
 const firebaseConfig = {
     apiKey: "AIzaSyA8-Ab2dE48sVOhmT-HfxIL5_rzDMRdcCc",
@@ -15,272 +13,167 @@ const firebaseConfig = {
     measurementId: "G-M7PWC6DDRH"
 };
 
-
-const app = initializeApp(firebaseConfig);
+const app  = initializeApp(firebaseConfig);
 const auth = getAuth(app);
-const db = getFirestore(app);
+const db   = getFirestore(app);
 const storage = getStorage(app);
 
-//DOM
-let loginForm, loginEmailInput, loginPasswordInput, loginBtn, loginMessage;
-let adminPanelSection, logoutBtn;
-//blog form
-let postContentInput, publishPostBtn, postMessage;
-let postImageFile, postImageUrl; //imgs
-
-// dream form
-let dreamContentInput, publishDreamBtn, dreamMessage;
-// private form
-let privateEntryContentInput, publishPrivateBtn, privateEntryMessage;
-
-
-// show messages
-function showMessage(element, message, type) {
-    if (element) {
-        element.textContent = message;
-        element.className = `message ${type}`;
-    }
+function msg(el, text, type) {
+    if (!el) return;
+    el.textContent = text;
+    el.className = `message ${type}`;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    //login
-    loginForm = document.getElementById('login-form');
-    loginEmailInput = document.getElementById('login-email');
-    loginPasswordInput = document.getElementById('login-password');
-    loginBtn = document.getElementById('login-btn');
-    loginMessage = document.getElementById('login-message');
-    adminPanelSection = document.getElementById('admin-panel-section');
-    logoutBtn = document.getElementById('logout-btn');
 
+    // ── auth ──────────────────────────────────
+    const loginForm       = document.getElementById('login-form');
+    const loginEmail      = document.getElementById('login-email');
+    const loginPassword   = document.getElementById('login-password');
+    const loginMessage    = document.getElementById('login-message');
+    const adminPanel      = document.getElementById('admin-panel-section');
+    const logoutBtn       = document.getElementById('logout-btn');
 
-
-    // blog form
-
-    const blogContentInput = document.getElementById('blog-content');
-    const blogImageUrlInput = document.getElementById('blog-image-url');
-    const publishBlogBtn = document.getElementById('publish-blog-btn');
-    const blogMessage = document.getElementById('blog-message');
-
-
-
-
-    // blog form
-
-    postContentInput = document.getElementById('post-content');
-    publishPostBtn = document.getElementById('publish-post-btn');
-    postMessage = document.getElementById('post-message');
-    // imgs
-    postImageUrl = document.getElementById('post-image-url');
-    postImageFile = document.getElementById('post-image-file');
-
-    // dreams form
-    dreamContentInput = document.getElementById('dream-content');
-    publishDreamBtn = document.getElementById('publish-dream-btn');
-    dreamMessage = document.getElementById('dream-message');
-
-    // private forms
-    privateEntryContentInput = document.getElementById('private-entry-content');
-    publishPrivateBtn = document.getElementById('publish-private-entry-btn');
-    privateEntryMessage = document.getElementById('private-entry-message');
-
-
-    // publish private
-    if (publishPrivateBtn) {
-        publishPrivateBtn.addEventListener('click', async () => {
-            const content = privateEntryContentInput.value;
-
-            if (!content.trim()) {
-                showMessage(privateEntryMessage, 'Por favor, preencha o conteúdo da entrada privada.', 'error');
-                return;
-            }
-
-            try {
-                showMessage(privateEntryMessage, 'Publicando entrada privada...', 'info');
-                // 'private_entries'
-                await addDoc(collection(db, 'private_entries'), {
-                    content: content,
-                    timestamp: serverTimestamp() // cronologic
-                });
-                showMessage(privateEntryMessage, 'Entrada privada publicada com sucesso!', 'success');
-                privateEntryContentInput.value = '';
-            } catch (error) {
-                showMessage(privateEntryMessage, `Erro ao publicar entrada privada: ${error.message}`, 'error');
-            }
-        });
-    }
-
-    onAuthStateChanged(auth, (user) => {
-        if (adminPanelSection && loginForm) {
-            if (user) {
-                adminPanelSection.style.display = 'block';
-                loginForm.style.display = 'none';
-            } else {
-                adminPanelSection.style.display = 'none';
-                loginForm.style.display = 'block';
-            }
+    onAuthStateChanged(auth, user => {
+        if (!adminPanel || !loginForm) return;
+        if (user) {
+            adminPanel.style.display = 'block';
+            loginForm.style.display  = 'none';
+        } else {
+            adminPanel.style.display = 'none';
+            loginForm.style.display  = 'block';
         }
     });
 
-    // login event
-    if (loginForm) {
-        loginForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            try {
-                await signInWithEmailAndPassword(auth, loginEmailInput.value, loginPasswordInput.value);
-                showMessage(loginMessage, 'Login bem-sucedido!', 'success');
-            } catch (error) {
-                showMessage(loginMessage, `Erro de login: ${error.message}`, 'error');
-            }
-        });
-    }
+    loginForm?.addEventListener('submit', async e => {
+        e.preventDefault();
+        try {
+            await signInWithEmailAndPassword(auth, loginEmail.value, loginPassword.value);
+            msg(loginMessage, 'logged in!', 'success');
+        } catch (err) {
+            msg(loginMessage, `login error: ${err.message}`, 'error');
+        }
+    });
 
+    logoutBtn?.addEventListener('click', async () => {
+        try {
+            await signOut(auth);
+            msg(loginMessage, 'logged out.', 'info');
+        } catch (err) {
+            msg(loginMessage, `logout error: ${err.message}`, 'error');
+        }
+    });
 
-    // blog post
-    if (publishBlogBtn) {
-        publishBlogBtn.addEventListener('click', async () => {
+    // ── thoughts post ──────────────────────────
+    // how it works:
+    //   - paste any text + links directly into the textarea
+    //   - optionally attach/url an image — it gets appended to content automatically
+    //   - the loader detects all urls and renders them as embeds
+    const postContent  = document.getElementById('post-content');
+    const postImageUrl = document.getElementById('post-image-url');
+    const postImageFile = document.getElementById('post-image-file');
+    const publishBtn   = document.getElementById('publish-post-btn');
+    const postMsg      = document.getElementById('post-message');
 
-            const content = blogContentInput.value;
-            const imageUrl = blogImageUrlInput.value.trim();
+    publishBtn?.addEventListener('click', async () => {
+        let content = (postContent?.value || '').trim();
+        const enteredUrl = (postImageUrl?.value || '').trim();
+        const file = postImageFile?.files[0];
 
+        if (!content && !enteredUrl && !file) {
+            msg(postMsg, 'write something first.', 'error');
+            return;
+        }
 
+        try {
+            msg(postMsg, 'publishing...', 'info');
 
-            try {
-                showMessage(blogMessage, 'Publicando post...', 'info');
-                //'blog_posts'
-                await addDoc(collection(db, 'blog_posts'), {
-
-                    content: content,
-                    imageUrl: imageUrl,
-                    timestamp: serverTimestamp()
-                });
-
-                showMessage(blogMessage, 'Post publicado com sucesso!', 'success');
-
-                blogContentInput.value = '';
-                blogImageUrlInput.value = '';
-            } catch (error) {
-                showMessage(blogMessage, `Erro ao publicar: ${error.message}`, 'error');
-            }
-        });
-    }
-
-
-
-    // thoughts
-    if (publishPostBtn) {
-        publishPostBtn.addEventListener('click', async () => {
-            const content = postContentInput.value;
-            const selectedFile = postImageFile.files[0];
-            const enteredUrl = postImageUrl.value.trim();
-
-
-
-            try {
-                showMessage(postMessage, 'Publicando post...', 'info');
-                let finalImageUrl = '';
-
-
-                if (enteredUrl) {
-                    finalImageUrl = enteredUrl;
-                } else if (selectedFile) {
-
-                    showMessage(postMessage, 'Enviando imagem para o Storage (se o faturamento permitir)...', 'info');
-                    const storageRef = ref(storage, `blog_images/${Date.now()}_${selectedFile.name}`);
-                    await uploadBytes(storageRef, selectedFile);
-                    finalImageUrl = await getDownloadURL(storageRef);
-                    showMessage(postMessage, 'Imagem enviada com sucesso para o Storage!', 'success');
-                }
-
-
-                await addDoc(collection(db, 'posts'), {
-
-                    content: content,
-                    imageUrl: finalImageUrl,
-                    timestamp: serverTimestamp()
-                });
-
-                showMessage(postMessage, 'Post publicado com sucesso!', 'success');
-
-                postContentInput.value = '';
-                postImageFile.value = '';
-                postImageUrl.value = '';
-            } catch (error) {
-                showMessage(postMessage, `Erro ao publicar post: ${error.message}`, 'error');
-                console.error("Erro detalhado:", error);
-
-                if (error.code === 'storage/unauthorized' || error.message.includes('CORS policy') || error.message.includes('permission_denied')) {
-                    showMessage(postMessage, 'Erro: Não foi possível fazer upload da imagem para o Firebase Storage. Isso geralmente indica problemas de CORS ou que o faturamento do Google Cloud não está ativo. Tente usar a opção "URL da Imagem" para imagens já hospedadas.', 'error');
-                }
-            }
-        });
-    }
-
-    // dream register
-    if (publishDreamBtn) {
-        publishDreamBtn.addEventListener('click', async () => {
-            const content = dreamContentInput.value;
-
-
-            if (!content.trim()) {
-                showMessage(dreamMessage, 'Por favor, preencha o conteúdo do sonho.', 'error');
-                return;
+            // if there's a file upload, get its url and append to content
+            if (file) {
+                msg(postMsg, 'uploading image...', 'info');
+                const storageRef = ref(storage, `blog_images/${Date.now()}_${file.name}`);
+                await uploadBytes(storageRef, file);
+                const fileUrl = await getDownloadURL(storageRef);
+                content = content ? `${content}\n${fileUrl}` : fileUrl;
             }
 
-            try {
-                showMessage(dreamMessage, 'Registrando sonho...', 'info');
-                //'dreams'
-                await addDoc(collection(db, 'dreams'), {
-                    content: content,
-                    timestamp: serverTimestamp()
-                });
-                showMessage(dreamMessage, 'Sonho registrado com sucesso!', 'success');
-                dreamContentInput.value = '';
-            } catch (error) {
-                showMessage(dreamMessage, `Erro ao registrar sonho: ${error.message}`, 'error');
+            // if there's a manual url, append to content
+            if (enteredUrl) {
+                content = content ? `${content}\n${enteredUrl}` : enteredUrl;
             }
-        });
-    }
 
+            await addDoc(collection(db, 'posts'), {
+                content,
+                imageUrl: '', // keep field for backwards compat but empty
+                timestamp: serverTimestamp()
+            });
 
+            msg(postMsg, 'posted!', 'success');
+            if (postContent)   postContent.value  = '';
+            if (postImageUrl)  postImageUrl.value  = '';
+            if (postImageFile) postImageFile.value = '';
+        } catch (err) {
+            console.error(err);
+            msg(postMsg, `error: ${err.message}`, 'error');
+        }
+    });
 
+    // ── close friends (private entries) ───────
+    const privateContent = document.getElementById('private-entry-content');
+    const publishPrivate = document.getElementById('publish-private-entry-btn');
+    const privateMsg     = document.getElementById('private-entry-message');
 
+    publishPrivate?.addEventListener('click', async () => {
+        const content = (privateContent?.value || '').trim();
+        if (!content) { msg(privateMsg, 'write something first.', 'error'); return; }
+        try {
+            msg(privateMsg, 'publishing...', 'info');
+            await addDoc(collection(db, 'private_entries'), { content, timestamp: serverTimestamp() });
+            msg(privateMsg, 'published!', 'success');
+            if (privateContent) privateContent.value = '';
+        } catch (err) {
+            msg(privateMsg, `error: ${err.message}`, 'error');
+        }
+    });
 
+    // ── dreams ─────────────────────────────────
+    const dreamContent = document.getElementById('dream-content');
+    const publishDream = document.getElementById('publish-dream-btn');
+    const dreamMsg     = document.getElementById('dream-message');
 
+    publishDream?.addEventListener('click', async () => {
+        const content = (dreamContent?.value || '').trim();
+        if (!content) { msg(dreamMsg, 'write something first.', 'error'); return; }
+        try {
+            msg(dreamMsg, 'saving...', 'info');
+            await addDoc(collection(db, 'dreams'), { content, timestamp: serverTimestamp() });
+            msg(dreamMsg, 'dream saved!', 'success');
+            if (dreamContent) dreamContent.value = '';
+        } catch (err) {
+            msg(dreamMsg, `error: ${err.message}`, 'error');
+        }
+    });
 
+    // ── blog posts ─────────────────────────────
+    const blogTitle   = document.getElementById('blog-title');
+    const blogContent = document.getElementById('blog-content');
+    const blogImgUrl  = document.getElementById('blog-image-url');
+    const publishBlog = document.getElementById('publish-blog-btn');
+    const blogMsg     = document.getElementById('blog-message');
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    if (logoutBtn) {
-        logoutBtn.addEventListener('click', async () => {
-            try {
-                await signOut(auth);
-                showMessage(loginMessage, 'Você saiu da sua conta.', 'info');
-            } catch (error) {
-                showMessage(loginMessage, `Erro ao sair: ${error.message}`, 'error');
-            }
-        });
-    }
+    publishBlog?.addEventListener('click', async () => {
+        const title   = (blogTitle?.value || '').trim();
+        const content = (blogContent?.value || '').trim();
+        const imageUrl = (blogImgUrl?.value || '').trim();
+        if (!title || !content) { msg(blogMsg, 'fill in title and content.', 'error'); return; }
+        try {w
+            await addDoc(collection(db, 'blog_posts'), { title, content, imageUrl, timestamp: serverTimestamp() });
+            msg(blogMsg, 'published!', 'success');
+            if (blogTitle)   blogTitle.value   = '';
+            if (blogContent) blogContent.value = '';
+            if (blogImgUrl)  blogImgUrl.value  = '';
+        } catch (err) {
+            msg(blogMsg, `error: ${err.message}`, 'error');
+        }
+    });
 });
