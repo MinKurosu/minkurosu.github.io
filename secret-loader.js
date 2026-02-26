@@ -30,7 +30,7 @@ function formatTimestampMinimal(timestamp) {
 async function loadSecretPosts() {
     const secretPostsContainer = document.getElementById('secret-posts-container');
     if (!secretPostsContainer) {
-        console.error("Elemento 'secret-posts-container' não encontrado!");
+        console.error("elemento 'secret-posts-container' não encontrado!");
         return;
     }
 
@@ -97,11 +97,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 loadSecretPosts();
 
             } else {
-                passwordMessage.textContent = 'Senha incorreta. Tente novamente.';
+                passwordMessage.textContent = 'senha incorreta. Tente novamente.';
                 secretPasswordInput.value = '';
             }
         });
     } else {
-        console.error("Elementos da seção secreta não encontrados. Verifique os IDs no HTML.");
+        console.error("elementos do priv não encontrados. Verifique os ids no HTML.");
     }
 });
