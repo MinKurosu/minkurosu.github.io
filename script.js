@@ -1,11 +1,3 @@
-const observer = new MutationObserver(() => {
-  const banner = document.querySelector('.goog-te-banner-frame');
-  if (banner) banner.style.display = 'none';
-  document.body.style.top = '0';
-});
-observer.observe(document.body, { childList: true, subtree: true });
-
-
 document.addEventListener('DOMContentLoaded', () => {
     const tracks = document.querySelectorAll('.track-inner');
     tracks.forEach(track => {
@@ -117,3 +109,15 @@ function initializeDrag() {
         setTimeout(showSlides, 4000);
     }
 }
+
+const gtObserver = new MutationObserver(() => {
+  const banner = document.querySelector('.goog-te-banner-frame');
+  if (banner) {
+    banner.style.setProperty('display', 'none', 'important');
+  }
+  if (document.body.style.top && document.body.style.top !== '0px') {
+    document.body.style.setProperty('top', '0', 'important');
+  }
+});
+
+gtObserver.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['style'] });
