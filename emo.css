@@ -1238,7 +1238,7 @@ th {
 
 .track-inner {
   display: inline-block;
-  animation: scroll-right 400s linear infinite;
+  animation: scroll-right 100s linear infinite;
 }
 
 .track:hover .track-inner {
