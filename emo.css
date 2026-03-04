@@ -275,6 +275,8 @@ header {
   max-width: 50rem;
   box-sizing: border-box;
   max-height: 5rem;
+  position: relative;
+  overflow: visible;
 
 }
 
@@ -450,7 +452,7 @@ header {
   text-align: center;
   margin: 0 auto;
   width: 100%;
-
+  position: relative;
   box-sizing: border-box;
   color: #4b4b4b;
 }
@@ -1238,7 +1240,7 @@ th {
 
 .track-inner {
   display: inline-block;
-  animation: scroll-right 100s linear infinite;
+  animation: scroll-right 400s linear infinite;
 }
 
 .track:hover .track-inner {
