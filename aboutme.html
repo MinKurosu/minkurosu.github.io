@@ -88,23 +88,26 @@
         <div class="about-me-container">
             <div class="slideshow-area">
                 <img src="imgs/site_imgs/slideshow-me/2.jpg" class="active">
-                <img src="imgs/site_imgs/slideshow-me/1.jpg">
                 <img src="imgs/site_imgs/slideshow-me/3.jpg">
-                <img src="imgs/site_imgs/slideshow-me/4.jpg">
             </div>
 
             <div class="badges-area">
                 <div class="badges-container">
                     <div class="scrollthin">
                         <img src="imgs/webgraphics/identitybuttons/cat.png" class="badge-img">
-                        <img src="imgs/webgraphics/identitybuttons/enby.png" class="badge-img">
+                                                <img src="imgs/webgraphics/identitybuttons/intro.png" class="badge-img">
+                        <img src="imgs/webgraphics/identitybuttons/artist.png" class="badge-img">
+
                         <img src="imgs/webgraphics/identitybuttons/demi.png" class="badge-img">
-                        <img src="imgs/webgraphics/identitybuttons/punk.png" class="badge-img">
-                        <img src="imgs/webgraphics/identitybuttons/queerpunk.png" class="badge-img">
+                                       <img src="imgs/webgraphics/identitybuttons/sensitive.png" class="badge-img">
+                        <img src="imgs/webgraphics/identitybuttons/neurodivergent.png" class="badge-img">
+                        <img src="imgs/webgraphics/identitybuttons/pc.png" class="badge-img">
+
+                        
                         <img src="imgs/webgraphics/identitybuttons/emo.png" class="badge-img">
+                                 <img src="imgs/webgraphics/identitybuttons/punk.png" class="badge-img">
                         <img src="imgs/webgraphics/identitybuttons/taken.png" class="badge-img">
                         <img src="imgs/webgraphics/identitybuttons/vampirekin.png" class="badge-img">
-                        <img src="imgs/webgraphics/identitybuttons/intro.png" class="badge-img">
                         <img src="imgs/webgraphics/identitybuttons/infp.png" class="badge-img">
                         <img src="imgs/webgraphics/identitybuttons/veg.png" class="badge-img">
                         <img src="imgs/webgraphics/identitybuttons/nature.gif" class="badge-img">
@@ -113,15 +116,12 @@
                         <img src="imgs/webgraphics/identitybuttons/sun.png" class="badge-img">
                         <img src="imgs/webgraphics/identitybuttons/horse.png" class="badge-img">
                         <img src="imgs/webgraphics/identitybuttons/student.png" class="badge-img">
-                        <img src="imgs/webgraphics/identitybuttons/artist.png" class="badge-img">
-                        <img src="imgs/webgraphics/identitybuttons/neurodivergent.png" class="badge-img">
-                        <img src="imgs/webgraphics/identitybuttons/sensitive.png" class="badge-img">
                         <img src="imgs/webgraphics/identitybuttons/ocd.png" class="badge-img">
-                        <img src="imgs/webgraphics/identitybuttons/schizotypal.png" class="badge-img">
                         <img src="imgs/webgraphics/identitybuttons/righthand.png" class="badge-img">
-                        <img src="imgs/webgraphics/identitybuttons/pc.png" class="badge-img">
                         <img src="imgs/webgraphics/identitybuttons/+18.png" class="badge-img">
                         <img src="imgs/webgraphics/identitybuttons/queer.png" class="badge-img">
+                                                <img src="imgs/webgraphics/identitybuttons/enby.png" class="badge-img">
+
                     </div>
                 </div>
             </div>
@@ -195,7 +195,7 @@
                 <tr>
                     <td style="border: 1px solid black; padding: 8px;">games</td>
                     <td style="border: 1px solid black; padding: 8px;">minecraft, stardew valley, baldurs gate 3, cs:go,
-                        lol, the sims, animal crossing, rhythm heaven, keep driving, project zomboid, transformice, stake., needy girl overdose, cult of the lamb, </td>
+                        lol, the sims, animal crossing, overwatch, rhythm heaven, keep driving, project zomboid, transformice, skate., needy girl overdose, cult of the lamb, </td>
                 </tr>
                 <tr>
                     <td style="border: 1px solid black; padding: 8px;">hobbies i've had</td>
@@ -276,3 +276,12 @@ even though i didn't really catch the tumblr era (i was more of an instagram and
         <iframe style="width:100%; height:100%; border:none;" src="drawbox.html" title="Drawbox"></iframe>
     </div>
 </div>
+<script>
+  const slides = document.querySelectorAll('.slideshow-area img');
+  let current = 0;
+  setInterval(() => {
+    slides[current].classList.remove('active');
+    current = (current + 1) % slides.length;
+    slides[current].classList.add('active');
+  }, 3000);
+</script>
