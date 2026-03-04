@@ -264,9 +264,8 @@ body>.layout-with-sidebars {
 
 header {
   background-color: #0a0a0a;
-
   background-attachment: fixed;
-  margin-bottom: 2%;
+  margin-bottom: 0;
   border-radius: 0 0 1.25rem 1.25rem;
   display: flex;
   justify-content: space-between;
@@ -1239,7 +1238,7 @@ th {
 
 .track-inner {
   display: inline-block;
-  animation: scroll-right 100s linear infinite;
+  animation: scroll-right 400s linear infinite;
 }
 
 .track:hover .track-inner {
